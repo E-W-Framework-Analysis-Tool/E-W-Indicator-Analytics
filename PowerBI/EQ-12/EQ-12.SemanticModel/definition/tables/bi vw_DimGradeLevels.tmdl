@@ -1,27 +1,27 @@
 table 'bi vw_DimGradeLevels'
 	lineageTag: 146faf17-3fdb-4714-adf3-d5620835c217
 
-	column Code
-		dataType: string
-		lineageTag: c84329f5-4805-4739-880c-503abb4da1c5
-		summarizeBy: none
-		sourceColumn: Code
-
-		annotation SummarizationSetBy = Automatic
-
-	column Desc
-		dataType: string
-		lineageTag: 74237c92-7506-4c49-92d5-c7fc4e9fe37a
-		summarizeBy: none
-		sourceColumn: Desc
-
-		annotation SummarizationSetBy = Automatic
-
 	column GradeLevelGroup
 		dataType: string
 		lineageTag: 0ce0b257-9836-4dde-a28d-1df3686e60d3
 		summarizeBy: none
 		sourceColumn: GradeLevelGroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column GradeLevelCode
+		dataType: string
+		lineageTag: 1be12bb1-3f57-4b2a-8a70-4caae68020b3
+		summarizeBy: none
+		sourceColumn: GradeLevelCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column GradeLevelDescription
+		dataType: string
+		lineageTag: 7ed98a85-e1fa-4aaf-9fa2-31b9a2524bee
+		summarizeBy: none
+		sourceColumn: GradeLevelDescription
 
 		annotation SummarizationSetBy = Automatic
 

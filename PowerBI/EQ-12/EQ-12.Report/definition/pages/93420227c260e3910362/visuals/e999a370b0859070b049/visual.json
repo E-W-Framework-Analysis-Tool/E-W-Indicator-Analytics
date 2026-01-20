@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "45a94118a6bc31145510",
+  "name": "e999a370b0859070b049",
   "position": {
-    "x": 10.328988206083178,
+    "x": 10.19607843137255,
     "y": 0,
     "z": 0,
-    "height": 303.51334574798261,
-    "width": 334.50031036623216,
+    "height": 295.68627450980392,
+    "width": 296.47058823529414,
     "tabOrder": 0
   },
   "visual": {
@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "College Readiness"
+                      "Entity": "Early College Coursework Completion"
                     }
                   },
-                  "Property": "% College Ready Graduates"
+                  "Property": "Early College Pass Count"
                 }
               },
-              "queryRef": "bi vw_DimAssessmentSubtests.% College Ready Graduates",
-              "nativeQueryRef": "% College Ready Graduates"
+              "queryRef": "Early College Coursework Completion.Early College Pass Count",
+              "nativeQueryRef": "Early College Pass Count"
             }
           ]
         }
@@ -39,10 +39,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "College Readiness"
+                    "Entity": "Early College Coursework Completion"
                   }
                 },
-                "Property": "% College Ready Graduates"
+                "Property": "Early College Pass Count"
               }
             },
             "direction": "Descending"
@@ -56,15 +56,15 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "dd8982a78596b025e76a",
+        "name": "d65ab9e5a37cbe6e7562",
         "field": {
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "College Readiness"
+                "Entity": "Early College Coursework Completion"
               }
             },
-            "Property": "% College Ready Graduates"
+            "Property": "Early College Pass Count"
           }
         },
         "type": "Advanced"

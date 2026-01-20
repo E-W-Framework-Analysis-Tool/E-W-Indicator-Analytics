@@ -1,34 +1,20 @@
 table 'bi vw_DimRaces'
 	lineageTag: f02bcb71-295e-4b95-8a18-b7d179a77803
 
-	column Id
+	column DimRaceId
 		dataType: int64
-		isHidden
 		formatString: 0
-		lineageTag: 8d611428-6aae-4fa3-bc59-06f5998a7db6
+		lineageTag: 56e15362-3681-48d7-8e7f-e0da5a606551
 		summarizeBy: none
-		sourceColumn: Id
-
-		changedProperty = IsHidden
+		sourceColumn: DimRaceId
 
 		annotation SummarizationSetBy = Automatic
 
-	column Code
+	column RaceEthnicity
 		dataType: string
-		isHidden
-		lineageTag: c61db9cd-b798-40e6-ae6b-f19bb14bc628
+		lineageTag: fb8609a3-96a5-4bb4-b958-9153e9a7244d
 		summarizeBy: none
-		sourceColumn: Code
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column Desc
-		dataType: string
-		lineageTag: 43578b30-1a8e-4f0a-b091-c0766a9e7196
-		summarizeBy: none
-		sourceColumn: Desc
+		sourceColumn: RaceEthnicity
 
 		annotation SummarizationSetBy = Automatic
 

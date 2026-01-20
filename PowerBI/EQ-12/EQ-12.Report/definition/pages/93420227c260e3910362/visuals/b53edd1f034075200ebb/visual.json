@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "550d85222b64e5914978",
+  "name": "b53edd1f034075200ebb",
   "position": {
     "x": 0,
-    "y": 336.08938547486036,
-    "z": 3000,
-    "height": 383.76163873370581,
-    "width": 1000.3227808814402,
-    "tabOrder": 3000
+    "y": 336.47058823529414,
+    "z": 3,
+    "height": 383.52941176470591,
+    "width": 948.23529411764707,
+    "tabOrder": 3
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -56,14 +56,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Algebra I by 9th grade"
+                      "Entity": "Early College Coursework Completion"
                     }
                   },
-                  "Property": "Algebra I Success Rate"
+                  "Property": "% Early College Completion"
                 }
               },
-              "queryRef": "bi vw_DimAssessmentSubtests.Algebra I Success Rate",
-              "nativeQueryRef": "Algebra I Success Rate"
+              "queryRef": "Early College Coursework Completion.% Early College Completion",
+              "nativeQueryRef": "% Early College Completion"
             }
           ]
         }
@@ -75,10 +75,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Algebra I by 9th grade"
+                    "Entity": "Early College Coursework Completion"
                   }
                 },
-                "Property": "Algebra I Success Rate"
+                "Property": "% Early College Completion"
               }
             },
             "direction": "Descending"
@@ -87,70 +87,34 @@
         "isDefaultSort": true
       }
     },
-    "visualContainerObjects": {
-      "title": [
-        {
-          "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "''"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "dea9b9d386c2b3618b07",
+        "name": "ad58760c37b50cde9d21",
         "field": {
-          "Arithmetic": {
-            "Left": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Algebra I by 9th grade"
-                  }
-                },
-                "Property": "Algebra I Success Rate"
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimRaces"
               }
             },
-            "Right": {
-              "ScopedEval": {
-                "Expression": {
-                  "Measure": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Algebra I by 9th grade"
-                      }
-                    },
-                    "Property": "Algebra I Success Rate"
-                  }
-                },
-                "Scope": []
-              }
-            },
-            "Operator": 3
+            "Property": "RaceEthnicity"
           }
         },
-        "type": "Advanced",
-        "howCreated": "User"
+        "type": "Categorical"
       },
       {
-        "name": "0f4ec9a9a895a5d19eb0",
+        "name": "8da7a34c4623e6000d93",
         "field": {
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Algebra I by 9th grade"
+                "Entity": "Early College Coursework Completion"
               }
             },
-            "Property": "Algebra I Success Rate"
+            "Property": "% Early College Completion"
           }
         },
         "type": "Advanced"

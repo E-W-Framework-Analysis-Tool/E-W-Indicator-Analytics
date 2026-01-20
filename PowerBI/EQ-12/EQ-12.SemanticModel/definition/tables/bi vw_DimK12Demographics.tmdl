@@ -1,34 +1,20 @@
 table 'bi vw_DimK12Demographics'
 	lineageTag: c6261036-c05f-4884-9a26-f3c12173cf69
 
-	column DimK12DemographicId
+	column Dimk12DemographicId
 		dataType: int64
-		isHidden
 		formatString: 0
-		lineageTag: 3ca6d8c5-8718-4739-bfc8-b661c2b26819
+		lineageTag: 16f1c605-77a3-478f-bd68-e5d9ae74b8c2
 		summarizeBy: none
-		sourceColumn: DimK12DemographicId
-
-		changedProperty = IsHidden
+		sourceColumn: Dimk12DemographicId
 
 		annotation SummarizationSetBy = Automatic
 
-	column SexCode
+	column Gender
 		dataType: string
-		isHidden
-		lineageTag: c8a86ddc-94b8-423c-870b-0719edae416d
+		lineageTag: 2da856cb-8ac8-4a72-816c-af777a7fd9d1
 		summarizeBy: none
-		sourceColumn: SexCode
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column SexDescription
-		dataType: string
-		lineageTag: 20204723-ca6c-4158-be42-b833a65fac6c
-		summarizeBy: none
-		sourceColumn: SexDescription
+		sourceColumn: Gender
 
 		annotation SummarizationSetBy = Automatic
 

@@ -1,34 +1,20 @@
 table 'bi vw_DimFosterCareStatuses'
 	lineageTag: 3945d4ff-8140-473a-ab83-be544df72a1c
 
-	column Id
+	column DimFosterCareStatusId
 		dataType: int64
-		isHidden
 		formatString: 0
-		lineageTag: 706fccd7-8683-478b-ac64-c86a566e9592
+		lineageTag: 34c9f530-7c76-4321-a403-9b411220db03
 		summarizeBy: none
-		sourceColumn: Id
-
-		changedProperty = IsHidden
+		sourceColumn: DimFosterCareStatusId
 
 		annotation SummarizationSetBy = Automatic
 
-	column Code
+	column FosterCareStatus
 		dataType: string
-		isHidden
-		lineageTag: 669fd37f-e58f-4fb2-93b1-1003ddfed5d8
+		lineageTag: 3f8ef081-1231-480e-b9d8-6d037685fd0b
 		summarizeBy: none
-		sourceColumn: Code
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column Desc
-		dataType: string
-		lineageTag: eb19a88a-c589-41f5-8e9e-8dda643526a4
-		summarizeBy: none
-		sourceColumn: Desc
+		sourceColumn: FosterCareStatus
 
 		annotation SummarizationSetBy = Automatic
 

@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "6da4e9c2863cd363a2a2",
+  "name": "d540e5fa16012702cdd9",
   "position": {
-    "x": 1032.8988206083179,
+    "x": 1032.9411764705883,
     "y": 0,
-    "z": 1000,
-    "height": 279.67721911855989,
-    "width": 247.10117939168219,
-    "tabOrder": 1000
+    "z": 2,
+    "height": 295.68627450980392,
+    "width": 247.05882352941177,
+    "tabOrder": 2
   },
   "visual": {
     "visualType": "listSlicer",
@@ -46,7 +46,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "dc559aa8ebb632b3c74b",
+        "name": "e3c0bbfc20049d681753",
         "field": {
           "Column": {
             "Expression": {

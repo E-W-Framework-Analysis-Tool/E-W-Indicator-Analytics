@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "18f95cfa51b50b03da0c",
+  "name": "c1b53b7f0e141b10e774",
   "position": {
-    "x": 458.44816883923033,
+    "x": 334.11764705882354,
     "y": 0,
-    "z": 3000,
-    "height": 359.92551210428309,
-    "width": 821.55183116076978,
-    "tabOrder": 3000
+    "z": 1,
+    "height": 295.68627450980392,
+    "width": 690.98039215686276,
+    "tabOrder": 1
   },
   "visual": {
     "visualType": "lineChart",
@@ -32,6 +32,9 @@
             }
           ]
         },
+        "Series": {
+          "projections": []
+        },
         "Y": {
           "projections": [
             {
@@ -39,16 +42,19 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "College Readiness"
+                      "Entity": "Early College Coursework Completion"
                     }
                   },
-                  "Property": "% College Ready Students"
+                  "Property": "% Early College Completion"
                 }
               },
-              "queryRef": "College Readiness.% College Ready Students",
-              "nativeQueryRef": "% College Ready Students"
+              "queryRef": "Early College Coursework Completion.% Early College Completion",
+              "nativeQueryRef": "% Early College Completion"
             }
           ]
+        },
+        "Y2": {
+          "projections": []
         }
       },
       "sortDefinition": {
@@ -58,10 +64,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "College Readiness"
+                    "Entity": "Early College Coursework Completion"
                   }
                 },
-                "Property": "% College Ready Students"
+                "Property": "% Early College Completion"
               }
             },
             "direction": "Descending"
@@ -70,42 +76,12 @@
         "isDefaultSort": true
       }
     },
-    "objects": {
-      "valueAxis": [
-        {
-          "properties": {
-            "logAxisScale": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
-    "visualContainerObjects": {
-      "title": [
-        {
-          "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'% College Ready Students by SchoolYear [!! To Do !!]'"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "d803d659393cce1304ed",
+        "name": "2c4a41bc12b36a66e070",
         "field": {
           "Column": {
             "Expression": {
@@ -119,15 +95,15 @@
         "type": "Advanced"
       },
       {
-        "name": "adcd9eb7bba7e4090be0",
+        "name": "27663f64b7c3ecac770e",
         "field": {
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "College Readiness"
+                "Entity": "Early College Coursework Completion"
               }
             },
-            "Property": "% College Ready Students"
+            "Property": "% Early College Completion"
           }
         },
         "type": "Advanced"

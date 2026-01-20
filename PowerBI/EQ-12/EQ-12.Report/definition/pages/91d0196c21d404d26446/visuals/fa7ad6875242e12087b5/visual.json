@@ -1,0 +1,257 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "fa7ad6875242e12087b5",
+  "position": {
+    "x": 0,
+    "y": 336.08938547486036,
+    "z": 3001,
+    "height": 383.76163873370581,
+    "width": 1000.3227808814402,
+    "tabOrder": 3001
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_DimRaces"
+                    }
+                  },
+                  "Property": "RaceEthnicity"
+                }
+              },
+              "queryRef": "bi vw_DimRaces.RaceEthnicity",
+              "nativeQueryRef": "RaceEthnicity",
+              "active": true,
+              "displayName": "RaceEthnicity"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_DimK12Demographics"
+                    }
+                  },
+                  "Property": "Gender"
+                }
+              },
+              "queryRef": "bi vw_DimK12Demographics.Gender",
+              "nativeQueryRef": "Gender",
+              "active": false,
+              "displayName": "Gender"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_DimDisabilityStatuses"
+                    }
+                  },
+                  "Property": "DisabilityStatus"
+                }
+              },
+              "queryRef": "bi vw_DimDisabilityStatuses.DisabilityStatus",
+              "nativeQueryRef": "DisabilityStatus",
+              "active": false,
+              "displayName": "DisabilityStatus"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_DimEconomicallyDisadvantagedStatuses"
+                    }
+                  },
+                  "Property": "EconomicDisadvantageStatus"
+                }
+              },
+              "queryRef": "bi vw_DimEconomicallyDisadvantagedStatuses.EconomicDisadvantageStatus",
+              "nativeQueryRef": "EconomicDisadvantageStatus",
+              "active": false,
+              "displayName": "EconomicDisadvantageStatus"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_DimEnglishLearnerStatuses"
+                    }
+                  },
+                  "Property": "EnglishLearnerStatus"
+                }
+              },
+              "queryRef": "bi vw_DimEnglishLearnerStatuses.EnglishLearnerStatus",
+              "nativeQueryRef": "EnglishLearnerStatus",
+              "active": false,
+              "displayName": "EnglishLearnerStatus"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_DimFosterCareStatuses"
+                    }
+                  },
+                  "Property": "FosterCareStatus"
+                }
+              },
+              "queryRef": "bi vw_DimFosterCareStatuses.FosterCareStatus",
+              "nativeQueryRef": "FosterCareStatus",
+              "active": false,
+              "displayName": "FosterCareStatus"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_DimHomelessnessStatuses"
+                    }
+                  },
+                  "Property": "HomelessnessStatus"
+                }
+              },
+              "queryRef": "bi vw_DimHomelessnessStatuses.HomelessnessStatus",
+              "nativeQueryRef": "HomelessnessStatus",
+              "active": false,
+              "displayName": "HomelessnessStatus"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_DimNeglectedOrDelinquentStatus"
+                    }
+                  },
+                  "Property": "NeglectedOrDelinquentStatus"
+                }
+              },
+              "queryRef": "bi vw_DimNeglectedOrDelinquentStatus.NeglectedOrDelinquentStatus",
+              "nativeQueryRef": "NeglectedOrDelinquentStatus",
+              "active": false,
+              "displayName": "NeglectedOrDelinquentStatus"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Disaggregation"
+                    }
+                  },
+                  "Property": "Disaggregation"
+                }
+              },
+              "index": 0,
+              "length": 8
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "College Readiness"
+                    }
+                  },
+                  "Property": "% College Ready Graduates"
+                }
+              },
+              "queryRef": "College Readiness.% College Ready Graduates",
+              "nativeQueryRef": "% College Ready Graduates"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "College Readiness"
+                  }
+                },
+                "Property": "% College Ready Graduates"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "dea9b9d386c2b3618b07",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Algebra I by 9th grade"
+                  }
+                },
+                "Property": "Algebra I Success Rate"
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Measure": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Algebra I by 9th grade"
+                      }
+                    },
+                    "Property": "Algebra I Success Rate"
+                  }
+                },
+                "Scope": []
+              }
+            },
+            "Operator": 3
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "ee573edc3837380a247e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "College Readiness"
+              }
+            },
+            "Property": "% College Ready Graduates"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

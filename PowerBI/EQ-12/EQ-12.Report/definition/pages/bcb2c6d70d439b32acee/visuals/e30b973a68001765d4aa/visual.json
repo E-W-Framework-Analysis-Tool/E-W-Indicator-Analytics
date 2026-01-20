@@ -26,7 +26,7 @@
                   "Property": "Total 9th Graders"
                 }
               },
-              "queryRef": "bi vw_DimAssessmentSubtests.Total 9th Graders",
+              "queryRef": "Algebra I by 9th grade.Total 9th Graders",
               "nativeQueryRef": "Total 9th Graders"
             }
           ]
@@ -74,7 +74,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "bba1e550118400a0d796",
+        "name": "de5b4a8f06589c09d942",
         "field": {
           "Measure": {
             "Expression": {
@@ -88,7 +88,7 @@
         "type": "Advanced"
       },
       {
-        "name": "c3258d4a8d9b9352e0d3",
+        "name": "a682990c66c30e40485b",
         "field": {
           "Measure": {
             "Expression": {

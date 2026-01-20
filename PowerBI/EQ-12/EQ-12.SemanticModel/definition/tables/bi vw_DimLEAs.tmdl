@@ -22,33 +22,11 @@ table 'bi vw_DimLEAs'
 
 		annotation SummarizationSetBy = Automatic
 
-	column LeaIdentifierSea
-		dataType: string
-		isHidden
-		lineageTag: 219809d9-be66-48ba-ba7a-0be88b3ceebf
-		summarizeBy: none
-		sourceColumn: LeaIdentifierSea
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
 	column LeaOrganizationName
 		dataType: string
 		lineageTag: eb380408-c3db-4fde-ac1e-6fb952c2fddc
 		summarizeBy: none
 		sourceColumn: LeaOrganizationName
-
-		annotation SummarizationSetBy = Automatic
-
-	column LeaTypeCode
-		dataType: string
-		isHidden
-		lineageTag: 270c5ab5-347e-4694-971b-bbb31b2c8661
-		summarizeBy: none
-		sourceColumn: LeaTypeCode
-
-		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

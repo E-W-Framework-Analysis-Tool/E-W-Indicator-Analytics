@@ -1,34 +1,20 @@
 table 'bi vw_DimEnglishLearnerStatuses'
 	lineageTag: e1a39082-95ac-442c-b50d-2549ca694750
 
-	column Id
+	column DimEnglishLearnerStatusId
 		dataType: int64
-		isHidden
 		formatString: 0
-		lineageTag: fcc00d6f-0048-40d7-a013-30db8c1d6c7b
+		lineageTag: beeaf84f-6761-4ff5-bd7a-f09acb7559f5
 		summarizeBy: none
-		sourceColumn: Id
-
-		changedProperty = IsHidden
+		sourceColumn: DimEnglishLearnerStatusId
 
 		annotation SummarizationSetBy = Automatic
 
-	column Code
+	column EnglishLearnerStatus
 		dataType: string
-		isHidden
-		lineageTag: 894bf399-579c-42c4-820c-8c07470b0978
+		lineageTag: b6aff965-f406-495c-bd68-ab8598593ee8
 		summarizeBy: none
-		sourceColumn: Code
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column Desc
-		dataType: string
-		lineageTag: a11f4ae5-57a1-4720-9852-d2a2a3a0ac20
-		summarizeBy: none
-		sourceColumn: Desc
+		sourceColumn: EnglishLearnerStatus
 
 		annotation SummarizationSetBy = Automatic
 

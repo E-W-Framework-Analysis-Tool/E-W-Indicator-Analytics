@@ -1,0 +1,54 @@
+table Disaggregation
+	lineageTag: 1699548b-882f-4a8e-9499-5ca2a0617b42
+
+	column Disaggregation
+		lineageTag: 5c46bb78-261b-49d0-b69b-1329ec0439d7
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Disaggregation Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Disaggregation Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Disaggregation Fields'
+		isHidden
+		lineageTag: 640fdf05-d18d-4649-ac65-84bc89c71296
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Disaggregation Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Disaggregation Order'
+		isHidden
+		formatString: 0
+		lineageTag: 2fb40ee8-1853-4944-bb07-038e34757d89
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Disaggregation = calculated
+		mode: import
+		source =
+				{
+				    ("RaceEthnicity", NAMEOF('bi vw_DimRaces'[RaceEthnicity]), 0),
+				    ("Gender", NAMEOF('bi vw_DimK12Demographics'[Gender]), 1),
+				    ("DisabilityStatus", NAMEOF('bi vw_DimDisabilityStatuses'[DisabilityStatus]), 2),
+				    ("EconomicDisadvantageStatus", NAMEOF('bi vw_DimEconomicallyDisadvantagedStatuses'[EconomicDisadvantageStatus]), 3),
+				    ("EnglishLearnerStatus", NAMEOF('bi vw_DimEnglishLearnerStatuses'[EnglishLearnerStatus]), 4),
+				    ("FosterCareStatus", NAMEOF('bi vw_DimFosterCareStatuses'[FosterCareStatus]), 5),
+				    ("HomelessnessStatus", NAMEOF('bi vw_DimHomelessnessStatuses'[HomelessnessStatus]), 6),
+				    ("NeglectedOrDelinquentStatus", NAMEOF('bi vw_DimNeglectedOrDelinquentStatus'[NeglectedOrDelinquentStatus]), 7)
+				}
+
+	annotation PBI_Id = 0534350ece8d4cd794d0dba427af969a
+

@@ -107,7 +107,7 @@ table 'bi vw_FactK12StudentEnrollments'
 		isHidden
 		formatString: 0
 		lineageTag: 72cd3da4-73ee-44e3-9961-068f00be6218
-		summarizeBy: none
+		summarizeBy: count
 		sourceColumn: HomelessnessStatusId
 
 		changedProperty = IsHidden
@@ -143,7 +143,7 @@ table 'bi vw_FactK12StudentEnrollments'
 		isHidden
 		formatString: 0
 		lineageTag: a7f4401b-01dc-44e8-bf4b-3992f5cf174a
-		summarizeBy: none
+		summarizeBy: count
 		sourceColumn: NOrDStatusId
 
 		changedProperty = IsHidden

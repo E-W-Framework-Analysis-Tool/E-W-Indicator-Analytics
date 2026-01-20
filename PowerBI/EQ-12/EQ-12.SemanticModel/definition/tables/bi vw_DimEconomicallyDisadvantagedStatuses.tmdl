@@ -1,34 +1,20 @@
 table 'bi vw_DimEconomicallyDisadvantagedStatuses'
 	lineageTag: 7218c01b-aaa4-48ed-ac32-97ac567bbae6
 
-	column Id
+	column DimEconomicallyDisadvantagedStatusId
 		dataType: int64
-		isHidden
 		formatString: 0
-		lineageTag: 7612c1bd-e3e8-469d-8a27-e8a593c3aadc
+		lineageTag: dd990322-92b5-4fb8-abb9-a1a193a48082
 		summarizeBy: none
-		sourceColumn: Id
-
-		changedProperty = IsHidden
+		sourceColumn: DimEconomicallyDisadvantagedStatusId
 
 		annotation SummarizationSetBy = Automatic
 
-	column Code
+	column EconomicDisadvantageStatus
 		dataType: string
-		isHidden
-		lineageTag: 7f03d428-e4b7-4888-82a9-75afa5d6fbcf
+		lineageTag: 9db02b45-9542-4fc7-99c7-f1b20fef9e86
 		summarizeBy: none
-		sourceColumn: Code
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column Desc
-		dataType: string
-		lineageTag: 72ede076-2718-47fe-8dde-48c7d4fc8637
-		summarizeBy: none
-		sourceColumn: Desc
+		sourceColumn: EconomicDisadvantageStatus
 
 		annotation SummarizationSetBy = Automatic
 

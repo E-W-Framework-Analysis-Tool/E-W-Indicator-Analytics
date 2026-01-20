@@ -1,0 +1,35 @@
+table 'Early College Coursework Completion'
+	lineageTag: 1d42e52c-4914-45c0-8b06-1b8f5ea515a0
+
+	measure 'Early College Pass Count' = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[K12StudentId]), 'bi vw_DimK12CourseStatuses'[CourseLevelCharacteristicCode] in {"73048", "00575", "00574"}, 'bi vw_FactK12StudentCourseSections'[LetterGradeEarned] <> "F")
+		formatString: 0
+		lineageTag: 270b15b0-65c2-4780-8f7b-01e27b103143
+
+	measure '% Early College Completion' =
+			VAR TotalHSStudents = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[K12StudentId]), 'bi vw_DimGradeLevels'[GradeLevelCode] IN {"09", "10", "11", "12"})
+			RETURN DIVIDE('Early College Coursework Completion'[Early College Pass Count], [Total 9th Graders], 0)
+		lineageTag: 63314f6a-89e7-4032-9575-a6b44b191e3c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Early College Total Count' = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[K12StudentId]), 'bi vw_DimGradeLevels'[GradeLevelCode] IN {"09", "10", "11", "12"})
+		formatString: 0
+		lineageTag: f5fc74e4-5fb1-4a95-8533-2669f340f3af
+
+	measure 'Coursework Completion' = DIVIDE([Early College Pass Count], [Early College Total Count], 0)
+		lineageTag: e66cad81-58e0-4639-958e-b3fbc8f11ca4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Early College Coursework Completion' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

@@ -1,34 +1,20 @@
 table 'bi vw_DimDisabilityStatuses'
 	lineageTag: 446724cf-18df-47a6-bbcd-2f356ecd81ed
 
-	column Id
+	column DimDisabilityStatusId
 		dataType: int64
-		isHidden
 		formatString: 0
-		lineageTag: 7418f1da-ff42-4c18-8887-49fc53e0a450
+		lineageTag: 5a505dc8-3b27-4877-9357-01811d2431ed
 		summarizeBy: none
-		sourceColumn: Id
-
-		changedProperty = IsHidden
+		sourceColumn: DimDisabilityStatusId
 
 		annotation SummarizationSetBy = Automatic
 
-	column Code
+	column DisabilityStatus
 		dataType: string
-		isHidden
-		lineageTag: 7d5cea3c-aad6-423b-8b46-787b50a3a6a5
+		lineageTag: 9c6a26cd-78fc-444a-b481-e3ab5831ac56
 		summarizeBy: none
-		sourceColumn: Code
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column Desc
-		dataType: string
-		lineageTag: 2a873e2e-041e-442d-8b30-9a081b0f9cd7
-		summarizeBy: none
-		sourceColumn: Desc
+		sourceColumn: DisabilityStatus
 
 		annotation SummarizationSetBy = Automatic
 

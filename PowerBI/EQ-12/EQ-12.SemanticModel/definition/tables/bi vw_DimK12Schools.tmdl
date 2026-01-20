@@ -37,17 +37,6 @@ table 'bi vw_DimK12Schools'
 
 		annotation SummarizationSetBy = Automatic
 
-	column SchoolIdentifierSea
-		dataType: string
-		isHidden
-		lineageTag: f857b458-921c-49e6-9188-00ed9b595cd9
-		summarizeBy: none
-		sourceColumn: SchoolIdentifierSea
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
 	column NameOfInstitution
 		dataType: string
 		lineageTag: 039c1df4-9586-4559-b7a9-426e36f0003d
@@ -64,14 +53,6 @@ table 'bi vw_DimK12Schools'
 		sourceColumn: SchoolTypeCode
 
 		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column SchoolTypeDescription
-		dataType: string
-		lineageTag: 912a3569-78af-4550-b9d1-4f4e2f6d728f
-		summarizeBy: none
-		sourceColumn: SchoolTypeDescription
 
 		annotation SummarizationSetBy = Automatic
 

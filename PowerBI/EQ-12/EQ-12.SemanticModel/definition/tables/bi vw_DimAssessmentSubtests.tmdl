@@ -1,31 +1,36 @@
 table 'bi vw_DimAssessmentSubtests'
 	lineageTag: 22028065-0199-4de6-95c9-ce091ee7428a
 
-	column Id
-		dataType: int64
-		isHidden
-		formatString: 0
-		lineageTag: 50802cb5-cb48-4fea-8cba-52f11c380e70
-		summarizeBy: none
-		sourceColumn: Id
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column Code
-		dataType: string
-		lineageTag: 0da7d379-10c6-49ca-b119-62d03f96d111
-		summarizeBy: none
-		sourceColumn: Code
-
-		annotation SummarizationSetBy = Automatic
-
 	column AcademicSubject
 		dataType: string
 		lineageTag: 9b2d031a-7dc9-4912-a02e-58947a9c54e7
 		summarizeBy: none
 		sourceColumn: AcademicSubject
+
+		annotation SummarizationSetBy = Automatic
+
+	column DimAssessmentSubtestId
+		dataType: int64
+		formatString: 0
+		lineageTag: fdc77f04-694e-44c2-91d7-063b57c0cd5e
+		summarizeBy: none
+		sourceColumn: DimAssessmentSubtestId
+
+		annotation SummarizationSetBy = Automatic
+
+	column AssessmentSubtestTitle
+		dataType: string
+		lineageTag: a64d1658-fcd3-479e-b6cc-0718dc66d710
+		summarizeBy: none
+		sourceColumn: AssessmentSubtestTitle
+
+		annotation SummarizationSetBy = Automatic
+
+	column AssessmentSubtestCode
+		dataType: string
+		lineageTag: e811f192-c70e-4c1e-9081-8442ce446402
+		summarizeBy: none
+		sourceColumn: AssessmentSubtestCode
 
 		annotation SummarizationSetBy = Automatic
 

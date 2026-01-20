@@ -81,22 +81,20 @@ table 'bi vw_FactK12StudentCourseSections'
 
 		annotation SummarizationSetBy = Automatic
 
-	column LetterGrade
-		dataType: string
-		lineageTag: a1404e6f-e341-415c-ae78-b4e7c4cb787e
-		summarizeBy: none
-		sourceColumn: LetterGrade
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
 	column K12CourseStatusId
 		dataType: int64
 		formatString: 0
 		lineageTag: 424f17e3-f54c-447d-b4cd-e0823657a01a
 		summarizeBy: none
 		sourceColumn: K12CourseStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column LetterGradeEarned
+		dataType: string
+		lineageTag: ed4f36de-5561-4dbe-aa04-1a1da41f8244
+		summarizeBy: none
+		sourceColumn: LetterGradeEarned
 
 		annotation SummarizationSetBy = Automatic
 

@@ -1,34 +1,20 @@
 table 'bi vw_DimHomelessnessStatuses'
 	lineageTag: 7cf6f8ef-bd42-461c-9105-8ed055969cb8
 
-	column Id
+	column DimHomelessnessStatusId
 		dataType: int64
-		isHidden
 		formatString: 0
-		lineageTag: c2d5a014-8c27-4b04-a179-8bb62eb1a790
-		summarizeBy: none
-		sourceColumn: Id
-
-		changedProperty = IsHidden
+		lineageTag: 75311dba-43d7-43b4-9188-85265707fbc4
+		summarizeBy: count
+		sourceColumn: DimHomelessnessStatusId
 
 		annotation SummarizationSetBy = Automatic
 
-	column Code
+	column HomelessnessStatus
 		dataType: string
-		isHidden
-		lineageTag: ea75d773-5811-40b6-95f6-9ca50b856d86
+		lineageTag: 42e08a14-28d4-4f9a-8a44-20346295d213
 		summarizeBy: none
-		sourceColumn: Code
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column Desc
-		dataType: string
-		lineageTag: e696900e-0964-4efb-9d06-3873f653cd7f
-		summarizeBy: none
-		sourceColumn: Desc
+		sourceColumn: HomelessnessStatus
 
 		annotation SummarizationSetBy = Automatic
 

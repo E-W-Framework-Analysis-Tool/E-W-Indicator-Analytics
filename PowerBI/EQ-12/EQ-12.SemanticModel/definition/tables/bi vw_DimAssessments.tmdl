@@ -1,28 +1,6 @@
 table 'bi vw_DimAssessments'
 	lineageTag: 1345d851-3124-4a3f-8a1f-f8906df77570
 
-	column Id
-		dataType: int64
-		isHidden
-		formatString: 0
-		lineageTag: 03d06c21-8a8a-4784-b983-c0792cd4a5ef
-		summarizeBy: none
-		sourceColumn: Id
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column Code
-		dataType: string
-		lineageTag: 333f74c9-1ce0-4b2f-a52d-7f7d510600e9
-		summarizeBy: none
-		sourceColumn: Code
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
 	column AcademicSubject
 		dataType: string
 		lineageTag: 81632b5b-44bb-4952-9514-d2d1e4c2dedd
@@ -30,6 +8,23 @@ table 'bi vw_DimAssessments'
 		sourceColumn: AcademicSubject
 
 		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DimAssessmentId
+		dataType: int64
+		formatString: 0
+		lineageTag: 630d6cb5-7c3a-4932-ab71-cd317ac5b77e
+		summarizeBy: none
+		sourceColumn: DimAssessmentId
+
+		annotation SummarizationSetBy = Automatic
+
+	column AssessmentCode
+		dataType: string
+		lineageTag: 2c2f99d5-89ac-49ec-bcec-46ac6082dfdb
+		summarizeBy: none
+		sourceColumn: AssessmentCode
 
 		annotation SummarizationSetBy = Automatic
 

@@ -1,29 +1,6 @@
 table 'bi vw_DimK12Courses'
 	lineageTag: 9aba5c33-97ac-47ad-9eca-d2a76f107802
 
-	column Id
-		dataType: int64
-		isHidden
-		formatString: 0
-		lineageTag: eed71c9e-4e01-41e8-a9f2-f37d1aefc016
-		summarizeBy: none
-		sourceColumn: Id
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column Code
-		dataType: string
-		isHidden
-		lineageTag: 8a6b1054-c0e3-43b9-9629-cac8c5a69e0d
-		summarizeBy: none
-		sourceColumn: Code
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
 	column CourseSubject
 		dataType: string
 		lineageTag: 33de0db8-4d49-4710-bbb4-9affb2467d5b
@@ -37,6 +14,23 @@ table 'bi vw_DimK12Courses'
 		lineageTag: 2138e84b-aabc-4423-bd9a-97e0f5e7fe7f
 		summarizeBy: none
 		sourceColumn: CourseTitle
+
+		annotation SummarizationSetBy = Automatic
+
+	column DimK12CourseId
+		dataType: int64
+		formatString: 0
+		lineageTag: 6ef2d667-90f8-4ee7-b215-967294bd8eb7
+		summarizeBy: none
+		sourceColumn: DimK12CourseId
+
+		annotation SummarizationSetBy = Automatic
+
+	column CourseIdentifier
+		dataType: string
+		lineageTag: a2baddea-5fe2-4c7c-8c6c-b4c5f15ecc08
+		summarizeBy: none
+		sourceColumn: CourseIdentifier
 
 		annotation SummarizationSetBy = Automatic
 
