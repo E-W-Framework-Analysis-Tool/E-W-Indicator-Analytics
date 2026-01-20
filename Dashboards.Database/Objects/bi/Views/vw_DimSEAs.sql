@@ -1,2 +1,6 @@
 ﻿CREATE VIEW [bi].[vw_DimSEAs] AS
-SELECT * FROM [reporting].[DimSEAs];
+SELECT
+	[DimSeaId]
+  , [SeaOrganizationName]
+  , [StateAbbreviationCode] AS [StateCode]
+FROM [reporting].[DimSEAs];

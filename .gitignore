@@ -367,7 +367,7 @@ eng/dev-dependencies/database/backups/
 # User-specific files
 *.sqlproj.user
 *.suo
-*.user
+*.user*
 
 # Power BI user settings and data cache
 *.pbi

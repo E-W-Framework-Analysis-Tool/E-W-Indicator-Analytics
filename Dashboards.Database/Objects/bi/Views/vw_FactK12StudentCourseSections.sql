@@ -1,6 +1,6 @@
 CREATE VIEW [bi].[vw_FactK12StudentCourseSections] AS
 SELECT
-	  [SchoolYear]
+	[SchoolYear]
   , [SeaId]
   , [LeaId]
   , [K12SchoolId]
@@ -8,6 +8,6 @@ SELECT
   , [K12CourseId]
   , [K12CourseStatusId]
   , [K12StudentId]
-  , [StudentCourseSectionGradeEarned] AS [LetterGrade]
+  , [StudentCourseSectionGradeEarned] AS [LetterGradeEarned]
 FROM
-	[reporting].[FactK12StudentCourseSections]
+	[reporting].[FactK12StudentCourseSections];

@@ -1,6 +1,7 @@
 ﻿CREATE VIEW [bi].[vw_DimAssessmentSubtests] AS
 SELECT
-  DimAssessmentSubtestId as Id
-, AssessmentAcademicSubjectCode as [Code]
-, AssessmentAcademicSubjectDescription as [AcademicSubject]
+	[DimAssessmentSubtestId]
+  , [AssessmentSubtestTitle]
+  , [AssessmentAcademicSubjectCode]        AS [AssessmentSubtestCode]
+  , [AssessmentAcademicSubjectDescription] AS [AcademicSubject]
 FROM [reporting].[DimAssessmentSubtests];

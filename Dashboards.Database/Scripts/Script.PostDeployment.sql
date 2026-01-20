@@ -21,6 +21,7 @@ Post-Deployment Script Template
 :r .\SeedReportingDimensionTables\SeedDimNOrDStatuses.sql
 :r .\SeedReportingDimensionTables\SeedDimSchoolYears.sql
 :r .\SeedReportingDimensionTables\SeedDimK12Demographics.sql
+:r .\SeedReportingDimensionTables\SeedDimK12CourseStatuses.sql
 
 -- Seed other tables
 :r .\SeedOtherTables\SeedBatchControl.sql

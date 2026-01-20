@@ -136,7 +136,7 @@
     <Build Include="Objects\bi\Views\vw_DimK12Courses.sql" />
     <Build Include="Objects\bi\Views\vw_DimK12Schools.sql" />
     <Build Include="Objects\bi\Views\vw_DimLEAs.sql" />
-    <Build Include="Objects\bi\Views\vw_DimNeglectedStatuses.sql" />
+    <Build Include="Objects\bi\Views\vw_DimNeglectedOrDelinquentStatus.sql" />
     <Build Include="Objects\bi\Views\vw_DimRaces.sql" />
     <Build Include="Objects\bi\Views\vw_DimSchoolYears.sql" />
     <Build Include="Objects\bi\Views\vw_DimSEAs.sql" />
@@ -161,5 +161,6 @@
     <None Include="Scripts\SeedReportingDimensionTables\SeedDimK12Demographics.sql" />
     <None Include="Scripts\SeedReportingDimensionTables\SeedDimRaces.sql" />
     <None Include="Scripts\SeedReportingDimensionTables\SeedDimK12CourseStatuses.sql" />
+    <None Include="Dashboards.Database.publish.xml" />
   </ItemGroup>
 </Project>

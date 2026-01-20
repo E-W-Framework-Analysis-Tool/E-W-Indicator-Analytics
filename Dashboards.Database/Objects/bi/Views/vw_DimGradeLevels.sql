@@ -1,7 +1,7 @@
 CREATE VIEW [bi].[vw_DimGradeLevels] AS
 SELECT
-	[GradeLevelCode]          AS [Code]
-  , [GradeLevelDescription] AS [Desc]
+	[GradeLevelCode]
+  , [GradeLevelDescription]
   , CASE
 		WHEN [GradeLevelCode] IN ('01', '02', '03', '04', '05') THEN 'Elementary'
 		WHEN [GradeLevelCode] IN ('06', '07', '08')             THEN 'Middle'

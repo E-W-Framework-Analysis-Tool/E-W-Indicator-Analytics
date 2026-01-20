@@ -1,6 +1,5 @@
 ﻿CREATE VIEW [bi].[vw_DimHomelessnessStatuses] AS
-SELECT 
- DimHomelessnessStatusId as Id
-,HomelessnessStatusCode as  Code
-,HomelessnessStatusDescription as  [Desc]
+SELECT
+	[DimHomelessnessStatusId]
+  , [HomelessnessStatusCode] AS [HomelessnessStatus]
 FROM [reporting].[DimHomelessnessStatuses];

@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="1/19/2026 12:50:57 PM"
@@ -12,8 +12,8 @@
   DTS:ObjectName="LoadStagingFacts"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{69DE3DBA-FC53-4038-9355-16026306CB43}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{894416FD-6723-4069-A05C-1A4622D9EDEF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -690,7 +690,7 @@ order by fksa.FactK12StudentAssessmentId</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate staging table"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -881,6 +881,13 @@ order by fksa.FactK12StudentAssessmentId</property>
                           cachedName="CourseIdentifier"
                           externalMetadataColumnId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CourseIdentifier]"
                           lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CourseIdentifier]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CourseLevelCharacteristicCode]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="CourseLevelCharacteristicCode"
+                          externalMetadataColumnId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CourseLevelCharacteristicCode]"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CourseLevelCharacteristicCode]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -937,6 +944,11 @@ order by fksa.FactK12StudentAssessmentId</property>
                           dataType="wstr"
                           length="40"
                           name="CourseIdentifier" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CourseLevelCharacteristicCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="CourseLevelCharacteristicCode" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1352,7 +1364,7 @@ ORDER BY
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate staging table"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2242,7 +2254,7 @@ ORDER BY fkse.FactK12StudentEnrollmentId</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate staging table"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2536,7 +2548,7 @@ ORDER BY fkse.FactK12StudentEnrollmentId</property>
     design-time-name="Package\FactK12StudentAssessments\Stage Data">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="177,42"
           Id="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination"
@@ -2564,7 +2576,9 @@ ORDER BY fkse.FactK12StudentEnrollmentId</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2654,7 +2668,7 @@ ORDER BY fkse.FactK12StudentEnrollmentId</property>
     design-time-name="Package\FactK12StudentEnrollments\Stage Data">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="157,42"
           Id="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source"
@@ -2682,7 +2696,9 @@ ORDER BY fkse.FactK12StudentEnrollmentId</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

@@ -8,7 +8,7 @@ CREATE TABLE [reporting].[FactK12StudentCourseSections](
 	[K12StudentId] [bigint] NOT NULL REFERENCES [reporting].[DimStudents]([DimK12StudentId]),
 	[GradeLevelCode] [varchar](8) NOT NULL REFERENCES [reporting].[DimGradeLevels]([GradeLevelCode]),
 	[K12CourseId] [int] NOT NULL REFERENCES [reporting].[DimK12Courses]([DimK12CourseId]),
-  [K12CourseStatusId] [int] NULL REFERENCES [reporting].[DimK12CourseStatuses]([DimK12CourseStatusId]),
+    [K12CourseStatusId] [int] NULL REFERENCES [reporting].[DimK12CourseStatuses]([DimK12CourseStatusId]),
 	[StudentCourseSectionGradeEarned] [nvarchar](15) NULL,
 	[StudentCourseSectionGradeNarrative] [nvarchar](300) NULL
 )

@@ -1,2 +1,7 @@
 ﻿CREATE VIEW [bi].[vw_DimLEAs] AS
-SELECT * FROM [reporting].[DimLEAs];
+SELECT
+	[DimLeaId]
+  , [SeaId]
+  , [LeaOrganizationName]
+  , [LeaTypeDescription]
+FROM [reporting].[DimLEAs];

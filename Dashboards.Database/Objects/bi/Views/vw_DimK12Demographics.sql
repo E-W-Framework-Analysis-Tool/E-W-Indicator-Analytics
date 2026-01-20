@@ -1,2 +1,5 @@
 ﻿CREATE VIEW [bi].[vw_DimK12Demographics] AS
-SELECT * FROM [reporting].[DimK12Demographics];
+SELECT
+	[Dimk12DemographicId]
+  , [SexDescription] AS [Gender]
+FROM [reporting].[DimK12Demographics];

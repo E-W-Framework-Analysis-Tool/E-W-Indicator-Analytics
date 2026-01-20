@@ -1,6 +1,5 @@
 ﻿CREATE VIEW [bi].[vw_DimEnglishLearnerStatuses] AS
-SELECT 
-DimEnglishLearnerStatusId as Id
-,EnglishLearnerStatusCode as Code
-,EnglishLearnerStatusDescription as [Desc]
+SELECT
+	[DimEnglishLearnerStatusId]
+  , [EnglishLearnerStatusCode] AS [EnglishLearnerStatus]
 FROM [reporting].[DimEnglishLearnerStatuses];
