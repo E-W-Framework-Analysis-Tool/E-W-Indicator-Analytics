@@ -1,0 +1,106 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "e30b973a68001765d4aa",
+  "position": {
+    "x": 10.328988206083178,
+    "y": 0,
+    "z": 0,
+    "height": 279.67721911855989,
+    "width": 294.77343265052764,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "gauge",
+    "query": {
+      "queryState": {
+        "MaxValue": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Algebra I by 9th grade"
+                    }
+                  },
+                  "Property": "Total 9th Graders"
+                }
+              },
+              "queryRef": "bi vw_DimAssessmentSubtests.Total 9th Graders",
+              "nativeQueryRef": "Total 9th Graders"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Algebra I by 9th grade"
+                    }
+                  },
+                  "Property": "Algebra I Pass Count"
+                }
+              },
+              "queryRef": "bi vw_DimAssessmentSubtests.Algebra I Pass Count",
+              "nativeQueryRef": "Algebra I Pass Count"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Algebra I by 9th grade"
+                  }
+                },
+                "Property": "Algebra I Pass Count"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "bba1e550118400a0d796",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Algebra I by 9th grade"
+              }
+            },
+            "Property": "Algebra I Pass Count"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c3258d4a8d9b9352e0d3",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Algebra I by 9th grade"
+              }
+            },
+            "Property": "Total 9th Graders"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

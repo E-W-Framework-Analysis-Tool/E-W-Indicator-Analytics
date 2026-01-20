@@ -1,0 +1,45 @@
+table 'bi vw_DimFosterCareStatuses'
+	lineageTag: 3945d4ff-8140-473a-ab83-be544df72a1c
+
+	column Id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 706fccd7-8683-478b-ac64-c86a566e9592
+		summarizeBy: none
+		sourceColumn: Id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Code
+		dataType: string
+		isHidden
+		lineageTag: 669fd37f-e58f-4fb2-93b1-1003ddfed5d8
+		summarizeBy: none
+		sourceColumn: Code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Desc
+		dataType: string
+		lineageTag: eb19a88a-c589-41f5-8e9e-8dda643526a4
+		summarizeBy: none
+		sourceColumn: Desc
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bi vw_DimFosterCareStatuses' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    bi_vw_DimFosterCareStatuses = Source{[Schema="bi",Item="vw_DimFosterCareStatuses"]}[Data]
+				in
+				    bi_vw_DimFosterCareStatuses
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,583 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/18/2026 9:35:50 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LATITUDE"
+  DTS:CreatorName="SPI-GLOBAL\e74099"
+  DTS:DTSID="{652AEA04-95FB-4440-8FDE-9D84C92BF8B4}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{641B890A-9F1E-4F62-8838-0E87B0991779}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Update Batch Control"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{54353073-d64f-46f1-8994-be53cb6dfc95}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update Batch Control"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+          SQLTask:SqlStatementSource="INSERT&#xA;INTO [etl].[BatchControl]&#xA; (&#xA;  [YearProcessed]&#xA; )&#xA;SELECT [src].[SchoolYear]&#xA;FROM&#xA; (SELECT DISTINCT [SchoolYear] FROM [reporting].[FactK12StudentEnrollments]) AS [src]([SchoolYear])&#xA;WHERE&#xA; NOT EXISTS(SELECT 1&#xA;      FROM [etl].[BatchControl] AS [tgt]&#xA;      WHERE [tgt].[YearProcessed] = [src].[SchoolYear])&#xA;ORDER BY&#xA; [SchoolYear];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\UPSERT Dimensions"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{023E6C79-E9CB-4FB2-8C9A-8B744E48D9FD}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="UPSERT Dimensions">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\UPSERT Dimensions\DimAssessments"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{c6d3e632-9da2-49f6-b728-723d53340261}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimAssessments"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+              SQLTask:SqlStatementSource="EXEC [etl].[Upsert_DimAssessments]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\UPSERT Dimensions\DimAssessmentSubtests"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{4b9804cd-14ef-4aad-9a6e-b3f2fc125479}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimAssessmentSubtests"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+              SQLTask:SqlStatementSource="EXEC [etl].[Upsert_DimAssessmentSubtests]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\UPSERT Dimensions\DimK12Courses"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{ae31d8a2-7315-4143-9327-2aea987013f3}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimK12Courses"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+              SQLTask:SqlStatementSource="EXEC [etl].[Upsert_DimK12Courses]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\UPSERT Dimensions\DimK12CourseStatuses"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{e94ecf80-a347-4ac7-9227-487f90bc3b73}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimK12CourseStatuses"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+              SQLTask:SqlStatementSource="EXEC [etl].[Upsert_DimK12CourseStatuses]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\UPSERT Dimensions\DimK12Schools"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{2a00465f-c613-463c-858d-685d28b41db7}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimK12Schools"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="4">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+              SQLTask:SqlStatementSource="EXEC [etl].[Upsert_DimK12Schools]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\UPSERT Dimensions\DimLEAs"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{3d9a1182-f3c4-4d72-978e-0abef3551a4b}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimLEAs"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="4">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+              SQLTask:SqlStatementSource="EXEC [etl].[Upsert_DimLEAs]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\UPSERT Dimensions\DimRaces"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{1304197d-eb7a-45b1-9e62-43bfca506c9a}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimRaces"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="5">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+              SQLTask:SqlStatementSource="EXEC [etl].[Upsert_DimRaces]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\UPSERT Dimensions\DimSEAs"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{A67DC987-1892-49D2-BD94-B1E5083B8AD4}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimSEAs"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="4">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+              SQLTask:SqlStatementSource="EXEC [etl].[Upsert_DimSEAs]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\UPSERT Dimensions\DimStudents"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{441e775b-8be5-402c-b051-acdf294e48f1}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimStudents"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="6">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+              SQLTask:SqlStatementSource="EXEC [etl].[Upsert_DimStudents]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\UPSERT Dimensions.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{D311ABCA-F431-4217-917A-384CEF466074}"
+          DTS:From="Package\UPSERT Dimensions\DimSEAs"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\UPSERT Dimensions\DimLEAs" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\UPSERT Dimensions.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{059DC2EA-6B09-4368-A9A0-C787E8EB33A4}"
+          DTS:From="Package\UPSERT Dimensions\DimLEAs"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\UPSERT Dimensions\DimK12Schools" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\UPSERT Facts"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{B035979E-ACD9-4EEE-A335-9921A00AAED9}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="UPSERT Facts">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\UPSERT Facts\FactK12StudentAssessments"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{083bf549-fd23-484e-8253-10119e127c5f}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="FactK12StudentAssessments"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+              SQLTask:SqlStatementSource="EXEC [etl].[Upsert_FactK12StudentAssessments]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\UPSERT Facts\FactK12StudentCourseSections"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{6359b013-f8d8-45df-beab-94780b26519d}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="FactK12StudentCourseSections"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+              SQLTask:SqlStatementSource="EXEC [etl].[Upsert_FactK12StudentCourseSections]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\UPSERT Facts\FactK12StudentEnrollments"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{21612e80-eaeb-469b-a999-b0de7262dd2d}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="FactK12StudentEnrollments"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+              SQLTask:SqlStatementSource="EXEC [etl].[Upsert_FactK12StudentEnrollments]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\UPSERT Facts.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{897BE641-D353-4D32-B373-3C986F747614}"
+          DTS:From="Package\UPSERT Facts\FactK12StudentEnrollments"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\UPSERT Facts\FactK12StudentCourseSections" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\UPSERT Facts.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{65F796F3-EBDB-4E2B-AA2D-08EC62537550}"
+          DTS:From="Package\UPSERT Facts\FactK12StudentEnrollments"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\UPSERT Facts\FactK12StudentAssessments" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{999A59B9-8D4E-406F-B57C-ABC7020A8273}"
+      DTS:From="Package\UPSERT Dimensions"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\UPSERT Facts" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{19D212D3-7BAC-45A2-BCD5-AB0CA47BF937}"
+      DTS:From="Package\UPSERT Facts"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Update Batch Control" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Update Batch Control"
+          TopLeft="874.25,619.25" />
+        <NodeLayout
+          Size="201,42"
+          Id="Package\UPSERT Dimensions\DimAssessments"
+          TopLeft="63,411" />
+        <NodeLayout
+          Size="201,42"
+          Id="Package\UPSERT Dimensions\DimAssessmentSubtests"
+          TopLeft="63,473" />
+        <NodeLayout
+          Size="201,42"
+          Id="Package\UPSERT Dimensions\DimK12Courses"
+          TopLeft="63,349" />
+        <NodeLayout
+          Size="201,42"
+          Id="Package\UPSERT Dimensions\DimK12Schools"
+          TopLeft="63,163" />
+        <NodeLayout
+          Size="201,42"
+          Id="Package\UPSERT Dimensions\DimLEAs"
+          TopLeft="63,101" />
+        <NodeLayout
+          Size="201,42"
+          Id="Package\UPSERT Dimensions\DimRaces"
+          TopLeft="63,287" />
+        <NodeLayout
+          Size="201,42"
+          Id="Package\UPSERT Dimensions\DimSEAs"
+          TopLeft="63,39" />
+        <NodeLayout
+          Size="201,42"
+          Id="Package\UPSERT Dimensions\DimStudents"
+          TopLeft="63,225" />
+        <EdgeLayout
+          Id="Package\UPSERT Dimensions.PrecedenceConstraints[Constraint]"
+          TopLeft="63,60">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.3333333333333"
+              Start="0,0"
+              End="-7.5,56.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,52.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,52.3333333333333"
+                    Point2="-22.5,56.3333333333333"
+                    Point3="-18.5,56.3333333333333" />
+                  <mssgle:LineSegment
+                    End="-7.5,56.3333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\UPSERT Dimensions.PrecedenceConstraints[Constraint 1]"
+          TopLeft="63,127.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.3333333333333"
+              Start="0,0"
+              End="-7.5,56.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,52.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,52.3333333333333"
+                    Point2="-22.5,56.3333333333333"
+                    Point3="-18.5,56.3333333333333" />
+                  <mssgle:LineSegment
+                    End="-7.5,56.3333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="196,42"
+          Id="Package\UPSERT Dimensions\DimK12CourseStatuses"
+          TopLeft="62,533.666666666667" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="332,632"
+          Size="332,675"
+          Id="Package\UPSERT Dimensions"
+          TopLeft="108,5.5" />
+        <NodeLayout
+          Size="236,42"
+          Id="Package\UPSERT Facts\FactK12StudentAssessments"
+          TopLeft="404,95" />
+        <NodeLayout
+          Size="236,42"
+          Id="Package\UPSERT Facts\FactK12StudentCourseSections"
+          TopLeft="69,95" />
+        <NodeLayout
+          Size="236,42"
+          Id="Package\UPSERT Facts\FactK12StudentEnrollments"
+          TopLeft="237,16" />
+        <EdgeLayout
+          Id="Package\UPSERT Facts.PrecedenceConstraints[Constraint]"
+          TopLeft="317,58">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-130,37"
+              Start="0,0"
+              End="-130,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.9494949494949" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.9494949494949"
+                    Point2="0,14.9494949494949"
+                    Point3="-4,14.9494949494949" />
+                  <mssgle:LineSegment
+                    End="-126,14.9494949494949" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-126,14.9494949494949"
+                    Point2="-130,14.9494949494949"
+                    Point3="-130,18.9494949494949" />
+                  <mssgle:LineSegment
+                    End="-130,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\UPSERT Facts.PrecedenceConstraints[Constraint 1]"
+          TopLeft="393,58">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="129,37"
+              Start="0,0"
+              End="129,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.9494949494949" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.9494949494949"
+                    Point2="0,14.9494949494949"
+                    Point3="4,14.9494949494949" />
+                  <mssgle:LineSegment
+                    End="125,14.9494949494949" />
+                  <mssgle:CubicBezierSegment
+                    Point1="125,14.9494949494949"
+                    Point2="129,14.9494949494949"
+                    Point3="129,18.9494949494949" />
+                  <mssgle:LineSegment
+                    End="129,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="759,249"
+          Size="759,292"
+          Id="Package\UPSERT Facts"
+          TopLeft="586.75,197" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="440,343">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="146.75,0"
+              Start="0,0"
+              End="139.25,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="139.25,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="966.25,489">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,130.25"
+              Start="0,0"
+              End="0,122.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,122.75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,107 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "1db13a4c9d909e4529e8",
+  "position": {
+    "x": 849.36064556176291,
+    "y": 483.0788330229671,
+    "z": 2,
+    "height": 236.772191185599,
+    "width": 430.63935443823715,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "columnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_DimK12Demographics"
+                    }
+                  },
+                  "Property": "SexDescription"
+                }
+              },
+              "queryRef": "bi vw_DimK12Demographics.SexDescription",
+              "nativeQueryRef": "SexDescription",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "College Readiness"
+                    }
+                  },
+                  "Property": "% College Ready Graduates"
+                }
+              },
+              "queryRef": "bi vw_DimAssessmentSubtests.% College Ready Graduates",
+              "nativeQueryRef": "% College Ready Graduates"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "College Readiness"
+                  }
+                },
+                "Property": "% College Ready Graduates"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e36a9c616e036e30d672",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "College Readiness"
+              }
+            },
+            "Property": "% College Ready Graduates"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6dc6594041aaec307ae3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Demographics"
+              }
+            },
+            "Property": "SexDescription"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

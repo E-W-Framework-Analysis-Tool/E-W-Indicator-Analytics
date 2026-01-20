@@ -1,0 +1,64 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "6da4e9c2863cd363a2a2",
+  "position": {
+    "x": 1000.3227808814402,
+    "y": 0,
+    "z": 1000,
+    "height": 279.67721911855989,
+    "width": 279.67721911855989,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "listSlicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_DimSchoolYears"
+                    }
+                  },
+                  "Property": "SchoolYear"
+                }
+              },
+              "queryRef": "bi vw_DimSchoolYears.SchoolYear",
+              "nativeQueryRef": "SchoolYear",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e175eb435cac5096dd2c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimSchoolYears"
+              }
+            },
+            "Property": "SchoolYear"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

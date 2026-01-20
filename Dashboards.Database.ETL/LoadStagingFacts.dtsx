@@ -1,0 +1,2713 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/19/2026 12:50:57 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LATITUDE"
+  DTS:CreatorName="SPI-GLOBAL\e74099"
+  DTS:DTSID="{FE0861DE-0140-44FB-A5A0-E21F0E4CFE5E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="LoadStagingFacts"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="26"
+  DTS:VersionGUID="{69DE3DBA-FC53-4038-9355-16026306CB43}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{ECA92B21-F17A-42E1-A266-C94DF3FAE11C}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="SchoolYear">
+      <DTS:VariableValue
+        DTS:DataType="19">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\FactK12StudentAssessments"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:DelayValidation="True"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{40112cc7-b87d-4220-ba0f-97eaeac27698}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FactK12StudentAssessments">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\FactK12StudentAssessments\Stage Data"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:DelayValidation="True"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{e3e45304-ac77-4616-b219-463fdac01e27}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Stage Data"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[staging].[FactK12StudentAssessments]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{60dda06b-3f51-4553-8452-daaed09fbd3d}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Dashboards-DB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FactK12StudentEnrollmentId]"
+                          cachedDataType="i8"
+                          cachedName="FactK12StudentEnrollmentId"
+                          externalMetadataColumnId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FactK12StudentEnrollmentId]"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FactK12StudentEnrollmentId]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SchoolYear]"
+                          cachedDataType="i2"
+                          cachedName="SchoolYear"
+                          externalMetadataColumnId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolYear]"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolYear]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[GradeLevelCode]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8"
+                          cachedName="GradeLevelCode"
+                          externalMetadataColumnId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GradeLevelCode]"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[GradeLevelCode]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FactK12StudentAssessmentId]"
+                          cachedDataType="i4"
+                          cachedName="FactK12StudentAssessmentId"
+                          externalMetadataColumnId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FactK12StudentAssessmentId]"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FactK12StudentAssessmentId]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AssessmentResultScoreValueACTScore]"
+                          cachedDataType="wstr"
+                          cachedLength="35"
+                          cachedName="AssessmentResultScoreValueACTScore"
+                          externalMetadataColumnId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AssessmentResultScoreValueACTScore]"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[AssessmentResultScoreValueACTScore]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AssessmentResultScoreValueSATScore]"
+                          cachedDataType="wstr"
+                          cachedLength="35"
+                          cachedName="AssessmentResultScoreValueSATScore"
+                          externalMetadataColumnId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AssessmentResultScoreValueSATScore]"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[AssessmentResultScoreValueSATScore]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SeaOrganizationIdentifierSea]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="SeaOrganizationIdentifierSea"
+                          externalMetadataColumnId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SeaOrganizationIdentifierSea]"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SeaOrganizationIdentifierSea]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LeaIdentifierSea]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="LeaIdentifierSea"
+                          externalMetadataColumnId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LeaIdentifierSea]"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[LeaIdentifierSea]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SchoolIdentifierSea]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="SchoolIdentifierSea"
+                          externalMetadataColumnId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolIdentifierSea]"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolIdentifierSea]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StudentIdentifierState]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="StudentIdentifierState"
+                          externalMetadataColumnId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentIdentifierState]"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentIdentifierState]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AssessmentIdentifierState]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="AssessmentIdentifierState"
+                          externalMetadataColumnId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AssessmentIdentifierState]"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[AssessmentIdentifierState]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AssessmentSubtestIdentifierInternal]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="AssessmentSubtestIdentifierInternal"
+                          externalMetadataColumnId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AssessmentSubtestIdentifierInternal]"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[AssessmentSubtestIdentifierInternal]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FactK12StudentEnrollmentId]"
+                          dataType="i8"
+                          name="FactK12StudentEnrollmentId" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolYear]"
+                          dataType="i2"
+                          name="SchoolYear" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GradeLevelCode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          name="GradeLevelCode" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FactK12StudentAssessmentId]"
+                          dataType="i4"
+                          name="FactK12StudentAssessmentId" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AssessmentResultScoreValueACTScore]"
+                          dataType="wstr"
+                          length="35"
+                          name="AssessmentResultScoreValueACTScore" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AssessmentResultScoreValueSATScore]"
+                          dataType="wstr"
+                          length="35"
+                          name="AssessmentResultScoreValueSATScore" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SeaOrganizationIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          name="SeaOrganizationIdentifierSea" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LeaIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          name="LeaIdentifierSea" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          name="SchoolIdentifierSea" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          name="StudentIdentifierState" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AssessmentIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          name="AssessmentIdentifierState" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AssessmentSubtestIdentifierInternal]"
+                          dataType="wstr"
+                          length="40"
+                          name="AssessmentSubtestIdentifierInternal" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select
+ fksa.FactK12StudentAssessmentId
+,fkse.FactK12StudentEnrollmentId
+,dsy.SchoolYear
+,ds.SeaOrganizationIdentifierSea
+,dl.LeaIdentifierSea
+,dks.SchoolIdentifierSea
+,dp.StudentIdentifierState
+,cast(dgl.GradeLevelCode as varchar(8)) as GradeLevelCode
+,da.AssessmentIdentifierState
+,das.AssessmentSubtestIdentifierInternal
+,fksa.AssessmentResultScoreValueACTScore
+,fksa.AssessmentResultScoreValueSATScore
+from RDS.FactK12StudentAssessments as fksa
+LEFT JOIN RDS.FactK12StudentEnrollments as fkse
+on fksa.SchoolYearId = fkse.SchoolYearId
+and fksa.SeaId = fkse.SeaId
+AND fksa.LeaId = fkse.LeaAttendanceId
+and fksa.K12SchoolId = fkse.K12SchoolId
+and fksa.K12StudentId = fkse.K12StudentId
+and fksa.K12StudentId = fkse.K12StudentId
+and fksa.GradeLevelWhenAssessedId = fkse.EntryGradeLevelId
+LEFT JOIN RDS.DimSchoolYears as dsy
+on dsy.DimSchoolYearId = fksa.SchoolYearId
+LEFT JOIN RDS.DimSeas AS ds 
+ON ds.DimSeaId = fkse.SeaId
+LEFT JOIN RDS.DimLeas AS dl
+on dl.DimLeaId = fkse.LeaAttendanceId
+LEFT JOIN RDS.DimK12Schools AS dks
+on fkse.K12SchoolId = dks.DimK12SchoolId
+LEFT JOIN RDS.DimPeople AS dp
+on fkse.K12StudentId = dp.DimPersonId
+LEFT JOIN RDS.DimGradeLevels AS dgl
+on fksa.GradeLevelWhenAssessedId= dgl.DimGradeLevelId
+LEFT JOIN RDS.DimAssessments as da
+on fksa.AssessmentId = da.DimAssessmentId
+LEFT JOIN RDS.DimAssessmentSubtests as das
+on fksa.AssessmentSubtestId= das.DimAssessmentSubtestId
+where dsy.SchoolYear &gt; ?
+order by fksa.FactK12StudentAssessmentId</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping">"0:Input",{ECA92B21-F17A-42E1-A266-C94DF3FAE11C};</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{D41EB2B6-A586-49A5-A9CB-BCA8E8B2703B}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CEDS-DWH]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FactK12StudentEnrollmentId]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FactK12StudentEnrollmentId]"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FactK12StudentEnrollmentId]"
+                          name="FactK12StudentEnrollmentId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolYear]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolYear]"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolYear]"
+                          name="SchoolYear"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[GradeLevelCode]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GradeLevelCode]"
+                          length="8"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[GradeLevelCode]"
+                          name="GradeLevelCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FactK12StudentAssessmentId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FactK12StudentAssessmentId]"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FactK12StudentAssessmentId]"
+                          name="FactK12StudentAssessmentId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[AssessmentResultScoreValueACTScore]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AssessmentResultScoreValueACTScore]"
+                          length="35"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[AssessmentResultScoreValueACTScore]"
+                          name="AssessmentResultScoreValueACTScore"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[AssessmentResultScoreValueSATScore]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AssessmentResultScoreValueSATScore]"
+                          length="35"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[AssessmentResultScoreValueSATScore]"
+                          name="AssessmentResultScoreValueSATScore"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SeaOrganizationIdentifierSea]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SeaOrganizationIdentifierSea]"
+                          length="50"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SeaOrganizationIdentifierSea]"
+                          name="SeaOrganizationIdentifierSea"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[LeaIdentifierSea]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LeaIdentifierSea]"
+                          length="50"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[LeaIdentifierSea]"
+                          name="LeaIdentifierSea"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolIdentifierSea]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolIdentifierSea]"
+                          length="50"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolIdentifierSea]"
+                          name="SchoolIdentifierSea"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentIdentifierState]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StudentIdentifierState]"
+                          length="40"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentIdentifierState]"
+                          name="StudentIdentifierState"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[AssessmentIdentifierState]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AssessmentIdentifierState]"
+                          length="40"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[AssessmentIdentifierState]"
+                          name="AssessmentIdentifierState"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[AssessmentSubtestIdentifierInternal]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AssessmentSubtestIdentifierInternal]"
+                          length="40"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[AssessmentSubtestIdentifierInternal]"
+                          name="AssessmentSubtestIdentifierInternal"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FactK12StudentEnrollmentId]"
+                          dataType="i8"
+                          name="FactK12StudentEnrollmentId" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolYear]"
+                          dataType="i2"
+                          name="SchoolYear" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GradeLevelCode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          name="GradeLevelCode" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FactK12StudentAssessmentId]"
+                          dataType="i4"
+                          name="FactK12StudentAssessmentId" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AssessmentResultScoreValueACTScore]"
+                          dataType="wstr"
+                          length="35"
+                          name="AssessmentResultScoreValueACTScore" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AssessmentResultScoreValueSATScore]"
+                          dataType="wstr"
+                          length="35"
+                          name="AssessmentResultScoreValueSATScore" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SeaOrganizationIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          name="SeaOrganizationIdentifierSea" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LeaIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          name="LeaIdentifierSea" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          name="SchoolIdentifierSea" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StudentIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          name="StudentIdentifierState" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AssessmentIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          name="AssessmentIdentifierState" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AssessmentSubtestIdentifierInternal]"
+                          dataType="wstr"
+                          length="40"
+                          name="AssessmentSubtestIdentifierInternal" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FactK12StudentAssessmentId]"
+                          dataType="i4"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FactK12StudentAssessmentId]"
+                          name="FactK12StudentAssessmentId" />
+                        <outputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FactK12StudentEnrollmentId]"
+                          dataType="i8"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FactK12StudentEnrollmentId]"
+                          name="FactK12StudentEnrollmentId" />
+                        <outputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolYear]"
+                          dataType="i2"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolYear]"
+                          name="SchoolYear" />
+                        <outputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SeaOrganizationIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SeaOrganizationIdentifierSea]"
+                          name="SeaOrganizationIdentifierSea" />
+                        <outputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LeaIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LeaIdentifierSea]"
+                          name="LeaIdentifierSea" />
+                        <outputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolIdentifierSea]"
+                          name="SchoolIdentifierSea" />
+                        <outputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StudentIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StudentIdentifierState]"
+                          name="StudentIdentifierState" />
+                        <outputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GradeLevelCode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GradeLevelCode]"
+                          name="GradeLevelCode" />
+                        <outputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AssessmentIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AssessmentIdentifierState]"
+                          name="AssessmentIdentifierState" />
+                        <outputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AssessmentSubtestIdentifierInternal]"
+                          dataType="wstr"
+                          length="40"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AssessmentSubtestIdentifierInternal]"
+                          name="AssessmentSubtestIdentifierInternal" />
+                        <outputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AssessmentResultScoreValueACTScore]"
+                          dataType="wstr"
+                          length="35"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AssessmentResultScoreValueACTScore]"
+                          name="AssessmentResultScoreValueACTScore" />
+                        <outputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AssessmentResultScoreValueSATScore]"
+                          dataType="wstr"
+                          length="35"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AssessmentResultScoreValueSATScore]"
+                          name="AssessmentResultScoreValueSATScore" />
+                        <outputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\FactK12StudentAssessments\Stage Data.Paths[OLE DB Source Output]"
+                  endId="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\FactK12StudentAssessments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FactK12StudentAssessments\Truncate staging table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{b048697f-9d27-42f5-ab37-e9c34f66f8cf}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate staging table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[FactK12StudentAssessments];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FactK12StudentAssessments.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{a6ab57d2-2ff2-46b0-bd7e-06200cc07313}"
+          DTS:From="Package\FactK12StudentAssessments\Truncate staging table"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\FactK12StudentAssessments\Stage Data" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\FactK12StudentCourseSections"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{875dc16a-604c-40ad-bb1c-aefbfcd6c552}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FactK12StudentCourseSections">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\FactK12StudentCourseSections\Stage Data"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{16e70abd-acc8-45f7-bb35-118f349f68b4}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Stage Data"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[staging].[FactK12StudentCourseSections]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{60dda06b-3f51-4553-8452-daaed09fbd3d}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Dashboards-DB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FactK12StudentCourseSectionId]"
+                          cachedDataType="i8"
+                          cachedName="FactK12StudentCourseSectionId"
+                          externalMetadataColumnId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FactK12StudentCourseSectionId]"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FactK12StudentCourseSectionId]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FactK12StudentEnrollmentId]"
+                          cachedDataType="i8"
+                          cachedName="FactK12StudentEnrollmentId"
+                          externalMetadataColumnId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FactK12StudentEnrollmentId]"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FactK12StudentEnrollmentId]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SchoolYear]"
+                          cachedDataType="i2"
+                          cachedName="SchoolYear"
+                          externalMetadataColumnId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolYear]"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolYear]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[GradeLevelCode]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8"
+                          cachedName="GradeLevelCode"
+                          externalMetadataColumnId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GradeLevelCode]"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[GradeLevelCode]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StudentCourseSectionGradeEarned]"
+                          cachedDataType="wstr"
+                          cachedLength="15"
+                          cachedName="StudentCourseSectionGradeEarned"
+                          externalMetadataColumnId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentCourseSectionGradeEarned]"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentCourseSectionGradeEarned]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StudentCourseSectionGradeNarrative]"
+                          cachedDataType="wstr"
+                          cachedLength="300"
+                          cachedName="StudentCourseSectionGradeNarrative"
+                          externalMetadataColumnId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentCourseSectionGradeNarrative]"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentCourseSectionGradeNarrative]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SeaOrganizationIdentifierSea]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="SeaOrganizationIdentifierSea"
+                          externalMetadataColumnId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SeaOrganizationIdentifierSea]"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SeaOrganizationIdentifierSea]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LeaIdentifierSea]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="LeaIdentifierSea"
+                          externalMetadataColumnId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LeaIdentifierSea]"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[LeaIdentifierSea]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SchoolIdentifierSea]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="SchoolIdentifierSea"
+                          externalMetadataColumnId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolIdentifierSea]"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolIdentifierSea]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StudentIdentifierState]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="StudentIdentifierState"
+                          externalMetadataColumnId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentIdentifierState]"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentIdentifierState]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CourseIdentifier]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="CourseIdentifier"
+                          externalMetadataColumnId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CourseIdentifier]"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CourseIdentifier]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FactK12StudentCourseSectionId]"
+                          dataType="i8"
+                          name="FactK12StudentCourseSectionId" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FactK12StudentEnrollmentId]"
+                          dataType="i8"
+                          name="FactK12StudentEnrollmentId" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolYear]"
+                          dataType="i2"
+                          name="SchoolYear" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GradeLevelCode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          name="GradeLevelCode" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentCourseSectionGradeEarned]"
+                          dataType="wstr"
+                          length="15"
+                          name="StudentCourseSectionGradeEarned" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentCourseSectionGradeNarrative]"
+                          dataType="wstr"
+                          length="300"
+                          name="StudentCourseSectionGradeNarrative" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SeaOrganizationIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          name="SeaOrganizationIdentifierSea" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LeaIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          name="LeaIdentifierSea" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          name="SchoolIdentifierSea" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          name="StudentIdentifierState" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CourseIdentifier]"
+                          dataType="wstr"
+                          length="40"
+                          name="CourseIdentifier" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+    fkscs.FactK12StudentCourseSectionId,
+    fkse.FactK12StudentEnrollmentId,
+    dsy.SchoolYear,
+    ds.SeaOrganizationIdentifierSea,
+    dl.LeaIdentifierSea,
+    dks.SchoolIdentifierSea,
+    dp.StudentIdentifierState,
+    cast(dgl.GradeLevelCode as varchar(8)) as GradeLevelCode,
+    dkc.CourseIdentifier,
+    dkcs.CourseLevelCharacteristicCode,
+    fkscs.StudentCourseSectionGradeEarned,
+    fkscs.StudentCourseSectionGradeNarrative
+FROM
+    RDS.FactK12StudentCourseSections AS fkscs
+    LEFT JOIN RDS.FactK12StudentEnrollments as fkse on fkscs.SchoolYearId = fkse.SchoolYearId
+    and fkscs.SeaId = fkse.SeaId
+    AND fkscs.LeaAttendanceId = fkse.LeaAttendanceId
+    and fkscs.K12SchoolId = fkse.K12SchoolId
+    and fkscs.K12StudentId = fkse.K12StudentId
+    and fkscs.K12StudentId = fkse.K12StudentId
+    and fkscs.EntryGradeLevelId = fkse.EntryGradeLevelId
+    LEFT JOIN RDS.DimSchoolYears as dsy on dsy.DimSchoolYearId = fkscs.SchoolYearId
+    LEFT JOIN RDS.DimSeas AS ds ON ds.DimSeaId = fkscs.SeaId
+    LEFT JOIN RDS.DimLeas AS dl on dl.DimLeaId = fkscs.LeaAttendanceId
+    LEFT JOIN RDS.DimK12Schools AS dks on fkscs.K12SchoolId = dks.DimK12SchoolId
+    LEFT JOIN RDS.DimPeople AS dp on fkscs.K12StudentId = dp.DimPersonId
+    LEFT JOIN RDS.DimGradeLevels AS dgl on fkscs.EntryGradeLevelId = dgl.DimGradeLevelId
+    LEFT JOIN RDS.DimK12Courses AS dkc ON fkscs.LeaK12CourseId = dkc.DimK12CourseId
+    LEFT JOIN RDS.DimK12CourseStatuses AS dkcs ON fkscs.K12CourseStatusId = dkcs.DimK12CourseStatusId
+where
+    dsy.SchoolYear &gt; ?
+ORDER BY
+    FactK12StudentCourseSectionId</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping">"0:Input",{ECA92B21-F17A-42E1-A266-C94DF3FAE11C};</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{D41EB2B6-A586-49A5-A9CB-BCA8E8B2703B}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CEDS-DWH]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FactK12StudentEnrollmentId]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FactK12StudentEnrollmentId]"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FactK12StudentEnrollmentId]"
+                          name="FactK12StudentEnrollmentId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolYear]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolYear]"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolYear]"
+                          name="SchoolYear"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[GradeLevelCode]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GradeLevelCode]"
+                          length="8"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[GradeLevelCode]"
+                          name="GradeLevelCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SeaOrganizationIdentifierSea]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SeaOrganizationIdentifierSea]"
+                          length="50"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SeaOrganizationIdentifierSea]"
+                          name="SeaOrganizationIdentifierSea"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[LeaIdentifierSea]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LeaIdentifierSea]"
+                          length="50"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[LeaIdentifierSea]"
+                          name="LeaIdentifierSea"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolIdentifierSea]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolIdentifierSea]"
+                          length="50"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolIdentifierSea]"
+                          name="SchoolIdentifierSea"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentIdentifierState]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StudentIdentifierState]"
+                          length="40"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentIdentifierState]"
+                          name="StudentIdentifierState"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FactK12StudentCourseSectionId]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FactK12StudentCourseSectionId]"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FactK12StudentCourseSectionId]"
+                          name="FactK12StudentCourseSectionId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CourseIdentifier]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CourseIdentifier]"
+                          length="40"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CourseIdentifier]"
+                          name="CourseIdentifier"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentCourseSectionGradeEarned]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StudentCourseSectionGradeEarned]"
+                          length="15"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentCourseSectionGradeEarned]"
+                          name="StudentCourseSectionGradeEarned"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentCourseSectionGradeNarrative]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StudentCourseSectionGradeNarrative]"
+                          length="300"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentCourseSectionGradeNarrative]"
+                          name="StudentCourseSectionGradeNarrative"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CourseLevelCharacteristicCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CourseLevelCharacteristicCode]"
+                          length="50"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CourseLevelCharacteristicCode]"
+                          name="CourseLevelCharacteristicCode"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FactK12StudentEnrollmentId]"
+                          dataType="i8"
+                          name="FactK12StudentEnrollmentId" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolYear]"
+                          dataType="i2"
+                          name="SchoolYear" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GradeLevelCode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          name="GradeLevelCode" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SeaOrganizationIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          name="SeaOrganizationIdentifierSea" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LeaIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          name="LeaIdentifierSea" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          name="SchoolIdentifierSea" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StudentIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          name="StudentIdentifierState" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FactK12StudentCourseSectionId]"
+                          dataType="i8"
+                          name="FactK12StudentCourseSectionId" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CourseIdentifier]"
+                          dataType="wstr"
+                          length="40"
+                          name="CourseIdentifier" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StudentCourseSectionGradeEarned]"
+                          dataType="wstr"
+                          length="15"
+                          name="StudentCourseSectionGradeEarned" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StudentCourseSectionGradeNarrative]"
+                          dataType="wstr"
+                          length="300"
+                          name="StudentCourseSectionGradeNarrative" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CourseLevelCharacteristicCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="CourseLevelCharacteristicCode" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FactK12StudentCourseSectionId]"
+                          dataType="i8"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FactK12StudentCourseSectionId]"
+                          name="FactK12StudentCourseSectionId" />
+                        <outputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FactK12StudentEnrollmentId]"
+                          dataType="i8"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FactK12StudentEnrollmentId]"
+                          name="FactK12StudentEnrollmentId" />
+                        <outputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolYear]"
+                          dataType="i2"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolYear]"
+                          name="SchoolYear" />
+                        <outputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SeaOrganizationIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SeaOrganizationIdentifierSea]"
+                          name="SeaOrganizationIdentifierSea" />
+                        <outputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LeaIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LeaIdentifierSea]"
+                          name="LeaIdentifierSea" />
+                        <outputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolIdentifierSea]"
+                          name="SchoolIdentifierSea" />
+                        <outputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StudentIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StudentIdentifierState]"
+                          name="StudentIdentifierState" />
+                        <outputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GradeLevelCode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GradeLevelCode]"
+                          name="GradeLevelCode" />
+                        <outputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CourseIdentifier]"
+                          dataType="wstr"
+                          length="40"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CourseIdentifier]"
+                          name="CourseIdentifier" />
+                        <outputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CourseLevelCharacteristicCode]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CourseLevelCharacteristicCode]"
+                          name="CourseLevelCharacteristicCode" />
+                        <outputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StudentCourseSectionGradeEarned]"
+                          dataType="wstr"
+                          length="15"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StudentCourseSectionGradeEarned]"
+                          name="StudentCourseSectionGradeEarned" />
+                        <outputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StudentCourseSectionGradeNarrative]"
+                          dataType="wstr"
+                          length="300"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StudentCourseSectionGradeNarrative]"
+                          name="StudentCourseSectionGradeNarrative" />
+                        <outputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\FactK12StudentCourseSections\Stage Data.Paths[OLE DB Source Output]"
+                  endId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FactK12StudentCourseSections\Truncate staging table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{6c963ace-997b-4ba9-909c-572293bdef67}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate staging table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[FactK12StudentCourseSections];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FactK12StudentCourseSections.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{dcd64ce2-1133-43ac-a514-3fb53703955c}"
+          DTS:From="Package\FactK12StudentCourseSections\Truncate staging table"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\FactK12StudentCourseSections\Stage Data" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\FactK12StudentEnrollments"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:DelayValidation="True"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{64a904f1-2628-4fff-9de7-b32f51a13739}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FactK12StudentEnrollments">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\FactK12StudentEnrollments\Stage Data"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:DelayValidation="True"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{00516e40-e5dc-4c09-8869-fc6df869687d}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Stage Data"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[staging].[FactK12StudentEnrollments]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{60dda06b-3f51-4553-8452-daaed09fbd3d}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Dashboards-DB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FactK12StudentEnrollmentId]"
+                          cachedDataType="i8"
+                          cachedName="FactK12StudentEnrollmentId"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FactK12StudentEnrollmentId]"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FactK12StudentEnrollmentId]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CohortYear]"
+                          cachedDataType="i2"
+                          cachedName="CohortYear"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CohortYear]"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CohortYear]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SchoolYear]"
+                          cachedDataType="i2"
+                          cachedName="SchoolYear"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolYear]"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolYear]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CohortGraduationYear]"
+                          cachedDataType="i2"
+                          cachedName="CohortGraduationYear"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CohortGraduationYear]"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CohortGraduationYear]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProjectedGraduationYear]"
+                          cachedDataType="i2"
+                          cachedName="ProjectedGraduationYear"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProjectedGraduationYear]"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProjectedGraduationYear]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[GradeLevelCode]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8"
+                          cachedName="GradeLevelCode"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GradeLevelCode]"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[GradeLevelCode]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EnglishLearnerStatusCode]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="EnglishLearnerStatusCode"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EnglishLearnerStatusCode]"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[EnglishLearnerStatusCode]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HomelessnessStatusCode]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="HomelessnessStatusCode"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HomelessnessStatusCode]"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[HomelessnessStatusCode]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EconomicDisadvantageStatusCode]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="EconomicDisadvantageStatusCode"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EconomicDisadvantageStatusCode]"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[EconomicDisadvantageStatusCode]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProgramParticipationFosterCareCode]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="ProgramParticipationFosterCareCode"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProgramParticipationFosterCareCode]"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProgramParticipationFosterCareCode]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NeglectedOrDelinquentAcademicAchievementIndicatorCode]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="NeglectedOrDelinquentAcademicAchievementIndicatorCode"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NeglectedOrDelinquentAcademicAchievementIndicatorCode]"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[NeglectedOrDelinquentAcademicAchievementIndicatorCode]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DisabilityStatusCode]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="DisabilityStatusCode"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DisabilityStatusCode]"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DisabilityStatusCode]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SeaOrganizationIdentifierSea]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="SeaOrganizationIdentifierSea"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SeaOrganizationIdentifierSea]"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SeaOrganizationIdentifierSea]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LeaIdentifierSea]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="LeaIdentifierSea"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LeaIdentifierSea]"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[LeaIdentifierSea]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SchoolIdentifierSea]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="SchoolIdentifierSea"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolIdentifierSea]"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolIdentifierSea]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StudentIdentifierState]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="StudentIdentifierState"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentIdentifierState]"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentIdentifierState]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RaceCode]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="RaceCode"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RaceCode]"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[RaceCode]" />
+                        <inputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SexCode]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="SexCode"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SexCode]"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SexCode]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FactK12StudentEnrollmentId]"
+                          dataType="i8"
+                          name="FactK12StudentEnrollmentId" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CohortYear]"
+                          dataType="i2"
+                          name="CohortYear" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolYear]"
+                          dataType="i2"
+                          name="SchoolYear" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CohortGraduationYear]"
+                          dataType="i2"
+                          name="CohortGraduationYear" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProjectedGraduationYear]"
+                          dataType="i2"
+                          name="ProjectedGraduationYear" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GradeLevelCode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          name="GradeLevelCode" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EnglishLearnerStatusCode]"
+                          dataType="wstr"
+                          length="100"
+                          name="EnglishLearnerStatusCode" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HomelessnessStatusCode]"
+                          dataType="wstr"
+                          length="100"
+                          name="HomelessnessStatusCode" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EconomicDisadvantageStatusCode]"
+                          dataType="wstr"
+                          length="100"
+                          name="EconomicDisadvantageStatusCode" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProgramParticipationFosterCareCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="ProgramParticipationFosterCareCode" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NeglectedOrDelinquentAcademicAchievementIndicatorCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="NeglectedOrDelinquentAcademicAchievementIndicatorCode" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DisabilityStatusCode]"
+                          dataType="wstr"
+                          length="100"
+                          name="DisabilityStatusCode" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SeaOrganizationIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          name="SeaOrganizationIdentifierSea" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LeaIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          name="LeaIdentifierSea" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          name="SchoolIdentifierSea" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          name="StudentIdentifierState" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RaceCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="RaceCode" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SexCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="SexCode" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+ fkse.FactK12StudentEnrollmentId
+,dsy3.SchoolYear AS CohortYear
+,dsy.SchoolYear
+,dsy2.SchoolYear AS CohortGraduationYear
+,dsy4.SchoolYear AS ProjectedGraduationYear
+,ds.SeaOrganizationIdentifierSea
+,dl.LeaIdentifierSea
+,dks.SchoolIdentifierSea
+,dp.StudentIdentifierState
+,dr.RaceCode
+,cast(dgl.GradeLevelCode as varchar(8)) as GradeLevelCode
+,dels.EnglishLearnerStatusCode
+,dhs.HomelessnessStatusCode
+,deds.EconomicDisadvantageStatusCode
+,dfcs.ProgramParticipationFosterCareCode
+,dnds.NeglectedOrDelinquentAcademicAchievementIndicatorCode
+,dds.DisabilityStatusCode
+,dkd.SexCode
+FROM RDS.FactK12StudentEnrollments as fkse
+LEFT JOIN RDS.DimSchoolYears as dsy
+on dsy.DimSchoolYearId = fkse.SchoolYearId
+LEFT JOIN RDS.DimSchoolYears as dsy2
+on fkse.CohortGraduationYearId = dsy2.DimSchoolYearId
+LEFT JOIN RDS.DimSchoolYears as dsy3
+on fkse.CohortYearId = dsy3.DimSchoolYearId
+LEFT JOIN RDS.DimSchoolYears as dsy4
+on fkse.ProjectedGraduationDateId = dsy4.DimSchoolYearId
+LEFT JOIN RDS.DimSeas AS ds 
+ON ds.DimSeaId = fkse.SeaId
+LEFT JOIN RDS.DimLeas AS dl
+on dl.DimLeaId = fkse.LeaAttendanceId
+LEFT JOIN RDS.DimK12Schools AS dks
+on fkse.K12SchoolId = dks.DimK12SchoolId
+LEFT JOIN RDS.DimPeople AS dp
+on fkse.K12StudentId = dp.DimPersonId
+LEFT JOIN RDS.DimGradeLevels AS dgl
+on fkse.EntryGradeLevelId= dgl.DimGradeLevelId
+LEFT JOIN RDS.DimEnglishLearnerStatuses AS dels
+ON fkse.EnglishLearnerStatusId = dels.DimEnglishLearnerStatusId
+LEFT JOIN RDS.DimHomelessnessStatuses AS dhs
+on fkse.HomelessnessStatusId = dhs.DimHomelessnessStatusId
+LEFT JOIN RDS.DimMilitaryStatuses AS dms
+on fkse.MilitaryStatusId = dms.DimMilitaryStatusId
+LEFT JOIN RDS.DimEconomicallyDisadvantagedStatuses AS deds
+ON fkse.EconomicallyDisadvantagedStatusId = deds.DimEconomicallyDisadvantagedStatusId
+LEFT JOIN RDS.DimFosterCareStatuses AS dfcs
+on fkse.FosterCareStatusId = dfcs.DimFosterCareStatusId
+left join RDS.DimNOrDStatuses as dnds
+on fkse.NOrDStatusId = dnds.DimNOrDStatusId
+LEFT JOIN RDS.DimDisabilityStatuses AS dds
+ON fkse.DisabilityStatusId = dds.DimDisabilityStatusId
+LEFT JOIN RDS.BridgeK12StudentEnrollmentRaces AS bker
+on fkse.FactK12StudentEnrollmentId = bker.FactK12StudentEnrollmentId
+LEFT JOIN RDS.DimRaces AS dr
+ON bker.RaceId = dr.DimRaceId
+LEFT JOIN RDS.DimK12Demographics AS dkd
+ON fkse.K12DemographicId = dkd.DimK12DemographicId
+WHERE dsy.SchoolYear &gt; ?
+ORDER BY fkse.FactK12StudentEnrollmentId</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping">"0:Input",{ECA92B21-F17A-42E1-A266-C94DF3FAE11C};</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{D41EB2B6-A586-49A5-A9CB-BCA8E8B2703B}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CEDS-DWH]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FactK12StudentEnrollmentId]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FactK12StudentEnrollmentId]"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FactK12StudentEnrollmentId]"
+                          name="FactK12StudentEnrollmentId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CohortYear]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CohortYear]"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CohortYear]"
+                          name="CohortYear"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolYear]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolYear]"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolYear]"
+                          name="SchoolYear"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CohortGraduationYear]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CohortGraduationYear]"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CohortGraduationYear]"
+                          name="CohortGraduationYear"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProjectedGraduationYear]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProjectedGraduationYear]"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProjectedGraduationYear]"
+                          name="ProjectedGraduationYear"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[GradeLevelCode]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GradeLevelCode]"
+                          length="8"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[GradeLevelCode]"
+                          name="GradeLevelCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[EnglishLearnerStatusCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EnglishLearnerStatusCode]"
+                          length="100"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[EnglishLearnerStatusCode]"
+                          name="EnglishLearnerStatusCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[HomelessnessStatusCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[HomelessnessStatusCode]"
+                          length="100"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[HomelessnessStatusCode]"
+                          name="HomelessnessStatusCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[EconomicDisadvantageStatusCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EconomicDisadvantageStatusCode]"
+                          length="100"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[EconomicDisadvantageStatusCode]"
+                          name="EconomicDisadvantageStatusCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProgramParticipationFosterCareCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProgramParticipationFosterCareCode]"
+                          length="50"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProgramParticipationFosterCareCode]"
+                          name="ProgramParticipationFosterCareCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[NeglectedOrDelinquentAcademicAchievementIndicatorCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NeglectedOrDelinquentAcademicAchievementIndicatorCode]"
+                          length="50"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[NeglectedOrDelinquentAcademicAchievementIndicatorCode]"
+                          name="NeglectedOrDelinquentAcademicAchievementIndicatorCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DisabilityStatusCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DisabilityStatusCode]"
+                          length="100"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DisabilityStatusCode]"
+                          name="DisabilityStatusCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SeaOrganizationIdentifierSea]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SeaOrganizationIdentifierSea]"
+                          length="50"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SeaOrganizationIdentifierSea]"
+                          name="SeaOrganizationIdentifierSea"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[LeaIdentifierSea]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LeaIdentifierSea]"
+                          length="50"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[LeaIdentifierSea]"
+                          name="LeaIdentifierSea"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolIdentifierSea]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolIdentifierSea]"
+                          length="50"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolIdentifierSea]"
+                          name="SchoolIdentifierSea"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentIdentifierState]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StudentIdentifierState]"
+                          length="40"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentIdentifierState]"
+                          name="StudentIdentifierState"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[RaceCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RaceCode]"
+                          length="50"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[RaceCode]"
+                          name="RaceCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SexCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SexCode]"
+                          length="50"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SexCode]"
+                          name="SexCode"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FactK12StudentEnrollmentId]"
+                          dataType="i8"
+                          name="FactK12StudentEnrollmentId" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CohortYear]"
+                          dataType="i2"
+                          name="CohortYear" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolYear]"
+                          dataType="i2"
+                          name="SchoolYear" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CohortGraduationYear]"
+                          dataType="i2"
+                          name="CohortGraduationYear" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProjectedGraduationYear]"
+                          dataType="i2"
+                          name="ProjectedGraduationYear" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GradeLevelCode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          name="GradeLevelCode" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EnglishLearnerStatusCode]"
+                          dataType="wstr"
+                          length="100"
+                          name="EnglishLearnerStatusCode" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[HomelessnessStatusCode]"
+                          dataType="wstr"
+                          length="100"
+                          name="HomelessnessStatusCode" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EconomicDisadvantageStatusCode]"
+                          dataType="wstr"
+                          length="100"
+                          name="EconomicDisadvantageStatusCode" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProgramParticipationFosterCareCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="ProgramParticipationFosterCareCode" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NeglectedOrDelinquentAcademicAchievementIndicatorCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="NeglectedOrDelinquentAcademicAchievementIndicatorCode" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DisabilityStatusCode]"
+                          dataType="wstr"
+                          length="100"
+                          name="DisabilityStatusCode" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SeaOrganizationIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          name="SeaOrganizationIdentifierSea" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LeaIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          name="LeaIdentifierSea" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          name="SchoolIdentifierSea" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StudentIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          name="StudentIdentifierState" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RaceCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="RaceCode" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SexCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="SexCode" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FactK12StudentEnrollmentId]"
+                          dataType="i8"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FactK12StudentEnrollmentId]"
+                          name="FactK12StudentEnrollmentId" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CohortYear]"
+                          dataType="i2"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CohortYear]"
+                          name="CohortYear" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolYear]"
+                          dataType="i2"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolYear]"
+                          name="SchoolYear" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CohortGraduationYear]"
+                          dataType="i2"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CohortGraduationYear]"
+                          name="CohortGraduationYear" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProjectedGraduationYear]"
+                          dataType="i2"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProjectedGraduationYear]"
+                          name="ProjectedGraduationYear" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SeaOrganizationIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SeaOrganizationIdentifierSea]"
+                          name="SeaOrganizationIdentifierSea" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LeaIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LeaIdentifierSea]"
+                          name="LeaIdentifierSea" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolIdentifierSea]"
+                          name="SchoolIdentifierSea" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StudentIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StudentIdentifierState]"
+                          name="StudentIdentifierState" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RaceCode]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RaceCode]"
+                          name="RaceCode" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GradeLevelCode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GradeLevelCode]"
+                          name="GradeLevelCode" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EnglishLearnerStatusCode]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EnglishLearnerStatusCode]"
+                          name="EnglishLearnerStatusCode" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[HomelessnessStatusCode]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[HomelessnessStatusCode]"
+                          name="HomelessnessStatusCode" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EconomicDisadvantageStatusCode]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EconomicDisadvantageStatusCode]"
+                          name="EconomicDisadvantageStatusCode" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProgramParticipationFosterCareCode]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProgramParticipationFosterCareCode]"
+                          name="ProgramParticipationFosterCareCode" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NeglectedOrDelinquentAcademicAchievementIndicatorCode]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NeglectedOrDelinquentAcademicAchievementIndicatorCode]"
+                          name="NeglectedOrDelinquentAcademicAchievementIndicatorCode" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DisabilityStatusCode]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DisabilityStatusCode]"
+                          name="DisabilityStatusCode" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SexCode]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SexCode]"
+                          name="SexCode" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\FactK12StudentEnrollments\Stage Data.Paths[OLE DB Source Output]"
+                  endId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FactK12StudentEnrollments\Truncate staging table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{240a2554-95f8-458e-963d-0eaec2dde717}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate staging table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[FactK12StudentEnrollments];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FactK12StudentEnrollments.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{54f71f94-de05-4671-a9cf-f9897eabe752}"
+          DTS:From="Package\FactK12StudentEnrollments\Truncate staging table"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\FactK12StudentEnrollments\Stage Data" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get Latest SchoolYear to Process"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{c8beafaf-83e3-4223-ba25-fb78443f78e6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get Latest SchoolYear to Process"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="SELECT MAX(YearProcessed) AS SchoolYearToProcess FROM [etl].[BatchControl]"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="SchoolYearToProcess"
+            SQLTask:DtsVariableName="User::SchoolYear" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{b7673de3-aed6-4887-a044-aad0b15b8b48}"
+      DTS:From="Package\Get Latest SchoolYear to Process"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\FactK12StudentEnrollments" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{93f021b5-d402-41d6-8cef-961901cdd56c}"
+      DTS:From="Package\Get Latest SchoolYear to Process"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\FactK12StudentCourseSections" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{120ee7d2-5518-4b60-bfab-b5366d834712}"
+      DTS:From="Package\Get Latest SchoolYear to Process"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\FactK12StudentAssessments" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="188,42"
+          Id="Package\FactK12StudentAssessments\Stage Data"
+          TopLeft="67,103" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\FactK12StudentAssessments\Truncate staging table"
+          TopLeft="66,31" />
+        <EdgeLayout
+          Id="Package\FactK12StudentAssessments.PrecedenceConstraints[Constraint]"
+          TopLeft="160.5,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="331,200"
+          Size="331,243"
+          Id="Package\FactK12StudentAssessments"
+          TopLeft="1092.5,402" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\FactK12StudentCourseSections\Stage Data"
+          TopLeft="67,103" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\FactK12StudentCourseSections\Truncate staging table"
+          TopLeft="66,31" />
+        <EdgeLayout
+          Id="Package\FactK12StudentCourseSections.PrecedenceConstraints[Constraint]"
+          TopLeft="160.5,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="331,200"
+          Size="331,243"
+          Id="Package\FactK12StudentCourseSections"
+          TopLeft="246.5,402" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\FactK12StudentEnrollments\Stage Data"
+          TopLeft="67,103" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\FactK12StudentEnrollments\Truncate staging table"
+          TopLeft="66,31" />
+        <EdgeLayout
+          Id="Package\FactK12StudentEnrollments.PrecedenceConstraints[Constraint]"
+          TopLeft="160.5,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="331,200"
+          Size="331,243"
+          Id="Package\FactK12StudentEnrollments"
+          TopLeft="674.5,402" />
+        <NodeLayout
+          Size="244,42"
+          Id="Package\Get Latest SchoolYear to Process"
+          TopLeft="722,136" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="842,178">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,224"
+              Start="0,0"
+              End="0,216.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,216.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="785,178">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-373,224"
+              Start="0,0"
+              End="-373,216.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,72.2810810810811" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,72.2810810810811"
+                    Point2="0,76.2810810810811"
+                    Point3="-4,76.2810810810811" />
+                  <mssgle:LineSegment
+                    End="-369,76.2810810810811" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-369,76.2810810810811"
+                    Point2="-373,76.2810810810811"
+                    Point3="-373,80.2810810810811" />
+                  <mssgle:LineSegment
+                    End="-373,216.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="903,178">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="355,224"
+              Start="0,0"
+              End="355,216.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,72.2810810810811" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,72.2810810810811"
+                    Point2="0,76.2810810810811"
+                    Point3="4,76.2810810810811" />
+                  <mssgle:LineSegment
+                    End="351,76.2810810810811" />
+                  <mssgle:CubicBezierSegment
+                    Point1="351,76.2810810810811"
+                    Point2="355,76.2810810810811"
+                    Point3="355,80.2810810810811" />
+                  <mssgle:LineSegment
+                    End="355,216.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\FactK12StudentAssessments\Stage Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination"
+          TopLeft="66,149" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\FactK12StudentAssessments\Stage Data\OLE DB Source"
+          TopLeft="81,44" />
+        <EdgeLayout
+          Id="Package\FactK12StudentAssessments\Stage Data.Paths[OLE DB Source Output]"
+          TopLeft="157,86">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63"
+              Start="0,0"
+              End="0,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactK12StudentAssessments\Stage Data\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactK12StudentAssessments\Stage Data\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\FactK12StudentCourseSections\Stage Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source"
+          TopLeft="129,72" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination"
+          TopLeft="121,184" />
+        <EdgeLayout
+          Id="Package\FactK12StudentCourseSections\Stage Data.Paths[OLE DB Source Output]"
+          TopLeft="208.5,114">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,70"
+              Start="0,0"
+              End="0,62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\FactK12StudentEnrollments\Stage Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source"
+          TopLeft="81,44" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination"
+          TopLeft="66,149" />
+        <EdgeLayout
+          Id="Package\FactK12StudentEnrollments\Stage Data.Paths[OLE DB Source Output]"
+          TopLeft="157,86">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63"
+              Start="0,0"
+              End="0,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactK12StudentEnrollments\Stage Data\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

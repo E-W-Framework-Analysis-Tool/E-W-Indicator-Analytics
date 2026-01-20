@@ -1,0 +1,20 @@
+CREATE TABLE [reporting].[FactK12StudentEnrollments](
+	[FactK12StudentEnrollmentId] [bigint] IDENTITY(1,1) PRIMARY KEY,
+	[CohortYear] [smallint] REFERENCES [reporting].[DimSchoolYears]([Year]),
+	[SchoolYear] [smallint] NOT NULL REFERENCES [reporting].[DimSchoolYears]([Year]),
+	[CohortGraduationYear] [smallint] REFERENCES [reporting].[DimSchoolYears]([Year]),
+	[ProjectedGraduationYear] [smallint] REFERENCES [reporting].[DimSchoolYears]([Year]),
+	[SeaId] [int] NOT NULL REFERENCES [reporting].[DimSEAs]([DimSeaId]),
+	[LeaId] [int] NOT NULL REFERENCES [reporting].[DimLEAs]([DimLeaId]),
+	[K12SchoolId] [int] NOT NULL REFERENCES [reporting].[DimK12Schools]([DimK12SchoolId]),
+	[K12StudentId] [bigint] NOT NULL REFERENCES [reporting].[DimStudents]([DimK12StudentId]),
+	[GradeLevelCode] [varchar](8) NOT NULL REFERENCES [reporting].[DimGradeLevels]([GradeLevelCode]),
+	[RaceId] [int] NULL REFERENCES [reporting].[DimRaces]([DimRaceId]),
+	[EnglishLearnerStatusId] [int] NULL REFERENCES [reporting].[DimEnglishLearnerStatuses]([DimEnglishLearnerStatusId]),
+	[HomelessnessStatusId] [int] NULL REFERENCES [reporting].[DimHomelessnessStatuses]([DimHomelessnessStatusId]),
+	[EconomicallyDisadvantagedStatusId] [int] NULL REFERENCES [reporting].[DimEconomicallyDisadvantagedStatuses]([DimEconomicallyDisadvantagedStatusId]),
+	[FosterCareStatusId] [int] NULL REFERENCES [reporting].[DimFosterCareStatuses]([DimFosterCareStatusId]),
+	[NOrDStatusId] [int] NULL REFERENCES [reporting].[DimNOrDStatuses]([DimNOrDStatusId]),
+	[DisabilityStatusId] [int] NULL REFERENCES [reporting].[DimDisabilityStatuses]([DimDisabilityStatusId]),
+  [K12DemographicId] [int] NULL REFERENCES [reporting].[DimK12Demographics]([DimK12DemographicId])
+)

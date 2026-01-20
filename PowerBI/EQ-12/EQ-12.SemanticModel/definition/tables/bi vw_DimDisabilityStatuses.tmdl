@@ -1,0 +1,45 @@
+table 'bi vw_DimDisabilityStatuses'
+	lineageTag: 446724cf-18df-47a6-bbcd-2f356ecd81ed
+
+	column Id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7418f1da-ff42-4c18-8887-49fc53e0a450
+		summarizeBy: none
+		sourceColumn: Id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Code
+		dataType: string
+		isHidden
+		lineageTag: 7d5cea3c-aad6-423b-8b46-787b50a3a6a5
+		summarizeBy: none
+		sourceColumn: Code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Desc
+		dataType: string
+		lineageTag: 2a873e2e-041e-442d-8b30-9a081b0f9cd7
+		summarizeBy: none
+		sourceColumn: Desc
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bi vw_DimDisabilityStatuses' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    bi_vw_DimDisabilityStatuses = Source{[Schema="bi",Item="vw_DimDisabilityStatuses"]}[Data]
+				in
+				    bi_vw_DimDisabilityStatuses
+
+	annotation PBI_ResultType = Table
+

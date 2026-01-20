@@ -1,0 +1,42 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+annotation PBI_QueryOrder = ["bi vw_DimAssessments","bi vw_DimAssessmentSubtests","bi vw_DimCohortGraduationYears","bi vw_DimCohortYears","bi vw_DimDisabilityStatuses","bi vw_DimEconomicallyDisadvantagedStatuses","bi vw_DimEnglishLearnerStatuses","bi vw_DimFosterCareStatuses","bi vw_DimGradeLevels","bi vw_DimHomelessnessStatuses","bi vw_DimK12Courses","bi vw_DimK12Schools","bi vw_DimLEAs","bi vw_DimNeglectedStatuses","bi vw_DimRaces","bi vw_DimSchoolYears","bi vw_DimSEAs","bi vw_FactK12StudentAssessments","bi vw_FactK12StudentCourseSections","bi vw_FactK12StudentEnrollments","bi vw_DimStudents","bi vw_DimK12Demographics","Algebra I by 9th grade","College Readiness","bi vw_DimK12CourseStatuses"]
+
+ref table 'bi vw_DimAssessments'
+ref table 'bi vw_DimAssessmentSubtests'
+ref table 'bi vw_DimCohortGraduationYears'
+ref table 'bi vw_DimCohortYears'
+ref table 'bi vw_DimDisabilityStatuses'
+ref table 'bi vw_DimEconomicallyDisadvantagedStatuses'
+ref table 'bi vw_DimEnglishLearnerStatuses'
+ref table 'bi vw_DimFosterCareStatuses'
+ref table 'bi vw_DimGradeLevels'
+ref table 'bi vw_DimHomelessnessStatuses'
+ref table 'bi vw_DimK12Courses'
+ref table 'bi vw_DimK12Schools'
+ref table 'bi vw_DimLEAs'
+ref table 'bi vw_DimNeglectedStatuses'
+ref table 'bi vw_DimRaces'
+ref table 'bi vw_DimSchoolYears'
+ref table 'bi vw_DimSEAs'
+ref table 'bi vw_FactK12StudentAssessments'
+ref table 'bi vw_FactK12StudentCourseSections'
+ref table 'bi vw_FactK12StudentEnrollments'
+ref table 'bi vw_DimStudents'
+ref table 'bi vw_DimK12Demographics'
+ref table 'Algebra I by 9th grade'
+ref table 'College Readiness'
+ref table 'bi vw_DimK12CourseStatuses'
+
+ref cultureInfo en-US
+

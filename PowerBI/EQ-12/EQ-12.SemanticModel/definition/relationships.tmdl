@@ -1,0 +1,120 @@
+relationship 7865ebe9-4fd1-ac10-8577-03b00c25491c
+	fromColumn: 'bi vw_FactK12StudentEnrollments'.DisabilityStatusId
+	toColumn: 'bi vw_DimDisabilityStatuses'.Id
+
+relationship b0bbb922-c455-c657-122b-0e5edd1a8cf4
+	fromColumn: 'bi vw_FactK12StudentEnrollments'.EconomicallyDisadvantagedStatusId
+	toColumn: 'bi vw_DimEconomicallyDisadvantagedStatuses'.Id
+
+relationship 5166c56c-578c-44c4-7a02-ea0646c3ed44
+	fromColumn: 'bi vw_FactK12StudentEnrollments'.EnglishLearnerStatusId
+	toColumn: 'bi vw_DimEnglishLearnerStatuses'.Id
+
+relationship d8bb1a64-803c-b3a7-4d55-715b6c5db5b0
+	fromColumn: 'bi vw_FactK12StudentEnrollments'.FosterCareStatusId
+	toColumn: 'bi vw_DimFosterCareStatuses'.Id
+
+relationship 43edfaf5-e38c-607f-ce9e-3ba77afeb717
+	fromColumn: 'bi vw_FactK12StudentEnrollments'.HomelessnessStatusId
+	toColumn: 'bi vw_DimHomelessnessStatuses'.Id
+
+relationship 218f10e1-2a39-b14d-1f42-534cdb549a3b
+	fromColumn: 'bi vw_FactK12StudentEnrollments'.NOrDStatusId
+	toColumn: 'bi vw_DimNeglectedStatuses'.Id
+
+relationship d2b91290-be38-d458-6175-677aff93e82d
+	fromColumn: 'bi vw_FactK12StudentCourseSections'.K12CourseId
+	toColumn: 'bi vw_DimK12Courses'.Id
+
+relationship 644d8769-2897-d18f-c0fe-636a68ba87f1
+	fromColumn: 'bi vw_FactK12StudentAssessments'.AssessmentId
+	toColumn: 'bi vw_DimAssessments'.Id
+
+relationship 7d1a22b6-a819-592b-87d7-e1e9503c358e
+	fromColumn: 'bi vw_FactK12StudentAssessments'.AssessmentSubtestId
+	toColumn: 'bi vw_DimAssessmentSubtests'.Id
+
+relationship e1d9e6f1-3ca7-cfd8-4aca-b85bbe54dba2
+	fromColumn: 'bi vw_FactK12StudentEnrollments'.SchoolYear
+	toColumn: 'bi vw_DimSchoolYears'.SchoolYear
+
+relationship 137f033a-c6d5-79e0-2174-cef8e4e9f97b
+	fromColumn: 'bi vw_FactK12StudentCourseSections'.SchoolYear
+	toColumn: 'bi vw_DimSchoolYears'.SchoolYear
+
+relationship edde7899-5d04-67f4-08ec-45e52443edb7
+	fromColumn: 'bi vw_FactK12StudentAssessments'.SchoolYear
+	toColumn: 'bi vw_DimSchoolYears'.SchoolYear
+
+relationship c46b6d33-6e3c-5edc-feb4-a461b2b4e36c
+	fromColumn: 'bi vw_FactK12StudentEnrollments'.K12SchoolId
+	toColumn: 'bi vw_DimK12Schools'.DimK12SchoolId
+
+relationship 1c3d2ca7-3c41-1823-2da2-0420299ebb37
+	fromColumn: 'bi vw_FactK12StudentCourseSections'.K12SchoolId
+	toColumn: 'bi vw_DimK12Schools'.DimK12SchoolId
+
+relationship cd95541c-d7d7-bed4-241b-e8eae458f500
+	fromColumn: 'bi vw_FactK12StudentAssessments'.K12SchoolId
+	toColumn: 'bi vw_DimK12Schools'.DimK12SchoolId
+
+relationship fdef9636-a150-192b-a68a-c8e06e90c22b
+	fromColumn: 'bi vw_FactK12StudentEnrollments'.SeaId
+	toColumn: 'bi vw_DimSEAs'.DimSeaId
+
+relationship 234a644c-4a86-c6e8-c139-22805231018f
+	fromColumn: 'bi vw_FactK12StudentCourseSections'.SeaId
+	toColumn: 'bi vw_DimSEAs'.DimSeaId
+
+relationship 80eacd42-f5b2-5da4-69ca-51ba6a0537ea
+	fromColumn: 'bi vw_FactK12StudentAssessments'.SeaId
+	toColumn: 'bi vw_DimSEAs'.DimSeaId
+
+relationship 6de925ef-e4de-ee61-81ce-99a0b65b0b19
+	fromColumn: 'bi vw_FactK12StudentEnrollments'.LeaId
+	toColumn: 'bi vw_DimLEAs'.DimLeaId
+
+relationship 64cd8d94-f82b-d543-dd1e-f4cf68503dbe
+	fromColumn: 'bi vw_FactK12StudentCourseSections'.LeaId
+	toColumn: 'bi vw_DimLEAs'.DimLeaId
+
+relationship eb06131c-bb28-665b-4197-66e553d17533
+	fromColumn: 'bi vw_FactK12StudentAssessments'.LeaId
+	toColumn: 'bi vw_DimLEAs'.DimLeaId
+
+relationship 163071f8-219f-c2a2-2e52-531fd1331b8a
+	fromColumn: 'bi vw_FactK12StudentEnrollments'.GradeLevelCode
+	toColumn: 'bi vw_DimGradeLevels'.Code
+
+relationship 34eb97a4-38f2-8ff5-cf17-3677472c366d
+	fromColumn: 'bi vw_FactK12StudentCourseSections'.GradeLevelCode
+	toColumn: 'bi vw_DimGradeLevels'.Code
+
+relationship e6b239da-9b84-046f-065b-936e722558e5
+	fromColumn: 'bi vw_FactK12StudentAssessments'.GradeLevelCode
+	toColumn: 'bi vw_DimGradeLevels'.Code
+
+relationship b65cf917-056a-5868-4ee8-49e892dd0c5c
+	fromColumn: 'bi vw_FactK12StudentEnrollments'.K12StudentId
+	toColumn: 'bi vw_DimStudents'.DimK12StudentId
+
+relationship 33cfcdc5-e4bc-488f-09ce-030b3f6b2178
+	fromColumn: 'bi vw_FactK12StudentAssessments'.K12StudentId
+	toColumn: 'bi vw_DimStudents'.DimK12StudentId
+
+relationship 943348d4-976c-f682-46b6-ba03f3aac7cb
+	fromColumn: 'bi vw_FactK12StudentCourseSections'.K12StudentId
+	toColumn: 'bi vw_DimStudents'.DimK12StudentId
+
+relationship 4975e7e8-7b39-e613-8f54-8cac3a7c43ea
+	fromColumn: 'bi vw_DimStudents'.K12DemographicId
+	toColumn: 'bi vw_DimK12Demographics'.DimK12DemographicId
+
+relationship a2c2c5d8-fc5b-7ac4-1009-ce44c28ad737
+	fromColumn: 'bi vw_DimStudents'.RaceId
+	toColumn: 'bi vw_DimRaces'.Id
+
+relationship b6886e81-6e61-6bba-007c-cc91b24d5629
+	fromColumn: 'bi vw_FactK12StudentCourseSections'.K12CourseStatusId
+	toColumn: 'bi vw_DimK12CourseStatuses'.DimK12CourseStatusId
+

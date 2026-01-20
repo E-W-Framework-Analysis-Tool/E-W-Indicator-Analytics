@@ -1,0 +1,64 @@
+table 'bi vw_DimSEAs'
+	lineageTag: f3500de3-1d18-40c3-bae2-7c51b42ce54b
+
+	column DimSeaId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 43e66e50-2e5f-44d6-b55c-127073e0bcbb
+		summarizeBy: none
+		sourceColumn: DimSeaId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SeaOrganizationIdentifierSea
+		dataType: string
+		isHidden
+		lineageTag: f7a775be-7cb1-4b00-acdc-8e6043529815
+		summarizeBy: none
+		sourceColumn: SeaOrganizationIdentifierSea
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SeaOrganizationName
+		dataType: string
+		lineageTag: 18788f20-f303-4b9d-a527-4f0a51441350
+		summarizeBy: none
+		sourceColumn: SeaOrganizationName
+
+		annotation SummarizationSetBy = Automatic
+
+	column StateAnsiCode
+		dataType: string
+		isHidden
+		lineageTag: 1f317465-198d-4cdd-9efa-00b4c7726709
+		summarizeBy: none
+		sourceColumn: StateAnsiCode
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column StateAbbreviationCode
+		dataType: string
+		lineageTag: b5c57de8-b24d-4552-a91a-ed21d100c9af
+		summarizeBy: none
+		sourceColumn: StateAbbreviationCode
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bi vw_DimSEAs' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    bi_vw_DimSEAs = Source{[Schema="bi",Item="vw_DimSEAs"]}[Data]
+				in
+				    bi_vw_DimSEAs
+
+	annotation PBI_ResultType = Table
+

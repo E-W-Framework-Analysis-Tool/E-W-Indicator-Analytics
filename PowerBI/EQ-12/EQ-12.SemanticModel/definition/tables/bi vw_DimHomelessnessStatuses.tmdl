@@ -1,0 +1,45 @@
+table 'bi vw_DimHomelessnessStatuses'
+	lineageTag: 7cf6f8ef-bd42-461c-9105-8ed055969cb8
+
+	column Id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c2d5a014-8c27-4b04-a179-8bb62eb1a790
+		summarizeBy: none
+		sourceColumn: Id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Code
+		dataType: string
+		isHidden
+		lineageTag: ea75d773-5811-40b6-95f6-9ca50b856d86
+		summarizeBy: none
+		sourceColumn: Code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Desc
+		dataType: string
+		lineageTag: e696900e-0964-4efb-9d06-3873f653cd7f
+		summarizeBy: none
+		sourceColumn: Desc
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bi vw_DimHomelessnessStatuses' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    bi_vw_DimHomelessnessStatuses = Source{[Schema="bi",Item="vw_DimHomelessnessStatuses"]}[Data]
+				in
+				    bi_vw_DimHomelessnessStatuses
+
+	annotation PBI_ResultType = Table
+

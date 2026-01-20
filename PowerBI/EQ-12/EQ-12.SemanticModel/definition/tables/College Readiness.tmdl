@@ -1,0 +1,75 @@
+table 'College Readiness'
+	lineageTag: b9fc6faf-c77c-42d2-9680-6d4886af4801
+
+	measure 'College Ready Prior Year' = CALCULATE([% College Ready Graduates], 'bi vw_DimSchoolYears'[SchoolYear] = MAX('bi vw_DimSchoolYears'[SchoolYear]) - 1)
+		lineageTag: 468a106b-8195-4266-862c-2a9d34708ae6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'College Ready YoY Growth' = [% College Ready Graduates] - [College Ready Prior Year]
+		lineageTag: 89dceaea-b1cb-4f47-810d-47d0a6f1177d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Has_1Y_Arts = VAR YearsCount = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), CONTAINSSTRING('bi vw_DimK12Courses'[CourseSubject], "Arts"), 'bi vw_FactK12StudentCourseSections'[LetterGrade] <> "F") RETURN IF(YearsCount >=1,1,0)
+		formatString: 0
+		lineageTag: bac7da4b-11b8-4529-8248-eb7c4a251661
+
+	measure Has_2Y_ForeignLang = VAR YearsCount = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_DimK12Courses'[CourseSubject] = "Foreign Language", 'bi vw_FactK12StudentCourseSections'[LetterGrade] <> "F") RETURN IF(YearsCount >=2,1,0)
+		formatString: 0
+		lineageTag: f2194adf-7a4f-4924-aefd-b1c81d66320e
+
+	measure Has_2Y_SocSci = VAR YearsCount = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_DimK12Courses'[CourseSubject] = "Social Science", 'bi vw_FactK12StudentCourseSections'[LetterGrade] <> "F") RETURN IF(YearsCount >=2,1,0)
+		formatString: 0
+		lineageTag: b3211dfa-eca6-485a-947b-d2abb0e322cd
+
+	measure Has_3Y_LabSci = VAR YearsCount = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_DimK12Courses'[CourseSubject] = "Laboratory Science", 'bi vw_FactK12StudentCourseSections'[LetterGrade] <> "F") RETURN IF(YearsCount >=3,1,0)
+		formatString: 0
+		lineageTag: 3c0c9448-e995-4bf1-bde4-58bf7a7b5f5b
+
+	measure Has_4Y_Eng = VAR YearsCount = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_DimK12Courses'[CourseSubject] = "English", 'bi vw_FactK12StudentCourseSections'[LetterGrade] <> "F") RETURN IF(YearsCount >=4,1,0)
+		formatString: 0
+		lineageTag: 2a852779-6e5a-4821-b2b2-a9207a6d341e
+
+	measure Has_4Y_Math = VAR YearsCount = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_DimK12Courses'[CourseSubject] = "Math", 'bi vw_FactK12StudentCourseSections'[LetterGrade] <> "F") RETURN IF(YearsCount >=4,1,0)
+		formatString: 0
+		lineageTag: 1d2cfe63-ea9c-4374-bb84-3ec36c095cd8
+
+	measure Is_College_Ready = ```
+			
+			IF(
+			    [Has_4Y_Math] = 1 && 
+			    [Has_4Y_Eng] = 1 && 
+			    [Has_3Y_LabSci] = 1 && 
+			    [Has_2Y_SocSci] = 1 && 
+			    [Has_2Y_ForeignLang] = 1 && 
+			    [Has_1Y_Arts] = 1,
+			    1, 0
+			)
+			```
+		formatString: 0
+		lineageTag: 2fb27806-880a-4ba5-85e7-1ff00cc28eb0
+
+	measure '% College Ready Graduates' = ```
+			
+			DIVIDE(
+			    SUMX('bi vw_DimStudents', [Is_College_Ready]), 
+			    DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[K12StudentId]), 
+			    0
+			)
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 46c267a9-fb6a-462c-a430-df62c44db6e5
+
+	partition 'College Readiness' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

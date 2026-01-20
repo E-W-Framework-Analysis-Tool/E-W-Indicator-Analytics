@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "EQ-12"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "91c14e57-8035-4088-bfea-2071c5454fb1"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "45a94118a6bc31145510",
+  "position": {
+    "x": 10.328988206083178,
+    "y": 0,
+    "z": 0,
+    "height": 303.51334574798261,
+    "width": 334.50031036623216,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "gauge",
+    "query": {
+      "queryState": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "College Readiness"
+                    }
+                  },
+                  "Property": "% College Ready Graduates"
+                }
+              },
+              "queryRef": "bi vw_DimAssessmentSubtests.% College Ready Graduates",
+              "nativeQueryRef": "% College Ready Graduates"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "College Readiness"
+                  }
+                },
+                "Property": "% College Ready Graduates"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b0318b7e54d41bc696be",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "College Readiness"
+              }
+            },
+            "Property": "% College Ready Graduates"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

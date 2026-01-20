@@ -1,0 +1,48 @@
+table 'bi vw_DimAssessments'
+	lineageTag: 1345d851-3124-4a3f-8a1f-f8906df77570
+
+	column Id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 03d06c21-8a8a-4784-b983-c0792cd4a5ef
+		summarizeBy: none
+		sourceColumn: Id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Code
+		dataType: string
+		lineageTag: 333f74c9-1ce0-4b2f-a52d-7f7d510600e9
+		summarizeBy: none
+		sourceColumn: Code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AcademicSubject
+		dataType: string
+		lineageTag: 81632b5b-44bb-4952-9514-d2d1e4c2dedd
+		summarizeBy: none
+		sourceColumn: AcademicSubject
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bi vw_DimAssessments' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    bi_vw_DimAssessments = Source{[Schema="bi",Item="vw_DimAssessments"]}[Data]
+				in
+				    bi_vw_DimAssessments
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
