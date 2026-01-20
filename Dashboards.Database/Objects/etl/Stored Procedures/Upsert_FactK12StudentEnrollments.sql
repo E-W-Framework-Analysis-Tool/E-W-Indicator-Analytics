@@ -10,14 +10,14 @@ BEGIN
 		  , [dl].[DimLeaId]
 		  , [dks].[DimK12SchoolId]
 		  , [dsu].[DimK12StudentId]
-		  , [dr].[DimRaceId]
-		  , [dels].[DimEnglishLearnerStatusId]
-		  , [dhs].[DimHomelessnessStatusId]
-		  , [deds].[DimEconomicallyDisadvantagedStatusId]
-		  , [dfcs].[DimFosterCareStatusId]
-		  , [dnds].[DimNOrDStatusId]
-		  , [dds].[DimDisabilityStatusId]
-		  , [dkd].[DimK12DemographicId]
+		  , COALESCE([dr].[DimRaceId], -1) AS [DimRaceId]
+		  , COALESCE([dels].[DimEnglishLearnerStatusId], -1) AS [DimEnglishLearnerStatusId]
+		  , COALESCE([dhs].[DimHomelessnessStatusId], -1) AS [DimHomelessnessStatusId]
+		  , COALESCE([deds].[DimEconomicallyDisadvantagedStatusId], -1) AS [DimEconomicallyDisadvantagedStatusId]
+		  , COALESCE([dfcs].[DimFosterCareStatusId], -1) AS [DimFosterCareStatusId]
+		  , COALESCE([dnds].[DimNOrDStatusId], -1) AS [DimNOrDStatusId]
+		  , COALESCE([dds].[DimDisabilityStatusId], -1) AS [DimDisabilityStatusId]
+		  , COALESCE([dkd].[DimK12DemographicId], -1) AS [DimK12DemographicId]
 		FROM
 			[staging].[FactK12StudentEnrollments]                            AS [fact]
 				LEFT JOIN [reporting].[DimSEAs]                              AS [ds]
@@ -50,13 +50,6 @@ BEGIN
 		  AND [dl].[DimLeaId] IS NOT NULL
 		  AND [dks].[DimK12SchoolId] IS NOT NULL
 		  AND [dsu].[DimK12StudentId] IS NOT NULL
-		  AND [dr].[DimRaceId] IS NOT NULL
-		  AND [dels].[DimEnglishLearnerStatusId] IS NOT NULL
-		  AND [dhs].[DimHomelessnessStatusId] IS NOT NULL
-		  AND [deds].[DimEconomicallyDisadvantagedStatusId] IS NOT NULL
-		  AND [dfcs].[DimFosterCareStatusId] IS NOT NULL
-		  AND [dnds].[DimNOrDStatusId] IS NOT NULL
-		  AND [dds].[DimDisabilityStatusId] IS NOT NULL
 		)
 		MERGE [reporting].[FactK12StudentEnrollments] AS [Target]
 	USING [Source]
