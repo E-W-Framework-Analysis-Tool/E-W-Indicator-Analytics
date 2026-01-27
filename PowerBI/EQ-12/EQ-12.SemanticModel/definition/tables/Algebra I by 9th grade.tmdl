@@ -5,13 +5,19 @@ table 'Algebra I by 9th grade'
 		formatString: 0
 		lineageTag: a44bf016-fb7a-4068-afc1-289e3a32477f
 
-	measure 'Algebra I Success Rate' = DIVIDE([Algebra I Pass Count], [Total 9th Graders], 0)
+	measure 'Algebra I Success Rate' = IF([Total 9th Graders] = 0, 0, DIVIDE([Algebra I Pass Count], [Total 9th Graders], 0))
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: bce3ee81-d942-46a3-b108-dd2c9d3cc84a
 
 	measure 'Total 9th Graders' = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentEnrollments'[K12StudentId]), 'bi vw_DimGradeLevels'[GradeLevelCode]= "09")
 		formatString: 0
 		lineageTag: e5aa32f6-84ac-491b-b4f3-21905ffa9b94
+
+	measure '% Algebra I Completion' =
+			VAR TotalPass = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[K12StudentId]), 'bi vw_FactK12StudentCourseSections'[GradeLevelCode] = "09", CONTAINSSTRING('bi vw_DimK12Courses'[CourseTitle], "Algebra I"), 'bi vw_FactK12StudentCourseSections'[LetterGradeEarned] <> "F")
+			RETURN DIVIDE(TotalPass, [Total 9th Graders], 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: eb9b41af-bd53-482e-a09b-9a0b1b5d3599
 
 	partition 'Algebra I by 9th grade' = m
 		mode: import

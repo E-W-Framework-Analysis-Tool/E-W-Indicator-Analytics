@@ -327,6 +327,16 @@
             "width": 234
           },
           "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Early College Coursework Completion",
+          "nodeLineageTag": "1d42e52c-4914-45c0-8b06-1b8f5ea515a0",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",

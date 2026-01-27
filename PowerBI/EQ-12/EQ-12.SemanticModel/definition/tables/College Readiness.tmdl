@@ -97,6 +97,47 @@ table 'College Readiness'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Has Passed' = IF(SELECTEDVALUE('bi vw_FactK12StudentCourseSections'[LetterGradeEarned]) <> "F", 1, 0)
+		formatString: 0
+		lineageTag: dda77c6f-5a2c-4638-b3f6-18a3d3c7f43a
+
+	measure 'College Prep Graduates' = ```
+			
+			VAR PassingCourses = 
+			    FILTER(
+			        'bi vw_FactK12StudentCourseSections',
+			        'bi vw_FactK12StudentCourseSections'[LetterGradeEarned] <> "F"
+			    )
+			RETURN
+			COUNTROWS(
+			    FILTER(
+			        VALUES('bi vw_FactK12StudentEnrollments'[K12StudentId]),
+			        VAR StudentID = 'bi vw_FactK12StudentEnrollments'[K12StudentId]
+			        
+			        -- Logic: Count distinct years the student passed these subjects
+			        VAR EnglishYears = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_FactK12StudentCourseSections'[K12StudentId] = StudentID, 'bi vw_DimK12Courses'[CourseTitle] = "English")
+			        VAR MathYears = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_FactK12StudentCourseSections'[K12StudentId] = StudentID, 'bi vw_DimK12Courses'[CourseSubject] = "Math")
+			        VAR ScienceYears = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_FactK12StudentCourseSections'[K12StudentId] = StudentID, 'bi vw_DimK12Courses'[CourseSubject] = "Science")
+			        VAR SocialYears = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_FactK12StudentCourseSections'[K12StudentId] = StudentID, 'bi vw_DimK12Courses'[CourseSubject] = "Social Studies")
+			        VAR LangYears = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_FactK12StudentCourseSections'[K12StudentId] = StudentID, 'bi vw_DimK12Courses'[CourseSubject] = "Foreign Language")
+			        VAR ArtsYears = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_FactK12StudentCourseSections'[K12StudentId] = StudentID, CONTAINSSTRING('bi vw_DimK12Courses'[CourseSubject], "Arts"))
+			
+			        RETURN
+			        EnglishYears >= 4 && MathYears >= 4 && ScienceYears >= 3 && SocialYears >= 2 && LangYears >= 2 && ArtsYears >= 1
+			    )
+			)
+			```
+		formatString: 0
+		lineageTag: d3af2943-3354-4378-ab65-2eca6e338c40
+
+	measure 'College Prep Completion Rate' =
+			
+			VAR TotalGrads = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentAssessments'[K12StudentId]), 'bi vw_FactK12StudentEnrollments'[SchoolYear] = 'bi vw_FactK12StudentEnrollments'[CohortGraduationYear])
+			RETURN DIVIDE([College Prep Graduates], TotalGrads, 0)
+		lineageTag: c2b08cf0-97d8-458d-888c-a8c817429c2e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition 'College Readiness' = m
 		mode: import
 		source =

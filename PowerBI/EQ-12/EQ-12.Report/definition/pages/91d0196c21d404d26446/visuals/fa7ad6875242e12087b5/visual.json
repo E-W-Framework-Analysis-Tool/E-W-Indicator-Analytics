@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "fa7ad6875242e12087b5",
   "position": {
     "x": 0,
-    "y": 336.08938547486036,
+    "y": 381.30391173520559,
     "z": 3001,
-    "height": 383.76163873370581,
-    "width": 1000.3227808814402,
+    "height": 338.2948846539619,
+    "width": 1000.1203610832497,
     "tabOrder": 3001
   },
   "visual": {
@@ -28,7 +28,7 @@
               },
               "queryRef": "bi vw_DimRaces.RaceEthnicity",
               "nativeQueryRef": "RaceEthnicity",
-              "active": true,
+              "active": false,
               "displayName": "RaceEthnicity"
             },
             {
@@ -60,7 +60,7 @@
               },
               "queryRef": "bi vw_DimDisabilityStatuses.DisabilityStatus",
               "nativeQueryRef": "DisabilityStatus",
-              "active": false,
+              "active": true,
               "displayName": "DisabilityStatus"
             },
             {

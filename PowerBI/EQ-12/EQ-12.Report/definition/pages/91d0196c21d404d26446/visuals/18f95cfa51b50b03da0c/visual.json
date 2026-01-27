@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "18f95cfa51b50b03da0c",
   "position": {
-    "x": 458.44816883923033,
-    "y": 0,
+    "x": 395.42627883650954,
+    "y": 105.27582748244734,
     "z": 3000,
-    "height": 359.92551210428309,
-    "width": 821.55183116076978,
+    "height": 276.02808425275828,
+    "width": 648.986960882648,
     "tabOrder": 3000
   },
   "visual": {
@@ -42,11 +42,11 @@
                       "Entity": "College Readiness"
                     }
                   },
-                  "Property": "% College Ready Students"
+                  "Property": "College Prep Graduates"
                 }
               },
-              "queryRef": "College Readiness.% College Ready Students",
-              "nativeQueryRef": "% College Ready Students"
+              "queryRef": "College Readiness.College Prep Graduates",
+              "nativeQueryRef": "College Prep Graduates"
             }
           ]
         }
@@ -61,7 +61,7 @@
                     "Entity": "College Readiness"
                   }
                 },
-                "Property": "% College Ready Students"
+                "Property": "College Prep Graduates"
               }
             },
             "direction": "Descending"
@@ -101,37 +101,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "d803d659393cce1304ed",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimSchoolYears"
-              }
-            },
-            "Property": "SchoolYear"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "adcd9eb7bba7e4090be0",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "College Readiness"
-              }
-            },
-            "Property": "% College Ready Students"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

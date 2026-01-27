@@ -2,8 +2,178 @@ cultureInfo en-US
 
 	linguisticMetadata =
 			{
-			  "Version": "1.0.0",
-			  "Language": "en-US"
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "bi_vw_dimraces.raceethnicity": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bi vw_DimRaces",
+			          "ConceptualProperty": "RaceEthnicity"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "RaceEthnicity": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bi_vw_dimk12demographics.gender": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bi vw_DimK12Demographics",
+			          "ConceptualProperty": "Gender"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Gender": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bi_vw_dimdisabilitystatuses.disabilitystatus": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bi vw_DimDisabilityStatuses",
+			          "ConceptualProperty": "DisabilityStatus"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "DisabilityStatus": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bi_vw_dimeconomicallydisadvantagedstatuses.economicdisadvantagestatus": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bi vw_DimEconomicallyDisadvantagedStatuses",
+			          "ConceptualProperty": "EconomicDisadvantageStatus"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "EconomicDisadvantageStatus": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bi_vw_dimenglishlearnerstatuses.englishlearnerstatus": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bi vw_DimEnglishLearnerStatuses",
+			          "ConceptualProperty": "EnglishLearnerStatus"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "EnglishLearnerStatus": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bi_vw_dimfostercarestatuses.fostercarestatus": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bi vw_DimFosterCareStatuses",
+			          "ConceptualProperty": "FosterCareStatus"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "FosterCareStatus": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bi_vw_dimhomelessnessstatuses.homelessnessstatus": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bi vw_DimHomelessnessStatuses",
+			          "ConceptualProperty": "HomelessnessStatus"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "HomelessnessStatus": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bi_vw_dimneglectedordelinquentstatus.neglectedordelinquentstatus": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bi vw_DimNeglectedOrDelinquentStatus",
+			          "ConceptualProperty": "NeglectedOrDelinquentStatus"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "NeglectedOrDelinquentStatus": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
 			}
 		contentType: json
 

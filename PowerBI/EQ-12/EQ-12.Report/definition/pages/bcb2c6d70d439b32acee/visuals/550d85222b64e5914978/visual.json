@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "550d85222b64e5914978",
   "position": {
     "x": 0,
-    "y": 336.08938547486036,
+    "y": 360.12036108324975,
     "z": 3000,
-    "height": 383.76163873370581,
-    "width": 1000.3227808814402,
+    "height": 359.47843530591774,
+    "width": 1000.1203610832497,
     "tabOrder": 3000
   },
   "visual": {
@@ -62,7 +62,7 @@
                   "Property": "Algebra I Success Rate"
                 }
               },
-              "queryRef": "bi vw_DimAssessmentSubtests.Algebra I Success Rate",
+              "queryRef": "Algebra I by 9th grade.Algebra I Success Rate",
               "nativeQueryRef": "Algebra I Success Rate"
             }
           ]
@@ -140,20 +140,6 @@
         },
         "type": "Advanced",
         "howCreated": "User"
-      },
-      {
-        "name": "0f4ec9a9a895a5d19eb0",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Algebra I by 9th grade"
-              }
-            },
-            "Property": "Algebra I Success Rate"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

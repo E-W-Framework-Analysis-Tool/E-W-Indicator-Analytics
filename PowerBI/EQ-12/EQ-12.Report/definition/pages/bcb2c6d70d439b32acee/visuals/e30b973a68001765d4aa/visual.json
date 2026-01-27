@@ -1,36 +1,18 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "e30b973a68001765d4aa",
   "position": {
-    "x": 10.328988206083178,
-    "y": 0,
+    "x": 0,
+    "y": 95.005015045135409,
     "z": 0,
-    "height": 279.67721911855989,
-    "width": 294.77343265052764,
+    "height": 265.11534603811435,
+    "width": 294.64393179538615,
     "tabOrder": 0
   },
   "visual": {
     "visualType": "gauge",
     "query": {
       "queryState": {
-        "MaxValue": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Algebra I by 9th grade"
-                    }
-                  },
-                  "Property": "Total 9th Graders"
-                }
-              },
-              "queryRef": "Algebra I by 9th grade.Total 9th Graders",
-              "nativeQueryRef": "Total 9th Graders"
-            }
-          ]
-        },
         "Y": {
           "projections": [
             {
@@ -41,11 +23,11 @@
                       "Entity": "Algebra I by 9th grade"
                     }
                   },
-                  "Property": "Algebra I Pass Count"
+                  "Property": "Algebra I Success Rate"
                 }
               },
-              "queryRef": "bi vw_DimAssessmentSubtests.Algebra I Pass Count",
-              "nativeQueryRef": "Algebra I Pass Count"
+              "queryRef": "Algebra I by 9th grade.Algebra I Success Rate",
+              "nativeQueryRef": "Algebra I Success Rate"
             }
           ]
         }
@@ -60,7 +42,7 @@
                     "Entity": "Algebra I by 9th grade"
                   }
                 },
-                "Property": "Algebra I Pass Count"
+                "Property": "Algebra I Success Rate"
               }
             },
             "direction": "Descending"
@@ -70,37 +52,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "de5b4a8f06589c09d942",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Algebra I by 9th grade"
-              }
-            },
-            "Property": "Algebra I Pass Count"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "a682990c66c30e40485b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Algebra I by 9th grade"
-              }
-            },
-            "Property": "Total 9th Graders"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

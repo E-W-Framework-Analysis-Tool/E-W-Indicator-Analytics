@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "6da4e9c2863cd363a2a2",
   "position": {
-    "x": 1032.8988206083179,
-    "y": 0,
+    "x": 1032.8585757271815,
+    "y": 95.005015045135409,
     "z": 1000,
-    "height": 279.67721911855989,
-    "width": 247.10117939168219,
+    "height": 259.97993981945837,
+    "width": 247.14142427281845,
     "tabOrder": 1000
   },
   "visual": {
@@ -42,23 +42,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "dc559aa8ebb632b3c74b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimSchoolYears"
-              }
-            },
-            "Property": "SchoolYear"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
