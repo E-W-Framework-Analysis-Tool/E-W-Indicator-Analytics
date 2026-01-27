@@ -26,6 +26,14 @@ table 'bi vw_DimK12CourseStatuses'
 
 		annotation SummarizationSetBy = Automatic
 
+	column CourseLevel
+		dataType: string
+		lineageTag: 5b7355c2-dc69-4d2f-8aa2-176d77b10432
+		summarizeBy: none
+		sourceColumn: CourseLevel
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'bi vw_DimK12CourseStatuses' = m
 		mode: import
 		source =

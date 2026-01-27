@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "550d85222b64e5914978",
+  "name": "9603232560a73f7a75f7",
   "position": {
     "x": 0,
-    "y": 360.12036108324975,
-    "z": 3000,
-    "height": 359.47843530591774,
-    "width": 1000.1203610832497,
-    "tabOrder": 3000
+    "y": 388.36509528585754,
+    "z": 1,
+    "height": 331.8756268806419,
+    "width": 948.1243731193581,
+    "tabOrder": 1
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -56,14 +56,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Algebra I by 9th grade"
+                      "Entity": "Early College Coursework Completion"
                     }
                   },
-                  "Property": "Algebra I Success Rate"
+                  "Property": "Coursework Completion"
                 }
               },
-              "queryRef": "Algebra I by 9th grade.Algebra I Success Rate",
-              "nativeQueryRef": "Algebra I Success Rate"
+              "queryRef": "Early College Coursework Completion.Coursework Completion",
+              "nativeQueryRef": "Coursework Completion"
             }
           ]
         }
@@ -75,10 +75,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Algebra I by 9th grade"
+                    "Entity": "Early College Coursework Completion"
                   }
                 },
-                "Property": "Algebra I Success Rate"
+                "Property": "Coursework Completion"
               }
             },
             "direction": "Descending"
@@ -87,60 +87,6 @@
         "isDefaultSort": true
       }
     },
-    "visualContainerObjects": {
-      "title": [
-        {
-          "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "''"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "dea9b9d386c2b3618b07",
-        "field": {
-          "Arithmetic": {
-            "Left": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Algebra I by 9th grade"
-                  }
-                },
-                "Property": "Algebra I Success Rate"
-              }
-            },
-            "Right": {
-              "ScopedEval": {
-                "Expression": {
-                  "Measure": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Algebra I by 9th grade"
-                      }
-                    },
-                    "Property": "Algebra I Success Rate"
-                  }
-                },
-                "Scope": []
-              }
-            },
-            "Operator": 3
-          }
-        },
-        "type": "Advanced",
-        "howCreated": "User"
-      }
-    ]
   }
 }

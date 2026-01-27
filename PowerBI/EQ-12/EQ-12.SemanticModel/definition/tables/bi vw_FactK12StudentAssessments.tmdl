@@ -97,18 +97,24 @@ table 'bi vw_FactK12StudentAssessments'
 		annotation SummarizationSetBy = Automatic
 
 	column ACTScore
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: c6ec2728-ca73-4305-97d3-576c3831fdd6
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: ACTScore
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
 	column SATScore
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: 2dfbee9f-cd44-45da-9336-8976b8ed18f9
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: SATScore
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 

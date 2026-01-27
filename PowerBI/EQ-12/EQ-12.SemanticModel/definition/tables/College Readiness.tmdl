@@ -138,6 +138,48 @@ table 'College Readiness'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure Total_11_12_Graders = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentEnrollments'[K12StudentId]), 'bi vw_DimGradeLevels'[GradeLevelCode] IN {"11", "12"})
+		formatString: 0
+		lineageTag: 30a2f34d-0867-445e-a161-d958a44d4814
+
+	measure 'SAT or ACT Participants' = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentEnrollments'[K12StudentId]), 'bi vw_FactK12StudentEnrollments'[GradeLevelCode] IN {"11", "12"} ,'bi vw_FactK12StudentAssessments'[SATScore] <> BLANK() || 'bi vw_FactK12StudentAssessments'[ACTScore] <> BLANK())
+		formatString: 0
+		lineageTag: b9b7ab8d-406b-402d-a60b-a9c4481de6b8
+
+	measure 'College Readiness on ACT-SAT Scores' = ```
+			
+			VAR SAT_RW_Bench = 480
+			VAR SAT_Math_Bench = 530
+			VAR ACT_Eng_Bench = 18
+			VAR ACT_Math_Bench = 22
+			VAR ACT_Read_Bench = 22
+			VAR ACT_Sci_Bench = 23
+			VAR ACT_Wri_Bench = 21
+			
+			VAR StudentSubtestScores = SUMMARIZE('bi vw_FactK12StudentAssessments',
+			 'bi vw_FactK12StudentAssessments'[K12StudentId],
+			        "MaxSAT_RW", CALCULATE(MAX('bi vw_FactK12StudentAssessments'[SATScore]), KEEPFILTERS('bi vw_DimAssessmentSubtests'[AssessmentSubtestCode]  = "SAT-RW")),
+			        "MaxSAT_Math", CALCULATE(MAX('bi vw_FactK12StudentAssessments'[SATScore]), KEEPFILTERS('bi vw_DimAssessmentSubtests'[AssessmentSubtestCode]  = "SAT-M")),
+			        "MaxACT_Eng", CALCULATE(MAX('bi vw_FactK12StudentAssessments'[ACTScore]), KEEPFILTERS('bi vw_DimAssessmentSubtests'[AssessmentSubtestCode]  = "ACT-ENG")),
+			        "MaxACT_Math", CALCULATE(MAX('bi vw_FactK12StudentAssessments'[ACTScore]), KEEPFILTERS('bi vw_DimAssessmentSubtests'[AssessmentSubtestCode]  = "ACT-M")),
+			        "MaxACT_Read", CALCULATE(MAX('bi vw_FactK12StudentAssessments'[ACTScore]), KEEPFILTERS('bi vw_DimAssessmentSubtests'[AssessmentSubtestCode]  = "ACT-R")),
+			        "MaxACT_Sci", CALCULATE(MAX('bi vw_FactK12StudentAssessments'[ACTScore]), KEEPFILTERS('bi vw_DimAssessmentSubtests'[AssessmentSubtestCode]  = "ACT-S")),
+			        "MaxACT_Wri", CALCULATE(MAX('bi vw_FactK12StudentAssessments'[ACTScore]), KEEPFILTERS('bi vw_DimAssessmentSubtests'[AssessmentSubtestCode]  = "ACT-W"))
+			    )
+			RETURN
+			COUNTROWS(FILTER(StudentSubtestScores, 
+			( [MaxSAT_RW] >= SAT_RW_Bench && [MaxSAT_Math] >= SAT_Math_Bench ) ||
+			        ( [MaxACT_Eng] >= ACT_Eng_Bench && [MaxACT_Math] >= ACT_Math_Bench && [MaxACT_Read] >= ACT_Read_Bench && [MaxACT_Sci] >= ACT_Sci_Bench && [MaxACT_Wri] >= ACT_Wri_Bench  )
+			))
+			```
+		formatString: 0
+		lineageTag: 1988389e-77b2-43f8-a006-a68edf934eb8
+
+	measure 'ACT-SAT College Readiness' = IF([SAT or ACT Participants] = 0, 0, DIVIDE([College Readiness on ACT-SAT Scores], [SAT or ACT Participants], 0))
+		lineageTag: 7a1b237e-732a-4869-9064-160e603780c5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition 'College Readiness' = m
 		mode: import
 		source =

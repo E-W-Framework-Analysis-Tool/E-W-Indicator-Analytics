@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "c1b53b7f0e141b10e774",
+  "name": "db75309a8bdd87f873b0",
   "position": {
-    "x": 346.6399197592778,
-    "y": 75.105315947843522,
-    "z": 1,
-    "height": 285.01504513540618,
-    "width": 677.8736208625877,
-    "tabOrder": 1
+    "x": 0,
+    "y": 77.673019057171516,
+    "z": 0,
+    "height": 282.44734202607822,
+    "width": 498.13440320962889,
+    "tabOrder": 0
   },
   "visual": {
-    "visualType": "lineChart",
+    "visualType": "columnChart",
     "query": {
       "queryState": {
         "Category": {
@@ -20,20 +20,17 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "bi vw_DimSchoolYears"
+                      "Entity": "bi vw_DimK12CourseStatuses"
                     }
                   },
-                  "Property": "SchoolYear"
+                  "Property": "CourseLevel"
                 }
               },
-              "queryRef": "bi vw_DimSchoolYears.SchoolYear",
-              "nativeQueryRef": "SchoolYear",
+              "queryRef": "bi vw_DimK12CourseStatuses.CourseLevel",
+              "nativeQueryRef": "CourseLevel",
               "active": true
             }
           ]
-        },
-        "Series": {
-          "projections": []
         },
         "Y": {
           "projections": [
@@ -52,9 +49,6 @@
               "nativeQueryRef": "Coursework Completion"
             }
           ]
-        },
-        "Y2": {
-          "projections": []
         }
       },
       "sortDefinition": {
@@ -77,23 +71,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "2c4a41bc12b36a66e070",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimSchoolYears"
-              }
-            },
-            "Property": "SchoolYear"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

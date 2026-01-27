@@ -12,14 +12,13 @@ table 'Early College Coursework Completion'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Early College Total Count' = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[K12StudentId]), 'bi vw_DimGradeLevels'[GradeLevelCode] IN {"09", "10", "11", "12"})
+	measure 'Early College Total Count' = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[K12StudentId]), 'bi vw_DimGradeLevels'[GradeLevelCode] IN {"11", "12"})
 		formatString: 0
 		lineageTag: f5fc74e4-5fb1-4a95-8533-2669f340f3af
 
-	measure 'Coursework Completion' = DIVIDE([Early College Pass Count], [Early College Total Count], 0)
+	measure 'Coursework Completion' = IF('Early College Coursework Completion'[Early College Pass Count] = 0, 0, DIVIDE([Early College Pass Count], [Early College Total Count], 0))
+		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: e66cad81-58e0-4639-958e-b3fbc8f11ca4
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition 'Early College Coursework Completion' = m
 		mode: import

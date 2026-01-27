@@ -27,9 +27,9 @@
                 }
               },
               "queryRef": "bi vw_DimRaces.RaceEthnicity",
-              "nativeQueryRef": "RaceEthnicity",
+              "nativeQueryRef": "Race & Ethnicity",
               "active": true,
-              "displayName": "RaceEthnicity"
+              "displayName": "Race & Ethnicity"
             }
           ],
           "fieldParameters": [
@@ -59,11 +59,11 @@
                       "Entity": "Early College Coursework Completion"
                     }
                   },
-                  "Property": "% Early College Completion"
+                  "Property": "Coursework Completion"
                 }
               },
-              "queryRef": "Early College Coursework Completion.% Early College Completion",
-              "nativeQueryRef": "% Early College Completion"
+              "queryRef": "Early College Coursework Completion.Coursework Completion",
+              "nativeQueryRef": "Coursework Completion"
             }
           ]
         }
@@ -78,7 +78,7 @@
                     "Entity": "Early College Coursework Completion"
                   }
                 },
-                "Property": "% Early College Completion"
+                "Property": "Coursework Completion"
               }
             },
             "direction": "Descending"
@@ -104,20 +104,6 @@
           }
         },
         "type": "Categorical"
-      },
-      {
-        "name": "8da7a34c4623e6000d93",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Early College Coursework Completion"
-              }
-            },
-            "Property": "% Early College Completion"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

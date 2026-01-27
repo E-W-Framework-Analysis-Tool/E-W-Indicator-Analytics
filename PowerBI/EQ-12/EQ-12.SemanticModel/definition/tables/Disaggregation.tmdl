@@ -40,14 +40,14 @@ table Disaggregation
 		mode: import
 		source =
 				{
-				    ("RaceEthnicity", NAMEOF('bi vw_DimRaces'[RaceEthnicity]), 0),
+				    ("Race & Ethnicity", NAMEOF('bi vw_DimRaces'[RaceEthnicity]), 0),
 				    ("Gender", NAMEOF('bi vw_DimK12Demographics'[Gender]), 1),
-				    ("DisabilityStatus", NAMEOF('bi vw_DimDisabilityStatuses'[DisabilityStatus]), 2),
-				    ("EconomicDisadvantageStatus", NAMEOF('bi vw_DimEconomicallyDisadvantagedStatuses'[EconomicDisadvantageStatus]), 3),
-				    ("EnglishLearnerStatus", NAMEOF('bi vw_DimEnglishLearnerStatuses'[EnglishLearnerStatus]), 4),
-				    ("FosterCareStatus", NAMEOF('bi vw_DimFosterCareStatuses'[FosterCareStatus]), 5),
-				    ("HomelessnessStatus", NAMEOF('bi vw_DimHomelessnessStatuses'[HomelessnessStatus]), 6),
-				    ("NeglectedOrDelinquentStatus", NAMEOF('bi vw_DimNeglectedOrDelinquentStatus'[NeglectedOrDelinquentStatus]), 7)
+				    ("Disability Status", NAMEOF('bi vw_DimDisabilityStatuses'[DisabilityStatus]), 2),
+				    ("Economic Disadvantage Status", NAMEOF('bi vw_DimEconomicallyDisadvantagedStatuses'[EconomicDisadvantageStatus]), 3),
+				    ("English Learner Status", NAMEOF('bi vw_DimEnglishLearnerStatuses'[EnglishLearnerStatus]), 4),
+				    ("Foster Care Status", NAMEOF('bi vw_DimFosterCareStatuses'[FosterCareStatus]), 5),
+				    ("Homelessness Status", NAMEOF('bi vw_DimHomelessnessStatuses'[HomelessnessStatus]), 6),
+				    ("Neglected Or Delinquent Status", NAMEOF('bi vw_DimNeglectedOrDelinquentStatus'[NeglectedOrDelinquentStatus]), 7)
 				}
 
 	annotation PBI_Id = 0534350ece8d4cd794d0dba427af969a

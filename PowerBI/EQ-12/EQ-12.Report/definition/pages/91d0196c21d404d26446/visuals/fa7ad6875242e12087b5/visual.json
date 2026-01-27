@@ -27,9 +27,9 @@
                 }
               },
               "queryRef": "bi vw_DimRaces.RaceEthnicity",
-              "nativeQueryRef": "RaceEthnicity",
+              "nativeQueryRef": "Race & Ethnicity",
               "active": false,
-              "displayName": "RaceEthnicity"
+              "displayName": "Race & Ethnicity"
             },
             {
               "field": {
@@ -59,9 +59,9 @@
                 }
               },
               "queryRef": "bi vw_DimDisabilityStatuses.DisabilityStatus",
-              "nativeQueryRef": "DisabilityStatus",
+              "nativeQueryRef": "Disability Status",
               "active": true,
-              "displayName": "DisabilityStatus"
+              "displayName": "Disability Status"
             },
             {
               "field": {
@@ -75,9 +75,9 @@
                 }
               },
               "queryRef": "bi vw_DimEconomicallyDisadvantagedStatuses.EconomicDisadvantageStatus",
-              "nativeQueryRef": "EconomicDisadvantageStatus",
+              "nativeQueryRef": "Economic Disadvantage Status",
               "active": false,
-              "displayName": "EconomicDisadvantageStatus"
+              "displayName": "Economic Disadvantage Status"
             },
             {
               "field": {
@@ -91,9 +91,9 @@
                 }
               },
               "queryRef": "bi vw_DimEnglishLearnerStatuses.EnglishLearnerStatus",
-              "nativeQueryRef": "EnglishLearnerStatus",
+              "nativeQueryRef": "English Learner Status",
               "active": false,
-              "displayName": "EnglishLearnerStatus"
+              "displayName": "English Learner Status"
             },
             {
               "field": {
@@ -107,9 +107,9 @@
                 }
               },
               "queryRef": "bi vw_DimFosterCareStatuses.FosterCareStatus",
-              "nativeQueryRef": "FosterCareStatus",
+              "nativeQueryRef": "Foster Care Status",
               "active": false,
-              "displayName": "FosterCareStatus"
+              "displayName": "Foster Care Status"
             },
             {
               "field": {
@@ -123,9 +123,9 @@
                 }
               },
               "queryRef": "bi vw_DimHomelessnessStatuses.HomelessnessStatus",
-              "nativeQueryRef": "HomelessnessStatus",
+              "nativeQueryRef": "Homelessness Status",
               "active": false,
-              "displayName": "HomelessnessStatus"
+              "displayName": "Homelessness Status"
             },
             {
               "field": {
@@ -139,9 +139,9 @@
                 }
               },
               "queryRef": "bi vw_DimNeglectedOrDelinquentStatus.NeglectedOrDelinquentStatus",
-              "nativeQueryRef": "NeglectedOrDelinquentStatus",
+              "nativeQueryRef": "Neglected Or Delinquent Status",
               "active": false,
-              "displayName": "NeglectedOrDelinquentStatus"
+              "displayName": "Neglected Or Delinquent Status"
             }
           ],
           "fieldParameters": [

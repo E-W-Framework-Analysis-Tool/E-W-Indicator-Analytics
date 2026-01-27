@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "4a8c0d81b9967a09c88e",
+  "name": "91315a67b03dd658aae4",
   "position": {
-    "x": 1032.8585757271815,
-    "y": 360.12036108324975,
-    "z": 4001,
-    "height": 359.47843530591774,
-    "width": 247.14142427281845,
-    "tabOrder": 4001
+    "x": 1017.4523570712136,
+    "y": 388.36509528585754,
+    "z": 2,
+    "height": 331.2337011033099,
+    "width": 262.54764292878633,
+    "tabOrder": 2
   },
   "visual": {
     "visualType": "slicer",
@@ -154,23 +154,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "8b180aafb0c0cb000614",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Disaggregation"
-              }
-            },
-            "Property": "Disaggregation"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }
