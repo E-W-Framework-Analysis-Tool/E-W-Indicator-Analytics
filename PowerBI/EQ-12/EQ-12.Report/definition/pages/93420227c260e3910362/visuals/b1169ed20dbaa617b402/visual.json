@@ -4,10 +4,10 @@
   "position": {
     "x": 1017.4523570712136,
     "y": 388.36509528585754,
-    "z": 4,
+    "z": 4000,
     "height": 331.2337011033099,
     "width": 262.54764292878633,
-    "tabOrder": 4
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "slicer",
@@ -27,7 +27,7 @@
                 }
               },
               "queryRef": "Disaggregation.Disaggregation",
-              "nativeQueryRef": "Disaggregation",
+              "nativeQueryRef": "Disaggregation1",
               "active": true
             }
           ]
@@ -154,23 +154,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "0793515dbc792671a243",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Disaggregation"
-              }
-            },
-            "Property": "Disaggregation"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

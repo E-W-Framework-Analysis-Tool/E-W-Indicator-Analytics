@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "ace01d991bab70060535",
   "position": {
-    "x": 369.10732196589771,
-    "y": 95.005015045135409,
+    "x": 368.78923766816143,
+    "y": 94.7085201793722,
     "z": 2000,
-    "height": 265.11534603811435,
-    "width": 527.66298896690068,
+    "height": 265.4708520179372,
+    "width": 540.98654708520178,
     "tabOrder": 2000
   },
   "visual": {
@@ -31,9 +31,6 @@
               "active": true
             }
           ]
-        },
-        "Series": {
-          "projections": []
         },
         "Tooltips": {
           "projections": [],
@@ -91,6 +88,21 @@
         "isDefaultSort": true
       }
     },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
@@ -131,7 +143,7 @@
         "howCreated": "User"
       },
       {
-        "name": "a3fba772edc71dd0c37c",
+        "name": "8e1dabc9c75073fa0207",
         "field": {
           "Column": {
             "Expression": {
@@ -140,6 +152,20 @@
               }
             },
             "Property": "SchoolYear"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4291ccc83d89ac85e807",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Algebra I by 9th grade"
+              }
+            },
+            "Property": "Algebra I Success Rate"
           }
         },
         "type": "Advanced"

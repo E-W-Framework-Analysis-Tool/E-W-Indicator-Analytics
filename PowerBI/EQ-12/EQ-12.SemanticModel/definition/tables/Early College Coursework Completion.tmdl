@@ -20,6 +20,14 @@ table 'Early College Coursework Completion'
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: e66cad81-58e0-4639-958e-b3fbc8f11ca4
 
+	measure 'Early College Coursework Disaggregate Chart Title' =
+			
+			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
+			VAR SelectedYearTitle = "Coursework Completion " & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			RETURN
+			SelectedYearTitle
+		lineageTag: c1f42071-12da-4fa2-aea0-73e4cca74dfc
+
 	partition 'Early College Coursework Completion' = m
 		mode: import
 		source =

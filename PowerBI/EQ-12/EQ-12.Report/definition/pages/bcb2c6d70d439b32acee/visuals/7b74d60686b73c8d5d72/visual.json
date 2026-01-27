@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "550d85222b64e5914978",
+  "name": "7b74d60686b73c8d5d72",
   "position": {
     "x": 0,
-    "y": 360.12036108324975,
-    "z": 3000,
-    "height": 359.47843530591774,
-    "width": 1000.1203610832497,
-    "tabOrder": 3000
+    "y": 359.87963891675025,
+    "z": 6000,
+    "height": 360.12036108324975,
+    "width": 948.1243731193581,
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -87,59 +87,37 @@
         "isDefaultSort": true
       }
     },
-    "visualContainerObjects": {
-      "title": [
-        {
-          "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "''"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "dea9b9d386c2b3618b07",
+        "name": "7abeb84c37830d087d22",
         "field": {
-          "Arithmetic": {
-            "Left": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Algebra I by 9th grade"
-                  }
-                },
-                "Property": "Algebra I Success Rate"
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Algebra I by 9th grade"
               }
             },
-            "Right": {
-              "ScopedEval": {
-                "Expression": {
-                  "Measure": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Algebra I by 9th grade"
-                      }
-                    },
-                    "Property": "Algebra I Success Rate"
-                  }
-                },
-                "Scope": []
-              }
-            },
-            "Operator": 3
+            "Property": "Algebra I Success Rate"
           }
         },
-        "type": "Advanced",
-        "howCreated": "User"
+        "type": "Advanced"
+      },
+      {
+        "name": "71dfb4bacf0ef4a03cf6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimRaces"
+              }
+            },
+            "Property": "RaceEthnicity"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

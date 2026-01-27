@@ -4,10 +4,10 @@
   "position": {
     "x": 0,
     "y": 360.12036108324975,
-    "z": 3,
+    "z": 3000,
     "height": 360.12036108324975,
     "width": 948.1243731193581,
-    "tabOrder": 3
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -88,23 +88,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "ad58760c37b50cde9d21",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimRaces"
-              }
-            },
-            "Property": "RaceEthnicity"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

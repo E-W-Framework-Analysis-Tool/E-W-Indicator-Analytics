@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "678564c3ebaa4006a705",
   "position": {
     "x": 0,
     "y": 440.17380509000623,
-    "z": 1,
+    "z": 1000,
     "height": 279.67721911855989,
     "width": 766.72873991309746,
-    "tabOrder": 1
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -71,37 +71,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "80a50176bc8d5074d5a6",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimRaces"
-              }
-            },
-            "Property": "Desc"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "56a0e921d2e34057ac00",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "College Readiness"
-              }
-            },
-            "Property": "% College Ready Graduates"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

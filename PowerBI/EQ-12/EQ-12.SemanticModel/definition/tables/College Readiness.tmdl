@@ -61,9 +61,6 @@ table 'College Readiness'
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 46c267a9-fb6a-462c-a430-df62c44db6e5
 
-	measure 'Chart Title' = "Algebra I Success Rate" & SELECTEDVALUE(Disaggregation[Disaggregation Fields])
-		lineageTag: b4dc14e3-74b2-4e87-9242-a1a98aab7414
-
 	measure Student_Has_4Y_Math = VAR CurrentStudents = VALUES('bi vw_FactK12StudentCourseSections'[K12StudentId]) RETURN SUMX(CurrentStudents, VAR Yrs = CALCULATE(DISTINCTCOUNT('bi vw_DimSchoolYears'[SchoolYear]), 'bi vw_DimK12Courses'[CourseSubject] = "Math", 'bi vw_FactK12StudentCourseSections'[LetterGradeEarned] <> "F") RETURN IF(Yrs >= 4, 1, 0))
 		formatString: 0
 		lineageTag: b7fac7ce-86ab-4100-8915-587e8e4e2c8a

@@ -4,10 +4,10 @@
   "position": {
     "x": 346.6399197592778,
     "y": 75.105315947843522,
-    "z": 1,
+    "z": 1000,
     "height": 285.01504513540618,
     "width": 677.8736208625877,
-    "tabOrder": 1
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "lineChart",
@@ -32,9 +32,6 @@
             }
           ]
         },
-        "Series": {
-          "projections": []
-        },
         "Y": {
           "projections": [
             {
@@ -52,9 +49,6 @@
               "nativeQueryRef": "Coursework Completion"
             }
           ]
-        },
-        "Y2": {
-          "projections": []
         }
       },
       "sortDefinition": {
@@ -77,23 +71,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "2c4a41bc12b36a66e070",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimSchoolYears"
-              }
-            },
-            "Property": "SchoolYear"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

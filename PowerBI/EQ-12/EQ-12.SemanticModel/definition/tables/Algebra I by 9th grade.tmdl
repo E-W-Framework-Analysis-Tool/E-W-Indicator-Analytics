@@ -19,6 +19,14 @@ table 'Algebra I by 9th grade'
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: eb9b41af-bd53-482e-a09b-9a0b1b5d3599
 
+	measure 'Algebra I Disaggregate Chart Title' =
+			
+			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
+			VAR SelectedYearTitle = "Algebra I Success Rate " & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			RETURN
+			SelectedYearTitle
+		lineageTag: b4dc14e3-74b2-4e87-9242-a1a98aab7414
+
 	partition 'Algebra I by 9th grade' = m
 		mode: import
 		source =
