@@ -15,7 +15,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "RaceEthnicity": {
+			          "Race & Ethnicity": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -57,7 +57,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "DisabilityStatus": {
+			          "Disability Status": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -78,7 +78,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "EconomicDisadvantageStatus": {
+			          "Economic Disadvantage Status": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -99,7 +99,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "EnglishLearnerStatus": {
+			          "English Learner Status": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -120,7 +120,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "FosterCareStatus": {
+			          "Foster Care Status": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -141,7 +141,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "HomelessnessStatus": {
+			          "Homelessness Status": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -162,7 +162,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "NeglectedOrDelinquentStatus": {
+			          "Neglected Or Delinquent Status": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

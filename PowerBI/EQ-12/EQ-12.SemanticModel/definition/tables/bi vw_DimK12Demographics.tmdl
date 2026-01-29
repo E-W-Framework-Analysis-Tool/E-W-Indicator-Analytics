@@ -1,5 +1,4 @@
 table 'bi vw_DimK12Demographics'
-	isHidden
 	lineageTag: c6261036-c05f-4884-9a26-f3c12173cf69
 
 	column Dimk12DemographicId
@@ -16,7 +15,6 @@ table 'bi vw_DimK12Demographics'
 
 	column Gender
 		dataType: string
-		isHidden
 		lineageTag: 2da856cb-8ac8-4a72-816c-af777a7fd9d1
 		summarizeBy: none
 		sourceColumn: Gender

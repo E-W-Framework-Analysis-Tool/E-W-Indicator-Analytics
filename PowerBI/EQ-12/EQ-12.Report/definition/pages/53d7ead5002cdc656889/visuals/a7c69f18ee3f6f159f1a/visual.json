@@ -154,23 +154,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "9017d407af81ca88cce9",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Disaggregation"
-              }
-            },
-            "Property": "Disaggregation"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

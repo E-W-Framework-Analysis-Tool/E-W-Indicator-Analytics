@@ -9,6 +9,15 @@
         "page": "2.3.0"
       },
       "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "E-W_Framework17014013083866508.json",
+      "reportVersionAtImport": {
+        "visual": "2.5.0",
+        "report": "3.1.0",
+        "page": "2.3.0"
+      },
+      "type": "RegisteredResources"
     }
   },
   "filterConfig": {
@@ -189,6 +198,11 @@
           "name": "E-W_framework_Logo39900571019709863.png",
           "path": "E-W_framework_Logo39900571019709863.png",
           "type": "Image"
+        },
+        {
+          "name": "E-W_Framework17014013083866508.json",
+          "path": "E-W_Framework17014013083866508.json",
+          "type": "CustomTheme"
         }
       ]
     }

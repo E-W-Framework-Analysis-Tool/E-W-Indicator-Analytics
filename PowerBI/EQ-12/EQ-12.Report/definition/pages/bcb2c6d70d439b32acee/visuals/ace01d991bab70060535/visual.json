@@ -141,34 +141,6 @@
         },
         "type": "Advanced",
         "howCreated": "User"
-      },
-      {
-        "name": "8e1dabc9c75073fa0207",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimSchoolYears"
-              }
-            },
-            "Property": "SchoolYear"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "4291ccc83d89ac85e807",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Algebra I by 9th grade"
-              }
-            },
-            "Property": "Algebra I Success Rate"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

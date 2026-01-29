@@ -604,7 +604,7 @@
             "height": 104,
             "width": 234
           },
-          "zIndex": 6
+          "zIndex": 5
         },
         {
           "location": {
@@ -617,7 +617,7 @@
             "height": 478,
             "width": 320
           },
-          "zIndex": 5
+          "zIndex": 4
         },
         {
           "location": {
@@ -630,7 +630,7 @@
             "height": 331,
             "width": 350
           },
-          "zIndex": 4
+          "zIndex": 3
         },
         {
           "location": {
@@ -669,7 +669,7 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 3
+          "zIndex": 8
         },
         {
           "location": {
@@ -682,7 +682,7 @@
             "height": 224,
             "width": 234
           },
-          "zIndex": 8
+          "zIndex": 7
         },
         {
           "location": {
@@ -695,7 +695,7 @@
             "height": 145,
             "width": 234
           },
-          "zIndex": 7
+          "zIndex": 6
         }
       ],
       "name": "Fact Tables",

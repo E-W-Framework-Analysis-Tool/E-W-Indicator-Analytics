@@ -47,7 +47,6 @@ table 'bi vw_DimK12Schools'
 
 	column SchoolTypeCode
 		dataType: string
-		isHidden
 		lineageTag: 0ec63205-13a6-49db-97be-7c6d7b8664ee
 		summarizeBy: none
 		sourceColumn: SchoolTypeCode

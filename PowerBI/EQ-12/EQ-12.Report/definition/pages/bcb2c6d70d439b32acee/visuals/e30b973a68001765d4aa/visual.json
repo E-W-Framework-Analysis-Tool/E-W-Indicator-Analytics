@@ -79,23 +79,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "f063eadcfd27af7d1f57",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Algebra I by 9th grade"
-              }
-            },
-            "Property": "Algebra I Success Rate"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

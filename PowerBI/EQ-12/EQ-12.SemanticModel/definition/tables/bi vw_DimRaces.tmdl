@@ -1,5 +1,4 @@
 table 'bi vw_DimRaces'
-	isHidden
 	lineageTag: f02bcb71-295e-4b95-8a18-b7d179a77803
 
 	column DimRaceId
@@ -16,7 +15,6 @@ table 'bi vw_DimRaces'
 
 	column RaceEthnicity
 		dataType: string
-		isHidden
 		lineageTag: fb8609a3-96a5-4bb4-b958-9153e9a7244d
 		summarizeBy: none
 		sourceColumn: RaceEthnicity

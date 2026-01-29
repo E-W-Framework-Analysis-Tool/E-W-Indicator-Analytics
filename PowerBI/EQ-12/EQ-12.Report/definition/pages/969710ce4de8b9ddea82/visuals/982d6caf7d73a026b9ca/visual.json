@@ -10,7 +10,7 @@
     "tabOrder": 1000
   },
   "visual": {
-    "visualType": "hundredPercentStackedColumnChart",
+    "visualType": "clusteredColumnChart",
     "query": {
       "queryState": {
         "Category": {
@@ -27,7 +27,7 @@
                 }
               },
               "queryRef": "bi vw_DimRaces.RaceEthnicity",
-              "nativeQueryRef": "Race & Ethnicity",
+              "nativeQueryRef": "RaceEthnicity",
               "active": true,
               "displayName": "Race & Ethnicity"
             }

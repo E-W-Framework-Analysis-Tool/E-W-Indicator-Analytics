@@ -18,10 +18,6 @@ relationship cd95541c-d7d7-bed4-241b-e8eae458f500
 	fromColumn: 'bi vw_FactK12StudentAssessments'.K12SchoolId
 	toColumn: 'bi vw_DimK12Schools'.DimK12SchoolId
 
-relationship fdef9636-a150-192b-a68a-c8e06e90c22b
-	fromColumn: 'bi vw_FactK12StudentEnrollments'.SeaId
-	toColumn: 'bi vw_DimSEAs'.DimSeaId
-
 relationship 234a644c-4a86-c6e8-c139-22805231018f
 	fromColumn: 'bi vw_FactK12StudentCourseSections'.SeaId
 	toColumn: 'bi vw_DimSEAs'.DimSeaId
@@ -105,4 +101,8 @@ relationship f1dac0ba-20bb-a951-1df4-e1382cd12982
 relationship 85c238a5-5228-0b8e-2f2e-982e5633b406
 	fromColumn: 'bi vw_FactK12StudentEnrollments'.SchoolYear
 	toColumn: 'bi vw_DimSchoolYears'.SchoolYear
+
+relationship 38fdce16-37ef-6e44-c99e-03a7fa38a200
+	fromColumn: 'bi vw_FactK12StudentEnrollments'.SeaId
+	toColumn: 'bi vw_DimSEAs'.DimSeaId
 

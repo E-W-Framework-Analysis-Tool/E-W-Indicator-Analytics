@@ -3,10 +3,10 @@
   "name": "db75309a8bdd87f873b0",
   "position": {
     "x": 0,
-    "y": 77.673019057171516,
+    "y": 77.873210633946826,
     "z": 0,
-    "height": 282.44734202607822,
-    "width": 498.13440320962889,
+    "height": 282.04498977505114,
+    "width": 875.58282208588957,
     "tabOrder": 0
   },
   "visual": {
@@ -28,6 +28,21 @@
               },
               "queryRef": "bi vw_DimK12CourseStatuses.CourseLevel",
               "nativeQueryRef": "CourseLevel",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_FactK12StudentCourseSections"
+                    }
+                  },
+                  "Property": "GradeLevelCode"
+                }
+              },
+              "queryRef": "bi vw_FactK12StudentCourseSections.GradeLevelCode",
+              "nativeQueryRef": "GradeLevelCode",
               "active": true
             }
           ]
@@ -55,16 +70,29 @@
         "sort": [
           {
             "field": {
-              "Measure": {
+              "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Early College Coursework Completion"
+                    "Entity": "bi vw_DimK12CourseStatuses"
                   }
                 },
-                "Property": "Coursework Completion"
+                "Property": "CourseLevel"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "bi vw_FactK12StudentCourseSections"
+                  }
+                },
+                "Property": "GradeLevelCode"
+              }
+            },
+            "direction": "Ascending"
           }
         ],
         "isDefaultSort": true
@@ -91,37 +119,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "ebe31e23ff81fa5e9ed9",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimK12CourseStatuses"
-              }
-            },
-            "Property": "CourseLevel"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "7ee0c851e6a299495f09",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Early College Coursework Completion"
-              }
-            },
-            "Property": "Coursework Completion"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
