@@ -80,5 +80,51 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b46a2d296a9056da33c9",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "College Readiness"
+              }
+            },
+            "Property": "Total_11_12_Graders"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "db1a36558154c3cafb1a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "College Readiness"
+              }
+            },
+            "Property": "College Readiness on ACT-SAT Scores"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "badfa8fc894c7cffde9c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "College Readiness"
+              }
+            },
+            "Property": "SAT or ACT Participants"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

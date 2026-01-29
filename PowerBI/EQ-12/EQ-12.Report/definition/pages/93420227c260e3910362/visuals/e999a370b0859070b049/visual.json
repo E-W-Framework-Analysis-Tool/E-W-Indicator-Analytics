@@ -79,5 +79,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "8fd13c7ca2f3acb485d9",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Early College Coursework Completion"
+              }
+            },
+            "Property": "Early College Pass Count"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

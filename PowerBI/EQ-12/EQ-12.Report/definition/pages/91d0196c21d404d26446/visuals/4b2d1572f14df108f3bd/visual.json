@@ -5,8 +5,8 @@
     "x": 0,
     "y": 0,
     "z": 6000,
-    "height": 75.105315947843522,
-    "width": 1032.8585757271815,
+    "height": 75.005476451259582,
+    "width": 969.46330777656078,
     "tabOrder": 6000
   },
   "visual": {
@@ -17778,9 +17778,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "Percentage of high school graduates who successfully complete the coursework required for admission to a four-year college or university, which includes:  Four years of English classes, Four years of math classes, Three years of laboratory science, Two years of social sciences, Two years of foreign language, and One year of visual or performing arts",
+                    "value": "Percentage of high school graduates who successfully complete the coursework required for admission to a four-year college or university, which includes:  Four years of English classes, Four years of math classes, Three years of laboratory science, Two years of social sciences, Two years of foreign language, and One year of visual or performing arts.",
                     "textStyle": {
                       "fontFamily": "Segoe UI Light",
+                      "fontSize": "9pt",
                       "color": "#000000"
                     }
                   }

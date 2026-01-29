@@ -3,7 +3,6 @@ table 'bi vw_DimStudents'
 
 	column DimK12StudentId
 		dataType: int64
-		isHidden
 		formatString: 0
 		lineageTag: d3530230-0ade-4b5d-aa43-9c133bdfe5a2
 		summarizeBy: none
@@ -15,7 +14,6 @@ table 'bi vw_DimStudents'
 
 	column K12DemographicId
 		dataType: int64
-		isHidden
 		formatString: 0
 		lineageTag: 3c85a1d0-4ec8-48c0-b993-4827c8aead92
 		summarizeBy: none
@@ -27,7 +25,6 @@ table 'bi vw_DimStudents'
 
 	column RaceId
 		dataType: int64
-		isHidden
 		formatString: 0
 		lineageTag: efdc95f0-1a20-4e3e-8ad3-25f42db92883
 		summarizeBy: none

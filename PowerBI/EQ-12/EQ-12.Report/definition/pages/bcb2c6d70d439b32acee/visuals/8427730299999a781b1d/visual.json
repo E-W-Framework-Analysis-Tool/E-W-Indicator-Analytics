@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "d4c96444ceac0793b849",
+  "name": "8427730299999a781b1d",
   "position": {
-    "x": 0,
+    "x": 969.32735426008969,
     "y": 0,
-    "z": 4000,
+    "z": 6001,
     "height": 75.336322869955154,
-    "width": 947.8026905829596,
-    "tabOrder": 4000
+    "width": 124.12556053811659,
+    "tabOrder": 6001
   },
   "visual": {
     "visualType": "textbox",
@@ -17768,24 +17768,15 @@
               {
                 "textRuns": [
                   {
-                    "value": "Education-to-Workforce Indicator Framework",
+                    "value": "SAMPLE DATA",
                     "textStyle": {
-                      "fontWeight": "bold"
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "12pt",
+                      "color": "#6d5a00"
                     }
                   }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Percentage of first-time grade 9 students who complete Algebra I or an equivalent course by the end of their 9th-grade year.",
-                    "textStyle": {
-                      "fontFamily": "Segoe UI Light",
-                      "fontSize": "9pt",
-                      "color": "#000000"
-                    }
-                  }
-                ]
+                ],
+                "horizontalTextAlignment": "center"
               }
             ]
           }

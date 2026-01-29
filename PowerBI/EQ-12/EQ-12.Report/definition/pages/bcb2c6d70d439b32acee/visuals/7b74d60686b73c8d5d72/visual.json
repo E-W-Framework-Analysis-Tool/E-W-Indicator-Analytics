@@ -30,6 +30,118 @@
               "nativeQueryRef": "Race & Ethnicity",
               "active": true,
               "displayName": "Race & Ethnicity"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_DimK12Demographics"
+                    }
+                  },
+                  "Property": "Gender"
+                }
+              },
+              "queryRef": "bi vw_DimK12Demographics.Gender",
+              "nativeQueryRef": "Gender",
+              "active": false,
+              "displayName": "Gender"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_DimDisabilityStatuses"
+                    }
+                  },
+                  "Property": "DisabilityStatus"
+                }
+              },
+              "queryRef": "bi vw_DimDisabilityStatuses.DisabilityStatus",
+              "nativeQueryRef": "Disability Status",
+              "active": false,
+              "displayName": "Disability Status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_DimEconomicallyDisadvantagedStatuses"
+                    }
+                  },
+                  "Property": "EconomicDisadvantageStatus"
+                }
+              },
+              "queryRef": "bi vw_DimEconomicallyDisadvantagedStatuses.EconomicDisadvantageStatus",
+              "nativeQueryRef": "Economic Disadvantage Status",
+              "active": false,
+              "displayName": "Economic Disadvantage Status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_DimEnglishLearnerStatuses"
+                    }
+                  },
+                  "Property": "EnglishLearnerStatus"
+                }
+              },
+              "queryRef": "bi vw_DimEnglishLearnerStatuses.EnglishLearnerStatus",
+              "nativeQueryRef": "English Learner Status",
+              "active": false,
+              "displayName": "English Learner Status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_DimFosterCareStatuses"
+                    }
+                  },
+                  "Property": "FosterCareStatus"
+                }
+              },
+              "queryRef": "bi vw_DimFosterCareStatuses.FosterCareStatus",
+              "nativeQueryRef": "Foster Care Status",
+              "active": false,
+              "displayName": "Foster Care Status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_DimHomelessnessStatuses"
+                    }
+                  },
+                  "Property": "HomelessnessStatus"
+                }
+              },
+              "queryRef": "bi vw_DimHomelessnessStatuses.HomelessnessStatus",
+              "nativeQueryRef": "Homelessness Status",
+              "active": false,
+              "displayName": "Homelessness Status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_DimNeglectedOrDelinquentStatus"
+                    }
+                  },
+                  "Property": "NeglectedOrDelinquentStatus"
+                }
+              },
+              "queryRef": "bi vw_DimNeglectedOrDelinquentStatus.NeglectedOrDelinquentStatus",
+              "nativeQueryRef": "Neglected Or Delinquent Status",
+              "active": false,
+              "displayName": "Neglected Or Delinquent Status"
             }
           ],
           "fieldParameters": [
@@ -45,7 +157,7 @@
                 }
               },
               "index": 0,
-              "length": 1
+              "length": 8
             }
           ]
         },
@@ -87,6 +199,21 @@
         "isDefaultSort": true
       }
     },
+    "objects": {
+      "valueAxis": [
+        {
+          "properties": {
+            "end": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
@@ -106,7 +233,7 @@
         "type": "Advanced"
       },
       {
-        "name": "71dfb4bacf0ef4a03cf6",
+        "name": "c9e439960388b818e89c",
         "field": {
           "Column": {
             "Expression": {
@@ -115,6 +242,104 @@
               }
             },
             "Property": "RaceEthnicity"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "73bd1857bba9ae880669",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Demographics"
+              }
+            },
+            "Property": "Gender"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f87f39c1159d6edebfb7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimDisabilityStatuses"
+              }
+            },
+            "Property": "DisabilityStatus"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "222c4f3be259304fc8d0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimEconomicallyDisadvantagedStatuses"
+              }
+            },
+            "Property": "EconomicDisadvantageStatus"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2f5c6ccdc360239a1898",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimEnglishLearnerStatuses"
+              }
+            },
+            "Property": "EnglishLearnerStatus"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "cf30bc2694f57408c69c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimFosterCareStatuses"
+              }
+            },
+            "Property": "FosterCareStatus"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "eb412aff5dc05a6d0ab5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimHomelessnessStatuses"
+              }
+            },
+            "Property": "HomelessnessStatus"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2976cc08fe9999f4a5cc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimNeglectedOrDelinquentStatus"
+              }
+            },
+            "Property": "NeglectedOrDelinquentStatus"
           }
         },
         "type": "Categorical"

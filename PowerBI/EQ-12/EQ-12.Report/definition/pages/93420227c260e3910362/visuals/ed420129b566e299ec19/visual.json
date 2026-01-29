@@ -5,8 +5,8 @@
     "x": 0,
     "y": 0,
     "z": 6000,
-    "height": 66.760280842527578,
-    "width": 1024.5135406218656,
+    "height": 75.005476451259582,
+    "width": 969.46330777656078,
     "tabOrder": 6000
   },
   "visual": {
@@ -17704,6 +17704,7 @@
                     "value": "Early college coursework completion - High school students successfully complete early college coursework (Advanced Placement [AP], International Baccalaureate [IB], or dual credit).",
                     "textStyle": {
                       "fontFamily": "Segoe UI Light",
+                      "fontSize": "9pt",
                       "color": "#000000"
                     }
                   }
