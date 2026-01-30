@@ -41,7 +41,7 @@
                       "Entity": "Disaggregation"
                     }
                   },
-                  "Property": "Disaggregation"
+                  "Property": "Disaggregation Name"
                 }
               },
               "index": 0,

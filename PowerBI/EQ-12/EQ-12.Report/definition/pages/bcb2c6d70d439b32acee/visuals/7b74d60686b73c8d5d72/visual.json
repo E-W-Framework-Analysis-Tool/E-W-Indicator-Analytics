@@ -4,10 +4,10 @@
   "position": {
     "x": 0,
     "y": 359.87963891675025,
-    "z": 6000,
+    "z": 2000,
     "height": 360.12036108324975,
     "width": 948.1243731193581,
-    "tabOrder": 6000
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -30,118 +30,6 @@
               "nativeQueryRef": "Race & Ethnicity",
               "active": true,
               "displayName": "Race & Ethnicity"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "bi vw_DimK12Demographics"
-                    }
-                  },
-                  "Property": "Gender"
-                }
-              },
-              "queryRef": "bi vw_DimK12Demographics.Gender",
-              "nativeQueryRef": "Gender",
-              "active": false,
-              "displayName": "Gender"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "bi vw_DimDisabilityStatuses"
-                    }
-                  },
-                  "Property": "DisabilityStatus"
-                }
-              },
-              "queryRef": "bi vw_DimDisabilityStatuses.DisabilityStatus",
-              "nativeQueryRef": "Disability Status",
-              "active": false,
-              "displayName": "Disability Status"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "bi vw_DimEconomicallyDisadvantagedStatuses"
-                    }
-                  },
-                  "Property": "EconomicDisadvantageStatus"
-                }
-              },
-              "queryRef": "bi vw_DimEconomicallyDisadvantagedStatuses.EconomicDisadvantageStatus",
-              "nativeQueryRef": "Economic Disadvantage Status",
-              "active": false,
-              "displayName": "Economic Disadvantage Status"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "bi vw_DimEnglishLearnerStatuses"
-                    }
-                  },
-                  "Property": "EnglishLearnerStatus"
-                }
-              },
-              "queryRef": "bi vw_DimEnglishLearnerStatuses.EnglishLearnerStatus",
-              "nativeQueryRef": "English Learner Status",
-              "active": false,
-              "displayName": "English Learner Status"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "bi vw_DimFosterCareStatuses"
-                    }
-                  },
-                  "Property": "FosterCareStatus"
-                }
-              },
-              "queryRef": "bi vw_DimFosterCareStatuses.FosterCareStatus",
-              "nativeQueryRef": "Foster Care Status",
-              "active": false,
-              "displayName": "Foster Care Status"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "bi vw_DimHomelessnessStatuses"
-                    }
-                  },
-                  "Property": "HomelessnessStatus"
-                }
-              },
-              "queryRef": "bi vw_DimHomelessnessStatuses.HomelessnessStatus",
-              "nativeQueryRef": "Homelessness Status",
-              "active": false,
-              "displayName": "Homelessness Status"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "bi vw_DimNeglectedOrDelinquentStatus"
-                    }
-                  },
-                  "Property": "NeglectedOrDelinquentStatus"
-                }
-              },
-              "queryRef": "bi vw_DimNeglectedOrDelinquentStatus.NeglectedOrDelinquentStatus",
-              "nativeQueryRef": "Neglected Or Delinquent Status",
-              "active": false,
-              "displayName": "Neglected Or Delinquent Status"
             }
           ],
           "fieldParameters": [
@@ -153,11 +41,11 @@
                       "Entity": "Disaggregation"
                     }
                   },
-                  "Property": "Disaggregation"
+                  "Property": "Disaggregation Name"
                 }
               },
               "index": 0,
-              "length": 8
+              "length": 1
             }
           ]
         },

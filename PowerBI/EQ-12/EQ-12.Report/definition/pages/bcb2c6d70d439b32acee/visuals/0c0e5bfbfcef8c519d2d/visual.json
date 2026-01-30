@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "b1169ed20dbaa617b402",
+  "name": "0c0e5bfbfcef8c519d2d",
   "position": {
-    "x": 1017.4523570712136,
-    "y": 388.36509528585754,
-    "z": 4000,
-    "height": 331.2337011033099,
-    "width": 262.54764292878633,
-    "tabOrder": 4000
+    "x": 533.71024734982325,
+    "y": 64.1110260483295,
+    "z": 15000,
+    "height": 73.121319199057709,
+    "width": 214.0871613663133,
+    "tabOrder": 19000
   },
   "visual": {
     "visualType": "slicer",
@@ -27,7 +27,7 @@
                 }
               },
               "queryRef": "Disaggregation.Disaggregation",
-              "nativeQueryRef": "Disaggregation1",
+              "nativeQueryRef": "Disaggregation",
               "active": true
             }
           ]
@@ -38,13 +38,6 @@
       "general": [
         {
           "properties": {
-            "orientation": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            },
             "filter": {
               "filter": {
                 "Version": 2,
@@ -139,13 +132,82 @@
           }
         }
       ],
+      "header": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Disaggregates'"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          }
+        }
+      ],
       "data": [
         {
           "properties": {
             "mode": {
               "expr": {
                 "Literal": {
-                  "Value": "'Basic'"
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "selectAllCheckboxEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "strictSingleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Cohort Year'"
                 }
               }
             }
@@ -154,5 +216,6 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  }
+  },
+  "parentGroupName": "3620c13f39d709393175"
 }

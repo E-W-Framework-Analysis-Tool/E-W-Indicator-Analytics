@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "ace01d991bab70060535",
   "position": {
-    "x": 368.78923766816143,
-    "y": 94.7085201793722,
-    "z": 2000,
-    "height": 265.4708520179372,
-    "width": 540.98654708520178,
-    "tabOrder": 2000
+    "x": 681.10091743119267,
+    "y": 196.01976005645733,
+    "z": 1000,
+    "height": 164.40366972477065,
+    "width": 598.89908256880744,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "lineChart",
@@ -43,7 +43,7 @@
                       "Entity": "Disaggregation"
                     }
                   },
-                  "Property": "Disaggregation"
+                  "Property": "Disaggregation Name"
                 }
               },
               "index": 0
@@ -87,6 +87,35 @@
         ],
         "isDefaultSort": true
       }
+    },
+    "objects": {
+      "valueAxis": [
+        {
+          "properties": {
+            "start": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "end": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [

@@ -4,7 +4,7 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 0,
+        "x": 3258.443980785104,
         "y": 0
       },
       "nodes": [
@@ -269,7 +269,10 @@
           "zIndex": 0
         },
         {
-          "location": {},
+          "location": {
+            "x": 5964,
+            "y": 74
+          },
           "nodeIndex": "bi vw_DimK12Demographics",
           "nodeLineageTag": "c6261036-c05f-4884-9a26-f3c12173cf69",
           "size": {
@@ -279,7 +282,10 @@
           "zIndex": 0
         },
         {
-          "location": {},
+          "location": {
+            "x": 6248,
+            "y": 98
+          },
           "nodeIndex": "Algebra I by 9th grade",
           "nodeLineageTag": "b9e2b3c4-c6f2-43db-85a1-a3b4b6c75aa8",
           "size": {
@@ -289,7 +295,10 @@
           "zIndex": 0
         },
         {
-          "location": {},
+          "location": {
+            "x": 6532,
+            "y": 98
+          },
           "nodeIndex": "College Readiness",
           "nodeLineageTag": "b9fc6faf-c77c-42d2-9680-6d4886af4801",
           "size": {
@@ -299,7 +308,10 @@
           "zIndex": 0
         },
         {
-          "location": {},
+          "location": {
+            "x": 6816,
+            "y": 74
+          },
           "nodeIndex": "bi vw_DimK12CourseStatuses",
           "nodeLineageTag": "490b39b4-6008-472e-8ceb-f31a7f40c8bb",
           "size": {
@@ -309,7 +321,10 @@
           "zIndex": 0
         },
         {
-          "location": {},
+          "location": {
+            "x": 7100,
+            "y": 86
+          },
           "nodeIndex": "bi vw_DimNeglectedOrDelinquentStatus",
           "nodeLineageTag": "874d6e04-0012-4066-a777-01948ede7b3d",
           "size": {
@@ -319,7 +334,10 @@
           "zIndex": 0
         },
         {
-          "location": {},
+          "location": {
+            "x": 7384,
+            "y": 74
+          },
           "nodeIndex": "Disaggregation",
           "nodeLineageTag": "1699548b-882f-4a8e-9499-5ca2a0617b42",
           "size": {
@@ -329,7 +347,10 @@
           "zIndex": 0
         },
         {
-          "location": {},
+          "location": {
+            "x": 7668,
+            "y": 62
+          },
           "nodeIndex": "Early College Coursework Completion",
           "nodeLineageTag": "1d42e52c-4914-45c0-8b06-1b8f5ea515a0",
           "size": {
@@ -760,6 +781,6 @@
       "tablesLocked": false
     }
   ],
-  "selectedDiagram": "Student Static Attributes",
+  "selectedDiagram": "Student Enrollments",
   "defaultDiagram": "All tables"
 }

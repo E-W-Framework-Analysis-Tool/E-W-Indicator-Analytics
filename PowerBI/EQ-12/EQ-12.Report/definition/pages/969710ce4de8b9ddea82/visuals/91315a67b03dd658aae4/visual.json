@@ -23,7 +23,7 @@
                       "Entity": "Disaggregation"
                     }
                   },
-                  "Property": "Disaggregation"
+                  "Property": "Disaggregation Name"
                 }
               },
               "queryRef": "Disaggregation.Disaggregation",
@@ -92,7 +92,7 @@
                                   "Entity": "Disaggregation"
                                 }
                               },
-                              "Property": "Disaggregation"
+                              "Property": "Disaggregation Name"
                             }
                           }
                         ],

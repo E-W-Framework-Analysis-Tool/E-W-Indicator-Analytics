@@ -1,7 +1,7 @@
 table Disaggregation
 	lineageTag: 1699548b-882f-4a8e-9499-5ca2a0617b42
 
-	column Disaggregation
+	column 'Disaggregation Name'
 		lineageTag: 5c46bb78-261b-49d0-b69b-1329ec0439d7
 		summarizeBy: none
 		sourceColumn: [Value1]
