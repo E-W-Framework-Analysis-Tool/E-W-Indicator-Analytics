@@ -3,9 +3,9 @@
   "name": "d15799a1a6d6d877a392",
   "position": {
     "x": 316.24471289175341,
-    "y": 132.30386052303862,
+    "y": 132.4536413401737,
     "z": 3000,
-    "height": 72.5280199252802,
+    "height": 72.610128686480763,
     "width": 213.59900373599004
   },
   "visual": {
@@ -19,14 +19,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "bi vw_DimLEAs"
+                      "Entity": "bi vw_DimK12Schools"
                     }
                   },
                   "Property": "LeaOrganizationName"
                 }
               },
-              "queryRef": "bi vw_DimLEAs.LeaOrganizationName",
-              "nativeQueryRef": "LeaOrganizationName",
+              "queryRef": "bi vw_DimK12Schools.LeaOrganizationName",
+              "nativeQueryRef": "LeaOrganizationName1",
               "active": true
             }
           ]
@@ -102,49 +102,7 @@
       ],
       "general": [
         {
-          "properties": {
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "b",
-                    "Entity": "bi vw_DimLEAs",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "b"
-                                }
-                              },
-                              "Property": "LeaOrganizationName"
-                            }
-                          }
-                        ],
-                        "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'Crooks Education Agency'"
-                              }
-                            }
-                          ]
-                        ]
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          }
+          "properties": {}
         }
       ]
     },
@@ -212,5 +170,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "3620c13f39d709393175"
+  "parentGroupName": "3620c13f39d709393175",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "fa5b89fa24c5ce00ebbf",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Schools"
+              }
+            },
+            "Property": "LeaOrganizationName"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

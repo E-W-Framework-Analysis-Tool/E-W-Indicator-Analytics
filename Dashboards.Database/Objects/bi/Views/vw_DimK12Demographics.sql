@@ -2,4 +2,5 @@
 SELECT
 	[Dimk12DemographicId]
   , [SexDescription] AS [Gender]
-FROM [reporting].[DimK12Demographics];
+FROM [reporting].[DimK12Demographics]
+WHERE DimK12DemographicId != -1;

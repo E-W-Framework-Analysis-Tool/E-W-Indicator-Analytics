@@ -38,6 +38,48 @@ table 'Algebra I by 9th grade'
 		displayFolder: Algebra I Completion Measures
 		lineageTag: 75f698d7-f7e7-4297-a1f9-c968924d5493
 
+	measure 'Trend Success (Selection)' = [Algebra I Success Rate]
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Algebra I Completion Measures
+		lineageTag: 80414406-1c04-4c42-9174-4854e3ac53a6
+
+	measure 'Trend Success (LEA Average)' =
+			
+			CALCULATE(
+			    [Algebra I Success Rate],
+			    REMOVEFILTERS('bi vw_DimK12Schools'[K12SchoolName])
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Algebra I Completion Measures
+		lineageTag: 88770343-f503-495b-bad7-26554fffc95f
+
+	measure 'Trend Success (SEA Average)' =
+			
+			CALCULATE(
+			    [Algebra I Success Rate],
+			    REMOVEFILTERS('bi vw_DimK12Schools'[K12SchoolName], 'bi vw_DimK12Schools'[SeaOrganizationName])
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Algebra I Completion Measures
+		lineageTag: 71beff97-14ac-4079-9967-b8180ecd5fdd
+
+	measure 'Dynamic Algebra Trend' = ```
+			
+			VAR CurrentYear = REMOVEFILTERS('bi vw_DimSchoolYears'[SchoolYear]) -- To keep trend visible
+			RETURN
+			IF(ISINSCOPE('bi vw_DimK12Schools'[K12SchoolName]), 
+			    [Trend Success (Selection)], -- Calculate for School
+			    IF(ISINSCOPE('bi vw_DimK12Schools'[LeaOrganizationName]), 
+			        [Trend Success (LEA Average)], -- Calculate for LEA
+			        [Trend Success (SEA Average)] -- Calculate for SEA
+			    )
+			)
+			```
+		displayFolder: Algebra I Completion Measures
+		lineageTag: 32cd3ae6-8af0-4d18-b8b7-69e3095780fb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition 'Algebra I by 9th grade' = m
 		mode: import
 		source =

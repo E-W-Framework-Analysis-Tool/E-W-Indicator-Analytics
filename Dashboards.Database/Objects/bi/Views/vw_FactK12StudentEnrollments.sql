@@ -3,8 +3,6 @@ SELECT
 	[CohortYear]
   , [SchoolYear]
   , [CohortGraduationYear]
-  , [SeaId]
-  , [LeaId]
   , [K12SchoolId]
   , [K12StudentId]
   , [GradeLevelCode]
@@ -15,4 +13,4 @@ SELECT
   , [NOrDStatusId]
   , [DisabilityStatusId]
 FROM
-	[reporting].[FactK12StudentEnrollments]
+	[reporting].[FactK12StudentEnrollments];

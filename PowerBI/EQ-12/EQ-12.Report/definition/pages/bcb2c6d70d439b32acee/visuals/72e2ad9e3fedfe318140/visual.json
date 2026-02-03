@@ -3,9 +3,9 @@
   "name": "72e2ad9e3fedfe318140",
   "position": {
     "x": 534.01989467524868,
-    "y": 129.71396739322097,
+    "y": 129.86081619984824,
     "z": 4000,
-    "height": 71.9016968987712,
+    "height": 71.983096601488285,
     "width": 213.45816266822703
   },
   "visual": {
@@ -22,11 +22,11 @@
                       "Entity": "bi vw_DimK12Schools"
                     }
                   },
-                  "Property": "NameOfInstitution"
+                  "Property": "K12SchoolName"
                 }
               },
-              "queryRef": "bi vw_DimK12Schools.NameOfInstitution",
-              "nativeQueryRef": "NameOfInstitution",
+              "queryRef": "bi vw_DimK12Schools.K12SchoolName",
+              "nativeQueryRef": "K12SchoolName",
               "active": true
             }
           ]
@@ -174,7 +174,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "75f9abbc5cc22a89417a",
+        "name": "0eef1bbf5540d1cdadfc",
         "field": {
           "Column": {
             "Expression": {
@@ -182,7 +182,7 @@
                 "Entity": "bi vw_DimK12Schools"
               }
             },
-            "Property": "NameOfInstitution"
+            "Property": "K12SchoolName"
           }
         },
         "type": "Categorical"

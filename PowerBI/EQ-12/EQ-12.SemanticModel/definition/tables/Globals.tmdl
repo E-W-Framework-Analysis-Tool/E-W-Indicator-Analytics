@@ -9,11 +9,11 @@ table Globals
 			    ||
 			    ISFILTERED('bi vw_DimCohortGraduationYears'[CohortGraduationYear])
 			    ||
-			    ISFILTERED('bi vw_DimSEAs'[SeaOrganizationName])
+			    ISFILTERED('bi vw_DimK12Schools'[SeaOrganizationName])
 			    ||
-			    ISFILTERED('bi vw_DimLEAs'[LeaOrganizationName])
+			    ISFILTERED('bi vw_DimK12Schools'[LeaOrganizationName])
 			    ||
-			    ISFILTERED('bi vw_DimK12Schools'[NameOfInstitution])
+			    ISFILTERED('bi vw_DimK12Schools'[K12SchoolName])
 			    ||
 			    ISFILTERED('bi vw_DimK12Schools'[SchoolTypeCode])
 			    ||
@@ -46,20 +46,20 @@ table Globals
 			        )     
 			        & " " & 
 			         IF(
-			            ISFILTERED('bi vw_DimSEAs'[SeaOrganizationName]),
-			            "> SEAs: " & CONCATENATEX(VALUES('bi vw_DimSEAs'[SeaOrganizationName]), 'bi vw_DimSEAs'[SeaOrganizationName], ", "),
+			            ISFILTERED('bi vw_DimK12Schools'[SeaOrganizationName]),
+			            "> SEAs: " & CONCATENATEX(VALUES('bi vw_DimK12Schools'[SeaOrganizationName]), 'bi vw_DimK12Schools'[SeaOrganizationName], ", "),
 			            ""
 			        )     
 			        & " " & 
 			        IF(
-			            ISFILTERED('bi vw_DimLEAs'[LeaOrganizationName]),
-			            "> LEAs: " & CONCATENATEX(VALUES('bi vw_DimLEAs'[LeaOrganizationName]), 'bi vw_DimLEAs'[LeaOrganizationName], ", "),
+			            ISFILTERED('bi vw_DimK12Schools'[LeaOrganizationName]),
+			            "> LEAs: " & CONCATENATEX(VALUES('bi vw_DimK12Schools'[LeaOrganizationName]), 'bi vw_DimK12Schools'[LeaOrganizationName], ", "),
 			            ""
 			        )
 			        & " " & 
 			        IF(
-			            ISFILTERED('bi vw_DimK12Schools'[NameOfInstitution]),
-			            "> School: " & CONCATENATEX(VALUES('bi vw_DimK12Schools'[NameOfInstitution]), 'bi vw_DimK12Schools'[NameOfInstitution], ", "),
+			            ISFILTERED('bi vw_DimK12Schools'[K12SchoolName]),
+			            "> School: " & CONCATENATEX(VALUES('bi vw_DimK12Schools'[K12SchoolName]), 'bi vw_DimK12Schools'[K12SchoolName], ", "),
 			            ""
 			        )
 			        & " " & 

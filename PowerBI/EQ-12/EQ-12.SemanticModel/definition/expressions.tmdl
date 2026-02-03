@@ -1,0 +1,24 @@
+expression 'bi vw_DimSEAs' =
+		let
+		    Source = Sql.Database("localhost,14331", "Dashboards"),
+		    bi_vw_DimSEAs = Source{[Schema="bi",Item="vw_DimSEAs"]}[Data]
+		in
+		    bi_vw_DimSEAs
+	lineageTag: c1a7e44f-4412-4091-b0ed-f7e51d55fb4f
+
+	annotation PBI_ResultType = Table
+
+expression 'bi vw_DimLEAs' =
+		let
+		    Source = Sql.Database("localhost,14331", "Dashboards"),
+		    bi_vw_DimLEAs = Source{[Schema="bi",Item="vw_DimLEAs"]}[Data],
+		    #"Merged Queries" = Table.NestedJoin(bi_vw_DimLEAs, {"SeaId"}, #"bi vw_DimSEAs", {"DimSeaId"}, "bi vw_DimSEAs", JoinKind.LeftOuter),
+		    #"Expanded bi vw_DimSEAs" = Table.ExpandTableColumn(#"Merged Queries", "bi vw_DimSEAs", {"SeaOrganizationName"}, {"bi vw_DimSEAs.SeaOrganizationName"})
+		in
+		    #"Expanded bi vw_DimSEAs"
+	lineageTag: c311abc1-1cd5-4948-99b6-6d7de9badeb8
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

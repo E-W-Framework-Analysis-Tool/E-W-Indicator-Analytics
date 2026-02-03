@@ -5,7 +5,7 @@
     "x": 631.98417930125254,
     "y": 180.56690837178644,
     "z": 2000,
-    "height": 179.72313777191826,
+    "height": 210.94264996704024,
     "width": 648.01582069874758,
     "tabOrder": 1000
   },
@@ -27,26 +27,8 @@
                 }
               },
               "queryRef": "TrendLineYears.SchoolYear",
-              "nativeQueryRef": "SchoolYear1",
+              "nativeQueryRef": "SchoolYear",
               "active": true
-            }
-          ]
-        },
-        "Tooltips": {
-          "projections": [],
-          "fieldParameters": [
-            {
-              "parameterExpr": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Disaggregation"
-                    }
-                  },
-                  "Property": "Disaggregation Name"
-                }
-              },
-              "index": 0
             }
           ]
         },
@@ -115,6 +97,39 @@
             }
           }
         }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "concatenateLabels": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "smallMultiplesLayout": [
+        {
+          "properties": {
+            "rowCount": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            },
+            "columnCount": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -172,7 +187,7 @@
         "howCreated": "User"
       },
       {
-        "name": "f2920492ead925ba4ab5",
+        "name": "7b817a03ed39c1748d13",
         "field": {
           "Column": {
             "Expression": {
@@ -186,7 +201,7 @@
         "type": "Advanced"
       },
       {
-        "name": "3de44792c5c3133b8be2",
+        "name": "f9854dd4a3522d044d57",
         "field": {
           "Measure": {
             "Expression": {

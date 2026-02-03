@@ -1,8 +1,6 @@
 CREATE VIEW [bi].[vw_FactK12StudentAssessments] AS
 SELECT
 	[SchoolYear]
-  , [SeaId]
-  , [LeaId]
   , [K12SchoolId]
   , [GradeLevelCode]
   , [AssessmentId]

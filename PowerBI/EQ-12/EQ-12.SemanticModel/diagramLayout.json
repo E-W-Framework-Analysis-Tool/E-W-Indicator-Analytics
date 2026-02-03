@@ -166,19 +166,6 @@
         },
         {
           "location": {
-            "x": 3408,
-            "y": 38
-          },
-          "nodeIndex": "bi vw_DimLEAs",
-          "nodeLineageTag": "37ceca1c-6cb7-4516-940a-63640685fd42",
-          "size": {
-            "height": 224,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
             "x": 3976,
             "y": 74
           },
@@ -199,19 +186,6 @@
           "nodeLineageTag": "6fc644b9-6c6b-424f-8d43-1f4185203878",
           "size": {
             "height": 104,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 4544,
-            "y": 50
-          },
-          "nodeIndex": "bi vw_DimSEAs",
-          "nodeLineageTag": "f3500de3-1d18-40c3-bae2-7c51b42ce54b",
-          "size": {
-            "height": 200,
             "width": 234
           },
           "zIndex": 0
@@ -360,7 +334,10 @@
           "zIndex": 0
         },
         {
-          "location": {},
+          "location": {
+            "x": 7952,
+            "y": 50
+          },
           "nodeIndex": "Globals",
           "size": {
             "height": 200,
@@ -369,7 +346,10 @@
           "zIndex": 0
         },
         {
-          "location": {},
+          "location": {
+            "x": 8236,
+            "y": 50
+          },
           "nodeIndex": "TrendLineYears",
           "size": {
             "height": 200,
@@ -446,8 +426,8 @@
         },
         {
           "location": {
-            "x": 1093,
-            "y": 422
+            "x": 1118,
+            "y": 400
           },
           "nodeIndex": "bi vw_DimFosterCareStatuses",
           "nodeLineageTag": "3945d4ff-8140-473a-ab83-be544df72a1c",
@@ -472,8 +452,8 @@
         },
         {
           "location": {
-            "x": 1138,
-            "y": 619
+            "x": 1092,
+            "y": 680
           },
           "nodeIndex": "bi vw_DimNeglectedOrDelinquentStatus",
           "nodeLineageTag": "874d6e04-0012-4066-a777-01948ede7b3d",
@@ -520,7 +500,7 @@
           "nodeLineageTag": "1b0744dd-6d2a-4d99-8f90-d234b398caf0",
           "size": {
             "height": 395,
-            "width": 249
+            "width": 306
           },
           "zIndex": 0
         },
@@ -634,7 +614,7 @@
       "nodes": [
         {
           "location": {
-            "x": 0,
+            "x": 410,
             "y": 0
           },
           "nodeIndex": "bi vw_DimSchoolYears",
@@ -643,7 +623,7 @@
             "height": 104,
             "width": 234
           },
-          "zIndex": 5
+          "zIndex": 4
         },
         {
           "location": {
@@ -656,7 +636,7 @@
             "height": 478,
             "width": 320
           },
-          "zIndex": 4
+          "zIndex": 3
         },
         {
           "location": {
@@ -669,7 +649,7 @@
             "height": 331,
             "width": 350
           },
-          "zIndex": 3
+          "zIndex": 2
         },
         {
           "location": {
@@ -692,36 +672,10 @@
           "nodeIndex": "bi vw_DimK12Schools",
           "nodeLineageTag": "e89199b1-c489-43ce-bddf-33c345aeb6e1",
           "size": {
-            "height": 248,
-            "width": 322
+            "height": 378,
+            "width": 323
           },
-          "zIndex": 2
-        },
-        {
-          "location": {
-            "x": 347,
-            "y": 0
-          },
-          "nodeIndex": "bi vw_DimSEAs",
-          "nodeLineageTag": "f3500de3-1d18-40c3-bae2-7c51b42ce54b",
-          "size": {
-            "height": 200,
-            "width": 234
-          },
-          "zIndex": 8
-        },
-        {
-          "location": {
-            "x": 702,
-            "y": 0
-          },
-          "nodeIndex": "bi vw_DimLEAs",
-          "nodeLineageTag": "37ceca1c-6cb7-4516-940a-63640685fd42",
-          "size": {
-            "height": 224,
-            "width": 234
-          },
-          "zIndex": 7
+          "zIndex": 6
         },
         {
           "location": {
@@ -731,10 +685,10 @@
           "nodeIndex": "bi vw_DimStudents",
           "nodeLineageTag": "c5ac66a0-c196-468c-8f8d-a42626e29721",
           "size": {
-            "height": 145,
+            "height": 184,
             "width": 234
           },
-          "zIndex": 6
+          "zIndex": 5
         }
       ],
       "name": "Fact Tables",

@@ -13,30 +13,6 @@ table 'bi vw_FactK12StudentAssessments'
 
 		annotation SummarizationSetBy = Automatic
 
-	column SeaId
-		dataType: int64
-		isHidden
-		formatString: 0
-		lineageTag: 29729ab5-030a-4915-9e0c-9bef62261934
-		summarizeBy: none
-		sourceColumn: SeaId
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column LeaId
-		dataType: int64
-		isHidden
-		formatString: 0
-		lineageTag: d967c647-e248-4585-b566-1534eeb4f7a2
-		summarizeBy: none
-		sourceColumn: LeaId
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
 	column K12SchoolId
 		dataType: int64
 		isHidden
@@ -127,5 +103,7 @@ table 'bi vw_FactK12StudentAssessments'
 				in
 				    bi_vw_FactK12StudentAssessments
 
-	annotation PBI_ResultType = Exception
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 

@@ -3,9 +3,9 @@
   "name": "2488f47fe1fb2430f29c",
   "position": {
     "x": 102.6457091557634,
-    "y": 132.30386052303862,
+    "y": 132.4536413401737,
     "z": 17000,
-    "height": 72.5280199252802,
+    "height": 72.610128686480763,
     "width": 213.59900373599004
   },
   "visual": {
@@ -19,14 +19,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "bi vw_DimSEAs"
+                      "Entity": "bi vw_DimK12Schools"
                     }
                   },
                   "Property": "SeaOrganizationName"
                 }
               },
-              "queryRef": "bi vw_DimSEAs.SeaOrganizationName",
-              "nativeQueryRef": "SeaOrganizationName",
+              "queryRef": "bi vw_DimK12Schools.SeaOrganizationName",
+              "nativeQueryRef": "SeaOrganizationName1",
               "active": true
             }
           ]
@@ -103,5 +103,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "3620c13f39d709393175"
+  "parentGroupName": "3620c13f39d709393175",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f97e41ad5384de228a6f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Schools"
+              }
+            },
+            "Property": "SeaOrganizationName"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

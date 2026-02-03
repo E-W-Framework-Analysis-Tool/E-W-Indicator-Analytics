@@ -13,38 +13,6 @@ table 'bi vw_DimK12Schools'
 
 		annotation SummarizationSetBy = Automatic
 
-	column SeaId
-		dataType: int64
-		isHidden
-		formatString: 0
-		lineageTag: f5b2f295-412c-42c9-a1a3-a186a56325e7
-		summarizeBy: count
-		sourceColumn: SeaId
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column LeaId
-		dataType: int64
-		isHidden
-		formatString: 0
-		lineageTag: 04c77802-72ba-4dee-ae8f-1da407c87306
-		summarizeBy: count
-		sourceColumn: LeaId
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column NameOfInstitution
-		dataType: string
-		lineageTag: 039c1df4-9586-4559-b7a9-426e36f0003d
-		summarizeBy: none
-		sourceColumn: NameOfInstitution
-
-		annotation SummarizationSetBy = Automatic
-
 	column SchoolTypeCode
 		dataType: string
 		lineageTag: 0ec63205-13a6-49db-97be-7c6d7b8664ee
@@ -54,6 +22,53 @@ table 'bi vw_DimK12Schools'
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
+
+	column SeaOrganizationName
+		dataType: string
+		lineageTag: 65e91868-9eed-40cd-9d58-ed6001e93dfc
+		summarizeBy: none
+		sourceColumn: SeaOrganizationName
+
+		annotation SummarizationSetBy = Automatic
+
+	column LeaOrganizationName
+		dataType: string
+		lineageTag: de32e776-30ab-4d61-8197-25f46f7e42f2
+		summarizeBy: none
+		sourceColumn: LeaOrganizationName
+
+		annotation SummarizationSetBy = Automatic
+
+	column K12SchoolName
+		dataType: string
+		lineageTag: 8d4c0b82-930c-40e3-aa46-1ac3a4cf883b
+		summarizeBy: none
+		sourceColumn: K12SchoolName
+
+		annotation SummarizationSetBy = Automatic
+
+	column LeaTypeDescription
+		dataType: string
+		lineageTag: 4216d28e-9994-4d3d-bbf4-a23186e088f6
+		summarizeBy: none
+		sourceColumn: LeaTypeDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy Geography
+		lineageTag: fc91778c-0d90-43a4-9140-558ba5808f66
+
+		level SeaOrganizationName
+			lineageTag: 6bde98ed-1a1c-4aa6-a406-039b78203a5e
+			column: SeaOrganizationName
+
+		level LeaOrganizationName
+			lineageTag: 66059d21-b0a6-4e15-8354-e0a83d2eb4f6
+			column: LeaOrganizationName
+
+		level K12SchoolName
+			lineageTag: 90b83a72-3169-4cf4-9a69-fdeda2d01e05
+			column: K12SchoolName
 
 	partition 'bi vw_DimK12Schools' = m
 		mode: import
@@ -65,4 +80,6 @@ table 'bi vw_DimK12Schools'
 				    bi_vw_DimK12Schools
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 
