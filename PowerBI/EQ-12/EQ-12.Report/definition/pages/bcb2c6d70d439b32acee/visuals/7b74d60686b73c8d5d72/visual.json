@@ -3,10 +3,10 @@
   "name": "7b74d60686b73c8d5d72",
   "position": {
     "x": 0,
-    "y": 359.87963891675025,
+    "y": 391.50955833882665,
     "z": 3000,
-    "height": 360.12036108324975,
-    "width": 948.1243731193581,
+    "height": 328.2267633487146,
+    "width": 948.39815425181291,
     "tabOrder": 4000
   },
   "visual": {
@@ -145,20 +145,6 @@
           }
         },
         "type": "Advanced"
-      },
-      {
-        "name": "63967fa3a591fc790a98",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimRaces"
-              }
-            },
-            "Property": "RaceEthnicity"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }
