@@ -3,15 +3,42 @@
   "name": "3620c13f39d709393175",
   "position": {
     "x": 0,
-    "y": 131.88426252646437,
-    "z": 3000,
+    "y": 50.625720708294907,
+    "z": 9500,
     "height": 366.62515566625154,
-    "width": 1280,
-    "tabOrder": 8000
+    "width": 1280
   },
   "visualGroup": {
     "displayName": "Filters Pane",
-    "groupMode": "ScaleMode"
+    "groupMode": "ScaleMode",
+    "objects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "lockAspect": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
   },
   "isHidden": true
 }

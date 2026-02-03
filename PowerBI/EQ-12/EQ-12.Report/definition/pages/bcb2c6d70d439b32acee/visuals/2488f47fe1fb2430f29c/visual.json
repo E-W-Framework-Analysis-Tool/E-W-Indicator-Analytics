@@ -6,8 +6,7 @@
     "y": 132.30386052303862,
     "z": 17000,
     "height": 72.5280199252802,
-    "width": 213.59900373599004,
-    "tabOrder": 17000
+    "width": 213.59900373599004
   },
   "visual": {
     "visualType": "slicer",
@@ -48,7 +47,7 @@
             "textSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "8D"
                 }
               }
             }
@@ -87,63 +86,14 @@
             }
           }
         }
-      ]
-    },
-    "visualContainerObjects": {
-      "title": [
-        {
-          "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Cohort Year'"
-                }
-              }
-            },
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "titleWrap": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
       ],
-      "background": [
+      "items": [
         {
           "properties": {
-            "show": {
+            "textSize": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "border": [
-        {
-          "properties": {
-            "width": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
+                  "Value": "8D"
                 }
               }
             }

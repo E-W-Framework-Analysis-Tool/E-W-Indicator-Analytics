@@ -1606,12 +1606,6 @@
               "visualType": "actionButton",
               "objects": {}
             }
-          },
-          "c6e959ed95c8e999cc13": {
-            "singleVisual": {
-              "visualType": "shape",
-              "objects": {}
-            }
           }
         },
         "visualContainerGroups": {

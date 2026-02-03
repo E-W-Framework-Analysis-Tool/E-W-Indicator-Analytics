@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "ace01d991bab70060535",
   "position": {
-    "x": 681.10091743119267,
-    "y": 196.01976005645733,
-    "z": 1000,
-    "height": 164.40366972477065,
-    "width": 598.89908256880744,
+    "x": 631.98417930125254,
+    "y": 180.56690837178644,
+    "z": 2000,
+    "height": 179.72313777191826,
+    "width": 648.01582069874758,
     "tabOrder": 1000
   },
   "visual": {
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "bi vw_DimSchoolYears"
+                      "Entity": "TrendLineYears"
                     }
                   },
                   "Property": "SchoolYear"
                 }
               },
-              "queryRef": "bi vw_DimSchoolYears.SchoolYear",
-              "nativeQueryRef": "SchoolYear",
+              "queryRef": "TrendLineYears.SchoolYear",
+              "nativeQueryRef": "SchoolYear1",
               "active": true
             }
           ]
@@ -60,11 +60,11 @@
                       "Entity": "Algebra I by 9th grade"
                     }
                   },
-                  "Property": "Algebra I Success Rate"
+                  "Property": "Algebra Trend"
                 }
               },
-              "queryRef": "Algebra I by 9th grade.Algebra I Success Rate",
-              "nativeQueryRef": "Algebra I Success Rate"
+              "queryRef": "Algebra I by 9th grade.Algebra Trend",
+              "nativeQueryRef": "Algebra Trend"
             }
           ]
         }
@@ -79,7 +79,7 @@
                     "Entity": "Algebra I by 9th grade"
                   }
                 },
-                "Property": "Algebra I Success Rate"
+                "Property": "Algebra Trend"
               }
             },
             "direction": "Descending"
@@ -92,6 +92,13 @@
       "valueAxis": [
         {
           "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
             "start": {
               "expr": {
                 "Literal": {
@@ -103,13 +110,6 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
-                }
-              }
-            },
-            "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
                 }
               }
             }
@@ -170,6 +170,34 @@
         },
         "type": "Advanced",
         "howCreated": "User"
+      },
+      {
+        "name": "f2920492ead925ba4ab5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "TrendLineYears"
+              }
+            },
+            "Property": "SchoolYear"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3de44792c5c3133b8be2",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Algebra I by 9th grade"
+              }
+            },
+            "Property": "Algebra Trend"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

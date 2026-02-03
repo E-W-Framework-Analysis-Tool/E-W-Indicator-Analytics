@@ -2,12 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "970893c9f4b3c7faebc4",
   "position": {
-    "x": 315.44770168378329,
-    "y": 59.775840597758418,
+    "x": 960.964824120603,
+    "y": 132.50251256281408,
     "z": 2000,
-    "height": 72.5280199252802,
-    "width": 213.59900373599004,
-    "tabOrder": 3000
+    "height": 72.683417085427138,
+    "width": 214.19095477386935
   },
   "visual": {
     "visualType": "slicer",
@@ -53,7 +52,7 @@
             "textSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "8D"
                 }
               }
             }
@@ -92,6 +91,26 @@
             }
           }
         }
+      ],
+      "items": [
+        {
+          "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "padding": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -118,5 +137,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "3620c13f39d709393175"
+  "parentGroupName": "3620c13f39d709393175",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "45ce22ee4a7ef310d462",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimCohortGraduationYears"
+              }
+            },
+            "Property": "CohortGraduationYear"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
 }

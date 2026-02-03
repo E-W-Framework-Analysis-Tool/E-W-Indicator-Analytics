@@ -3,10 +3,10 @@
   "name": "a04c1a7dca501ec5c9d5",
   "position": {
     "x": 0,
-    "y": 74.628975265017658,
-    "z": 6000,
-    "height": 57.290930506478205,
-    "width": 54.2756183745583,
+    "y": 75.09558338826632,
+    "z": 5000,
+    "height": 56.532630191166781,
+    "width": 54.0013183915623,
     "tabOrder": 6000
   },
   "visual": {
@@ -216,6 +216,36 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "shape": [
+        {
+          "properties": {
+            "roundEdge": {
+              "expr": {
+                "Literal": {
+                  "Value": "2L"
+                }
+              }
+            },
+            "tileShape": {
+              "expr": {
+                "Literal": {
+                  "Value": "'rectangleRounded'"
+                }
+              }
+            },
+            "rectangleRoundedCurve": {
+              "expr": {
+                "Literal": {
+                  "Value": "10L"
                 }
               }
             }

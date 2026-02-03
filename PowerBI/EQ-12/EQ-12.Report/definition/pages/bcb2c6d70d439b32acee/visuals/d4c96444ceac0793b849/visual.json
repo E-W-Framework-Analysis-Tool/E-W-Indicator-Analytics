@@ -4,7 +4,7 @@
   "position": {
     "x": 0,
     "y": 0,
-    "z": 9000,
+    "z": 2000,
     "height": 74.975299929428374,
     "width": 969.25899788285119,
     "tabOrder": 2000
@@ -17778,10 +17778,8 @@
               {
                 "textRuns": [
                   {
-                    "value": "Percentage of first-time grade 9 students who complete Algebra I or an equivalent course by the end of their 9th-grade year.",
+                    "value": "EQ12: Do students have access to and complete rigorous and accelerated college preparatory coursework?",
                     "textStyle": {
-                      "fontFamily": "Segoe UI Light",
-                      "fontSize": "9pt",
                       "color": "#000000"
                     }
                   }
@@ -17808,5 +17806,6 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  }
+  },
+  "parentGroupName": "9b6467b78af5ff4893be"
 }

@@ -4,7 +4,7 @@
   "position": {
     "x": 0,
     "y": 359.87963891675025,
-    "z": 2000,
+    "z": 3000,
     "height": 360.12036108324975,
     "width": 948.1243731193581,
     "tabOrder": 4000
@@ -100,8 +100,66 @@
             }
           }
         }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b2871966414d41a83bf3",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Algebra I by 9th grade"
+              }
+            },
+            "Property": "Algebra I Success Rate"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "63967fa3a591fc790a98",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimRaces"
+              }
+            },
+            "Property": "RaceEthnicity"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

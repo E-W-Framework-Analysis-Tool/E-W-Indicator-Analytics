@@ -3,10 +3,10 @@
   "name": "e30b973a68001765d4aa",
   "position": {
     "x": 0,
-    "y": 196.01976005645733,
-    "z": 0,
-    "height": 164.40366972477065,
-    "width": 294.48129851799581,
+    "y": 202.50494396835862,
+    "z": 1000,
+    "height": 163.69149637442322,
+    "width": 299.53856295319713,
     "tabOrder": 0
   },
   "visual": {
@@ -28,6 +28,21 @@
               },
               "queryRef": "Algebra I by 9th grade.Algebra I Success Rate",
               "nativeQueryRef": "Algebra I Success Rate"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Disaggregation"
+                    }
+                  },
+                  "Property": "Disaggregation Name"
+                }
+              },
+              "index": 1
             }
           ]
         }
@@ -79,5 +94,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ef8f34ff6e6514c05ed1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Algebra I by 9th grade"
+              }
+            },
+            "Property": "Algebra I Success Rate"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

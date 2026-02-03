@@ -2,12 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "72e2ad9e3fedfe318140",
   "position": {
-    "x": 533.82877266759328,
-    "y": 132.30386052303862,
+    "x": 534.01989467524868,
+    "y": 129.71396739322097,
     "z": 4000,
-    "height": 72.5280199252802,
-    "width": 213.59900373599004,
-    "tabOrder": 5000
+    "height": 71.9016968987712,
+    "width": 213.45816266822703
   },
   "visual": {
     "visualType": "slicer",
@@ -48,7 +47,7 @@
             "textSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "8D"
                 }
               }
             }
@@ -91,6 +90,19 @@
       "general": [
         {
           "properties": {}
+        }
+      ],
+      "items": [
+        {
+          "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
         }
       ]
     },
@@ -158,5 +170,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "3620c13f39d709393175"
+  "parentGroupName": "3620c13f39d709393175",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "75f9abbc5cc22a89417a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Schools"
+              }
+            },
+            "Property": "NameOfInstitution"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

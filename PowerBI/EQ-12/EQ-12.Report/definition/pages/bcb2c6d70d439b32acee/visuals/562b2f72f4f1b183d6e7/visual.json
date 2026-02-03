@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "562b2f72f4f1b183d6e7",
   "position": {
-    "x": 272.80169371912496,
-    "y": 77.685250529287231,
-    "z": 10000,
-    "height": 50.585744530698662,
-    "width": 998.165137614679,
-    "tabOrder": 19002
+    "x": 268.31905075807515,
+    "y": 75.09558338826632,
+    "z": 4000,
+    "height": 56.532630191166781,
+    "width": 1011.680949241925,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -20,7 +20,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Algebra I by 9th grade"
+                      "Entity": "Globals"
                     }
                   },
                   "Property": "Selected Filters"
@@ -311,7 +311,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Card: Disaggregate By'"
+                  "Value": "'Card: Selected Filters'"
                 }
               }
             },
@@ -373,26 +373,42 @@
             }
           }
         }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "5d77f13581d7541a8b04",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Algebra I by 9th grade"
-              }
-            },
-            "Property": "Selected Filters"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

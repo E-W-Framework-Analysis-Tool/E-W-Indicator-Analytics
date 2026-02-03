@@ -6,8 +6,7 @@
     "y": 277.35990037359903,
     "z": 11000,
     "height": 72.5280199252802,
-    "width": 213.59900373599004,
-    "tabOrder": 12000
+    "width": 213.59900373599004
   },
   "visual": {
     "visualType": "slicer",
@@ -48,7 +47,7 @@
             "textSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "8D"
                 }
               }
             }
@@ -82,6 +81,19 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "items": [
+        {
+          "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
                 }
               }
             }
@@ -153,5 +165,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "3620c13f39d709393175"
+  "parentGroupName": "3620c13f39d709393175",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7f65f1c28de9cede641e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimEnglishLearnerStatuses"
+              }
+            },
+            "Property": "EnglishLearnerStatus"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

@@ -39,6 +39,8 @@ ref table 'bi vw_DimK12CourseStatuses'
 ref table 'bi vw_DimNeglectedOrDelinquentStatus'
 ref table Disaggregation
 ref table 'Early College Coursework Completion'
+ref table Globals
+ref table TrendLineYears
 
 ref cultureInfo en-US
 

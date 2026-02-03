@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "d6a3a01d2a1b4016192d",
+  "name": "9ee838332dafb5b3965d",
   "position": {
-    "x": 62.328863796753708,
-    "y": 77.685250529287231,
-    "z": 5000,
-    "height": 50.585744530698662,
-    "width": 210.47282992237123,
-    "tabOrder": 19001
+    "x": 54.0013183915623,
+    "y": 75.09558338826632,
+    "z": 6000,
+    "height": 56.532630191166781,
+    "width": 214.31773236651287,
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -20,13 +20,13 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Algebra I by 9th grade"
+                      "Entity": "Globals"
                     }
                   },
                   "Property": "Disaggregate by"
                 }
               },
-              "queryRef": "Algebra I by 9th grade.Title Disaggregate by",
+              "queryRef": "Algebra I by 9th grade.Disaggregate by",
               "nativeQueryRef": "Disaggregate by"
             }
           ]
@@ -37,10 +37,17 @@
       "layout": [
         {
           "properties": {
-            "calloutSize": {
+            "orientation": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "1D"
+                }
+              }
+            },
+            "rowCount": {
+              "expr": {
+                "Literal": {
+                  "Value": "4L"
                 }
               }
             },
@@ -51,17 +58,10 @@
                 }
               }
             },
-            "autoGrid": {
+            "calloutSize": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "orientation": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
+                  "Value": "12D"
                 }
               }
             },
@@ -72,7 +72,14 @@
                 }
               }
             },
-            "rowCount": {
+            "autoGrid": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "cellPadding": {
               "expr": {
                 "Literal": {
                   "Value": "1L"
@@ -87,6 +94,13 @@
               "expr": {
                 "Literal": {
                   "Value": "0L"
+                }
+              }
+            },
+            "backgroundShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -167,7 +181,79 @@
           }
         }
       ],
+      "label": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'aboveValue'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Algebra I by 9th grade.Title Disaggregate by"
+          }
+        },
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'aboveValue'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
       "value": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Algebra I by 9th grade.Title Disaggregate by"
+          }
+        },
         {
           "properties": {
             "fontSize": {
@@ -186,37 +272,7 @@
             }
           },
           "selector": {
-            "metadata": "Algebra I by 9th grade.Title Disaggregate by"
-          }
-        }
-      ],
-      "label": [
-        {
-          "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "9D"
-                }
-              }
-            },
-            "position": {
-              "expr": {
-                "Literal": {
-                  "Value": "'aboveValue'"
-                }
-              }
-            },
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Algebra I by 9th grade.Title Disaggregate by"
+            "id": "default"
           }
         }
       ]
@@ -241,7 +297,97 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Card: Disaggregate By'"
+                  "Value": "'Card: Selected Filters'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "spacing": [
+        {
+          "properties": {
+            "verticalSpacing": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
                 }
               }
             }
@@ -250,23 +396,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "7051f3b686ea8ff284f5",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Algebra I by 9th grade"
-              }
-            },
-            "Property": "Disaggregate by"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

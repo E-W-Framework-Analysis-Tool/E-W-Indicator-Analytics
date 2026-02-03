@@ -162,6 +162,21 @@ table 'bi vw_FactK12StudentEnrollments'
 
 		annotation SummarizationSetBy = Automatic
 
+	hierarchy 'Organization Hierarchy'
+		lineageTag: 2fda97f6-4dba-4e1f-8342-287ed2f87b1e
+
+		level SeaId
+			lineageTag: 63fb2bfd-3ad5-4e87-9b4c-86db4dad3706
+			column: SeaId
+
+		level LeaId
+			lineageTag: 4b6fe5c8-0563-4bdd-9730-7e814dab090a
+			column: LeaId
+
+		level K12SchoolId
+			lineageTag: a9656b7b-f70f-4586-9f30-e8acd6f58f3d
+			column: K12SchoolId
+
 	partition 'bi vw_FactK12StudentEnrollments' = m
 		mode: import
 		source =

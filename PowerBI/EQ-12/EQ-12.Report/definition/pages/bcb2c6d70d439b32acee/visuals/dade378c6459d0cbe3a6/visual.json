@@ -6,8 +6,7 @@
     "y": 0,
     "z": 0,
     "height": 366.62515566625154,
-    "width": 1280,
-    "tabOrder": 0
+    "width": 1280
   },
   "visual": {
     "visualType": "shape",
@@ -103,7 +102,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }
@@ -159,6 +158,19 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "lockAspect": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
