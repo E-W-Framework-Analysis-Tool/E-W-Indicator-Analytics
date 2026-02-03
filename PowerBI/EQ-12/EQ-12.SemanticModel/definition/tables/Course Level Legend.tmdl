@@ -1,0 +1,22 @@
+table 'Course Level Legend'
+	lineageTag: 8425c2f8-d7b6-4cf2-94c3-3dba1a997f86
+
+	column CourseLevel
+		lineageTag: 533b0d64-6521-4fda-8266-8703d941dcbd
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: bi vw_DimK12CourseStatuses[CourseLevel]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Course Level Legend' = calculated
+		mode: import
+		source =
+				
+				FILTER(
+				    DISTINCT('bi vw_DimK12CourseStatuses'[CourseLevel]),
+				    'bi vw_DimK12CourseStatuses'[CourseLevel] IN {"AP", "IB", "Dual Credit"}
+				)
+
+	annotation PBI_Id = 905aca288bd44128a3531825524d6452
+
