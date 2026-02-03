@@ -1,21 +1,9 @@
-relationship 137f033a-c6d5-79e0-2174-cef8e4e9f97b
-	fromColumn: 'bi vw_FactK12StudentCourseSections'.SchoolYear
-	toColumn: 'bi vw_DimSchoolYears'.SchoolYear
-
-relationship edde7899-5d04-67f4-08ec-45e52443edb7
-	fromColumn: 'bi vw_FactK12StudentAssessments'.SchoolYear
-	toColumn: 'bi vw_DimSchoolYears'.SchoolYear
-
 relationship c46b6d33-6e3c-5edc-feb4-a461b2b4e36c
 	fromColumn: 'bi vw_FactK12StudentEnrollments'.K12SchoolId
 	toColumn: 'bi vw_DimK12Schools'.DimK12SchoolId
 
 relationship b65cf917-056a-5868-4ee8-49e892dd0c5c
 	fromColumn: 'bi vw_FactK12StudentEnrollments'.K12StudentId
-	toColumn: 'bi vw_DimStudents'.DimK12StudentId
-
-relationship 33cfcdc5-e4bc-488f-09ce-030b3f6b2178
-	fromColumn: 'bi vw_FactK12StudentAssessments'.K12StudentId
 	toColumn: 'bi vw_DimStudents'.DimK12StudentId
 
 relationship 943348d4-976c-f682-46b6-ba03f3aac7cb
@@ -74,6 +62,26 @@ relationship 85c238a5-5228-0b8e-2f2e-982e5633b406
 	fromColumn: 'bi vw_FactK12StudentEnrollments'.SchoolYear
 	toColumn: 'bi vw_DimSchoolYears'.SchoolYear
 
+relationship c33394ad-2aed-5dc0-a242-661f46c7ad74
+	fromColumn: 'bi vw_FactK12StudentEnrollments'.HomelessnessStatusId
+	toColumn: 'bi vw_DimHomelessnessStatuses'.DimHomelessnessStatusId
+
+relationship 73b072b1-3739-ac01-6a3f-57a6cba7ba1f
+	fromColumn: 'bi vw_FactK12StudentEnrollments'.NOrDStatusId
+	toColumn: 'bi vw_DimNeglectedOrDelinquentStatus'.DimNOrDStatusId
+
+relationship 137f033a-c6d5-79e0-2174-cef8e4e9f97b
+	fromColumn: 'bi vw_FactK12StudentCourseSections'.SchoolYear
+	toColumn: 'bi vw_DimSchoolYears'.SchoolYear
+
+relationship edde7899-5d04-67f4-08ec-45e52443edb7
+	fromColumn: 'bi vw_FactK12StudentAssessments'.SchoolYear
+	toColumn: 'bi vw_DimSchoolYears'.SchoolYear
+
+relationship 33cfcdc5-e4bc-488f-09ce-030b3f6b2178
+	fromColumn: 'bi vw_FactK12StudentAssessments'.K12StudentId
+	toColumn: 'bi vw_DimStudents'.DimK12StudentId
+
 relationship 5f3acf7e-63d9-af63-f909-1ee71554c638
 	fromColumn: 'bi vw_FactK12StudentCourseSections'.K12SchoolId
 	toColumn: 'bi vw_DimK12Schools'.DimK12SchoolId
@@ -82,11 +90,31 @@ relationship f49b2647-28db-9bec-dd28-61563defb7a4
 	fromColumn: 'bi vw_FactK12StudentAssessments'.K12SchoolId
 	toColumn: 'bi vw_DimK12Schools'.DimK12SchoolId
 
-relationship c33394ad-2aed-5dc0-a242-661f46c7ad74
-	fromColumn: 'bi vw_FactK12StudentEnrollments'.HomelessnessStatusId
+relationship AutoDetected_05bfcd29-0fc1-417a-98e0-124b48dab2b7
+	fromColumn: 'bi vw_FactK12StudentCourseSections'.CohortGraduationYear
+	toColumn: 'bi vw_DimCohortGraduationYears'.CohortGraduationYear
+
+relationship 1842be95-8add-cf21-0c9d-450981d085d9
+	fromColumn: 'bi vw_FactK12StudentCourseSections'.EconomicallyDisadvantagedStatusId
+	toColumn: 'bi vw_DimEconomicallyDisadvantagedStatuses'.DimEconomicallyDisadvantagedStatusId
+
+relationship 94d2ce74-4115-6b10-c47f-317fd3d9094b
+	fromColumn: 'bi vw_FactK12StudentCourseSections'.DisabilityStatusId
+	toColumn: 'bi vw_DimDisabilityStatuses'.DimDisabilityStatusId
+
+relationship ef50c936-0aa9-5db4-d163-504e35195381
+	fromColumn: 'bi vw_FactK12StudentCourseSections'.EnglishLearnerStatusId
+	toColumn: 'bi vw_DimEnglishLearnerStatuses'.DimEnglishLearnerStatusId
+
+relationship 00087d38-651c-e483-cc00-b38c62c8ecaf
+	fromColumn: 'bi vw_FactK12StudentCourseSections'.FosterCareStatusId
+	toColumn: 'bi vw_DimFosterCareStatuses'.DimFosterCareStatusId
+
+relationship 293b7ccd-0b98-cf1a-d633-e8fb81c6a115
+	fromColumn: 'bi vw_FactK12StudentCourseSections'.HomelessnessStatusId
 	toColumn: 'bi vw_DimHomelessnessStatuses'.DimHomelessnessStatusId
 
-relationship 73b072b1-3739-ac01-6a3f-57a6cba7ba1f
-	fromColumn: 'bi vw_FactK12StudentEnrollments'.NOrDStatusId
+relationship 9be02f7e-1d3c-22b1-9fe7-cd34cac43214
+	fromColumn: 'bi vw_FactK12StudentCourseSections'.NOrDStatusId
 	toColumn: 'bi vw_DimNeglectedOrDelinquentStatus'.DimNOrDStatusId
 

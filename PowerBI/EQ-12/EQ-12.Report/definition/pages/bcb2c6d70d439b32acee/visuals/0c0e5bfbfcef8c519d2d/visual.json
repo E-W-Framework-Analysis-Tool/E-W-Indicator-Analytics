@@ -6,7 +6,8 @@
     "y": 59.977598118135042,
     "z": 15000,
     "height": 72.98478807146553,
-    "width": 213.65413533834587
+    "width": 213.65413533834587,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "slicer",
@@ -229,23 +230,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "3620c13f39d709393175",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "b05d7d69f5e0699be5e3",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Disaggregation"
-              }
-            },
-            "Property": "Disaggregation Name"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
-  }
+  "parentGroupName": "3620c13f39d709393175"
 }

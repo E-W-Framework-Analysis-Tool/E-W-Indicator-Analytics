@@ -1,0 +1,22 @@
+table GradeLegend
+	lineageTag: 4227a442-2754-40cf-9e13-81a441cf2876
+
+	column GradeLevelCode
+		lineageTag: 436c17f1-9508-4874-ad4c-6d83caa98bc0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: bi vw_FactK12StudentCourseSections[GradeLevelCode]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition GradeLegend = calculated
+		mode: import
+		source =
+				
+				FILTER(
+				    DISTINCT('bi vw_FactK12StudentCourseSections'[GradeLevelCode]),
+				    'bi vw_FactK12StudentCourseSections'[GradeLevelCode] IN {"11", "12"}
+				)
+
+	annotation PBI_Id = b43606ca4f3648e78fe005d0be18c3bb
+

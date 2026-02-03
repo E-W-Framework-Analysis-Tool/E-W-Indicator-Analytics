@@ -4,10 +4,10 @@
   "position": {
     "x": 0,
     "y": 381.30391173520559,
-    "z": 3000,
+    "z": 2000,
     "height": 338.2948846539619,
     "width": 1000.1203610832497,
-    "tabOrder": 3000
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -237,132 +237,6 @@
         },
         "type": "Advanced",
         "howCreated": "User"
-      },
-      {
-        "name": "f187e59b213ddc7ac552",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimRaces"
-              }
-            },
-            "Property": "RaceEthnicity"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "f9d84a47984a40fc8c57",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimK12Demographics"
-              }
-            },
-            "Property": "Gender"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "614dd723851b4193d18b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimDisabilityStatuses"
-              }
-            },
-            "Property": "DisabilityStatus"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "d58b60284943a6f3c302",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimEconomicallyDisadvantagedStatuses"
-              }
-            },
-            "Property": "EconomicDisadvantageStatus"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "7f6ec3e9b4c24ff83346",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimEnglishLearnerStatuses"
-              }
-            },
-            "Property": "EnglishLearnerStatus"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "a20dc267e47bc56fbf50",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimFosterCareStatuses"
-              }
-            },
-            "Property": "FosterCareStatus"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "2241973397d1186f2707",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimHomelessnessStatuses"
-              }
-            },
-            "Property": "HomelessnessStatus"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "645600a07c1467d12a71",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimNeglectedOrDelinquentStatus"
-              }
-            },
-            "Property": "NeglectedOrDelinquentStatus"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "8abf0cca29aa8686eecc",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "College Readiness"
-              }
-            },
-            "Property": "% College Ready Graduates"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

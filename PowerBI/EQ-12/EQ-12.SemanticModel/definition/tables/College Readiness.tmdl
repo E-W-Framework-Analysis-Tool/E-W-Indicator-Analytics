@@ -59,7 +59,7 @@ table 'College Readiness'
 	measure '% College Ready Graduates' = ```
 			
 			DIVIDE(
-			    SUMX('bi vw_DimStudents', [Is_College_Ready]), 
+			    SUMX(VALUES('bi vw_FactK12StudentCourseSections'[K12StudentId]), [Is_College_Ready]), 
 			    DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[K12StudentId]), 
 			    0
 			)
@@ -148,6 +148,20 @@ table 'College Readiness'
 
 	measure 'ACT-SAT College Readiness' = IF([SAT or ACT Participants] = 0, 0, DIVIDE([College Readiness on ACT-SAT Scores], [SAT or ACT Participants], 0))
 		lineageTag: 7a1b237e-732a-4869-9064-160e603780c5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'College Readiness Trend' =
+			
+			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
+			RETURN
+			CALCULATE(
+			    'College Readiness'[% College Ready Graduates],
+			    'bi vw_DimSchoolYears'[SchoolYear] = SelectedTrendYear,
+			    REMOVEFILTERS('bi vw_DimSchoolYears')
+			)
+		displayFolder: College Ready Measures
+		lineageTag: a843d23f-014a-4a9c-8607-d71a2aba2847
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 

@@ -39,6 +39,9 @@ ref table Disaggregation
 ref table 'Early College Coursework Completion'
 ref table Globals
 ref table TrendLineYears
+ref table TrendLineGraduationYears
+ref table GradeLegend
+ref table 'Course Level Legend'
 
 ref cultureInfo en-US
 

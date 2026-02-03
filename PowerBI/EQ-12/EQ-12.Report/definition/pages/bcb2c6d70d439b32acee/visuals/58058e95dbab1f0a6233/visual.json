@@ -6,7 +6,8 @@
     "y": 132.4536413401737,
     "z": 5000,
     "height": 72.610128686480763,
-    "width": 213.59900373599004
+    "width": 213.59900373599004,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "slicer",
@@ -165,23 +166,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "3620c13f39d709393175",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "200507c832f4acb03646",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimK12Schools"
-              }
-            },
-            "Property": "SchoolTypeCode"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
-  }
+  "parentGroupName": "3620c13f39d709393175"
 }

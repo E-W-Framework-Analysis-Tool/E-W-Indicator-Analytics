@@ -1,11 +1,24 @@
 CREATE VIEW [bi].[vw_FactK12StudentCourseSections] AS
 SELECT
-	[SchoolYear]
-  , [K12SchoolId]
-  , [GradeLevelCode]
-  , [K12CourseId]
-  , [K12CourseStatusId]
-  , [K12StudentId]
-  , [StudentCourseSectionGradeEarned] AS [LetterGradeEarned]
+	[fkcs].[SchoolYear]
+  , [fkse].[CohortGraduationYear]
+  , [fkcs].[K12SchoolId]
+  , [fkcs].[GradeLevelCode]
+  , [fkcs].[K12CourseId]
+  , [fkcs].[K12CourseStatusId]
+  , [fkcs].[K12StudentId]
+  , [fkcs].[StudentCourseSectionGradeEarned] AS [LetterGradeEarned]
+  , [fkse].[EnglishLearnerStatusId]
+  , [fkse].[HomelessnessStatusId]
+  , [fkse].[EconomicallyDisadvantagedStatusId]
+  , [fkse].[FosterCareStatusId]
+  , [fkse].[NOrDStatusId]
+  , [fkse].[DisabilityStatusId]
 FROM
-	[reporting].[FactK12StudentCourseSections];
+	[reporting].[FactK12StudentCourseSections]             AS [fkcs]
+		INNER JOIN [reporting].[FactK12StudentEnrollments] AS [fkse]
+					   ON [fkcs].[SeaId] = [fkse].[SeaId]
+						   AND [fkcs].[LeaId] = [fkse].[LeaId]
+						   AND [fkcs].[K12SchoolId] = [fkse].[K12SchoolId]
+						   AND [fkcs].[K12StudentId] = [fkse].[K12StudentId]
+						   AND [fkcs].[GradeLevelCode] = [fkse].[GradeLevelCode];

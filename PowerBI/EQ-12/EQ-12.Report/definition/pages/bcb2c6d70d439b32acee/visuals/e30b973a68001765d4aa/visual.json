@@ -77,9 +77,6 @@
             }
           ]
         },
-        "Series": {
-          "projections": []
-        },
         "Y": {
           "projections": [
             {
@@ -216,80 +213,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "86d27f9c069e61f96035",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Algebra I by 9th grade"
-              }
-            },
-            "Property": "Algebra I Success Rate"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "40634a7427080f39e8a6",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "bi vw_DimK12Schools"
-                  }
-                },
-                "Hierarchy": "Geography"
-              }
-            },
-            "Level": "SeaOrganizationName"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "72a9d2a2799b0f29a83f",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "bi vw_DimK12Schools"
-                  }
-                },
-                "Hierarchy": "Geography"
-              }
-            },
-            "Level": "LeaOrganizationName"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "60122fa1a083c6a5411f",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "bi vw_DimK12Schools"
-                  }
-                },
-                "Hierarchy": "Geography"
-              }
-            },
-            "Level": "K12SchoolName"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

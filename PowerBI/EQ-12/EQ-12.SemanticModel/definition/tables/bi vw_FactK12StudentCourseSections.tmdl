@@ -74,6 +74,69 @@ table 'bi vw_FactK12StudentCourseSections'
 
 		annotation SummarizationSetBy = Automatic
 
+	column CohortGraduationYear
+		dataType: int64
+		formatString: 0
+		lineageTag: e1e54d70-0d72-45dd-a9fb-ee34df83a0ed
+		summarizeBy: none
+		sourceColumn: CohortGraduationYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column EnglishLearnerStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: 176b494e-8341-4a61-8753-abe9bf896123
+		summarizeBy: none
+		sourceColumn: EnglishLearnerStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column HomelessnessStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: 04e10e6d-fadd-48f4-a05f-defad68f1097
+		summarizeBy: none
+		sourceColumn: HomelessnessStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column EconomicallyDisadvantagedStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: 1c295851-a73b-4def-98e2-5ec0cabd3009
+		summarizeBy: none
+		sourceColumn: EconomicallyDisadvantagedStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column FosterCareStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: dbf36e77-75f8-4699-b09d-9ce234e07673
+		summarizeBy: none
+		sourceColumn: FosterCareStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOrDStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: 504ea69f-2d0e-4d7a-a0b6-1014751d58c0
+		summarizeBy: none
+		sourceColumn: NOrDStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column DisabilityStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: 0e7480e0-708e-42f9-be0e-1be2570e49ba
+		summarizeBy: none
+		sourceColumn: DisabilityStatusId
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'bi vw_FactK12StudentCourseSections' = m
 		mode: import
 		source =

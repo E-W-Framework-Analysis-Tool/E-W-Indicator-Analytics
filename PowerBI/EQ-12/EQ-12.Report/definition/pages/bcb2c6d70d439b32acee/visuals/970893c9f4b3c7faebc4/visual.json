@@ -6,7 +6,8 @@
     "y": 132.65251827334777,
     "z": 2000,
     "height": 72.765701771302417,
-    "width": 214.19095477386935
+    "width": 214.19095477386935,
+    "tabOrder": 13000
   },
   "visual": {
     "visualType": "slicer",
@@ -137,23 +138,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "3620c13f39d709393175",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "45ce22ee4a7ef310d462",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimCohortGraduationYears"
-              }
-            },
-            "Property": "CohortGraduationYear"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
-  }
+  "parentGroupName": "3620c13f39d709393175"
 }
