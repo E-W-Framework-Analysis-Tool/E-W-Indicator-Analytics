@@ -4,7 +4,7 @@
   "position": {
     "x": 1103.1419558359621,
     "y": 398.13249211356469,
-    "z": 10000,
+    "z": 0,
     "height": 121.94321766561514,
     "width": 176.85804416403786,
     "tabOrder": 19001
@@ -158,5 +158,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "0047d2e915853f7d450c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GradeLegend"
+              }
+            },
+            "Property": "GradeLevelCode"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

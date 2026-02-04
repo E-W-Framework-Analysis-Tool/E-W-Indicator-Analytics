@@ -4,7 +4,7 @@
   "position": {
     "x": 1103.0144167758847,
     "y": 598.06028833551773,
-    "z": 11000,
+    "z": 0,
     "height": 121.62516382699869,
     "width": 176.98558322411535,
     "tabOrder": 11000
@@ -164,5 +164,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "923b0481c84821ecaf24",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Course Level Legend"
+              }
+            },
+            "Property": "CourseLevel"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }
