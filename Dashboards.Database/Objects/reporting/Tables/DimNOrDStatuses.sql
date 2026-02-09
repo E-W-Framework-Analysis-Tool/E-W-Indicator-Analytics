@@ -1,9 +1,10 @@
-CREATE TABLE [reporting].[DimNOrDStatuses](
-	[DimNOrDStatusId] [int] IDENTITY(1,1) PRIMARY KEY,
-	[NeglectedOrDelinquentLongTermStatusCode] [nvarchar](50) NULL,
-	[NeglectedOrDelinquentLongTermStatusDescription] [nvarchar](100) NULL
+CREATE TABLE [reporting].[DimNOrDStatuses]
+(
+	[DimNOrDStatusId]                                [int] IDENTITY (1,1),
+	[NeglectedOrDelinquentLongTermStatusCode]        [nvarchar](50)  NULL,
+	[NeglectedOrDelinquentLongTermStatusDescription] [nvarchar](100) NULL,
+	CONSTRAINT [PK_DimNOrDStatusId] PRIMARY KEY ([DimNOrDStatusId]),
+	INDEX [NCIX_DimNOrDStatuses_NeglectedOrDelinquentLongTermStatusCode] NONCLUSTERED ([NeglectedOrDelinquentLongTermStatusCode])
 )
 GO
 --------------------------------------------------------------------------------------
-CREATE NONCLUSTERED INDEX NCIX_reporting_DimNOrDStatuses_NeglectedOrDelinquentLongTermStatusCode
-ON [reporting].[DimNOrDStatuses] ([NeglectedOrDelinquentLongTermStatusCode]);

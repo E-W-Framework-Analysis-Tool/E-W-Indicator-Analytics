@@ -1,9 +1,10 @@
-CREATE TABLE [reporting].[DimHomelessnessStatuses](
-	[DimHomelessnessStatusId] [int]  IDENTITY(1,1) PRIMARY KEY,
-	[HomelessnessStatusCode] [nvarchar](100) NOT NULL,
-	[HomelessnessStatusDescription] [nvarchar](300) NULL
+CREATE TABLE [reporting].[DimHomelessnessStatuses]
+(
+	[DimHomelessnessStatusId]       [int] IDENTITY (1,1),
+	[HomelessnessStatusCode]        [nvarchar](100) NOT NULL,
+	[HomelessnessStatusDescription] [nvarchar](300) NULL,
+	CONSTRAINT [PK_DimHomelessnessStatusId] PRIMARY KEY ([DimHomelessnessStatusId]),
+	INDEX [NCIX_DimHomelessnessStatuses_HomelessnessStatusCode] NONCLUSTERED ([HomelessnessStatusCode])
 )
 GO
 --------------------------------------------------------------------------------------
-CREATE NONCLUSTERED INDEX NCIX_reporting_DimHomelessnessStatuses_HomelessnessStatusCode
-ON [reporting].[DimHomelessnessStatuses] ([HomelessnessStatusCode]);

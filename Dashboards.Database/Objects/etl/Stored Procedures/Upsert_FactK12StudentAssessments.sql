@@ -5,38 +5,34 @@ BEGIN
 	
 	WITH [Source] AS (
 		SELECT
-			[fact].*
+			[fact].[SchoolYear]
 		  , [ds].[DimSeaId]
 		  , [dl].[DimLeaId]
 		  , [dks].[DimK12SchoolId]
 		  , [dsu].[DimK12StudentId]
+		  , [fact].[GradeLevelCode]
+		  , [fact].[AssessmentResultScoreValueSATScore]
+		  , [fact].[AssessmentResultScoreValueACTScore]
 		  , [da].[DimAssessmentId]
 		  , [das].[DimAssessmentSubtestId]
-		  , [fkse].[FactK12StudentEnrollmentId] AS [TargetFactK12StudentEnrollmentId]
 		FROM
-			[staging].[FactK12StudentAssessments]                  AS [fact]
-				INNER JOIN [reporting].[DimSEAs]                   AS [ds]
+			[staging].[FactK12StudentAssessments]              AS [fact]
+				INNER JOIN [reporting].[DimSEAs]               AS [ds]
 							   ON [fact].[SeaOrganizationIdentifierSea] = [ds].[SeaOrganizationIdentifierSea]
-				INNER JOIN [reporting].[DimLEAs]                   AS [dl]
+				INNER JOIN [reporting].[DimLEAs]               AS [dl]
 							   ON [fact].[LeaIdentifierSea] = [dl].[LeaIdentifierSea]
 								   AND [ds].[DimSeaId] = [dl].[SeaId]
-				INNER JOIN [reporting].[DimK12Schools]             AS [dks]
+				INNER JOIN [reporting].[DimK12Schools]         AS [dks]
 							   ON [fact].[SchoolIdentifierSea] = [dks].[SchoolIdentifierSea]
 								   AND [ds].[DimSeaId] = [dks].[SeaId]
 								   AND [dl].[DimLeaId] = [dks].[LeaId]
-				INNER JOIN [reporting].[DimStudents]               AS [dsu]
+				INNER JOIN [reporting].[DimStudents]           AS [dsu]
 							   ON [fact].[StudentIdentifierState] = [dsu].[StudentIdentifierState]
-				INNER JOIN [reporting].[DimAssessments]            AS [da]
+				INNER JOIN [reporting].[DimAssessments]        AS [da]
 							   ON [fact].[AssessmentIdentifierState] = [da].[AssessmentIdentifierState]
-				INNER JOIN [reporting].[DimAssessmentSubtests]     AS [das]
+				INNER JOIN [reporting].[DimAssessmentSubtests] AS [das]
 							   ON [fact].[AssessmentSubtestIdentifierInternal] =
 								  [das].[AssessmentSubtestIdentifierInternal]
-				INNER JOIN [reporting].[FactK12StudentEnrollments] AS [fkse]
-							   ON [fkse].[SeaId] = [ds].[DimSeaId]
-								   AND [fkse].[LeaId] = [dl].[DimLeaId]
-								   AND [fkse].[K12SchoolId] = [dks].[DimK12SchoolId]
-								   AND [fkse].[K12StudentId] = [dsu].[DimK12StudentId]
-								   AND [fkse].[GradeLevelCode] = [fact].[GradeLevelCode]
 		WHERE
 			  [ds].[DimSeaId] IS NOT NULL
 		  AND [dl].[DimLeaId] IS NOT NULL
@@ -71,7 +67,6 @@ BEGIN
 		INSERT
 			(
 				  [SchoolYear]
-				, [FactK12StudentEnrollmentId]
 				, [SeaId]
 				, [LeaId]
 				, [K12SchoolId]
@@ -85,7 +80,6 @@ BEGIN
 		VALUES
 			(
 				  [Source].[SchoolYear]
-				, [source].[TargetFactK12StudentEnrollmentId]
 				, [Source].[DimSeaId]
 				, [Source].[DimLeaId]
 				, [Source].[DimK12SchoolId]

@@ -1,10 +1,10 @@
-CREATE TABLE [reporting].[DimFosterCareStatuses](
-	[DimFosterCareStatusId] [int]  IDENTITY(1,1) PRIMARY KEY,
-	[FosterCareStatusCode] [nvarchar](50) NOT NULL,
-	[FosterCareStatusDescription] [nvarchar](200) NULL
-) 
-
+CREATE TABLE [reporting].[DimFosterCareStatuses]
+(
+	[DimFosterCareStatusId]       [int] IDENTITY (1,1),
+	[FosterCareStatusCode]        [nvarchar](50)  NOT NULL,
+	[FosterCareStatusDescription] [nvarchar](200) NULL,
+	CONSTRAINT [PK_DimFosterCareStatusId] PRIMARY KEY ([DimFosterCareStatusId]),
+	INDEX [NCIX_DimFosterCareStatuses_FosterCareStatusCode] NONCLUSTERED ([FosterCareStatusCode])
+)
 GO
 --------------------------------------------------------------------------------------
-CREATE NONCLUSTERED INDEX NCIX_reporting_DimFosterCareStatuses_FosterCareStatusCode
-ON [reporting].[DimFosterCareStatuses] ([FosterCareStatusCode]);

@@ -1,3 +1,7 @@
-﻿CREATE TABLE [reporting].[DimSchoolYears](
-	[Year] [smallint] PRIMARY KEY
+﻿CREATE TABLE [reporting].[DimSchoolYears]
+(
+	[Year] [smallint],
+	CONSTRAINT [PK_DimSchoolYears_Year] PRIMARY KEY ([Year])
 )
+GO
+--------------------------------------------------------------------------------------
