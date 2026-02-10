@@ -10,7 +10,7 @@
     "tabOrder": 0
   },
   "visual": {
-    "visualType": "columnChart",
+    "visualType": "clusteredColumnChart",
     "query": {
       "queryState": {
         "Category": {
@@ -33,7 +33,7 @@
               },
               "queryRef": "bi vw_DimK12Schools.Geography.SeaOrganizationName",
               "nativeQueryRef": "Geography SeaOrganizationName",
-              "active": true
+              "active": false
             },
             {
               "field": {
@@ -53,7 +53,7 @@
               },
               "queryRef": "bi vw_DimK12Schools.Geography.LeaOrganizationName",
               "nativeQueryRef": "Geography LeaOrganizationName",
-              "active": false
+              "active": true
             },
             {
               "field": {
@@ -74,6 +74,24 @@
               "queryRef": "bi vw_DimK12Schools.Geography.K12SchoolName",
               "nativeQueryRef": "Geography K12SchoolName",
               "active": false
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_DimAssessments"
+                    }
+                  },
+                  "Property": "AssessmentCode"
+                }
+              },
+              "queryRef": "bi vw_DimAssessments.AssessmentCode",
+              "nativeQueryRef": "AssessmentCode"
             }
           ]
         },
@@ -183,6 +201,19 @@
             }
           }
         }
+      ],
+      "legend": [
+        {
+          "properties": {
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Assessment'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -197,7 +228,7 @@
                       "Entity": "College Readiness"
                     }
                   },
-                  "Property": "SAT-ACT Disaggregate Chart Title"
+                  "Property": "SAT-ACT Participation Chart Title"
                 }
               }
             },
@@ -217,7 +248,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "dc230a2801d5aad9d68a",
+        "name": "7fb3c369830afbee3a1a",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -236,7 +267,7 @@
         "type": "Categorical"
       },
       {
-        "name": "2ae178b2c1e49d17546f",
+        "name": "0774a2aaa6aae10e1204",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -255,7 +286,7 @@
         "type": "Categorical"
       },
       {
-        "name": "eeacea9619cd7f131edf",
+        "name": "595d941dc0f1cea9767b",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -274,7 +305,7 @@
         "type": "Categorical"
       },
       {
-        "name": "20cf8b88c9a310b740eb",
+        "name": "e9acc2b373199789173e",
         "field": {
           "Measure": {
             "Expression": {
@@ -286,6 +317,20 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "18c4d047c365d05f3b13",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimAssessments"
+              }
+            },
+            "Property": "AssessmentCode"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

@@ -10,7 +10,7 @@
     "tabOrder": 0
   },
   "visual": {
-    "visualType": "columnChart",
+    "visualType": "clusteredColumnChart",
     "query": {
       "queryState": {
         "Category": {
@@ -33,7 +33,7 @@
               },
               "queryRef": "bi vw_DimK12Schools.Geography.SeaOrganizationName",
               "nativeQueryRef": "Geography SeaOrganizationName",
-              "active": true
+              "active": false
             },
             {
               "field": {
@@ -53,7 +53,7 @@
               },
               "queryRef": "bi vw_DimK12Schools.Geography.LeaOrganizationName",
               "nativeQueryRef": "Geography LeaOrganizationName",
-              "active": false
+              "active": true
             },
             {
               "field": {
@@ -197,7 +197,7 @@
                       "Entity": "College Readiness"
                     }
                   },
-                  "Property": "SAT-ACT Disaggregate Chart Title"
+                  "Property": "SAT-ACT College Readiness Chart Title"
                 }
               }
             },
@@ -217,7 +217,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "ad484de7bb95c32a4450",
+        "name": "d00da998fcbd90a7522c",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -236,7 +236,7 @@
         "type": "Categorical"
       },
       {
-        "name": "bfc34866af2da5b1695c",
+        "name": "18aa312019160f11eaa5",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -255,7 +255,7 @@
         "type": "Categorical"
       },
       {
-        "name": "848a5e7bba2ad071a0eb",
+        "name": "906c628cc24a8aec4ff2",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -274,7 +274,7 @@
         "type": "Categorical"
       },
       {
-        "name": "4cb4f9f79e5867774196",
+        "name": "dd0679c563cc7412d5fb",
         "field": {
           "Measure": {
             "Expression": {
