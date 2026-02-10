@@ -1,0 +1,113 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "c0eb32be7a224619b5b5",
+  "position": {
+    "x": 947.27170868347343,
+    "y": 202.21848739495798,
+    "z": 3,
+    "height": 258.86834733893556,
+    "width": 332.72829131652662,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "listSlicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_DimK12Schools"
+                    }
+                  },
+                  "Property": "LeaOrganizationName"
+                }
+              },
+              "queryRef": "bi vw_DimK12Schools.LeaOrganizationName",
+              "nativeQueryRef": "LeaOrganizationName",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "b",
+                    "Entity": "bi vw_DimK12Schools",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "b"
+                                }
+                              },
+                              "Property": "LeaOrganizationName"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'Barton Education Agency'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'Collins Education Agency'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6c975ef638e565af8251",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Schools"
+              }
+            },
+            "Property": "LeaOrganizationName"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

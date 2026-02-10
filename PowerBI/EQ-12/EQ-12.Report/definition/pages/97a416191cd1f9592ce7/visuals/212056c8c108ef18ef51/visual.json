@@ -250,6 +250,48 @@
         },
         "type": "Advanced",
         "howCreated": "User"
+      },
+      {
+        "name": "2ee3079f6e17fa6b822e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "TrendLineGraduationYears"
+              }
+            },
+            "Property": "CohortGraduationYear"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9c646fdc2878f9ecdeae",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GradeLegend"
+              }
+            },
+            "Property": "GradeLevelCode"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2aab7010dbadc05d1eaa",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Early College Coursework Completion"
+              }
+            },
+            "Property": "Coursework Completion Trend"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

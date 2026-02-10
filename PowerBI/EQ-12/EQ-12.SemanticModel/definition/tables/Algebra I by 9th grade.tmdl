@@ -1,7 +1,14 @@
 table 'Algebra I by 9th grade'
 	lineageTag: b9e2b3c4-c6f2-43db-85a1-a3b4b6c75aa8
 
-	measure 'Algebra I Pass Count' = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[K12StudentId]), 'bi vw_FactK12StudentCourseSections'[GradeLevelCode] = "09", CONTAINSSTRING('bi vw_DimK12Courses'[CourseTitle], "Algebra I"), 'bi vw_FactK12StudentCourseSections'[LetterGradeEarned] <> "F")
+	measure 'Algebra I Pass Count' =
+			CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[K12StudentId]),
+			    CONTAINSSTRING('bi vw_DimK12Courses'[CourseTitle], "Algebra I"),
+			    'bi vw_FactK12StudentCourseSections'[LetterGradeEarned] <> "F",
+			    'bi vw_FactK12StudentCourseSections'[GradeLevelCode] = "09",
+			    KEEPFILTERS(CALCULATETABLE('bi vw_DimStudents', 'bi vw_FactK12StudentEnrollments'[GradeLevelCode] = "09",
+			    KEEPFILTERS(CALCULATETABLE('bi vw_DimGradeLevels', 'bi vw_FactK12StudentEnrollments'[GradeLevelCode] = "09"
+			    )))))
 		formatString: 0
 		displayFolder: Algebra I Completion Measures
 		lineageTag: a44bf016-fb7a-4068-afc1-289e3a32477f

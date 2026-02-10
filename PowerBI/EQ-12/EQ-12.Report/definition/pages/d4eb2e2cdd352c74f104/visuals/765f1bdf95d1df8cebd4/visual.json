@@ -10,7 +10,7 @@
     "tabOrder": 0
   },
   "visual": {
-    "visualType": "columnChart",
+    "visualType": "clusteredColumnChart",
     "query": {
       "queryState": {
         "Category": {
@@ -28,7 +28,67 @@
               },
               "queryRef": "Course Level Legend.CourseLevel",
               "nativeQueryRef": "CourseLevel1",
+              "active": false
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimK12Schools"
+                        }
+                      },
+                      "Hierarchy": "Geography"
+                    }
+                  },
+                  "Level": "SeaOrganizationName"
+                }
+              },
+              "queryRef": "bi vw_DimK12Schools.Geography.SeaOrganizationName",
+              "nativeQueryRef": "Geography SeaOrganizationName",
+              "active": false
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimK12Schools"
+                        }
+                      },
+                      "Hierarchy": "Geography"
+                    }
+                  },
+                  "Level": "LeaOrganizationName"
+                }
+              },
+              "queryRef": "bi vw_DimK12Schools.Geography.LeaOrganizationName",
+              "nativeQueryRef": "Geography LeaOrganizationName",
               "active": true
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimK12Schools"
+                        }
+                      },
+                      "Hierarchy": "Geography"
+                    }
+                  },
+                  "Level": "K12SchoolName"
+                }
+              },
+              "queryRef": "bi vw_DimK12Schools.Geography.K12SchoolName",
+              "nativeQueryRef": "Geography K12SchoolName",
+              "active": false
             },
             {
               "field": {
@@ -43,7 +103,25 @@
               },
               "queryRef": "GradeLegend.GradeLevelCode",
               "nativeQueryRef": "GradeLevelCode",
-              "active": true
+              "active": false
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GradeLegend"
+                    }
+                  },
+                  "Property": "GradeLevelCode"
+                }
+              },
+              "queryRef": "GradeLegend.GradeLevelCode",
+              "nativeQueryRef": "GradeLevelCode"
             }
           ]
         },
@@ -68,6 +146,19 @@
       },
       "sortDefinition": {
         "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Course Level Legend"
+                  }
+                },
+                "Property": "CourseLevel"
+              }
+            },
+            "direction": "Ascending"
+          },
           {
             "field": {
               "HierarchyLevel": {
@@ -118,6 +209,19 @@
                   }
                 },
                 "Level": "K12SchoolName"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "GradeLegend"
+                  }
+                },
+                "Property": "GradeLevelCode"
               }
             },
             "direction": "Ascending"
@@ -213,7 +317,21 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "5a0450d3ec739f5d01d1",
+        "name": "d2d2e86efd1107a3fb06",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Course Level Legend"
+              }
+            },
+            "Property": "CourseLevel"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8009ddd34c7e97a02d7d",
         "field": {
           "Measure": {
             "Expression": {
@@ -227,7 +345,7 @@
         "type": "Advanced"
       },
       {
-        "name": "c319026490e980bf5bdc",
+        "name": "f125a8677a3a07d96963",
         "field": {
           "Column": {
             "Expression": {
@@ -241,15 +359,58 @@
         "type": "Categorical"
       },
       {
-        "name": "315b6e2b72a1a77820df",
+        "name": "ebcc315c658b7461ea5d",
         "field": {
-          "Column": {
+          "HierarchyLevel": {
             "Expression": {
-              "SourceRef": {
-                "Entity": "Course Level Legend"
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "bi vw_DimK12Schools"
+                  }
+                },
+                "Hierarchy": "Geography"
               }
             },
-            "Property": "CourseLevel"
+            "Level": "SeaOrganizationName"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "fb395b109a9a7ff1a23b",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "bi vw_DimK12Schools"
+                  }
+                },
+                "Hierarchy": "Geography"
+              }
+            },
+            "Level": "LeaOrganizationName"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "42fb2be5d64e6f319cd6",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "bi vw_DimK12Schools"
+                  }
+                },
+                "Hierarchy": "Geography"
+              }
+            },
+            "Level": "K12SchoolName"
           }
         },
         "type": "Categorical"

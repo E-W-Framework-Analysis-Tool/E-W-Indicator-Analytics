@@ -109,12 +109,21 @@ table 'College Readiness'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure Total_11_12_Graders = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentEnrollments'[K12StudentId]), 'bi vw_DimGradeLevels'[GradeLevelCode] IN {"11", "12"})
+	measure 'Total 11-12 Graders' = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentEnrollments'[K12StudentId]), 'bi vw_DimGradeLevels'[GradeLevelCode] IN {"11", "12"})
 		formatString: 0
+		displayFolder: SAT-ACT Participations
 		lineageTag: 30a2f34d-0867-445e-a161-d958a44d4814
 
-	measure 'SAT or ACT Participants' = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentEnrollments'[K12StudentId]), 'bi vw_FactK12StudentEnrollments'[GradeLevelCode] IN {"11", "12"} ,'bi vw_FactK12StudentAssessments'[SATScore] <> BLANK() || 'bi vw_FactK12StudentAssessments'[ACTScore] <> BLANK())
+	measure 'ACT-SAT Participant Count' =
+			
+			VAR Result = CALCULATE(
+			    DISTINCTCOUNT('bi vw_FactK12StudentAssessments'[K12StudentId]),
+			    'bi vw_FactK12StudentAssessments'[SATScore] <> BLANK() || 'bi vw_FactK12StudentAssessments'[ACTScore] <> BLANK(),
+			    KEEPFILTERS(CALCULATETABLE('bi vw_FactK12StudentEnrollments', 'bi vw_FactK12StudentEnrollments'[GradeLevelCode] IN {"11", "12"}))
+			 )
+			 RETURN Result
 		formatString: 0
+		displayFolder: SAT-ACT Participations
 		lineageTag: b9b7ab8d-406b-402d-a60b-a9c4481de6b8
 
 	measure 'College Readiness on ACT-SAT Scores' = ```
@@ -124,11 +133,13 @@ table 'College Readiness'
 			VAR ACT_Eng_Bench = 18
 			VAR ACT_Math_Bench = 22
 			VAR ACT_Read_Bench = 22
-			VAR ACT_Sci_Bench = 23
+			VAR ACT_Sci_Bench = 20
 			VAR ACT_Wri_Bench = 21
 			
-			VAR StudentSubtestScores = SUMMARIZE('bi vw_FactK12StudentAssessments',
-			 'bi vw_FactK12StudentAssessments'[K12StudentId],
+			VAR StudentSubtestScores = SUMMARIZE(
+			    'bi vw_FactK12StudentEnrollments',
+			    'bi vw_FactK12StudentEnrollments'[CohortGraduationYear],
+			    'bi vw_FactK12StudentEnrollments'[K12StudentId],
 			        "MaxSAT_RW", CALCULATE(MAX('bi vw_FactK12StudentAssessments'[SATScore]), KEEPFILTERS('bi vw_DimAssessmentSubtests'[AssessmentSubtestCode]  = "SAT-RW")),
 			        "MaxSAT_Math", CALCULATE(MAX('bi vw_FactK12StudentAssessments'[SATScore]), KEEPFILTERS('bi vw_DimAssessmentSubtests'[AssessmentSubtestCode]  = "SAT-M")),
 			        "MaxACT_Eng", CALCULATE(MAX('bi vw_FactK12StudentAssessments'[ACTScore]), KEEPFILTERS('bi vw_DimAssessmentSubtests'[AssessmentSubtestCode]  = "ACT-ENG")),
@@ -144,12 +155,13 @@ table 'College Readiness'
 			))
 			```
 		formatString: 0
+		displayFolder: SAT-ACT Participations
 		lineageTag: 1988389e-77b2-43f8-a006-a68edf934eb8
 
-	measure 'ACT-SAT College Readiness' = IF([SAT or ACT Participants] = 0, 0, DIVIDE([College Readiness on ACT-SAT Scores], [SAT or ACT Participants], 0))
+	measure 'ACT-SAT College Readiness' = IF([ACT-SAT Participant Count] = 0, 0, DIVIDE([College Readiness on ACT-SAT Scores], [ACT-SAT Participant Count], 0))
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: SAT-ACT Participations
 		lineageTag: 7a1b237e-732a-4869-9064-160e603780c5
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'College Readiness Trend' =
 			
@@ -164,6 +176,46 @@ table 'College Readiness'
 		lineageTag: a843d23f-014a-4a9c-8607-d71a2aba2847
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'ACT-SAT Participation Rate' = IF([Total 11-12 Graders] = 0, 0, DIVIDE([ACT-SAT Participant Count], [Total 11-12 Graders], 0))
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: SAT-ACT Participations
+		lineageTag: 3f9b7145-77bb-4128-8a32-f7ea020d4be0
+
+	measure 'SAT-ACT Disaggregate Chart Title' =
+			
+			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
+			VAR SelectedYearTitle = "SAT/ACT Participation Rate " & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			RETURN
+			SelectedYearTitle
+		displayFolder: SAT-ACT Participations
+		lineageTag: 3e7f3b8d-db8e-4bec-a0c0-ffaa3de87061
+
+	measure 'ACT-SAT Participation Trend' =
+			
+			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineYears[SchoolYear])
+			RETURN
+			CALCULATE(
+			    [ACT-SAT Participation Rate],
+			    'bi vw_DimSchoolYears'[SchoolYear] = SelectedTrendYear,
+			    REMOVEFILTERS('bi vw_DimSchoolYears'[SchoolYear]
+			))
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: SAT-ACT Participations
+		lineageTag: 147960a4-c58a-45f5-b836-750f0e198a0d
+
+	measure 'ACT-SAT College Readiness Trend' =
+			
+			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineYears[SchoolYear])
+			RETURN
+			CALCULATE(
+			    [ACT-SAT College Readiness],
+			    'bi vw_DimSchoolYears'[SchoolYear] = SelectedTrendYear,
+			    REMOVEFILTERS('bi vw_DimCohortGraduationYears'[CohortGraduationYear]
+			))
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: SAT-ACT Participations
+		lineageTag: ad41363f-e3ae-43d5-8f16-aa3cf3b8cb81
 
 	partition 'College Readiness' = m
 		mode: import

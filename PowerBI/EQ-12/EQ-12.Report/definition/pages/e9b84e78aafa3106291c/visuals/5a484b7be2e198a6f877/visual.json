@@ -1,0 +1,54 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "5a484b7be2e198a6f877",
+  "position": {
+    "x": 0,
+    "y": 2.2204460492503131E-16,
+    "z": 1000,
+    "height": 34.5945945945946,
+    "width": 1263.9683586025051,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Percentage of grade 11–12 students who take the SAT/ACT.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI Light",
+                      "fontSize": "9pt",
+                      "color": "#ffffff"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "100D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "db14e2ccec37bc1d4dc5"
+}

@@ -1,0 +1,251 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "481ff5204279c270c915",
+  "position": {
+    "x": 0,
+    "y": 217.99439775910363,
+    "z": 1,
+    "height": 243.0924369747899,
+    "width": 937.23249299719885,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TrendLineYears"
+                    }
+                  },
+                  "Property": "SchoolYear"
+                }
+              },
+              "queryRef": "TrendLineYears.SchoolYear",
+              "nativeQueryRef": "SchoolYear",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_DimK12Schools"
+                    }
+                  },
+                  "Property": "LeaOrganizationName"
+                }
+              },
+              "queryRef": "bi vw_DimK12Schools.LeaOrganizationName",
+              "nativeQueryRef": "LeaOrganizationName"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Algebra I by 9th grade"
+                    }
+                  },
+                  "Property": "Algebra Trend"
+                }
+              },
+              "queryRef": "Algebra I by 9th grade.Algebra Trend",
+              "nativeQueryRef": "Algebra Trend"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Algebra I by 9th grade"
+                  }
+                },
+                "Property": "Algebra Trend"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "valueAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "start": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "end": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "concatenateLabels": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "smallMultiplesLayout": [
+        {
+          "properties": {
+            "rowCount": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            },
+            "columnCount": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c5e3824b6dc3dde2b032",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Algebra I by 9th grade"
+                  }
+                },
+                "Property": "Algebra I Success Rate"
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Measure": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Algebra I by 9th grade"
+                      }
+                    },
+                    "Property": "Algebra I Success Rate"
+                  }
+                },
+                "Scope": []
+              }
+            },
+            "Operator": 3
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "320065c979103e08ccb3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "TrendLineYears"
+              }
+            },
+            "Property": "SchoolYear"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "32deb35315c72792f805",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Algebra I by 9th grade"
+              }
+            },
+            "Property": "Algebra Trend"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9662e9605b961d1891e7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Schools"
+              }
+            },
+            "Property": "LeaOrganizationName"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}
