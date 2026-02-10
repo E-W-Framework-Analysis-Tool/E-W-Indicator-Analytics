@@ -53,7 +53,7 @@
               },
               "queryRef": "bi vw_DimK12Schools.Geography.LeaOrganizationName",
               "nativeQueryRef": "Geography LeaOrganizationName",
-              "active": false
+              "active": true
             },
             {
               "field": {
@@ -73,7 +73,7 @@
               },
               "queryRef": "bi vw_DimK12Schools.Geography.K12SchoolName",
               "nativeQueryRef": "Geography K12SchoolName",
-              "active": true
+              "active": false
             }
           ]
         },
@@ -87,11 +87,11 @@
                       "Entity": "College Readiness"
                     }
                   },
-                  "Property": "% College Ready Graduates"
+                  "Property": "College Readiness Rate"
                 }
               },
               "queryRef": "College Readiness.% College Ready Graduates",
-              "nativeQueryRef": "% College Ready Graduates"
+              "nativeQueryRef": "College Readiness Rate"
             }
           ]
         }
@@ -194,10 +194,10 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Algebra I by 9th grade"
+                      "Entity": "College Readiness"
                     }
                   },
-                  "Property": "Algebra I Disaggregate Chart Title"
+                  "Property": "College Readiness Chart Title"
                 }
               }
             },
@@ -282,7 +282,7 @@
                 "Entity": "College Readiness"
               }
             },
-            "Property": "% College Ready Graduates"
+            "Property": "College Readiness Rate"
           }
         },
         "type": "Advanced"

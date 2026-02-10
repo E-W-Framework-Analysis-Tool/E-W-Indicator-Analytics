@@ -68,7 +68,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''bi vw_DimRaces''[RaceEthnicity]'"
+                                "Value": "'''bi vw_DimK12Demographics''[Gender]'"
                               }
                             }
                           ]
@@ -96,7 +96,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''bi vw_DimRaces''[RaceEthnicity]'"
+                                      "Value": "'''bi vw_DimK12Demographics''[Gender]'"
                                     }
                                   }
                                 ]
@@ -120,7 +120,7 @@
                         },
                         "valueMap": [
                           {
-                            "0": "Race & Ethnicity"
+                            "0": "Gender"
                           }
                         ]
                       }

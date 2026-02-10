@@ -20,16 +20,16 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "bi vw_DimRaces"
+                      "Entity": "bi vw_DimK12Demographics"
                     }
                   },
-                  "Property": "RaceEthnicity"
+                  "Property": "Gender"
                 }
               },
-              "queryRef": "bi vw_DimRaces.RaceEthnicity",
-              "nativeQueryRef": "Race & Ethnicity",
+              "queryRef": "bi vw_DimK12Demographics.Gender",
+              "nativeQueryRef": "Gender",
               "active": true,
-              "displayName": "Race & Ethnicity"
+              "displayName": "Gender"
             }
           ],
           "fieldParameters": [
@@ -56,14 +56,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Algebra I by 9th grade"
+                      "Entity": "College Readiness"
                     }
                   },
-                  "Property": "Algebra I Success Rate"
+                  "Property": "College Readiness Rate"
                 }
               },
-              "queryRef": "Algebra I by 9th grade.Algebra I Success Rate",
-              "nativeQueryRef": "Algebra I Success Rate"
+              "queryRef": "College Readiness.% College Ready Graduates",
+              "nativeQueryRef": "College Readiness Rate"
             }
           ]
         }
@@ -75,10 +75,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Algebra I by 9th grade"
+                    "Entity": "College Readiness"
                   }
                 },
-                "Property": "Algebra I Success Rate"
+                "Property": "College Readiness Rate"
               }
             },
             "direction": "Descending"
@@ -128,34 +128,49 @@
         }
       ]
     },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "57023182064a19cfaca3",
+        "name": "f5cfc7bab666d2416ab7",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "bi vw_DimRaces"
+                "Entity": "bi vw_DimK12Demographics"
               }
             },
-            "Property": "RaceEthnicity"
+            "Property": "Gender"
           }
         },
         "type": "Categorical"
       },
       {
-        "name": "bb65dce68a129f82fa69",
+        "name": "b2c3d5489ab530574186",
         "field": {
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Algebra I by 9th grade"
+                "Entity": "College Readiness"
               }
             },
-            "Property": "Algebra I Success Rate"
+            "Property": "College Readiness Rate"
           }
         },
         "type": "Advanced"

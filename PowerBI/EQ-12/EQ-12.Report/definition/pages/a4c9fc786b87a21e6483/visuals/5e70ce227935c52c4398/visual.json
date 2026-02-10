@@ -51,7 +51,7 @@
                       "Entity": "College Readiness"
                     }
                   },
-                  "Property": "% College Ready Graduates"
+                  "Property": "College Readiness Rate"
                 }
               },
               "queryRef": "College Readiness.% College Ready Graduates",
@@ -120,7 +120,7 @@
                 "Entity": "College Readiness"
               }
             },
-            "Property": "% College Ready Graduates"
+            "Property": "College Readiness Rate"
           }
         },
         "type": "Advanced"

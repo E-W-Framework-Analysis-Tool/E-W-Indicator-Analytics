@@ -142,6 +142,13 @@
                   "Value": "13D"
                 }
               }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'College Readiness Trend by Cohort Graduation Year'"
+                }
+              }
             }
           }
         }

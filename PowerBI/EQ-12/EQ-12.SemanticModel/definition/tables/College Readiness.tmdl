@@ -1,7 +1,7 @@
 table 'College Readiness'
 	lineageTag: b9fc6faf-c77c-42d2-9680-6d4886af4801
 
-	measure '% College Ready Graduates' = IF([Total Students In Cohort] = 0, 0, DIVIDE('College Readiness'[College Readiness by Coursework], [Total Students In Cohort], 0))
+	measure 'College Readiness Rate' = IF([Total Students In Cohort] = 0, 0, DIVIDE('College Readiness'[College Readiness by Coursework], [Total Students In Cohort], 0))
 		formatString: 0.0%;-0.0%;0.0%
 		displayFolder: College Ready Measures
 		lineageTag: 46c267a9-fb6a-462c-a430-df62c44db6e5
@@ -65,7 +65,7 @@ table 'College Readiness'
 			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
 			RETURN
 			CALCULATE(
-			    'College Readiness'[% College Ready Graduates],
+			    'College Readiness'[College Readiness Rate],
 			    'bi vw_DimCohortGraduationYears'[CohortGraduationYear] = SelectedTrendYear,
 			    REMOVEFILTERS('bi vw_DimCohortGraduationYears'[CohortGraduationYear])
 			)
@@ -198,6 +198,15 @@ table 'College Readiness'
 		formatString: 0
 		displayFolder: College Ready Measures
 		lineageTag: 77e8c56b-42f6-47ed-8928-854e19e861cc
+
+	measure 'College Readiness Chart Title' =
+			
+			VAR SelectedYear = SELECTEDVALUE('bi vw_DimCohortGraduationYears'[CohortGraduationYear])
+			VAR SelectedYearTitle = "College Readiness " & IF(not ISBLANK(SelectedYear), "for graduation year " & SelectedYear, "All Years")
+			RETURN
+			SelectedYearTitle
+		displayFolder: College Ready Measures
+		lineageTag: 000da8d3-7782-4342-a5ba-1ca91d299900
 
 	partition 'College Readiness' = m
 		mode: import
