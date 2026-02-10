@@ -118,3 +118,7 @@ relationship 9be02f7e-1d3c-22b1-9fe7-cd34cac43214
 	fromColumn: 'bi vw_FactK12StudentCourseSections'.NOrDStatusId
 	toColumn: 'bi vw_DimNeglectedOrDelinquentStatus'.DimNOrDStatusId
 
+relationship e038dffd-b24c-ae64-be07-e60e7001785a
+	fromColumn: 'bi vw_FactK12StudentEnrollments'.CohortGraduationYear
+	toColumn: 'bi vw_DimCohortGraduationYears'.CohortGraduationYear
+

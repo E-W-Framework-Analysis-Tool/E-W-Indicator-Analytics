@@ -3,10 +3,10 @@
   "name": "6cfefa3b35a572d37548",
   "position": {
     "x": 0,
-    "y": 180.56690837178644,
+    "y": 180.65138721351025,
     "z": 1000,
-    "height": 210.94264996704024,
-    "width": 631.98417930125254,
+    "height": 210.75995174909528,
+    "width": 632.27985524728581,
     "tabOrder": 0
   },
   "visual": {
@@ -33,7 +33,7 @@
               },
               "queryRef": "bi vw_DimK12Schools.Geography.SeaOrganizationName",
               "nativeQueryRef": "Geography SeaOrganizationName",
-              "active": true
+              "active": false
             },
             {
               "field": {
@@ -73,7 +73,7 @@
               },
               "queryRef": "bi vw_DimK12Schools.Geography.K12SchoolName",
               "nativeQueryRef": "Geography K12SchoolName",
-              "active": false
+              "active": true
             }
           ]
         },
@@ -84,14 +84,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Algebra I by 9th grade"
+                      "Entity": "College Readiness"
                     }
                   },
-                  "Property": "Algebra I Success Rate"
+                  "Property": "% College Ready Graduates"
                 }
               },
-              "queryRef": "Algebra I by 9th grade.Algebra I Success Rate",
-              "nativeQueryRef": "Algebra I Success Rate"
+              "queryRef": "College Readiness.% College Ready Graduates",
+              "nativeQueryRef": "% College Ready Graduates"
             }
           ]
         }
@@ -213,5 +213,80 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "bcd0b77652efbfdc8af1",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "bi vw_DimK12Schools"
+                  }
+                },
+                "Hierarchy": "Geography"
+              }
+            },
+            "Level": "SeaOrganizationName"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7e20a64d6afb33755f7c",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "bi vw_DimK12Schools"
+                  }
+                },
+                "Hierarchy": "Geography"
+              }
+            },
+            "Level": "LeaOrganizationName"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ed1197d6f247e22a497f",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "bi vw_DimK12Schools"
+                  }
+                },
+                "Hierarchy": "Geography"
+              }
+            },
+            "Level": "K12SchoolName"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "89ce92040f832faca235",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "College Readiness"
+              }
+            },
+            "Property": "% College Ready Graduates"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

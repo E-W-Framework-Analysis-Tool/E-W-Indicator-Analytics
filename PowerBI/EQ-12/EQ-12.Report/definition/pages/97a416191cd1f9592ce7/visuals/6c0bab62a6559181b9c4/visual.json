@@ -169,6 +169,13 @@
                   "Value": "'Completion of at least 1 early college course'"
                 }
               }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
             }
           }
         }

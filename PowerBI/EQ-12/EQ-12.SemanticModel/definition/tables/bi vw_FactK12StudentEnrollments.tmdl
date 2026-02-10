@@ -26,7 +26,7 @@ table 'bi vw_FactK12StudentEnrollments'
 		dataType: int64
 		formatString: 0
 		lineageTag: 0f8e66cb-ff13-4800-8c31-5fad8c145bf2
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: CohortGraduationYear
 
 		annotation SummarizationSetBy = Automatic

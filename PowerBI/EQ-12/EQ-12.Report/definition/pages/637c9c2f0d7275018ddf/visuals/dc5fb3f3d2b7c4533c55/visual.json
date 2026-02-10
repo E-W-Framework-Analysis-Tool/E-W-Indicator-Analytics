@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "dc5fb3f3d2b7c4533c55",
   "position": {
-    "x": 960.964824120603,
-    "y": 132.65251827334777,
+    "x": 102.6779252110977,
+    "y": 62.049709246155153,
     "z": 2000,
-    "height": 72.765701771302417,
-    "width": 214.19095477386935,
+    "height": 72.569360675512655,
+    "width": 213.84800965018093,
     "tabOrder": 13000
   },
   "visual": {
@@ -32,12 +32,71 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "bi vw_DimCohortGraduationYears"
+                  }
+                },
+                "Property": "CohortGraduationYear"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
       }
     },
     "objects": {
       "general": [
         {
-          "properties": {}
+          "properties": {
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "b",
+                    "Entity": "bi vw_DimCohortGraduationYears",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "b"
+                                }
+                              },
+                              "Property": "CohortGraduationYear"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "2026L"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
         }
       ],
       "header": [
@@ -89,6 +148,13 @@
                   "Value": "false"
                 }
               }
+            },
+            "strictSingleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           }
         }
@@ -138,5 +204,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "8af61ac4e7e349a993b9"
+  "parentGroupName": "8af61ac4e7e349a993b9",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9c52b1bf032dece86d36",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimCohortGraduationYears"
+              }
+            },
+            "Property": "CohortGraduationYear"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
 }

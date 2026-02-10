@@ -1,0 +1,130 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "5e70ce227935c52c4398",
+  "position": {
+    "x": 411.85882352941178,
+    "y": 439.7176470588235,
+    "z": 1000,
+    "height": 280.09411764705885,
+    "width": 670.11764705882354,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "College Readiness"
+                    }
+                  },
+                  "Property": "Total Students In Cohort"
+                }
+              },
+              "queryRef": "College Readiness.Total Students In Cohort",
+              "nativeQueryRef": "Total Students In Cohort"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "College Readiness"
+                    }
+                  },
+                  "Property": "College Readiness by Coursework"
+                }
+              },
+              "queryRef": "College Readiness.College Readiness by Coursework",
+              "nativeQueryRef": "College Readiness by Coursework"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "College Readiness"
+                    }
+                  },
+                  "Property": "% College Ready Graduates"
+                }
+              },
+              "queryRef": "College Readiness.% College Ready Graduates",
+              "nativeQueryRef": "% College Ready Graduates"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "College Readiness"
+                  }
+                },
+                "Property": "Total Students In Cohort"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9788e826a8f0ffaac2d6",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "College Readiness"
+              }
+            },
+            "Property": "Total Students In Cohort"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9addd9d52f4bb2add1f7",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "College Readiness"
+              }
+            },
+            "Property": "College Readiness by Coursework"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1c8f933731e3636afd59",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "College Readiness"
+              }
+            },
+            "Property": "% College Ready Graduates"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

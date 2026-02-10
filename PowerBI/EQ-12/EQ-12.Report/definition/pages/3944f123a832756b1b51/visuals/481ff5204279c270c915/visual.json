@@ -4,10 +4,10 @@
   "position": {
     "x": 0,
     "y": 217.99439775910363,
-    "z": 1,
+    "z": 1000,
     "height": 243.0924369747899,
     "width": 937.23249299719885,
-    "tabOrder": 1
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "lineChart",
@@ -203,48 +203,6 @@
         },
         "type": "Advanced",
         "howCreated": "User"
-      },
-      {
-        "name": "320065c979103e08ccb3",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "TrendLineYears"
-              }
-            },
-            "Property": "SchoolYear"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "32deb35315c72792f805",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Algebra I by 9th grade"
-              }
-            },
-            "Property": "Algebra Trend"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "9662e9605b961d1891e7",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimK12Schools"
-              }
-            },
-            "Property": "LeaOrganizationName"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

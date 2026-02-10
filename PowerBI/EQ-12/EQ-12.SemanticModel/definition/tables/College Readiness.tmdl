@@ -1,113 +1,10 @@
 table 'College Readiness'
 	lineageTag: b9fc6faf-c77c-42d2-9680-6d4886af4801
 
-	measure 'College Ready Prior Year' = CALCULATE([% College Ready Graduates], 'bi vw_DimSchoolYears'[SchoolYear] = MAX('bi vw_DimSchoolYears'[SchoolYear]) - 1)
-		lineageTag: 468a106b-8195-4266-862c-2a9d34708ae6
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'College Ready YoY Growth' = [% College Ready Graduates] - [College Ready Prior Year]
-		lineageTag: 89dceaea-b1cb-4f47-810d-47d0a6f1177d
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure Has_1Y_Arts = VAR YearsCount = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), CONTAINSSTRING('bi vw_DimK12Courses'[CourseSubject], "Arts"), 'bi vw_FactK12StudentCourseSections'[LetterGradeEarned] <> "F") RETURN IF(YearsCount >=1,1,0)
-		formatString: 0
-		displayFolder: College Ready Measures
-		lineageTag: bac7da4b-11b8-4529-8248-eb7c4a251661
-
-	measure Has_2Y_ForeignLang = VAR YearsCount = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_DimK12Courses'[CourseSubject] = "Foreign Language", 'bi vw_FactK12StudentCourseSections'[LetterGradeEarned] <> "F") RETURN IF(YearsCount >=2,1,0)
-		formatString: 0
-		displayFolder: College Ready Measures
-		lineageTag: f2194adf-7a4f-4924-aefd-b1c81d66320e
-
-	measure Has_2Y_SocSci = VAR YearsCount = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_DimK12Courses'[CourseSubject] = "Social Science", 'bi vw_FactK12StudentCourseSections'[LetterGradeEarned] <> "F") RETURN IF(YearsCount >=2,1,0)
-		formatString: 0
-		displayFolder: College Ready Measures
-		lineageTag: b3211dfa-eca6-485a-947b-d2abb0e322cd
-
-	measure Has_3Y_LabSci = VAR YearsCount = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_DimK12Courses'[CourseSubject] = "Laboratory Science", 'bi vw_FactK12StudentCourseSections'[LetterGradeEarned] <> "F") RETURN IF(YearsCount >=3,1,0)
-		formatString: 0
-		displayFolder: College Ready Measures
-		lineageTag: 3c0c9448-e995-4bf1-bde4-58bf7a7b5f5b
-
-	measure Has_4Y_Eng = VAR YearsCount = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_DimK12Courses'[CourseSubject] = "English", 'bi vw_FactK12StudentCourseSections'[LetterGradeEarned] <> "F") RETURN IF(YearsCount >=4,1,0)
-		formatString: 0
-		displayFolder: College Ready Measures
-		lineageTag: 2a852779-6e5a-4821-b2b2-a9207a6d341e
-
-	measure Has_4Y_Math = VAR YearsCount = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_DimK12Courses'[CourseSubject] = "Math", 'bi vw_FactK12StudentCourseSections'[LetterGradeEarned] <> "F") RETURN IF(YearsCount >=4,1,0)
-		formatString: 0
-		displayFolder: College Ready Measures
-		lineageTag: 1d2cfe63-ea9c-4374-bb84-3ec36c095cd8
-
-	measure Is_College_Ready = ```
-			
-			IF(
-			    [Has_4Y_Math] = 1 && 
-			    [Has_4Y_Eng] = 1 && 
-			    [Has_3Y_LabSci] = 1 && 
-			    [Has_2Y_SocSci] = 1 && 
-			    [Has_2Y_ForeignLang] = 1 && 
-			    [Has_1Y_Arts] = 1,
-			    1, 0
-			)
-			```
-		formatString: 0
-		lineageTag: 2fb27806-880a-4ba5-85e7-1ff00cc28eb0
-
-	measure '% College Ready Graduates' = ```
-			
-			DIVIDE(
-			    SUMX(VALUES('bi vw_FactK12StudentCourseSections'[K12StudentId]), [Is_College_Ready]), 
-			    DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[K12StudentId]), 
-			    0
-			)
-			```
-		formatString: 0.00%;-0.00%;0.00%
+	measure '% College Ready Graduates' = IF([Total Students In Cohort] = 0, 0, DIVIDE('College Readiness'[College Readiness by Coursework], [Total Students In Cohort], 0))
+		formatString: 0.0%;-0.0%;0.0%
 		displayFolder: College Ready Measures
 		lineageTag: 46c267a9-fb6a-462c-a430-df62c44db6e5
-
-	measure 'Has Passed' = IF(SELECTEDVALUE('bi vw_FactK12StudentCourseSections'[LetterGradeEarned]) <> "F", 1, 0)
-		formatString: 0
-		lineageTag: dda77c6f-5a2c-4638-b3f6-18a3d3c7f43a
-
-	measure 'College Prep Graduates' = ```
-			
-			VAR PassingCourses = 
-			    FILTER(
-			        'bi vw_FactK12StudentCourseSections',
-			        'bi vw_FactK12StudentCourseSections'[LetterGradeEarned] <> "F"
-			    )
-			RETURN
-			COUNTROWS(
-			    FILTER(
-			        VALUES('bi vw_FactK12StudentEnrollments'[K12StudentId]),
-			        VAR StudentID = 'bi vw_FactK12StudentEnrollments'[K12StudentId]
-			        
-			        -- Logic: Count distinct years the student passed these subjects
-			        VAR EnglishYears = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_FactK12StudentCourseSections'[K12StudentId] = StudentID, 'bi vw_DimK12Courses'[CourseTitle] = "English")
-			        VAR MathYears = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_FactK12StudentCourseSections'[K12StudentId] = StudentID, 'bi vw_DimK12Courses'[CourseSubject] = "Math")
-			        VAR ScienceYears = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_FactK12StudentCourseSections'[K12StudentId] = StudentID, 'bi vw_DimK12Courses'[CourseSubject] = "Science")
-			        VAR SocialYears = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_FactK12StudentCourseSections'[K12StudentId] = StudentID, 'bi vw_DimK12Courses'[CourseSubject] = "Social Studies")
-			        VAR LangYears = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_FactK12StudentCourseSections'[K12StudentId] = StudentID, 'bi vw_DimK12Courses'[CourseSubject] = "Foreign Language")
-			        VAR ArtsYears = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_FactK12StudentCourseSections'[K12StudentId] = StudentID, CONTAINSSTRING('bi vw_DimK12Courses'[CourseSubject], "Arts"))
-			
-			        RETURN
-			        EnglishYears >= 4 && MathYears >= 4 && ScienceYears >= 3 && SocialYears >= 2 && LangYears >= 2 && ArtsYears >= 1
-			    )
-			)
-			```
-		formatString: 0
-		lineageTag: d3af2943-3354-4378-ab65-2eca6e338c40
-
-	measure 'College Prep Completion Rate' =
-			
-			VAR TotalGrads = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentAssessments'[K12StudentId]), 'bi vw_FactK12StudentEnrollments'[SchoolYear] = 'bi vw_FactK12StudentEnrollments'[CohortGraduationYear])
-			RETURN DIVIDE([College Prep Graduates], TotalGrads, 0)
-		lineageTag: c2b08cf0-97d8-458d-888c-a8c817429c2e
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Total 11-12 Graders' = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentEnrollments'[K12StudentId]), 'bi vw_DimGradeLevels'[GradeLevelCode] IN {"11", "12"})
 		formatString: 0
@@ -169,13 +66,12 @@ table 'College Readiness'
 			RETURN
 			CALCULATE(
 			    'College Readiness'[% College Ready Graduates],
-			    'bi vw_DimSchoolYears'[SchoolYear] = SelectedTrendYear,
-			    REMOVEFILTERS('bi vw_DimSchoolYears')
+			    'bi vw_DimCohortGraduationYears'[CohortGraduationYear] = SelectedTrendYear,
+			    REMOVEFILTERS('bi vw_DimCohortGraduationYears'[CohortGraduationYear])
 			)
+		formatString: 0.0%;-0.0%;0.0%
 		displayFolder: College Ready Measures
 		lineageTag: a843d23f-014a-4a9c-8607-d71a2aba2847
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'ACT-SAT Participation Rate' = IF([Total 11-12 Graders] = 0, 0, DIVIDE([ACT-SAT Participant Count], [Total 11-12 Graders], 0))
 		formatString: 0.0%;-0.0%;0.0%
@@ -216,6 +112,92 @@ table 'College Readiness'
 		formatString: 0.0%;-0.0%;0.0%
 		displayFolder: SAT-ACT Participations
 		lineageTag: ad41363f-e3ae-43d5-8f16-aa3cf3b8cb81
+
+	measure 'College Readiness by Coursework' = ```
+			
+			VAR Req_English = 4
+			VAR Req_Math = 4
+			VAR Req_Science = 3
+			VAR Req_SocialSci = 2
+			VAR Req_ForeignLang = 2
+			VAR Req_Arts = 1
+			
+			VAR PassedOnly = CALCULATETABLE('bi vw_FactK12StudentCourseSections', 'bi vw_FactK12StudentCourseSections'[LetterGradeEarned] <> "F", REMOVEFILTERS('bi vw_DimSchoolYears'[SchoolYear]))
+			
+			VAR StudentSubjectYears = 
+			    SUMMARIZE(
+			        PassedOnly,
+			        'bi vw_FactK12StudentCourseSections'[CohortGraduationYear],
+			        'bi vw_FactK12StudentCourseSections'[K12StudentId],
+			        "Years_English", CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_DimK12Courses'[CourseSubject] = "English"),
+			        "Years_Math", CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_DimK12Courses'[CourseSubject] = "Math"),
+			        "Years_Science", CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_DimK12Courses'[CourseSubject] = "Laboratory Science"),
+			        "Years_SocialSci", CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_DimK12Courses'[CourseSubject] = "Social Science"),
+			        "Years_ForeignLang", CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_DimK12Courses'[CourseSubject] = "Foreign Language"),
+			        "Years_Arts", CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), CONTAINSSTRING('bi vw_DimK12Courses'[CourseSubject],"Arts"))
+			    )
+			
+			RETURN
+			COUNTROWS(
+			    FILTER(
+			        StudentSubjectYears,
+			        [Years_English] >= Req_English &&
+			        [Years_Math] >= Req_Math &&
+			        [Years_Science] >= Req_Science &&
+			        [Years_SocialSci] >= Req_SocialSci &&
+			        [Years_ForeignLang] >= Req_ForeignLang &&
+			        [Years_Arts] >= Req_Arts
+			    )
+			)
+			```
+		formatString: 0
+		displayFolder: College Ready Measures
+		lineageTag: 72a5be32-0fbe-48d4-a4a5-2e90cdecc426
+
+	measure Test = ```
+			
+			VAR Req_English = 4
+			VAR Req_Math = 4
+			VAR Req_Science = 3
+			VAR Req_SocialSci = 2
+			VAR Req_ForeignLang = 2
+			VAR Req_Arts = 1
+			
+			VAR PassedOnly = FILTER('bi vw_FactK12StudentCourseSections', 'bi vw_FactK12StudentCourseSections'[LetterGradeEarned] <> "F")
+			
+			VAR StudentSubjectYears = 
+			    SUMMARIZE(
+			        PassedOnly,
+			        'bi vw_FactK12StudentCourseSections'[CohortGraduationYear],
+			        'bi vw_FactK12StudentCourseSections'[K12StudentId],
+			        "Years_English", CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_DimK12Courses'[CourseSubject] = "English"),
+			        "Years_Math", CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_DimK12Courses'[CourseSubject] = "Math"),
+			        "Years_Science", CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_DimK12Courses'[CourseSubject] = "Laboratory Science"),
+			        "Years_SocialSci", CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_DimK12Courses'[CourseSubject] = "Social Science"),
+			        "Years_ForeignLang", CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_DimK12Courses'[CourseSubject] = "Foreign Language"),
+			        "Years_Arts", CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), CONTAINSSTRING('bi vw_DimK12Courses'[CourseSubject],"Arts"))
+			    )
+			
+			RETURN
+			COUNTROWS(
+			    FILTER(
+			        StudentSubjectYears,
+			        [Years_English] >= Req_English &&
+			        [Years_Math] >= Req_Math &&
+			        [Years_Science] >= Req_Science &&
+			        [Years_SocialSci] >= Req_SocialSci &&
+			        [Years_ForeignLang] >= Req_ForeignLang &&
+			        [Years_Arts] >= Req_Arts
+			    )
+			)
+			```
+		formatString: 0
+		lineageTag: f96d3d49-c190-44bf-a926-94fd898480a5
+
+	measure 'Total Students In Cohort' = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentEnrollments'[K12StudentId]), KEEPFILTERS('bi vw_DimCohortGraduationYears'[CohortGraduationYear]))
+		formatString: 0
+		displayFolder: College Ready Measures
+		lineageTag: 77e8c56b-42f6-47ed-8928-854e19e861cc
 
 	partition 'College Readiness' = m
 		mode: import

@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "c0eb32be7a224619b5b5",
+  "name": "bf400310c07ab34f20d0",
   "position": {
-    "x": 947.27170868347343,
-    "y": 202.21848739495798,
-    "z": 3000,
-    "height": 258.86834733893556,
-    "width": 332.72829131652662,
-    "tabOrder": 3000
+    "x": 0,
+    "y": 0,
+    "z": 1001,
+    "height": 280.09411764705885,
+    "width": 417.12941176470588,
+    "tabOrder": 1001
   },
   "visual": {
     "visualType": "listSlicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "bi vw_DimK12Schools"
+                      "Entity": "bi vw_DimCohortGraduationYears"
                     }
                   },
-                  "Property": "LeaOrganizationName"
+                  "Property": "CohortGraduationYear"
                 }
               },
-              "queryRef": "bi vw_DimK12Schools.LeaOrganizationName",
-              "nativeQueryRef": "LeaOrganizationName",
+              "queryRef": "bi vw_DimCohortGraduationYears.CohortGraduationYear",
+              "nativeQueryRef": "CohortGraduationYear",
               "active": true
             }
           ]
@@ -44,7 +44,7 @@
                 "From": [
                   {
                     "Name": "b",
-                    "Entity": "bi vw_DimK12Schools",
+                    "Entity": "bi vw_DimCohortGraduationYears",
                     "Type": 0
                   }
                 ],
@@ -60,7 +60,7 @@
                                   "Source": "b"
                                 }
                               },
-                              "Property": "LeaOrganizationName"
+                              "Property": "CohortGraduationYear"
                             }
                           }
                         ],
@@ -68,14 +68,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Barton Education Agency'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'Collins Education Agency'"
+                                "Value": "2017L"
                               }
                             }
                           ]
@@ -91,5 +84,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "06bd71154c31f47e005a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimCohortGraduationYears"
+              }
+            },
+            "Property": "CohortGraduationYear"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

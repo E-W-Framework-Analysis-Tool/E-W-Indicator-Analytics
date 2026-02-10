@@ -208,53 +208,6 @@
         },
         "type": "Advanced",
         "howCreated": "User"
-      },
-      {
-        "name": "4909ad73649e19a288c1",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "TrendLineYears"
-              }
-            },
-            "Property": "SchoolYear"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "04510af9f356cb943b9b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Algebra I by 9th grade"
-              }
-            },
-            "Property": "Algebra Trend"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "c93ce5b8408779162018",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "bi vw_DimK12Schools"
-                  }
-                },
-                "Hierarchy": "Geography"
-              }
-            },
-            "Level": "SeaOrganizationName"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }
