@@ -70,6 +70,17 @@ table 'bi vw_DimK12Schools'
 			lineageTag: 90b83a72-3169-4cf4-9a69-fdeda2d01e05
 			column: K12SchoolName
 
+	hierarchy 'Geography District Level'
+		lineageTag: fa19a52e-d6a1-483a-98c6-d339d9c63c24
+
+		level SeaOrganizationName
+			lineageTag: 7c04d5c0-063b-42aa-ab79-979a8176bb93
+			column: SeaOrganizationName
+
+		level LeaOrganizationName
+			lineageTag: f150353d-690e-466a-ae12-b1ccfdf14e27
+			column: LeaOrganizationName
+
 	partition 'bi vw_DimK12Schools' = m
 		mode: import
 		source =

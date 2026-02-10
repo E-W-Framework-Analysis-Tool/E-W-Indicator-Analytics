@@ -54,19 +54,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "DisabilityStatus"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Disability Status": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "bi_vw_dimeconomicallydisadvantagedstatuses.economicdisadvantagestatus": {
 			      "Definition": {
@@ -75,19 +63,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "EconomicDisadvantageStatus"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Economic Disadvantage Status": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "bi_vw_dimenglishlearnerstatuses.englishlearnerstatus": {
 			      "Definition": {
@@ -96,19 +72,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "EnglishLearnerStatus"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "English Learner Status": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "bi_vw_dimfostercarestatuses.fostercarestatus": {
 			      "Definition": {
@@ -117,19 +81,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "FosterCareStatus"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Foster Care Status": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "bi_vw_dimhomelessnessstatuses.homelessnessstatus": {
 			      "Definition": {
@@ -138,19 +90,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "HomelessnessStatus"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Homelessness Status": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "bi_vw_dimneglectedordelinquentstatus.neglectedordelinquentstatus": {
 			      "Definition": {
@@ -159,19 +99,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "NeglectedOrDelinquentStatus"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Neglected Or Delinquent Status": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    }
 			  }
 			}

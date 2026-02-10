@@ -20,42 +20,28 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "College Readiness"
+                      "Entity": "Course Offering"
                     }
                   },
-                  "Property": "Total Students In Cohort"
+                  "Property": "TotalSchools"
                 }
               },
-              "queryRef": "College Readiness.Total Students In Cohort",
-              "nativeQueryRef": "Total Students In Cohort"
+              "queryRef": "Course Offering.TotalSchools",
+              "nativeQueryRef": "TotalSchools"
             },
             {
               "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "College Readiness"
+                      "Entity": "Course Offering"
                     }
                   },
-                  "Property": "College Readiness by Coursework"
+                  "Property": "Schools Offering Required Curriculum"
                 }
               },
-              "queryRef": "College Readiness.College Readiness by Coursework",
-              "nativeQueryRef": "College Readiness by Coursework"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "College Readiness"
-                    }
-                  },
-                  "Property": "College Readiness Rate"
-                }
-              },
-              "queryRef": "College Readiness.% College Ready Graduates",
-              "nativeQueryRef": "% College Ready Graduates"
+              "queryRef": "Course Offering.Schools Offering Required Curriculum",
+              "nativeQueryRef": "Schools Offering Required Curriculum"
             }
           ]
         }
@@ -67,10 +53,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "College Readiness"
+                    "Entity": "Course Offering"
                   }
                 },
-                "Property": "Total Students In Cohort"
+                "Property": "TotalSchools"
               }
             },
             "direction": "Descending"
@@ -84,43 +70,29 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "9788e826a8f0ffaac2d6",
+        "name": "e26dbf10ff19a7754a6a",
         "field": {
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "College Readiness"
+                "Entity": "Course Offering"
               }
             },
-            "Property": "Total Students In Cohort"
+            "Property": "TotalSchools"
           }
         },
         "type": "Advanced"
       },
       {
-        "name": "9addd9d52f4bb2add1f7",
+        "name": "9f6f0db42167b8bdf3e7",
         "field": {
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "College Readiness"
+                "Entity": "Course Offering"
               }
             },
-            "Property": "College Readiness by Coursework"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "1c8f933731e3636afd59",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "College Readiness"
-              }
-            },
-            "Property": "College Readiness Rate"
+            "Property": "Schools Offering Required Curriculum"
           }
         },
         "type": "Advanced"

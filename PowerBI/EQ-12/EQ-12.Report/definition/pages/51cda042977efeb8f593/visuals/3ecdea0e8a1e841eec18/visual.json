@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "8a8c41ce416e516ae97c",
+  "name": "3ecdea0e8a1e841eec18",
   "position": {
     "x": 0,
-    "y": 180.56690837178644,
-    "z": 1000,
-    "height": 210.94264996704024,
-    "width": 631.98417930125254,
+    "y": 194.356940509915,
+    "z": 0,
+    "height": 211.03682719546742,
+    "width": 631.66005665722378,
     "tabOrder": 0
   },
   "visual": {
@@ -25,15 +25,15 @@
                           "Entity": "bi vw_DimK12Schools"
                         }
                       },
-                      "Hierarchy": "Geography"
+                      "Hierarchy": "Geography District Level"
                     }
                   },
                   "Level": "SeaOrganizationName"
                 }
               },
-              "queryRef": "bi vw_DimK12Schools.Geography.SeaOrganizationName",
-              "nativeQueryRef": "Geography SeaOrganizationName",
-              "active": true
+              "queryRef": "bi vw_DimK12Schools.Geography District Level.SeaOrganizationName",
+              "nativeQueryRef": "Geography District Level SeaOrganizationName",
+              "active": false
             },
             {
               "field": {
@@ -45,35 +45,15 @@
                           "Entity": "bi vw_DimK12Schools"
                         }
                       },
-                      "Hierarchy": "Geography"
+                      "Hierarchy": "Geography District Level"
                     }
                   },
                   "Level": "LeaOrganizationName"
                 }
               },
-              "queryRef": "bi vw_DimK12Schools.Geography.LeaOrganizationName",
-              "nativeQueryRef": "Geography LeaOrganizationName",
-              "active": false
-            },
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "bi vw_DimK12Schools"
-                        }
-                      },
-                      "Hierarchy": "Geography"
-                    }
-                  },
-                  "Level": "K12SchoolName"
-                }
-              },
-              "queryRef": "bi vw_DimK12Schools.Geography.K12SchoolName",
-              "nativeQueryRef": "Geography K12SchoolName",
-              "active": false
+              "queryRef": "bi vw_DimK12Schools.Geography District Level.LeaOrganizationName",
+              "nativeQueryRef": "Geography District Level LeaOrganizationName",
+              "active": true
             }
           ]
         },
@@ -84,14 +64,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "College Readiness"
+                      "Entity": "Course Offering"
                     }
                   },
-                  "Property": "ACT-SAT Participation Rate"
+                  "Property": "Course Offering Rate"
                 }
               },
-              "queryRef": "College Readiness.ACT-SAT Participation Rate",
-              "nativeQueryRef": "ACT-SAT Participation Rate"
+              "queryRef": "Course Offering.Course Offering Rate",
+              "nativeQueryRef": "Course Offering Rate"
             }
           ]
         }
@@ -108,7 +88,7 @@
                         "Entity": "bi vw_DimK12Schools"
                       }
                     },
-                    "Hierarchy": "Geography"
+                    "Hierarchy": "Geography District Level"
                   }
                 },
                 "Level": "SeaOrganizationName"
@@ -126,28 +106,10 @@
                         "Entity": "bi vw_DimK12Schools"
                       }
                     },
-                    "Hierarchy": "Geography"
+                    "Hierarchy": "Geography District Level"
                   }
                 },
                 "Level": "LeaOrganizationName"
-              }
-            },
-            "direction": "Ascending"
-          },
-          {
-            "field": {
-              "HierarchyLevel": {
-                "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "bi vw_DimK12Schools"
-                      }
-                    },
-                    "Hierarchy": "Geography"
-                  }
-                },
-                "Level": "K12SchoolName"
               }
             },
             "direction": "Ascending"
@@ -191,13 +153,8 @@
           "properties": {
             "text": {
               "expr": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "College Readiness"
-                    }
-                  },
-                  "Property": "SAT-ACT Disaggregate Chart Title"
+                "Literal": {
+                  "Value": "'Schools offering college-ready courses'"
                 }
               }
             },
@@ -217,7 +174,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "dc230a2801d5aad9d68a",
+        "name": "fe57243641a4572e70b4",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -227,7 +184,7 @@
                     "Entity": "bi vw_DimK12Schools"
                   }
                 },
-                "Hierarchy": "Geography"
+                "Hierarchy": "Geography District Level"
               }
             },
             "Level": "SeaOrganizationName"
@@ -236,7 +193,7 @@
         "type": "Categorical"
       },
       {
-        "name": "2ae178b2c1e49d17546f",
+        "name": "f2e998ce1bb72b439e18",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -246,7 +203,7 @@
                     "Entity": "bi vw_DimK12Schools"
                   }
                 },
-                "Hierarchy": "Geography"
+                "Hierarchy": "Geography District Level"
               }
             },
             "Level": "LeaOrganizationName"
@@ -255,34 +212,15 @@
         "type": "Categorical"
       },
       {
-        "name": "eeacea9619cd7f131edf",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "bi vw_DimK12Schools"
-                  }
-                },
-                "Hierarchy": "Geography"
-              }
-            },
-            "Level": "K12SchoolName"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "20cf8b88c9a310b740eb",
+        "name": "5fd2ee0fe9349256d462",
         "field": {
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "College Readiness"
+                "Entity": "Course Offering"
               }
             },
-            "Property": "ACT-SAT Participation Rate"
+            "Property": "Course Offering Rate"
           }
         },
         "type": "Advanced"

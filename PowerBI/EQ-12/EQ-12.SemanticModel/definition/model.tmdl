@@ -10,7 +10,7 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_ProTooling = ["DevMode"]
 
-annotation PBI_QueryOrder = ["bi vw_DimAssessments","bi vw_DimAssessmentSubtests","bi vw_DimCohortGraduationYears","bi vw_DimCohortYears","bi vw_DimDisabilityStatuses","bi vw_DimEconomicallyDisadvantagedStatuses","bi vw_DimEnglishLearnerStatuses","bi vw_DimFosterCareStatuses","bi vw_DimGradeLevels","bi vw_DimHomelessnessStatuses","bi vw_DimK12Courses","bi vw_DimK12Schools","bi vw_DimLEAs","bi vw_DimRaces","bi vw_DimSchoolYears","bi vw_DimSEAs","bi vw_FactK12StudentAssessments","bi vw_FactK12StudentCourseSections","bi vw_FactK12StudentEnrollments","bi vw_DimStudents","bi vw_DimK12Demographics","Algebra I by 9th grade","College Readiness","bi vw_DimK12CourseStatuses","bi vw_DimNeglectedOrDelinquentStatus","Early College Coursework Completion"]
+annotation PBI_QueryOrder = ["bi vw_DimAssessments","bi vw_DimAssessmentSubtests","bi vw_DimCohortGraduationYears","bi vw_DimCohortYears","bi vw_DimDisabilityStatuses","bi vw_DimEconomicallyDisadvantagedStatuses","bi vw_DimEnglishLearnerStatuses","bi vw_DimFosterCareStatuses","bi vw_DimGradeLevels","bi vw_DimHomelessnessStatuses","bi vw_DimK12Courses","bi vw_DimK12Schools","bi vw_DimLEAs","bi vw_DimRaces","bi vw_DimSchoolYears","bi vw_DimSEAs","bi vw_FactK12StudentAssessments","bi vw_FactK12StudentCourseSections","bi vw_FactK12StudentEnrollments","bi vw_DimStudents","bi vw_DimK12Demographics","Algebra I by 9th grade","College Readiness","bi vw_DimK12CourseStatuses","bi vw_DimNeglectedOrDelinquentStatus","Early College Coursework Completion","Course Offering"]
 
 ref table 'bi vw_DimAssessments'
 ref table 'bi vw_DimAssessmentSubtests'
@@ -42,6 +42,7 @@ ref table TrendLineYears
 ref table TrendLineGraduationYears
 ref table GradeLegend
 ref table 'Course Level Legend'
+ref table 'Course Offering'
 
 ref cultureInfo en-US
 
