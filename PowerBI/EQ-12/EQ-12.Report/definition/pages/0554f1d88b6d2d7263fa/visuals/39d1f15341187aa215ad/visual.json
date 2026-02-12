@@ -3,11 +3,10 @@
   "name": "39d1f15341187aa215ad",
   "position": {
     "x": 0,
-    "y": 138.97142857142856,
+    "y": 138.60859044162129,
     "z": 2000,
-    "height": 34.946031746031743,
-    "width": 631.4666666666667,
-    "tabOrder": 2000
+    "height": 35.620084694494857,
+    "width": 632.64367816091954
   },
   "visualGroup": {
     "displayName": "Page Summary - Left",
@@ -19,14 +18,14 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "100D"
                 }
               }
             }

@@ -4,7 +4,7 @@
   "position": {
     "x": 1100.0233372228704,
     "y": 524.9941656942824,
-    "z": 9501,
+    "z": 10000,
     "height": 194.9124854142357,
     "width": 179.97666277712952,
     "tabOrder": 19001
@@ -67,7 +67,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''bi vw_DimK12Schools''[SeaOrganizationName]'"
+                                "Value": "'''bi vw_DimK12Schools''[K12SchoolName]'"
                               }
                             }
                           ]
@@ -95,7 +95,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''bi vw_DimK12Schools''[SeaOrganizationName]'"
+                                      "Value": "'''bi vw_DimK12Schools''[K12SchoolName]'"
                                     }
                                   }
                                 ]
@@ -119,7 +119,7 @@
                         },
                         "valueMap": [
                           {
-                            "0": "SEA"
+                            "0": "K12 School"
                           }
                         ]
                       }

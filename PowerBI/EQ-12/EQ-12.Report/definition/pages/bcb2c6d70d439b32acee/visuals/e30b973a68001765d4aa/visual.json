@@ -23,13 +23,13 @@
                       "Entity": "bi vw_DimK12Schools"
                     }
                   },
-                  "Property": "SeaOrganizationName"
+                  "Property": "K12SchoolName"
                 }
               },
-              "queryRef": "bi vw_DimK12Schools.SeaOrganizationName",
-              "nativeQueryRef": "SEA",
+              "queryRef": "bi vw_DimK12Schools.K12SchoolName",
+              "nativeQueryRef": "K12 School",
               "active": true,
-              "displayName": "SEA"
+              "displayName": "K12 School"
             }
           ],
           "fieldParameters": [
@@ -160,6 +160,20 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "f163179bd217aa41b675",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Schools"
+              }
+            },
+            "Property": "K12SchoolName"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

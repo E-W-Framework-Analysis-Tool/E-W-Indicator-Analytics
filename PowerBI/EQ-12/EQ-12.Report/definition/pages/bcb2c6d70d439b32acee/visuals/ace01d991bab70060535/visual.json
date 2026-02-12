@@ -42,12 +42,12 @@
                       "Entity": "bi vw_DimK12Schools"
                     }
                   },
-                  "Property": "SeaOrganizationName"
+                  "Property": "K12SchoolName"
                 }
               },
-              "queryRef": "bi vw_DimK12Schools.SeaOrganizationName",
-              "nativeQueryRef": "SEA",
-              "displayName": "SEA"
+              "queryRef": "bi vw_DimK12Schools.K12SchoolName",
+              "nativeQueryRef": "K12 School",
+              "displayName": "K12 School"
             }
           ],
           "fieldParameters": [
