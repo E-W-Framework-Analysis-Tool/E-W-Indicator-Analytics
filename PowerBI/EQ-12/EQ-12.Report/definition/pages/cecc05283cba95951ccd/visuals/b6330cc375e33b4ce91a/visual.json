@@ -374,7 +374,7 @@
             "weight": {
               "expr": {
                 "Literal": {
-                  "Value": "3D"
+                  "Value": "1D"
                 }
               }
             }
@@ -400,7 +400,7 @@
             "weight": {
               "expr": {
                 "Literal": {
-                  "Value": "3D"
+                  "Value": "1D"
                 }
               }
             }
@@ -426,7 +426,7 @@
             "weight": {
               "expr": {
                 "Literal": {
-                  "Value": "3D"
+                  "Value": "1D"
                 }
               }
             }

@@ -4,7 +4,7 @@
   "position": {
     "x": 0,
     "y": 0,
-    "z": 0,
+    "z": 1500,
     "height": 98.835175713578622,
     "width": 639.61282516636425,
     "tabOrder": 2000
@@ -61,6 +61,13 @@
                       "Percent": 0
                     }
                   }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }
