@@ -1,0 +1,100 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "cecc05283cba95951ccd",
+  "displayName": "Course Offering",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "pageBinding": {
+    "name": "e653f0409555b216dd66",
+    "type": "Default",
+    "parameters": []
+  },
+  "objects": {
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "242L"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "971ac20acbefc4edfb8c",
+      "target": "613f257a4f53d0a517ba",
+      "type": "NoFilter"
+    },
+    {
+      "source": "971ac20acbefc4edfb8c",
+      "target": "c8a5bab5246c8e3f7d10",
+      "type": "NoFilter"
+    },
+    {
+      "source": "971ac20acbefc4edfb8c",
+      "target": "6506727b021073edfaa5",
+      "type": "NoFilter"
+    },
+    {
+      "source": "971ac20acbefc4edfb8c",
+      "target": "91a1eb8fdcb323dba24c",
+      "type": "NoFilter"
+    },
+    {
+      "source": "971ac20acbefc4edfb8c",
+      "target": "d3c12fed14fd8679930e",
+      "type": "NoFilter"
+    },
+    {
+      "source": "971ac20acbefc4edfb8c",
+      "target": "0c964d9f5919ed203da2",
+      "type": "NoFilter"
+    },
+    {
+      "source": "971ac20acbefc4edfb8c",
+      "target": "73a748817ac77d2baf36",
+      "type": "NoFilter"
+    },
+    {
+      "source": "971ac20acbefc4edfb8c",
+      "target": "e7ddba17992c3a98b715",
+      "type": "NoFilter"
+    },
+    {
+      "source": "971ac20acbefc4edfb8c",
+      "target": "ea82593afa3cb4bc932f",
+      "type": "NoFilter"
+    },
+    {
+      "source": "971ac20acbefc4edfb8c",
+      "target": "0c3a9b68c3ede9e75aad",
+      "type": "NoFilter"
+    },
+    {
+      "source": "971ac20acbefc4edfb8c",
+      "target": "b7b9f676b68ffebd4ce8",
+      "type": "NoFilter"
+    },
+    {
+      "source": "971ac20acbefc4edfb8c",
+      "target": "8199e7439e36854cf6f5",
+      "type": "NoFilter"
+    },
+    {
+      "source": "971ac20acbefc4edfb8c",
+      "target": "7e9d5d8287622082e5a5",
+      "type": "NoFilter"
+    },
+    {
+      "source": "3e32ff722300f76ec82d",
+      "target": "971ac20acbefc4edfb8c",
+      "type": "NoFilter"
+    }
+  ]
+}

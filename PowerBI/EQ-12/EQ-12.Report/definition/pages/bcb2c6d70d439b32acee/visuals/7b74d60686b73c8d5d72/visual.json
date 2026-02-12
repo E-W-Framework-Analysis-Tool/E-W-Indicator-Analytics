@@ -45,7 +45,8 @@
                 }
               },
               "index": 0,
-              "length": 1
+              "length": 1,
+              "sortDirection": "Ascending"
             }
           ]
         },
@@ -72,19 +73,18 @@
         "sort": [
           {
             "field": {
-              "Measure": {
+              "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Algebra I by 9th grade"
+                    "Entity": "bi vw_DimRaces"
                   }
                 },
-                "Property": "Algebra I Success Rate"
+                "Property": "RaceEthnicity"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": true
+        ]
       }
     },
     "objects": {

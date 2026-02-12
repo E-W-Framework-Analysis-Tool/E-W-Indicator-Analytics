@@ -33,19 +33,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Gender"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Gender": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "bi_vw_dimdisabilitystatuses.disabilitystatus": {
 			      "Definition": {

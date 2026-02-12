@@ -66,37 +66,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "e26dbf10ff19a7754a6a",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Course Offering"
-              }
-            },
-            "Property": "TotalSchools"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "9f6f0db42167b8bdf3e7",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Course Offering"
-              }
-            },
-            "Property": "Schools Offering Required Curriculum"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

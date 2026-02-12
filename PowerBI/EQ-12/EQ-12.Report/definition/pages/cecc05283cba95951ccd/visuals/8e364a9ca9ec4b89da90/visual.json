@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "8e364a9ca9ec4b89da90",
+  "position": {
+    "x": 0,
+    "y": 138.989898989899,
+    "z": 6000,
+    "height": 34.747474747474747,
+    "width": 631.91919191919192,
+    "tabOrder": 2000
+  },
+  "visualGroup": {
+    "displayName": "Page Summary",
+    "groupMode": "ScaleMode"
+  }
+}

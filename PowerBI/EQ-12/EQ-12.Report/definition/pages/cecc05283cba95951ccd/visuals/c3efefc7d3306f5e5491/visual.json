@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "e08bde71d5836829e981",
+  "name": "c3efefc7d3306f5e5491",
   "position": {
     "x": 0,
-    "y": 509.09915014164307,
-    "z": 1,
-    "height": 211.03682719546742,
-    "width": 631.66005665722378,
-    "tabOrder": 1
+    "y": 193.46938775510202,
+    "z": 8000,
+    "height": 211.42857142857142,
+    "width": 631.83673469387747,
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "columnChart",
@@ -28,7 +28,7 @@
                       "Hierarchy": "Geography District Level"
                     }
                   },
-                  "Level": "SeaOrganizationName"
+                  "Level": "Sea Organization Name"
                 }
               },
               "queryRef": "bi vw_DimK12Schools.Geography District Level.SeaOrganizationName",
@@ -48,7 +48,7 @@
                       "Hierarchy": "Geography District Level"
                     }
                   },
-                  "Level": "LeaOrganizationName"
+                  "Level": "Lea Organization Name"
                 }
               },
               "queryRef": "bi vw_DimK12Schools.Geography District Level.LeaOrganizationName",
@@ -67,11 +67,11 @@
                       "Entity": "Course Offering"
                     }
                   },
-                  "Property": "Algebra I Offering Rate"
+                  "Property": "Course Offering Rate"
                 }
               },
-              "queryRef": "Course Offering.Algebra I Offering Rate",
-              "nativeQueryRef": "Algebra I Offering Rate"
+              "queryRef": "Course Offering.Course Offering Rate",
+              "nativeQueryRef": "Course Offering Rate"
             }
           ]
         }
@@ -91,7 +91,7 @@
                     "Hierarchy": "Geography District Level"
                   }
                 },
-                "Level": "SeaOrganizationName"
+                "Level": "Sea Organization Name"
               }
             },
             "direction": "Ascending"
@@ -109,7 +109,7 @@
                     "Hierarchy": "Geography District Level"
                   }
                 },
-                "Level": "LeaOrganizationName"
+                "Level": "Lea Organization Name"
               }
             },
             "direction": "Ascending"
@@ -154,7 +154,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Schools curriculum offering Algebra I'"
+                  "Value": "'Schools offering college-ready courses'"
                 }
               }
             },
@@ -174,7 +174,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "fa85a66c997caacdd0c1",
+        "name": "3a29816864ce27a27a5a",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -187,13 +187,13 @@
                 "Hierarchy": "Geography District Level"
               }
             },
-            "Level": "SeaOrganizationName"
+            "Level": "Sea Organization Name"
           }
         },
         "type": "Categorical"
       },
       {
-        "name": "0148590cce9ddaf01d47",
+        "name": "f87960f1a1770f73a932",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -206,13 +206,13 @@
                 "Hierarchy": "Geography District Level"
               }
             },
-            "Level": "LeaOrganizationName"
+            "Level": "Lea Organization Name"
           }
         },
         "type": "Categorical"
       },
       {
-        "name": "e333e34cb9037a90cc95",
+        "name": "659525957d21fff02b3e",
         "field": {
           "Measure": {
             "Expression": {
@@ -220,7 +220,7 @@
                 "Entity": "Course Offering"
               }
             },
-            "Property": "Algebra I Offering Rate"
+            "Property": "Course Offering Rate"
           }
         },
         "type": "Advanced"
