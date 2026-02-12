@@ -191,23 +191,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "3a256690bfcb3b9852ba",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "4d78c200b000c5f0ab56",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimSchoolYears"
-              }
-            },
-            "Property": "SchoolYear"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
-  }
+  "parentGroupName": "3a256690bfcb3b9852ba"
 }

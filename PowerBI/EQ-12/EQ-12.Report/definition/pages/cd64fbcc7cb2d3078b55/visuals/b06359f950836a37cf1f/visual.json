@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "b06359f950836a37cf1f",
   "position": {
-    "x": 631.98417930125254,
-    "y": 180.56690837178644,
-    "z": 2000,
-    "height": 210.94264996704024,
-    "width": 648.01582069874758,
+    "x": 631.657355679702,
+    "y": 193.86716325263811,
+    "z": 3000,
+    "height": 204.99068901303539,
+    "width": 648.342644320298,
     "tabOrder": 1000
   },
   "visual": {
@@ -29,6 +29,41 @@
               "queryRef": "TrendLineYears.SchoolYear",
               "nativeQueryRef": "SchoolYear",
               "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_DimK12Schools"
+                    }
+                  },
+                  "Property": "SeaOrganizationName"
+                }
+              },
+              "queryRef": "bi vw_DimK12Schools.SeaOrganizationName",
+              "nativeQueryRef": "SEA",
+              "displayName": "SEA"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Hierarchy Picker"
+                    }
+                  },
+                  "Property": "Organization Hierarchy"
+                }
+              },
+              "index": 0,
+              "length": 1
             }
           ]
         },
@@ -185,6 +220,48 @@
         },
         "type": "Advanced",
         "howCreated": "User"
+      },
+      {
+        "name": "cd66941aa9e0bae166ae",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "TrendLineYears"
+              }
+            },
+            "Property": "SchoolYear"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7a2586faf56ad71622a9",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "College Readiness"
+              }
+            },
+            "Property": "ACT-SAT College Readiness Trend"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6160bc3832acc79c47ab",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Schools"
+              }
+            },
+            "Property": "SeaOrganizationName"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

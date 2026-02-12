@@ -3,11 +3,11 @@
   "name": "c3efefc7d3306f5e5491",
   "position": {
     "x": 0,
-    "y": 193.46938775510202,
-    "z": 8000,
-    "height": 211.42857142857142,
-    "width": 631.83673469387747,
-    "tabOrder": 7000
+    "y": 204.19615145872129,
+    "z": 5000,
+    "height": 249.48479205462448,
+    "width": 640.397268777157,
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "columnChart",
@@ -17,43 +17,53 @@
           "projections": [
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "bi vw_DimK12Schools"
-                        }
-                      },
-                      "Hierarchy": "Geography District Level"
+                    "SourceRef": {
+                      "Entity": "bi vw_DimK12Schools"
                     }
                   },
-                  "Level": "Sea Organization Name"
+                  "Property": "LeaOrganizationName"
                 }
               },
-              "queryRef": "bi vw_DimK12Schools.Geography District Level.SeaOrganizationName",
-              "nativeQueryRef": "Geography District Level SeaOrganizationName",
-              "active": false
-            },
+              "queryRef": "bi vw_DimK12Schools.LeaOrganizationName",
+              "nativeQueryRef": "LEA",
+              "active": true,
+              "displayName": "LEA"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Hierarchy Picker"
+                    }
+                  },
+                  "Property": "Organization Hierarchy"
+                }
+              },
+              "index": 0,
+              "length": 1
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "bi vw_DimK12Schools"
-                        }
-                      },
-                      "Hierarchy": "Geography District Level"
+                    "SourceRef": {
+                      "Entity": "bi vw_DimK12Schools"
                     }
                   },
-                  "Level": "Lea Organization Name"
+                  "Property": "EducationLevel"
                 }
               },
-              "queryRef": "bi vw_DimK12Schools.Geography District Level.LeaOrganizationName",
-              "nativeQueryRef": "Geography District Level LeaOrganizationName",
-              "active": true
+              "queryRef": "bi vw_DimK12Schools.EducationLevel",
+              "nativeQueryRef": "EducationLevel"
             }
           ]
         },
@@ -80,39 +90,16 @@
         "sort": [
           {
             "field": {
-              "HierarchyLevel": {
+              "Measure": {
                 "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "bi vw_DimK12Schools"
-                      }
-                    },
-                    "Hierarchy": "Geography District Level"
+                  "SourceRef": {
+                    "Entity": "Course Offering"
                   }
                 },
-                "Level": "Sea Organization Name"
+                "Property": "Course Offering Rate"
               }
             },
-            "direction": "Ascending"
-          },
-          {
-            "field": {
-              "HierarchyLevel": {
-                "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "bi vw_DimK12Schools"
-                      }
-                    },
-                    "Hierarchy": "Geography District Level"
-                  }
-                },
-                "Level": "Lea Organization Name"
-              }
-            },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ],
         "isDefaultSort": true
@@ -140,6 +127,19 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "legend": [
+        {
+          "properties": {
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Education Level'"
                 }
               }
             }
@@ -174,45 +174,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "3a29816864ce27a27a5a",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "bi vw_DimK12Schools"
-                  }
-                },
-                "Hierarchy": "Geography District Level"
-              }
-            },
-            "Level": "Sea Organization Name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "f87960f1a1770f73a932",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "bi vw_DimK12Schools"
-                  }
-                },
-                "Hierarchy": "Geography District Level"
-              }
-            },
-            "Level": "Lea Organization Name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "659525957d21fff02b3e",
+        "name": "7c784808ac7162c0a0ea",
         "field": {
           "Measure": {
             "Expression": {
@@ -224,6 +186,20 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "7e11133c68c6722360b1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Schools"
+              }
+            },
+            "Property": "EducationLevel"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

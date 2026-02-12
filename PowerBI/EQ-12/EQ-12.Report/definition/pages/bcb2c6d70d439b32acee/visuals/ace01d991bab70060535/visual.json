@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "ace01d991bab70060535",
   "position": {
-    "x": 631.98417930125254,
-    "y": 180.56690837178644,
-    "z": 2000,
-    "height": 210.94264996704024,
-    "width": 648.01582069874758,
+    "x": 631.657355679702,
+    "y": 193.07262569832403,
+    "z": 3000,
+    "height": 205.78522656734947,
+    "width": 648.342644320298,
     "tabOrder": 1000
   },
   "visual": {
@@ -42,12 +42,12 @@
                       "Entity": "bi vw_DimK12Schools"
                     }
                   },
-                  "Property": "K12SchoolName"
+                  "Property": "SeaOrganizationName"
                 }
               },
-              "queryRef": "bi vw_DimK12Schools.K12SchoolName",
-              "nativeQueryRef": "K12 School",
-              "displayName": "K12 School"
+              "queryRef": "bi vw_DimK12Schools.SeaOrganizationName",
+              "nativeQueryRef": "SEA",
+              "displayName": "SEA"
             }
           ],
           "fieldParameters": [
@@ -222,7 +222,7 @@
         "howCreated": "User"
       },
       {
-        "name": "ef0cbb65eeeba1ac3ebc",
+        "name": "2dce99b0b985838d463d",
         "field": {
           "Column": {
             "Expression": {
@@ -236,7 +236,7 @@
         "type": "Advanced"
       },
       {
-        "name": "4fc960fd3db89d4a9420",
+        "name": "0ffebfd3fe3f648a3244",
         "field": {
           "Measure": {
             "Expression": {
@@ -248,6 +248,20 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "c1f0c06fce69f6f58a21",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Schools"
+              }
+            },
+            "Property": "SeaOrganizationName"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

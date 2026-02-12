@@ -166,23 +166,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "3a256690bfcb3b9852ba",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "1bfbe17b91a24408ffde",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimEnglishLearnerStatuses"
-              }
-            },
-            "Property": "EnglishLearnerStatus"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
-  }
+  "parentGroupName": "3a256690bfcb3b9852ba"
 }

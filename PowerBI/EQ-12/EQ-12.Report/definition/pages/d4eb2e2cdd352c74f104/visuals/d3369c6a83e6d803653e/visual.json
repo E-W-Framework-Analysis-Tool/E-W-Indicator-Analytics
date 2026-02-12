@@ -3,10 +3,10 @@
   "name": "d3369c6a83e6d803653e",
   "position": {
     "x": 0,
-    "y": 391.67192429022083,
-    "z": 5000,
-    "height": 327.87381703470032,
-    "width": 988.46687697160883,
+    "y": 398.57230769230767,
+    "z": 3000,
+    "height": 321.37846153846152,
+    "width": 987.76615384615388,
     "tabOrder": 2000
   },
   "visual": {
@@ -158,7 +158,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Grade Level'"
+                  "Value": "'Course Type'"
                 }
               }
             }
@@ -221,6 +221,48 @@
             }
           ]
         }
+      },
+      {
+        "name": "21c4af5eb4fe5fb38f48",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimRaces"
+              }
+            },
+            "Property": "RaceEthnicity"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f0ce6fae7fd613851d26",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Course Level Legend"
+              }
+            },
+            "Property": "CourseLevel"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d3bafa067a1be5011c4c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Early College Coursework Completion"
+              }
+            },
+            "Property": "Coursework Completion"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

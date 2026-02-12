@@ -55,6 +55,14 @@ table 'bi vw_DimK12Schools'
 
 		annotation SummarizationSetBy = Automatic
 
+	column EducationLevel
+		dataType: string
+		lineageTag: 7503e81c-6c14-4b88-8227-a8baf9fc6b1c
+		summarizeBy: none
+		sourceColumn: EducationLevel
+
+		annotation SummarizationSetBy = Automatic
+
 	hierarchy Geography
 		lineageTag: fc91778c-0d90-43a4-9140-558ba5808f66
 
@@ -69,17 +77,6 @@ table 'bi vw_DimK12Schools'
 		level K12SchoolName
 			lineageTag: 90b83a72-3169-4cf4-9a69-fdeda2d01e05
 			column: K12SchoolName
-
-	hierarchy 'Geography District Level'
-		lineageTag: fa19a52e-d6a1-483a-98c6-d339d9c63c24
-
-		level 'Sea Organization Name'
-			lineageTag: 7c04d5c0-063b-42aa-ab79-979a8176bb93
-			column: SeaOrganizationName
-
-		level 'Lea Organization Name'
-			lineageTag: f150353d-690e-466a-ae12-b1ccfdf14e27
-			column: LeaOrganizationName
 
 	partition 'bi vw_DimK12Schools' = m
 		mode: import

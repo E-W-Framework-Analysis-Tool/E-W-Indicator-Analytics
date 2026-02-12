@@ -3,10 +3,10 @@
   "name": "6c0bab62a6559181b9c4",
   "position": {
     "x": 0,
-    "y": 391.67192429022083,
+    "y": 398.57230769230767,
     "z": 4000,
-    "height": 327.87381703470032,
-    "width": 988.46687697160883,
+    "height": 321.37846153846152,
+    "width": 988.55384615384617,
     "tabOrder": 2000
   },
   "visual": {
@@ -214,6 +214,48 @@
             }
           ]
         }
+      },
+      {
+        "name": "b856ae86aa8e1c378e00",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimRaces"
+              }
+            },
+            "Property": "RaceEthnicity"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4425d102677591e86a7e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GradeLegend"
+              }
+            },
+            "Property": "GradeLevelCode"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a30b962b12a3adda2c83",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Early College Coursework Completion"
+              }
+            },
+            "Property": "Coursework Completion"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

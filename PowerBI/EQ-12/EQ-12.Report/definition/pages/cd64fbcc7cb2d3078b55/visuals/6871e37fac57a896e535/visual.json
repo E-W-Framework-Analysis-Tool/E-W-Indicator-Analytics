@@ -3,10 +3,10 @@
   "name": "6871e37fac57a896e535",
   "position": {
     "x": 0,
-    "y": 180.56690837178644,
-    "z": 1000,
-    "height": 210.94264996704024,
-    "width": 631.98417930125254,
+    "y": 193.86716325263811,
+    "z": 2000,
+    "height": 204.99068901303539,
+    "width": 631.657355679702,
     "tabOrder": 0
   },
   "visual": {
@@ -17,63 +17,35 @@
           "projections": [
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "bi vw_DimK12Schools"
-                        }
-                      },
-                      "Hierarchy": "Geography"
+                    "SourceRef": {
+                      "Entity": "bi vw_DimK12Schools"
                     }
                   },
-                  "Level": "SeaOrganizationName"
+                  "Property": "SeaOrganizationName"
                 }
               },
-              "queryRef": "bi vw_DimK12Schools.Geography.SeaOrganizationName",
-              "nativeQueryRef": "Geography SeaOrganizationName",
-              "active": false
-            },
+              "queryRef": "bi vw_DimK12Schools.SeaOrganizationName",
+              "nativeQueryRef": "SEA",
+              "active": true,
+              "displayName": "SEA"
+            }
+          ],
+          "fieldParameters": [
             {
-              "field": {
-                "HierarchyLevel": {
+              "parameterExpr": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "bi vw_DimK12Schools"
-                        }
-                      },
-                      "Hierarchy": "Geography"
+                    "SourceRef": {
+                      "Entity": "Hierarchy Picker"
                     }
                   },
-                  "Level": "LeaOrganizationName"
+                  "Property": "Organization Hierarchy"
                 }
               },
-              "queryRef": "bi vw_DimK12Schools.Geography.LeaOrganizationName",
-              "nativeQueryRef": "Geography LeaOrganizationName",
-              "active": true
-            },
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "bi vw_DimK12Schools"
-                        }
-                      },
-                      "Hierarchy": "Geography"
-                    }
-                  },
-                  "Level": "K12SchoolName"
-                }
-              },
-              "queryRef": "bi vw_DimK12Schools.Geography.K12SchoolName",
-              "nativeQueryRef": "Geography K12SchoolName",
-              "active": false
+              "index": 0,
+              "length": 1
             }
           ]
         },
@@ -100,57 +72,16 @@
         "sort": [
           {
             "field": {
-              "HierarchyLevel": {
+              "Measure": {
                 "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "bi vw_DimK12Schools"
-                      }
-                    },
-                    "Hierarchy": "Geography"
+                  "SourceRef": {
+                    "Entity": "College Readiness"
                   }
                 },
-                "Level": "SeaOrganizationName"
+                "Property": "ACT-SAT College Readiness"
               }
             },
-            "direction": "Ascending"
-          },
-          {
-            "field": {
-              "HierarchyLevel": {
-                "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "bi vw_DimK12Schools"
-                      }
-                    },
-                    "Hierarchy": "Geography"
-                  }
-                },
-                "Level": "LeaOrganizationName"
-              }
-            },
-            "direction": "Ascending"
-          },
-          {
-            "field": {
-              "HierarchyLevel": {
-                "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "bi vw_DimK12Schools"
-                      }
-                    },
-                    "Hierarchy": "Geography"
-                  }
-                },
-                "Level": "K12SchoolName"
-              }
-            },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ],
         "isDefaultSort": true
@@ -213,5 +144,37 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f1b554ba68b1f70f0c82",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "College Readiness"
+              }
+            },
+            "Property": "ACT-SAT College Readiness"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "981e576660bbcaa9ce0f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Schools"
+              }
+            },
+            "Property": "SeaOrganizationName"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

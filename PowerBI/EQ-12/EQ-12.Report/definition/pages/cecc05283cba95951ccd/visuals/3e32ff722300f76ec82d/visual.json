@@ -171,23 +171,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "3a256690bfcb3b9852ba",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "928b53073e8c9b042117",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimK12Demographics"
-              }
-            },
-            "Property": "Gender"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
-  }
+  "parentGroupName": "3a256690bfcb3b9852ba"
 }

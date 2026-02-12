@@ -3,14 +3,29 @@
   "name": "c668a9579306e4c47a8b",
   "position": {
     "x": 0,
-    "y": 183.66984126984127,
-    "z": 8000,
-    "height": 100.77460317460317,
-    "width": 632.27936507936511,
-    "tabOrder": 3000
+    "y": 218.36660617059889,
+    "z": 4000,
+    "height": 99.116757410768287,
+    "width": 639.61282516636413,
+    "tabOrder": 1000
   },
   "visualGroup": {
     "displayName": "Col 1 Row 1",
-    "groupMode": "ScaleMode"
+    "groupMode": "ScaleMode",
+    "objects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
   }
 }

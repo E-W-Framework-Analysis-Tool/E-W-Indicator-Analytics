@@ -3,10 +3,10 @@
   "name": "e30b973a68001765d4aa",
   "position": {
     "x": 0,
-    "y": 180.56690837178644,
-    "z": 1000,
-    "height": 210.94264996704024,
-    "width": 631.98417930125254,
+    "y": 193.07262569832403,
+    "z": 2000,
+    "height": 205.78522656734947,
+    "width": 631.657355679702,
     "tabOrder": 0
   },
   "visual": {
@@ -23,13 +23,13 @@
                       "Entity": "bi vw_DimK12Schools"
                     }
                   },
-                  "Property": "K12SchoolName"
+                  "Property": "SeaOrganizationName"
                 }
               },
-              "queryRef": "bi vw_DimK12Schools.K12SchoolName",
-              "nativeQueryRef": "K12 School",
+              "queryRef": "bi vw_DimK12Schools.SeaOrganizationName",
+              "nativeQueryRef": "SEA",
               "active": true,
-              "displayName": "K12 School"
+              "displayName": "SEA"
             }
           ],
           "fieldParameters": [
@@ -148,7 +148,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "e0783890180acb2eb5f4",
+        "name": "3792cb40e2530dcf6ab1",
         "field": {
           "Measure": {
             "Expression": {
@@ -162,7 +162,7 @@
         "type": "Advanced"
       },
       {
-        "name": "f163179bd217aa41b675",
+        "name": "e46cac819137b44fdbe5",
         "field": {
           "Column": {
             "Expression": {
@@ -170,7 +170,7 @@
                 "Entity": "bi vw_DimK12Schools"
               }
             },
-            "Property": "K12SchoolName"
+            "Property": "SeaOrganizationName"
           }
         },
         "type": "Categorical"

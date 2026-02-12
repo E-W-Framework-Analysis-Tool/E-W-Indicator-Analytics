@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "7a7e38794ed6f237110c",
   "position": {
-    "x": 631.98417930125254,
-    "y": 180.56690837178644,
-    "z": 2000,
-    "height": 210.94264996704024,
-    "width": 648.01582069874758,
+    "x": 631.657355679702,
+    "y": 193.86716325263811,
+    "z": 3000,
+    "height": 204.19615145872129,
+    "width": 648.342644320298,
     "tabOrder": 1000
   },
   "visual": {
@@ -161,6 +161,50 @@
             }
           }
         }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "bi vw_DimAssessments"
+                          }
+                        },
+                        "Property": "AssessmentCode"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'SAT'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -216,6 +260,48 @@
         },
         "type": "Advanced",
         "howCreated": "User"
+      },
+      {
+        "name": "8312d7195ee3f40989bb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "TrendLineYears"
+              }
+            },
+            "Property": "SchoolYear"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "fbc6c12771a949d2dcf5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimAssessments"
+              }
+            },
+            "Property": "AssessmentCode"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ae9e3a2380e87b641b35",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "College Readiness"
+              }
+            },
+            "Property": "ACT-SAT Participation Trend"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

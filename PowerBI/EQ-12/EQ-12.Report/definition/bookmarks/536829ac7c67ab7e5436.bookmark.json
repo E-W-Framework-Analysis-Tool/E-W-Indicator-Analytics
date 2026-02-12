@@ -1477,18 +1477,6 @@
               }
             }
           },
-          "4c40501f9f4477933247": {
-            "singleVisual": {
-              "visualType": "shape",
-              "objects": {}
-            }
-          },
-          "c3d3bedd22f495c5d55c": {
-            "singleVisual": {
-              "visualType": "textbox",
-              "objects": {}
-            }
-          },
           "d5029e4905cffbe3b0a1": {
             "singleVisual": {
               "visualType": "shape",
@@ -1664,45 +1652,6 @@
                         }
                       },
                       "Level": "SeaOrganizationName"
-                    }
-                  }
-                ]
-              }
-            }
-          },
-          "5b2d1e16b854ec45c844": {
-            "filters": {
-              "byExpr": [
-                {
-                  "name": "8692885c7435384b2f8a",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "GradeLegend"
-                        }
-                      },
-                      "Property": "GradeLevelCode"
-                    }
-                  },
-                  "howCreated": 0
-                }
-              ]
-            },
-            "singleVisual": {
-              "visualType": "listSlicer",
-              "objects": {},
-              "activeProjections": {
-                "Values": [
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "GradeLegend"
-                        }
-                      },
-                      "Property": "GradeLevelCode"
                     }
                   }
                 ]

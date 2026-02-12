@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "212056c8c108ef18ef51",
   "position": {
-    "x": 631.98417930125254,
-    "y": 180.56690837178644,
+    "x": 631.72923076923075,
+    "y": 193.77230769230769,
     "z": 3000,
-    "height": 210.94264996704024,
-    "width": 648.01582069874758,
+    "height": 204.8,
+    "width": 648.27076923076925,
     "tabOrder": 1000
   },
   "visual": {
@@ -76,10 +76,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Algebra I by 9th grade"
+                    "Entity": "Early College Coursework Completion"
                   }
                 },
-                "Property": "Algebra Trend"
+                "Property": "Coursework Completion Trend"
               }
             },
             "direction": "Descending"
@@ -250,6 +250,48 @@
         },
         "type": "Advanced",
         "howCreated": "User"
+      },
+      {
+        "name": "6f301e96039fa4b37421",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "TrendLineGraduationYears"
+              }
+            },
+            "Property": "CohortGraduationYear"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "5383d3860f15e4e3c669",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Early College Coursework Completion"
+              }
+            },
+            "Property": "Coursework Completion Trend"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d923128efdd3249d736c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GradeLegend"
+              }
+            },
+            "Property": "GradeLevelCode"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

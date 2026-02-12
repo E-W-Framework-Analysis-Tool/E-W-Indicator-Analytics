@@ -1420,18 +1420,6 @@
               }
             }
           },
-          "b8aa91104f7fc663eaac": {
-            "singleVisual": {
-              "visualType": "shape",
-              "objects": {}
-            }
-          },
-          "ffdac2b06ad45370a7e5": {
-            "singleVisual": {
-              "visualType": "textbox",
-              "objects": {}
-            }
-          },
           "ecd9e847c0cc1be7d7a8": {
             "singleVisual": {
               "visualType": "shape",

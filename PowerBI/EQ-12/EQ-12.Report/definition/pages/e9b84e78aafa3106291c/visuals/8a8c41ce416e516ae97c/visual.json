@@ -3,10 +3,10 @@
   "name": "8a8c41ce416e516ae97c",
   "position": {
     "x": 0,
-    "y": 180.56690837178644,
-    "z": 1000,
-    "height": 210.94264996704024,
-    "width": 631.98417930125254,
+    "y": 193.86716325263811,
+    "z": 2000,
+    "height": 204.19615145872129,
+    "width": 631.657355679702,
     "tabOrder": 0
   },
   "visual": {
@@ -17,63 +17,35 @@
           "projections": [
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "bi vw_DimK12Schools"
-                        }
-                      },
-                      "Hierarchy": "Geography"
+                    "SourceRef": {
+                      "Entity": "bi vw_DimK12Schools"
                     }
                   },
-                  "Level": "SeaOrganizationName"
+                  "Property": "SeaOrganizationName"
                 }
               },
-              "queryRef": "bi vw_DimK12Schools.Geography.SeaOrganizationName",
-              "nativeQueryRef": "Geography SeaOrganizationName",
-              "active": false
-            },
+              "queryRef": "bi vw_DimK12Schools.SeaOrganizationName",
+              "nativeQueryRef": "SEA",
+              "active": true,
+              "displayName": "SEA"
+            }
+          ],
+          "fieldParameters": [
             {
-              "field": {
-                "HierarchyLevel": {
+              "parameterExpr": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "bi vw_DimK12Schools"
-                        }
-                      },
-                      "Hierarchy": "Geography"
+                    "SourceRef": {
+                      "Entity": "Hierarchy Picker"
                     }
                   },
-                  "Level": "LeaOrganizationName"
+                  "Property": "Organization Hierarchy"
                 }
               },
-              "queryRef": "bi vw_DimK12Schools.Geography.LeaOrganizationName",
-              "nativeQueryRef": "Geography LeaOrganizationName",
-              "active": true
-            },
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "bi vw_DimK12Schools"
-                        }
-                      },
-                      "Hierarchy": "Geography"
-                    }
-                  },
-                  "Level": "K12SchoolName"
-                }
-              },
-              "queryRef": "bi vw_DimK12Schools.Geography.K12SchoolName",
-              "nativeQueryRef": "Geography K12SchoolName",
-              "active": false
+              "index": 0,
+              "length": 1
             }
           ]
         },
@@ -118,57 +90,16 @@
         "sort": [
           {
             "field": {
-              "HierarchyLevel": {
+              "Measure": {
                 "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "bi vw_DimK12Schools"
-                      }
-                    },
-                    "Hierarchy": "Geography"
+                  "SourceRef": {
+                    "Entity": "College Readiness"
                   }
                 },
-                "Level": "SeaOrganizationName"
+                "Property": "ACT-SAT Participation Rate"
               }
             },
-            "direction": "Ascending"
-          },
-          {
-            "field": {
-              "HierarchyLevel": {
-                "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "bi vw_DimK12Schools"
-                      }
-                    },
-                    "Hierarchy": "Geography"
-                  }
-                },
-                "Level": "LeaOrganizationName"
-              }
-            },
-            "direction": "Ascending"
-          },
-          {
-            "field": {
-              "HierarchyLevel": {
-                "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "bi vw_DimK12Schools"
-                      }
-                    },
-                    "Hierarchy": "Geography"
-                  }
-                },
-                "Level": "K12SchoolName"
-              }
-            },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ],
         "isDefaultSort": true
@@ -211,7 +142,65 @@
                   "Value": "'Assessment'"
                 }
               }
+            },
+            "showGradientLegend": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "bi vw_DimAssessments"
+                          }
+                        },
+                        "Property": "AssessmentCode"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'SAT'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
           }
         }
       ]
@@ -244,5 +233,51 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "31169a612efef76ba2a5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimAssessments"
+              }
+            },
+            "Property": "AssessmentCode"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ece1d691739c7ea7d6df",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "College Readiness"
+              }
+            },
+            "Property": "ACT-SAT Participation Rate"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4ef244b937560befb155",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Schools"
+              }
+            },
+            "Property": "SeaOrganizationName"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

@@ -3,10 +3,10 @@
   "name": "6ccf298aa2f55becbf6f",
   "position": {
     "x": 0,
-    "y": 391.50955833882665,
-    "z": 3000,
-    "height": 328.2267633487146,
-    "width": 948.39815425181291,
+    "y": 398.8578522656735,
+    "z": 4000,
+    "height": 320.99317194289262,
+    "width": 987.61018001241473,
     "tabOrder": 2000
   },
   "visual": {
@@ -144,5 +144,37 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "aa47fd4e6c1f85670dac",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimRaces"
+              }
+            },
+            "Property": "RaceEthnicity"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0a4361275fc034966d5d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "College Readiness"
+              }
+            },
+            "Property": "ACT-SAT College Readiness"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
