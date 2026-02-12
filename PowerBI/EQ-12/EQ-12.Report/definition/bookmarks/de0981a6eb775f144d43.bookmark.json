@@ -1310,12 +1310,6 @@
               "objects": {}
             }
           },
-          "7aaef28a4a4767a93dc1": {
-            "singleVisual": {
-              "visualType": "actionButton",
-              "objects": {}
-            }
-          },
           "212056c8c108ef18ef51": {
             "filters": {
               "byExpr": [

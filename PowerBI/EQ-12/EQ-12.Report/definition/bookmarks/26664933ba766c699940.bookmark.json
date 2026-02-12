@@ -1308,12 +1308,6 @@
               "objects": {}
             }
           },
-          "f4b628612ea8b8e29592": {
-            "singleVisual": {
-              "visualType": "actionButton",
-              "objects": {}
-            }
-          },
           "7a7e38794ed6f237110c": {
             "filters": {
               "byExpr": [

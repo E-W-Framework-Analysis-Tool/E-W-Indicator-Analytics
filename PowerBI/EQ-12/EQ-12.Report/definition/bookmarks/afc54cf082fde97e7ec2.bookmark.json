@@ -1183,12 +1183,6 @@
               "objects": {}
             }
           },
-          "d6fa3c9a2ea0efbdcadf": {
-            "singleVisual": {
-              "visualType": "actionButton",
-              "objects": {}
-            }
-          },
           "c272c5f601863f715624": {
             "singleVisual": {
               "visualType": "textbox",

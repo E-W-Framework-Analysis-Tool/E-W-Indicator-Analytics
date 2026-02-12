@@ -4,7 +4,7 @@
   "position": {
     "x": 54.0013183915623,
     "y": 75.09558338826632,
-    "z": 7000,
+    "z": 6000,
     "height": 56.532630191166781,
     "width": 214.31773236651287,
     "tabOrder": 5000
@@ -396,5 +396,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "00c8e6944e6391bef1b1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Globals"
+              }
+            },
+            "Property": "Disaggregate by"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

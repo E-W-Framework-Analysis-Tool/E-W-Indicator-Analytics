@@ -88,6 +88,48 @@ cultureInfo en-US
 			        }
 			      },
 			      "State": "Generated"
+			    },
+			    "bi_vw_dimk12schools.seaorganizationname": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bi vw_DimK12Schools",
+			          "ConceptualProperty": "SeaOrganizationName"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "SEA": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "bi_vw_dimk12schools.leaorganizationname": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bi vw_DimK12Schools",
+			          "ConceptualProperty": "LeaOrganizationName"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LEA": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  }
 			}
