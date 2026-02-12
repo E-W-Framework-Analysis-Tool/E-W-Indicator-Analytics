@@ -17,63 +17,35 @@
           "projections": [
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "bi vw_DimK12Schools"
-                        }
-                      },
-                      "Hierarchy": "Geography"
+                    "SourceRef": {
+                      "Entity": "bi vw_DimK12Schools"
                     }
                   },
-                  "Level": "SeaOrganizationName"
+                  "Property": "SeaOrganizationName"
                 }
               },
-              "queryRef": "bi vw_DimK12Schools.Geography.SeaOrganizationName",
-              "nativeQueryRef": "Geography SeaOrganizationName",
-              "active": true
-            },
+              "queryRef": "bi vw_DimK12Schools.SeaOrganizationName",
+              "nativeQueryRef": "SEA",
+              "active": true,
+              "displayName": "SEA"
+            }
+          ],
+          "fieldParameters": [
             {
-              "field": {
-                "HierarchyLevel": {
+              "parameterExpr": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "bi vw_DimK12Schools"
-                        }
-                      },
-                      "Hierarchy": "Geography"
+                    "SourceRef": {
+                      "Entity": "Hierarchy Picker"
                     }
                   },
-                  "Level": "LeaOrganizationName"
+                  "Property": "Organization Hierarchy"
                 }
               },
-              "queryRef": "bi vw_DimK12Schools.Geography.LeaOrganizationName",
-              "nativeQueryRef": "Geography LeaOrganizationName",
-              "active": false
-            },
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "bi vw_DimK12Schools"
-                        }
-                      },
-                      "Hierarchy": "Geography"
-                    }
-                  },
-                  "Level": "K12SchoolName"
-                }
-              },
-              "queryRef": "bi vw_DimK12Schools.Geography.K12SchoolName",
-              "nativeQueryRef": "Geography K12SchoolName",
-              "active": false
+              "index": 0,
+              "length": 1
             }
           ]
         },
@@ -100,57 +72,16 @@
         "sort": [
           {
             "field": {
-              "HierarchyLevel": {
+              "Measure": {
                 "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "bi vw_DimK12Schools"
-                      }
-                    },
-                    "Hierarchy": "Geography"
+                  "SourceRef": {
+                    "Entity": "Algebra I by 9th grade"
                   }
                 },
-                "Level": "SeaOrganizationName"
+                "Property": "Algebra I Success Rate"
               }
             },
-            "direction": "Ascending"
-          },
-          {
-            "field": {
-              "HierarchyLevel": {
-                "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "bi vw_DimK12Schools"
-                      }
-                    },
-                    "Hierarchy": "Geography"
-                  }
-                },
-                "Level": "LeaOrganizationName"
-              }
-            },
-            "direction": "Ascending"
-          },
-          {
-            "field": {
-              "HierarchyLevel": {
-                "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "bi vw_DimK12Schools"
-                      }
-                    },
-                    "Hierarchy": "Geography"
-                  }
-                },
-                "Level": "K12SchoolName"
-              }
-            },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ],
         "isDefaultSort": true
@@ -213,5 +144,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e0783890180acb2eb5f4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Algebra I by 9th grade"
+              }
+            },
+            "Property": "Algebra I Success Rate"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
