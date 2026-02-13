@@ -14,11 +14,11 @@ SELECT
   , [dl].[LeaTypeDescription]
   , IIF([SchoolTypeCode] = '', 'N/A', [SchoolTypeCode]) AS [SchoolTypeCode]
   , CASE
-		WHEN [ed].[MaxGradeLevel] IN ('05')
+		WHEN [ed].[MaxGradeLevel] < '05'
 			THEN 'Elementary'
-		WHEN [ed].[MaxGradeLevel] IN ('08')
+		WHEN [ed].[MaxGradeLevel] < '08'
 			THEN 'Middle'
-		WHEN [ed].[MaxGradeLevel] IN ('10', '12')
+		WHEN [ed].[MaxGradeLevel] >= '10'
 			THEN 'High'
 		ELSE 'K12'
 	END                                                 AS [EducationLevel]
