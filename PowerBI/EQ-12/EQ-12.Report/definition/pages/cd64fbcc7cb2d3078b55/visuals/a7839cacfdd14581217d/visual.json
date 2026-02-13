@@ -514,28 +514,28 @@
             "top": {
               "expr": {
                 "Literal": {
-                  "Value": "3D"
+                  "Value": "2D"
                 }
               }
             },
             "left": {
               "expr": {
                 "Literal": {
-                  "Value": "3D"
+                  "Value": "2D"
                 }
               }
             },
             "bottom": {
               "expr": {
                 "Literal": {
-                  "Value": "3D"
+                  "Value": "2D"
                 }
               }
             },
             "right": {
               "expr": {
                 "Literal": {
-                  "Value": "3D"
+                  "Value": "1D"
                 }
               }
             }
