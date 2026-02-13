@@ -34,12 +34,14 @@ table 'Early College Coursework Completion'
 	measure 'Coursework Completion Trend' =
 			
 			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
+			VAR MaxCohortYear = CALCULATE(MAX('bi vw_DimCohortYears'[CohortYear]), ALL('bi vw_DimCohortYears'))
 			RETURN
+			IF(SelectedTrendYear <= MaxCohortYear,
 			CALCULATE(
 			    'Early College Coursework Completion'[Coursework Completion],
 			    'bi vw_DimSchoolYears'[SchoolYear] = SelectedTrendYear,
 			    REMOVEFILTERS('bi vw_DimSchoolYears')
-			)
+			), BLANK())
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: a3655212-f920-4c62-9806-d86b75b939f4
 

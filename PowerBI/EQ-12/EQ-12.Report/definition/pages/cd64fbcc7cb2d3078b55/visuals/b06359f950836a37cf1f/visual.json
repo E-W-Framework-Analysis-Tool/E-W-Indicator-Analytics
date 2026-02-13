@@ -142,6 +142,13 @@
                   "Value": "false"
                 }
               }
+            },
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'School Year'"
+                }
+              }
             }
           }
         }
@@ -229,7 +236,7 @@
         "howCreated": "User"
       },
       {
-        "name": "ee163b1b321d38421476",
+        "name": "9b998830b39d12e2e9b6",
         "field": {
           "Column": {
             "Expression": {
@@ -243,7 +250,7 @@
         "type": "Advanced"
       },
       {
-        "name": "6d41ecc0c797999c021c",
+        "name": "c44d6f114960504a79cf",
         "field": {
           "Column": {
             "Expression": {
@@ -257,7 +264,7 @@
         "type": "Categorical"
       },
       {
-        "name": "72c71c7609edffd295d1",
+        "name": "29bbd92a51160f72cf20",
         "field": {
           "Measure": {
             "Expression": {
