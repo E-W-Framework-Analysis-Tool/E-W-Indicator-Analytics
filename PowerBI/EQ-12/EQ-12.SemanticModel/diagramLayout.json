@@ -383,6 +383,35 @@
             "width": 234
           },
           "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Course Offering",
+          "nodeLineageTag": "d3345126-e524-4d28-9d9f-b56be842af23",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Hierarchy Picker",
+          "nodeLineageTag": "02b5b6d3-cb13-4c44-9785-c1817542192a",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "TrendLineCohortYears",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",
@@ -502,6 +531,19 @@
             "width": 318
           },
           "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 897,
+            "y": 9
+          },
+          "nodeIndex": "bi vw_DimCohortYears",
+          "nodeLineageTag": "3823d081-15cb-49c2-a015-105103193c1d",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "Student Enrollments",
@@ -533,8 +575,8 @@
         },
         {
           "location": {
-            "x": 1298,
-            "y": 104
+            "x": 1348,
+            "y": 108
           },
           "nodeIndex": "bi vw_DimK12Courses",
           "nodeLineageTag": "9aba5c33-97ac-47ad-9eca-d2a76f107802",
@@ -647,6 +689,19 @@
             "width": 234
           },
           "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1075,
+            "y": 7
+          },
+          "nodeIndex": "bi vw_DimCohortYears",
+          "nodeLineageTag": "3823d081-15cb-49c2-a015-105103193c1d",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "Student Course Sections",
@@ -741,7 +796,7 @@
             "height": 104,
             "width": 234
           },
-          "zIndex": 4
+          "zIndex": 5
         },
         {
           "location": {
@@ -754,7 +809,7 @@
             "height": 478,
             "width": 320
           },
-          "zIndex": 3
+          "zIndex": 4
         },
         {
           "location": {
@@ -767,7 +822,7 @@
             "height": 331,
             "width": 350
           },
-          "zIndex": 2
+          "zIndex": 3
         },
         {
           "location": {
@@ -780,7 +835,7 @@
             "height": 375,
             "width": 335
           },
-          "zIndex": 1
+          "zIndex": 2
         },
         {
           "location": {
@@ -793,7 +848,7 @@
             "height": 378,
             "width": 323
           },
-          "zIndex": 6
+          "zIndex": 7
         },
         {
           "location": {
@@ -806,7 +861,7 @@
             "height": 184,
             "width": 234
           },
-          "zIndex": 5
+          "zIndex": 6
         },
         {
           "location": {
@@ -819,7 +874,7 @@
             "height": 104,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 1
         }
       ],
       "name": "Fact Tables",
@@ -884,6 +939,6 @@
       "tablesLocked": false
     }
   ],
-  "selectedDiagram": "Fact Tables",
+  "selectedDiagram": "Student Course Sections",
   "defaultDiagram": "All tables"
 }

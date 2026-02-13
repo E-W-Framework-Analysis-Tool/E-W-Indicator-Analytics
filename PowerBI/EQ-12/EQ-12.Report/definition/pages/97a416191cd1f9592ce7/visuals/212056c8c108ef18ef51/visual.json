@@ -39,14 +39,31 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "GradeLegend"
+                      "Entity": "bi vw_DimK12Schools"
                     }
                   },
-                  "Property": "GradeLevelCode"
+                  "Property": "SeaOrganizationName"
                 }
               },
-              "queryRef": "GradeLegend.GradeLevelCode",
-              "nativeQueryRef": "GradeLevelCode"
+              "queryRef": "bi vw_DimK12Schools.SeaOrganizationName",
+              "nativeQueryRef": "SEA",
+              "displayName": "SEA"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Hierarchy Picker"
+                    }
+                  },
+                  "Property": "Organization Hierarchy"
+                }
+              },
+              "index": 0,
+              "length": 1
             }
           ]
         },
@@ -175,19 +192,6 @@
             }
           }
         }
-      ],
-      "legend": [
-        {
-          "properties": {
-            "titleText": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Grade Level'"
-                }
-              }
-            }
-          }
-        }
       ]
     },
     "visualContainerObjects": {
@@ -278,20 +282,6 @@
           }
         },
         "type": "Advanced"
-      },
-      {
-        "name": "d923128efdd3249d736c",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "GradeLegend"
-              }
-            },
-            "Property": "GradeLevelCode"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

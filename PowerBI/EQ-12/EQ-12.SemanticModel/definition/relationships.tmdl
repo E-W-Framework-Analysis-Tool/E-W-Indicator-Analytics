@@ -122,3 +122,11 @@ relationship e038dffd-b24c-ae64-be07-e60e7001785a
 	fromColumn: 'bi vw_FactK12StudentEnrollments'.CohortGraduationYear
 	toColumn: 'bi vw_DimCohortGraduationYears'.CohortGraduationYear
 
+relationship c9f14ec3-9530-4d0d-43e1-62a2a736ee89
+	fromColumn: 'bi vw_FactK12StudentEnrollments'.CohortYear
+	toColumn: 'bi vw_DimCohortYears'.CohortYear
+
+relationship 8af0e263-fd90-a838-47f6-4fd1ce55d080
+	fromColumn: 'bi vw_FactK12StudentCourseSections'.CohortYear
+	toColumn: 'bi vw_DimCohortYears'.CohortYear
+

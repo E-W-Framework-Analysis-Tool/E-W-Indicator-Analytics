@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "bi vw_DimAssessments"
+                      "Entity": "bi vw_DimK12CourseStatuses"
                     }
                   },
-                  "Property": "AssessmentCode"
+                  "Property": "CourseLevel"
                 }
               },
-              "queryRef": "bi vw_DimAssessments.AssessmentCode",
-              "nativeQueryRef": "AssessmentCode"
+              "queryRef": "bi vw_DimK12CourseStatuses.CourseLevel",
+              "nativeQueryRef": "CourseLevel"
             }
           ]
         }
@@ -460,52 +460,6 @@
       ]
     },
     "visualContainerObjects": {
-      "title": [
-        {
-          "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Assessment'"
-                }
-              }
-            },
-            "titleWrap": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 5,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
-                }
-              }
-            },
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'center'"
-                }
-              }
-            }
-          }
-        }
-      ],
       "background": [
         {
           "properties": {
@@ -551,6 +505,26 @@
             }
           }
         }
+      ],
+      "title": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Course Level'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
@@ -558,18 +532,71 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "ccfb6cb24015c15eb10d",
+        "name": "a391721f941917d0e853",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "bi vw_DimAssessments"
+                "Entity": "bi vw_DimK12CourseStatuses"
               }
             },
-            "Property": "AssessmentCode"
+            "Property": "CourseLevel"
           }
         },
-        "type": "Categorical"
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "b",
+              "Entity": "bi vw_DimK12CourseStatuses",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "b"
+                          }
+                        },
+                        "Property": "CourseLevel"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'AP'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Dual Credit'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'IB'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
       }
     ]
   }

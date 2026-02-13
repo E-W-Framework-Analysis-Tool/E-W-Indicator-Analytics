@@ -10,7 +10,12 @@ table 'Early College Coursework Completion'
 		formatString: 0
 		lineageTag: 270b15b0-65c2-4780-8f7b-01e27b103143
 
-	measure 'Early College Total Count' = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[K12StudentId]), 'bi vw_DimGradeLevels'[GradeLevelCode] IN {"11", "12"})
+	measure 'Early College Total Count' =
+			CALCULATE(
+			    DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[K12StudentId]),
+			    'bi vw_DimK12CourseStatuses'[CourseLevelCharacteristicCode] in {"73048", "00575", "00574"},
+			    'bi vw_DimGradeLevels'[GradeLevelCode] IN {"11", "12"}
+			    )
 		formatString: 0
 		lineageTag: f5fc74e4-5fb1-4a95-8533-2669f340f3af
 

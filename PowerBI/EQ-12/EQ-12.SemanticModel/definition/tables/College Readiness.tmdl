@@ -60,15 +60,16 @@ table 'College Readiness'
 		displayFolder: SAT-ACT Participations
 		lineageTag: 7a1b237e-732a-4869-9064-160e603780c5
 
-	measure 'College Readiness Trend' =
+	measure 'College Readiness Trend' = ```
 			
 			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
 			RETURN
 			CALCULATE(
-			    'College Readiness'[College Readiness Rate],
-			    'bi vw_DimCohortGraduationYears'[CohortGraduationYear] = SelectedTrendYear,
-			    REMOVEFILTERS('bi vw_DimCohortGraduationYears'[CohortGraduationYear])
+			    'College Readiness'[College Readiness Rate],    
+			    'bi vw_FactK12StudentCourseSections'[CohortGraduationYear] = SelectedTrendYear,
+			    REMOVEFILTERS('bi vw_DimCohortGraduationYears')
 			)
+			```
 		formatString: 0.0%;-0.0%;0.0%
 		displayFolder: College Ready Measures
 		lineageTag: a843d23f-014a-4a9c-8607-d71a2aba2847
