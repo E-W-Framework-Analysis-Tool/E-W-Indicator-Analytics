@@ -14,9 +14,9 @@ SELECT
   , [dl].[LeaTypeDescription]
   , IIF([SchoolTypeCode] = '', 'N/A', [SchoolTypeCode]) AS [SchoolTypeCode]
   , CASE
-		WHEN [ed].[MaxGradeLevel] < '05'
+		WHEN [ed].[MaxGradeLevel] <= '05'
 			THEN 'Elementary'
-		WHEN [ed].[MaxGradeLevel] < '08'
+		WHEN [ed].[MaxGradeLevel] <= '08'
 			THEN 'Middle'
 		WHEN [ed].[MaxGradeLevel] >= '10'
 			THEN 'High'
