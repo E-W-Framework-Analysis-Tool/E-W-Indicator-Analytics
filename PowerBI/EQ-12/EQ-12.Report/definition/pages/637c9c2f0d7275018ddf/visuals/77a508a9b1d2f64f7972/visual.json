@@ -144,37 +144,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "da49e5ee08ad2cbb3f2f",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimRaces"
-              }
-            },
-            "Property": "RaceEthnicity"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "ef9790eb65ad11eb14c9",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "College Readiness"
-              }
-            },
-            "Property": "College Readiness Rate"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

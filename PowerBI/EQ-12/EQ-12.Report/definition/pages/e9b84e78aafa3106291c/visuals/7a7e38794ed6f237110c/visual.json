@@ -217,6 +217,13 @@
                   "Value": "13D"
                 }
               }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'SAT/ACT Participation Trend by SchoolYear and AssessmentCode'"
+                }
+              }
             }
           }
         }
@@ -262,7 +269,7 @@
         "howCreated": "User"
       },
       {
-        "name": "8312d7195ee3f40989bb",
+        "name": "6c2d7f0935bbb6c9d9d8",
         "field": {
           "Column": {
             "Expression": {
@@ -276,7 +283,7 @@
         "type": "Advanced"
       },
       {
-        "name": "fbc6c12771a949d2dcf5",
+        "name": "0e7a400c1d6625f1ef21",
         "field": {
           "Column": {
             "Expression": {
@@ -290,7 +297,7 @@
         "type": "Categorical"
       },
       {
-        "name": "ae9e3a2380e87b641b35",
+        "name": "7952d3dd75f4b48c7669",
         "field": {
           "Measure": {
             "Expression": {

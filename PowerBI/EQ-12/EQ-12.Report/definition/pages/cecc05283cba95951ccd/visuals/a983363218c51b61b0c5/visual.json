@@ -7,7 +7,7 @@
     "z": 7000,
     "height": 249.48479205462448,
     "width": 639.602731222843,
-    "tabOrder": 7000
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "columnChart",
@@ -255,37 +255,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "1c9bb449fec485643e86",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Course Offering"
-              }
-            },
-            "Property": "Algebra I Offering Rate"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "fab1a36fc1201e3f9121",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimK12Schools"
-              }
-            },
-            "Property": "EducationLevel"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

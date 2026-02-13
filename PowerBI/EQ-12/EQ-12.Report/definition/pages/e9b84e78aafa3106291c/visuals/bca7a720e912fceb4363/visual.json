@@ -213,6 +213,13 @@
                   "Value": "13D"
                 }
               }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'SAT/ACT Participation Rate by Race & Ethnicity and AssessmentCode'"
+                }
+              }
             }
           }
         }
@@ -223,7 +230,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "23a3eddc1d6d732c5da8",
+        "name": "36e46c4dcda92a65830d",
         "field": {
           "Column": {
             "Expression": {
@@ -237,7 +244,7 @@
         "type": "Categorical"
       },
       {
-        "name": "0e02b547872402161b9e",
+        "name": "81fc659f8d1f31134f19",
         "field": {
           "Column": {
             "Expression": {
@@ -251,7 +258,7 @@
         "type": "Categorical"
       },
       {
-        "name": "cd3c2260a2f984edfabe",
+        "name": "d8adcc8731ab4ca59efa",
         "field": {
           "Measure": {
             "Expression": {

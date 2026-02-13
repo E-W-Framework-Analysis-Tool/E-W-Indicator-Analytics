@@ -138,6 +138,13 @@
                   "Value": "13D"
                 }
               }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'SAT/ACT College Readiness by Race & Ethnicity'"
+                }
+              }
             }
           }
         }
@@ -148,7 +155,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "aa47fd4e6c1f85670dac",
+        "name": "821eefb2b593ca94adbc",
         "field": {
           "Column": {
             "Expression": {
@@ -162,7 +169,7 @@
         "type": "Categorical"
       },
       {
-        "name": "0a4361275fc034966d5d",
+        "name": "89bb1ad7854a2fd16a6f",
         "field": {
           "Measure": {
             "Expression": {

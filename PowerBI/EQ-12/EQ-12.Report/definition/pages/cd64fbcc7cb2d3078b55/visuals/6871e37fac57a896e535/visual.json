@@ -144,37 +144,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "f1b554ba68b1f70f0c82",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "College Readiness"
-              }
-            },
-            "Property": "ACT-SAT College Readiness"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "981e576660bbcaa9ce0f",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimK12Schools"
-              }
-            },
-            "Property": "SeaOrganizationName"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

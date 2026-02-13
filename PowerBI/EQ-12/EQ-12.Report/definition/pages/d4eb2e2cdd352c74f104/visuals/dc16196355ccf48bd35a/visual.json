@@ -250,48 +250,6 @@
         },
         "type": "Advanced",
         "howCreated": "User"
-      },
-      {
-        "name": "e69281afbb74a9e695cd",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "TrendLineGraduationYears"
-              }
-            },
-            "Property": "CohortGraduationYear"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "ffbbfeaebe360683eac2",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Early College Coursework Completion"
-              }
-            },
-            "Property": "Coursework Completion Trend"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "0ad242d6d5910d9afcaa",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "GradeLegend"
-              }
-            },
-            "Property": "GradeLevelCode"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "4868b861c4e4c38caf13",
   "position": {
-    "x": 1187.0523076923077,
-    "y": 524.603076923077,
+    "x": 1187.0838548185232,
+    "y": 524.65581977471834,
     "z": 9000,
-    "height": 195.34769230769231,
-    "width": 92.947692307692307,
-    "tabOrder": 19001
+    "height": 195.44430538172713,
+    "width": 92.916145181476836,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "advancedSlicerVisual",
@@ -602,6 +602,81 @@
             }
           }
         }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "preset": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "angle": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            },
+            "shadowDistance": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            },
+            "shadowBlur": {
+              "expr": {
+                "Literal": {
+                  "Value": "15L"
+                }
+              }
+            },
+            "shadowSpread": {
+              "expr": {
+                "Literal": {
+                  "Value": "3L"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "70L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
@@ -609,7 +684,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "535061fc5f57943e74f2",
+        "name": "79774cbfb5ea4f57d428",
         "field": {
           "Column": {
             "Expression": {

@@ -144,23 +144,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "aad7377dc3a72e8a1306",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "College Readiness"
-              }
-            },
-            "Property": "College Readiness Rate"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

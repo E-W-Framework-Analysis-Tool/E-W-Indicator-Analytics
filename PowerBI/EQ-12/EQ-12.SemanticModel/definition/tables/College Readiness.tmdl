@@ -157,46 +157,6 @@ table 'College Readiness'
 		displayFolder: College Ready Measures
 		lineageTag: 72a5be32-0fbe-48d4-a4a5-2e90cdecc426
 
-	measure Test = ```
-			
-			VAR Req_English = 4
-			VAR Req_Math = 4
-			VAR Req_Science = 3
-			VAR Req_SocialSci = 2
-			VAR Req_ForeignLang = 2
-			VAR Req_Arts = 1
-			
-			VAR PassedOnly = FILTER('bi vw_FactK12StudentCourseSections', 'bi vw_FactK12StudentCourseSections'[LetterGradeEarned] <> "F")
-			
-			VAR StudentSubjectYears = 
-			    SUMMARIZE(
-			        PassedOnly,
-			        'bi vw_FactK12StudentCourseSections'[CohortGraduationYear],
-			        'bi vw_FactK12StudentCourseSections'[K12StudentId],
-			        "Years_English", CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_DimK12Courses'[CourseSubject] = "English"),
-			        "Years_Math", CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_DimK12Courses'[CourseSubject] = "Math"),
-			        "Years_Science", CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_DimK12Courses'[CourseSubject] = "Laboratory Science"),
-			        "Years_SocialSci", CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_DimK12Courses'[CourseSubject] = "Social Science"),
-			        "Years_ForeignLang", CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), 'bi vw_DimK12Courses'[CourseSubject] = "Foreign Language"),
-			        "Years_Arts", CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[SchoolYear]), CONTAINSSTRING('bi vw_DimK12Courses'[CourseSubject],"Arts"))
-			    )
-			
-			RETURN
-			COUNTROWS(
-			    FILTER(
-			        StudentSubjectYears,
-			        [Years_English] >= Req_English &&
-			        [Years_Math] >= Req_Math &&
-			        [Years_Science] >= Req_Science &&
-			        [Years_SocialSci] >= Req_SocialSci &&
-			        [Years_ForeignLang] >= Req_ForeignLang &&
-			        [Years_Arts] >= Req_Arts
-			    )
-			)
-			```
-		formatString: 0
-		lineageTag: f96d3d49-c190-44bf-a926-94fd898480a5
-
 	measure 'Total Students In Cohort' = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentEnrollments'[K12StudentId]), KEEPFILTERS('bi vw_DimCohortGraduationYears'[CohortGraduationYear]))
 		formatString: 0
 		displayFolder: College Ready Measures

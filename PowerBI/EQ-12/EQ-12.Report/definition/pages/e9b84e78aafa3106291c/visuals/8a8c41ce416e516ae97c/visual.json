@@ -233,37 +233,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "31169a612efef76ba2a5",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimAssessments"
-              }
-            },
-            "Property": "AssessmentCode"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "ece1d691739c7ea7d6df",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "College Readiness"
-              }
-            },
-            "Property": "ACT-SAT Participation Rate"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -7,7 +7,7 @@
     "z": 6000,
     "height": 249.48479205462448,
     "width": 640.397268777157,
-    "tabOrder": 6000
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "columnChart",
@@ -170,37 +170,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "7c784808ac7162c0a0ea",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Course Offering"
-              }
-            },
-            "Property": "Course Offering Rate"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "7e11133c68c6722360b1",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimK12Schools"
-              }
-            },
-            "Property": "EducationLevel"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

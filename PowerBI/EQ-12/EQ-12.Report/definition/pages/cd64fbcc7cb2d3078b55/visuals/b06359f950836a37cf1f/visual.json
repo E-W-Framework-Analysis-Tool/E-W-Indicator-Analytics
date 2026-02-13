@@ -177,6 +177,13 @@
                   "Value": "13D"
                 }
               }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'SAT/ACT College Readiness Trend by SchoolYear and SEA'"
+                }
+              }
             }
           }
         }
@@ -222,7 +229,7 @@
         "howCreated": "User"
       },
       {
-        "name": "cd66941aa9e0bae166ae",
+        "name": "ee163b1b321d38421476",
         "field": {
           "Column": {
             "Expression": {
@@ -236,21 +243,7 @@
         "type": "Advanced"
       },
       {
-        "name": "7a2586faf56ad71622a9",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "College Readiness"
-              }
-            },
-            "Property": "ACT-SAT College Readiness Trend"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "6160bc3832acc79c47ab",
+        "name": "6d41ecc0c797999c021c",
         "field": {
           "Column": {
             "Expression": {
@@ -262,6 +255,20 @@
           }
         },
         "type": "Categorical"
+      },
+      {
+        "name": "72c71c7609edffd295d1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "College Readiness"
+              }
+            },
+            "Property": "ACT-SAT College Readiness Trend"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

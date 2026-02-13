@@ -7,7 +7,7 @@
     "z": 8000,
     "height": 195.34769230769231,
     "width": 92.947692307692307,
-    "tabOrder": 19001
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "advancedSlicerVisual",
@@ -605,23 +605,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "46c7d767217d120b07f0",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Hierarchy Picker"
-              }
-            },
-            "Property": "Organization Hierarchy"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

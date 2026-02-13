@@ -1,0 +1,89 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "425fdcfb7f2c4968fc4a",
+  "position": {
+    "x": 0.77434966727162724,
+    "y": 75.111917725347851,
+    "z": 11000,
+    "height": 63.496672716273437,
+    "width": 1279.2256503327283,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Instructions for using these visualizations:",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#0b2949"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Use the Data Filter at the top of the page to select certain academic institution levels (e.g., State, District, School), disaggregates and other characteristics you want to focus on.",
+                    "textStyle": {
+                      "fontSize": "9pt",
+                      "color": "#0b2949"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Use the Drill Down and Drill Up toggles within Dashboard Panes to change view from State, District, and School levels.",
+                    "textStyle": {
+                      "fontSize": "9pt",
+                      "color": "#0b2949"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Instruction'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

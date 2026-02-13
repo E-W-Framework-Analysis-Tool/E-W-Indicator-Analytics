@@ -188,51 +188,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "d073bd81a583755dbc35",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Early College Coursework Completion"
-              }
-            },
-            "Property": "Coursework Completion"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "171cebc0da4993b5d8b1",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimK12Schools"
-              }
-            },
-            "Property": "LeaOrganizationName"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "122d3887e9c446bcd3a3",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Course Level Legend"
-              }
-            },
-            "Property": "CourseLevel"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

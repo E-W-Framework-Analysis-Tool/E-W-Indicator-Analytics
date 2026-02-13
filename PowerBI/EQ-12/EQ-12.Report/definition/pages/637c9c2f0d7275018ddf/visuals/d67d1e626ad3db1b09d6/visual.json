@@ -32,9 +32,6 @@
             }
           ]
         },
-        "Rows": {
-          "projections": []
-        },
         "Series": {
           "projections": [
             {
@@ -87,9 +84,6 @@
               "nativeQueryRef": "College Readiness Trend"
             }
           ]
-        },
-        "Y2": {
-          "projections": []
         }
       },
       "sortDefinition": {
@@ -240,48 +234,6 @@
         },
         "type": "Advanced",
         "howCreated": "User"
-      },
-      {
-        "name": "b9d86408be4f6dfd26c6",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "College Readiness"
-              }
-            },
-            "Property": "College Readiness Trend"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "8c0daefd8c72541bd1c3",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "TrendLineGraduationYears"
-              }
-            },
-            "Property": "CohortGraduationYear"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "c6255f157e2311466f1a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimK12Schools"
-              }
-            },
-            "Property": "SeaOrganizationName"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }
