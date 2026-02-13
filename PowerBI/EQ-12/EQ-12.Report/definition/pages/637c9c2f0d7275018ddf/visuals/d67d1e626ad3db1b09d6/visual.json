@@ -32,8 +32,43 @@
             }
           ]
         },
-        "Series": {
+        "Rows": {
           "projections": []
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_DimK12Schools"
+                    }
+                  },
+                  "Property": "SeaOrganizationName"
+                }
+              },
+              "queryRef": "bi vw_DimK12Schools.SeaOrganizationName",
+              "nativeQueryRef": "SEA",
+              "displayName": "SEA"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Hierarchy Picker"
+                    }
+                  },
+                  "Property": "Organization Hierarchy"
+                }
+              },
+              "index": 0,
+              "length": 1
+            }
+          ]
         },
         "Y": {
           "projections": [
@@ -52,6 +87,9 @@
               "nativeQueryRef": "College Readiness Trend"
             }
           ]
+        },
+        "Y2": {
+          "projections": []
         }
       },
       "sortDefinition": {
@@ -110,6 +148,13 @@
                   "Value": "false"
                 }
               }
+            },
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Cohort Graduation Year'"
+                }
+              }
             }
           }
         }
@@ -149,7 +194,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'College Readiness Trend by Cohort Graduation Year'"
+                  "Value": "'College Readiness Trend'"
                 }
               }
             }
@@ -211,7 +256,7 @@
         "type": "Advanced"
       },
       {
-        "name": "ae1374a8b96916dc69b6",
+        "name": "8c0daefd8c72541bd1c3",
         "field": {
           "Column": {
             "Expression": {
@@ -223,6 +268,20 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "c6255f157e2311466f1a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Schools"
+              }
+            },
+            "Property": "SeaOrganizationName"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

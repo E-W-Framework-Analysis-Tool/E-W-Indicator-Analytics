@@ -63,12 +63,14 @@ table 'College Readiness'
 	measure 'College Readiness Trend' = ```
 			
 			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
+			VAR MaxCohortYear = CALCULATE(MAX('bi vw_DimCohortYears'[CohortYear]), ALL('bi vw_DimCohortYears'))
 			RETURN
+			IF(SelectedTrendYear <= MaxCohortYear, 
 			CALCULATE(
 			    'College Readiness'[College Readiness Rate],    
-			    'bi vw_FactK12StudentCourseSections'[CohortGraduationYear] = SelectedTrendYear,
-			    REMOVEFILTERS('bi vw_DimCohortGraduationYears')
-			)
+			    'bi vw_DimCohortGraduationYears'[CohortGraduationYear] = SelectedTrendYear,
+			    REMOVEFILTERS('bi vw_DimCohortGraduationYears'[CohortGraduationYear])
+			), BLANK())
 			```
 		formatString: 0.0%;-0.0%;0.0%
 		displayFolder: College Ready Measures

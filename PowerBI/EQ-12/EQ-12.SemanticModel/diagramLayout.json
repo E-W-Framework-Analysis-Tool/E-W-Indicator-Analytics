@@ -403,15 +403,6 @@
             "width": 234
           },
           "zIndex": 0
-        },
-        {
-          "location": {},
-          "nodeIndex": "TrendLineCohortYears",
-          "size": {
-            "height": 200,
-            "width": 234
-          },
-          "zIndex": 0
         }
       ],
       "name": "All tables",
@@ -939,6 +930,6 @@
       "tablesLocked": false
     }
   ],
-  "selectedDiagram": "Student Course Sections",
+  "selectedDiagram": "Fact Tables",
   "defaultDiagram": "All tables"
 }
