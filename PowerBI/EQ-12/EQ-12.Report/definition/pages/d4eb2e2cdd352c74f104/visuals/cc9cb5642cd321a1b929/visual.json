@@ -20,13 +20,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "bi vw_DimK12CourseStatuses"
+                      "Entity": "Course Level Legend"
                     }
                   },
                   "Property": "CourseLevel"
                 }
               },
-              "queryRef": "bi vw_DimK12CourseStatuses.CourseLevel",
+              "queryRef": "Course Level Legend.CourseLevel",
               "nativeQueryRef": "CourseLevel"
             }
           ]
@@ -596,7 +596,22 @@
               }
             }
           ]
-        }
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "2fe36b4ac20f0627de0e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Course Level Legend"
+              }
+            },
+            "Property": "CourseLevel"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

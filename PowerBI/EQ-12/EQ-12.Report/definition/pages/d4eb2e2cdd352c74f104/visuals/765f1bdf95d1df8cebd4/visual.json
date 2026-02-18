@@ -23,13 +23,13 @@
                       "Entity": "bi vw_DimK12Schools"
                     }
                   },
-                  "Property": "LeaOrganizationName"
+                  "Property": "SeaOrganizationName"
                 }
               },
-              "queryRef": "bi vw_DimK12Schools.LeaOrganizationName",
-              "nativeQueryRef": "LEA",
+              "queryRef": "bi vw_DimK12Schools.SeaOrganizationName",
+              "nativeQueryRef": "SEA",
               "active": true,
-              "displayName": "LEA"
+              "displayName": "SEA"
             }
           ],
           "fieldParameters": [
