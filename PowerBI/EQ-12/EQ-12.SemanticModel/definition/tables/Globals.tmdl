@@ -9,6 +9,8 @@ table Globals
 			    ||
 			    ISFILTERED('bi vw_DimCohortGraduationYears'[CohortGraduationYear])
 			    ||
+			    ISFILTERED(LimitedGraduationYears[CohortGraduationYear])
+			    ||
 			    ISFILTERED('bi vw_DimK12Schools'[SeaOrganizationName])
 			    ||
 			    ISFILTERED('bi vw_DimK12Schools'[LeaOrganizationName])
@@ -43,7 +45,13 @@ table Globals
 			            ISFILTERED('bi vw_DimCohortGraduationYears'[CohortGraduationYear]),
 			            "> Graduation Year: " & CONCATENATEX(VALUES('bi vw_DimCohortGraduationYears'[CohortGraduationYear]), 'bi vw_DimCohortGraduationYears'[CohortGraduationYear], ", "),
 			            ""
-			        )     
+			        )
+			        & " " & 
+			         IF(
+			            ISFILTERED(LimitedGraduationYears[CohortGraduationYear]),
+			            "> Graduation Year: " & CONCATENATEX(VALUES(LimitedGraduationYears[CohortGraduationYear]), LimitedGraduationYears[CohortGraduationYear], ", "),
+			            ""
+			        )       
 			        & " " & 
 			         IF(
 			            ISFILTERED('bi vw_DimK12Schools'[SeaOrganizationName]),

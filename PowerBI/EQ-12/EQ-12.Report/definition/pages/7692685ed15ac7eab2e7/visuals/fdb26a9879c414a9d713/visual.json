@@ -45,7 +45,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Early college coursework completion'"
+                  "Value": "'HS students who pass at least one AP, IB, or Dual-Credit course'"
                 }
               }
             },

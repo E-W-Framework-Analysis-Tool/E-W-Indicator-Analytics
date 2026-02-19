@@ -45,7 +45,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'College preparatory coursework completion'"
+                  "Value": "'HS graduates who successfully complete coursework required for PS admission'"
                 }
               }
             },

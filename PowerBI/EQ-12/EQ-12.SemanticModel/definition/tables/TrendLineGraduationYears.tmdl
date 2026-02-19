@@ -3,7 +3,7 @@ table TrendLineGraduationYears
 
 	column CohortGraduationYear
 		formatString: 0
-		lineageTag: 805fb107-988e-4da9-a3c3-bfe1cb283862
+		lineageTag: 070de476-b4ee-40d7-95da-3b753a64353e
 		summarizeBy: sum
 		isNameInferred
 		sourceColumn: bi vw_DimCohortGraduationYears[CohortGraduationYear]

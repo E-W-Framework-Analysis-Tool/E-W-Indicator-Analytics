@@ -875,6 +875,19 @@
             "width": 234
           },
           "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 686,
+            "y": -8
+          },
+          "nodeIndex": "LimitedGraduationYears",
+          "nodeLineageTag": "e2cc9400-e1b9-4272-97fd-2262defd7048",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "Fact Tables",

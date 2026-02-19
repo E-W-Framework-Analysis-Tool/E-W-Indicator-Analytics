@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "bi vw_DimCohortGraduationYears"
+                      "Entity": "LimitedGraduationYears"
                     }
                   },
                   "Property": "CohortGraduationYear"
                 }
               },
-              "queryRef": "bi vw_DimCohortGraduationYears.CohortGraduationYear",
-              "nativeQueryRef": "CohortGraduationYear",
+              "queryRef": "LimitedGraduationYears.CohortGraduationYear",
+              "nativeQueryRef": "CohortGraduationYear1",
               "active": true
             }
           ]
@@ -40,7 +40,7 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "bi vw_DimCohortGraduationYears"
+                    "Entity": "LimitedGraduationYears"
                   }
                 },
                 "Property": "CohortGraduationYear"
@@ -60,8 +60,8 @@
                 "Version": 2,
                 "From": [
                   {
-                    "Name": "b",
-                    "Entity": "bi vw_DimCohortGraduationYears",
+                    "Name": "l",
+                    "Entity": "LimitedGraduationYears",
                     "Type": 0
                   }
                 ],
@@ -74,7 +74,7 @@
                             "Column": {
                               "Expression": {
                                 "SourceRef": {
-                                  "Source": "b"
+                                  "Source": "l"
                                 }
                               },
                               "Property": "CohortGraduationYear"
@@ -204,5 +204,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "8af61ac4e7e349a993b9"
+  "parentGroupName": "8af61ac4e7e349a993b9",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "368f0cd80d4b47557f7f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "LimitedGraduationYears"
+              }
+            },
+            "Property": "CohortGraduationYear"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
 }

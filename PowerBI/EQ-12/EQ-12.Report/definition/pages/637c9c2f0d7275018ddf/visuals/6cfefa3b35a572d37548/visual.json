@@ -3,10 +3,10 @@
   "name": "6cfefa3b35a572d37548",
   "position": {
     "x": 0,
-    "y": 193.86716325263811,
+    "y": 193.69390103567318,
     "z": 2000,
-    "height": 204.99068901303539,
-    "width": 632.45189323401621,
+    "height": 205.47756041426925,
+    "width": 631.89873417721515,
     "tabOrder": 0
   },
   "visual": {
@@ -114,6 +114,26 @@
             }
           }
         }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "labelPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Auto'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -144,5 +164,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "526fb7012196a35dcdbf",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "College Readiness"
+              }
+            },
+            "Property": "College Readiness Rate"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

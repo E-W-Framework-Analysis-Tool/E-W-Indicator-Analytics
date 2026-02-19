@@ -4,7 +4,7 @@ table LimitedGraduationYears
 	column CohortGraduationYear
 		formatString: 0
 		lineageTag: 51ce0df9-76cc-4998-9157-90eb4acd8eb0
-		summarizeBy: sum
+		summarizeBy: none
 		isNameInferred
 		sourceColumn: bi vw_DimCohortGraduationYears[CohortGraduationYear]
 

@@ -90,10 +90,6 @@ relationship f49b2647-28db-9bec-dd28-61563defb7a4
 	fromColumn: 'bi vw_FactK12StudentAssessments'.K12SchoolId
 	toColumn: 'bi vw_DimK12Schools'.DimK12SchoolId
 
-relationship AutoDetected_05bfcd29-0fc1-417a-98e0-124b48dab2b7
-	fromColumn: 'bi vw_FactK12StudentCourseSections'.CohortGraduationYear
-	toColumn: 'bi vw_DimCohortGraduationYears'.CohortGraduationYear
-
 relationship 1842be95-8add-cf21-0c9d-450981d085d9
 	fromColumn: 'bi vw_FactK12StudentCourseSections'.EconomicallyDisadvantagedStatusId
 	toColumn: 'bi vw_DimEconomicallyDisadvantagedStatuses'.DimEconomicallyDisadvantagedStatusId
@@ -118,11 +114,23 @@ relationship 9be02f7e-1d3c-22b1-9fe7-cd34cac43214
 	fromColumn: 'bi vw_FactK12StudentCourseSections'.NOrDStatusId
 	toColumn: 'bi vw_DimNeglectedOrDelinquentStatus'.DimNOrDStatusId
 
-relationship e038dffd-b24c-ae64-be07-e60e7001785a
-	fromColumn: 'bi vw_FactK12StudentEnrollments'.CohortGraduationYear
-	toColumn: 'bi vw_DimCohortGraduationYears'.CohortGraduationYear
-
 relationship c9f14ec3-9530-4d0d-43e1-62a2a736ee89
 	fromColumn: 'bi vw_FactK12StudentEnrollments'.CohortYear
 	toColumn: 'bi vw_DimCohortYears'.CohortYear
+
+relationship f76a38cf-fc6d-1d02-f05b-7b03aa8944b7
+	fromColumn: 'bi vw_FactK12StudentCourseSections'.CohortGraduationYear
+	toColumn: LimitedGraduationYears.CohortGraduationYear
+
+relationship 527f39df-b160-88f5-9094-824c2581794a
+	fromColumn: 'bi vw_FactK12StudentEnrollments'.CohortGraduationYear
+	toColumn: LimitedGraduationYears.CohortGraduationYear
+
+relationship 3518f156-8203-688d-af90-3132516ae976
+	fromColumn: 'bi vw_FactK12StudentEnrollments'.CohortGraduationYear
+	toColumn: 'bi vw_DimCohortGraduationYears'.CohortGraduationYear
+
+relationship 5c24addb-17ef-e305-751f-2fd748f7113b
+	fromColumn: 'bi vw_FactK12StudentCourseSections'.CohortGraduationYear
+	toColumn: 'bi vw_DimCohortGraduationYears'.CohortGraduationYear
 

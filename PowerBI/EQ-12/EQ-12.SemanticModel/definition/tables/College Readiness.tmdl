@@ -69,7 +69,7 @@ table 'College Readiness'
 			CALCULATE(
 			    'College Readiness'[College Readiness Rate],    
 			    'bi vw_DimCohortGraduationYears'[CohortGraduationYear] = SelectedTrendYear,
-			    REMOVEFILTERS('bi vw_DimCohortGraduationYears'[CohortGraduationYear])
+			    REMOVEFILTERS(LimitedGraduationYears[CohortGraduationYear])
 			), BLANK())
 			```
 		formatString: 0.0%;-0.0%;0.0%
@@ -164,7 +164,7 @@ table 'College Readiness'
 
 	measure 'College Readiness Chart Title' =
 			
-			VAR SelectedYear = SELECTEDVALUE('bi vw_DimCohortGraduationYears'[CohortGraduationYear])
+			VAR SelectedYear = SELECTEDVALUE(LimitedGraduationYears[CohortGraduationYear])
 			VAR SelectedYearTitle = "College Readiness " & IF(not ISBLANK(SelectedYear), "for graduation year " & SelectedYear, "All Years")
 			RETURN
 			SelectedYearTitle

@@ -45,7 +45,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'SAT and ACT participation and performance'"
+                  "Value": "'11/12 graders who take the SAT/ACT'"
                 }
               }
             },
