@@ -26,7 +26,7 @@ table 'Early College Coursework Completion'
 	measure 'Early College Coursework Disaggregate Chart Title' =
 			
 			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
-			VAR SelectedYearTitle = "Early College Coursework Completion " & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			VAR SelectedYearTitle = "Completion of at least 1 early college course "& IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
 			RETURN
 			SelectedYearTitle
 		lineageTag: c1f42071-12da-4fa2-aea0-73e4cca74dfc
@@ -45,13 +45,12 @@ table 'Early College Coursework Completion'
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: a3655212-f920-4c62-9806-d86b75b939f4
 
-	measure 'Course Completion Disaggregate Chart Title' = ```
+	measure 'Course Completion Disaggregate Chart Title' =
 			
-			VAR SelectedDisaggregate = CONCATENATEX(VALUES(Disaggregation[Disaggregation Name]), Disaggregation[Disaggregation Name], ", ") 
-			VAR SelectedYearTitle = "Completion of at least 1 early college course by " & IF(not ISBLANK(SelectedDisaggregate), "")
+			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
+			VAR SelectedYearTitle = "Completion of at least 1 early college course " & IF(not ISBLANK([Disaggregate by]), "by '" & [Disaggregate by] & "' "," ") & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
 			RETURN
 			SelectedYearTitle
-			```
 		lineageTag: d304ac0c-0ad8-45a0-8122-c2e4b71fa759
 
 	partition 'Early College Coursework Completion' = m

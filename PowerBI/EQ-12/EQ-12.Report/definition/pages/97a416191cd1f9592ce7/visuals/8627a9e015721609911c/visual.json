@@ -3,9 +3,9 @@
   "name": "8627a9e015721609911c",
   "position": {
     "x": 0,
-    "y": 138.74374652584768,
+    "y": 136.06619987269255,
     "z": 1000,
-    "height": 54.78599221789883,
+    "height": 57.848504137492043,
     "width": 1280,
     "tabOrder": 10000
   },
@@ -45,7 +45,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of high-school school students who pass at least one of AP, IB, or Dual-Credit courses.'"
+                  "Value": "'Percentage of high-school students who pass at least one AP, IB, or Dual Credit course.'"
                 }
               }
             },
