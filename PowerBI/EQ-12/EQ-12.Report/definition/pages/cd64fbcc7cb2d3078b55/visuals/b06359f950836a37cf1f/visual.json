@@ -188,7 +188,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'SAT/ACT College Readiness Trend by SchoolYear and SEA'"
+                  "Value": "'SAT/ACE College Readiness Rate by School Year'"
                 }
               }
             }

@@ -45,7 +45,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of grade 11–12 students who earn a “college-ready” score, based on the benchmarks set by the SAT and ACT.'"
+                  "Value": "'Percentage of 11th and 12th grade students who earn …'"
                 }
               }
             },
@@ -71,7 +71,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of grade 11–12 students who earn a “college-ready” score, based on the benchmarks set by the SAT and ACT.'"
+                  "Value": "'Percentage of 11th and 12th grade students who earn …'"
                 }
               }
             }
