@@ -17778,10 +17778,23 @@
               {
                 "textRuns": [
                   {
-                    "value": "EQ12: Have students completed  Four years of English classes, Four years of math classes, Three years of laboratory science, Two years of social sciences, Two years of foreign language, and One year of visual or performing arts?",
+                    "value": "Do students have access to and complete rigorous and accelerated college preparatory coursework?",
                     "textStyle": {
                       "color": "#000000"
                     }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Indicator",
+                    "textStyle": {
+                      "fontStyle": "italic"
+                    }
+                  },
+                  {
+                    "value": ":  College preparatory coursework completion - High school students meet typical coursework requirements for admission to a four-year college."
                   }
                 ]
               }

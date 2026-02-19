@@ -7,7 +7,7 @@
     "z": 1000,
     "height": 57.848504137492043,
     "width": 1280,
-    "tabOrder": 10000
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "actionButton",
@@ -71,7 +71,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of high-school school students who pass at least one of AP, IB, or Dual-Credit courses.'"
+                  "Value": "'Percentage of high-school students who pass at least one AP, IB, or Dual Credit course.'"
                 }
               }
             }

@@ -3,9 +3,9 @@
   "name": "b14ac94d4d8d86e8a2d0",
   "position": {
     "x": 0,
-    "y": 138.74374652584768,
+    "y": 138.93384714193965,
     "z": 1000,
-    "height": 54.78599221789883,
+    "height": 81.387283236994222,
     "width": 1280,
     "tabOrder": 9000
   },
@@ -45,7 +45,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of high school graduates who successfully complete the coursework required for admission to a four-year college or university.'"
+                  "Value": "'Percentage of HS graduates who successfully complete the coursework required for admission to a four-year college or university, which includes: 4 years of English classes, 4 years of math classes, 3 years of laboratory science, 2 years of social sciences, 2 years of foreign language, and 1 year of visual or performing arts.'"
                 }
               }
             },
@@ -71,7 +71,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of high school graduates who successfully complete the coursework required for admission to a four-year college or university.'"
+                  "Value": "'Percentage of HS graduates who successfully complete the coursework required for admission to a four-year college or university, which includes: 4 years of English classes, 4 years of math classes, 3 years of laboratory science, 2 years of social sciences, 2 years of foreign language, and 1 year of visual or performing arts.'"
                 }
               }
             }

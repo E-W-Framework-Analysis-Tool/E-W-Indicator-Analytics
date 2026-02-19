@@ -232,37 +232,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "c311e51669b2c0be0844",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimK12Schools"
-              }
-            },
-            "Property": "SeaOrganizationName"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "b40a01999292bcdc389c",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Algebra I by 9th grade"
-              }
-            },
-            "Property": "Algebra I Success Rate"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -188,51 +188,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "6f266823e2619cb020dd",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimK12Schools"
-              }
-            },
-            "Property": "SeaOrganizationName"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "eb89f30b36dfcc6c4780",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "GradeLegend"
-              }
-            },
-            "Property": "GradeLevelCode"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "6a149b6cade2e0198e20",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Early College Coursework Completion"
-              }
-            },
-            "Property": "Coursework Completion"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

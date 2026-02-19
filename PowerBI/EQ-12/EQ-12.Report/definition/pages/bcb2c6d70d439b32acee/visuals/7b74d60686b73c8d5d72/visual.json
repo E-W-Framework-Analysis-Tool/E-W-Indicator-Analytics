@@ -156,37 +156,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "ee2e10705030b00e2cac",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Algebra I by 9th grade"
-              }
-            },
-            "Property": "Algebra I Success Rate"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "5589e67e775d3020b4cd",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimRaces"
-              }
-            },
-            "Property": "RaceEthnicity"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

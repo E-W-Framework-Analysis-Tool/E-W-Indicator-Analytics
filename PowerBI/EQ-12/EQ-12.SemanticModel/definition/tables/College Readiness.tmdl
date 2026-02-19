@@ -180,6 +180,15 @@ table 'College Readiness'
 		displayFolder: SAT-ACT Participations
 		lineageTag: e03ab723-03f7-4977-b948-d0bf61e1ae30
 
+	measure 'College Readiness Disaggregate Chart Title' =
+			
+			VAR SelectedYear = SELECTEDVALUE(LimitedGraduationYears[CohortGraduationYear])
+			VAR SelectedYearTitle = "College Readiness Rate " & IF(not ISBLANK([Disaggregate by]), "by '" & [Disaggregate by] & "' "," ") & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			RETURN
+			SelectedYearTitle
+		displayFolder: College Ready Measures
+		lineageTag: b7bfbd59-bde6-4f67-97bb-fd976ba39f52
+
 	partition 'College Readiness' = m
 		mode: import
 		source =

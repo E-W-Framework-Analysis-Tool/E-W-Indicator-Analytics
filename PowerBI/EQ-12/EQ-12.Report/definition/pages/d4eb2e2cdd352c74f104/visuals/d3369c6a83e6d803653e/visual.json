@@ -221,48 +221,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "50c5e36ccdb9874ac8ab",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimRaces"
-              }
-            },
-            "Property": "RaceEthnicity"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "4dcf1b5883aac777651a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Course Level Legend"
-              }
-            },
-            "Property": "CourseLevel"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "7cf3ab7026eeb6dcb2ba",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Early College Coursework Completion"
-              }
-            },
-            "Property": "Coursework Completion"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

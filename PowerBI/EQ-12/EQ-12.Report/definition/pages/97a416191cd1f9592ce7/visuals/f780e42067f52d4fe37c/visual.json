@@ -410,23 +410,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "00b6a162aaa691092f1f",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Globals"
-              }
-            },
-            "Property": "Selected Filters"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
