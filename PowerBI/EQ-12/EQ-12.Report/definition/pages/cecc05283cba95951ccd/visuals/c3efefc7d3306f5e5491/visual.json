@@ -170,5 +170,51 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c1aceeebc1fb7d9f471b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Schools"
+              }
+            },
+            "Property": "EducationLevel"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1d78b498abc2551a02a3",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Course Offering"
+              }
+            },
+            "Property": "Course Offering Rate"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "cb721b75e704b7f64f89",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Schools"
+              }
+            },
+            "Property": "LeaOrganizationName"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

@@ -178,23 +178,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "3a256690bfcb3b9852ba",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "3ef6c062e7fa30bdc90c",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimK12Schools"
-              }
-            },
-            "Property": "LeaOrganizationName"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
-  }
+  "parentGroupName": "3a256690bfcb3b9852ba"
 }

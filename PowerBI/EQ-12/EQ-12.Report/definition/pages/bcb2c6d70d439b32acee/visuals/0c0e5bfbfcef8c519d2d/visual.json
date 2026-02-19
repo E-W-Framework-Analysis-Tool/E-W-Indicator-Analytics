@@ -230,5 +230,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "3620c13f39d709393175"
+  "parentGroupName": "3620c13f39d709393175",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c21a419d061311282f76",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Disaggregation"
+              }
+            },
+            "Property": "Disaggregation Name"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

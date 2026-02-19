@@ -172,8 +172,13 @@
           "properties": {
             "text": {
               "expr": {
-                "Literal": {
-                  "Value": "'Completion of at least 1 early college course'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Early College Coursework Completion"
+                    }
+                  },
+                  "Property": "Course Completion Disaggregate Chart Title"
                 }
               }
             },
@@ -221,6 +226,48 @@
             }
           ]
         }
+      },
+      {
+        "name": "b396322fb64516c0b548",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimRaces"
+              }
+            },
+            "Property": "RaceEthnicity"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1cfdc51f456d338ec72b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Course Level Legend"
+              }
+            },
+            "Property": "CourseLevel"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "684009ae355db3f49363",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Early College Coursework Completion"
+              }
+            },
+            "Property": "Coursework Completion"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
