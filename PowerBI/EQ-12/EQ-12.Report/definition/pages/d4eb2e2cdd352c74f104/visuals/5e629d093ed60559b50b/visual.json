@@ -5,8 +5,8 @@
     "x": 0,
     "y": 0,
     "z": 2000,
-    "height": 74.975299929428374,
-    "width": 969.25899788285119,
+    "height": 79.032463399108849,
+    "width": 969.573520050923,
     "tabOrder": 2000
   },
   "visual": {
@@ -17778,7 +17778,24 @@
               {
                 "textRuns": [
                   {
-                    "value": "EQ12: Early college coursework completion measures the percentage of 11th and 12th grade students who successfully complete early college coursework, including Advanced Placement (AP), International Baccalaureate (IB), or dual credit courses.",
+                    "value": "EQ12: Do students have access to and complete rigorous and accelerated college preparatory coursework?",
+                    "textStyle": {
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Indicator",
+                    "textStyle": {
+                      "fontStyle": "italic",
+                      "color": "#000000"
+                    }
+                  },
+                  {
+                    "value": ": Early college coursework completion - High school students successfully complete early college coursework (Advanced Placement [AP], International Baccalaureate [IB], or dual credit).",
                     "textStyle": {
                       "color": "#000000"
                     }

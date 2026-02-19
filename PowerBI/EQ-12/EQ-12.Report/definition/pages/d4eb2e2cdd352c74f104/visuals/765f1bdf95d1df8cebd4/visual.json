@@ -139,7 +139,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Grade Level'"
+                  "Value": "'Course Level'"
                 }
               }
             }
@@ -188,5 +188,51 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "8cd5b3b9a77842b58b46",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Schools"
+              }
+            },
+            "Property": "SeaOrganizationName"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9da92b53fa90ced46506",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Course Level Legend"
+              }
+            },
+            "Property": "CourseLevel"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7f2debeb95e61c94f237",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Early College Coursework Completion"
+              }
+            },
+            "Property": "Coursework Completion"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
