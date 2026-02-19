@@ -605,5 +605,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "01309336914bc7ccddd4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Hierarchy Picker"
+              }
+            },
+            "Property": "Organization Hierarchy"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

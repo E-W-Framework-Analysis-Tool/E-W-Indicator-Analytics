@@ -45,7 +45,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of grade 11–12 students who take the SAT/ACT.'"
+                  "Value": "'Percentage of 11th and 12th grade students who took the SAT/ACT.'"
                 }
               }
             },
@@ -71,7 +71,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of grade 11–12 students who take the SAT/ACT.'"
+                  "Value": "'Percentage of 11th and 12th grade students who took the SAT/ACT.'"
                 }
               }
             }

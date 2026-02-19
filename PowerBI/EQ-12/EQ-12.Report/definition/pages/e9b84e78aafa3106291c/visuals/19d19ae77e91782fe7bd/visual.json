@@ -5,8 +5,8 @@
     "x": 0,
     "y": 0,
     "z": 2000,
-    "height": 74.975299929428374,
-    "width": 969.25899788285119,
+    "height": 79.743095696852933,
+    "width": 969.24855491329492,
     "tabOrder": 2000
   },
   "visual": {
@@ -17778,10 +17778,23 @@
               {
                 "textRuns": [
                   {
-                    "value": "EQ12: Do high school students take and earn a “college-ready” score on the ACT or SAT before graduating high school?",
+                    "value": "EQ12:  Do students have access to and complete rigorous and accelerated college preparatory coursework?",
                     "textStyle": {
                       "color": "#000000"
                     }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Indicator",
+                    "textStyle": {
+                      "fontStyle": "italic"
+                    }
+                  },
+                  {
+                    "value": ":  SAT and ACT participation and performance - High school students take and earn a “college-ready” score on the ACT or SAT before graduating high school."
                   }
                 ]
               }

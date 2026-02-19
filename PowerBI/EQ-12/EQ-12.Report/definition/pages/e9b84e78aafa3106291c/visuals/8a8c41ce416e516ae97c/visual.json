@@ -233,5 +233,51 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "759cc1dae2b20d28e364",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimAssessments"
+              }
+            },
+            "Property": "AssessmentCode"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "07d7de318d328da9ec01",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "College Readiness"
+              }
+            },
+            "Property": "ACT-SAT Participation Rate"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c4cf202fe9ba8fb319e9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Schools"
+              }
+            },
+            "Property": "SeaOrganizationName"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

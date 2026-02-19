@@ -189,6 +189,15 @@ table 'College Readiness'
 		displayFolder: College Ready Measures
 		lineageTag: b7bfbd59-bde6-4f67-97bb-fd976ba39f52
 
+	measure 'SAT-ACT Participation Disaggregate Chart Title' =
+			
+			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
+			VAR SelectedYearTitle = "SAT/ACT Participation Rate " & IF(not ISBLANK([Disaggregate by]), "by '" & [Disaggregate by] & "' "," ") & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			RETURN
+			SelectedYearTitle
+		displayFolder: SAT-ACT Participations
+		lineageTag: aefcb8ce-5559-4b08-b10f-48f27a12a6ea
+
 	partition 'College Readiness' = m
 		mode: import
 		source =

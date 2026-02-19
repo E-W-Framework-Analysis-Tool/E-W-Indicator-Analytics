@@ -228,7 +228,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'SAT/ACT Participation Trend by SchoolYear and AssessmentCode'"
+                  "Value": "'SAT/ACT Participation Trend by School Year'"
                 }
               }
             }
@@ -274,6 +274,48 @@
         },
         "type": "Advanced",
         "howCreated": "User"
+      },
+      {
+        "name": "a9f44cd6d2f2ec39518a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "TrendLineYears"
+              }
+            },
+            "Property": "SchoolYear"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ead3cce56692d1c12b5c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimAssessments"
+              }
+            },
+            "Property": "AssessmentCode"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c1a151f18c016297eb53",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "College Readiness"
+              }
+            },
+            "Property": "ACT-SAT Participation Trend"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
