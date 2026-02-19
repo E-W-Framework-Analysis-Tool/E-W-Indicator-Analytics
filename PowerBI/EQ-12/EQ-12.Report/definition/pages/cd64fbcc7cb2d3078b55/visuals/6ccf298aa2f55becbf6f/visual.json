@@ -264,34 +264,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "b1e5c925689d927cba59",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimRaces"
-              }
-            },
-            "Property": "RaceEthnicity"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "75fda4d7b71a879c50a5",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "College Readiness"
-              }
-            },
-            "Property": "ACT-SAT College Readiness"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
         "name": "7099c399a28b40a7cff8",
         "field": {
           "Column": {

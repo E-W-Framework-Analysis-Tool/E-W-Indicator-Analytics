@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "ea82593afa3cb4bc932f",
   "position": {
-    "x": 747.42777640358315,
-    "y": 132.4536413401737,
+    "x": 742.35067437379587,
+    "y": 69.877970456005144,
     "z": 5000,
-    "height": 72.610128686480763,
-    "width": 213.59900373599004,
+    "height": 72.344251766217084,
+    "width": 213.74438021836866,
     "tabOrder": 8000
   },
   "visual": {
@@ -100,6 +100,11 @@
             }
           }
         }
+      ],
+      "general": [
+        {
+          "properties": {}
+        }
       ]
     },
     "visualContainerObjects": {
@@ -109,7 +114,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Cohort Year'"
+                  "Value": "'Slicer School Type'"
                 }
               }
             },
@@ -159,6 +164,13 @@
                   "Value": "1D"
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
@@ -166,5 +178,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "3a256690bfcb3b9852ba"
+  "parentGroupName": "3a256690bfcb3b9852ba",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "8aa6f30029452bf95558",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Schools"
+              }
+            },
+            "Property": "SchoolTypeCode"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

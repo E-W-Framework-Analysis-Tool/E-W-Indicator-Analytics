@@ -3,10 +3,10 @@
   "name": "74aeaf94347ed8987b41",
   "position": {
     "x": 0,
-    "y": 144.60583488516451,
+    "y": 214.41992076966611,
     "z": 2000,
-    "height": 59.5903165735568,
-    "width": 640.397268777157,
+    "height": 90.548953027730619,
+    "width": 640.36219581211094,
     "tabOrder": 8000
   },
   "visual": {
@@ -144,7 +144,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of Schools offering College Prep Coursework such as Math, Science, English, etc.'"
+                  "Value": "'Percentage of schools offering the following sets of college preparatory courses:  4 years of English classes, 4 years of math classes, 3 years of laboratory science, 2 years of social sciences, 2 years of foreign language, and 1 year of visual or performing arts'"
                 }
               }
             },

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "022f846f1089caa640be",
   "position": {
-    "x": 316.24471289175341,
-    "y": 132.4536413401737,
-    "z": 3000,
-    "height": 72.610128686480763,
-    "width": 213.59900373599004,
+    "x": 316.50610147719976,
+    "y": 69.877970456005144,
+    "z": 11000,
+    "height": 72.344251766217084,
+    "width": 213.74438021836866,
     "tabOrder": 16000
   },
   "visual": {
@@ -114,7 +114,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Cohort Year'"
+                  "Value": "'Slicer LEA'"
                 }
               }
             },
@@ -164,6 +164,13 @@
                   "Value": "1D"
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
@@ -171,5 +178,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "3a256690bfcb3b9852ba"
+  "parentGroupName": "3a256690bfcb3b9852ba",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "3ef6c062e7fa30bdc90c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Schools"
+              }
+            },
+            "Property": "LeaOrganizationName"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

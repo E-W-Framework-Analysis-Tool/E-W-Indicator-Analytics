@@ -210,20 +210,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "8597786bf76142a04a78",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "College Readiness"
-              }
-            },
-            "Property": "ACT-SAT College Readiness"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
         "name": "91734e1d9e26f85300d5",
         "field": {
           "Column": {

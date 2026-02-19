@@ -5,8 +5,8 @@
     "x": 0,
     "y": 0,
     "z": 2000,
-    "height": 74.975299929428374,
-    "width": 969.25899788285119,
+    "height": 78.9586870401811,
+    "width": 969.23599320882863,
     "tabOrder": 2000
   },
   "visual": {
@@ -17778,7 +17778,17 @@
               {
                 "textRuns": [
                   {
-                    "value": "EQ12: Do Students have access to the full set of courses needed to meet the requirements for admission at most colleges?",
+                    "value": "EQ12:  Do students have access to and complete rigorous and accelerated college preparatory coursework?",
+                    "textStyle": {
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Indicator: Access to college preparatory coursework - Students have access to the full set of courses needed to meet the requirements for admission at most colleges.",
                     "textStyle": {
                       "color": "#000000"
                     }

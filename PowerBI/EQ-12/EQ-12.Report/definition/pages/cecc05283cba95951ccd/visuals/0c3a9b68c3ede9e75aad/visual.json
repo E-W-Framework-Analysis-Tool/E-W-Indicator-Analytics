@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "0c3a9b68c3ede9e75aad",
   "position": {
-    "x": 534.01989467524868,
-    "y": 129.86081619984824,
-    "z": 4000,
-    "height": 71.983096601488285,
-    "width": 213.45816266822703,
+    "x": 530.2504816955684,
+    "y": 69.877970456005144,
+    "z": 8000,
+    "height": 72.344251766217084,
+    "width": 212.92228644829802,
     "tabOrder": 10000
   },
   "visual": {
@@ -114,7 +114,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Cohort Year'"
+                  "Value": "'Slicer School'"
                 }
               }
             },
@@ -164,6 +164,13 @@
                   "Value": "1D"
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
@@ -171,5 +178,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "3a256690bfcb3b9852ba"
+  "parentGroupName": "3a256690bfcb3b9852ba",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "42edb24dae5328ac4250",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Schools"
+              }
+            },
+            "Property": "K12SchoolName"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

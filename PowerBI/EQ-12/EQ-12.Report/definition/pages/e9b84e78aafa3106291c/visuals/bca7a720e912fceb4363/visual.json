@@ -231,51 +231,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "289ef2c3799d80599b5b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimRaces"
-              }
-            },
-            "Property": "RaceEthnicity"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "f35572843d505d7451d9",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimAssessments"
-              }
-            },
-            "Property": "AssessmentCode"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "20c8beb483bb6dccf1be",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "College Readiness"
-              }
-            },
-            "Property": "ACT-SAT Participation Rate"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
