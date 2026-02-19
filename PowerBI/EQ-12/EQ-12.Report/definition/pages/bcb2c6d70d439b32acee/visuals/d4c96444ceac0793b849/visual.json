@@ -17784,6 +17784,23 @@
                     }
                   }
                 ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Indicator",
+                    "textStyle": {
+                      "fontStyle": "italic",
+                      "color": "#000000"
+                    }
+                  },
+                  {
+                    "value": ":  Successful completion of Algebra I by 9th grade",
+                    "textStyle": {
+                      "color": "#000000"
+                    }
+                  }
+                ]
               }
             ]
           }

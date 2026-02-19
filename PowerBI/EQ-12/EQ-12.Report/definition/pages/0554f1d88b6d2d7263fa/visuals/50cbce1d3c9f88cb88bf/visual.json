@@ -42,7 +42,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Use the dashboard buttons to shift the level of organization displayed (e.g., show LEA results instead of SEA level) or where available, to focus on a particular Grade Level or Course Type.",
+                    "value": "Use the dashboard buttons to shift the level of organization displayed (e.g., show LEA results instead of SEA level) or where available, to focus on a particular Grade Level or Course Type",
                     "textStyle": {
                       "fontSize": "9pt",
                       "color": "#0b2949"
@@ -54,7 +54,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "Filters are unique to each dashboard visualization (they are not global)."
+                    "value": "Filters are unique to each dashboard visualization (they are not global).",
+                    "textStyle": {
+                      "fontSize": "9pt",
+                      "color": "#0b2949"
+                    }
                   }
                 ],
                 "listType": "bullet"

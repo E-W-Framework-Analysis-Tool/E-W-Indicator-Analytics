@@ -598,20 +598,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "2fe36b4ac20f0627de0e",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Course Level Legend"
-              }
-            },
-            "Property": "CourseLevel"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

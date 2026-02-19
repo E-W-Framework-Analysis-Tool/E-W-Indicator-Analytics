@@ -204,23 +204,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "8af61ac4e7e349a993b9",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "368f0cd80d4b47557f7f",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "LimitedGraduationYears"
-              }
-            },
-            "Property": "CohortGraduationYear"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
-  }
+  "parentGroupName": "8af61ac4e7e349a993b9"
 }
