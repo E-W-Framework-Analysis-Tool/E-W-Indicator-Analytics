@@ -16,7 +16,7 @@ table 'College Readiness'
 			VAR Result = CALCULATE(
 			    DISTINCTCOUNT('bi vw_FactK12StudentAssessments'[K12StudentId]),
 			    'bi vw_FactK12StudentAssessments'[SATScore] <> BLANK() || 'bi vw_FactK12StudentAssessments'[ACTScore] <> BLANK(),
-			    KEEPFILTERS(CALCULATETABLE('bi vw_FactK12StudentEnrollments', 'bi vw_FactK12StudentEnrollments'[GradeLevelCode] IN {"11", "12"}))
+			    KEEPFILTERS(CALCULATETABLE('bi vw_DimGradeLevels', 'bi vw_DimGradeLevels'[GradeLevelCode] IN {"11", "12"}))
 			 )
 			 RETURN Result
 		formatString: 0

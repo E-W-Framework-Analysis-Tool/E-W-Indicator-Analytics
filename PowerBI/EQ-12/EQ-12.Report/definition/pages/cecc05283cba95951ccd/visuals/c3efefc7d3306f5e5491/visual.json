@@ -200,20 +200,6 @@
           }
         },
         "type": "Advanced"
-      },
-      {
-        "name": "cb721b75e704b7f64f89",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimK12Schools"
-              }
-            },
-            "Property": "LeaOrganizationName"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

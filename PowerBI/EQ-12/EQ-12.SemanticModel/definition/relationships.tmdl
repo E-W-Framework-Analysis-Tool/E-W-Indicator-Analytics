@@ -134,3 +134,11 @@ relationship 5c24addb-17ef-e305-751f-2fd748f7113b
 	fromColumn: 'bi vw_FactK12StudentCourseSections'.CohortGraduationYear
 	toColumn: 'bi vw_DimCohortGraduationYears'.CohortGraduationYear
 
+relationship d3f788d2-8ed9-d1a2-b80a-6a1d53b2739d
+	fromColumn: 'bi vw_FactK12StudentAssessments'.GradeLevelCode
+	toColumn: GradeLegend.GradeLevelCode
+
+relationship 916176b6-edb5-63ce-e705-38e3c1ad1d5b
+	fromColumn: 'bi vw_DimK12CourseStatuses'.CourseLevel
+	toColumn: 'Course Level Legend'.CourseLevel
+

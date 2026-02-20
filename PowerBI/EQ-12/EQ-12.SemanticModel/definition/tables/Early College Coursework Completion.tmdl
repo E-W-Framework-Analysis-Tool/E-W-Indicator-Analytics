@@ -5,8 +5,9 @@ table 'Early College Coursework Completion'
 			CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[K12StudentId]),
 			    'bi vw_DimK12CourseStatuses'[CourseLevelCharacteristicCode] in {"73048", "00575", "00574"},
 			    'bi vw_FactK12StudentCourseSections'[LetterGradeEarned] <> "F",
-			    KEEPFILTERS(CALCULATETABLE('bi vw_DimGradeLevels', 'bi vw_DimGradeLevels'[GradeLevelCode] IN {"11", "12"})
-			    ))
+			    KEEPFILTERS(CALCULATETABLE('bi vw_DimGradeLevels', 'bi vw_DimGradeLevels'[GradeLevelCode] IN {"11", "12"})),
+			    KEEPFILTERS(CALCULATETABLE('bi vw_DimK12CourseStatuses', 'bi vw_DimK12CourseStatuses'[CourseLevel] IN {"AP", "IB", "Dual Credit"}))
+			    )
 		formatString: 0
 		lineageTag: 270b15b0-65c2-4780-8f7b-01e27b103143
 

@@ -201,7 +201,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'SAT/ACE College Readiness Rate by School Year'"
+                  "Value": "'SAT/ACT College Readiness Rate by School Year'"
                 }
               }
             }

@@ -588,7 +588,7 @@
         },
         {
           "location": {
-            "x": 1248,
+            "x": 1286,
             "y": 708
           },
           "nodeIndex": "bi vw_DimK12CourseStatuses",
@@ -666,8 +666,8 @@
         },
         {
           "location": {
-            "x": 944,
-            "y": 827
+            "x": 737,
+            "y": 823
           },
           "nodeIndex": "bi vw_DimNeglectedOrDelinquentStatus",
           "nodeLineageTag": "874d6e04-0012-4066-a777-01948ede7b3d",
@@ -699,6 +699,19 @@
           "nodeLineageTag": "3823d081-15cb-49c2-a015-105103193c1d",
           "size": {
             "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 985,
+            "y": 817
+          },
+          "nodeIndex": "Course Level Legend",
+          "nodeLineageTag": "8425c2f8-d7b6-4cf2-94c3-3dba1a997f86",
+          "size": {
+            "height": 145,
             "width": 234
           },
           "zIndex": 0
@@ -819,7 +832,7 @@
           "nodeIndex": "bi vw_FactK12StudentCourseSections",
           "nodeLineageTag": "1b0744dd-6d2a-4d99-8f90-d234b398caf0",
           "size": {
-            "height": 331,
+            "height": 463,
             "width": 350
           },
           "zIndex": 3
@@ -883,6 +896,19 @@
           },
           "nodeIndex": "LimitedGraduationYears",
           "nodeLineageTag": "e2cc9400-e1b9-4272-97fd-2262defd7048",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1632,
+            "y": 856
+          },
+          "nodeIndex": "GradeLegend",
+          "nodeLineageTag": "4227a442-2754-40cf-9e13-81a441cf2876",
           "size": {
             "height": 200,
             "width": 234
@@ -952,6 +978,6 @@
       "tablesLocked": false
     }
   ],
-  "selectedDiagram": "Fact Tables",
+  "selectedDiagram": "Student Course Sections",
   "defaultDiagram": "All tables"
 }

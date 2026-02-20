@@ -45,7 +45,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of 11th and 12th grade students who earn …'"
+                  "Value": "'Percentage of 11th and 12th grade students who take and earn a \"college-ready\" score on the ACT or SAT before graduating HS.'"
                 }
               }
             },
@@ -71,7 +71,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of 11th and 12th grade students who earn …'"
+                  "Value": "'Percentage of 11th and 12th grade students who take and earn a \"college-ready\" score on the ACT or SAT before graduating HS.'"
                 }
               }
             }

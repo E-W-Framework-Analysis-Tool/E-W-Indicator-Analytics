@@ -87,7 +87,7 @@ table 'bi vw_DimK12Schools'
 				in
 				    bi_vw_DimK12Schools
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 
 	annotation PBI_NavigationStepName = Navigation
 

@@ -6,8 +6,7 @@
     "y": 0,
     "z": 2000,
     "height": 74.975299929428374,
-    "width": 969.25899788285119,
-    "tabOrder": 2000
+    "width": 969.25899788285119
   },
   "visual": {
     "visualType": "textbox",
@@ -17778,7 +17777,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Do students have access to and complete rigorous and accelerated college preparatory coursework?",
+                    "value": "EQ12: Do students have access to and complete rigorous and accelerated college preparatory coursework?",
                     "textStyle": {
                       "color": "#000000"
                     }
