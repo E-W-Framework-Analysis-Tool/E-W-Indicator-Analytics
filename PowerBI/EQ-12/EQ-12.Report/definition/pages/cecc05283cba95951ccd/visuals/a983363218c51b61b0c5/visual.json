@@ -2,15 +2,15 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "a983363218c51b61b0c5",
   "position": {
-    "x": 640.36219581211094,
-    "y": 304.96887379739672,
-    "z": 7000,
-    "height": 415.07640067911717,
-    "width": 639.63780418788917,
+    "x": 0,
+    "y": 195.63318777292574,
+    "z": 6000,
+    "height": 230.76731129132875,
+    "width": 640,
     "tabOrder": 6000
   },
   "visual": {
-    "visualType": "columnChart",
+    "visualType": "clusteredColumnChart",
     "query": {
       "queryState": {
         "Category": {
@@ -255,5 +255,51 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6b04bb16e9b17be719c9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Schools"
+              }
+            },
+            "Property": "EducationLevel"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ad238c540a38656ddc31",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Course Offering"
+              }
+            },
+            "Property": "Algebra I Offering Rate"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "db9b2715ab86b3e9a90b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Schools"
+              }
+            },
+            "Property": "LeaOrganizationName"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

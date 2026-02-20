@@ -64,6 +64,12 @@ table 'Course Offering'
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 6285b008-893e-4b07-a67d-d4a589a79a5c
 
+	measure 'Schools Offering Advance Courses' =
+			
+			CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[K12SchoolId]), KEEPFILTERS(CALCULATETABLE('bi vw_DimK12CourseStatuses', 'bi vw_DimK12CourseStatuses'[CourseLevel] IN {"AP", "IB", "Dual Credit"})))
+		formatString: 0
+		lineageTag: 1d56d8e4-f083-47fa-bf16-128c63e6df40
+
 	partition 'Course Offering' = m
 		mode: import
 		source =

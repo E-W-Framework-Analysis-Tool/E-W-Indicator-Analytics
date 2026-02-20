@@ -45,6 +45,7 @@ ref table 'Course Level Legend'
 ref table 'Course Offering'
 ref table 'Hierarchy Picker'
 ref table LimitedGraduationYears
+ref table 'Schools Offering Advance Courses'
 
 ref cultureInfo en-US
 

@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "c3efefc7d3306f5e5491",
+  "name": "6f4a0ca9d40301a91c10",
   "position": {
-    "x": 639.60074859638178,
-    "y": 196.43169058016218,
-    "z": 5000,
-    "height": 230.76731129132875,
+    "x": 0,
+    "y": 487.8852152214597,
+    "z": 11000,
+    "height": 232.36431690580162,
     "width": 640.39925140361822,
-    "tabOrder": 5000
+    "tabOrder": 17002
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -56,14 +56,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "bi vw_DimK12Schools"
+                      "Entity": "bi vw_DimK12CourseStatuses"
                     }
                   },
-                  "Property": "EducationLevel"
+                  "Property": "CourseLevel"
                 }
               },
-              "queryRef": "bi vw_DimK12Schools.EducationLevel",
-              "nativeQueryRef": "EducationLevel"
+              "queryRef": "bi vw_DimK12CourseStatuses.CourseLevel",
+              "nativeQueryRef": "CourseLevel"
             }
           ]
         },
@@ -139,7 +139,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Education Level'"
+                  "Value": "'Course Level'"
                 }
               }
             }
@@ -154,7 +154,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Schools offering college-ready courses'"
+                  "Value": "'Schools offering advance courses'"
                 }
               }
             },
@@ -174,7 +174,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -201,21 +201,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "fcd3d8d0d7684720127b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimK12Schools"
-              }
-            },
-            "Property": "EducationLevel"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "0668b08e09debe4ca407",
+        "name": "7f06c733b196e0d75691",
         "field": {
           "Measure": {
             "Expression": {
@@ -227,6 +213,73 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "7758d7fb7329700b4a8d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12CourseStatuses"
+              }
+            },
+            "Property": "CourseLevel"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "b",
+              "Entity": "bi vw_DimK12CourseStatuses",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "b"
+                          }
+                        },
+                        "Property": "CourseLevel"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'AP'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Dual Credit'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'IB'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
       }
     ]
   }
