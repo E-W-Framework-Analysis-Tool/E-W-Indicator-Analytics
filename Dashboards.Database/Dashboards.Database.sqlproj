@@ -150,6 +150,14 @@
     <Build Include="Objects\reporting\Tables\DimK12CourseStatuses.sql" />
     <Build Include="Objects\etl\Stored Procedures\Upsert_DimK12CourseStatuses.sql" />
     <Build Include="Objects\bi\Views\vw_DimK12CourseStatuses.sql" />
+    <Build Include="Objects\staging\Tables\DimRuralStatuses.sql" />
+    <Build Include="Objects\reporting\Tables\DimRuralStatuses.sql" />
+    <Build Include="Objects\etl\Stored Procedures\Upsert_DimRuralStatuses.sql" />
+    <Build Include="Objects\bi\Views\DimRuralStatuses.sql" />
+    <Build Include="Objects\staging\Tables\FactK12AccessibleEducationMaterialAssignments.sql" />
+    <Build Include="Objects\reporting\Tables\FactK12AccessibleEducationMaterialAssignments.sql" />
+    <Build Include="Objects\etl\Stored Procedures\Upsert_FactK12AccessibleEducationMaterialAssignments.sql" />
+    <Build Include="Objects\bi\Views\vw_FactK12AccessibleEducationMaterialAssignments.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\SeedReportingDimensionTables\SeedDimEnglishLearnerStatuses.sql" />

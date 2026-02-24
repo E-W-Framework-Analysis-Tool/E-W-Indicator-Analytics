@@ -12,8 +12,8 @@
   DTS:ObjectName="LoadStagingFacts"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{894416FD-6723-4069-A05C-1A4622D9EDEF}">
+  DTS:VersionBuild="30"
+  DTS:VersionGUID="{84D46670-B6F9-4BA1-9CBA-1392488A197F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -28,6 +28,501 @@
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\FactK12AccessibleEducationMaterialAssignment"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:DelayValidation="True"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{4576eed9-987f-472c-a75e-71bc65dcf5d8}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FactK12AccessibleEducationMaterialAssignment">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:DelayValidation="True"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{66637825-cb3d-4834-823c-e3f50b11f2e7}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Stage Data"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[staging].[FactK12AccessibleEducationMaterialAssignments]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{60dda06b-3f51-4553-8452-daaed09fbd3d}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Dashboards-DB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SchoolYear]"
+                          cachedDataType="i2"
+                          cachedName="SchoolYear"
+                          externalMetadataColumnId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolYear]"
+                          lineageId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolYear]" />
+                        <inputColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SeaOrganizationIdentifierSea]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="SeaOrganizationIdentifierSea"
+                          externalMetadataColumnId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SeaOrganizationIdentifierSea]"
+                          lineageId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SeaOrganizationIdentifierSea]" />
+                        <inputColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LeaIdentifierSea]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="LeaIdentifierSea"
+                          externalMetadataColumnId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LeaIdentifierSea]"
+                          lineageId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[LeaIdentifierSea]" />
+                        <inputColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SchoolIdentifierSea]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="SchoolIdentifierSea"
+                          externalMetadataColumnId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolIdentifierSea]"
+                          lineageId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolIdentifierSea]" />
+                        <inputColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StudentIdentifierState]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="StudentIdentifierState"
+                          externalMetadataColumnId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentIdentifierState]"
+                          lineageId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentIdentifierState]" />
+                        <inputColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FactK12AccessibleEducationMaterialAssignmentId]"
+                          cachedDataType="i4"
+                          cachedName="FactK12AccessibleEducationMaterialAssignmentId"
+                          externalMetadataColumnId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FactK12AccessibleEducationMaterialAssignmentId]"
+                          lineageId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FactK12AccessibleEducationMaterialAssignmentId]" />
+                        <inputColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RuralStatusId]"
+                          cachedDataType="i4"
+                          cachedName="RuralStatusId"
+                          externalMetadataColumnId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RuralStatusId]"
+                          lineageId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[RuralStatusId]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolYear]"
+                          dataType="i2"
+                          name="SchoolYear" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SeaOrganizationIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          name="SeaOrganizationIdentifierSea" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LeaIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          name="LeaIdentifierSea" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          name="SchoolIdentifierSea" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          name="StudentIdentifierState" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FactK12AccessibleEducationMaterialAssignmentId]"
+                          dataType="i4"
+                          name="FactK12AccessibleEducationMaterialAssignmentId" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RuralStatusId]"
+                          dataType="i4"
+                          name="RuralStatusId" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+ fkema.FactK12AccessibleEducationMaterialAssignmentId
+,dsy.SchoolYear
+,ds.SeaOrganizationIdentifierSea
+,dl.LeaIdentifierSea
+,dks.SchoolIdentifierSea
+,dp.StudentIdentifierState
+,fkema.RuralStatusId
+FROM RDS.FactK12AccessibleEducationMaterialAssignments as fkema
+LEFT JOIN RDS.DimSchoolYears as dsy
+on dsy.DimSchoolYearId = fkema.SchoolYearId
+LEFT JOIN RDS.DimSeas AS ds 
+ON ds.DimSeaId = fkema.SeaId
+LEFT JOIN RDS.DimLeas AS dl
+on dl.DimLeaId = fkema.LeaId
+LEFT JOIN RDS.DimK12Schools AS dks
+on fkema.K12SchoolId = dks.DimK12SchoolId
+LEFT JOIN RDS.DimPeople AS dp
+on fkema.K12StudentId = dp.DimPersonId
+LEFT JOIN RDS.DimGradeLevels AS dgl
+on fkema.EntryGradeLevelId= dgl.DimGradeLevelId
+WHERE dsy.SchoolYear &gt; ?
+ORDER BY fkema.FactK12AccessibleEducationMaterialAssignmentId</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping">"0:Input",{ECA92B21-F17A-42E1-A266-C94DF3FAE11C};</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{D41EB2B6-A586-49A5-A9CB-BCA8E8B2703B}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CEDS-DWH]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolYear]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolYear]"
+                          lineageId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolYear]"
+                          name="SchoolYear"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SeaOrganizationIdentifierSea]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SeaOrganizationIdentifierSea]"
+                          length="50"
+                          lineageId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SeaOrganizationIdentifierSea]"
+                          name="SeaOrganizationIdentifierSea"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[LeaIdentifierSea]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LeaIdentifierSea]"
+                          length="50"
+                          lineageId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[LeaIdentifierSea]"
+                          name="LeaIdentifierSea"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolIdentifierSea]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolIdentifierSea]"
+                          length="50"
+                          lineageId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolIdentifierSea]"
+                          name="SchoolIdentifierSea"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentIdentifierState]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StudentIdentifierState]"
+                          length="40"
+                          lineageId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentIdentifierState]"
+                          name="StudentIdentifierState"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FactK12AccessibleEducationMaterialAssignmentId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FactK12AccessibleEducationMaterialAssignmentId]"
+                          lineageId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FactK12AccessibleEducationMaterialAssignmentId]"
+                          name="FactK12AccessibleEducationMaterialAssignmentId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[RuralStatusId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RuralStatusId]"
+                          lineageId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[RuralStatusId]"
+                          name="RuralStatusId"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolYear]"
+                          dataType="i2"
+                          name="SchoolYear" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SeaOrganizationIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          name="SeaOrganizationIdentifierSea" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LeaIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          name="LeaIdentifierSea" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          name="SchoolIdentifierSea" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StudentIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          name="StudentIdentifierState" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FactK12AccessibleEducationMaterialAssignmentId]"
+                          dataType="i4"
+                          name="FactK12AccessibleEducationMaterialAssignmentId" />
+                        <externalMetadataColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RuralStatusId]"
+                          dataType="i4"
+                          name="RuralStatusId" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FactK12AccessibleEducationMaterialAssignmentId]"
+                          dataType="i4"
+                          lineageId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FactK12AccessibleEducationMaterialAssignmentId]"
+                          name="FactK12AccessibleEducationMaterialAssignmentId" />
+                        <outputColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolYear]"
+                          dataType="i2"
+                          lineageId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolYear]"
+                          name="SchoolYear" />
+                        <outputColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SeaOrganizationIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SeaOrganizationIdentifierSea]"
+                          name="SeaOrganizationIdentifierSea" />
+                        <outputColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LeaIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LeaIdentifierSea]"
+                          name="LeaIdentifierSea" />
+                        <outputColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolIdentifierSea]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolIdentifierSea]"
+                          name="SchoolIdentifierSea" />
+                        <outputColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StudentIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          lineageId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StudentIdentifierState]"
+                          name="StudentIdentifierState" />
+                        <outputColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RuralStatusId]"
+                          dataType="i4"
+                          lineageId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RuralStatusId]"
+                          name="RuralStatusId" />
+                        <outputColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data.Paths[OLE DB Source Output]"
+                  endId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FactK12AccessibleEducationMaterialAssignment\Truncate staging table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{ad734bb4-7582-48f4-9f1a-1931aa7a1d89}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate staging table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[FactK12AccessibleEducationMaterialAssignments];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FactK12AccessibleEducationMaterialAssignment.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{042c9599-e777-49fc-bf2f-b404593733ec}"
+          DTS:From="Package\FactK12AccessibleEducationMaterialAssignment\Truncate staging table"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\FactK12StudentAssessments"
       DTS:CreationName="STOCK:SEQUENCE"
@@ -690,7 +1185,7 @@ order by fksa.FactK12StudentAssessmentId</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate staging table"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2254,7 +2749,7 @@ ORDER BY fkse.FactK12StudentEnrollmentId</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate staging table"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2323,6 +2818,14 @@ ORDER BY fkse.FactK12StudentEnrollmentId</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
       DTS:To="Package\FactK12StudentAssessments" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{BFD65452-D0B6-445A-B0AF-FF03967124C2}"
+      DTS:From="Package\Get Latest SchoolYear to Process"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\FactK12AccessibleEducationMaterialAssignment" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -2335,7 +2838,7 @@ ORDER BY fkse.FactK12StudentEnrollmentId</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="188,42"
           Id="Package\FactK12StudentAssessments\Stage Data"
@@ -2450,21 +2953,33 @@ ORDER BY fkse.FactK12StudentEnrollmentId</property>
         <NodeLayout
           Size="244,42"
           Id="Package\Get Latest SchoolYear to Process"
-          TopLeft="722,136" />
+          TopLeft="963,139" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="842,178">
+          TopLeft="1061.4,181">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,224"
+              EndConnector="-221.4,221"
               Start="0,0"
-              End="0,216.5">
+              End="-221.4,213.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,216.5" />
+                    End="0,94.6678765880218" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,94.6678765880218"
+                    Point2="0,98.6678765880218"
+                    Point3="-4,98.6678765880218" />
+                  <mssgle:LineSegment
+                    End="-217.4,98.6678765880218" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-217.4,98.6678765880218"
+                    Point2="-221.4,98.6678765880218"
+                    Point3="-221.4,102.667876588022" />
+                  <mssgle:LineSegment
+                    End="-221.4,213.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2475,30 +2990,30 @@ ORDER BY fkse.FactK12StudentEnrollmentId</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="785,178">
+          TopLeft="1014.2,181">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-373,224"
+              EndConnector="-602.2,221"
               Start="0,0"
-              End="-373,216.5">
+              End="-602.2,213.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,72.2810810810811" />
+                    End="0,61.3302540415705" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,72.2810810810811"
-                    Point2="0,76.2810810810811"
-                    Point3="-4,76.2810810810811" />
+                    Point1="0,61.3302540415705"
+                    Point2="0,65.3302540415705"
+                    Point3="-4,65.3302540415705" />
                   <mssgle:LineSegment
-                    End="-369,76.2810810810811" />
+                    End="-598.2,65.3302540415705" />
                   <mssgle:CubicBezierSegment
-                    Point1="-369,76.2810810810811"
-                    Point2="-373,76.2810810810811"
-                    Point3="-373,80.2810810810811" />
+                    Point1="-598.2,65.3302540415705"
+                    Point2="-602.2,65.3302540415705"
+                    Point3="-602.2,69.3302540415705" />
                   <mssgle:LineSegment
-                    End="-373,216.5" />
+                    End="-602.2,213.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2509,30 +3024,101 @@ ORDER BY fkse.FactK12StudentEnrollmentId</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="903,178">
+          TopLeft="1108.6,181">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="355,224"
+              EndConnector="149.4,221"
               Start="0,0"
-              End="355,216.5">
+              End="149.4,213.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,72.2810810810811" />
+                    End="0,94.6678765880218" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,72.2810810810811"
-                    Point2="0,76.2810810810811"
-                    Point3="4,76.2810810810811" />
+                    Point1="0,94.6678765880218"
+                    Point2="0,98.6678765880218"
+                    Point3="4,98.6678765880218" />
                   <mssgle:LineSegment
-                    End="351,76.2810810810811" />
+                    End="145.4,98.6678765880218" />
                   <mssgle:CubicBezierSegment
-                    Point1="351,76.2810810810811"
-                    Point2="355,76.2810810810811"
-                    Point3="355,80.2810810810811" />
+                    Point1="145.4,98.6678765880218"
+                    Point2="149.4,98.6678765880218"
+                    Point3="149.4,102.667876588022" />
                   <mssgle:LineSegment
-                    End="355,216.5" />
+                    End="149.4,213.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="188,42"
+          Id="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data"
+          TopLeft="67,103" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\FactK12AccessibleEducationMaterialAssignment\Truncate staging table"
+          TopLeft="66,31" />
+        <EdgeLayout
+          Id="Package\FactK12AccessibleEducationMaterialAssignment.PrecedenceConstraints[Constraint]"
+          TopLeft="160.5,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="341,200"
+          Size="341,243"
+          Id="Package\FactK12AccessibleEducationMaterialAssignment"
+          TopLeft="1480.5,407" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="1155.8,181">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="495.2,226"
+              Start="0,0"
+              End="495.2,218.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.8083140877599" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,62.8083140877599"
+                    Point2="0,66.8083140877599"
+                    Point3="4,66.8083140877599" />
+                  <mssgle:LineSegment
+                    End="491.2,66.8083140877599" />
+                  <mssgle:CubicBezierSegment
+                    Point1="491.2,66.8083140877599"
+                    Point2="495.2,66.8083140877599"
+                    Point3="495.2,70.8083140877599" />
+                  <mssgle:LineSegment
+                    End="495.2,218.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2609,15 +3195,15 @@ ORDER BY fkse.FactK12StudentEnrollmentId</property>
     design-time-name="Package\FactK12StudentCourseSections\Stage Data">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="157,42"
-          Id="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source"
-          TopLeft="129,72" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="177,42"
           Id="Package\FactK12StudentCourseSections\Stage Data\OLE DB Destination"
           TopLeft="121,184" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\FactK12StudentCourseSections\Stage Data\OLE DB Source"
+          TopLeft="129,72" />
         <EdgeLayout
           Id="Package\FactK12StudentCourseSections\Stage Data.Paths[OLE DB Source Output]"
           TopLeft="208.5,114">
@@ -2637,7 +3223,9 @@ ORDER BY fkse.FactK12StudentEnrollmentId</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2668,7 +3256,7 @@ ORDER BY fkse.FactK12StudentEnrollmentId</property>
     design-time-name="Package\FactK12StudentEnrollments\Stage Data">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="157,42"
           Id="Package\FactK12StudentEnrollments\Stage Data\OLE DB Source"
@@ -2696,9 +3284,7 @@ ORDER BY fkse.FactK12StudentEnrollmentId</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2722,6 +3308,65 @@ ORDER BY fkse.FactK12StudentEnrollmentId</property>
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source"
+          TopLeft="81,44" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination"
+          TopLeft="74,148" />
+        <EdgeLayout
+          Id="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data.Paths[OLE DB Source Output]"
+          TopLeft="161,86">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62"
+              Start="0,0"
+              End="0,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactK12AccessibleEducationMaterialAssignment\Stage Data\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
