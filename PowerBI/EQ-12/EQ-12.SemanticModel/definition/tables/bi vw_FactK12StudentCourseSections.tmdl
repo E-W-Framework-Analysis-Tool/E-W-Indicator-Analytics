@@ -155,6 +155,15 @@ table 'bi vw_FactK12StudentCourseSections'
 
 		annotation SummarizationSetBy = Automatic
 
+	column RuralStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: b14da816-1c68-4db8-a353-71b4da75cca4
+		summarizeBy: none
+		sourceColumn: RuralStatusId
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'bi vw_FactK12StudentCourseSections' = m
 		mode: import
 		source =

@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "bi vw_DimRaces"
+                      "Entity": "bi vw_DimRuralStatuses"
                     }
                   },
-                  "Property": "RaceEthnicity"
+                  "Property": "Urbanicity"
                 }
               },
-              "queryRef": "bi vw_DimRaces.RaceEthnicity",
-              "nativeQueryRef": "RaceEthnicity",
+              "queryRef": "bi vw_DimRuralStatuses.Urbanicity",
+              "nativeQueryRef": "Urbanicity",
               "active": true
             }
           ]
@@ -159,6 +159,13 @@
                   "Value": "1D"
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
@@ -166,5 +173,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "2f782722bfbca9067220"
+  "parentGroupName": "2f782722bfbca9067220",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ff558f908bb2842934e5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimRuralStatuses"
+              }
+            },
+            "Property": "Urbanicity"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

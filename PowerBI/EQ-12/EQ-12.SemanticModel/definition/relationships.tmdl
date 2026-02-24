@@ -142,3 +142,11 @@ relationship 916176b6-edb5-63ce-e705-38e3c1ad1d5b
 	fromColumn: 'bi vw_DimK12CourseStatuses'.CourseLevel
 	toColumn: 'Course Level Legend'.CourseLevel
 
+relationship 0f3316c8-3654-e45c-d2c3-0feea72a7814
+	fromColumn: 'bi vw_FactK12StudentCourseSections'.RuralStatusId
+	toColumn: 'bi vw_DimRuralStatuses'.DimRuralStatusId
+
+relationship 0fb5d6d0-2e34-30ff-a1cf-4de3a41bff6f
+	fromColumn: 'bi vw_FactK12StudentEnrollments'.RuralStatusId
+	toColumn: 'bi vw_DimRuralStatuses'.DimRuralStatusId
+

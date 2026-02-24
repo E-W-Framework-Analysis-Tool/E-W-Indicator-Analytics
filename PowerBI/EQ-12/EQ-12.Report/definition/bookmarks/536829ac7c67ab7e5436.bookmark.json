@@ -14,61 +14,6 @@
     "sections": {
       "d4eb2e2cdd352c74f104": {
         "visualContainers": {
-          "0142a8fbdb25d87f8f85": {
-            "filters": {
-              "byExpr": [
-                {
-                  "name": "d47731eddba61f92e37e",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "bi vw_DimRaces"
-                        }
-                      },
-                      "Property": "RaceEthnicity"
-                    }
-                  },
-                  "howCreated": 0
-                }
-              ]
-            },
-            "singleVisual": {
-              "visualType": "slicer",
-              "objects": {
-                "merge": {
-                  "data": [
-                    {
-                      "properties": {
-                        "mode": {
-                          "expr": {
-                            "Literal": {
-                              "Value": "'Dropdown'"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  ]
-                }
-              },
-              "activeProjections": {
-                "Values": [
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "bi vw_DimRaces"
-                        }
-                      },
-                      "Property": "RaceEthnicity"
-                    }
-                  }
-                ]
-              }
-            }
-          },
           "3b7f81adb6274f996209": {
             "filters": {
               "byExpr": [

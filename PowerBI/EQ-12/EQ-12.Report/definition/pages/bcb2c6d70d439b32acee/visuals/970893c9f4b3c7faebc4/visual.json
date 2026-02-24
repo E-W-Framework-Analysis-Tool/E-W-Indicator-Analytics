@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "970893c9f4b3c7faebc4",
   "position": {
-    "x": 960.964824120603,
-    "y": 132.65251827334777,
+    "x": 961.45124716553289,
+    "y": 132.78911564625849,
     "z": 2000,
-    "height": 72.765701771302417,
-    "width": 214.19095477386935,
+    "height": 72.562358276643991,
+    "width": 214.78458049886621,
     "tabOrder": 13000
   },
   "visual": {
@@ -138,5 +138,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "3620c13f39d709393175"
+  "parentGroupName": "3620c13f39d709393175",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "eacfd85b92b77b10a27c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimCohortGraduationYears"
+              }
+            },
+            "Property": "CohortGraduationYear"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
 }

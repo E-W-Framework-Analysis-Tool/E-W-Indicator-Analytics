@@ -166,5 +166,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "3620c13f39d709393175"
+  "parentGroupName": "3620c13f39d709393175",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "611cb0bc2d58d7121291",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimFosterCareStatuses"
+              }
+            },
+            "Property": "FosterCareStatus"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

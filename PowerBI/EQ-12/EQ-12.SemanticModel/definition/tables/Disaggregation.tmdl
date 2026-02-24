@@ -47,7 +47,8 @@ table Disaggregation
 				    ("English Learner Status", NAMEOF('bi vw_DimEnglishLearnerStatuses'[EnglishLearnerStatus]), 4),
 				    ("Foster Care Status", NAMEOF('bi vw_DimFosterCareStatuses'[FosterCareStatus]), 5),
 				    ("Homelessness Status", NAMEOF('bi vw_DimHomelessnessStatuses'[HomelessnessStatus]), 6),
-				    ("Neglected Or Delinquent Status", NAMEOF('bi vw_DimNeglectedOrDelinquentStatus'[NeglectedOrDelinquentStatus]), 7)
+				    ("Neglected Or Delinquent Status", NAMEOF('bi vw_DimNeglectedOrDelinquentStatus'[NeglectedOrDelinquentStatus]), 7),
+				    ("Urbanicity", NAMEOF('bi vw_DimRuralStatuses'[Urbanicity]), 8)
 				}
 
 	annotation PBI_Id = 0534350ece8d4cd794d0dba427af969a

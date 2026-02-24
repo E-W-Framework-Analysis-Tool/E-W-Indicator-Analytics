@@ -14,6 +14,7 @@ SELECT
   , [fkse].[FosterCareStatusId]
   , [fkse].[NOrDStatusId]
   , [fkse].[DisabilityStatusId]
+  , [fkaema].[RuralStatusId]
 FROM
 	[reporting].[FactK12StudentCourseSections]             AS [fkcs]
 		INNER JOIN [reporting].[FactK12StudentEnrollments] AS [fkse]
@@ -21,4 +22,9 @@ FROM
 						   AND [fkcs].[LeaId] = [fkse].[LeaId]
 						   AND [fkcs].[K12SchoolId] = [fkse].[K12SchoolId]
 						   AND [fkcs].[K12StudentId] = [fkse].[K12StudentId]
-						   AND [fkcs].[GradeLevelCode] = [fkse].[GradeLevelCode];
+						   AND [fkcs].[GradeLevelCode] = [fkse].[GradeLevelCode]		
+		LEFT JOIN [reporting].[FactK12AccessibleEducationMaterialAssignments] AS [fkaema]
+					   ON [fkaema].[SeaId] = [fkse].[SeaId]
+						   AND [fkaema].[LeaId] = [fkse].[LeaId]
+						   AND [fkaema].[K12SchoolId] = [fkse].[K12SchoolId]
+						   AND [fkaema].[K12StudentId] = [fkse].[K12StudentId];

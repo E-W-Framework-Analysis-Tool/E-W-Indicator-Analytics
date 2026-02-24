@@ -4,14 +4,14 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 3258.443980785104,
+        "x": 4338.2633626184779,
         "y": 0
       },
       "nodes": [
         {
           "location": {
             "x": 0,
-            "y": 74
+            "y": 92.5
           },
           "nodeIndex": "bi vw_DimAssessments",
           "nodeLineageTag": "1345d851-3124-4a3f-8a1f-f8906df77570",
@@ -24,7 +24,7 @@
         {
           "location": {
             "x": 284,
-            "y": 74
+            "y": 92.5
           },
           "nodeIndex": "bi vw_DimAssessmentSubtests",
           "nodeLineageTag": "22028065-0199-4de6-95c9-ce091ee7428a",
@@ -37,7 +37,7 @@
         {
           "location": {
             "x": 568,
-            "y": 98
+            "y": 116.5
           },
           "nodeIndex": "bi vw_DimCohortGraduationYears",
           "nodeLineageTag": "cf152aef-7800-458d-adc4-624ef6b610eb",
@@ -50,7 +50,7 @@
         {
           "location": {
             "x": 852,
-            "y": 98
+            "y": 116.5
           },
           "nodeIndex": "bi vw_DimCohortYears",
           "nodeLineageTag": "3823d081-15cb-49c2-a015-105103193c1d",
@@ -63,7 +63,7 @@
         {
           "location": {
             "x": 1136,
-            "y": 74
+            "y": 92.5
           },
           "nodeIndex": "bi vw_DimDisabilityStatuses",
           "nodeLineageTag": "446724cf-18df-47a6-bbcd-2f356ecd81ed",
@@ -76,7 +76,7 @@
         {
           "location": {
             "x": 1420,
-            "y": 74
+            "y": 92.5
           },
           "nodeIndex": "bi vw_DimEconomicallyDisadvantagedStatuses",
           "nodeLineageTag": "7218c01b-aaa4-48ed-ac32-97ac567bbae6",
@@ -89,7 +89,7 @@
         {
           "location": {
             "x": 1704,
-            "y": 74
+            "y": 92.5
           },
           "nodeIndex": "bi vw_DimEnglishLearnerStatuses",
           "nodeLineageTag": "e1a39082-95ac-442c-b50d-2549ca694750",
@@ -102,7 +102,7 @@
         {
           "location": {
             "x": 1988,
-            "y": 74
+            "y": 92.5
           },
           "nodeIndex": "bi vw_DimFosterCareStatuses",
           "nodeLineageTag": "3945d4ff-8140-473a-ab83-be544df72a1c",
@@ -115,7 +115,7 @@
         {
           "location": {
             "x": 2272,
-            "y": 74
+            "y": 92.5
           },
           "nodeIndex": "bi vw_DimGradeLevels",
           "nodeLineageTag": "146faf17-3fdb-4714-adf3-d5620835c217",
@@ -128,7 +128,7 @@
         {
           "location": {
             "x": 2556,
-            "y": 74
+            "y": 92.5
           },
           "nodeIndex": "bi vw_DimHomelessnessStatuses",
           "nodeLineageTag": "7cf6f8ef-bd42-461c-9105-8ed055969cb8",
@@ -141,7 +141,7 @@
         {
           "location": {
             "x": 2840,
-            "y": 74
+            "y": 92.5
           },
           "nodeIndex": "bi vw_DimK12Courses",
           "nodeLineageTag": "9aba5c33-97ac-47ad-9eca-d2a76f107802",
@@ -154,7 +154,7 @@
         {
           "location": {
             "x": 3124,
-            "y": 26
+            "y": 44.5
           },
           "nodeIndex": "bi vw_DimK12Schools",
           "nodeLineageTag": "e89199b1-c489-43ce-bddf-33c345aeb6e1",
@@ -167,7 +167,7 @@
         {
           "location": {
             "x": 3976,
-            "y": 74
+            "y": 92.5
           },
           "nodeIndex": "bi vw_DimRaces",
           "nodeLineageTag": "f02bcb71-295e-4b95-8a18-b7d179a77803",
@@ -180,7 +180,7 @@
         {
           "location": {
             "x": 4260,
-            "y": 98
+            "y": 116.5
           },
           "nodeIndex": "bi vw_DimSchoolYears",
           "nodeLineageTag": "6fc644b9-6c6b-424f-8d43-1f4185203878",
@@ -193,7 +193,7 @@
         {
           "location": {
             "x": 4828,
-            "y": 0
+            "y": 18.5
           },
           "nodeIndex": "bi vw_FactK12StudentAssessments",
           "nodeLineageTag": "507771a1-5f6e-4ac5-9152-9fc47fdd08cc",
@@ -206,7 +206,7 @@
         {
           "location": {
             "x": 5112,
-            "y": 14
+            "y": 32.5
           },
           "nodeIndex": "bi vw_FactK12StudentCourseSections",
           "nodeLineageTag": "1b0744dd-6d2a-4d99-8f90-d234b398caf0",
@@ -219,7 +219,7 @@
         {
           "location": {
             "x": 5396,
-            "y": 0
+            "y": 18.5
           },
           "nodeIndex": "bi vw_FactK12StudentEnrollments",
           "nodeLineageTag": "e3ed783c-3048-498b-b6cb-73b74eb5134e",
@@ -232,7 +232,7 @@
         {
           "location": {
             "x": 5680,
-            "y": 98
+            "y": 116.5
           },
           "nodeIndex": "bi vw_DimStudents",
           "nodeLineageTag": "c5ac66a0-c196-468c-8f8d-a42626e29721",
@@ -245,7 +245,7 @@
         {
           "location": {
             "x": 5964,
-            "y": 74
+            "y": 92.5
           },
           "nodeIndex": "bi vw_DimK12Demographics",
           "nodeLineageTag": "c6261036-c05f-4884-9a26-f3c12173cf69",
@@ -258,7 +258,7 @@
         {
           "location": {
             "x": 6248,
-            "y": 98
+            "y": 116.5
           },
           "nodeIndex": "Algebra I by 9th grade",
           "nodeLineageTag": "b9e2b3c4-c6f2-43db-85a1-a3b4b6c75aa8",
@@ -271,7 +271,7 @@
         {
           "location": {
             "x": 6532,
-            "y": 98
+            "y": 116.5
           },
           "nodeIndex": "College Readiness",
           "nodeLineageTag": "b9fc6faf-c77c-42d2-9680-6d4886af4801",
@@ -284,7 +284,7 @@
         {
           "location": {
             "x": 6816,
-            "y": 74
+            "y": 92.5
           },
           "nodeIndex": "bi vw_DimK12CourseStatuses",
           "nodeLineageTag": "490b39b4-6008-472e-8ceb-f31a7f40c8bb",
@@ -297,7 +297,7 @@
         {
           "location": {
             "x": 7100,
-            "y": 86
+            "y": 104.5
           },
           "nodeIndex": "bi vw_DimNeglectedOrDelinquentStatus",
           "nodeLineageTag": "874d6e04-0012-4066-a777-01948ede7b3d",
@@ -310,7 +310,7 @@
         {
           "location": {
             "x": 7384,
-            "y": 74
+            "y": 92.5
           },
           "nodeIndex": "Disaggregation",
           "nodeLineageTag": "1699548b-882f-4a8e-9499-5ca2a0617b42",
@@ -323,7 +323,7 @@
         {
           "location": {
             "x": 7668,
-            "y": 62
+            "y": 80.5
           },
           "nodeIndex": "Early College Coursework Completion",
           "nodeLineageTag": "1d42e52c-4914-45c0-8b06-1b8f5ea515a0",
@@ -336,7 +336,7 @@
         {
           "location": {
             "x": 7952,
-            "y": 50
+            "y": 68.5
           },
           "nodeIndex": "Globals",
           "size": {
@@ -348,7 +348,7 @@
         {
           "location": {
             "x": 8236,
-            "y": 50
+            "y": 68.5
           },
           "nodeIndex": "TrendLineYears",
           "size": {
@@ -358,7 +358,10 @@
           "zIndex": 0
         },
         {
-          "location": {},
+          "location": {
+            "x": 9088,
+            "y": 62.5
+          },
           "nodeIndex": "TrendLineGraduationYears",
           "size": {
             "height": 200,
@@ -367,7 +370,10 @@
           "zIndex": 0
         },
         {
-          "location": {},
+          "location": {
+            "x": 9372,
+            "y": 62.5
+          },
           "nodeIndex": "GradeLegend",
           "size": {
             "height": 200,
@@ -376,7 +382,10 @@
           "zIndex": 0
         },
         {
-          "location": {},
+          "location": {
+            "x": 9656,
+            "y": 62.5
+          },
           "nodeIndex": "Course Level Legend",
           "size": {
             "height": 200,
@@ -385,7 +394,10 @@
           "zIndex": 0
         },
         {
-          "location": {},
+          "location": {
+            "x": 9940,
+            "y": 62.5
+          },
           "nodeIndex": "Course Offering",
           "nodeLineageTag": "d3345126-e524-4d28-9d9f-b56be842af23",
           "size": {
@@ -395,7 +407,10 @@
           "zIndex": 0
         },
         {
-          "location": {},
+          "location": {
+            "x": 10224,
+            "y": 86.5
+          },
           "nodeIndex": "Hierarchy Picker",
           "nodeLineageTag": "02b5b6d3-cb13-4c44-9785-c1817542192a",
           "size": {
@@ -405,7 +420,10 @@
           "zIndex": 0
         },
         {
-          "location": {},
+          "location": {
+            "x": 10508,
+            "y": 62.5
+          },
           "nodeIndex": "LimitedGraduationYears",
           "size": {
             "height": 200,
@@ -414,10 +432,14 @@
           "zIndex": 0
         },
         {
-          "location": {},
-          "nodeIndex": "Schools Offering Advance Courses",
+          "location": {
+            "x": 8854,
+            "y": 48.5
+          },
+          "nodeIndex": "bi vw_DimRuralStatuses",
+          "nodeLineageTag": "8e1e9323-23f3-4ae2-8cdd-fc66e2d71469",
           "size": {
-            "height": 200,
+            "height": 128,
             "width": 234
           },
           "zIndex": 0
@@ -550,6 +572,19 @@
           "nodeLineageTag": "3823d081-15cb-49c2-a015-105103193c1d",
           "size": {
             "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 242,
+            "y": 934
+          },
+          "nodeIndex": "bi vw_DimRuralStatuses",
+          "nodeLineageTag": "8e1e9323-23f3-4ae2-8cdd-fc66e2d71469",
+          "size": {
+            "height": 128,
             "width": 234
           },
           "zIndex": 0
@@ -721,6 +756,19 @@
           "nodeLineageTag": "8425c2f8-d7b6-4cf2-94c3-3dba1a997f86",
           "size": {
             "height": 145,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 95,
+            "y": 788
+          },
+          "nodeIndex": "bi vw_DimRuralStatuses",
+          "nodeLineageTag": "8e1e9323-23f3-4ae2-8cdd-fc66e2d71469",
+          "size": {
+            "height": 128,
             "width": 234
           },
           "zIndex": 0
@@ -987,6 +1035,6 @@
       "tablesLocked": false
     }
   ],
-  "selectedDiagram": "Student Course Sections",
+  "selectedDiagram": "Student Enrollments",
   "defaultDiagram": "All tables"
 }

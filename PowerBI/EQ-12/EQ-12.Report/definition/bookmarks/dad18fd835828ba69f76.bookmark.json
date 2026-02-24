@@ -1019,61 +1019,6 @@
               }
             }
           },
-          "087d5525a8a2ea12dc04": {
-            "filters": {
-              "byExpr": [
-                {
-                  "name": "1bf54b8e213241c9904e",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "bi vw_DimRaces"
-                        }
-                      },
-                      "Property": "RaceEthnicity"
-                    }
-                  },
-                  "howCreated": 0
-                }
-              ]
-            },
-            "singleVisual": {
-              "visualType": "slicer",
-              "objects": {
-                "merge": {
-                  "data": [
-                    {
-                      "properties": {
-                        "mode": {
-                          "expr": {
-                            "Literal": {
-                              "Value": "'Dropdown'"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  ]
-                }
-              },
-              "activeProjections": {
-                "Values": [
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "bi vw_DimRaces"
-                        }
-                      },
-                      "Property": "RaceEthnicity"
-                    }
-                  }
-                ]
-              }
-            }
-          },
           "87c548e4a6fba070a42e": {
             "filters": {
               "byExpr": [

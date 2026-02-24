@@ -33,6 +33,8 @@ table Globals
 			    ||    
 			    ISFILTERED('bi vw_DimHomelessnessStatuses'[HomelessnessStatus])
 			    ||    
+			    ISFILTERED('bi vw_DimRuralStatuses'[Urbanicity])
+			    ||      
 			    ISFILTERED('bi vw_DimNeglectedOrDelinquentStatus'[NeglectedOrDelinquentStatus]),
 			    
 			         IF(
@@ -119,6 +121,12 @@ table Globals
 			            ""
 			        )
 			        & " " & 
+			        IF(
+			            ISFILTERED('bi vw_DimRuralStatuses'[Urbanicity]),
+			            "> Urbanicity: " & CONCATENATEX(VALUES('bi vw_DimRuralStatuses'[Urbanicity]), 'bi vw_DimRuralStatuses'[Urbanicity], ", "),
+			            ""
+			        )
+			        & " " &  
 			        IF(
 			            ISFILTERED('bi vw_DimNeglectedOrDelinquentStatus'[NeglectedOrDelinquentStatus]),
 			            "> Neglected or Delinquent Status: " & CONCATENATEX(VALUES('bi vw_DimNeglectedOrDelinquentStatus'[NeglectedOrDelinquentStatus]), 'bi vw_DimNeglectedOrDelinquentStatus'[NeglectedOrDelinquentStatus], ", "),
