@@ -1,13 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
-  "name": "d2b458027e1a7ce9dc5c",
+  "name": "42313f1b0530c00d00b3",
   "position": {
     "x": 0,
-    "y": 134.94697442295694,
+    "y": 0,
     "z": 0,
-    "height": 12.776044915782906,
-    "width": 1280,
-    "tabOrder": 1000
+    "height": 98.847055298376759,
+    "width": 639.61282516636425
   },
   "visual": {
     "visualType": "shape",
@@ -18,7 +17,7 @@
             "tileShape": {
               "expr": {
                 "Literal": {
-                  "Value": "'line'"
+                  "Value": "'rectangleRounded'"
                 }
               }
             }
@@ -38,25 +37,29 @@
           }
         }
       ],
-      "outline": [
+      "fill": [
         {
           "properties": {
-            "lineColor": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "fillColor": {
               "solid": {
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 8,
+                      "ColorId": 0,
                       "Percent": 0
                     }
                   }
-                }
-              }
-            },
-            "weight": {
-              "expr": {
-                "Literal": {
-                  "Value": "0.5D"
                 }
               }
             }
@@ -66,7 +69,48 @@
           }
         }
       ],
-      "fill": [
+      "outline": [
+        {
+          "properties": {
+            "weight": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
+            "lineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "shadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "glow": [
         {
           "properties": {
             "show": {
@@ -80,22 +124,8 @@
         }
       ]
     },
-    "visualContainerObjects": {
-      "title": [
-        {
-          "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Shape: Divider'"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
     "drillFilterOtherVisuals": true
   },
+  "parentGroupName": "b0eb03f251202aa0a8bc",
   "howCreated": "InsertVisualButton"
 }

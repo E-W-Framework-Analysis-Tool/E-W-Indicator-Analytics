@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "6f4a0ca9d40301a91c10",
   "position": {
     "x": 0,
@@ -7,7 +7,7 @@
     "z": 11000,
     "height": 232.36431690580162,
     "width": 640.39925140361822,
-    "tabOrder": 17002
+    "tabOrder": 11000
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -200,20 +200,6 @@
   },
   "filterConfig": {
     "filters": [
-      {
-        "name": "7f06c733b196e0d75691",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Course Offering"
-              }
-            },
-            "Property": "Course Offering Rate"
-          }
-        },
-        "type": "Advanced"
-      },
       {
         "name": "7758d7fb7329700b4a8d",
         "field": {

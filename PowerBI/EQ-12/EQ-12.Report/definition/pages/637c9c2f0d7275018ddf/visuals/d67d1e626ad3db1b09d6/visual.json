@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "d67d1e626ad3db1b09d6",
   "position": {
     "x": 631.36801541425825,
@@ -247,34 +247,6 @@
         },
         "type": "Advanced",
         "howCreated": "User"
-      },
-      {
-        "name": "f960bee319b1fc413f6f",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "TrendLineGraduationYears"
-              }
-            },
-            "Property": "CohortGraduationYear"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "11a90fe49f819127f87f",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "College Readiness"
-              }
-            },
-            "Property": "College Readiness Trend"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

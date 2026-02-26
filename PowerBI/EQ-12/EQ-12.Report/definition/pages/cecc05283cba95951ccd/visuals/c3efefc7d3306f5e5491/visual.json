@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "c3efefc7d3306f5e5491",
   "position": {
     "x": 639.60074859638178,
@@ -7,7 +7,7 @@
     "z": 5000,
     "height": 230.76731129132875,
     "width": 640.39925140361822,
-    "tabOrder": 5000
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -197,51 +197,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "fcd3d8d0d7684720127b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimK12Schools"
-              }
-            },
-            "Property": "EducationLevel"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "0668b08e09debe4ca407",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Course Offering"
-              }
-            },
-            "Property": "Course Offering Rate"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "ee68fa3953c835075d45",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimK12Schools"
-              }
-            },
-            "Property": "LeaOrganizationName"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

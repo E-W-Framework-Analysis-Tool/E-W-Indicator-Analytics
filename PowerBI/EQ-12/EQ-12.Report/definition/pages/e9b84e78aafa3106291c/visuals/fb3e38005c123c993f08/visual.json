@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "fb3e38005c123c993f08",
   "position": {
     "x": 1187.0523076923077,
@@ -605,23 +605,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "68b9936fb114cd80dc60",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Hierarchy Picker"
-              }
-            },
-            "Property": "Organization Hierarchy"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

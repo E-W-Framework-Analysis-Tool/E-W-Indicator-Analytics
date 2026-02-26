@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "7a7e38794ed6f237110c",
   "position": {
     "x": 631.657355679702,
@@ -287,48 +287,6 @@
         },
         "type": "Advanced",
         "howCreated": "User"
-      },
-      {
-        "name": "7c29e19e198517b3203a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "TrendLineYears"
-              }
-            },
-            "Property": "SchoolYear"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "3d3717ba3e9adf91b95b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimAssessments"
-              }
-            },
-            "Property": "AssessmentCode"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "4710a322c0e9405b2bab",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "College Readiness"
-              }
-            },
-            "Property": "ACT-SAT Participation Trend"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

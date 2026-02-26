@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "978c35bd018700447b57",
   "position": {
-    "x": 1187.0838548185232,
-    "y": 524.65581977471834,
+    "x": 492.89345592212004,
+    "y": 193.14223904813412,
     "z": 9000,
-    "height": 195.44430538172713,
-    "width": 92.916145181476836,
+    "height": 61.611681990265005,
+    "width": 294.90535424553809,
     "tabOrder": 8000
   },
   "visual": {
@@ -155,7 +155,7 @@
             "orientation": {
               "expr": {
                 "Literal": {
-                  "Value": "1D"
+                  "Value": "2D"
                 }
               }
             }
@@ -168,7 +168,7 @@
             "overFlowDirection": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "1D"
                 }
               }
             }
@@ -680,23 +680,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "371411df38941d7ead09",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Hierarchy Picker"
-              }
-            },
-            "Property": "Organization Hierarchy"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "d3369c6a83e6d803653e",
   "position": {
     "x": 0,
@@ -226,48 +226,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "b396322fb64516c0b548",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimRaces"
-              }
-            },
-            "Property": "RaceEthnicity"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "1cfdc51f456d338ec72b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Course Level Legend"
-              }
-            },
-            "Property": "CourseLevel"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "684009ae355db3f49363",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Early College Coursework Completion"
-              }
-            },
-            "Property": "Coursework Completion"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "405b93a07138c5a5a51d",
   "position": {
     "x": 747.39229024943313,
@@ -171,23 +171,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "8af61ac4e7e349a993b9",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "d7fcaf6ad925d175d624",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimNeglectedOrDelinquentStatus"
-              }
-            },
-            "Property": "NeglectedOrDelinquentStatus"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
-  }
+  "parentGroupName": "8af61ac4e7e349a993b9"
 }

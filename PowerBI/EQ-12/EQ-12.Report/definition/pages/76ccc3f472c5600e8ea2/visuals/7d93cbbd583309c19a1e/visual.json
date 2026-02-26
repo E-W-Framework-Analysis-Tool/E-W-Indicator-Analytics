@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "7d93cbbd583309c19a1e",
   "position": {
-    "x": 631.657355679702,
-    "y": 193.07262569832403,
+    "x": 0,
+    "y": 481.81719848566792,
     "z": 3000,
-    "height": 205.78522656734947,
-    "width": 648.342644320298,
+    "height": 238.13953488372093,
+    "width": 1280,
     "tabOrder": 1000
   },
   "visual": {
@@ -171,6 +171,19 @@
             }
           }
         }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Student to Counselor Ratio'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -226,34 +239,6 @@
         },
         "type": "Advanced",
         "howCreated": "User"
-      },
-      {
-        "name": "faed3da25cc2a8971e68",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "TrendLineYears"
-              }
-            },
-            "Property": "SchoolYear"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "42eb3e900ae6d2901216",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Career Advising"
-              }
-            },
-            "Property": "Advising Trend"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

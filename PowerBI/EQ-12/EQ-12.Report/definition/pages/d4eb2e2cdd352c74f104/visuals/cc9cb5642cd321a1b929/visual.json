@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "cc9cb5642cd321a1b929",
   "position": {
     "x": 1093.5290796160361,
@@ -598,20 +598,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "a90ebcf90623a56ef773",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Course Level Legend"
-              }
-            },
-            "Property": "CourseLevel"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

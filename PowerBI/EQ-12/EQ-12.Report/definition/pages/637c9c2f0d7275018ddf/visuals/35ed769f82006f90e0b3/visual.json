@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "35ed769f82006f90e0b3",
   "position": {
     "x": 533.82877266759328,
@@ -178,23 +178,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "8af61ac4e7e349a993b9",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "f85ee8643b60160a8892",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimRuralStatuses"
-              }
-            },
-            "Property": "Urbanicity"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
-  }
+  "parentGroupName": "8af61ac4e7e349a993b9"
 }

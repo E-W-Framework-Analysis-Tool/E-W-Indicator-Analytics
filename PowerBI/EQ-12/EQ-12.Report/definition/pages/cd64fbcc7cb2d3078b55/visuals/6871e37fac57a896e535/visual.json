@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "6871e37fac57a896e535",
   "position": {
     "x": 0,
@@ -281,34 +281,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "8cde3c5a1e6810eafaee",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimK12Schools"
-              }
-            },
-            "Property": "SeaOrganizationName"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "bccda90d90d8de5b17ef",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "College Readiness"
-              }
-            },
-            "Property": "ACT-SAT College Readiness"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

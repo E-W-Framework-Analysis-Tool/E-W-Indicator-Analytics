@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "aab5bd2ae421a202c47a",
   "position": {
     "x": 961.45124716553289,
@@ -171,23 +171,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "3620c13f39d709393175",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "79b3acdbbeb463a63b18",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimHomelessnessStatuses"
-              }
-            },
-            "Property": "HomelessnessStatus"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
-  }
+  "parentGroupName": "3620c13f39d709393175"
 }

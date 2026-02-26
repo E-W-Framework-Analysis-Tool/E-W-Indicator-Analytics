@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "dc16196355ccf48bd35a",
   "position": {
     "x": 631.72923076923075,
@@ -257,48 +257,6 @@
         },
         "type": "Advanced",
         "howCreated": "User"
-      },
-      {
-        "name": "ee9debd7e8148ad78c00",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "TrendLineGraduationYears"
-              }
-            },
-            "Property": "CohortGraduationYear"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "819625b467dbb87f5512",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "GradeLegend"
-              }
-            },
-            "Property": "GradeLevelCode"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "509c73314cc029f44e60",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Early College Coursework Completion"
-              }
-            },
-            "Property": "Coursework Completion Trend"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }
