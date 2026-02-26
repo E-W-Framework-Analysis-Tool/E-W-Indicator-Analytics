@@ -5,14 +5,13 @@ table 'Career Advising'
 		formatString: 0
 		lineageTag: cec007cf-1824-477d-ab6b-20d80169b1e5
 
-	measure 'Total FTE Counselors' = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StaffCounts'[K12StaffId]), CONTAINSSTRING('bi vw_DimK12StaffCategories'[K12StaffClassificationDescription], "counselor"))
+	measure 'Total FTE Counselors' = CALCULATE(SUM('bi vw_FactK12StaffCounts'[StaffFullTimeEquivalency]), CONTAINSSTRING('bi vw_DimK12StaffCategories'[K12StaffClassificationDescription], "counselor"))
 		formatString: 0
 		lineageTag: 6e231793-3aff-4942-8df6-85197ffaf3c5
 
 	measure 'Student to Counselor Ratio' = IF([Total FTE Counselors] = 0, 0, DIVIDE([Total HS Students], [Total FTE Counselors]))
+		formatString: 0.0
 		lineageTag: b0c8f4b6-5c6d-4b9b-ae8e-782606888d6c
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Advising Trend' =
 			

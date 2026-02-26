@@ -254,20 +254,6 @@
           }
         },
         "type": "Advanced"
-      },
-      {
-        "name": "248fef5700dad2071918",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimK12Schools"
-              }
-            },
-            "Property": "SeaOrganizationName"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }
