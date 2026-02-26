@@ -13,8 +13,8 @@
   DTS:ObjectName="LoadStagingDimensions"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="85"
-  DTS:VersionGUID="{DE7974DC-981B-457B-9BAA-4D425CEED63C}">
+  DTS:VersionBuild="87"
+  DTS:VersionGUID="{9526DE3D-2BB6-4598-B072-3CA3A8DF9732}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -1399,7 +1399,7 @@ order by DimK12CourseId</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate staging table"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="4">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1748,7 +1748,7 @@ order by DimK12CourseId</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate staging table"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="6">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2240,7 +2240,7 @@ ORDER BY DimK12SchoolId</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate staging table"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="4">
+          DTS:ThreadHint="5">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2258,6 +2258,718 @@ ORDER BY DimK12SchoolId</property>
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
           DTS:To="Package\DimK12Schools\Stage Data" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DimK12StaffCategories"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{5fe7bb07-9ff9-468d-a83d-ad80dbaf2808}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DimK12StaffCategories">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\DimK12StaffCategories\Stage Data"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{72619ad5-9cc6-485a-ab2b-59644ff42a09}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Stage Data"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[staging].[DimK12StaffCategories]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{60dda06b-3f51-4553-8452-daaed09fbd3d}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Dashboards-DB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DimK12StaffCategoryId]"
+                          cachedDataType="i4"
+                          cachedName="DimK12StaffCategoryId"
+                          externalMetadataColumnId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DimK12StaffCategoryId]"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimK12StaffCategoryId]" />
+                        <inputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[K12StaffClassificationCode]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="K12StaffClassificationCode"
+                          externalMetadataColumnId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[K12StaffClassificationCode]"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[K12StaffClassificationCode]" />
+                        <inputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[K12StaffClassificationDescription]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="K12StaffClassificationDescription"
+                          externalMetadataColumnId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[K12StaffClassificationDescription]"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[K12StaffClassificationDescription]" />
+                        <inputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[K12StaffClassificationEdFactsCode]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="K12StaffClassificationEdFactsCode"
+                          externalMetadataColumnId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[K12StaffClassificationEdFactsCode]"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[K12StaffClassificationEdFactsCode]" />
+                        <inputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SpecialEducationSupportServicesCategoryCode]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="SpecialEducationSupportServicesCategoryCode"
+                          externalMetadataColumnId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SpecialEducationSupportServicesCategoryCode]"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SpecialEducationSupportServicesCategoryCode]" />
+                        <inputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SpecialEducationSupportServicesCategoryDescription]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="SpecialEducationSupportServicesCategoryDescription"
+                          externalMetadataColumnId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SpecialEducationSupportServicesCategoryDescription]"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SpecialEducationSupportServicesCategoryDescription]" />
+                        <inputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SpecialEducationSupportServicesCategoryEdFactsCode]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="SpecialEducationSupportServicesCategoryEdFactsCode"
+                          externalMetadataColumnId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SpecialEducationSupportServicesCategoryEdFactsCode]"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SpecialEducationSupportServicesCategoryEdFactsCode]" />
+                        <inputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TitleIProgramStaffCategoryCode]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="TitleIProgramStaffCategoryCode"
+                          externalMetadataColumnId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TitleIProgramStaffCategoryCode]"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[TitleIProgramStaffCategoryCode]" />
+                        <inputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TitleIProgramStaffCategoryDescription]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="TitleIProgramStaffCategoryDescription"
+                          externalMetadataColumnId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TitleIProgramStaffCategoryDescription]"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[TitleIProgramStaffCategoryDescription]" />
+                        <inputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TitleIProgramStaffCategoryEdFactsCode]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="TitleIProgramStaffCategoryEdFactsCode"
+                          externalMetadataColumnId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TitleIProgramStaffCategoryEdFactsCode]"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[TitleIProgramStaffCategoryEdFactsCode]" />
+                        <inputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MigrantEducationProgramStaffCategoryCode]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="MigrantEducationProgramStaffCategoryCode"
+                          externalMetadataColumnId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MigrantEducationProgramStaffCategoryCode]"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[MigrantEducationProgramStaffCategoryCode]" />
+                        <inputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MigrantEducationProgramStaffCategoryDescription]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="MigrantEducationProgramStaffCategoryDescription"
+                          externalMetadataColumnId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MigrantEducationProgramStaffCategoryDescription]"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[MigrantEducationProgramStaffCategoryDescription]" />
+                        <inputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProfessionalEducationalJobClassificationCode]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="ProfessionalEducationalJobClassificationCode"
+                          externalMetadataColumnId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProfessionalEducationalJobClassificationCode]"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProfessionalEducationalJobClassificationCode]" />
+                        <inputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProfessionalEducationalJobClassificationDescription]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ProfessionalEducationalJobClassificationDescription"
+                          externalMetadataColumnId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProfessionalEducationalJobClassificationDescription]"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProfessionalEducationalJobClassificationDescription]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DimK12StaffCategoryId]"
+                          dataType="i4"
+                          name="DimK12StaffCategoryId" />
+                        <externalMetadataColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[K12StaffClassificationCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="K12StaffClassificationCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[K12StaffClassificationDescription]"
+                          dataType="wstr"
+                          length="100"
+                          name="K12StaffClassificationDescription" />
+                        <externalMetadataColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[K12StaffClassificationEdFactsCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="K12StaffClassificationEdFactsCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SpecialEducationSupportServicesCategoryCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="SpecialEducationSupportServicesCategoryCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SpecialEducationSupportServicesCategoryDescription]"
+                          dataType="wstr"
+                          length="200"
+                          name="SpecialEducationSupportServicesCategoryDescription" />
+                        <externalMetadataColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SpecialEducationSupportServicesCategoryEdFactsCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="SpecialEducationSupportServicesCategoryEdFactsCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TitleIProgramStaffCategoryCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="TitleIProgramStaffCategoryCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TitleIProgramStaffCategoryDescription]"
+                          dataType="wstr"
+                          length="100"
+                          name="TitleIProgramStaffCategoryDescription" />
+                        <externalMetadataColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TitleIProgramStaffCategoryEdFactsCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="TitleIProgramStaffCategoryEdFactsCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MigrantEducationProgramStaffCategoryCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="MigrantEducationProgramStaffCategoryCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MigrantEducationProgramStaffCategoryDescription]"
+                          dataType="wstr"
+                          length="200"
+                          name="MigrantEducationProgramStaffCategoryDescription" />
+                        <externalMetadataColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProfessionalEducationalJobClassificationCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="ProfessionalEducationalJobClassificationCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProfessionalEducationalJobClassificationDescription]"
+                          dataType="wstr"
+                          length="200"
+                          name="ProfessionalEducationalJobClassificationDescription" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[RDS].[DimK12StaffCategories]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from Rds.DimK12CourseStatuses</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{D41EB2B6-A586-49A5-A9CB-BCA8E8B2703B}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CEDS-DWH]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimK12StaffCategoryId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DimK12StaffCategoryId]"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimK12StaffCategoryId]"
+                          name="DimK12StaffCategoryId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[K12StaffClassificationCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[K12StaffClassificationCode]"
+                          length="50"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[K12StaffClassificationCode]"
+                          name="K12StaffClassificationCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[K12StaffClassificationDescription]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[K12StaffClassificationDescription]"
+                          length="100"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[K12StaffClassificationDescription]"
+                          name="K12StaffClassificationDescription"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[K12StaffClassificationEdFactsCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[K12StaffClassificationEdFactsCode]"
+                          length="50"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[K12StaffClassificationEdFactsCode]"
+                          name="K12StaffClassificationEdFactsCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SpecialEducationSupportServicesCategoryCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SpecialEducationSupportServicesCategoryCode]"
+                          length="50"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SpecialEducationSupportServicesCategoryCode]"
+                          name="SpecialEducationSupportServicesCategoryCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SpecialEducationSupportServicesCategoryDescription]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SpecialEducationSupportServicesCategoryDescription]"
+                          length="200"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SpecialEducationSupportServicesCategoryDescription]"
+                          name="SpecialEducationSupportServicesCategoryDescription"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SpecialEducationSupportServicesCategoryEdFactsCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SpecialEducationSupportServicesCategoryEdFactsCode]"
+                          length="50"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SpecialEducationSupportServicesCategoryEdFactsCode]"
+                          name="SpecialEducationSupportServicesCategoryEdFactsCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[TitleIProgramStaffCategoryCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TitleIProgramStaffCategoryCode]"
+                          length="50"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[TitleIProgramStaffCategoryCode]"
+                          name="TitleIProgramStaffCategoryCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[TitleIProgramStaffCategoryDescription]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TitleIProgramStaffCategoryDescription]"
+                          length="100"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[TitleIProgramStaffCategoryDescription]"
+                          name="TitleIProgramStaffCategoryDescription"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[TitleIProgramStaffCategoryEdFactsCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TitleIProgramStaffCategoryEdFactsCode]"
+                          length="50"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[TitleIProgramStaffCategoryEdFactsCode]"
+                          name="TitleIProgramStaffCategoryEdFactsCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[MigrantEducationProgramStaffCategoryCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MigrantEducationProgramStaffCategoryCode]"
+                          length="50"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[MigrantEducationProgramStaffCategoryCode]"
+                          name="MigrantEducationProgramStaffCategoryCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[MigrantEducationProgramStaffCategoryDescription]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MigrantEducationProgramStaffCategoryDescription]"
+                          length="200"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[MigrantEducationProgramStaffCategoryDescription]"
+                          name="MigrantEducationProgramStaffCategoryDescription"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProfessionalEducationalJobClassificationCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProfessionalEducationalJobClassificationCode]"
+                          length="50"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProfessionalEducationalJobClassificationCode]"
+                          name="ProfessionalEducationalJobClassificationCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProfessionalEducationalJobClassificationDescription]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProfessionalEducationalJobClassificationDescription]"
+                          length="200"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProfessionalEducationalJobClassificationDescription]"
+                          name="ProfessionalEducationalJobClassificationDescription"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DimK12StaffCategoryId]"
+                          dataType="i4"
+                          name="DimK12StaffCategoryId" />
+                        <externalMetadataColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[K12StaffClassificationCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="K12StaffClassificationCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[K12StaffClassificationDescription]"
+                          dataType="wstr"
+                          length="100"
+                          name="K12StaffClassificationDescription" />
+                        <externalMetadataColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[K12StaffClassificationEdFactsCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="K12StaffClassificationEdFactsCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SpecialEducationSupportServicesCategoryCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="SpecialEducationSupportServicesCategoryCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SpecialEducationSupportServicesCategoryDescription]"
+                          dataType="wstr"
+                          length="200"
+                          name="SpecialEducationSupportServicesCategoryDescription" />
+                        <externalMetadataColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SpecialEducationSupportServicesCategoryEdFactsCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="SpecialEducationSupportServicesCategoryEdFactsCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TitleIProgramStaffCategoryCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="TitleIProgramStaffCategoryCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TitleIProgramStaffCategoryDescription]"
+                          dataType="wstr"
+                          length="100"
+                          name="TitleIProgramStaffCategoryDescription" />
+                        <externalMetadataColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TitleIProgramStaffCategoryEdFactsCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="TitleIProgramStaffCategoryEdFactsCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MigrantEducationProgramStaffCategoryCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="MigrantEducationProgramStaffCategoryCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MigrantEducationProgramStaffCategoryDescription]"
+                          dataType="wstr"
+                          length="200"
+                          name="MigrantEducationProgramStaffCategoryDescription" />
+                        <externalMetadataColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProfessionalEducationalJobClassificationCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="ProfessionalEducationalJobClassificationCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProfessionalEducationalJobClassificationDescription]"
+                          dataType="wstr"
+                          length="200"
+                          name="ProfessionalEducationalJobClassificationDescription" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DimK12StaffCategoryId]"
+                          dataType="i4"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DimK12StaffCategoryId]"
+                          name="DimK12StaffCategoryId" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[K12StaffClassificationCode]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[K12StaffClassificationCode]"
+                          name="K12StaffClassificationCode" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[K12StaffClassificationDescription]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[K12StaffClassificationDescription]"
+                          name="K12StaffClassificationDescription" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[K12StaffClassificationEdFactsCode]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[K12StaffClassificationEdFactsCode]"
+                          name="K12StaffClassificationEdFactsCode" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SpecialEducationSupportServicesCategoryCode]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SpecialEducationSupportServicesCategoryCode]"
+                          name="SpecialEducationSupportServicesCategoryCode" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SpecialEducationSupportServicesCategoryDescription]"
+                          dataType="wstr"
+                          length="200"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SpecialEducationSupportServicesCategoryDescription]"
+                          name="SpecialEducationSupportServicesCategoryDescription" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SpecialEducationSupportServicesCategoryEdFactsCode]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SpecialEducationSupportServicesCategoryEdFactsCode]"
+                          name="SpecialEducationSupportServicesCategoryEdFactsCode" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TitleIProgramStaffCategoryCode]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TitleIProgramStaffCategoryCode]"
+                          name="TitleIProgramStaffCategoryCode" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TitleIProgramStaffCategoryDescription]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TitleIProgramStaffCategoryDescription]"
+                          name="TitleIProgramStaffCategoryDescription" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TitleIProgramStaffCategoryEdFactsCode]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TitleIProgramStaffCategoryEdFactsCode]"
+                          name="TitleIProgramStaffCategoryEdFactsCode" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MigrantEducationProgramStaffCategoryCode]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MigrantEducationProgramStaffCategoryCode]"
+                          name="MigrantEducationProgramStaffCategoryCode" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MigrantEducationProgramStaffCategoryDescription]"
+                          dataType="wstr"
+                          length="200"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MigrantEducationProgramStaffCategoryDescription]"
+                          name="MigrantEducationProgramStaffCategoryDescription" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProfessionalEducationalJobClassificationCode]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProfessionalEducationalJobClassificationCode]"
+                          name="ProfessionalEducationalJobClassificationCode" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProfessionalEducationalJobClassificationDescription]"
+                          dataType="wstr"
+                          length="200"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProfessionalEducationalJobClassificationDescription]"
+                          name="ProfessionalEducationalJobClassificationDescription" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\DimK12StaffCategories\Stage Data.Paths[OLE DB Source Output]"
+                  endId="Package\DimK12StaffCategories\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\DimK12StaffCategories\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\DimK12StaffCategories\Truncate staging table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{e22485f6-b933-4b8d-a44a-adbf496859aa}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate staging table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[DimK12StaffCategories];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\DimK12StaffCategories.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{99e1ecad-ef38-4933-8192-361a3c52d995}"
+          DTS:From="Package\DimK12StaffCategories\Truncate staging table"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\DimK12StaffCategories\Stage Data" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
@@ -2697,7 +3409,7 @@ ORDER BY DimLeaId</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate staging table"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="5">
+          DTS:ThreadHint="7">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3079,7 +3791,7 @@ ORDER BY DimLeaId</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate staging table"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="6">
+          DTS:ThreadHint="8">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3494,7 +4206,7 @@ ORDER BY DimLeaId</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate staging table"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="9">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3917,7 +4629,7 @@ ORDER BY DimSeaId</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate staging table"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="7">
+          DTS:ThreadHint="9">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3935,6 +4647,327 @@ ORDER BY DimSeaId</property>
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
           DTS:To="Package\DimSEAs\Stage Data" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DimStaffs"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{9fa539a4-fb34-411f-81c8-81f6cc9ac9ff}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DimStaffs">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\DimStaffs\Stage Data"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{78713efa-4bcc-4356-94e4-7e274e914757}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Stage Data"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\DimStaffs\Stage Data\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[staging].[DimStaffs]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\DimStaffs\Stage Data\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{60dda06b-3f51-4553-8452-daaed09fbd3d}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Dashboards-DB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\DimStaffs\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\DimStaffs\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DimK12StaffId]"
+                          cachedDataType="i8"
+                          cachedName="DimK12StaffId"
+                          externalMetadataColumnId="Package\DimStaffs\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DimK12StaffId]"
+                          lineageId="Package\DimStaffs\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimK12StaffId]" />
+                        <inputColumn
+                          refId="Package\DimStaffs\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StaffIdentifierState]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="StaffIdentifierState"
+                          externalMetadataColumnId="Package\DimStaffs\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StaffIdentifierState]"
+                          lineageId="Package\DimStaffs\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[StaffIdentifierState]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\DimStaffs\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DimK12StaffId]"
+                          dataType="i8"
+                          name="DimK12StaffId" />
+                        <externalMetadataColumn
+                          refId="Package\DimStaffs\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StaffIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          name="StaffIdentifierState" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\DimStaffs\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\DimStaffs\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DimStaffs\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\DimStaffs\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\DimStaffs\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\DimStaffs\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\DimStaffs\Stage Data\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[CEDS].[CedsOptionSetMapping]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT distinct fksc.K12StaffId AS [DimK12StaffId], dp.K12StaffStaffMemberIdentifierState AS StaffIdentifierState
+FROM [RDS].[FactK12StaffCounts] AS fksc
+LEFT JOIN [RDS].[DimPeople] AS dp
+on dp.DimPersonId = fksc.K12StaffId
+WHERE dp.IsActiveK12Staff = 1
+ORDER BY fksc.K12StaffId</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\DimStaffs\Stage Data\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{D41EB2B6-A586-49A5-A9CB-BCA8E8B2703B}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CEDS-DWH]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\DimStaffs\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DimStaffs\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimK12StaffId]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimStaffs\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DimK12StaffId]"
+                          lineageId="Package\DimStaffs\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimK12StaffId]"
+                          name="DimK12StaffId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimStaffs\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[StaffIdentifierState]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimStaffs\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StaffIdentifierState]"
+                          length="40"
+                          lineageId="Package\DimStaffs\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[StaffIdentifierState]"
+                          name="StaffIdentifierState"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\DimStaffs\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DimK12StaffId]"
+                          dataType="i8"
+                          name="DimK12StaffId" />
+                        <externalMetadataColumn
+                          refId="Package\DimStaffs\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StaffIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          name="StaffIdentifierState" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\DimStaffs\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DimStaffs\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DimK12StaffId]"
+                          dataType="i8"
+                          lineageId="Package\DimStaffs\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DimK12StaffId]"
+                          name="DimK12StaffId" />
+                        <outputColumn
+                          refId="Package\DimStaffs\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StaffIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          lineageId="Package\DimStaffs\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StaffIdentifierState]"
+                          name="StaffIdentifierState" />
+                        <outputColumn
+                          refId="Package\DimStaffs\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\DimStaffs\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\DimStaffs\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\DimStaffs\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\DimStaffs\Stage Data.Paths[OLE DB Source Output]"
+                  endId="Package\DimStaffs\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\DimStaffs\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\DimStaffs\Truncate staging table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{32260dee-ea55-4a6f-89b1-308c6fd80bcd}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate staging table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="11">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[DimStaffs];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\DimStaffs.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{48d8c896-57fb-4d20-975d-3fa06ed85312}"
+          DTS:From="Package\DimStaffs\Truncate staging table"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\DimStaffs\Stage Data" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
@@ -4238,7 +5271,7 @@ ORDER BY fkse.K12StudentId</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate staging table"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="8">
+          DTS:ThreadHint="10">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -4532,6 +5565,43 @@ ORDER BY fkse.K12StudentId</property>
           TopLeft="52,385" />
         <NodeLayout
           Size="188,42"
+          Id="Package\DimRuralStatuses\Stage Data"
+          TopLeft="66,103" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\DimRuralStatuses\Truncate staging table"
+          TopLeft="66,31" />
+        <EdgeLayout
+          Id="Package\DimRuralStatuses.PrecedenceConstraints[Constraint]"
+          TopLeft="160,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="334,270"
+          Size="334,313"
+          Id="Package\DimRuralStatuses"
+          TopLeft="407,733" />
+        <NodeLayout
+          Size="188,42"
           Id="Package\DimSEAs\Stage Data"
           TopLeft="66,103" />
         <NodeLayout
@@ -4606,14 +5676,14 @@ ORDER BY fkse.K12StudentId</property>
           TopLeft="1115,33" />
         <NodeLayout
           Size="188,42"
-          Id="Package\DimRuralStatuses\Stage Data"
+          Id="Package\DimK12StaffCategories\Stage Data"
           TopLeft="66,103" />
         <NodeLayout
           Size="188,42"
-          Id="Package\DimRuralStatuses\Truncate staging table"
+          Id="Package\DimK12StaffCategories\Truncate staging table"
           TopLeft="66,31" />
         <EdgeLayout
-          Id="Package\DimRuralStatuses.PrecedenceConstraints[Constraint]"
+          Id="Package\DimK12StaffCategories.PrecedenceConstraints[Constraint]"
           TopLeft="160,73">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4639,8 +5709,45 @@ ORDER BY fkse.K12StudentId</property>
           IsExpanded="True"
           PanelSize="334,270"
           Size="334,313"
-          Id="Package\DimRuralStatuses"
-          TopLeft="407,733" />
+          Id="Package\DimK12StaffCategories"
+          TopLeft="761,733" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\DimStaffs\Stage Data"
+          TopLeft="66,103" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\DimStaffs\Truncate staging table"
+          TopLeft="66,31" />
+        <EdgeLayout
+          Id="Package\DimStaffs.PrecedenceConstraints[Constraint]"
+          TopLeft="160,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="334,270"
+          Size="334,313"
+          Id="Package\DimStaffs"
+          TopLeft="1115,733" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -5072,6 +6179,72 @@ ORDER BY fkse.K12StudentId</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\DimRuralStatuses\Stage Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\DimRuralStatuses\Stage Data\OLE DB Destination"
+          TopLeft="72,144" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\DimRuralStatuses\Stage Data\OLE DB Source"
+          TopLeft="77,35" />
+        <EdgeLayout
+          Id="Package\DimRuralStatuses\Stage Data.Paths[OLE DB Source Output]"
+          TopLeft="158,77">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,67"
+              Start="0,0"
+              End="0,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimRuralStatuses\Stage Data\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimRuralStatuses\Stage Data\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\DimSEAs\Stage Data">
     <LayoutInfo>
       <GraphLayout
@@ -5141,7 +6314,7 @@ ORDER BY fkse.K12StudentId</property>
     design-time-name="Package\DimStudents\Stage Data">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="157,42"
           Id="Package\DimStudents\Stage Data\OLE DB Source"
@@ -5169,9 +6342,7 @@ ORDER BY fkse.K12StudentId</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5199,20 +6370,20 @@ ORDER BY fkse.K12StudentId</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\DimRuralStatuses\Stage Data">
+    design-time-name="Package\DimK12StaffCategories\Stage Data">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="177,42"
-          Id="Package\DimRuralStatuses\Stage Data\OLE DB Destination"
+          Id="Package\DimK12StaffCategories\Stage Data\OLE DB Destination"
           TopLeft="72,144" />
         <NodeLayout
           Size="157,42"
-          Id="Package\DimRuralStatuses\Stage Data\OLE DB Source"
+          Id="Package\DimK12StaffCategories\Stage Data\OLE DB Source"
           TopLeft="77,35" />
         <EdgeLayout
-          Id="Package\DimRuralStatuses\Stage Data.Paths[OLE DB Source Output]"
+          Id="Package\DimK12StaffCategories\Stage Data.Paths[OLE DB Source Output]"
           TopLeft="158,77">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5237,7 +6408,7 @@ ORDER BY fkse.K12StudentId</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DimRuralStatuses\Stage Data\OLE DB Destination">
+    design-time-name="Package\DimK12StaffCategories\Stage Data\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5250,7 +6421,7 @@ ORDER BY fkse.K12StudentId</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DimRuralStatuses\Stage Data\OLE DB Source">
+    design-time-name="Package\DimK12StaffCategories\Stage Data\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5259,6 +6430,65 @@ ORDER BY fkse.K12StudentId</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DimStaffs\Stage Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\DimStaffs\Stage Data\OLE DB Destination"
+          TopLeft="72,127" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\DimStaffs\Stage Data\OLE DB Source"
+          TopLeft="77,35" />
+        <EdgeLayout
+          Id="Package\DimStaffs\Stage Data.Paths[OLE DB Source Output]"
+          TopLeft="158,77">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimStaffs\Stage Data\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimStaffs\Stage Data\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
