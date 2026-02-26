@@ -1,0 +1,29 @@
+table 'bi vw_DimK12StaffCategories'
+	lineageTag: 69dadcd3-2414-415d-96f3-55eb6c89d4ba
+
+	column DimK12StaffCategoryId
+		dataType: int64
+		formatString: 0
+		lineageTag: 9a931135-3e92-44d1-9979-2942d28cd4cc
+		summarizeBy: none
+		sourceColumn: DimK12StaffCategoryId
+
+		annotation SummarizationSetBy = Automatic
+
+	column K12StaffClassificationDescription
+		dataType: string
+		lineageTag: c4f4fbcc-9b29-490e-b86f-722a7c013974
+		summarizeBy: none
+		sourceColumn: K12StaffClassificationDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bi vw_DimK12StaffCategories' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    bi_vw_DimK12StaffCategories = Source{[Schema="bi",Item="vw_DimK12StaffCategories"]}[Data]
+				in
+				    bi_vw_DimK12StaffCategories
+

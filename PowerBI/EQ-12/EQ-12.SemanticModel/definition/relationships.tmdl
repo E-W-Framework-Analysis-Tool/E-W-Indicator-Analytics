@@ -150,3 +150,19 @@ relationship 0fb5d6d0-2e34-30ff-a1cf-4de3a41bff6f
 	fromColumn: 'bi vw_FactK12StudentEnrollments'.RuralStatusId
 	toColumn: 'bi vw_DimRuralStatuses'.DimRuralStatusId
 
+relationship 41a46f30-4f47-9fee-3fc9-8384cc51bc31
+	fromColumn: 'bi vw_FactK12StaffCounts'.K12StaffId
+	toColumn: 'bi vw_DimStaffs'.DimK12StaffId
+
+relationship 4794b83a-21e2-cd0c-2d8b-c28e756c9bd3
+	fromColumn: 'bi vw_FactK12StaffCounts'.K12SchoolId
+	toColumn: 'bi vw_DimK12Schools'.DimK12SchoolId
+
+relationship e429cb73-b808-6f1d-7611-8473c86e1c54
+	fromColumn: 'bi vw_FactK12StaffCounts'.K12StaffCategoryId
+	toColumn: 'bi vw_DimK12StaffCategories'.DimK12StaffCategoryId
+
+relationship 27335e1d-9a67-32ed-62b0-6483f0be09fa
+	fromColumn: 'bi vw_FactK12StaffCounts'.SchoolYear
+	toColumn: 'bi vw_DimSchoolYears'.SchoolYear
+

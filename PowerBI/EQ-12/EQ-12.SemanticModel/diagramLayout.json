@@ -443,6 +443,45 @@
             "width": 234
           },
           "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "bi vw_DimK12StaffCategories",
+          "nodeLineageTag": "69dadcd3-2414-415d-96f3-55eb6c89d4ba",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "bi vw_DimStaffs",
+          "nodeLineageTag": "8ed3e596-d8d3-4429-bb56-ed36b328ad1d",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "bi vw_FactK12StaffCounts",
+          "nodeLineageTag": "7bea5587-bd5a-4fa0-932c-49963238b8e8",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Career Advising",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",
@@ -1033,8 +1072,88 @@
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,
       "tablesLocked": false
+    },
+    {
+      "ordinal": 6,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 363,
+            "y": 302
+          },
+          "nodeIndex": "bi vw_FactK12StaffCounts",
+          "nodeLineageTag": "7bea5587-bd5a-4fa0-932c-49963238b8e8",
+          "size": {
+            "height": 306,
+            "width": 393
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 120,
+            "y": 38
+          },
+          "nodeIndex": "bi vw_DimStaffs",
+          "nodeLineageTag": "8ed3e596-d8d3-4429-bb56-ed36b328ad1d",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 860,
+            "y": 58
+          },
+          "nodeIndex": "bi vw_DimK12Schools",
+          "nodeLineageTag": "e89199b1-c489-43ce-bddf-33c345aeb6e1",
+          "size": {
+            "height": 435,
+            "width": 358
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 905,
+            "y": 657
+          },
+          "nodeIndex": "bi vw_DimK12StaffCategories",
+          "nodeLineageTag": "69dadcd3-2414-415d-96f3-55eb6c89d4ba",
+          "size": {
+            "height": 217,
+            "width": 348
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 82,
+            "y": 686
+          },
+          "nodeIndex": "bi vw_DimSchoolYears",
+          "nodeLineageTag": "6fc644b9-6c6b-424f-8d43-1f4185203878",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Staff  Counts",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
     }
   ],
-  "selectedDiagram": "Student Enrollments",
+  "selectedDiagram": "Staff  Counts",
   "defaultDiagram": "All tables"
 }
