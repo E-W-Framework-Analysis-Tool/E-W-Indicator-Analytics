@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "34bc30a939c44ade254d",
   "position": {
     "x": 78.983666061705989,
@@ -22,6 +22,7 @@
                     "value": "SAT and ACT performance",
                     "textStyle": {
                       "fontWeight": "bold",
+                      "fontSize": "9pt",
                       "color": "#17a673"
                     }
                   }
@@ -32,7 +33,7 @@
                   {
                     "value": "High school students performance using \"college-ready\" score on the ACT or SAT before graduating high school.",
                     "textStyle": {
-                      "fontSize": "9pt",
+                      "fontSize": "8pt",
                       "color": "#17a673"
                     }
                   }
