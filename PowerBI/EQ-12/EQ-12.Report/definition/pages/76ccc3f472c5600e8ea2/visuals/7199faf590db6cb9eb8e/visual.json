@@ -88,33 +88,6 @@
       }
     },
     "objects": {
-      "valueAxis": [
-        {
-          "properties": {
-            "start": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "end": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            },
-            "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
       "labels": [
         {
           "properties": {
