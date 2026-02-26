@@ -39,6 +39,13 @@
                 "Value": "30L"
               }
             }
+          },
+          "concatenateLabels": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
           }
         }
       }
