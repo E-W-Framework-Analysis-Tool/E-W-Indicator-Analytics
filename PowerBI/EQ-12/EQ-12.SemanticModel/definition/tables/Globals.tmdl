@@ -35,7 +35,9 @@ table Globals
 			    ||    
 			    ISFILTERED('bi vw_DimRuralStatuses'[Urbanicity])
 			    ||      
-			    ISFILTERED('bi vw_DimNeglectedOrDelinquentStatus'[NeglectedOrDelinquentStatus]),
+			    ISFILTERED('bi vw_DimNeglectedOrDelinquentStatus'[NeglectedOrDelinquentStatus])
+			    ||      
+			    ISFILTERED('Geography Value Slicer'[Organization Hierarchy]),
 			    
 			         IF(
 			            ISFILTERED('bi vw_DimSchoolYears'[SchoolYear]),
@@ -132,6 +134,16 @@ table Globals
 			            "> Neglected or Delinquent Status: " & CONCATENATEX(VALUES('bi vw_DimNeglectedOrDelinquentStatus'[NeglectedOrDelinquentStatus]), 'bi vw_DimNeglectedOrDelinquentStatus'[NeglectedOrDelinquentStatus], ", "),
 			            ""
 			        )
+			        & " " &  
+			        IF(
+			            ISFILTERED('Geography Value Slicer'[Organization Hierarchy]),
+			                IF(SELECTEDVALUE('Geography Value Slicer'[Organization Hierarchy]) <> SELECTEDVALUE('Geography Value Slicer'[Organization Name]),
+			                    "> Organization: " & SELECTEDVALUE('Geography Value Slicer'[Organization Hierarchy]) & " | " & SELECTEDVALUE('Geography Value Slicer'[Organization Name]),
+			                    "> ! Select Organization filters !"
+			                ),
+			            ""
+			        )
+			        & " "
 			    ,
 			    "No filters selected"
 			
