@@ -140,6 +140,7 @@ table 'Equitable Placement'
 			CALCULATE(
 			    DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[K12StudentId]),
 			    'bi vw_DimK12Courses'[CourseSubject] == "Math",
+			    CONTAINSSTRING('bi vw_DimK12Courses'[CourseTitle], "Algebra II") || CONTAINSSTRING('bi vw_DimK12Courses'[CourseTitle], "Calculus"),
 			    'bi vw_FactK12StudentCourseSections'[GradeLevelCode] IN {"09", "10", "11", "12"}
 			)
 		formatString: 0
