@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "fd7d5c6f204132cb61be",
   "position": {
-    "x": 645.87155963302757,
-    "y": 79.070336391437309,
+    "x": 731.75257731958766,
+    "y": 79.793814432989691,
     "z": 1000,
-    "height": 56.366972477064223,
-    "width": 323.32721712538228,
+    "height": 56.288659793814432,
+    "width": 237.5257731958763,
     "tabOrder": 10002
   },
   "visual": {
@@ -676,5 +676,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "33fa8ddf50427807b12a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Geography Value Slicer"
+              }
+            },
+            "Property": "Organization Hierarchy"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }
