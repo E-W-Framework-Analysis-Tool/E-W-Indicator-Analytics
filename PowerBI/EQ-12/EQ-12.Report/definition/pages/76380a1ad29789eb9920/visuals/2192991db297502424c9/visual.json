@@ -7,7 +7,7 @@
     "z": 4000,
     "height": 263.04587155963304,
     "width": 426,
-    "tabOrder": 2000
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -448,20 +448,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "8106f435e89456cd8c40",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Equitable Placement"
-              }
-            },
-            "Property": "AP Participation Rate"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

@@ -7,7 +7,7 @@
     "z": 13000,
     "height": 263.04587155963304,
     "width": 640.39143730886849,
-    "tabOrder": 10007
+    "tabOrder": 13000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -448,20 +448,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "6df20f1ac373dbb2032b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Equitable Placement"
-              }
-            },
-            "Property": "Higher Level Math Participation Rate"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

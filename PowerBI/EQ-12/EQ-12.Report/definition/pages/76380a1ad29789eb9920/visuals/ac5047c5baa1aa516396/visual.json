@@ -7,7 +7,7 @@
     "z": 9000,
     "height": 263.04587155963304,
     "width": 640.39143730886849,
-    "tabOrder": 10003
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -462,20 +462,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "2d5db98d182bb22e1a7e",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Equitable Placement"
-              }
-            },
-            "Property": "Algebra I Participation Rate"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

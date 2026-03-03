@@ -519,7 +519,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Course Level'"
+                  "Value": "'Course Type'"
                 }
               }
             }

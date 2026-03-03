@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
   "name": "bcb2c6d70d439b32acee",
-  "displayName": "Algebra I  Completion",
+  "displayName": "Successful completion of Algebra I by 9th grade",
   "displayOption": "FitToPage",
   "height": 720,
   "width": 1280,

@@ -4,7 +4,7 @@
   "position": {
     "x": 0,
     "y": 195.63318777292574,
-    "z": 6000,
+    "z": 7000,
     "height": 230.76731129132875,
     "width": 640,
     "tabOrder": 4000
@@ -274,6 +274,13 @@
               "expr": {
                 "Literal": {
                   "Value": "12D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

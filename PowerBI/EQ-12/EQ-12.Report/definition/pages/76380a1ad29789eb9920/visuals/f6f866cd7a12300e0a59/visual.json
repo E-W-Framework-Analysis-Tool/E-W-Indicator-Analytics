@@ -7,7 +7,7 @@
     "z": 12000,
     "height": 263.04587155963304,
     "width": 428.23241590214064,
-    "tabOrder": 10006
+    "tabOrder": 12000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -441,34 +441,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "eb34ded250dcbb120c67",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Equitable Placement"
-              }
-            },
-            "Property": "Dual-Credit Participation Rate"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "c428751a0256205a100a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimRaces"
-              }
-            },
-            "Property": "RaceEthnicity"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

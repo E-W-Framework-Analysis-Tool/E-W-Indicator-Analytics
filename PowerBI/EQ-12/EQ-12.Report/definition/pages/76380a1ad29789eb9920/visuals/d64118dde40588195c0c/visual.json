@@ -7,7 +7,7 @@
     "z": 0,
     "height": 56.288659793814432,
     "width": 310.51546391752578,
-    "tabOrder": 10001
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "slicer",
@@ -390,20 +390,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "49b634794ee9cb9a9e59",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Geography Value Slicer"
-              }
-            },
-            "Property": "Organization Name"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

@@ -6,7 +6,8 @@
     "y": 50,
     "z": 14000,
     "height": 269.99999999999994,
-    "width": 1280
+    "width": 1280,
+    "tabOrder": 14000
   },
   "visualGroup": {
     "displayName": "Filters Pane",

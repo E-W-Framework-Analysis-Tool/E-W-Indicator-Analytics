@@ -235,7 +235,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'College Readiness Trend'"
+                  "Value": "'College Preparatory Coursework Completion Trend'"
                 }
               }
             }

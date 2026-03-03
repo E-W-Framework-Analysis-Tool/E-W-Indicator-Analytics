@@ -241,7 +241,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Algebra I Success Rate Trend '"
+                  "Value": "'Algebra I Trend '"
                 }
               }
             },

@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "fdb26a9879c414a9d713",
   "position": {
     "x": 0,
-    "y": 460.69529652351741,
+    "y": 435.59072922555117,
     "z": 2000,
-    "height": 54.969325153374236,
-    "width": 640,
+    "height": 60.056529112492932,
+    "width": 640.36178631995472,
     "tabOrder": 8000
   },
   "visual": {
@@ -45,7 +45,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'HS students who pass at least one AP, IB, or Dual-Credit course'"
+                  "Value": "'HS students who enroll in and pass at least one early college course (AP, IB, or dual credit)'"
                 }
               }
             },

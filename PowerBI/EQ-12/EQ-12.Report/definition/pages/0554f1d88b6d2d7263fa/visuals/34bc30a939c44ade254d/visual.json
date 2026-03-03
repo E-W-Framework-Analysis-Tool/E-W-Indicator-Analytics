@@ -31,9 +31,9 @@
               {
                 "textRuns": [
                   {
-                    "value": "High school students performance using \"college-ready\" score on the ACT or SAT before graduating high school.",
+                    "value": "High school students earn a “college-ready” score on the ACT or SAT before graduating high school.",
                     "textStyle": {
-                      "fontSize": "8pt",
+                      "fontSize": "9pt",
                       "color": "#17a673"
                     }
                   }

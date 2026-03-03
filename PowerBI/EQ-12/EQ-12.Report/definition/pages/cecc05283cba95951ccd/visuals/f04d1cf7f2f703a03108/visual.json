@@ -144,7 +144,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of Schools offering Algebra I course.'"
+                  "Value": "'Percentage of Schools offering Algebra I'"
                 }
               }
             },

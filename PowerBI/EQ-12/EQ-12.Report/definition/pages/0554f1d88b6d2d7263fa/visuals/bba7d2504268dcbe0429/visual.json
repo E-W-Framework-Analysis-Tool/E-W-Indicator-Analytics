@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "bba7d2504268dcbe0429",
   "position": {
     "x": 78.983666061705989,
@@ -30,7 +30,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "High school students participation to earn a “college-ready” score on the ACT or SAT before graduating high school.",
+                    "value": "High school students take the ACT or SAT before graduating high school.",
                     "textStyle": {
                       "fontSize": "9pt",
                       "color": "#17a673"

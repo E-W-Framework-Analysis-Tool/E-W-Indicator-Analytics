@@ -269,7 +269,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'SAT/ACT Participation Trend by School Year'"
+                  "Value": "'SAT and ACT Participation Trend by School Year'"
                 }
               }
             }

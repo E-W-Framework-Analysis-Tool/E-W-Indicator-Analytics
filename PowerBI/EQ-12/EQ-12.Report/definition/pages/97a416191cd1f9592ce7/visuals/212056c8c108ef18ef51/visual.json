@@ -160,7 +160,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Cohort Graduation Year'"
+                  "Value": "'School Year'"
                 }
               }
             },

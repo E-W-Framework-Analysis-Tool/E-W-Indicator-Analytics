@@ -144,7 +144,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of schools offering the following sets of college preparatory courses:'"
+                  "Value": "'Percentage of schools offering the full set of college preparatory courses*'"
                 }
               }
             },

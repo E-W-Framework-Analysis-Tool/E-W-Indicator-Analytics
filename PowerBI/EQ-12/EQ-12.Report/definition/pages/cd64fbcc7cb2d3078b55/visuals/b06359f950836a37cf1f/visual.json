@@ -235,7 +235,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'SAT/ACT College Readiness Rate by School Year'"
+                  "Value": "'SAT and ACT Performance Trend by School Year'"
                 }
               }
             }

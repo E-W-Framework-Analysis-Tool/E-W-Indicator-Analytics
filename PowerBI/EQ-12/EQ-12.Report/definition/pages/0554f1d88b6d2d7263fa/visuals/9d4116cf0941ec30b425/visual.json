@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "9d4116cf0941ec30b425",
   "position": {
     "x": 78.983666061705989,
@@ -22,6 +22,17 @@
                     "value": "Successful completion of Algebra I by 9th grade",
                     "textStyle": {
                       "fontWeight": "bold",
+                      "color": "#17a673"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Students successfully complete Algebra I or an equivalent course before or during grade 9.",
+                    "textStyle": {
+                      "fontSize": "9pt",
                       "color": "#17a673"
                     }
                   }

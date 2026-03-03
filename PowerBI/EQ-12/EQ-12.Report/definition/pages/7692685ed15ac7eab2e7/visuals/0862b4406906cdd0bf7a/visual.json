@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "0862b4406906cdd0bf7a",
   "position": {
-    "x": 639.63943661971825,
-    "y": 199.75211267605633,
+    "x": 640.36178631995472,
+    "y": 150.50310910118711,
     "z": 3000,
-    "height": 54.8056338028169,
-    "width": 639.63943661971825,
+    "height": 60,
+    "width": 639.63821368004517,
     "tabOrder": 7000
   },
   "visual": {
@@ -45,7 +45,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'HS graduates who successfully complete coursework required for PS admission'"
+                  "Value": "'HS graduates who successfully complete the coursework required for admission to a four-year college or university'"
                 }
               }
             },
@@ -65,6 +65,13 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
                 }
               }
             }

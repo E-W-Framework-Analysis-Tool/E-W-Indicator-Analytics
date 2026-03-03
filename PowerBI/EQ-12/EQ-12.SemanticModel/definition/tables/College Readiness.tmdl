@@ -84,7 +84,7 @@ table 'College Readiness'
 	measure 'SAT-ACT Participation Chart Title' =
 			
 			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
-			VAR SelectedYearTitle = "SAT/ACT Participation Rate " & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			VAR SelectedYearTitle = "SAT and ACT Participation " & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
 			RETURN
 			SelectedYearTitle
 		displayFolder: SAT-ACT Participations
@@ -165,7 +165,7 @@ table 'College Readiness'
 	measure 'College Readiness Chart Title' =
 			
 			VAR SelectedYear = SELECTEDVALUE(LimitedGraduationYears[CohortGraduationYear])
-			VAR SelectedYearTitle = "College Readiness " & IF(not ISBLANK(SelectedYear), "for graduation year " & SelectedYear, "All Years")
+			VAR SelectedYearTitle = "College Preparatory Coursework Completion " & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
 			RETURN
 			SelectedYearTitle
 		displayFolder: College Ready Measures
@@ -174,7 +174,7 @@ table 'College Readiness'
 	measure 'SAT-ACT College Readiness Chart Title' =
 			
 			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
-			VAR SelectedYearTitle = "SAT/ACT College Readiness Rate " & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			VAR SelectedYearTitle = "SAT and ACT Performance " & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
 			RETURN
 			SelectedYearTitle
 		displayFolder: SAT-ACT Participations
@@ -183,7 +183,7 @@ table 'College Readiness'
 	measure 'College Readiness Disaggregate Chart Title' =
 			
 			VAR SelectedYear = SELECTEDVALUE(LimitedGraduationYears[CohortGraduationYear])
-			VAR SelectedYearTitle = "College Readiness Rate " & IF(not ISBLANK([Disaggregate by]), "by '" & [Disaggregate by] & "' "," ") & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			VAR SelectedYearTitle = "College Preparatory Coursework Completion " & IF(not ISBLANK([Disaggregate by]), "by '" & [Disaggregate by] & "' "," ") & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
 			RETURN
 			SelectedYearTitle
 		displayFolder: College Ready Measures
@@ -192,7 +192,7 @@ table 'College Readiness'
 	measure 'SAT-ACT Participation Disaggregate Chart Title' =
 			
 			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
-			VAR SelectedYearTitle = "SAT/ACT Participation Rate " & IF(not ISBLANK([Disaggregate by]), "by '" & [Disaggregate by] & "' "," ") & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			VAR SelectedYearTitle = "SAT and ACT Participation Trend " & IF(not ISBLANK([Disaggregate by]), "by '" & [Disaggregate by] & "' "," ") & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
 			RETURN
 			SelectedYearTitle
 		displayFolder: SAT-ACT Participations
@@ -201,7 +201,7 @@ table 'College Readiness'
 	measure 'SAT-ACT College Readiness Disaggregate Chart Title' =
 			
 			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
-			VAR SelectedYearTitle = "SAT/ACT College Readiness Rate " & IF(not ISBLANK([Disaggregate by]), "by '" & [Disaggregate by] & "' "," ") & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			VAR SelectedYearTitle = "SAT and ACT Performance Trend " & IF(not ISBLANK([Disaggregate by]), "by '" & [Disaggregate by] & "' "," ") & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
 			RETURN
 			SelectedYearTitle
 		displayFolder: SAT-ACT Participations

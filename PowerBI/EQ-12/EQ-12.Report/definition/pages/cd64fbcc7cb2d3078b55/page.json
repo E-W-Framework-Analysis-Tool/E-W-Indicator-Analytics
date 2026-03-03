@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
   "name": "cd64fbcc7cb2d3078b55",
-  "displayName": "SAT-ACT College Readiness",
+  "displayName": "SAT and ACT Performance",
   "displayOption": "FitToPage",
   "height": 720,
   "width": 1280,

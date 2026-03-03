@@ -7,7 +7,7 @@
     "z": 11000,
     "height": 263.04587155963304,
     "width": 425.88379204892965,
-    "tabOrder": 10005
+    "tabOrder": 11000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -441,20 +441,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "56067f21d0bc0e46e585",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Equitable Placement"
-              }
-            },
-            "Property": "IB Participation Rate"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

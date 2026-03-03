@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Access to College & Career Advising",
+                    "value": "Access to College and Career Advising",
                     "textStyle": {
                       "fontWeight": "bold",
                       "color": "#5b6771"
@@ -30,7 +30,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "College and career counseling services are available in high schools and college campuses.",
+                    "value": "College and career counseling services are available in high schools and college campuses..",
                     "textStyle": {
                       "fontSize": "9pt",
                       "color": "#5b6771"

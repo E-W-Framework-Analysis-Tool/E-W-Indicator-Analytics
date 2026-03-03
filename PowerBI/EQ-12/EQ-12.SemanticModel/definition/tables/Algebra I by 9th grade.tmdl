@@ -26,7 +26,7 @@ table 'Algebra I by 9th grade'
 	measure 'Algebra I Disaggregate Chart Title' =
 			
 			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
-			VAR SelectedYearTitle = "Algebra I Student Success Rate " & IF(not ISBLANK([Disaggregate by]), "by '" & [Disaggregate by] & "' "," ") & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			VAR SelectedYearTitle = "Algebra I " & IF(not ISBLANK([Disaggregate by]), "by '" & [Disaggregate by] & "' "," ") & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
 			RETURN
 			SelectedYearTitle
 		displayFolder: Algebra I Completion Measures
@@ -48,7 +48,7 @@ table 'Algebra I by 9th grade'
 	measure 'Algebra I Summary Chart Title' =
 			
 			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
-			VAR SelectedYearTitle = "Algebra I Student Success Rate " & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			VAR SelectedYearTitle = "Algebra I " & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
 			RETURN
 			SelectedYearTitle
 		displayFolder: Algebra I Completion Measures
