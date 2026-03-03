@@ -1,0 +1,186 @@
+table 'Equitable Placement'
+	lineageTag: 410f3061-2889-41f1-9231-b0319ab252c1
+
+	measure 'Algebra I by 8th Grade Disaggregate Chart Title2' =
+			
+			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
+			VAR SelectedYearTitle = "Algebra I Participation Rates by end of 8th grade " & IF(not ISBLANK([Disaggregate by]), "by '" & [Disaggregate by] & "' "," ") & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			RETURN
+			SelectedYearTitle
+		displayFolder: Algebra I Participants
+		lineageTag: 60fb0214-7663-410a-be4f-8d0843f22e7f
+
+	measure 'Algebra I Participants by 8th Grade' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[K12StudentId]),
+			    CONTAINSSTRING('bi vw_DimK12Courses'[CourseTitle], "Algebra I"),
+			    'bi vw_FactK12StudentCourseSections'[GradeLevelCode] <= "09"
+			)
+		formatString: 0
+		displayFolder: Algebra I Participants
+		lineageTag: 46157ca8-f118-4a7d-a6b7-d10f9b5511d1
+
+	measure 'Total Students in Middle School' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[K12StudentId]),
+			    'bi vw_FactK12StudentCourseSections'[GradeLevelCode] <= "09"
+			)
+		formatString: 0
+		displayFolder: Algebra I Participants
+		lineageTag: 631c27ec-a57a-4c2b-a2d6-23d0e38118bb
+
+	measure 'Algebra I Participation Rate' = ```
+			
+			DIVIDE(
+			    [Algebra I Participants by 8th Grade], 
+			    [Total Students in Middle School], 
+			    0
+			)
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Algebra I Participants
+		lineageTag: 098b201a-8f9c-4236-80f1-fb8c71459fa8
+
+	measure 'AP Participant Count' =
+			CALCULATE(
+			    DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[K12StudentId]),
+			    'bi vw_DimK12CourseStatuses'[CourseLevelCharacteristicCode] == "00575",
+			    'bi vw_DimGradeLevels'[GradeLevelCode] IN {"11", "12"}
+			    )
+		formatString: 0
+		displayFolder: Advance Courses Participants
+		lineageTag: dff65058-4eed-4f17-902d-abf4854ce3da
+
+	measure 'IB Participant Count' =
+			CALCULATE(
+			    DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[K12StudentId]),
+			    'bi vw_DimK12CourseStatuses'[CourseLevelCharacteristicCode] == "00574",
+			    'bi vw_DimGradeLevels'[GradeLevelCode] IN {"11", "12"}
+			    )
+		formatString: 0
+		displayFolder: Advance Courses Participants
+		lineageTag: aef5a6d8-8a75-4df0-8f7f-425da0eb2df4
+
+	measure 'Dual-Credit Participant Count' =
+			CALCULATE(
+			    DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[K12StudentId]),
+			    'bi vw_DimK12CourseStatuses'[CourseLevelCharacteristicCode] == "73048",
+			    'bi vw_DimGradeLevels'[GradeLevelCode] IN {"11", "12"}
+			    )
+		formatString: 0
+		displayFolder: Advance Courses Participants
+		lineageTag: 9871cc65-b433-480f-a8aa-350063d4cb3d
+
+	measure 'AP Participant Disaggregate Chart Title' =
+			
+			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
+			VAR SelectedYearTitle = "AP Course Participation Rates " & IF(not ISBLANK([Disaggregate by]), "by '" & [Disaggregate by] & "' "," ") & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			RETURN
+			SelectedYearTitle
+		displayFolder: Advance Courses Participants
+		lineageTag: e8c7984d-741b-49e9-a2cd-9954e223d1cb
+
+	measure 'Dual-Credit Participant Disaggregate Chart Title' =
+			
+			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
+			VAR SelectedYearTitle = "Dual Credit Course Participation Rates " & IF(not ISBLANK([Disaggregate by]), "by '" & [Disaggregate by] & "' "," ") & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			RETURN
+			SelectedYearTitle
+		displayFolder: Advance Courses Participants
+		lineageTag: e4b4ad5c-3691-4e4c-b398-ff099770d8f2
+
+	measure 'IB Participant Disaggregate Chart Title' =
+			
+			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
+			VAR SelectedYearTitle = "IB Course Participation Rates " & IF(not ISBLANK([Disaggregate by]), "by '" & [Disaggregate by] & "' "," ") & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			RETURN
+			SelectedYearTitle
+		displayFolder: Advance Courses Participants
+		lineageTag: c01eb095-dbeb-4254-958e-1a3cfbf46efb
+
+	measure 'AP Participation Rate' = ```
+			
+			DIVIDE(
+			    [AP Participant Count], 
+			    [Total 11-12 Graders], 
+			    0
+			)
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Advance Courses Participants
+		lineageTag: abbe5947-c456-427d-b304-464b198d087f
+
+	measure 'Dual-Credit Participation Rate' = ```
+			
+			DIVIDE(
+			    [Dual-Credit Participant Count], 
+			    [Total 11-12 Graders], 
+			    0
+			)
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Advance Courses Participants
+		lineageTag: 96137550-6adb-49b1-b5b4-c662d8e06cbe
+
+	measure 'IB Participation Rate' = ```
+			
+			DIVIDE(
+			    [IB Participant Count], 
+			    [Total 11-12 Graders], 
+			    0
+			)
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Advance Courses Participants
+		lineageTag: 67133d51-7dc0-4f63-aaf6-34dc66cb79bf
+
+	measure 'Higher Level Math Participant Count' =
+			CALCULATE(
+			    DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[K12StudentId]),
+			    'bi vw_DimK12Courses'[CourseSubject] == "Math",
+			    'bi vw_FactK12StudentCourseSections'[GradeLevelCode] IN {"09", "10", "11", "12"}
+			)
+		formatString: 0
+		displayFolder: Advance Courses Participants
+		lineageTag: bfc3b462-4335-45ff-8b46-ec9ac19d8bf7
+
+	measure 'Total 09-12 Graders' = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentEnrollments'[K12StudentId]), 'bi vw_FactK12StudentEnrollments'[GradeLevelCode] IN {"09", "10", "11", "12"})
+		formatString: 0
+		displayFolder: Advance Courses Participants
+		lineageTag: 8d80378f-064e-4aa5-850c-defe7acc5cfa
+
+	measure 'Higher Level Math Participation Rate' = ```
+			
+			DIVIDE(
+			    [Higher Level Math Participant Count], 
+			    [Total 09-12 Graders], 
+			    0
+			)
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Advance Courses Participants
+		lineageTag: f5c04455-e5e9-44dd-9aae-dd039580d408
+
+	measure 'Higher Level Math Participant Disaggregate Chart Title' =
+			
+			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
+			VAR SelectedYearTitle = "Higher Level Math Course Participation Rates " & IF(not ISBLANK([Disaggregate by]), "by '" & [Disaggregate by] & "' "," ") & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			RETURN
+			SelectedYearTitle
+		displayFolder: Advance Courses Participants
+		lineageTag: 6966b868-5192-480e-b26e-130e54b0de1b
+
+	partition 'Equitable Placement' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

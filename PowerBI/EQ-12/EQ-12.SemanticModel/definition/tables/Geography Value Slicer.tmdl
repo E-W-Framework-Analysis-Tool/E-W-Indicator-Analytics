@@ -1,0 +1,40 @@
+table 'Geography Value Slicer'
+	lineageTag: 6e35b803-1c8a-4808-b532-ad46dc1004d7
+
+	column 'Organization Hierarchy'
+		lineageTag: 45af5200-5a70-492f-8403-1595efec6cf4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Organization Hierarchy]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Organization Name'
+		lineageTag: 28cf7d57-b88a-4a95-9d4f-0cd1e420882a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Organization Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column K12SchoolId
+		formatString: 0
+		lineageTag: b8763fe9-287b-4a2e-a1fa-942cbca2e81a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [K12SchoolId]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Geography Value Slicer' = calculated
+		mode: import
+		source =
+				
+				UNION(
+				    SELECTCOLUMNS('bi vw_DimK12Schools', "Organization Hierarchy", "SEA", "Organization Name", [SeaOrganizationName], "K12SchoolId", 'bi vw_DimK12Schools'[DimK12SchoolId]),
+				    SELECTCOLUMNS('bi vw_DimK12Schools', "Organization Hierarchy", "LEA", "Organization Name", [LeaOrganizationName], "K12SchoolId", 'bi vw_DimK12Schools'[DimK12SchoolId]),
+				    SELECTCOLUMNS('bi vw_DimK12Schools', "Organization Hierarchy", "K12 School", "Organization Name", [K12SchoolName], "K12SchoolId", 'bi vw_DimK12Schools'[DimK12SchoolId])
+				)
+
+	annotation PBI_Id = 3a1252ca1bc24aae94a32b95e223cc9d
+

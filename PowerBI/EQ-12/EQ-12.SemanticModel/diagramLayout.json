@@ -482,6 +482,25 @@
             "width": 234
           },
           "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Geography Value Slicer",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Equitable Placement",
+          "nodeLineageTag": "410f3061-2889-41f1-9231-b0319ab252c1",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",
@@ -1152,8 +1171,62 @@
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,
       "tablesLocked": false
+    },
+    {
+      "ordinal": 7,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 234,
+            "y": 634
+          },
+          "nodeIndex": "Hierarchy Picker",
+          "nodeLineageTag": "02b5b6d3-cb13-4c44-9785-c1817542192a",
+          "size": {
+            "height": 192,
+            "width": 284
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 669,
+            "y": 616
+          },
+          "nodeIndex": "Geography Value Slicer",
+          "nodeLineageTag": "6e35b803-1c8a-4808-b532-ad46dc1004d7",
+          "size": {
+            "height": 196,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1149,
+            "y": 350
+          },
+          "nodeIndex": "bi vw_DimK12Schools",
+          "nodeLineageTag": "e89199b1-c489-43ce-bddf-33c345aeb6e1",
+          "size": {
+            "height": 443,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Geography Slicers",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
     }
   ],
-  "selectedDiagram": "Staff  Counts",
+  "selectedDiagram": "Geography Slicers",
   "defaultDiagram": "All tables"
 }

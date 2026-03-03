@@ -166,3 +166,12 @@ relationship 27335e1d-9a67-32ed-62b0-6483f0be09fa
 	fromColumn: 'bi vw_FactK12StaffCounts'.SchoolYear
 	toColumn: 'bi vw_DimSchoolYears'.SchoolYear
 
+relationship ec4f1221-c13f-bf61-0e90-240b65c6dcb0
+	fromColumn: 'Geography Value Slicer'.'Organization Hierarchy'
+	toColumn: 'Hierarchy Picker'.'Organization Hierarchy'
+
+relationship b62fe276-cfae-5148-e662-2ffd0e18a270
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Geography Value Slicer'.K12SchoolId
+	toColumn: 'bi vw_DimK12Schools'.DimK12SchoolId
+

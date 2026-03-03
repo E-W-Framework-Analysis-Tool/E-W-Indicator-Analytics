@@ -6,7 +6,8 @@
     "y": 320.03996722827679,
     "z": 10000,
     "height": 99,
-    "width": 639.65386695511086
+    "width": 639.65386695511086,
+    "tabOrder": 10000
   },
   "visualGroup": {
     "displayName": "Col 2 Row 1",

@@ -31,7 +31,7 @@ table 'Hierarchy Picker'
 		isHidden
 		formatString: 0
 		lineageTag: 90323144-1e6d-4b26-b9c2-22d8ff4dac37
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: [Value3]
 
 		annotation SummarizationSetBy = Automatic
