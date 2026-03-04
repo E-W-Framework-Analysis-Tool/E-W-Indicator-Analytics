@@ -1,0 +1,107 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "1bd4cb97ce9b474420e4",
+  "position": {
+    "x": 861.90537913156186,
+    "y": 530.08425145819831,
+    "z": 3003,
+    "height": 149.31950745301359,
+    "width": 413.11730395333763,
+    "tabOrder": 3003
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Related Evidence-based Practices",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "12pt",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Accelerated postsecondary pathways",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "textDecoration": "underline",
+                      "color": "#000000"
+                    },
+                    "url": "https://educationtoworkforce.org/evidence-based-practices/accelerated-postsecondary-pathways"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Enhanced college advising",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "textDecoration": "underline",
+                      "color": "#000000"
+                    },
+                    "url": "https://educationtoworkforce.org/evidence-based-practices/enhanced-college-advising"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#cecfd2'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
