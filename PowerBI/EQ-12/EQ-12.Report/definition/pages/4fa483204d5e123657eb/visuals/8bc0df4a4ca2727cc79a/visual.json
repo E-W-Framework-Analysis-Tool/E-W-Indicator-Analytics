@@ -5,7 +5,7 @@
     "x": 861.90537913156186,
     "y": 116.96694750486066,
     "z": 3002,
-    "height": 408,
+    "height": 426,
     "width": 413.11730395333763,
     "tabOrder": 3002
   },
@@ -44,7 +44,7 @@
                   {
                     "value": "Essential Question 12",
                     "textStyle": {
-                      "fontFamily": "Atlassian Sans, ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Ubuntu, Helvetica Neue, sans-serif",
+                      "fontSize": "10.5pt",
                       "textDecoration": "underline",
                       "color": "#669df1"
                     },
@@ -95,9 +95,9 @@
                   {
                     "value": "Successful completion of Algebra I by 9th grade",
                     "textStyle": {
-                      "fontSize": "14px",
+                      "fontSize": "10.5pt",
                       "textDecoration": "underline",
-                      "color": "#000000"
+                      "color": "#669df1"
                     },
                     "url": "https://educationtoworkforce.org/indicators/successful-completion-algebra-i-9th-grade"
                   }
@@ -109,9 +109,9 @@
                   {
                     "value": "College preparatory coursework completion",
                     "textStyle": {
-                      "fontSize": "14px",
+                      "fontSize": "10.5pt",
                       "textDecoration": "underline",
-                      "color": "#000000"
+                      "color": "#669df1"
                     },
                     "url": "https://educationtoworkforce.org/indicators/college-preparatory-coursework-completion"
                   }
@@ -123,9 +123,9 @@
                   {
                     "value": "Early college coursework completion",
                     "textStyle": {
-                      "fontSize": "14px",
+                      "fontSize": "10.5pt",
                       "textDecoration": "underline",
-                      "color": "#000000"
+                      "color": "#669df1"
                     },
                     "url": "https://educationtoworkforce.org/indicators/early-college-coursework-completion"
                   }
@@ -137,9 +137,9 @@
                   {
                     "value": "SAT and ACT participation and performance",
                     "textStyle": {
-                      "fontSize": "14px",
+                      "fontSize": "10.5pt",
                       "textDecoration": "underline",
-                      "color": "#000000"
+                      "color": "#669df1"
                     },
                     "url": "https://educationtoworkforce.org/indicators/sat-and-act-participation-and-performance"
                   }
@@ -169,9 +169,9 @@
                   {
                     "value": "Access to college preparatory coursework",
                     "textStyle": {
-                      "fontSize": "14px",
+                      "fontSize": "10.5pt",
                       "textDecoration": "underline",
-                      "color": "#000000"
+                      "color": "#669df1"
                     },
                     "url": "https://educationtoworkforce.org/indicators/access-college-preparatory-coursework"
                   }
@@ -183,9 +183,9 @@
                   {
                     "value": "Access to early college coursework",
                     "textStyle": {
-                      "fontSize": "14px",
+                      "fontSize": "10.5pt",
                       "textDecoration": "underline",
-                      "color": "#000000"
+                      "color": "#669df1"
                     },
                     "url": "https://educationtoworkforce.org/indicators/access-early-college-coursework"
                   }
@@ -197,9 +197,9 @@
                   {
                     "value": "Equitable placement in gifted programs and rigorous coursework",
                     "textStyle": {
-                      "fontSize": "14px",
+                      "fontSize": "10.5pt",
                       "textDecoration": "underline",
-                      "color": "#000000"
+                      "color": "#669df1"
                     },
                     "url": "https://educationtoworkforce.org/indicators/equitable-placement-gifted-programs-and-rigorous-coursework"
                   }
@@ -211,9 +211,9 @@
                   {
                     "value": "Access to quality, culturally responsive curricula",
                     "textStyle": {
-                      "fontSize": "14px",
+                      "fontSize": "10.5pt",
                       "textDecoration": "underline",
-                      "color": "#000000"
+                      "color": "#669df1"
                     },
                     "url": "https://educationtoworkforce.org/indicators/access-quality-culturally-responsive-curricula"
                   }
@@ -225,14 +225,21 @@
                   {
                     "value": "Access to college and career advising",
                     "textStyle": {
-                      "fontSize": "14px",
+                      "fontSize": "10.5pt",
                       "textDecoration": "underline",
-                      "color": "#000000"
+                      "color": "#669df1"
                     },
                     "url": "https://educationtoworkforce.org/indicators/access-college-and-career-advising"
                   }
                 ],
                 "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
               },
               {
                 "textRuns": [

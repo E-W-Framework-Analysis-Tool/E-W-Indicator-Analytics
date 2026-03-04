@@ -3,9 +3,9 @@
   "name": "1bd4cb97ce9b474420e4",
   "position": {
     "x": 861.90537913156186,
-    "y": 530.08425145819831,
+    "y": 548.33441348023325,
     "z": 3003,
-    "height": 149.31950745301359,
+    "height": 131.06934543097861,
     "width": 413.11730395333763,
     "tabOrder": 3003
   },
@@ -36,7 +36,7 @@
                     "textStyle": {
                       "fontSize": "10.5pt",
                       "textDecoration": "underline",
-                      "color": "#000000"
+                      "color": "#669df1"
                     },
                     "url": "https://educationtoworkforce.org/evidence-based-practices/accelerated-postsecondary-pathways"
                   }
@@ -50,12 +50,19 @@
                     "textStyle": {
                       "fontSize": "10.5pt",
                       "textDecoration": "underline",
-                      "color": "#000000"
+                      "color": "#669df1"
                     },
                     "url": "https://educationtoworkforce.org/evidence-based-practices/enhanced-college-advising"
                   }
                 ],
                 "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
               },
               {
                 "textRuns": [

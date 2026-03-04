@@ -146,8 +146,10 @@
                   {
                     "value": "Essential Question 12",
                     "textStyle": {
+                      "fontFamily": "Atlassian Sans, ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Ubuntu, Helvetica Neue, sans-serif",
+                      "fontSize": "14px",
                       "textDecoration": "underline",
-                      "color": "#000000"
+                      "color": "#669df1"
                     },
                     "url": "https://educationtoworkforce.org/essential-questions/do-students-have-access-and-complete-rigorous-and-accelerated-college"
                   }
