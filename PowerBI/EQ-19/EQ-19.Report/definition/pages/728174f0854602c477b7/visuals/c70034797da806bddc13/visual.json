@@ -1,79 +1,58 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
-  "name": "7ed800b88bd343e76d20",
+  "name": "c70034797da806bddc13",
   "position": {
-    "x": 78.983666061705989,
-    "y": 18.183240906647466,
-    "z": 1000,
-    "height": 62.729862016277558,
-    "width": 538.9473684210526,
-    "tabOrder": 1000
+    "x": 0,
+    "y": 0,
+    "z": 0,
+    "height": 98.835175713578622,
+    "width": 639.61282516636425,
+    "tabOrder": 13
   },
   "visual": {
-    "visualType": "textbox",
+    "visualType": "shape",
     "objects": {
-      "general": [
+      "shape": [
         {
           "properties": {
-            "paragraphs": [
-              {
-                "textRuns": [
-                  {
-                    "value": "Access to College and Career Advising",
-                    "textStyle": {
-                      "fontWeight": "bold",
-                      "color": "#5b6771"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "College and career counseling services are available in high schools and college campuses.",
-                    "textStyle": {
-                      "fontSize": "9pt",
-                      "color": "#5b6771"
-                    }
-                  }
-                ]
-              }
-            ]
-          }
-        }
-      ]
-    },
-    "visualContainerObjects": {
-      "title": [
-        {
-          "properties": {
-            "show": {
+            "tileShape": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "'rectangleRounded'"
                 }
               }
             }
           }
         }
       ],
-      "visualHeader": [
+      "rotation": [
         {
           "properties": {
-            "show": {
+            "shapeAngle": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "0L"
                 }
               }
             }
           }
         }
       ],
-      "background": [
+      "fill": [
         {
           "properties": {
-            "color": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "fillColor": {
               "solid": {
                 "color": {
                   "expr": {
@@ -84,38 +63,55 @@
                   }
                 }
               }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
             }
+          },
+          "selector": {
+            "id": "default"
           }
         }
       ],
-      "border": [
+      "outline": [
+        {
+          "properties": {
+            "weight": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
+            "lineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "shadow": [
         {
           "properties": {
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }
           }
         }
       ],
-      "dropShadow": [
+      "glow": [
         {
           "properties": {
             "show": {
@@ -131,5 +127,6 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "b0eb03f251202aa0a8bc"
+  "parentGroupName": "604e073cbe91009441e0",
+  "howCreated": "InsertVisualButton"
 }

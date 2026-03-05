@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
-  "name": "7ed800b88bd343e76d20",
+  "name": "0b8b8c3c859abaa493a3",
   "position": {
     "x": 78.983666061705989,
-    "y": 18.183240906647466,
+    "y": 18.181055617954712,
     "z": 1000,
-    "height": 62.729862016277558,
+    "height": 62.722323049001808,
     "width": 538.9473684210526,
-    "tabOrder": 1000
+    "tabOrder": 12
   },
   "visual": {
     "visualType": "textbox",
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Access to College and Career Advising",
+                    "value": "Cumulative student debt",
                     "textStyle": {
                       "fontWeight": "bold",
                       "color": "#5b6771"
@@ -30,7 +30,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "College and career counseling services are available in high schools and college campuses.",
+                    "value": "The total amount of student loans individuals take out while enrolled in college.",
                     "textStyle": {
                       "fontSize": "9pt",
                       "color": "#5b6771"
@@ -131,5 +131,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "b0eb03f251202aa0a8bc"
+  "parentGroupName": "604e073cbe91009441e0"
 }

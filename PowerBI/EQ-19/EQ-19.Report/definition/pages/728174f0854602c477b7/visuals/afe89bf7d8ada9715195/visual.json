@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
-  "name": "7ed800b88bd343e76d20",
+  "name": "afe89bf7d8ada9715195",
   "position": {
     "x": 78.983666061705989,
-    "y": 18.183240906647466,
-    "z": 1000,
-    "height": 62.729862016277558,
+    "y": 18.181055617954712,
+    "z": 1750,
+    "height": 62.722323049001808,
     "width": 538.9473684210526,
-    "tabOrder": 1000
+    "tabOrder": 9
   },
   "visual": {
     "visualType": "textbox",
@@ -19,10 +19,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "Access to College and Career Advising",
+                    "value": "Postsecondary certificate or degree completion",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "color": "#5b6771"
+                      "color": "#17a673"
                     }
                   }
                 ]
@@ -30,10 +30,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "College and career counseling services are available in high schools and college campuses.",
+                    "value": "Students complete a certificate, associate’s, or bachelor’s degree within a specified time frame after entering college.",
                     "textStyle": {
                       "fontSize": "9pt",
-                      "color": "#5b6771"
+                      "color": "#17a673"
                     }
                   }
                 ]
@@ -131,5 +131,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "b0eb03f251202aa0a8bc"
+  "parentGroupName": "63435a5e2c97176eed72"
 }
