@@ -34,7 +34,6 @@
                   {
                     "value": "Accelerated postsecondary pathways",
                     "textStyle": {
-                      "fontSize": "10.5pt",
                       "textDecoration": "underline",
                       "color": "#669df1"
                     },
@@ -48,7 +47,6 @@
                   {
                     "value": "Enhanced college advising",
                     "textStyle": {
-                      "fontSize": "10.5pt",
                       "textDecoration": "underline",
                       "color": "#669df1"
                     },
