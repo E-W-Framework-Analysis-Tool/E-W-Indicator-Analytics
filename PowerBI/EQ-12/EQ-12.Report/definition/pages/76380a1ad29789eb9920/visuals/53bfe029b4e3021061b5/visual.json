@@ -32,6 +32,7 @@
               "displayName": "Race & Ethnicity"
             }
           ],
+          "showAll": true,
           "fieldParameters": [
             {
               "parameterExpr": {

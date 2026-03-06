@@ -396,5 +396,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "5e8eaf5ea164714241d6",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Globals"
+              }
+            },
+            "Property": "Disaggregate by"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

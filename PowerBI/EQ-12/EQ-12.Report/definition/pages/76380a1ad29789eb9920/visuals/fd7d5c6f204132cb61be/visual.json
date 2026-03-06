@@ -676,5 +676,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "de162242964bad0ac9b4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Geography Value Slicer"
+              }
+            },
+            "Property": "Organization Hierarchy"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

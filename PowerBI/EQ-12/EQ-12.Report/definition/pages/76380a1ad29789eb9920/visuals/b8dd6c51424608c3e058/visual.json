@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
-  "name": "ac5047c5baa1aa516396",
+  "name": "b8dd6c51424608c3e058",
   "position": {
     "x": 0,
-    "y": 194.15290519877675,
-    "z": 9000,
-    "height": 263.04587155963304,
-    "width": 640.39143730886849,
-    "tabOrder": 9000
+    "y": 194.94447382337387,
+    "z": 13062,
+    "height": 262.6335272342676,
+    "width": 640.33844526705445,
+    "tabOrder": 13001
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -32,6 +32,7 @@
               "displayName": "Race & Ethnicity"
             }
           ],
+          "showAll": true,
           "fieldParameters": [
             {
               "parameterExpr": {
@@ -73,19 +74,6 @@
         "sort": [
           {
             "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Equitable Placement"
-                  }
-                },
-                "Property": "Algebra I Participation Rate"
-              }
-            },
-            "direction": "Descending"
-          },
-          {
-            "field": {
               "Column": {
                 "Expression": {
                   "SourceRef": {
@@ -97,8 +85,7 @@
             },
             "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": true
+        ]
       }
     },
     "objects": {
@@ -157,6 +144,27 @@
               "expr": {
                 "Literal": {
                   "Value": "'InsideBase'"
+                }
+              }
+            },
+            "enableValueDataLabel": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "enableDetailDataLabel": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "enableTitleDataLabel": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -318,13 +326,6 @@
                 }
               }
             },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "40D"
-                }
-              }
-            },
             "lineColor": {
               "solid": {
                 "color": {
@@ -337,43 +338,10 @@
                 }
               }
             },
-            "dataLabelShow": {
+            "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "dataLabelColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 5,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            },
-            "style": {
-              "expr": {
-                "Literal": {
-                  "Value": "'dashed'"
-                }
-              }
-            },
-            "dataLabelText": {
-              "expr": {
-                "Literal": {
-                  "Value": "'ValueAndName'"
-                }
-              }
-            },
-            "dataLabelHorizontalPosition": {
-              "expr": {
-                "Literal": {
-                  "Value": "'right'"
+                  "Value": "40D"
                 }
               }
             }
@@ -478,7 +446,7 @@
         "howCreated": "User"
       },
       {
-        "name": "afe3c744a4922e2b53ce",
+        "name": "9eed11828ab3024d4959",
         "field": {
           "Column": {
             "Expression": {
@@ -492,7 +460,7 @@
         "type": "Categorical"
       },
       {
-        "name": "9937ed58b099b2da9be0",
+        "name": "673b23cb60cb29d1bd0b",
         "field": {
           "Measure": {
             "Expression": {
