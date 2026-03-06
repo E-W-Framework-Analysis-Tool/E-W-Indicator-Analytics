@@ -1190,7 +1190,7 @@
             "height": 192,
             "width": 284
           },
-          "zIndex": 0
+          "zIndex": 3
         },
         {
           "location": {
@@ -1203,7 +1203,7 @@
             "height": 196,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 1
         },
         {
           "location": {
@@ -1216,7 +1216,7 @@
             "height": 443,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 2
         }
       ],
       "name": "Geography Slicers",
@@ -1227,6 +1227,6 @@
       "tablesLocked": false
     }
   ],
-  "selectedDiagram": "Geography Slicers",
+  "selectedDiagram": "Student Course Sections",
   "defaultDiagram": "All tables"
 }

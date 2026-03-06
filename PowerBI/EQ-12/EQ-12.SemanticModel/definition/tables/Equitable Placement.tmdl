@@ -37,7 +37,7 @@ table 'Equitable Placement'
 			    [Algebra I Participants by 8th Grade], 
 			    [Total Students in Middle School], 
 			    0
-			)
+			) + 0
 			```
 		formatString: 0.0%;-0.0%;0.0%
 		displayFolder: Algebra I Participants
@@ -54,11 +54,13 @@ table 'Equitable Placement'
 		lineageTag: dff65058-4eed-4f17-902d-abf4854ce3da
 
 	measure 'IB Participant Count' =
+			
+			COALESCE(
 			CALCULATE(
 			    DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[K12StudentId]),
 			    'bi vw_DimK12CourseStatuses'[CourseLevelCharacteristicCode] == "00574",
 			    'bi vw_DimGradeLevels'[GradeLevelCode] IN {"11", "12"}
-			    )
+			    ), 0)
 		formatString: 0
 		displayFolder: Advance Courses Participants
 		lineageTag: aef5a6d8-8a75-4df0-8f7f-425da0eb2df4
@@ -106,7 +108,7 @@ table 'Equitable Placement'
 			    [AP Participant Count], 
 			    [Total 11-12 Graders], 
 			    0
-			)
+			) + 0
 			```
 		formatString: 0.0%;-0.0%;0.0%
 		displayFolder: Advance Courses Participants
@@ -118,19 +120,19 @@ table 'Equitable Placement'
 			    [Dual-Credit Participant Count], 
 			    [Total 11-12 Graders], 
 			    0
-			)
+			) + 0
 			```
 		formatString: 0.0%;-0.0%;0.0%
 		displayFolder: Advance Courses Participants
 		lineageTag: 96137550-6adb-49b1-b5b4-c662d8e06cbe
 
 	measure 'IB Participation Rate' = ```
-			
+			COALESCE(
 			DIVIDE(
 			    [IB Participant Count], 
 			    [Total 11-12 Graders], 
 			    0
-			)
+			), 0)
 			```
 		formatString: 0.0%;-0.0%;0.0%
 		displayFolder: Advance Courses Participants
@@ -142,7 +144,7 @@ table 'Equitable Placement'
 			    'bi vw_DimK12Courses'[CourseSubject] == "Math",
 			    CONTAINSSTRING('bi vw_DimK12Courses'[CourseTitle], "Algebra II") || CONTAINSSTRING('bi vw_DimK12Courses'[CourseTitle], "Calculus"),
 			    'bi vw_FactK12StudentCourseSections'[GradeLevelCode] IN {"09", "10", "11", "12"}
-			)
+			) + 0
 		formatString: 0
 		displayFolder: Advance Courses Participants
 		lineageTag: bfc3b462-4335-45ff-8b46-ec9ac19d8bf7
@@ -158,7 +160,7 @@ table 'Equitable Placement'
 			    [Higher Level Math Participant Count], 
 			    [Total 09-12 Graders], 
 			    0
-			)
+			) + 0
 			```
 		formatString: 0.0%;-0.0%;0.0%
 		displayFolder: Advance Courses Participants

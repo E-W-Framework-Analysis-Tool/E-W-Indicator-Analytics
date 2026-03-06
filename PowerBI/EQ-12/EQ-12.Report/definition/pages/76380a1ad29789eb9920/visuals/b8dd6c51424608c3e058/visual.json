@@ -143,7 +143,7 @@
             "labelPosition": {
               "expr": {
                 "Literal": {
-                  "Value": "'InsideBase'"
+                  "Value": "'OutsideEnd'"
                 }
               }
             },
@@ -344,11 +344,74 @@
                   "Value": "40D"
                 }
               }
+            },
+            "dataLabelShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "dataLabelText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'ValueAndName'"
+                }
+              }
+            },
+            "dataLabelColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 5,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "dataLabelHorizontalPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "'right'"
+                }
+              }
+            },
+            "dataLabelVerticalPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "'above'"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'front'"
+                }
+              }
             }
           },
           "selector": {
             "metadata": "Equitable Placement.Algebra I Participation Rate",
             "id": "1"
+          }
+        }
+      ],
+      "error": [
+        {
+          "properties": {
+            "enabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Equitable Placement.Algebra I Participation Rate"
           }
         }
       ]

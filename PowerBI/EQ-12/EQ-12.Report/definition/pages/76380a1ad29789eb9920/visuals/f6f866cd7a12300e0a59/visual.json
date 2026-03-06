@@ -109,7 +109,7 @@
             "labelPosition": {
               "expr": {
                 "Literal": {
-                  "Value": "'InsideBase'"
+                  "Value": "'OutsideEnd'"
                 }
               }
             },
@@ -417,67 +417,6 @@
   },
   "filterConfig": {
     "filters": [
-      {
-        "name": "7099c399a28b40a7cff8",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimAssessments"
-              }
-            },
-            "Property": "AssessmentCode"
-          }
-        },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "b",
-              "Entity": "bi vw_DimAssessments",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "b"
-                          }
-                        },
-                        "Property": "AssessmentCode"
-                      }
-                    }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'ACT'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'SAT'"
-                        }
-                      }
-                    ]
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User"
-      },
       {
         "name": "98c6c014a9202e74322b",
         "field": {

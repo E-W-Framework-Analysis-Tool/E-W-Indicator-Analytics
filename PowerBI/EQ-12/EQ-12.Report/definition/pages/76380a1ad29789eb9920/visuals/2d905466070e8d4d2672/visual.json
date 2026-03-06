@@ -32,7 +32,6 @@
               "displayName": "Race & Ethnicity"
             }
           ],
-          "showAll": true,
           "fieldParameters": [
             {
               "parameterExpr": {
@@ -143,7 +142,14 @@
             "labelPosition": {
               "expr": {
                 "Literal": {
-                  "Value": "'InsideBase'"
+                  "Value": "'OutsideEnd'"
+                }
+              }
+            },
+            "showBlankAs": {
+              "expr": {
+                "Literal": {
+                  "Value": "'0'"
                 }
               }
             }
@@ -363,6 +369,22 @@
             "id": "1"
           }
         }
+      ],
+      "error": [
+        {
+          "properties": {
+            "enabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Equitable Placement.IB Participation Rate"
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -458,20 +480,6 @@
         "howCreated": "User"
       },
       {
-        "name": "b6ee4b85605519156663",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimRaces"
-              }
-            },
-            "Property": "RaceEthnicity"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "eae00d3ba4b291c9a29c",
         "field": {
           "Measure": {
@@ -484,6 +492,20 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "a7021a132b7aba45030e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimRaces"
+              }
+            },
+            "Property": "RaceEthnicity"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }
