@@ -1,0 +1,1552 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.0.0/schema.json",
+  "displayName": "SAT_ACT 2 - Hide Filters",
+  "name": "59ab7ceb44f7a2527265",
+  "options": {
+    "targetVisualNames": [],
+    "suppressData": true
+  },
+  "explorationState": {
+    "version": "1.11",
+    "activeSection": "cd64fbcc7cb2d3078b55",
+    "sections": {
+      "cd64fbcc7cb2d3078b55": {
+        "visualContainers": {
+          "eb3709be4d56c1c039b1": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "00789c385e26d0c6acfd",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Disaggregation"
+                        }
+                      },
+                      "Property": "Disaggregation Name"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "d",
+                                "Entity": "Disaggregation",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "d"
+                                            }
+                                          },
+                                          "Property": "Disaggregation Fields"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'''bi vw_DimRaces''[RaceEthnicity]'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Disaggregation"
+                        }
+                      },
+                      "Property": "Disaggregation Name"
+                    }
+                  }
+                ]
+              },
+              "cachedFilterDisplayItems": [
+                {
+                  "id": {
+                    "scopeId": {
+                      "Comparison": {
+                        "ComparisonKind": 0,
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "Disaggregation"
+                              }
+                            },
+                            "Property": "Disaggregation Fields"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'''bi vw_DimRaces''[RaceEthnicity]'"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "displayName": "Race & Ethnicity"
+                }
+              ]
+            }
+          },
+          "1e3c303ab9198bec9a0d": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "8ec32e6e413914d5e6ef",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimEnglishLearnerStatuses"
+                        }
+                      },
+                      "Property": "EnglishLearnerStatus"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimEnglishLearnerStatuses"
+                        }
+                      },
+                      "Property": "EnglishLearnerStatus"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "a7b70a269528a1c15745": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "98b1e950d7a2f8322dc0",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimK12Schools"
+                        }
+                      },
+                      "Property": "SeaOrganizationName"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimK12Schools"
+                        }
+                      },
+                      "Property": "SeaOrganizationName"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "83cbc1dff41ea6e19e61": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "b64165113c4fec618eb4": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "e0513b4489e788facf74": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "96ee2aa2d499ccca20dd",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimNeglectedOrDelinquentStatus"
+                        }
+                      },
+                      "Property": "NeglectedOrDelinquentStatus"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimNeglectedOrDelinquentStatus"
+                        }
+                      },
+                      "Property": "NeglectedOrDelinquentStatus"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "e963a67656d41cc74ac3": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "e1fcfb51c64466174644",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimRaces"
+                        }
+                      },
+                      "Property": "RaceEthnicity"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimRaces"
+                        }
+                      },
+                      "Property": "RaceEthnicity"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "c7c9524e9fdc5a852ce2": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "8855585b142714e0dacf",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimK12Schools"
+                        }
+                      },
+                      "Property": "SchoolTypeCode"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimK12Schools"
+                        }
+                      },
+                      "Property": "SchoolTypeCode"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "41cb9e11b8731f7d4dd8": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "1218635fb5a3f95a5c05",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimK12Demographics"
+                        }
+                      },
+                      "Property": "Gender"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimK12Demographics"
+                        }
+                      },
+                      "Property": "Gender"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "726aaf4c5a4cfbcf570a": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "41183a01b9e5c8fc620c",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimK12Schools"
+                        }
+                      },
+                      "Property": "K12SchoolName"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimK12Schools"
+                        }
+                      },
+                      "Property": "K12SchoolName"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "484f3ad620b22de6d8f4": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "cf7d6ddb8ae37c41334c",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimRaces"
+                        }
+                      },
+                      "Property": "RaceEthnicity"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimRaces"
+                        }
+                      },
+                      "Property": "RaceEthnicity"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "c070c56d36176aac6c3f": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "040980f203ea449908db",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimEconomicallyDisadvantagedStatuses"
+                        }
+                      },
+                      "Property": "EconomicDisadvantageStatus"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimEconomicallyDisadvantagedStatuses"
+                        }
+                      },
+                      "Property": "EconomicDisadvantageStatus"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "b623e2f18dc5169a9be8": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d9c9d2193fcb1b120257",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimCohortGraduationYears"
+                        }
+                      },
+                      "Property": "CohortGraduationYear"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimCohortGraduationYears"
+                        }
+                      },
+                      "Property": "CohortGraduationYear"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "028c1085388845a76b19": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "c70d92cfff40ccdf39e2",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimHomelessnessStatuses"
+                        }
+                      },
+                      "Property": "HomelessnessStatus"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimHomelessnessStatuses"
+                        }
+                      },
+                      "Property": "HomelessnessStatus"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "fb2dd3a8c12506605113": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "11b27d026b6f712e31cf",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimSchoolYears"
+                        }
+                      },
+                      "Property": "SchoolYear"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "b",
+                                "Entity": "bi vw_DimSchoolYears",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "b"
+                                            }
+                                          },
+                                          "Property": "SchoolYear"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "2026L"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimSchoolYears"
+                        }
+                      },
+                      "Property": "SchoolYear"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimSchoolYears"
+                        }
+                      },
+                      "Property": "SchoolYear"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "0cb767fb275e07101884": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "1e22f94156d0c1d79ef2",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimK12Schools"
+                        }
+                      },
+                      "Property": "LeaOrganizationName"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimK12Schools"
+                        }
+                      },
+                      "Property": "LeaOrganizationName"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "bbd7f4351d62ea76522b": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "110d2091bfd276e1ea07": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "c3db6d9b9e20f17c1908",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimDisabilityStatuses"
+                        }
+                      },
+                      "Property": "DisabilityStatus"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimDisabilityStatuses"
+                        }
+                      },
+                      "Property": "DisabilityStatus"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "adc94d5630193f45e41d": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "ef638746a8423cb89993",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimFosterCareStatuses"
+                        }
+                      },
+                      "Property": "FosterCareStatus"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimFosterCareStatuses"
+                        }
+                      },
+                      "Property": "FosterCareStatus"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "a6fa0819112d945d23e5": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "5ecb280caed0a0823f2b",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Globals"
+                        }
+                      },
+                      "Property": "Selected Filters"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "cardVisual",
+              "objects": {}
+            }
+          },
+          "6ccf298aa2f55becbf6f": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d756c5d7f055b5045263",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimRaces"
+                        }
+                      },
+                      "Property": "RaceEthnicity"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "53fb31ecf851f49236df",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "College Readiness"
+                        }
+                      },
+                      "Property": "ACT-SAT Participation Rate"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "clusteredBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "College Readiness"
+                        }
+                      },
+                      "Property": "ACT-SAT Participation Rate"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimRaces"
+                        }
+                      },
+                      "Property": "RaceEthnicity"
+                    }
+                  }
+                ]
+              },
+              "projections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimRaces"
+                        }
+                      },
+                      "Property": "RaceEthnicity"
+                    }
+                  }
+                ],
+                "Y": [
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "College Readiness"
+                        }
+                      },
+                      "Property": "ACT-SAT Participation Rate"
+                    }
+                  }
+                ]
+              },
+              "parameters": {
+                "Category": [
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Disaggregation"
+                          }
+                        },
+                        "Property": "Disaggregation Name"
+                      }
+                    },
+                    "index": 0,
+                    "length": 1
+                  }
+                ]
+              }
+            }
+          },
+          "94345f8dc8fb8ae05822": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "852d220f228181c0f985": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "4444b2912d3ed62405af": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "a4e0b8eaec3a9aa3b971": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "0670d282659d93c66612",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Globals"
+                        }
+                      },
+                      "Property": "Disaggregate by"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "cardVisual",
+              "objects": {}
+            }
+          },
+          "b06359f950836a37cf1f": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "c5e3824b6dc3dde2b032",
+                  "type": "Advanced",
+                  "expression": {
+                    "Arithmetic": {
+                      "Left": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Algebra I by 9th grade"
+                            }
+                          },
+                          "Property": "Algebra I Success Rate"
+                        }
+                      },
+                      "Right": {
+                        "ScopedEval": {
+                          "Expression": {
+                            "Measure": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Algebra I by 9th grade"
+                                }
+                              },
+                              "Property": "Algebra I Success Rate"
+                            }
+                          },
+                          "Scope": []
+                        }
+                      },
+                      "Operator": 3
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "f4720860a39e344fb401",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "TrendLineYears"
+                        }
+                      },
+                      "Property": "SchoolYear"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d17742f9a125700bd14d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "College Readiness"
+                        }
+                      },
+                      "Property": "ACT-SAT Participation Trend"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "College Readiness"
+                        }
+                      },
+                      "Property": "ACT-SAT Participation Trend"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "TrendLineYears"
+                        }
+                      },
+                      "Property": "SchoolYear"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "a714f52208a99741c822": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "6871e37fac57a896e535": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "e2cd398b5f995dc27a50",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "bi vw_DimK12Schools"
+                            }
+                          },
+                          "Hierarchy": "Geography"
+                        }
+                      },
+                      "Level": "SeaOrganizationName"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6906ad6161acbc4cba70",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "bi vw_DimK12Schools"
+                            }
+                          },
+                          "Hierarchy": "Geography"
+                        }
+                      },
+                      "Level": "LeaOrganizationName"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "dd3ab63f46c3b61880ee",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "bi vw_DimK12Schools"
+                            }
+                          },
+                          "Hierarchy": "Geography"
+                        }
+                      },
+                      "Level": "K12SchoolName"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "567823104b346fbba443",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "College Readiness"
+                        }
+                      },
+                      "Property": "ACT-SAT Participation Rate"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "columnChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "bi vw_DimK12Schools"
+                            }
+                          },
+                          "Hierarchy": "Geography"
+                        }
+                      },
+                      "Level": "SeaOrganizationName"
+                    }
+                  }
+                },
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "bi vw_DimK12Schools"
+                            }
+                          },
+                          "Hierarchy": "Geography"
+                        }
+                      },
+                      "Level": "LeaOrganizationName"
+                    }
+                  }
+                },
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "bi vw_DimK12Schools"
+                            }
+                          },
+                          "Hierarchy": "Geography"
+                        }
+                      },
+                      "Level": "K12SchoolName"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "bi vw_DimK12Schools"
+                            }
+                          },
+                          "Hierarchy": "Geography"
+                        }
+                      },
+                      "Level": "SeaOrganizationName"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "visualContainerGroups": {
+          "80fbfec02a1d82271640": {
+            "isHidden": true
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "true"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

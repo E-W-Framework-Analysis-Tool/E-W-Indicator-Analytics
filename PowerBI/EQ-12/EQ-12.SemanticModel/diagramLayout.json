@@ -1,0 +1,1232 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 4338.2633626184779,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 92.5
+          },
+          "nodeIndex": "bi vw_DimAssessments",
+          "nodeLineageTag": "1345d851-3124-4a3f-8a1f-f8906df77570",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 284,
+            "y": 92.5
+          },
+          "nodeIndex": "bi vw_DimAssessmentSubtests",
+          "nodeLineageTag": "22028065-0199-4de6-95c9-ce091ee7428a",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 568,
+            "y": 116.5
+          },
+          "nodeIndex": "bi vw_DimCohortGraduationYears",
+          "nodeLineageTag": "cf152aef-7800-458d-adc4-624ef6b610eb",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 852,
+            "y": 116.5
+          },
+          "nodeIndex": "bi vw_DimCohortYears",
+          "nodeLineageTag": "3823d081-15cb-49c2-a015-105103193c1d",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1136,
+            "y": 92.5
+          },
+          "nodeIndex": "bi vw_DimDisabilityStatuses",
+          "nodeLineageTag": "446724cf-18df-47a6-bbcd-2f356ecd81ed",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1420,
+            "y": 92.5
+          },
+          "nodeIndex": "bi vw_DimEconomicallyDisadvantagedStatuses",
+          "nodeLineageTag": "7218c01b-aaa4-48ed-ac32-97ac567bbae6",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1704,
+            "y": 92.5
+          },
+          "nodeIndex": "bi vw_DimEnglishLearnerStatuses",
+          "nodeLineageTag": "e1a39082-95ac-442c-b50d-2549ca694750",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1988,
+            "y": 92.5
+          },
+          "nodeIndex": "bi vw_DimFosterCareStatuses",
+          "nodeLineageTag": "3945d4ff-8140-473a-ab83-be544df72a1c",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2272,
+            "y": 92.5
+          },
+          "nodeIndex": "bi vw_DimGradeLevels",
+          "nodeLineageTag": "146faf17-3fdb-4714-adf3-d5620835c217",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2556,
+            "y": 92.5
+          },
+          "nodeIndex": "bi vw_DimHomelessnessStatuses",
+          "nodeLineageTag": "7cf6f8ef-bd42-461c-9105-8ed055969cb8",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2840,
+            "y": 92.5
+          },
+          "nodeIndex": "bi vw_DimK12Courses",
+          "nodeLineageTag": "9aba5c33-97ac-47ad-9eca-d2a76f107802",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3124,
+            "y": 44.5
+          },
+          "nodeIndex": "bi vw_DimK12Schools",
+          "nodeLineageTag": "e89199b1-c489-43ce-bddf-33c345aeb6e1",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3976,
+            "y": 92.5
+          },
+          "nodeIndex": "bi vw_DimRaces",
+          "nodeLineageTag": "f02bcb71-295e-4b95-8a18-b7d179a77803",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4260,
+            "y": 116.5
+          },
+          "nodeIndex": "bi vw_DimSchoolYears",
+          "nodeLineageTag": "6fc644b9-6c6b-424f-8d43-1f4185203878",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4828,
+            "y": 18.5
+          },
+          "nodeIndex": "bi vw_FactK12StudentAssessments",
+          "nodeLineageTag": "507771a1-5f6e-4ac5-9152-9fc47fdd08cc",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5112,
+            "y": 32.5
+          },
+          "nodeIndex": "bi vw_FactK12StudentCourseSections",
+          "nodeLineageTag": "1b0744dd-6d2a-4d99-8f90-d234b398caf0",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5396,
+            "y": 18.5
+          },
+          "nodeIndex": "bi vw_FactK12StudentEnrollments",
+          "nodeLineageTag": "e3ed783c-3048-498b-b6cb-73b74eb5134e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5680,
+            "y": 116.5
+          },
+          "nodeIndex": "bi vw_DimStudents",
+          "nodeLineageTag": "c5ac66a0-c196-468c-8f8d-a42626e29721",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5964,
+            "y": 92.5
+          },
+          "nodeIndex": "bi vw_DimK12Demographics",
+          "nodeLineageTag": "c6261036-c05f-4884-9a26-f3c12173cf69",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 6248,
+            "y": 116.5
+          },
+          "nodeIndex": "Algebra I by 9th grade",
+          "nodeLineageTag": "b9e2b3c4-c6f2-43db-85a1-a3b4b6c75aa8",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 6532,
+            "y": 116.5
+          },
+          "nodeIndex": "College Readiness",
+          "nodeLineageTag": "b9fc6faf-c77c-42d2-9680-6d4886af4801",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 6816,
+            "y": 92.5
+          },
+          "nodeIndex": "bi vw_DimK12CourseStatuses",
+          "nodeLineageTag": "490b39b4-6008-472e-8ceb-f31a7f40c8bb",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 7100,
+            "y": 104.5
+          },
+          "nodeIndex": "bi vw_DimNeglectedOrDelinquentStatus",
+          "nodeLineageTag": "874d6e04-0012-4066-a777-01948ede7b3d",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 7384,
+            "y": 92.5
+          },
+          "nodeIndex": "Disaggregation",
+          "nodeLineageTag": "1699548b-882f-4a8e-9499-5ca2a0617b42",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 7668,
+            "y": 80.5
+          },
+          "nodeIndex": "Early College Coursework Completion",
+          "nodeLineageTag": "1d42e52c-4914-45c0-8b06-1b8f5ea515a0",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 7952,
+            "y": 68.5
+          },
+          "nodeIndex": "Globals",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 8236,
+            "y": 68.5
+          },
+          "nodeIndex": "TrendLineYears",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 9088,
+            "y": 62.5
+          },
+          "nodeIndex": "TrendLineGraduationYears",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 9372,
+            "y": 62.5
+          },
+          "nodeIndex": "GradeLegend",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 9656,
+            "y": 62.5
+          },
+          "nodeIndex": "Course Level Legend",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 9940,
+            "y": 62.5
+          },
+          "nodeIndex": "Course Offering",
+          "nodeLineageTag": "d3345126-e524-4d28-9d9f-b56be842af23",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 10224,
+            "y": 86.5
+          },
+          "nodeIndex": "Hierarchy Picker",
+          "nodeLineageTag": "02b5b6d3-cb13-4c44-9785-c1817542192a",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 10508,
+            "y": 62.5
+          },
+          "nodeIndex": "LimitedGraduationYears",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 8854,
+            "y": 48.5
+          },
+          "nodeIndex": "bi vw_DimRuralStatuses",
+          "nodeLineageTag": "8e1e9323-23f3-4ae2-8cdd-fc66e2d71469",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "bi vw_DimK12StaffCategories",
+          "nodeLineageTag": "69dadcd3-2414-415d-96f3-55eb6c89d4ba",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "bi vw_DimStaffs",
+          "nodeLineageTag": "8ed3e596-d8d3-4429-bb56-ed36b328ad1d",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "bi vw_FactK12StaffCounts",
+          "nodeLineageTag": "7bea5587-bd5a-4fa0-932c-49963238b8e8",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Career Advising",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Geography Value Slicer",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Equitable Placement",
+          "nodeLineageTag": "410f3061-2889-41f1-9231-b0319ab252c1",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 42.136676527094487,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 1,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 629,
+            "y": 387
+          },
+          "nodeIndex": "bi vw_FactK12StudentEnrollments",
+          "nodeLineageTag": "e3ed783c-3048-498b-b6cb-73b74eb5134e",
+          "size": {
+            "height": 502,
+            "width": 312
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 279
+          },
+          "nodeIndex": "bi vw_DimDisabilityStatuses",
+          "nodeLineageTag": "446724cf-18df-47a6-bbcd-2f356ecd81ed",
+          "size": {
+            "height": 152,
+            "width": 287
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 342,
+            "y": 0
+          },
+          "nodeIndex": "bi vw_DimEconomicallyDisadvantagedStatuses",
+          "nodeLineageTag": "7218c01b-aaa4-48ed-ac32-97ac567bbae6",
+          "size": {
+            "height": 152,
+            "width": 407
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 105,
+            "y": 716
+          },
+          "nodeIndex": "bi vw_DimEnglishLearnerStatuses",
+          "nodeLineageTag": "e1a39082-95ac-442c-b50d-2549ca694750",
+          "size": {
+            "height": 152,
+            "width": 334
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1118,
+            "y": 400
+          },
+          "nodeIndex": "bi vw_DimFosterCareStatuses",
+          "nodeLineageTag": "3945d4ff-8140-473a-ab83-be544df72a1c",
+          "size": {
+            "height": 152,
+            "width": 315
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 1082,
+            "y": 886
+          },
+          "nodeIndex": "bi vw_DimHomelessnessStatuses",
+          "nodeLineageTag": "7cf6f8ef-bd42-461c-9105-8ed055969cb8",
+          "size": {
+            "height": 152,
+            "width": 321
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 1092,
+            "y": 680
+          },
+          "nodeIndex": "bi vw_DimNeglectedOrDelinquentStatus",
+          "nodeLineageTag": "874d6e04-0012-4066-a777-01948ede7b3d",
+          "size": {
+            "height": 145,
+            "width": 398
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1208,
+            "y": 193
+          },
+          "nodeIndex": "bi vw_DimGradeLevels",
+          "nodeLineageTag": "146faf17-3fdb-4714-adf3-d5620835c217",
+          "size": {
+            "height": 161,
+            "width": 318
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 897,
+            "y": 9
+          },
+          "nodeIndex": "bi vw_DimCohortYears",
+          "nodeLineageTag": "3823d081-15cb-49c2-a015-105103193c1d",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 242,
+            "y": 934
+          },
+          "nodeIndex": "bi vw_DimRuralStatuses",
+          "nodeLineageTag": "8e1e9323-23f3-4ae2-8cdd-fc66e2d71469",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Student Enrollments",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 2,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 763,
+            "y": 163
+          },
+          "nodeIndex": "bi vw_FactK12StudentCourseSections",
+          "nodeLineageTag": "1b0744dd-6d2a-4d99-8f90-d234b398caf0",
+          "size": {
+            "height": 579,
+            "width": 306
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1348,
+            "y": 108
+          },
+          "nodeIndex": "bi vw_DimK12Courses",
+          "nodeLineageTag": "9aba5c33-97ac-47ad-9eca-d2a76f107802",
+          "size": {
+            "height": 265,
+            "width": 281
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1286,
+            "y": 708
+          },
+          "nodeIndex": "bi vw_DimK12CourseStatuses",
+          "nodeLineageTag": "490b39b4-6008-472e-8ceb-f31a7f40c8bb",
+          "size": {
+            "height": 209,
+            "width": 385
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 249,
+            "y": 57
+          },
+          "nodeIndex": "bi vw_DimEconomicallyDisadvantagedStatuses",
+          "nodeLineageTag": "7218c01b-aaa4-48ed-ac32-97ac567bbae6",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 626,
+            "y": 12
+          },
+          "nodeIndex": "bi vw_DimDisabilityStatuses",
+          "nodeLineageTag": "446724cf-18df-47a6-bbcd-2f356ecd81ed",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 101,
+            "y": 382
+          },
+          "nodeIndex": "bi vw_DimEnglishLearnerStatuses",
+          "nodeLineageTag": "e1a39082-95ac-442c-b50d-2549ca694750",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 214,
+            "y": 601
+          },
+          "nodeIndex": "bi vw_DimFosterCareStatuses",
+          "nodeLineageTag": "3945d4ff-8140-473a-ab83-be544df72a1c",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 476,
+            "y": 823
+          },
+          "nodeIndex": "bi vw_DimHomelessnessStatuses",
+          "nodeLineageTag": "7cf6f8ef-bd42-461c-9105-8ed055969cb8",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 737,
+            "y": 823
+          },
+          "nodeIndex": "bi vw_DimNeglectedOrDelinquentStatus",
+          "nodeLineageTag": "874d6e04-0012-4066-a777-01948ede7b3d",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1497,
+            "y": 472
+          },
+          "nodeIndex": "bi vw_DimCohortGraduationYears",
+          "nodeLineageTag": "cf152aef-7800-458d-adc4-624ef6b610eb",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1075,
+            "y": 7
+          },
+          "nodeIndex": "bi vw_DimCohortYears",
+          "nodeLineageTag": "3823d081-15cb-49c2-a015-105103193c1d",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 985,
+            "y": 817
+          },
+          "nodeIndex": "Course Level Legend",
+          "nodeLineageTag": "8425c2f8-d7b6-4cf2-94c3-3dba1a997f86",
+          "size": {
+            "height": 145,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 95,
+            "y": 788
+          },
+          "nodeIndex": "bi vw_DimRuralStatuses",
+          "nodeLineageTag": "8e1e9323-23f3-4ae2-8cdd-fc66e2d71469",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Student Course Sections",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 3,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 462,
+            "y": 117
+          },
+          "nodeIndex": "bi vw_FactK12StudentAssessments",
+          "nodeLineageTag": "507771a1-5f6e-4ac5-9152-9fc47fdd08cc",
+          "size": {
+            "height": 347,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 90,
+            "y": 7
+          },
+          "nodeIndex": "bi vw_DimAssessments",
+          "nodeLineageTag": "1345d851-3124-4a3f-8a1f-f8906df77570",
+          "size": {
+            "height": 152,
+            "width": 310
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 837,
+            "y": 15
+          },
+          "nodeIndex": "bi vw_DimAssessmentSubtests",
+          "nodeLineageTag": "22028065-0199-4de6-95c9-ce091ee7428a",
+          "size": {
+            "height": 236,
+            "width": 385
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 461,
+            "y": 582
+          },
+          "nodeIndex": "bi vw_DimGradeLevels",
+          "nodeLineageTag": "146faf17-3fdb-4714-adf3-d5620835c217",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Student Assessments",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 4,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 410,
+            "y": 0
+          },
+          "nodeIndex": "bi vw_DimSchoolYears",
+          "nodeLineageTag": "6fc644b9-6c6b-424f-8d43-1f4185203878",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 97,
+            "y": 489
+          },
+          "nodeIndex": "bi vw_FactK12StudentEnrollments",
+          "nodeLineageTag": "e3ed783c-3048-498b-b6cb-73b74eb5134e",
+          "size": {
+            "height": 478,
+            "width": 320
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 615,
+            "y": 494
+          },
+          "nodeIndex": "bi vw_FactK12StudentCourseSections",
+          "nodeLineageTag": "1b0744dd-6d2a-4d99-8f90-d234b398caf0",
+          "size": {
+            "height": 463,
+            "width": 350
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 1286,
+            "y": 494
+          },
+          "nodeIndex": "bi vw_FactK12StudentAssessments",
+          "nodeLineageTag": "507771a1-5f6e-4ac5-9152-9fc47fdd08cc",
+          "size": {
+            "height": 375,
+            "width": 335
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 1026,
+            "y": 0
+          },
+          "nodeIndex": "bi vw_DimK12Schools",
+          "nodeLineageTag": "e89199b1-c489-43ce-bddf-33c345aeb6e1",
+          "size": {
+            "height": 378,
+            "width": 323
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 1429,
+            "y": 0
+          },
+          "nodeIndex": "bi vw_DimStudents",
+          "nodeLineageTag": "c5ac66a0-c196-468c-8f8d-a42626e29721",
+          "size": {
+            "height": 184,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 31,
+            "y": 1
+          },
+          "nodeIndex": "bi vw_DimCohortGraduationYears",
+          "nodeLineageTag": "cf152aef-7800-458d-adc4-624ef6b610eb",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 686,
+            "y": -8
+          },
+          "nodeIndex": "LimitedGraduationYears",
+          "nodeLineageTag": "e2cc9400-e1b9-4272-97fd-2262defd7048",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1632,
+            "y": 856
+          },
+          "nodeIndex": "GradeLegend",
+          "nodeLineageTag": "4227a442-2754-40cf-9e13-81a441cf2876",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Fact Tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 5,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 416,
+            "y": 240
+          },
+          "nodeIndex": "bi vw_DimStudents",
+          "nodeLineageTag": "c5ac66a0-c196-468c-8f8d-a42626e29721",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 131,
+            "y": 0
+          },
+          "nodeIndex": "bi vw_DimRaces",
+          "nodeLineageTag": "f02bcb71-295e-4b95-8a18-b7d179a77803",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 732,
+            "y": 0
+          },
+          "nodeIndex": "bi vw_DimK12Demographics",
+          "nodeLineageTag": "c6261036-c05f-4884-9a26-f3c12173cf69",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Student Static Attributes",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 6,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 363,
+            "y": 302
+          },
+          "nodeIndex": "bi vw_FactK12StaffCounts",
+          "nodeLineageTag": "7bea5587-bd5a-4fa0-932c-49963238b8e8",
+          "size": {
+            "height": 306,
+            "width": 393
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 120,
+            "y": 38
+          },
+          "nodeIndex": "bi vw_DimStaffs",
+          "nodeLineageTag": "8ed3e596-d8d3-4429-bb56-ed36b328ad1d",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 860,
+            "y": 58
+          },
+          "nodeIndex": "bi vw_DimK12Schools",
+          "nodeLineageTag": "e89199b1-c489-43ce-bddf-33c345aeb6e1",
+          "size": {
+            "height": 435,
+            "width": 358
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 905,
+            "y": 657
+          },
+          "nodeIndex": "bi vw_DimK12StaffCategories",
+          "nodeLineageTag": "69dadcd3-2414-415d-96f3-55eb6c89d4ba",
+          "size": {
+            "height": 217,
+            "width": 348
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 82,
+            "y": 686
+          },
+          "nodeIndex": "bi vw_DimSchoolYears",
+          "nodeLineageTag": "6fc644b9-6c6b-424f-8d43-1f4185203878",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Staff  Counts",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 7,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 234,
+            "y": 634
+          },
+          "nodeIndex": "Hierarchy Picker",
+          "nodeLineageTag": "02b5b6d3-cb13-4c44-9785-c1817542192a",
+          "size": {
+            "height": 192,
+            "width": 284
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 669,
+            "y": 616
+          },
+          "nodeIndex": "Geography Value Slicer",
+          "nodeLineageTag": "6e35b803-1c8a-4808-b532-ad46dc1004d7",
+          "size": {
+            "height": 196,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1149,
+            "y": 350
+          },
+          "nodeIndex": "bi vw_DimK12Schools",
+          "nodeLineageTag": "e89199b1-c489-43ce-bddf-33c345aeb6e1",
+          "size": {
+            "height": 443,
+            "width": 234
+          },
+          "zIndex": 2
+        }
+      ],
+      "name": "Geography Slicers",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Student Course Sections",
+  "defaultDiagram": "All tables"
+}

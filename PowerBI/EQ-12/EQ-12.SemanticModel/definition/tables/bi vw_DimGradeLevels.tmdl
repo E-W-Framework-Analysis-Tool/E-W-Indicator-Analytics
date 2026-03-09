@@ -1,0 +1,38 @@
+table 'bi vw_DimGradeLevels'
+	lineageTag: 146faf17-3fdb-4714-adf3-d5620835c217
+
+	column GradeLevelGroup
+		dataType: string
+		lineageTag: 0ce0b257-9836-4dde-a28d-1df3686e60d3
+		summarizeBy: none
+		sourceColumn: GradeLevelGroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column GradeLevelCode
+		dataType: string
+		lineageTag: 1be12bb1-3f57-4b2a-8a70-4caae68020b3
+		summarizeBy: none
+		sourceColumn: GradeLevelCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column GradeLevelDescription
+		dataType: string
+		lineageTag: 7ed98a85-e1fa-4aaf-9fa2-31b9a2524bee
+		summarizeBy: none
+		sourceColumn: GradeLevelDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bi vw_DimGradeLevels' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    bi_vw_DimGradeLevels = Source{[Schema="bi",Item="vw_DimGradeLevels"]}[Data]
+				in
+				    bi_vw_DimGradeLevels
+
+	annotation PBI_ResultType = Table
+

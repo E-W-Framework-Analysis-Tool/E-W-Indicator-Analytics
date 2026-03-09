@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/18/2026 1:20:47 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LATITUDE"
+  DTS:CreatorName="SPI-GLOBAL\e74099"
+  DTS:DTSID="{5E51BBAC-0710-4B48-935A-10409211C75C}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{C40AA7E7-425F-4FC2-A595-E9C0954EF4F8}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\CEDS DWH to Staging Dimensions"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{2631a69f-9d4c-4065-bf20-c3f865891534}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CEDS DWH to Staging Dimensions"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>LoadStagingDimensions.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\CEDS DWH to Staging Facts"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{c4c949d3-fa35-4451-b3c4-02ee8b82e960}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CEDS DWH to Staging Facts"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>LoadStagingFacts.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DashboardDB - Staging to Reporting"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{E4D28210-BD89-421D-BCB4-6011F409B4F3}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DashboardDB - Staging to Reporting"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>LoadReporting.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{DC14F856-6A98-4F1C-88D2-7FD48951C1DB}"
+      DTS:From="Package\CEDS DWH to Staging Dimensions"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DashboardDB - Staging to Reporting" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{F246A175-6881-4AE4-9E80-890E1FFF2F7B}"
+      DTS:From="Package\CEDS DWH to Staging Facts"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\DashboardDB - Staging to Reporting" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="252,42"
+          Id="Package\CEDS DWH to Staging Dimensions"
+          TopLeft="60,60" />
+        <NodeLayout
+          Size="252,42"
+          Id="Package\CEDS DWH to Staging Facts"
+          TopLeft="60,153" />
+        <NodeLayout
+          Size="258,42"
+          Id="Package\DashboardDB - Staging to Reporting"
+          TopLeft="438,106" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="312,81">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="126,40.3333333333333"
+              Start="0,0"
+              End="118.5,40.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="68.8256880733945,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="68.8256880733945,0"
+                    Point2="72.8256880733945,0"
+                    Point3="72.8256880733945,4" />
+                  <mssgle:LineSegment
+                    End="72.8256880733945,36.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="72.8256880733945,36.3333333333333"
+                    Point2="72.8256880733945,40.3333333333333"
+                    Point3="76.8256880733945,40.3333333333333" />
+                  <mssgle:LineSegment
+                    End="118.5,40.3333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="312,174">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="126,-41.3333333333333"
+              Start="0,0"
+              End="118.5,-41.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="68.8256880733945,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="68.8256880733945,0"
+                    Point2="72.8256880733945,0"
+                    Point3="72.8256880733945,-4" />
+                  <mssgle:LineSegment
+                    End="72.8256880733945,-37.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="72.8256880733945,-37.3333333333333"
+                    Point2="72.8256880733945,-41.3333333333333"
+                    Point3="76.8256880733945,-41.3333333333333" />
+                  <mssgle:LineSegment
+                    End="118.5,-41.3333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,68 @@
+table 'Early College Coursework Completion'
+	lineageTag: 1d42e52c-4914-45c0-8b06-1b8f5ea515a0
+
+	measure 'Early College Pass Count' =
+			CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[K12StudentId]),
+			    'bi vw_DimK12CourseStatuses'[CourseLevelCharacteristicCode] in {"73048", "00575", "00574"},
+			    'bi vw_FactK12StudentCourseSections'[LetterGradeEarned] <> "F",
+			    KEEPFILTERS(CALCULATETABLE('bi vw_DimGradeLevels', 'bi vw_DimGradeLevels'[GradeLevelCode] IN {"11", "12"})),
+			    KEEPFILTERS(CALCULATETABLE('bi vw_DimK12CourseStatuses', 'bi vw_DimK12CourseStatuses'[CourseLevel] IN {"AP", "IB", "Dual Credit"}))
+			    )
+		formatString: 0
+		lineageTag: 270b15b0-65c2-4780-8f7b-01e27b103143
+
+	measure 'Early College Total Count' =
+			CALCULATE(
+			    DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[K12StudentId]),
+			    'bi vw_DimK12CourseStatuses'[CourseLevelCharacteristicCode] in {"73048", "00575", "00574"},
+			    'bi vw_DimGradeLevels'[GradeLevelCode] IN {"11", "12"}
+			    )
+		formatString: 0
+		lineageTag: f5fc74e4-5fb1-4a95-8533-2669f340f3af
+
+	measure 'Coursework Completion' = IF('Early College Coursework Completion'[Early College Pass Count] = 0, 0, DIVIDE([Early College Pass Count], [Early College Total Count], 0))
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: e66cad81-58e0-4639-958e-b3fbc8f11ca4
+
+	measure 'Early College Coursework Disaggregate Chart Title' =
+			
+			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
+			VAR SelectedYearTitle = "Completion of at least 1 early college course "& IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			RETURN
+			SelectedYearTitle
+		lineageTag: c1f42071-12da-4fa2-aea0-73e4cca74dfc
+
+	measure 'Coursework Completion Trend' =
+			
+			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
+			VAR MaxCohortYear = CALCULATE(MAX('bi vw_DimCohortYears'[CohortYear]), ALL('bi vw_DimCohortYears'))
+			RETURN
+			IF(SelectedTrendYear <= MaxCohortYear,
+			CALCULATE(
+			    'Early College Coursework Completion'[Coursework Completion],
+			    'bi vw_DimSchoolYears'[SchoolYear] = SelectedTrendYear,
+			    REMOVEFILTERS('bi vw_DimSchoolYears')
+			), BLANK())
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: a3655212-f920-4c62-9806-d86b75b939f4
+
+	measure 'Course Completion Disaggregate Chart Title' =
+			
+			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
+			VAR SelectedYearTitle = "Completion of at least 1 early college course " & IF(not ISBLANK([Disaggregate by]), "by '" & [Disaggregate by] & "' "," ") & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			RETURN
+			SelectedYearTitle
+		lineageTag: d304ac0c-0ad8-45a0-8122-c2e4b71fa759
+
+	partition 'Early College Coursework Completion' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

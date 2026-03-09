@@ -1,0 +1,88 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "807f16dd3760d082d75d",
+  "position": {
+    "x": 0.65439672801636,
+    "y": 75.255623721881392,
+    "z": 1,
+    "height": 82.453987730061357,
+    "width": 1279.3456032719837,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Instructions for using these visualizations:",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#0b2949"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Use the Data Filter at the top of the page to filter results to certain academic institutions, disaggregates and other characteristics you want to focus on.",
+                    "textStyle": {
+                      "fontSize": "9pt",
+                      "color": "#0b2949"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Use the dashboard buttons to shift the level of organization displayed (e.g., show LEA results instead of SEA level) or where available, to focus on a particular Grade Level or Course Type",
+                    "textStyle": {
+                      "fontSize": "9pt",
+                      "color": "#0b2949"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Filters are unique to each dashboard visualization (they are not global).",
+                    "textStyle": {
+                      "fontSize": "9pt",
+                      "color": "#0b2949"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Instruction'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

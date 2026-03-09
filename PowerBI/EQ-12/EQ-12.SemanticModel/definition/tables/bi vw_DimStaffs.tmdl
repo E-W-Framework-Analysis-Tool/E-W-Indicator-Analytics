@@ -1,0 +1,21 @@
+table 'bi vw_DimStaffs'
+	lineageTag: 8ed3e596-d8d3-4429-bb56-ed36b328ad1d
+
+	column DimK12StaffId
+		dataType: int64
+		formatString: 0
+		lineageTag: 210b58da-dd3b-451b-94ce-7fdce77ff605
+		summarizeBy: none
+		sourceColumn: DimK12StaffId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bi vw_DimStaffs' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    bi_vw_DimStaffs = Source{[Schema="bi",Item="vw_DimStaffs"]}[Data]
+				in
+				    bi_vw_DimStaffs
+

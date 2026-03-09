@@ -1,0 +1,47 @@
+table 'bi vw_DimK12CourseStatuses'
+	lineageTag: 490b39b4-6008-472e-8ceb-f31a7f40c8bb
+
+	column DimK12CourseStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: 20dfc11f-82ea-4e9b-9ee6-b793a7bc8889
+		summarizeBy: none
+		sourceColumn: DimK12CourseStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column CourseLevelCharacteristicCode
+		dataType: string
+		lineageTag: 0daef2d0-673f-4c56-a57d-ba25df48df11
+		summarizeBy: none
+		sourceColumn: CourseLevelCharacteristicCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column CourseLevelCharacteristicDescription
+		dataType: string
+		lineageTag: 67d72c6f-b784-46d2-ab39-34dd94ccb7b9
+		summarizeBy: none
+		sourceColumn: CourseLevelCharacteristicDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column CourseLevel
+		dataType: string
+		lineageTag: 5b7355c2-dc69-4d2f-8aa2-176d77b10432
+		summarizeBy: none
+		sourceColumn: CourseLevel
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bi vw_DimK12CourseStatuses' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    bi_vw_DimK12CourseStatuses = Source{[Schema="bi",Item="vw_DimK12CourseStatuses"]}[Data]
+				in
+				    bi_vw_DimK12CourseStatuses
+
+	annotation PBI_ResultType = Table
+

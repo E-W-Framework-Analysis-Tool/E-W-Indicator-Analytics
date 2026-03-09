@@ -1,0 +1,68 @@
+table 'Algebra I by 9th grade'
+	lineageTag: b9e2b3c4-c6f2-43db-85a1-a3b4b6c75aa8
+
+	measure 'Algebra I Pass Count' =
+			CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentCourseSections'[K12StudentId]),
+			    CONTAINSSTRING('bi vw_DimK12Courses'[CourseTitle], "Algebra I"),
+			    'bi vw_FactK12StudentCourseSections'[LetterGradeEarned] <> "F",
+			    'bi vw_FactK12StudentCourseSections'[GradeLevelCode] = "09",
+			    KEEPFILTERS(CALCULATETABLE('bi vw_DimStudents', 'bi vw_FactK12StudentEnrollments'[GradeLevelCode] = "09",
+			    KEEPFILTERS(CALCULATETABLE('bi vw_DimGradeLevels', 'bi vw_FactK12StudentEnrollments'[GradeLevelCode] = "09"
+			    )))))
+		formatString: 0
+		displayFolder: Algebra I Completion Measures
+		lineageTag: a44bf016-fb7a-4068-afc1-289e3a32477f
+
+	measure 'Algebra I Success Rate' = IF([Total 9th Graders] = 0, 0, DIVIDE([Algebra I Pass Count], [Total 9th Graders], 0))
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Algebra I Completion Measures
+		lineageTag: bce3ee81-d942-46a3-b108-dd2c9d3cc84a
+
+	measure 'Total 9th Graders' = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentEnrollments'[K12StudentId]), 'bi vw_DimGradeLevels'[GradeLevelCode]= "09")
+		formatString: 0
+		displayFolder: Algebra I Completion Measures
+		lineageTag: e5aa32f6-84ac-491b-b4f3-21905ffa9b94
+
+	measure 'Algebra I Disaggregate Chart Title' =
+			
+			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
+			VAR SelectedYearTitle = "Algebra I " & IF(not ISBLANK([Disaggregate by]), "by '" & [Disaggregate by] & "' "," ") & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			RETURN
+			SelectedYearTitle
+		displayFolder: Algebra I Completion Measures
+		lineageTag: b4dc14e3-74b2-4e87-9242-a1a98aab7414
+
+	measure 'Algebra Trend' =
+			
+			VAR SelectedTrendYear = SELECTEDVALUE('TrendLineYears'[SchoolYear])
+			RETURN
+			CALCULATE(
+			    [Algebra I Success Rate],
+			    'bi vw_DimSchoolYears'[SchoolYear] = SelectedTrendYear,
+			    REMOVEFILTERS('bi vw_DimSchoolYears')
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Algebra I Completion Measures
+		lineageTag: 75f698d7-f7e7-4297-a1f9-c968924d5493
+
+	measure 'Algebra I Summary Chart Title' =
+			
+			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
+			VAR SelectedYearTitle = "Algebra I " & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			RETURN
+			SelectedYearTitle
+		displayFolder: Algebra I Completion Measures
+		lineageTag: d0f74fd9-4424-41de-8c5b-9ff920abf600
+
+	partition 'Algebra I by 9th grade' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:DelayValidation="True"
+  DTS:ObjectName="CEDS-DWH"
+  DTS:DTSID="{D41EB2B6-A586-49A5-A9CB-BCA8E8B2703B}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">"Data Source="+ @[$Project::SourceServer] 
++ (@[$Project::SourceServerPort] &gt; 0 ? "," +  (DT_WSTR, 10) @[$Project::SourceServerPort] : "")
++";Initial Catalog="+@[$Project::SourceDatabase]
++ ";Provider=MSOLEDBSQL"
++ (@[$Project::SourceIntegratedSecurity] == false ? ";User Id="+@[$Project::SourceSqlUsername] + ";Password=" + @[$Project::TargetSqlPassword] :";Integrated Security=SSPI")
++";Trust Server Certificate=True;Persist Security Info=True;"</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=127.0.0.1,14331;Initial Catalog=CEDS-DW-V13-Reporting;Provider=MSOLEDBSQL;Integrated Security=SSPI;Trust Server Certificate=True;Persist Security Info=True;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

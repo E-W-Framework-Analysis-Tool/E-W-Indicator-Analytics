@@ -1,0 +1,281 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "8bc0df4a4ca2727cc79a",
+  "position": {
+    "x": 862.00101574403243,
+    "y": 92.310817673946161,
+    "z": 3002,
+    "height": 402,
+    "width": 412.79837480954797,
+    "tabOrder": 3002
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Education-to-Workforce Indicator Framework links:",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "12pt",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Learn more about the Education-to-Workforce Framework by clicking the web links below:",
+                    "textStyle": {
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Essential Question 12",
+                    "textStyle": {
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/essential-questions/do-students-have-access-and-complete-rigorous-and-accelerated-college"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Related Indicators:",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "12pt",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Outcomes & Milestones",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI Semibold",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Successful completion of Algebra I by 9th grade",
+                    "textStyle": {
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/successful-completion-algebra-i-9th-grade"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "College preparatory coursework completion",
+                    "textStyle": {
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/college-preparatory-coursework-completion"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Early college coursework completion",
+                    "textStyle": {
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/early-college-coursework-completion"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "SAT and ACT participation and performance",
+                    "textStyle": {
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/sat-and-act-participation-and-performance"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "E-W System Conditions",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI Semibold",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Access to college preparatory coursework",
+                    "textStyle": {
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/access-college-preparatory-coursework"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Access to early college coursework",
+                    "textStyle": {
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/access-early-college-coursework"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Equitable placement in gifted programs and rigorous coursework",
+                    "textStyle": {
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/equitable-placement-gifted-programs-and-rigorous-coursework"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Access to quality, culturally responsive curricula",
+                    "textStyle": {
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/access-quality-culturally-responsive-curricula"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Access to college and career advising",
+                    "textStyle": {
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/access-college-and-career-advising"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#cecfd2'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

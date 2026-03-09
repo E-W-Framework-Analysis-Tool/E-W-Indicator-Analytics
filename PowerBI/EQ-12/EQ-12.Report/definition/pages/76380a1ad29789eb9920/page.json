@@ -1,0 +1,45 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "76380a1ad29789eb9920",
+  "displayName": "Equitable Placement in Rigorous Courses",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "pageBinding": {
+    "name": "e2389baa51e718c91682",
+    "type": "Default",
+    "parameters": []
+  },
+  "objects": {
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "242L"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "fd7d5c6f204132cb61be",
+      "target": "d64118dde40588195c0c",
+      "type": "DataFilter"
+    },
+    {
+      "source": "d64118dde40588195c0c",
+      "target": "fd7d5c6f204132cb61be",
+      "type": "NoFilter"
+    },
+    {
+      "source": "d64118dde40588195c0c",
+      "target": "1054c9b410eac2493370",
+      "type": "NoFilter"
+    }
+  ]
+}

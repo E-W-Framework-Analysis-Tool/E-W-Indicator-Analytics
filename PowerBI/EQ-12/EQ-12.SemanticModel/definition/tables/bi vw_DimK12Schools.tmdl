@@ -1,0 +1,93 @@
+table 'bi vw_DimK12Schools'
+	lineageTag: e89199b1-c489-43ce-bddf-33c345aeb6e1
+
+	column DimK12SchoolId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f9c76ec6-fe3e-4dc7-8f7f-504816d1744d
+		summarizeBy: none
+		sourceColumn: DimK12SchoolId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SchoolTypeCode
+		dataType: string
+		lineageTag: 0ec63205-13a6-49db-97be-7c6d7b8664ee
+		summarizeBy: none
+		sourceColumn: SchoolTypeCode
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SeaOrganizationName
+		dataType: string
+		lineageTag: 65e91868-9eed-40cd-9d58-ed6001e93dfc
+		summarizeBy: none
+		sourceColumn: SeaOrganizationName
+
+		annotation SummarizationSetBy = Automatic
+
+	column LeaOrganizationName
+		dataType: string
+		lineageTag: de32e776-30ab-4d61-8197-25f46f7e42f2
+		summarizeBy: none
+		sourceColumn: LeaOrganizationName
+
+		annotation SummarizationSetBy = Automatic
+
+	column K12SchoolName
+		dataType: string
+		lineageTag: 8d4c0b82-930c-40e3-aa46-1ac3a4cf883b
+		summarizeBy: none
+		sourceColumn: K12SchoolName
+
+		annotation SummarizationSetBy = Automatic
+
+	column LeaTypeDescription
+		dataType: string
+		lineageTag: 4216d28e-9994-4d3d-bbf4-a23186e088f6
+		summarizeBy: none
+		sourceColumn: LeaTypeDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column EducationLevel
+		dataType: string
+		lineageTag: 7503e81c-6c14-4b88-8227-a8baf9fc6b1c
+		summarizeBy: none
+		sourceColumn: EducationLevel
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy Geography
+		lineageTag: fc91778c-0d90-43a4-9140-558ba5808f66
+
+		level SeaOrganizationName
+			lineageTag: 6bde98ed-1a1c-4aa6-a406-039b78203a5e
+			column: SeaOrganizationName
+
+		level LeaOrganizationName
+			lineageTag: 66059d21-b0a6-4e15-8354-e0a83d2eb4f6
+			column: LeaOrganizationName
+
+		level K12SchoolName
+			lineageTag: 90b83a72-3169-4cf4-9a69-fdeda2d01e05
+			column: K12SchoolName
+
+	partition 'bi vw_DimK12Schools' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    bi_vw_DimK12Schools = Source{[Schema="bi",Item="vw_DimK12Schools"]}[Data]
+				in
+				    bi_vw_DimK12Schools
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+

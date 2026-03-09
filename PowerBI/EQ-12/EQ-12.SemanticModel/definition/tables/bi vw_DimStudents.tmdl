@@ -1,0 +1,47 @@
+table 'bi vw_DimStudents'
+	lineageTag: c5ac66a0-c196-468c-8f8d-a42626e29721
+
+	column DimK12StudentId
+		dataType: int64
+		formatString: 0
+		lineageTag: d3530230-0ade-4b5d-aa43-9c133bdfe5a2
+		summarizeBy: none
+		sourceColumn: DimK12StudentId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column K12DemographicId
+		dataType: int64
+		formatString: 0
+		lineageTag: 3c85a1d0-4ec8-48c0-b993-4827c8aead92
+		summarizeBy: none
+		sourceColumn: K12DemographicId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RaceId
+		dataType: int64
+		formatString: 0
+		lineageTag: efdc95f0-1a20-4e3e-8ad3-25f42db92883
+		summarizeBy: none
+		sourceColumn: RaceId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bi vw_DimStudents' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    bi_vw_DimStudents = Source{[Schema="bi",Item="vw_DimStudents"]}[Data]
+				in
+				    bi_vw_DimStudents
+
+	annotation PBI_ResultType = Table
+

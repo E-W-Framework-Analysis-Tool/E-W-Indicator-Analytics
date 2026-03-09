@@ -1,0 +1,29 @@
+table 'bi vw_DimRaces'
+	lineageTag: c24686c8-e0e1-4b78-bb4d-f49ea6066bcb
+
+	column DimRaceId
+		dataType: int64
+		formatString: 0
+		lineageTag: d762d235-a2ea-4ce0-ad88-a5c07d6adfc6
+		summarizeBy: count
+		sourceColumn: DimRaceId
+
+		annotation SummarizationSetBy = Automatic
+
+	column RaceEthnicity
+		dataType: string
+		lineageTag: a0bc46b5-1c68-472e-9213-415ab6e74432
+		summarizeBy: none
+		sourceColumn: RaceEthnicity
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bi vw_DimRaces' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    bi_vw_DimRaces = Source{[Schema="bi",Item="vw_DimRaces"]}[Data]
+				in
+				    bi_vw_DimRaces
+

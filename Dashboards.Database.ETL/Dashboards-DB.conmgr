@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:DelayValidation="True"
+  DTS:ObjectName="Dashboards-DB"
+  DTS:DTSID="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">"Data Source="+ @[$Project::TargetServer] 
++ (@[$Project::TargetServerPort] &gt; 0 ? "," +  (DT_WSTR, 10) @[$Project::TargetServerPort] : "")
++";Initial Catalog="+@[$Project::TargetDatabase]
++ ";Provider=MSOLEDBSQL"
++ (@[$Project::TargetIntegratedSecurity] == false ? ";User Id="+@[$Project::TargetSqlUsername] + ";Password=" + @[$Project::TargetSqlPassword] :";Integrated Security=SSPI")
++";Trust Server Certificate=True;Persist Security Info=True;"</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=127.0.0.1,14331;Initial Catalog=Dashboards;Provider=MSOLEDBSQL;Integrated Security=SSPI;Trust Server Certificate=True;Persist Security Info=True;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

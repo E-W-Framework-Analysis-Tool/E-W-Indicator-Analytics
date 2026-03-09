@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "EQ-19"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5a967845-5f59-4b6d-a696-9997cea4233c"
+  }
+}

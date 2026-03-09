@@ -1,0 +1,179 @@
+table 'bi vw_FactK12StudentCourseSections'
+	lineageTag: 1b0744dd-6d2a-4d99-8f90-d234b398caf0
+
+	column SchoolYear
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 4337bd37-bc4c-4056-87f4-c625f20ac31f
+		summarizeBy: none
+		sourceColumn: SchoolYear
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column K12SchoolId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 28b24586-ef98-4bc9-a2a8-d98340dae214
+		summarizeBy: none
+		sourceColumn: K12SchoolId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column GradeLevelCode
+		dataType: string
+		lineageTag: a9ea60ee-9ca5-4dca-babb-af4702db03e2
+		summarizeBy: none
+		sourceColumn: GradeLevelCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column K12CourseId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 9c612535-9aa6-49c9-864e-9857a10ad628
+		summarizeBy: none
+		sourceColumn: K12CourseId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column K12StudentId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e35237e4-8840-41d7-9df2-799fe6017128
+		summarizeBy: none
+		sourceColumn: K12StudentId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column K12CourseStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: 424f17e3-f54c-447d-b4cd-e0823657a01a
+		summarizeBy: none
+		sourceColumn: K12CourseStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column LetterGradeEarned
+		dataType: string
+		lineageTag: ed4f36de-5561-4dbe-aa04-1a1da41f8244
+		summarizeBy: none
+		sourceColumn: LetterGradeEarned
+
+		annotation SummarizationSetBy = Automatic
+
+	column CohortGraduationYear
+		dataType: int64
+		formatString: 0
+		lineageTag: e1e54d70-0d72-45dd-a9fb-ee34df83a0ed
+		summarizeBy: none
+		sourceColumn: CohortGraduationYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column EnglishLearnerStatusId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 176b494e-8341-4a61-8753-abe9bf896123
+		summarizeBy: none
+		sourceColumn: EnglishLearnerStatusId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column HomelessnessStatusId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 04e10e6d-fadd-48f4-a05f-defad68f1097
+		summarizeBy: none
+		sourceColumn: HomelessnessStatusId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EconomicallyDisadvantagedStatusId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 1c295851-a73b-4def-98e2-5ec0cabd3009
+		summarizeBy: none
+		sourceColumn: EconomicallyDisadvantagedStatusId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FosterCareStatusId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: dbf36e77-75f8-4699-b09d-9ce234e07673
+		summarizeBy: none
+		sourceColumn: FosterCareStatusId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOrDStatusId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 504ea69f-2d0e-4d7a-a0b6-1014751d58c0
+		summarizeBy: none
+		sourceColumn: NOrDStatusId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DisabilityStatusId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 0e7480e0-708e-42f9-be0e-1be2570e49ba
+		summarizeBy: none
+		sourceColumn: DisabilityStatusId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RuralStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: b14da816-1c68-4db8-a353-71b4da75cca4
+		summarizeBy: none
+		sourceColumn: RuralStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bi vw_FactK12StudentCourseSections' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    bi_vw_FactK12StudentCourseSections = Source{[Schema="bi",Item="vw_FactK12StudentCourseSections"]}[Data]
+				in
+				    bi_vw_FactK12StudentCourseSections
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

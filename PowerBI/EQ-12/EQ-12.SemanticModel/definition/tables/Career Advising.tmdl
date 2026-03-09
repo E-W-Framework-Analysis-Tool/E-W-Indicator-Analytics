@@ -1,0 +1,68 @@
+table 'Career Advising'
+	lineageTag: a513b3d0-0b42-4fb0-aab3-1ee05677f59b
+
+	measure 'Total HS Students' = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentEnrollments'[K12StudentId]), 'bi vw_FactK12StudentEnrollments'[GradeLevelCode] IN {"09", "10", "11", "12"})
+		formatString: 0
+		lineageTag: cec007cf-1824-477d-ab6b-20d80169b1e5
+
+	measure 'Total FTE Counselors' =
+			
+			CALCULATE(
+			    SUMX(
+			        SUMMARIZE(
+			            'bi vw_FactK12StaffCounts',
+			            'bi vw_FactK12StaffCounts'[SchoolYear],
+			            'bi vw_FactK12StaffCounts'[K12StaffId]
+			            ),
+			        CALCULATE(MAX('bi vw_FactK12StaffCounts'[StaffFullTimeEquivalency]))
+			    ),
+			    'bi vw_DimK12StaffCategories'[K12StaffClassificationDescription] = "School Counselors"
+			)
+		formatString: 0
+		lineageTag: 6e231793-3aff-4942-8df6-85197ffaf3c5
+
+	measure 'Student to Counselor Ratio' = IF([Total FTE Counselors] = 0, 0, DIVIDE([Total HS Students], [Total FTE Counselors]))
+		formatString: 0.0
+		lineageTag: b0c8f4b6-5c6d-4b9b-ae8e-782606888d6c
+
+	measure 'Advising Trend' =
+			
+			VAR SelectedTrendYear = SELECTEDVALUE('TrendLineYears'[SchoolYear])
+			RETURN
+			CALCULATE(
+			    [Student to Counselor Ratio],
+			    'bi vw_DimSchoolYears'[SchoolYear] = SelectedTrendYear,
+			    REMOVEFILTERS('bi vw_DimSchoolYears')
+			)
+		lineageTag: 47d7f221-3b23-47e4-9ecf-a092847219c3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Career Advising Disaggregate Chart Title' =
+			
+			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
+			VAR SelectedYearTitle = "Students per FTE counselors " & IF(not ISBLANK([Disaggregate by]), "by '" & [Disaggregate by] & "' "," ") & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			RETURN
+			SelectedYearTitle
+		lineageTag: 8d152a2f-d8f6-465a-bd0a-07c6c5f0bcfc
+
+	measure 'Career Advising Chart Title' =
+			
+			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
+			VAR SelectedYearTitle = "Students per FTE counselors " & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			RETURN
+			SelectedYearTitle
+		lineageTag: 9280c824-0f4c-45e4-b431-db9e4cda46bb
+
+	partition 'Career Advising' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

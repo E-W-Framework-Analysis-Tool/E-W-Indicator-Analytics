@@ -1,0 +1,23 @@
+CREATE TABLE [staging].[FactK12StudentEnrollments]
+(
+	[FactK12StudentEnrollmentId]                            [bigint]        NOT NULL,
+	[CohortYear]                                            [smallint]      NULL,
+	[SchoolYear]                                            [smallint]      NULL,
+	[CohortGraduationYear]                                  [smallint]      NULL,
+	[ProjectedGraduationYear]                               [smallint]      NULL,
+	[SeaOrganizationIdentifierSea]                          [nvarchar](50)  NULL,
+	[LeaIdentifierSea]                                      [nvarchar](50)  NULL,
+	[SchoolIdentifierSea]                                   [nvarchar](50)  NULL,
+	[StudentIdentifierState]                                [nvarchar](40)  NULL,
+	[RaceCode]                                              [nvarchar](50)  NULL,
+	[GradeLevelCode]                                        [varchar](8)    NULL,
+	[EnglishLearnerStatusCode]                              [nvarchar](100) NULL,
+	[HomelessnessStatusCode]                                [nvarchar](100) NULL,
+	[EconomicDisadvantageStatusCode]                        [nvarchar](100) NULL,
+	[ProgramParticipationFosterCareCode]                    [nvarchar](50)  NULL,
+	[NeglectedOrDelinquentAcademicAchievementIndicatorCode] [nvarchar](50)  NULL,
+	[DisabilityStatusCode]                                  [nvarchar](100) NULL,
+	[SexCode]                                               [nvarchar](50)  NULL,
+)
+GO
+--------------------------------------------------------------------------------------

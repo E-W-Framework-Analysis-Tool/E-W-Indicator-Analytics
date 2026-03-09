@@ -1,0 +1,109 @@
+table 'bi vw_FactK12StudentAssessments'
+	lineageTag: 507771a1-5f6e-4ac5-9152-9fc47fdd08cc
+
+	column SchoolYear
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f0d2585d-ad8a-4253-8382-d701b381aff9
+		summarizeBy: none
+		sourceColumn: SchoolYear
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column K12SchoolId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 649fa65c-fb7c-47b7-be03-c4aaafcd6f49
+		summarizeBy: none
+		sourceColumn: K12SchoolId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column GradeLevelCode
+		dataType: string
+		isHidden
+		lineageTag: d4fd45c5-4c9e-4877-b2d6-ac76e7c4b8fa
+		summarizeBy: none
+		sourceColumn: GradeLevelCode
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AssessmentId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 89bb4f74-922e-4771-8d92-9637091c1afd
+		summarizeBy: none
+		sourceColumn: AssessmentId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AssessmentSubtestId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 6a078c75-60ed-4ac7-afbf-35e22c369eff
+		summarizeBy: none
+		sourceColumn: AssessmentSubtestId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column K12StudentId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 319b58a5-b359-4b33-99e4-e3d73995d3be
+		summarizeBy: none
+		sourceColumn: K12StudentId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACTScore
+		dataType: int64
+		formatString: 0
+		lineageTag: c6ec2728-ca73-4305-97d3-576c3831fdd6
+		summarizeBy: sum
+		sourceColumn: ACTScore
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column SATScore
+		dataType: int64
+		formatString: 0
+		lineageTag: 2dfbee9f-cd44-45da-9336-8976b8ed18f9
+		summarizeBy: sum
+		sourceColumn: SATScore
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bi vw_FactK12StudentAssessments' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    bi_vw_FactK12StudentAssessments = Source{[Schema="bi",Item="vw_FactK12StudentAssessments"]}[Data]
+				in
+				    bi_vw_FactK12StudentAssessments
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

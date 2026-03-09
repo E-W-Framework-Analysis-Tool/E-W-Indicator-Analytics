@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainerMobileState/2.2.0/schema.json",
+  "position": {
+    "x": 0,
+    "y": 577,
+    "z": 9000,
+    "height": 66,
+    "width": 324,
+    "tabOrder": 8000
+  },
+  "objects": {
+    "general": [],
+    "data": [],
+    "selection": [],
+    "layout": [
+      {
+        "properties": {
+          "orientation": {
+            "expr": {
+              "Literal": {
+                "Value": "2D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "overFlow": [
+      {
+        "properties": {
+          "overFlowDirection": {
+            "expr": {
+              "Literal": {
+                "Value": "1D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "selectionIcon": [],
+    "background": [],
+    "label": [],
+    "fillCustom": [],
+    "accentBar": [],
+    "outline": [],
+    "shapeCustomRectangle": [],
+    "shadowCustom": [],
+    "value": [],
+    "actionState": []
+  }
+}

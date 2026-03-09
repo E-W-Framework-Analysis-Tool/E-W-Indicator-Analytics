@@ -1,0 +1,18 @@
+table TrendLineYears
+	lineageTag: 1362bfa4-a881-4b59-80c2-2d176efc8d9c
+
+	column SchoolYear
+		formatString: 0
+		lineageTag: 92e659b6-a1ba-4552-99df-e97b20a7f153
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: bi vw_DimSchoolYears[SchoolYear]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition TrendLineYears = calculated
+		mode: import
+		source = DISTINCT('bi vw_DimSchoolYears'[SchoolYear])
+
+	annotation PBI_Id = 190d32dab017420fa25a29f54d5aa1bb
+

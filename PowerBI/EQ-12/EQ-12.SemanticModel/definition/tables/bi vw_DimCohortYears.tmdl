@@ -1,0 +1,23 @@
+table 'bi vw_DimCohortYears'
+	lineageTag: 3823d081-15cb-49c2-a015-105103193c1d
+
+	column CohortYear
+		dataType: int64
+		formatString: 0
+		lineageTag: eb815069-36c2-426e-a7f7-f1776b3ec85a
+		summarizeBy: none
+		sourceColumn: CohortYear
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bi vw_DimCohortYears' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    bi_vw_DimCohortYears = Source{[Schema="bi",Item="vw_DimCohortYears"]}[Data]
+				in
+				    bi_vw_DimCohortYears
+
+	annotation PBI_ResultType = Table
+

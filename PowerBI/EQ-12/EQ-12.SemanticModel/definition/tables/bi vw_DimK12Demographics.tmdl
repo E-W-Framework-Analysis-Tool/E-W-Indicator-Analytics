@@ -1,0 +1,40 @@
+table 'bi vw_DimK12Demographics'
+	lineageTag: c6261036-c05f-4884-9a26-f3c12173cf69
+
+	column Dimk12DemographicId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 16f1c605-77a3-478f-bd68-e5d9ae74b8c2
+		summarizeBy: none
+		sourceColumn: Dimk12DemographicId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: 2da856cb-8ac8-4a72-816c-af777a7fd9d1
+		summarizeBy: none
+		sourceColumn: Gender
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bi vw_DimK12Demographics' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    bi_vw_DimK12Demographics = Source{[Schema="bi",Item="vw_DimK12Demographics"]}[Data]
+				in
+				    bi_vw_DimK12Demographics
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

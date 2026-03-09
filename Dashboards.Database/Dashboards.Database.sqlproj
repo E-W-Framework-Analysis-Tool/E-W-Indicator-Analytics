@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Dashboards.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{156cb851-2802-43e3-b57f-577dacdef178}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Dashboards.Database</RootNamespace>
+    <AssemblyName>Dashboards.Database</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Security" />
+    <Folder Include="Objects" />
+    <Folder Include="Scripts\" />
+    <Folder Include="Objects\reporting" />
+    <Folder Include="Objects\reporting\Tables" />
+    <Folder Include="Objects\staging" />
+    <Folder Include="Objects\staging\Tables" />
+    <Folder Include="Scripts\SeedReportingDimensionTables" />
+    <Folder Include="Objects\etl" />
+    <Folder Include="Objects\etl\Stored Procedures" />
+    <Folder Include="Objects\etl\Tables" />
+    <Folder Include="Scripts\SeedOtherTables" />
+    <Folder Include="Objects\bi" />
+    <Folder Include="Objects\bi\Views" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Security\etl.sql" />
+    <Build Include="Security\staging.sql" />
+    <Build Include="Security\reporting.sql" />
+    <Build Include="Objects\reporting\Tables\DimAssessments.sql" />
+    <Build Include="Objects\reporting\Tables\DimAssessmentSubtests.sql" />
+    <Build Include="Objects\reporting\Tables\DimDisabilityStatuses.sql" />
+    <Build Include="Objects\reporting\Tables\DimEconomicallyDisadvantagedStatuses.sql" />
+    <Build Include="Objects\reporting\Tables\DimEnglishLearnerStatuses.sql" />
+    <Build Include="Objects\reporting\Tables\DimFosterCareStatuses.sql" />
+    <Build Include="Objects\reporting\Tables\DimGradeLevels.sql" />
+    <Build Include="Objects\reporting\Tables\DimHomelessnessStatuses.sql" />
+    <Build Include="Objects\reporting\Tables\DimK12Courses.sql" />
+    <Build Include="Objects\reporting\Tables\DimK12Schools.sql" />
+    <Build Include="Objects\reporting\Tables\DimLEAs.sql" />
+    <Build Include="Objects\reporting\Tables\DimNOrDStatuses.sql" />
+    <Build Include="Objects\reporting\Tables\DimRaces.sql" />
+    <Build Include="Objects\reporting\Tables\DimSchoolYears.sql" />
+    <Build Include="Objects\reporting\Tables\DimSEAs.sql" />
+    <Build Include="Objects\reporting\Tables\DimStudents.sql" />
+    <Build Include="Objects\reporting\Tables\FactK12StudentAssessments.sql" />
+    <Build Include="Objects\reporting\Tables\FactK12StudentCourseSections.sql" />
+    <Build Include="Objects\reporting\Tables\FactK12StudentEnrollments.sql" />
+    <Build Include="Objects\staging\Tables\DimAssessments.sql" />
+    <Build Include="Objects\staging\Tables\DimAssessmentSubtests.sql" />
+    <Build Include="Objects\staging\Tables\DimK12Courses.sql" />
+    <Build Include="Objects\staging\Tables\DimK12Schools.sql" />
+    <Build Include="Objects\staging\Tables\DimLEAs.sql" />
+    <Build Include="Objects\staging\Tables\DimRaces.sql" />
+    <Build Include="Objects\staging\Tables\DimSEAs.sql" />
+    <Build Include="Objects\staging\Tables\DimStudents.sql" />
+    <Build Include="Objects\staging\Tables\FactK12StudentAssessments.sql" />
+    <Build Include="Objects\staging\Tables\FactK12StudentCourseSections.sql" />
+    <Build Include="Objects\staging\Tables\FactK12StudentEnrollments.sql" />
+    <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
+    <None Include="Scripts\SeedReportingDimensionTables\SeedDimSchoolYears.sql" />
+    <None Include="Scripts\SeedReportingDimensionTables\SeedDimGradeLevels.sql" />
+    <Build Include="Objects\etl\Stored Procedures\Upsert_DimAssessments.sql" />
+    <Build Include="Objects\etl\Stored Procedures\Upsert_DimAssessmentSubtests.sql" />
+    <Build Include="Objects\etl\Stored Procedures\Upsert_DimK12Courses.sql" />
+    <Build Include="Objects\etl\Stored Procedures\Upsert_DimK12Schools.sql" />
+    <Build Include="Objects\etl\Stored Procedures\Upsert_DimLEAs.sql" />
+    <Build Include="Objects\etl\Stored Procedures\Upsert_DimRaces.sql" />
+    <Build Include="Objects\etl\Stored Procedures\Upsert_DimSEAs.sql" />
+    <Build Include="Objects\etl\Stored Procedures\Upsert_DimStudents.sql" />
+    <None Include="Scripts\SeedReportingDimensionTables\SeedDimHomelessnessStatuses.sql" />
+    <Build Include="Objects\etl\Tables\BatchControl.sql" />
+    <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
+    <Build Include="Objects\etl\Stored Procedures\Upsert_FactK12StudentAssessments.sql" />
+    <Build Include="Objects\etl\Stored Procedures\Upsert_FactK12StudentCourseSections.sql" />
+    <Build Include="Objects\etl\Stored Procedures\Upsert_FactK12StudentEnrollments.sql" />
+    <Build Include="Security\bi.sql" />
+    <Build Include="Objects\bi\Views\vw_DimAssessments.sql" />
+    <Build Include="Objects\bi\Views\vw_DimAssessmentSubtests.sql" />
+    <Build Include="Objects\bi\Views\vw_DimCohortGraduationYears.sql" />
+    <Build Include="Objects\bi\Views\vw_DimCohortYears.sql" />
+    <Build Include="Objects\bi\Views\vw_DimDisabilityStatuses.sql" />
+    <Build Include="Objects\bi\Views\vw_DimEconomicallyDisadvantagedStatuses.sql" />
+    <Build Include="Objects\bi\Views\vw_DimEnglishLearnerStatuses.sql" />
+    <Build Include="Objects\bi\Views\vw_DimFosterCareStatuses.sql" />
+    <Build Include="Objects\bi\Views\vw_DimGradeLevels.sql" />
+    <Build Include="Objects\bi\Views\vw_DimHomelessnessStatuses.sql" />
+    <Build Include="Objects\bi\Views\vw_DimK12Courses.sql" />
+    <Build Include="Objects\bi\Views\vw_DimK12Schools.sql" />
+    <Build Include="Objects\bi\Views\vw_DimLEAs.sql" />
+    <Build Include="Objects\bi\Views\vw_DimNeglectedOrDelinquentStatus.sql" />
+    <Build Include="Objects\bi\Views\vw_DimRaces.sql" />
+    <Build Include="Objects\bi\Views\vw_DimSchoolYears.sql" />
+    <Build Include="Objects\bi\Views\vw_DimSEAs.sql" />
+    <Build Include="Objects\bi\Views\vw_FactK12StudentAssessments.sql" />
+    <Build Include="Objects\bi\Views\vw_FactK12StudentCourseSections.sql" />
+    <Build Include="Objects\bi\Views\vw_FactK12StudentEnrollments.sql" />
+    <Build Include="Objects\bi\Views\vw_DimStudents.sql" />
+    <Build Include="Objects\reporting\Tables\DimK12Demographics.sql" />
+    <Build Include="Objects\bi\Views\vw_DimK12Demographics.sql" />
+    <Build Include="Objects\staging\Tables\DimK12CourseStatuses.sql" />
+    <Build Include="Objects\reporting\Tables\DimK12CourseStatuses.sql" />
+    <Build Include="Objects\etl\Stored Procedures\Upsert_DimK12CourseStatuses.sql" />
+    <Build Include="Objects\bi\Views\vw_DimK12CourseStatuses.sql" />
+    <Build Include="Objects\staging\Tables\DimRuralStatuses.sql" />
+    <Build Include="Objects\reporting\Tables\DimRuralStatuses.sql" />
+    <Build Include="Objects\etl\Stored Procedures\Upsert_DimRuralStatuses.sql" />
+    <Build Include="Objects\bi\Views\vw_DimRuralStatuses.sql" />
+    <Build Include="Objects\staging\Tables\FactK12AccessibleEducationMaterialAssignments.sql" />
+    <Build Include="Objects\reporting\Tables\FactK12AccessibleEducationMaterialAssignments.sql" />
+    <Build Include="Objects\etl\Stored Procedures\Upsert_FactK12AccessibleEducationMaterialAssignments.sql" />
+    <Build Include="Objects\staging\Tables\FactK12StaffCounts.sql" />
+    <Build Include="Objects\staging\Tables\DimStaffs.sql" />
+    <Build Include="Objects\reporting\Tables\DimStaffs.sql" />
+    <Build Include="Objects\staging\Tables\DimK12StaffCategories.sql" />
+    <Build Include="Objects\reporting\Tables\DimK12StaffCategories.sql" />
+    <Build Include="Objects\reporting\Tables\FactK12StaffCounts.sql" />
+    <Build Include="Objects\etl\Stored Procedures\Upsert_DimStaffs.sql" />
+    <Build Include="Objects\etl\Stored Procedures\Upsert_DimK12StaffCategories.sql" />
+    <Build Include="Objects\etl\Stored Procedures\Upsert_FactK12StaffCounts.sql" />
+    <Build Include="Objects\bi\Views\vw_DimStaffs.sql" />
+    <Build Include="Objects\bi\Views\vw_DimK12StaffCategories.sql" />
+    <Build Include="Objects\bi\Views\vw_FactK12StaffCounts.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\SeedReportingDimensionTables\SeedDimEnglishLearnerStatuses.sql" />
+    <None Include="Scripts\SeedReportingDimensionTables\SeedDimEconomicallyDisadvantagedStatuses.sql" />
+    <None Include="Scripts\SeedReportingDimensionTables\SeedDimFosterCareStatuses.sql" />
+    <None Include="Scripts\SeedReportingDimensionTables\SeedDimNOrDStatuses.sql" />
+    <None Include="Scripts\SeedReportingDimensionTables\SeedDimDisabilityStatuses.sql" />
+    <None Include="Scripts\SeedOtherTables\SeedBatchControl.sql" />
+    <None Include="Scripts\SeedReportingDimensionTables\SeedDimK12Demographics.sql" />
+    <None Include="Scripts\SeedReportingDimensionTables\SeedDimRaces.sql" />
+    <None Include="Scripts\SeedReportingDimensionTables\SeedDimK12CourseStatuses.sql" />
+    <None Include="Dashboards.Database.publish.xml" />
+  </ItemGroup>
+</Project>
