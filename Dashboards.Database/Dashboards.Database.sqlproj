@@ -169,6 +169,21 @@
     <Build Include="Objects\bi\Views\vw_DimStaffs.sql" />
     <Build Include="Objects\bi\Views\vw_DimK12StaffCategories.sql" />
     <Build Include="Objects\bi\Views\vw_FactK12StaffCounts.sql" />
+    <Build Include="Objects\staging\Tables\PS_DimStudents.sql" />
+    <Build Include="Objects\reporting\Tables\PS_DimStudents.sql" />
+    <Build Include="Objects\etl\Stored Procedures\Upsert_PS_DimStudents.sql" />
+    <Build Include="Objects\staging\Tables\PS_DimInstitutions.sql" />
+    <Build Include="Objects\etl\Stored Procedures\Upsert_PS_DimInstitutions.sql" />
+    <Build Include="Objects\reporting\Tables\PS_DimInstitutions.sql" />
+    <Build Include="Objects\staging\Tables\DimCipCodes.sql" />
+    <Build Include="Objects\reporting\Tables\DimCipCodes.sql" />
+    <Build Include="Objects\etl\Stored Procedures\Upsert_DimCipCodes.sql" />
+    <Build Include="Objects\staging\Tables\DimPsEnrollmentStatuses.sql" />
+    <Build Include="Objects\reporting\Tables\DimPsEnrollmentStatuses.sql" />
+    <Build Include="Objects\etl\Stored Procedures\Upsert_DimPsEnrollmentStatuses.sql" />
+    <Build Include="Objects\reporting\Tables\FactPsStudentEnrollments.sql" />
+    <Build Include="Objects\etl\Stored Procedures\Upsert_FactPsStudentEnrollments.sql" />
+    <Build Include="Objects\staging\Tables\FactPsStudentEnrollments.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\SeedReportingDimensionTables\SeedDimEnglishLearnerStatuses.sql" />
