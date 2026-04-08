@@ -184,6 +184,12 @@
     <Build Include="Objects\reporting\Tables\FactPsStudentEnrollments.sql" />
     <Build Include="Objects\etl\Stored Procedures\Upsert_FactPsStudentEnrollments.sql" />
     <Build Include="Objects\staging\Tables\FactPsStudentEnrollments.sql" />
+    <Build Include="Objects\staging\Tables\DimPsAcademicAwardStatuses.sql" />
+    <Build Include="Objects\reporting\Tables\DimPsAcademicAwardStatuses.sql" />
+    <Build Include="Objects\etl\Stored Procedures\Upsert_DimPsAcademicAwardStatuses.sql" />
+    <Build Include="Objects\staging\Tables\DimPsAcademicAwardTitles.sql" />
+    <Build Include="Objects\reporting\Tables\DimPsAcademicAwardTitles.sql" />
+    <Build Include="Objects\etl\Stored Procedures\Upsert_DimPsAcademicAwardTitles.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\SeedReportingDimensionTables\SeedDimEnglishLearnerStatuses.sql" />

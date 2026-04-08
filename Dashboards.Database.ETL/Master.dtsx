@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{217228BB-CC5E-4B26-9753-A89068F3CDFC}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{8ADB4F2B-57FE-430E-B671-EE9F40B1322C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -22,7 +22,6 @@
       DTS:refId="Package\CEDS DWH to PS Staging Dimensions"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{B71348D2-D93A-4663-8E32-54871392020F}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -40,7 +39,6 @@
       DTS:refId="Package\CEDS DWH to PS Staging Facts"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{41DFCA52-EE69-4D9D-9359-F4AB43D6D9CC}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -58,6 +56,7 @@
       DTS:refId="Package\CEDS DWH to Staging Dimensions"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
+      DTS:Disabled="True"
       DTS:DTSID="{2631a69f-9d4c-4065-bf20-c3f865891534}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -75,6 +74,7 @@
       DTS:refId="Package\CEDS DWH to Staging Facts"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
+      DTS:Disabled="True"
       DTS:DTSID="{c4c949d3-fa35-4451-b3c4-02ee8b82e960}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -92,7 +92,6 @@
       DTS:refId="Package\DashboardDB - PS - Staging to Reporting"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{60ABDB36-8E51-4C9A-AA72-5AD3ED3BDF04}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -110,6 +109,7 @@
       DTS:refId="Package\DashboardDB - Staging to Reporting"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
+      DTS:Disabled="True"
       DTS:DTSID="{E4D28210-BD89-421D-BCB4-6011F409B4F3}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
