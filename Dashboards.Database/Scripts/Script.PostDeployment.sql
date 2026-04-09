@@ -23,6 +23,8 @@ Post-Deployment Script Template
 :r .\SeedReportingDimensionTables\SeedDimK12Demographics.sql
 :r .\SeedReportingDimensionTables\SeedDimRaces.sql
 :r .\SeedReportingDimensionTables\SeedDimK12CourseStatuses.sql
+:r .\SeedReportingDimensionTables\SeedDimPsAcademicAwardStatuses.sql
+:r .\SeedReportingDimensionTables\SeedDimPsAcademicAwardTitles.sql
 
 -- Seed other tables
 :r .\SeedOtherTables\SeedBatchControl.sql

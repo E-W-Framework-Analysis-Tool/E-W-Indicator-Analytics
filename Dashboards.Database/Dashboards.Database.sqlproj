@@ -190,6 +190,10 @@
     <Build Include="Objects\staging\Tables\DimPsAcademicAwardTitles.sql" />
     <Build Include="Objects\reporting\Tables\DimPsAcademicAwardTitles.sql" />
     <Build Include="Objects\etl\Stored Procedures\Upsert_DimPsAcademicAwardTitles.sql" />
+    <Build Include="Objects\staging\Tables\FactPsStudentAcademicAwards.sql" />
+    <Build Include="Objects\reporting\Tables\FactPsStudentAcademicAwards.sql" />
+    <Build Include="Objects\etl\Stored Procedures\Upsert_FactPsStudentAcademicAwards.sql" />
+    <None Include="Scripts\SeedReportingDimensionTables\SeedDimPsAcademicAwardStatuses.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\SeedReportingDimensionTables\SeedDimEnglishLearnerStatuses.sql" />
@@ -202,5 +206,6 @@
     <None Include="Scripts\SeedReportingDimensionTables\SeedDimRaces.sql" />
     <None Include="Scripts\SeedReportingDimensionTables\SeedDimK12CourseStatuses.sql" />
     <None Include="Dashboards.Database.publish.xml" />
+    <None Include="Scripts\SeedReportingDimensionTables\SeedDimPsAcademicAwardTitles.sql" />
   </ItemGroup>
 </Project>
