@@ -4,7 +4,7 @@
   "position": {
     "x": 316.57875980042763,
     "y": 60.213827512473266,
-    "z": 14000,
+    "z": 9000,
     "height": 72.986457590876682,
     "width": 213.4853884533143,
     "tabOrder": 8
@@ -68,7 +68,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''bi vw_DimRaces''[RaceEthnicity]'"
+                                "Value": "'''bi vw_DimK12Demographics''[Gender]'"
                               }
                             }
                           ]
@@ -96,7 +96,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''bi vw_DimRaces''[RaceEthnicity]'"
+                                      "Value": "'''bi vw_DimK12Demographics''[Gender]'"
                                     }
                                   }
                                 ]
@@ -120,7 +120,7 @@
                         },
                         "valueMap": [
                           {
-                            "0": "Race & Ethnicity"
+                            "0": "Gender"
                           }
                         ]
                       }

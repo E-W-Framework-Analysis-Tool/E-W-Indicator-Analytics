@@ -10,7 +10,7 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_ProTooling = ["DevMode"]
 
-annotation PBI_QueryOrder = ["bi vw_DimRaces","bi vw_DimCipCodes","bi vw_DimDisabilityStatuses","bi vw_DimEconomicallyDisadvantagedStatuses","bi vw_DimHomelessnessStatuses","bi vw_DimPsInstitutions","bi vw_DimPsEnrollmentStatuses","bi vw_DimPsAcademicAwardTitles","bi vw_DimPsAcademicAwardStatuses","bi vw_DimSEAs","bi vw_FactPsStudentAcademicAwards","bi vw_FactPsStudentCourseTranscripts","bi vw_PS_DimStudents","bi vw_FactPsStudentEnrollments","bi vw_DimK12Demographics","bi vw_DimEnglishLearnerStatuses","bi vw_PS_DimSchoolYears","Globals","Postsecondary Certification"]
+annotation PBI_QueryOrder = ["bi vw_DimRaces","bi vw_DimCipCodes","bi vw_DimDisabilityStatuses","bi vw_DimEconomicallyDisadvantagedStatuses","bi vw_DimHomelessnessStatuses","bi vw_DimPsInstitutions","bi vw_DimPsEnrollmentStatuses","bi vw_DimPsAcademicAwardTitles","bi vw_DimPsAcademicAwardStatuses","bi vw_DimSEAs","bi vw_FactPsStudentAcademicAwards","bi vw_FactPsStudentCourseTranscripts","bi vw_PS_DimStudents","bi vw_FactPsStudentEnrollments","bi vw_DimK12Demographics","bi vw_DimEnglishLearnerStatuses","bi vw_PS_DimSchoolYears","Globals","Enrollment in Graduate Education","Postsecondary Certificate Completion"]
 
 ref table 'bi vw_DimRaces'
 ref table 'bi vw_DimCipCodes'
@@ -33,7 +33,8 @@ ref table 'bi vw_DimEnglishLearnerStatuses'
 ref table 'bi vw_PS_DimSchoolYears'
 ref table Globals
 ref table Disaggregation
-ref table 'Postsecondary Certification'
+ref table 'Enrollment in Graduate Education'
+ref table 'Postsecondary Certificate Completion'
 
 ref cultureInfo en-US
 

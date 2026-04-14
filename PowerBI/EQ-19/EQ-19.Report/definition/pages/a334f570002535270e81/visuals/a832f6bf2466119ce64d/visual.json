@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "235c3e5eadc041d9e3d7",
+  "name": "a832f6bf2466119ce64d",
   "position": {
-    "x": 950.0190961171229,
-    "y": 520.63653723742846,
-    "z": 7501,
-    "height": 199.61807765754298,
+    "x": 1117.0464672183323,
+    "y": 419.350732017823,
+    "z": 7000,
+    "height": 300.649267982177,
     "width": 162.95353278166775,
-    "tabOrder": 24
+    "tabOrder": 27
   },
   "visual": {
     "visualType": "advancedSlicerVisual",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "bi vw_DimCipCodes"
+                      "Entity": "bi vw_DimPsAcademicAwardStatuses"
                     }
                   },
-                  "Property": "FieldOfStudy"
+                  "Property": "CredentialType"
                 }
               },
-              "queryRef": "bi vw_DimCipCodes.FieldOfStudy",
-              "nativeQueryRef": "FieldOfStudy"
+              "queryRef": "bi vw_DimPsAcademicAwardStatuses.CredentialType",
+              "nativeQueryRef": "CredentialType"
             }
           ]
         }
@@ -39,10 +39,10 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "bi vw_DimCipCodes"
+                    "Entity": "bi vw_DimPsAcademicAwardStatuses"
                   }
                 },
-                "Property": "FieldOfStudy"
+                "Property": "CredentialType"
               }
             },
             "direction": "Ascending"
@@ -60,7 +60,7 @@
                 "From": [
                   {
                     "Name": "b",
-                    "Entity": "bi vw_DimCipCodes",
+                    "Entity": "bi vw_DimPsAcademicAwardStatuses",
                     "Type": 0
                   }
                 ],
@@ -76,7 +76,7 @@
                                   "Source": "b"
                                 }
                               },
-                              "Property": "FieldOfStudy"
+                              "Property": "CredentialType"
                             }
                           }
                         ],
@@ -84,7 +84,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Business'"
+                                "Value": "'Associate''s Degree'"
                               }
                             }
                           ]
@@ -129,7 +129,7 @@
             "maxTiles": {
               "expr": {
                 "Literal": {
-                  "Value": "4L"
+                  "Value": "6L"
                 }
               }
             }
@@ -557,7 +557,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Field of Study'"
+                  "Value": "'Credential Type'"
                 }
               }
             }

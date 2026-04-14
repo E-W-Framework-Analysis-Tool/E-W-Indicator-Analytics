@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "4c29d77f110c1b40c160",
   "position": {
     "x": 0,
@@ -17778,17 +17778,17 @@
               {
                 "textRuns": [
                   {
-                    "value": "Essential Question 19 - ",
+                    "value": "EQ19: Are students completing credentials of value after high school that set them up for success in the workforce?",
                     "textStyle": {
                       "color": "#000000"
                     }
-                  },
+                  }
+                ]
+              },
+              {
+                "textRuns": [
                   {
-                    "value": "!! TBA !!",
-                    "textStyle": {
-                      "fontWeight": "bold",
-                      "color": "#b58815"
-                    }
+                    "value": "Indicator: PS certificate/degree completion - Students complete a certificate, associate’s, or bachelor’s degree within a specified time frame after entering college."
                   }
                 ]
               }

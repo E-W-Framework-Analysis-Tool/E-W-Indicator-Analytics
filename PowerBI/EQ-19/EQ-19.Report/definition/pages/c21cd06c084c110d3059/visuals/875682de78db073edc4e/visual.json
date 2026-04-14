@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "875682de78db073edc4e",
+  "position": {
+    "x": 9.7772119669000634,
+    "y": 0,
+    "z": 0,
+    "height": 465.23233609166135,
+    "width": 701.51495862507954,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Postsecondary Certificate Completion"
+                    }
+                  },
+                  "Property": "% Grad Enroll 1-5 Years"
+                }
+              },
+              "queryRef": "Postsecondary Certificate Completion.% Grad Enroll 1-5 Years",
+              "nativeQueryRef": "% Grad Enroll 1-5 Years"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Postsecondary Certificate Completion"
+                    }
+                  },
+                  "Property": "% Grad Enroll 6-10 Years"
+                }
+              },
+              "queryRef": "Postsecondary Certificate Completion.% Grad Enroll 6-10 Years",
+              "nativeQueryRef": "% Grad Enroll 6-10 Years"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

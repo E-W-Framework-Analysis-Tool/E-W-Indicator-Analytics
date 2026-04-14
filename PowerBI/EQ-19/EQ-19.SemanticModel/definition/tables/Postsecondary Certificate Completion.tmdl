@@ -1,0 +1,83 @@
+table 'Postsecondary Certificate Completion'
+	lineageTag: 38c775e6-9153-4b66-8c1e-b0a9ee4a5b3c
+
+	measure UndergradAwardDate = ```
+			
+			CALCULATE(
+			    MIN('bi vw_FactPsStudentAcademicAwards'[AcademicAwardDate])--,
+			    // KEEPFILTERS('bi vw_DimPsAcademicAwardStatuses'[CredentialType] = "Bachelor's Degree") 
+			)
+			```
+		formatString: General Date
+		lineageTag: 46b9b726-9647-4b79-ba80-674946a4a93a
+
+	measure FirstGradEnrollDate = ```
+			
+			VAR UDate = [UndergradAwardDate]
+			RETURN
+			CALCULATE(
+			    MIN('bi vw_FactPsStudentEnrollments'[SchoolYear])--, 
+			    // 'bi vw_DimPsAcademicAwardStatuses'[CredentialType] = "Master's Degree",
+			    // 'bi vw_FactPsStudentEnrollments'[SchoolYear] > YEAR(UDate)
+			)
+			```
+		formatString: 0
+		lineageTag: f6a7f463-b011-49a1-872e-1906723637e2
+
+	measure '% Grad Enroll 1-5 Years' =
+			
+			VAR CohortCount = [Total Cohort Count]
+			RETURN
+			DIVIDE(
+			    CALCULATE(
+			        DISTINCTCOUNT('bi vw_FactPsStudentEnrollments'[PSStudentId]),
+			        FILTER(
+			            VALUES('bi vw_FactPsStudentEnrollments'[PSStudentId]),
+			            VAR UDate = [UndergradAwardDate]
+			            VAR GDate = [FirstGradEnrollDate]
+			            VAR Diff = GDate - YEAR(UDate)
+			            RETURN
+			            // NOT ISBLANK(UDate) && NOT ISBLANK(GDate) && Diff >= 1 && Diff <= 5
+			            Diff <=5
+			        )
+			    ),
+			    CohortCount
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: af5ffb6d-fef0-437c-ae11-984998c85ad9
+
+	measure '% Grad Enroll 6-10 Years' = ```
+			
+			VAR CohortCount = [Total Cohort Count]
+			RETURN
+			DIVIDE(
+			    CALCULATE(
+			        DISTINCTCOUNT('bi vw_FactPsStudentEnrollments'[PSStudentId]),
+			        FILTER(
+			            VALUES('bi vw_FactPsStudentEnrollments'[PSStudentId]),
+			            VAR UDate = [UndergradAwardDate]
+			            VAR GDate = [FirstGradEnrollDate]
+			            VAR Diff = GDate - YEAR(UDate)
+			            RETURN
+			            // NOT ISBLANK(UDate) && NOT ISBLANK(GDate) && Diff >= 6 && Diff <= 10
+			            Diff >= 6 
+			        )
+			    ),
+			    CohortCount
+			)
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: cf9e8b9e-45d2-451e-bccb-c4046ee3a8ab
+
+	partition 'Postsecondary Certificate Completion' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

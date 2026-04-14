@@ -251,8 +251,7 @@
         },
         {
           "location": {},
-          "nodeIndex": "Postsecondary Certification",
-          "nodeLineageTag": "a34fe3fd-4aea-45b2-ba18-b81f970e624e",
+          "nodeIndex": "Enrollment in Graduate Education",
           "size": {
             "height": 104,
             "width": 234
@@ -404,7 +403,7 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 7
+          "zIndex": 8
         },
         {
           "location": {
@@ -417,7 +416,7 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 8
+          "zIndex": 7
         },
         {
           "location": {

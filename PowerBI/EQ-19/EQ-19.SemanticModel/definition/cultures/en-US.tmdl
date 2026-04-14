@@ -9611,7 +9611,7 @@ cultureInfo en-US
 			    "postsecondary_certification": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Postsecondary Certification"
+			          "ConceptualEntity": "Enrollment in Graduate Education"
 			        }
 			      },
 			      "State": "Generated",
@@ -9732,7 +9732,7 @@ cultureInfo en-US
 			    "postsecondary_certification.years_to_complete": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Postsecondary Certification",
+			          "ConceptualEntity": "Enrollment in Graduate Education",
 			          "ConceptualProperty": "YearsToComplete"
 			        }
 			      },
@@ -9835,7 +9835,7 @@ cultureInfo en-US
 			    "postsecondary_certification.total_cohort_count": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Postsecondary Certification",
+			          "ConceptualEntity": "Enrollment in Graduate Education",
 			          "ConceptualProperty": "Total Cohort Count"
 			        }
 			      },
@@ -9897,7 +9897,7 @@ cultureInfo en-US
 			    "postsecondary_certification.completion_100_time": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Postsecondary Certification",
+			          "ConceptualEntity": "Enrollment in Graduate Education",
 			          "ConceptualProperty": "% Completion 100% Time"
 			        }
 			      },
@@ -10003,7 +10003,7 @@ cultureInfo en-US
 			    "postsecondary_certification.completion_150_time": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Postsecondary Certification",
+			          "ConceptualEntity": "Enrollment in Graduate Education",
 			          "ConceptualProperty": "% Completion 150% Time"
 			        }
 			      },
@@ -10109,7 +10109,7 @@ cultureInfo en-US
 			    "postsecondary_certification.completion_200_time": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Postsecondary Certification",
+			          "ConceptualEntity": "Enrollment in Graduate Education",
 			          "ConceptualProperty": "% Completion 200% Time"
 			        }
 			      },
@@ -12534,7 +12534,7 @@ cultureInfo en-US
 			    },
 			    "postsecondary_certification_has_years_to_complete": {
 			      "Binding": {
-			        "ConceptualEntity": "Postsecondary Certification"
+			        "ConceptualEntity": "Enrollment in Graduate Education"
 			      },
 			      "State": "Generated",
 			      "Roles": {

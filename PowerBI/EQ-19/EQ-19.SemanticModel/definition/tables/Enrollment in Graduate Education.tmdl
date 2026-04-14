@@ -1,4 +1,4 @@
-table 'Postsecondary Certification'
+table 'Enrollment in Graduate Education'
 	lineageTag: a34fe3fd-4aea-45b2-ba18-b81f970e624e
 
 	measure YearsToComplete = ```
@@ -79,7 +79,7 @@ table 'Postsecondary Certification'
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: f2b41234-2e26-4464-a7d9-ff77b65bf8ed
 
-	partition 'Postsecondary Certification' = m
+	partition 'Enrollment in Graduate Education' = m
 		mode: import
 		source =
 				let
@@ -88,6 +88,8 @@ table 'Postsecondary Certification'
 				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
 				in
 				    #"Removed Columns"
+
+	changedProperty = Name
 
 	annotation PBI_ResultType = Table
 
