@@ -1,0 +1,69 @@
+table 'bi vw_DimCipCodes'
+	lineageTag: b782f756-c42c-4b89-bbb1-f4cbdf89cd05
+
+	column DimCipCodeId
+		dataType: int64
+		formatString: 0
+		lineageTag: 65862472-c988-41b5-ad22-6c303c907862
+		summarizeBy: none
+		sourceColumn: DimCipCodeId
+
+		annotation SummarizationSetBy = Automatic
+
+	column CipCode
+		dataType: string
+		lineageTag: 4e873f37-be51-499d-b437-a68c4fce3558
+		summarizeBy: none
+		sourceColumn: CipCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column CipDescription
+		dataType: string
+		lineageTag: 6f0c66d8-5f26-4800-8c19-b81ecd95f090
+		summarizeBy: none
+		sourceColumn: CipDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column CipUseCode
+		dataType: string
+		lineageTag: 26bde253-da05-4180-99ca-fa0390e72ebc
+		summarizeBy: none
+		sourceColumn: CipUseCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column CipUseDescription
+		dataType: string
+		lineageTag: 52ea29b6-d7d2-4a0e-adc9-bc4e0ad42548
+		summarizeBy: none
+		sourceColumn: CipUseDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column CipVersionCode
+		dataType: string
+		lineageTag: b6f3898c-8cc0-47d7-b492-5aeaf6b2e269
+		summarizeBy: none
+		sourceColumn: CipVersionCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column CipVersionDescription
+		dataType: string
+		lineageTag: a16a50a4-1bfd-45e5-989d-763163fa1bf3
+		summarizeBy: none
+		sourceColumn: CipVersionDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bi vw_DimCipCodes' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    bi_vw_DimCipCodes = Source{[Schema="bi",Item="vw_DimCipCodes"]}[Data]
+				in
+				    bi_vw_DimCipCodes
+

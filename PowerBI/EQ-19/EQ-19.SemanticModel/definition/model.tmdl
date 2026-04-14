@@ -10,9 +10,27 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_ProTooling = ["DevMode"]
 
-annotation PBI_QueryOrder = ["bi vw_DimRaces"]
+annotation PBI_QueryOrder = ["bi vw_DimRaces","bi vw_DimCipCodes","bi vw_DimDisabilityStatuses","bi vw_DimEconomicallyDisadvantagedStatuses","bi vw_DimHomelessnessStatuses","bi vw_DimPsInstitutions","bi vw_DimPsEnrollmentStatuses","bi vw_DimPsAcademicAwardTitles","bi vw_DimPsAcademicAwardStatuses","bi vw_DimSEAs","bi vw_FactPsStudentAcademicAwards","bi vw_FactPsStudentCourseTranscripts","bi vw_PS_DimStudents","bi vw_FactPsStudentEnrollments","bi vw_DimK12Demographics","bi vw_DimEnglishLearnerStatuses","bi vw_PS_DimSchoolYears"]
 
 ref table 'bi vw_DimRaces'
+ref table 'bi vw_DimCipCodes'
+ref table 'bi vw_DimDisabilityStatuses'
+ref table 'bi vw_DimEconomicallyDisadvantagedStatuses'
+ref table 'bi vw_DimHomelessnessStatuses'
+ref table 'bi vw_DimPsInstitutions'
+ref table 'bi vw_DimPsEnrollmentStatuses'
+ref table 'bi vw_DimPsAcademicAwardTitles'
+ref table 'bi vw_DimPsAcademicAwardStatuses'
+ref table 'bi vw_DimSEAs'
+ref table 'bi vw_FactPsStudentAcademicAwards'
+ref table DateTableTemplate_61e8f730-66e7-4c5f-8b42-8c4a8df7347d
+ref table LocalDateTable_f9f5e827-acda-40cf-a431-6f99f09a8e29
+ref table 'bi vw_FactPsStudentCourseTranscripts'
+ref table 'bi vw_PS_DimStudents'
+ref table 'bi vw_FactPsStudentEnrollments'
+ref table 'bi vw_DimK12Demographics'
+ref table 'bi vw_DimEnglishLearnerStatuses'
+ref table 'bi vw_PS_DimSchoolYears'
 
 ref cultureInfo en-US
 

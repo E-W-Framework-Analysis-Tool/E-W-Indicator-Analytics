@@ -1,0 +1,57 @@
+table 'bi vw_FactPsStudentEnrollments'
+	lineageTag: 771ce0dd-8c9a-4ba5-ba70-dc41272e3b3f
+
+	column FactPsStudentEnrollmentsId
+		dataType: int64
+		formatString: 0
+		lineageTag: 5aa9859a-cd90-4cbb-9fc6-b570bb6314dd
+		summarizeBy: count
+		sourceColumn: FactPsStudentEnrollmentsId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PsInstitutionId
+		dataType: int64
+		formatString: 0
+		lineageTag: 6f9803f9-e03f-42b8-8825-fec16a5180d1
+		summarizeBy: none
+		sourceColumn: PsInstitutionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SchoolYear
+		dataType: int64
+		formatString: 0
+		lineageTag: e718a8e3-92a7-4a89-826c-375307ec8c9c
+		summarizeBy: none
+		sourceColumn: SchoolYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column PSStudentId
+		dataType: int64
+		formatString: 0
+		lineageTag: c308c05b-284a-4eb0-999c-f908b5c763db
+		summarizeBy: none
+		sourceColumn: PSStudentId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PsEnrollmentStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: 7ce9bdd6-b2b1-41eb-87cc-de15b92c463f
+		summarizeBy: count
+		sourceColumn: PsEnrollmentStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bi vw_FactPsStudentEnrollments' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    bi_vw_FactPsStudentEnrollments = Source{[Schema="bi",Item="vw_FactPsStudentEnrollments"]}[Data]
+				in
+				    bi_vw_FactPsStudentEnrollments
+

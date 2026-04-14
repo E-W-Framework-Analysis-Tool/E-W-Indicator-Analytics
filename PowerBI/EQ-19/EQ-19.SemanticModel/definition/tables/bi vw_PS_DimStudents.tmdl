@@ -1,0 +1,111 @@
+table 'bi vw_PS_DimStudents'
+	lineageTag: 946cecf2-44df-47b0-9604-86d875aa8840
+
+	column EnglishLearnerStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: 2cfca62d-64f9-4cf8-a9ed-8522ba45b36c
+		summarizeBy: none
+		sourceColumn: EnglishLearnerStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PsDemographicId
+		dataType: int64
+		formatString: 0
+		lineageTag: a4e1480f-bf10-4978-8ff4-7ba00fde8a8a
+		summarizeBy: none
+		sourceColumn: PsDemographicId
+
+		annotation SummarizationSetBy = Automatic
+
+	column DisabilityStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: d05d3ffa-a2be-45ed-a98c-1f388b1e11ef
+		summarizeBy: none
+		sourceColumn: DisabilityStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column EconomicallyDisadvantagedStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: 89ea776f-ccb1-4ee7-a562-3026a416cee8
+		summarizeBy: none
+		sourceColumn: EconomicallyDisadvantagedStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column HomelessnessStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: e63649f6-cb3f-453b-a0f7-06229d4f3422
+		summarizeBy: none
+		sourceColumn: HomelessnessStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column MigrantStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: 05e9af0e-0e74-45ac-ac25-0bb061367d57
+		summarizeBy: count
+		sourceColumn: MigrantStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PrimaryDisabilityTypeId
+		dataType: int64
+		formatString: 0
+		lineageTag: 68b54dde-1b27-40d3-894a-db540d1b6d63
+		summarizeBy: count
+		sourceColumn: PrimaryDisabilityTypeId
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdeaStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: f01be401-07b8-4535-81d4-a2356f8eb073
+		summarizeBy: count
+		sourceColumn: IdeaStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImmigrantStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: 750741da-009a-4e39-be0b-39cdeef6830f
+		summarizeBy: count
+		sourceColumn: ImmigrantStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column MilitaryStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: 2c1a6033-290f-46e7-8f43-55fe24209b46
+		summarizeBy: count
+		sourceColumn: MilitaryStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column DimPsStudentId
+		dataType: int64
+		formatString: 0
+		lineageTag: a33ae0d5-ef25-4c5c-a234-98dae011b5e9
+		summarizeBy: none
+		sourceColumn: DimPsStudentId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bi vw_PS_DimStudents' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    bi_vw_PS_DimStudents = Source{[Schema="bi",Item="vw_PS_DimStudents"]}[Data]
+				in
+				    bi_vw_PS_DimStudents
+

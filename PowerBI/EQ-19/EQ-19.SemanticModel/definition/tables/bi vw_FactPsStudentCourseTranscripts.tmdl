@@ -1,0 +1,85 @@
+table 'bi vw_FactPsStudentCourseTranscripts'
+	lineageTag: f4b04f63-1c67-494a-a0d5-e9f9b6a0c4f3
+
+	column FactPsStudentCourseTranscriptId
+		dataType: int64
+		formatString: 0
+		lineageTag: e00848ef-ddf3-4bbd-bb6b-da7c62097ec5
+		summarizeBy: count
+		sourceColumn: FactPsStudentCourseTranscriptId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SchoolYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 097926c5-e1e4-4394-86e3-f2fe04993e03
+		summarizeBy: none
+		sourceColumn: SchoolYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column PsInstitutionId
+		dataType: int64
+		formatString: 0
+		lineageTag: 1b9a3db3-f3d8-462c-bfd1-e6a32828fdd8
+		summarizeBy: none
+		sourceColumn: PsInstitutionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PsStudentId
+		dataType: int64
+		formatString: 0
+		lineageTag: 5a65860f-0c46-46d0-90b5-59ad5386658a
+		summarizeBy: none
+		sourceColumn: PsStudentId
+
+		annotation SummarizationSetBy = Automatic
+
+	column CipCodeId
+		dataType: int64
+		formatString: 0
+		lineageTag: 72fc4a96-48ff-4d8d-898e-86dd7cf36b08
+		summarizeBy: none
+		sourceColumn: CipCodeId
+
+		annotation SummarizationSetBy = Automatic
+
+	column NumberOfCreditsAttempted
+		dataType: double
+		lineageTag: f1463b3c-b599-4ad4-9de9-079bb7c487ff
+		summarizeBy: sum
+		sourceColumn: NumberOfCreditsAttempted
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NumberOfCreditsEarned
+		dataType: double
+		lineageTag: 73d3aa97-04e7-4590-87c7-092e20a4ab5d
+		summarizeBy: sum
+		sourceColumn: NumberOfCreditsEarned
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column StudentCourseSectionGradeEarned
+		dataType: string
+		lineageTag: 75b464c6-fe9d-4882-842b-226d506ea89a
+		summarizeBy: none
+		sourceColumn: StudentCourseSectionGradeEarned
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bi vw_FactPsStudentCourseTranscripts' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    bi_vw_FactPsStudentCourseTranscripts = Source{[Schema="bi",Item="vw_FactPsStudentCourseTranscripts"]}[Data]
+				in
+				    bi_vw_FactPsStudentCourseTranscripts
+

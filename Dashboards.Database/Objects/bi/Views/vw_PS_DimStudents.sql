@@ -1,7 +1,7 @@
 ﻿CREATE VIEW [bi].[vw_PS_DimStudents]
 AS	
 	SELECT DISTINCT
-		[base].[DimPSStudentId]                                       AS [PsStudentId]
+		[base].[DimPSStudentId]                                       AS [DimPsStudentId]
 	  , MAX(COALESCE([fact].[EnglishLearnerStatusId], -1))            AS [EnglishLearnerStatusId]
 	  , MAX(COALESCE([fact].[PsDemographicId], -1))                   AS [PsDemographicId]
 	  , MAX(COALESCE([fact].[DisabilityStatusId], -1))                AS [DisabilityStatusId]

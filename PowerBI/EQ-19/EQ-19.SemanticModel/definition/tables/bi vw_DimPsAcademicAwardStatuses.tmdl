@@ -1,0 +1,53 @@
+table 'bi vw_DimPsAcademicAwardStatuses'
+	lineageTag: 7f42d558-8292-4b9a-b256-afcaa2c7504a
+
+	column DimPsAcademicAwardStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: 04709ade-e283-47b1-9dfd-064afed6bb2a
+		summarizeBy: count
+		sourceColumn: DimPsAcademicAwardStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PescAwardLevelTypeCode
+		dataType: string
+		lineageTag: 8818ac03-2927-471a-ad4e-82f3dce5a678
+		summarizeBy: none
+		sourceColumn: PescAwardLevelTypeCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column PescAwardLevelTypeDescription
+		dataType: string
+		lineageTag: a28ec2a1-b9d7-4b79-8cd3-f47f67c00b26
+		summarizeBy: none
+		sourceColumn: PescAwardLevelTypeDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProfessionalOrTechnicalCredentialConferredCode
+		dataType: string
+		lineageTag: 12a60c98-c4c5-44a5-93b9-59dd88c6bf17
+		summarizeBy: none
+		sourceColumn: ProfessionalOrTechnicalCredentialConferredCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProfessionalOrTechnicalCredentialConferredDescription
+		dataType: string
+		lineageTag: 09959bd5-3aea-47ae-9679-3d4386d536bc
+		summarizeBy: none
+		sourceColumn: ProfessionalOrTechnicalCredentialConferredDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bi vw_DimPsAcademicAwardStatuses' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    bi_vw_DimPsAcademicAwardStatuses = Source{[Schema="bi",Item="vw_DimPsAcademicAwardStatuses"]}[Data]
+				in
+				    bi_vw_DimPsAcademicAwardStatuses
+
