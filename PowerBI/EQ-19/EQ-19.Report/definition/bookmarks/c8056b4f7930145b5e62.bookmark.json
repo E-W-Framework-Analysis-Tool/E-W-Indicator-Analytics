@@ -3,7 +3,8 @@
   "displayName": "Enrollment - Show Filters",
   "name": "c8056b4f7930145b5e62",
   "options": {
-    "targetVisualNames": []
+    "targetVisualNames": [],
+    "suppressData": true
   },
   "explorationState": {
     "version": "1.3",

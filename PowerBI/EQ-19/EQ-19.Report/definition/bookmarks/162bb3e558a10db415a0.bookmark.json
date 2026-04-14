@@ -3,7 +3,8 @@
   "displayName": "Institution - Show Filters",
   "name": "162bb3e558a10db415a0",
   "options": {
-    "targetVisualNames": []
+    "targetVisualNames": [],
+    "suppressData": true
   },
   "explorationState": {
     "version": "1.3",

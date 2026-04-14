@@ -3,7 +3,8 @@
   "displayName": "Cumulative - Hide Filters",
   "name": "44ac7919270b673a9e97",
   "options": {
-    "targetVisualNames": []
+    "targetVisualNames": [],
+    "suppressData": true
   },
   "explorationState": {
     "version": "1.3",

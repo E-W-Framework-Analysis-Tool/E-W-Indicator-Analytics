@@ -242,8 +242,19 @@
         {
           "location": {},
           "nodeIndex": "Disaggregation",
+          "nodeLineageTag": "2d92696a-4354-4272-8e5c-c96930078f58",
           "size": {
-            "height": 200,
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Postsecondary Certification",
+          "nodeLineageTag": "a34fe3fd-4aea-45b2-ba18-b81f970e624e",
+          "size": {
+            "height": 104,
             "width": 234
           },
           "zIndex": 0

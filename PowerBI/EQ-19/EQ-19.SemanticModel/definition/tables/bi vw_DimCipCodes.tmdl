@@ -10,51 +10,11 @@ table 'bi vw_DimCipCodes'
 
 		annotation SummarizationSetBy = Automatic
 
-	column CipCode
+	column FieldOfStudy
 		dataType: string
-		lineageTag: 4e873f37-be51-499d-b437-a68c4fce3558
+		lineageTag: 27c2e220-e3ee-4e22-bd2b-5bc9c13c2995
 		summarizeBy: none
-		sourceColumn: CipCode
-
-		annotation SummarizationSetBy = Automatic
-
-	column CipDescription
-		dataType: string
-		lineageTag: 6f0c66d8-5f26-4800-8c19-b81ecd95f090
-		summarizeBy: none
-		sourceColumn: CipDescription
-
-		annotation SummarizationSetBy = Automatic
-
-	column CipUseCode
-		dataType: string
-		lineageTag: 26bde253-da05-4180-99ca-fa0390e72ebc
-		summarizeBy: none
-		sourceColumn: CipUseCode
-
-		annotation SummarizationSetBy = Automatic
-
-	column CipUseDescription
-		dataType: string
-		lineageTag: 52ea29b6-d7d2-4a0e-adc9-bc4e0ad42548
-		summarizeBy: none
-		sourceColumn: CipUseDescription
-
-		annotation SummarizationSetBy = Automatic
-
-	column CipVersionCode
-		dataType: string
-		lineageTag: b6f3898c-8cc0-47d7-b492-5aeaf6b2e269
-		summarizeBy: none
-		sourceColumn: CipVersionCode
-
-		annotation SummarizationSetBy = Automatic
-
-	column CipVersionDescription
-		dataType: string
-		lineageTag: a16a50a4-1bfd-45e5-989d-763163fa1bf3
-		summarizeBy: none
-		sourceColumn: CipVersionDescription
+		sourceColumn: FieldOfStudy
 
 		annotation SummarizationSetBy = Automatic
 

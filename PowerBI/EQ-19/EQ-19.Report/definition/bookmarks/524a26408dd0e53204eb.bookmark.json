@@ -3,7 +3,8 @@
   "displayName": "PS Certificate - Hide Filters",
   "name": "524a26408dd0e53204eb",
   "options": {
-    "targetVisualNames": []
+    "targetVisualNames": [],
+    "suppressData": true
   },
   "explorationState": {
     "version": "1.3",

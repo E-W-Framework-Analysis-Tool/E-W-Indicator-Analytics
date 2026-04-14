@@ -3,7 +3,8 @@
   "displayName": "Enrollment - Hide Filters",
   "name": "92909b832ebbe0e6a31e",
   "options": {
-    "targetVisualNames": []
+    "targetVisualNames": [],
+    "suppressData": true
   },
   "explorationState": {
     "version": "1.3",
