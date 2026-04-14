@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.2.0/schema.json",
   "themeCollection": {
     "baseTheme": {
       "name": "CY26SU02",
@@ -60,6 +60,11 @@
           "name": "E-W_Framework5377382647149859.json",
           "path": "E-W_Framework5377382647149859.json",
           "type": "CustomTheme"
+        },
+        {
+          "name": "settings06263574640523073.svg",
+          "path": "settings06263574640523073.svg",
+          "type": "Image"
         }
       ]
     }

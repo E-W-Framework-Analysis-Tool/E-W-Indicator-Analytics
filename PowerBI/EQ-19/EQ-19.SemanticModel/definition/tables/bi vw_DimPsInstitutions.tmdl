@@ -27,6 +27,14 @@ table 'bi vw_DimPsInstitutions'
 
 		annotation SummarizationSetBy = Automatic
 
+	column SeaOrganizationName
+		dataType: string
+		lineageTag: 7fb08904-9bc8-4c5a-8eb2-4a2e5877f69a
+		summarizeBy: none
+		sourceColumn: SeaOrganizationName
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'bi vw_DimPsInstitutions' = m
 		mode: import
 		source =

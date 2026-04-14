@@ -1,0 +1,110 @@
+table Globals
+	lineageTag: 50acccf1-e54a-4d06-bfaa-dd885da7899a
+
+	measure 'Disaggregate by' = CONCATENATE(VALUES(Disaggregation[Disaggregation Name]), "")
+		lineageTag: d7289dce-0cae-4faf-a3c0-7061e1928a1f
+
+	measure 'Selected Filters' = ```
+			
+			
+			IF(
+			    ISFILTERED('bi vw_PS_DimSchoolYears'[SchoolYear])
+			    ||
+			    ISFILTERED('bi vw_DimPsInstitutions'[SeaOrganizationName])
+			    ||
+			    ISFILTERED('bi vw_DimPsInstitutions'[NameOfInstitution])
+			    ||
+			    ISFILTERED('bi vw_DimRaces'[RaceEthnicity])
+			    ||
+			    ISFILTERED('bi vw_DimK12Demographics'[Gender])
+			    ||
+			    ISFILTERED('bi vw_DimDisabilityStatuses'[DisabilityStatus])
+			    ||
+			    ISFILTERED('bi vw_DimEconomicallyDisadvantagedStatuses'[EconomicDisadvantageStatus])
+			    ||
+			    ISFILTERED('bi vw_DimEnglishLearnerStatuses'[EnglishLearnerStatus])
+			    ||    
+			    ISFILTERED('bi vw_DimHomelessnessStatuses'[HomelessnessStatus]),
+			    
+			         IF(
+			            ISFILTERED('bi vw_PS_DimSchoolYears'[SchoolYear]),
+			            "> Cohort Year: " & CONCATENATEX(VALUES('bi vw_PS_DimSchoolYears'[SchoolYear]), 'bi vw_PS_DimSchoolYears'[SchoolYear], ", "),
+			            ""
+			        )      
+			        & " " & 
+			         IF(
+			            ISFILTERED('bi vw_DimPsInstitutions'[SeaOrganizationName]),
+			            "> SEAs: " & CONCATENATEX(VALUES('bi vw_DimPsInstitutions'[SeaOrganizationName]), 'bi vw_DimPsInstitutions'[SeaOrganizationName], ", "),
+			            ""
+			        )
+			        & " " & 
+			        IF(
+			            ISFILTERED('bi vw_DimPsInstitutions'[NameOfInstitution]),
+			            "> School: " & CONCATENATEX(VALUES('bi vw_DimPsInstitutions'[NameOfInstitution]), 'bi vw_DimPsInstitutions'[NameOfInstitution], ", "),
+			            ""
+			        )
+			        & " " & 
+			        IF(
+			            ISFILTERED('bi vw_DimDisabilityStatuses'[DisabilityStatus]),
+			            "> Disability Type: " & CONCATENATEX(VALUES('bi vw_DimDisabilityStatuses'[DisabilityStatus]), 'bi vw_DimDisabilityStatuses'[DisabilityStatus], ", "),
+			            ""
+			        )
+			        & " " & 
+			        IF(
+			            ISFILTERED('bi vw_DimEnglishLearnerStatuses'[EnglishLearnerStatus]),
+			            "> English Learner Status: " & CONCATENATEX(VALUES('bi vw_DimEnglishLearnerStatuses'[EnglishLearnerStatus]), 'bi vw_DimEnglishLearnerStatuses'[EnglishLearnerStatus], ", "),
+			            ""
+			        )
+			        & " " &
+			        IF(
+			            ISFILTERED('bi vw_DimRaces'[RaceEthnicity]),
+			            "> Race/Ethnicity: " & CONCATENATEX(VALUES('bi vw_DimRaces'[RaceEthnicity]), 'bi vw_DimRaces'[RaceEthnicity], ", "),
+			            ""
+			        )
+			        & " " &
+			        IF(
+			            ISFILTERED('bi vw_DimHomelessnessStatuses'[HomelessnessStatus]),
+			            "> Homelessness Status: " & CONCATENATEX(VALUES('bi vw_DimHomelessnessStatuses'[HomelessnessStatus]), 'bi vw_DimHomelessnessStatuses'[HomelessnessStatus], ", "),
+			            ""
+			        )
+			        & " " &
+			        IF(
+			            ISFILTERED('bi vw_DimK12Demographics'[Gender]),
+			            "> Sex: " & CONCATENATEX(VALUES('bi vw_DimK12Demographics'[Gender]), 'bi vw_DimK12Demographics'[Gender], ", "),
+			            ""
+			        )
+			        & " " & 
+			        IF(
+			            ISFILTERED('bi vw_DimEconomicallyDisadvantagedStatuses'[EconomicDisadvantageStatus]),
+			            "> Economically Disadvantaged: " & CONCATENATEX(VALUES('bi vw_DimEconomicallyDisadvantagedStatuses'[EconomicDisadvantageStatus]), 'bi vw_DimEconomicallyDisadvantagedStatuses'[EconomicDisadvantageStatus], ", "),
+			            ""
+			        )
+			        // & " " &  
+			        // IF(
+			        //     ISFILTERED('Geography Value Slicer'[Organization Hierarchy]),
+			        //         IF(SELECTEDVALUE('Geography Value Slicer'[Organization Hierarchy]) <> SELECTEDVALUE('Geography Value Slicer'[Organization Name]),
+			        //             "> Organization: " & SELECTEDVALUE('Geography Value Slicer'[Organization Hierarchy]) & " | " & SELECTEDVALUE('Geography Value Slicer'[Organization Name]),
+			        //             "> ! Select Organization filters !"
+			        //         ),
+			        //     ""
+			        // )
+			        & " "
+			    ,
+			    "No filters selected"
+			
+			)
+			```
+		lineageTag: fa6e4c3c-ea5c-41cf-b361-19f9f65c0f9b
+
+	partition Globals = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

@@ -4,6 +4,7 @@ AS
 		[di].[DimPsInstitutionId]
 	  , [ds].[DimSeaId]
 	  , [di].[NameOfInstitution]
+	  , [ds].[SeaOrganizationName]
 	FROM
 		[reporting].[PS_DimInstitutions]    AS [di]
 			LEFT JOIN [reporting].[DimSEAs] AS [ds]
