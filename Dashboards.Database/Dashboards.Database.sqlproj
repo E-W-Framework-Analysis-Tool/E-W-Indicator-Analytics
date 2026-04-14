@@ -194,6 +194,9 @@
     <Build Include="Objects\reporting\Tables\FactPsStudentAcademicAwards.sql" />
     <Build Include="Objects\etl\Stored Procedures\Upsert_FactPsStudentAcademicAwards.sql" />
     <None Include="Scripts\SeedReportingDimensionTables\SeedDimPsAcademicAwardStatuses.sql" />
+    <Build Include="Objects\staging\Tables\FactPsStudentCourseTranscripts.sql" />
+    <Build Include="Objects\reporting\Tables\FactPsStudentCourseTranscripts.sql" />
+    <Build Include="Objects\etl\Stored Procedures\Upsert_FactPsStudentCourseTranscripts.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\SeedReportingDimensionTables\SeedDimEnglishLearnerStatuses.sql" />
