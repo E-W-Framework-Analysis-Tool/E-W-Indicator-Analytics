@@ -1171,7 +1171,7 @@
                           "Entity": "Enrollment in Graduate Education"
                         }
                       },
-                      "Property": "% Enrolled 1-5 Years"
+                      "Property": "Enrolled 1-5 Years"
                     }
                   },
                   "howCreated": 0
@@ -1186,7 +1186,7 @@
                           "Entity": "Enrollment in Graduate Education"
                         }
                       },
-                      "Property": "% Enrolled 6-10 Years"
+                      "Property": "Enrolled 6-10 Years"
                     }
                   },
                   "howCreated": 0
@@ -1221,7 +1221,7 @@
                           "Entity": "Enrollment in Graduate Education"
                         }
                       },
-                      "Property": "% Enrolled 1-5 Years"
+                      "Property": "Enrolled 1-5 Years"
                     }
                   }
                 }
@@ -1344,7 +1344,7 @@
                           "Entity": "Enrollment in Graduate Education"
                         }
                       },
-                      "Property": "% Enrolled 1-5 Years"
+                      "Property": "Enrolled 1-5 Years"
                     }
                   },
                   "howCreated": 0
@@ -1359,7 +1359,7 @@
                           "Entity": "Enrollment in Graduate Education"
                         }
                       },
-                      "Property": "% Enrolled 6-10 Years"
+                      "Property": "Enrolled 6-10 Years"
                     }
                   },
                   "howCreated": 0
@@ -1394,7 +1394,7 @@
                           "Entity": "Enrollment in Graduate Education"
                         }
                       },
-                      "Property": "% Enrolled 1-5 Years"
+                      "Property": "Enrolled 1-5 Years"
                     }
                   }
                 }
@@ -1558,7 +1558,7 @@
                           "Entity": "Enrollment in Graduate Education"
                         }
                       },
-                      "Property": "% Enrolled 1-5 Years"
+                      "Property": "Enrolled 1-5 Years"
                     }
                   },
                   "howCreated": 0
@@ -1573,7 +1573,7 @@
                           "Entity": "Enrollment in Graduate Education"
                         }
                       },
-                      "Property": "% Enrolled 6-10 Years"
+                      "Property": "Enrolled 6-10 Years"
                     }
                   },
                   "howCreated": 0

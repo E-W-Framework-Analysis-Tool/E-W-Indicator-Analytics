@@ -60,11 +60,25 @@
                       "Entity": "Enrollment in Graduate Education"
                     }
                   },
+                  "Property": "% Enrolled 0 Year"
+                }
+              },
+              "queryRef": "Enrollment in Graduate Education.% Enrolled 0 Years",
+              "nativeQueryRef": "% Enrolled 0 Year"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Enrollment in Graduate Education"
+                    }
+                  },
                   "Property": "% Enrolled 1-5 Years"
                 }
               },
-              "queryRef": "Enrollment in Graduate Education.% Enrolled 1-5 Years",
-              "nativeQueryRef": "% Enrolled 1-5 Years"
+              "queryRef": "Enrollment in Graduate Education.% Enrolled 1-5 Years1",
+              "nativeQueryRef": "% Enrolled 1-5 Years1"
             },
             {
               "field": {
@@ -77,7 +91,7 @@
                   "Property": "% Enrolled 6-10 Years"
                 }
               },
-              "queryRef": "Enrollment in Graduate Education.% Enrolled 6-10 Years",
+              "queryRef": "Enrollment in Graduate Education.% Enrolled 6-10 Years1",
               "nativeQueryRef": "% Enrolled 6-10 Years"
             }
           ]
@@ -149,6 +163,13 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "end": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             }

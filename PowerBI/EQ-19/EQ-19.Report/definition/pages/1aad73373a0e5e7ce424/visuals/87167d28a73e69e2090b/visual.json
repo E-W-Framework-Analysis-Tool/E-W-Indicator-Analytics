@@ -59,11 +59,25 @@
                       "Entity": "Enrollment in Graduate Education"
                     }
                   },
+                  "Property": "% Enrolled 0 Year"
+                }
+              },
+              "queryRef": "Enrollment in Graduate Education.% Enrolled 0 Years",
+              "nativeQueryRef": "% Enrolled 0 Year"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Enrollment in Graduate Education"
+                    }
+                  },
                   "Property": "% Enrolled 1-5 Years"
                 }
               },
-              "queryRef": "Enrollment in Graduate Education.% Enrolled 1-5 Years",
-              "nativeQueryRef": "% Enrolled 1-5 Years"
+              "queryRef": "Enrollment in Graduate Education.% Enrolled 1-5 Years1",
+              "nativeQueryRef": "% Enrolled 1-5 Years1"
             },
             {
               "field": {
@@ -76,7 +90,7 @@
                   "Property": "% Enrolled 6-10 Years"
                 }
               },
-              "queryRef": "Enrollment in Graduate Education.% Enrolled 6-10 Years",
+              "queryRef": "Enrollment in Graduate Education.% Enrolled 6-10 Years1",
               "nativeQueryRef": "% Enrolled 6-10 Years"
             }
           ]
@@ -92,7 +106,7 @@
                     "Entity": "Enrollment in Graduate Education"
                   }
                 },
-                "Property": "% Enrolled 1-5 Years"
+                "Property": "% Enrolled 0 Year"
               }
             },
             "direction": "Descending"
@@ -101,6 +115,52 @@
         "isDefaultSort": true
       }
     },
+    "objects": {
+      "valueAxis": [
+        {
+          "properties": {
+            "end": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "0489cf0c3698a09d3e0b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Schools"
+              }
+            },
+            "Property": "SeaOrganizationName"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }
