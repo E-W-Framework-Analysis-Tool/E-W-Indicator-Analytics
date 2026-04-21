@@ -4652,7 +4652,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Enrollment in Graduate Education",
-			          "ConceptualProperty": "Total Cohort Count"
+			          "ConceptualProperty": "Total Cohort Students"
 			        }
 			      },
 			      "State": "Generated",

@@ -707,21 +707,21 @@
         },
         {
           "location": {
-            "x": 840,
-            "y": 200
+            "x": 780,
+            "y": 332
           },
           "nodeIndex": "reporting RDS_FactPsStudentEnrollments",
           "nodeLineageTag": "340aee39-50c6-4fef-befe-3521642e9f22",
           "size": {
-            "height": 711,
-            "width": 234
+            "height": 352,
+            "width": 347
           },
           "zIndex": 0
         },
         {
           "location": {
-            "x": 1235,
-            "y": 87
+            "x": 31,
+            "y": 23
           },
           "nodeIndex": "reporting RDS_DimStudents",
           "nodeLineageTag": "4e6a4c71-b4d5-4f38-bce2-089c5d73531b",
@@ -740,6 +740,6 @@
       "tablesLocked": false
     }
   ],
-  "selectedDiagram": "Graduation Cohorts",
+  "selectedDiagram": "Fact-to-Fact Relationship",
   "defaultDiagram": "All tables"
 }

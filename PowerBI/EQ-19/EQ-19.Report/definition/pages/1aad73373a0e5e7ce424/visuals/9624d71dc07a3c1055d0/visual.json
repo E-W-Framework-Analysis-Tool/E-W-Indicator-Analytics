@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "986e056074b5c77dcd05",
+  "name": "9624d71dc07a3c1055d0",
   "position": {
-    "x": 1024.2973286875726,
+    "x": 1187.0847851335657,
     "y": 524.78513356562144,
-    "z": 1250,
+    "z": 1500,
     "height": 195.49361207897795,
-    "width": 162.78745644599303,
-    "tabOrder": 54
+    "width": 92.915214866434383,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "advancedSlicerVisual",
@@ -20,34 +20,17 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Enrollment Trend Picker"
+                      "Entity": "Hierarchy Picker"
                     }
                   },
-                  "Property": "Graduation Trend Picker"
+                  "Property": "Organization Hierarchy"
                 }
               },
-              "queryRef": "Enrollment Trend Picker.Graduation Trend Picker",
-              "nativeQueryRef": "Graduation Trend Picker"
+              "queryRef": "Hierarchy Picker.Hierarchy Picker",
+              "nativeQueryRef": "Organization Hierarchy"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "bi vw_DimCipCodes"
-                  }
-                },
-                "Property": "FieldOfStudy"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ]
       }
     },
     "objects": {
@@ -59,8 +42,8 @@
                 "Version": 2,
                 "From": [
                   {
-                    "Name": "e",
-                    "Entity": "Enrollment Trend Picker",
+                    "Name": "h",
+                    "Entity": "Hierarchy Picker",
                     "Type": 0
                   }
                 ],
@@ -73,10 +56,10 @@
                             "Column": {
                               "Expression": {
                                 "SourceRef": {
-                                  "Source": "e"
+                                  "Source": "h"
                                 }
                               },
-                              "Property": "Graduation Trend Picker Fields"
+                              "Property": "Hierarchy Picker Fields"
                             }
                           }
                         ],
@@ -84,7 +67,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''Enrollment in Graduate Education''[HS Trend]'"
+                                "Value": "'''bi vw_DimK12Schools''[SeaOrganizationName]'"
                               }
                             }
                           ]
@@ -98,10 +81,10 @@
                             "Column": {
                               "Expression": {
                                 "SourceRef": {
-                                  "Entity": "Enrollment Trend Picker"
+                                  "Entity": "Hierarchy Picker"
                                 }
                               },
-                              "Property": "Graduation Trend Picker"
+                              "Property": "Organization Hierarchy"
                             }
                           }
                         ],
@@ -112,7 +95,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''Enrollment in Graduate Education''[HS Trend]'"
+                                      "Value": "'''bi vw_DimK12Schools''[SeaOrganizationName]'"
                                     }
                                   }
                                 ]
@@ -125,10 +108,10 @@
                                 "Column": {
                                   "Expression": {
                                     "SourceRef": {
-                                      "Entity": "Enrollment Trend Picker"
+                                      "Entity": "Hierarchy Picker"
                                     }
                                   },
-                                  "Property": "Graduation Trend Picker Fields"
+                                  "Property": "Hierarchy Picker Fields"
                                 }
                               }
                             }
@@ -136,7 +119,7 @@
                         },
                         "valueMap": [
                           {
-                            "0": "K12 Graduation"
+                            "0": "SEA"
                           }
                         ]
                       }
@@ -162,13 +145,6 @@
                   "Value": "true"
                 }
               }
-            },
-            "singleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
             }
           }
         }
@@ -180,13 +156,6 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
-                }
-              }
-            },
-            "maxTiles": {
-              "expr": {
-                "Literal": {
-                  "Value": "3L"
                 }
               }
             }
@@ -614,7 +583,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Trend Type'"
+                  "Value": "'Organization'"
                 }
               }
             }

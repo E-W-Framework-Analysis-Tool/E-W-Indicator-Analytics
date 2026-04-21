@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "672f88465e966679d468",
+  "name": "95f609de9c03620a9bce",
   "position": {
     "x": 631.657355679702,
     "y": 193.07262569832403,
     "z": 750,
     "height": 205.78522656734947,
     "width": 648.342644320298,
-    "tabOrder": 50
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "lineChart",
@@ -27,45 +27,13 @@
                 }
               },
               "queryRef": "TrendLineGraduationYears.CohortGraduationYear",
-              "nativeQueryRef": "CohortGraduationYear",
+              "nativeQueryRef": "CohortGraduationYear1",
               "active": true
             }
           ]
         },
         "Series": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "bi vw_DimK12Schools"
-                    }
-                  },
-                  "Property": "SeaOrganizationName"
-                }
-              },
-              "queryRef": "bi vw_DimK12Schools.SeaOrganizationName",
-              "nativeQueryRef": "SEA",
-              "displayName": "SEA"
-            }
-          ],
-          "fieldParameters": [
-            {
-              "parameterExpr": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Hierarchy Picker"
-                    }
-                  },
-                  "Property": "Organization Hierarchy"
-                }
-              },
-              "index": 0,
-              "length": 1
-            }
-          ]
+          "projections": []
         },
         "Y": {
           "projections": [
@@ -77,28 +45,25 @@
                       "Entity": "Enrollment in Graduate Education"
                     }
                   },
-                  "Property": "HS Trend"
+                  "Property": "% Enrolled 1-5 Years Trend"
                 }
               },
-              "queryRef": "Enrollment in Graduate Education.HS Trend",
-              "nativeQueryRef": "K12 Graduation",
-              "displayName": "K12 Graduation"
-            }
-          ],
-          "fieldParameters": [
+              "queryRef": "Enrollment in Graduate Education.% Enrolled 1-5 Years Trend",
+              "nativeQueryRef": "% Enrolled 1-5 Years Trend"
+            },
             {
-              "parameterExpr": {
-                "Column": {
+              "field": {
+                "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Enrollment Trend Picker"
+                      "Entity": "Enrollment in Graduate Education"
                     }
                   },
-                  "Property": "Graduation Trend Picker"
+                  "Property": "% Enrolled 6-10 Years Trend"
                 }
               },
-              "index": 0,
-              "length": 1
+              "queryRef": "Enrollment in Graduate Education.% Enrolled 6-10 Years Trend",
+              "nativeQueryRef": "% Enrolled 6-10 Years Trend"
             }
           ]
         }
@@ -113,7 +78,7 @@
                     "Entity": "Enrollment in Graduate Education"
                   }
                 },
-                "Property": "HS Trend"
+                "Property": "% Enrolled 1-5 Years Trend"
               }
             },
             "direction": "Descending"
@@ -277,6 +242,20 @@
         },
         "type": "Advanced",
         "howCreated": "User"
+      },
+      {
+        "name": "ae75ea934b5c870554b0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "TrendLineGraduationYears"
+              }
+            },
+            "Property": "CohortGraduationYear"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

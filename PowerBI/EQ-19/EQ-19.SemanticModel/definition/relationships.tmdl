@@ -82,7 +82,9 @@ relationship 4c94dcec-f23e-9ecc-37d7-b980a6919322
 	fromColumn: 'reporting RDS_FactPsStudentEnrollments'.PsStudentId
 	toColumn: 'reporting RDS_FactK12GraduationCohorts'.K12StudentId
 
-relationship feed1162-1b38-73a6-1ba6-d652dcfd2e92
-	fromColumn: 'reporting RDS_FactPsStudentEnrollments'.PsStudentId
-	toColumn: 'reporting RDS_DimStudents'.DimK12StudentId
+relationship aaef7ebd-bfc2-dbcb-e369-5e4e7eeb1028
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'reporting RDS_DimStudents'.DimK12StudentId
+	toColumn: 'reporting RDS_FactK12GraduationCohorts'.K12StudentId
 
