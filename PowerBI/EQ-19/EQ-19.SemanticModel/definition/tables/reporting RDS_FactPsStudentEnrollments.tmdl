@@ -17,7 +17,7 @@ table 'reporting RDS_FactPsStudentEnrollments'
 		dataType: int64
 		formatString: 0
 		lineageTag: 8835746e-24d0-4e35-a0e8-8caa523e4964
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: SchoolYear
 
 		annotation SummarizationSetBy = Automatic

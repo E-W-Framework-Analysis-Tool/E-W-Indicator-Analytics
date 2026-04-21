@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "a832f6bf2466119ce64d",
+  "name": "986e056074b5c77dcd05",
   "position": {
-    "x": 1117.0464672183323,
-    "y": 419.350732017823,
-    "z": 6000,
-    "height": 300.649267982177,
-    "width": 162.95353278166775,
-    "tabOrder": 27
+    "x": 1024.2973286875726,
+    "y": 524.78513356562144,
+    "z": 1250,
+    "height": 195.49361207897795,
+    "width": 162.78745644599303,
+    "tabOrder": 54
   },
   "visual": {
     "visualType": "advancedSlicerVisual",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "bi vw_DimPsAcademicAwardStatuses"
+                      "Entity": "Enrollment Trend Picker"
                     }
                   },
-                  "Property": "CredentialType"
+                  "Property": "Graduation Trend Picker"
                 }
               },
-              "queryRef": "bi vw_DimPsAcademicAwardStatuses.CredentialType",
-              "nativeQueryRef": "CredentialType"
+              "queryRef": "Enrollment Trend Picker.Graduation Trend Picker",
+              "nativeQueryRef": "Graduation Trend Picker"
             }
           ]
         }
@@ -39,10 +39,10 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "bi vw_DimPsAcademicAwardStatuses"
+                    "Entity": "bi vw_DimCipCodes"
                   }
                 },
-                "Property": "CredentialType"
+                "Property": "FieldOfStudy"
               }
             },
             "direction": "Ascending"
@@ -53,7 +53,99 @@
     "objects": {
       "general": [
         {
-          "properties": {}
+          "properties": {
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "e",
+                    "Entity": "Enrollment Trend Picker",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "e"
+                                }
+                              },
+                              "Property": "Graduation Trend Picker Fields"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'''Enrollment in Graduate Education''[Undergrad Trend]'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    },
+                    "Annotations": {
+                      "filterExpressionMetadata": {
+                        "expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Enrollment Trend Picker"
+                                }
+                              },
+                              "Property": "Graduation Trend Picker"
+                            }
+                          }
+                        ],
+                        "decomposedIdentities": {
+                          "values": [
+                            [
+                              {
+                                "0": [
+                                  {
+                                    "Literal": {
+                                      "Value": "'''Enrollment in Graduate Education''[Undergrad Trend]'"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          ],
+                          "columns": [
+                            {
+                              "value": {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "Enrollment Trend Picker"
+                                    }
+                                  },
+                                  "Property": "Graduation Trend Picker Fields"
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        "valueMap": [
+                          {
+                            "0": "Undergrad Enrollment"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
         }
       ],
       "data": [
@@ -67,7 +159,14 @@
             "strictSingleSelect": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
+                }
+              }
+            },
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -87,7 +186,7 @@
             "maxTiles": {
               "expr": {
                 "Literal": {
-                  "Value": "6L"
+                  "Value": "3L"
                 }
               }
             }
@@ -515,7 +614,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Credential Type'"
+                  "Value": "'Trend Type'"
                 }
               }
             }
