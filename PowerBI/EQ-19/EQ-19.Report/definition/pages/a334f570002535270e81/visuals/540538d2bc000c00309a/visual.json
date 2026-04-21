@@ -1,24 +1,80 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "0074c3b4d94742dc3910",
+  "name": "540538d2bc000c00309a",
   "position": {
-    "x": 0,
-    "y": 137.68924302788847,
-    "z": 7000,
-    "height": 55.367103016505411,
-    "width": 1280,
-    "tabOrder": 28
+    "x": 1067.8895257946847,
+    "y": 20.778130949715383,
+    "z": 18000,
+    "height": 31.385152142616292,
+    "width": 106.72225117248567,
+    "tabOrder": 32
   },
   "visual": {
     "visualType": "actionButton",
     "objects": {
-      "icon": [
+      "shape": [
         {
           "properties": {
-            "shapeType": {
+            "roundEdge": {
               "expr": {
                 "Literal": {
-                  "Value": "'blank'"
+                  "Value": "15L"
+                }
+              }
+            },
+            "tileShape": {
+              "expr": {
+                "Literal": {
+                  "Value": "'rectangleRounded'"
+                }
+              }
+            },
+            "rectangleRoundedCurve": {
+              "expr": {
+                "Literal": {
+                  "Value": "15L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "selected"
+          }
+        },
+        {
+          "properties": {
+            "tileShape": {
+              "expr": {
+                "Literal": {
+                  "Value": "'rectangleRounded'"
+                }
+              }
+            },
+            "rectangleRoundedCurve": {
+              "expr": {
+                "Literal": {
+                  "Value": "15L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "hover"
+          }
+        },
+        {
+          "properties": {
+            "tileShape": {
+              "expr": {
+                "Literal": {
+                  "Value": "'rectangleRounded'"
+                }
+              }
+            },
+            "rectangleRoundedCurve": {
+              "expr": {
+                "Literal": {
+                  "Value": "15L"
                 }
               }
             }
@@ -28,7 +84,7 @@
           }
         }
       ],
-      "text": [
+      "icon": [
         {
           "properties": {
             "show": {
@@ -42,52 +98,17 @@
         },
         {
           "properties": {
-            "text": {
+            "shapeType": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of bachelor’s degree recipients enrolling in post-baccalaureate or graduate programs within 1-5 or 6-10 years of completion.'"
+                  "Value": "'clearAllSlicers'"
                 }
               }
             },
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "text": {
+            "lineWeight": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of bachelor’s degree recipients enrolling in post-baccalaureate or graduate programs within 1-5 or 6-10 years of completion.'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "hover"
-          }
-        }
-      ],
-      "shape": [
-        {
-          "properties": {
-            "tileShape": {
-              "expr": {
-                "Literal": {
-                  "Value": "'arrowPentagon'"
+                  "Value": "1L"
                 }
               }
             }
@@ -100,46 +121,10 @@
       "outline": [
         {
           "properties": {
-            "show": {
+            "weight": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "fill": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        },
-        {
-          "properties": {
-            "fillColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
+                  "Value": "2D"
                 }
               }
             }
@@ -149,7 +134,25 @@
           }
         }
       ],
-      "shadow": [
+      "text": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "visualLink": [
         {
           "properties": {
             "show": {
@@ -158,26 +161,18 @@
                   "Value": "true"
                 }
               }
-            }
-          }
-        }
-      ]
-    },
-    "visualContainerObjects": {
-      "title": [
-        {
-          "properties": {
-            "show": {
+            },
+            "type": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "'ClearAllSlicers'"
                 }
               }
             },
-            "text": {
+            "tooltipPlaceholderText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Summary'"
+                  "Value": "'Clear all slicers on this page'"
                 }
               }
             }
@@ -187,5 +182,6 @@
     },
     "drillFilterOtherVisuals": true
   },
+  "parentGroupName": "9716f74863eb33e4ad96",
   "howCreated": "InsertVisualButton"
 }

@@ -32,7 +32,7 @@ table 'Postsecondary Certificate Completion'
 			    CALCULATE(
 			        DISTINCTCOUNT('bi vw_FactPsStudentEnrollments'[PSStudentId]),
 			        FILTER(
-			            VALUES('bi vw_FactPsStudentEnrollments'[PSStudentId]),
+			            VALUES('bi vw_PS_DimStudents'[DimPsStudentId]),
 			            VAR UDate = [UndergradAwardDate]
 			            VAR GDate = [FirstGradEnrollDate]
 			            VAR Diff = GDate - YEAR(UDate)
@@ -54,7 +54,7 @@ table 'Postsecondary Certificate Completion'
 			    CALCULATE(
 			        DISTINCTCOUNT('bi vw_FactPsStudentEnrollments'[PSStudentId]),
 			        FILTER(
-			            VALUES('bi vw_FactPsStudentEnrollments'[PSStudentId]),
+			            VALUES('bi vw_PS_DimStudents'[DimPsStudentId]),
 			            VAR UDate = [UndergradAwardDate]
 			            VAR GDate = [FirstGradEnrollDate]
 			            VAR Diff = GDate - YEAR(UDate)

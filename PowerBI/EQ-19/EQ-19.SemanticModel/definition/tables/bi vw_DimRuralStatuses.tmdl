@@ -1,0 +1,29 @@
+table 'bi vw_DimRuralStatuses'
+	lineageTag: f3e14e8a-aa4b-4863-b6ad-d45c49da5170
+
+	column DimRuralStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: 29fa631a-1cfa-44da-b2df-d51488a78a1c
+		summarizeBy: count
+		sourceColumn: DimRuralStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Urbanicity
+		dataType: string
+		lineageTag: 5f873396-3794-47dc-a740-01a4017cc420
+		summarizeBy: none
+		sourceColumn: Urbanicity
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bi vw_DimRuralStatuses' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    bi_vw_DimRuralStatuses = Source{[Schema="bi",Item="vw_DimRuralStatuses"]}[Data]
+				in
+				    bi_vw_DimRuralStatuses
+

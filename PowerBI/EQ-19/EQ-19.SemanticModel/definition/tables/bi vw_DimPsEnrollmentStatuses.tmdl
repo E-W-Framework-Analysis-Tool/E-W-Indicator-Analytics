@@ -5,7 +5,7 @@ table 'bi vw_DimPsEnrollmentStatuses'
 		dataType: int64
 		formatString: 0
 		lineageTag: 0c23291b-cfaa-40b1-8738-37f24b550da0
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: DimPsEnrollmentStatusId
 
 		annotation SummarizationSetBy = Automatic

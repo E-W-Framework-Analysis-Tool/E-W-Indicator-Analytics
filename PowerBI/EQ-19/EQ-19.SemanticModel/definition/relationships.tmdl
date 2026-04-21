@@ -1,69 +1,87 @@
-relationship 23945e8d-c653-4f27-8e34-d0903f31d101
+relationship b6daadb8-125f-41c8-aad5-c2fa414fde0e
 	joinOnDateBehavior: datePartOnly
-	fromColumn: 'bi vw_FactPsStudentAcademicAwards'.AcademicAwardDate
-	toColumn: LocalDateTable_f9f5e827-acda-40cf-a431-6f99f09a8e29.Date
+	fromColumn: 'reporting RDS_FactPsStudentEnrollments'.EnrollmentEntryDate
+	toColumn: LocalDateTable_8e1e9ab8-78a9-4ea7-83c7-838b5d8b3fa1.Date
 
-relationship bc1ca9a6-784b-bc55-6e41-6c8215b96162
-	fromColumn: 'bi vw_PS_DimStudents'.DisabilityStatusId
-	toColumn: 'bi vw_DimDisabilityStatuses'.DimDisabilityStatusId
+relationship d56bddc3-8369-4e67-9df0-7361740c9966
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'reporting RDS_FactPsStudentEnrollments'.EnrollmentExitDate
+	toColumn: LocalDateTable_83841da8-e5bf-4734-8ea3-fe9c531649be.Date
 
-relationship e035e834-5f6a-f192-3fbe-412b55028c72
-	fromColumn: 'bi vw_PS_DimStudents'.EnglishLearnerStatusId
-	toColumn: 'bi vw_DimEnglishLearnerStatuses'.DimEnglishLearnerStatusId
+relationship 63fdabdd-2175-4f08-be01-e099af217a1e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'reporting RDS_DimPsInstitutions'.OperationalStatusEffectiveDate
+	toColumn: LocalDateTable_d05496c1-5e0b-4e01-b52a-283816cfde3d.Date
 
-relationship 94aa2f7a-3058-f561-0ed2-95c52e031b32
-	fromColumn: 'bi vw_PS_DimStudents'.HomelessnessStatusId
-	toColumn: 'bi vw_DimHomelessnessStatuses'.DimHomelessnessStatusId
+relationship AutoDetected_58d13370-2020-48ce-bda2-360c93e2116a
+	fromColumn: 'bi vw_DimK12Schools'.SeaOrganizationName
+	toColumn: 'bi vw_DimSEAs'.SeaOrganizationName
 
-relationship b3288b56-961c-0e4b-0b52-0240c4745638
-	fromColumn: 'bi vw_PS_DimStudents'.PsDemographicId
+relationship f7e65a01-9667-152a-5e31-4f540b04cc4c
+	fromColumn: 'reporting RDS_FactK12GraduationCohorts'.CohortYear
+	toColumn: 'bi vw_DimCohortYears'.CohortYear
+
+relationship 8f25ac74-68a3-151e-02df-9ac675199ebc
+	fromColumn: 'reporting RDS_FactK12GraduationCohorts'.CohortGraduationYear
+	toColumn: 'bi vw_DimCohortGraduationYears'.CohortGraduationYear
+
+relationship 4bb2fd16-0994-51a6-4926-fd9eeca5f1c8
+	fromColumn: 'reporting RDS_FactK12GraduationCohorts'.K12SchoolId
+	toColumn: 'bi vw_DimK12Schools'.DimK12SchoolId
+
+relationship c6320c6a-bca8-4d33-bed4-80e493f25945
+	fromColumn: 'reporting RDS_DimStudents'.K12DemographicId
 	toColumn: 'bi vw_DimK12Demographics'.Dimk12DemographicId
 
-relationship 4e55b90c-481f-e684-8e2c-60edeacaa1fb
-	fromColumn: 'bi vw_PS_DimStudents'.EconomicallyDisadvantagedStatusId
+relationship 29b7ab76-1d5b-7114-8ea1-5d03c48821f2
+	fromColumn: 'reporting RDS_DimStudents'.RaceId
+	toColumn: 'bi vw_DimRaces'.DimRaceId
+
+relationship a3cfc2d4-d31c-ae66-29c9-ca262c9153c4
+	fromColumn: 'reporting RDS_FactK12GraduationCohorts'.K12StudentId
+	toColumn: 'reporting RDS_DimStudents'.DimK12StudentId
+
+relationship e1097a25-3686-f15a-afe5-4e35c9d9ab0b
+	fromColumn: 'reporting RDS_FactK12GraduationCohorts'.DisabilityStatusId
+	toColumn: 'bi vw_DimDisabilityStatuses'.DimDisabilityStatusId
+
+relationship 6ffddff9-c8f7-3d4c-c707-b5b3fa8009c8
+	fromColumn: 'reporting RDS_FactK12GraduationCohorts'.EconomicallyDisadvantagedStatusId
 	toColumn: 'bi vw_DimEconomicallyDisadvantagedStatuses'.DimEconomicallyDisadvantagedStatusId
 
-relationship 071f2ece-b322-64a8-1ced-67d503c72ae6
-	fromColumn: 'bi vw_FactPsStudentEnrollments'.SchoolYear
-	toColumn: 'bi vw_PS_DimSchoolYears'.SchoolYear
+relationship a47bef3c-7b62-c0de-2afb-527dfb89fabf
+	fromColumn: 'reporting RDS_FactK12GraduationCohorts'.EnglishLearnerStatusId
+	toColumn: 'bi vw_DimEnglishLearnerStatuses'.DimEnglishLearnerStatusId
 
-relationship a4cb7083-1781-3e13-0560-8537abc2f161
-	fromColumn: 'bi vw_FactPsStudentEnrollments'.PsInstitutionId
-	toColumn: 'bi vw_DimPsInstitutions'.DimPsInstitutionId
+relationship a856c950-db05-61a0-a1ac-e89ea415e0db
+	fromColumn: 'reporting RDS_FactK12GraduationCohorts'.FosterCareStatusId
+	toColumn: 'bi vw_DimFosterCareStatuses'.DimFosterCareStatusId
 
-relationship 66af5734-7be7-ba1b-0338-6b3271ca6593
-	fromColumn: 'bi vw_DimPsInstitutions'.DimSeaId
-	toColumn: 'bi vw_DimSEAs'.DimSeaId
+relationship 6cacf17d-07cc-10f1-88b2-54440554b411
+	fromColumn: 'reporting RDS_FactK12GraduationCohorts'.HomelessnessStatusId
+	toColumn: 'bi vw_DimHomelessnessStatuses'.DimHomelessnessStatusId
 
-relationship cf92ec58-8145-5c1d-ed1c-9ac0825f91a5
-	fromColumn: 'bi vw_FactPsStudentAcademicAwards'.SchoolYear
-	toColumn: 'bi vw_PS_DimSchoolYears'.SchoolYear
+relationship c17e1d3e-f9d9-81bb-0e47-482fdde3f702
+	fromColumn: 'reporting RDS_FactK12GraduationCohorts'.SchoolYear
+	toColumn: 'bi vw_DimSchoolYears'.SchoolYear
 
-relationship 84b88b5d-a0c0-cc66-da57-a06a313ee8ce
-	fromColumn: 'bi vw_FactPsStudentCourseTranscripts'.CipCodeId
-	toColumn: 'bi vw_DimCipCodes'.DimCipCodeId
+relationship 8e527f2f-53e4-9623-94e8-ccfb1f69a2e5
+	fromColumn: 'reporting RDS_FactPsStudentEnrollments'.PsEnrollmentStatusId
+	toColumn: 'bi vw_DimPsEnrollmentStatuses'.DimPsEnrollmentStatusId
 
-relationship 07cf24b5-cc51-ead5-77df-79af01beb4f8
-	fromColumn: 'bi vw_FactPsStudentCourseTranscripts'.SchoolYear
-	toColumn: 'bi vw_PS_DimSchoolYears'.SchoolYear
+relationship 81f1ba8d-9fd7-6b53-8475-22d065a6a87f
+	fromColumn: 'reporting RDS_FactPsStudentEnrollments'.PsInstitutionId
+	toColumn: 'reporting RDS_DimPsInstitutions'.DimPsInstitutionId
 
-relationship 50cd5e0c-f76f-6573-06c3-9c21eeb0ef86
-	fromColumn: 'bi vw_FactPsStudentCourseTranscripts'.PsStudentId
-	toColumn: 'bi vw_PS_DimStudents'.DimPsStudentId
+relationship 95f85af9-f813-952e-45b9-9a64b9207278
+	fromColumn: 'reporting RDS_FactPsStudentEnrollments'.PsStudentId
+	toColumn: 'reporting RDS_DimStudents'.DimK12StudentId
 
-relationship dc0eed17-4115-fce4-bf49-427875ab160f
-	fromColumn: 'bi vw_FactPsStudentEnrollments'.PSStudentId
-	toColumn: 'bi vw_PS_DimStudents'.DimPsStudentId
+relationship 01d62a2d-d434-8ace-7fb5-4c7f2bec88a4
+	fromColumn: 'reporting RDS_FactPsStudentEnrollments'.SchoolYear
+	toColumn: 'bi vw_DimSchoolYears'.SchoolYear
 
-relationship 6603e2df-f196-f3c8-4106-330385bdb52e
-	fromColumn: 'bi vw_FactPsStudentAcademicAwards'.PSStudentId
-	toColumn: 'bi vw_PS_DimStudents'.DimPsStudentId
-
-relationship 6a3c66cf-e29d-2c49-cabd-e7ef7d4e3468
-	fromColumn: 'bi vw_FactPsStudentAcademicAwards'.PsInstitutionId
-	toColumn: 'bi vw_DimPsInstitutions'.DimPsInstitutionId
-
-relationship b1bae13b-257c-63d5-f9b9-f320ead0ed81
-	fromColumn: 'bi vw_FactPsStudentCourseTranscripts'.PsInstitutionId
-	toColumn: 'bi vw_DimPsInstitutions'.DimPsInstitutionId
+relationship 77923d81-cbc8-92e7-679d-05605392b239
+	fromColumn: 'reporting RDS_FactK12GraduationCohorts'.K12AcademicAwardStatusId
+	toColumn: 'bi vw_DimPsAcademicAwardStatuses'.DimPsAcademicAwardStatusId
 
