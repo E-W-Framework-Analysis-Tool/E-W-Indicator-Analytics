@@ -60,25 +60,11 @@
                       "Entity": "Enrollment in Graduate Education"
                     }
                   },
-                  "Property": "HS Graduates"
-                }
-              },
-              "queryRef": "Enrollment in Graduate Education.HS Graduates",
-              "nativeQueryRef": "HS Graduates"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Enrollment in Graduate Education"
-                    }
-                  },
-                  "Property": "Enrolled Undergrad"
+                  "Property": "% Enrolled Undergrad"
                 }
               },
               "queryRef": "Enrollment in Graduate Education.Enrolled Undergrad",
-              "nativeQueryRef": "Enrolled Undergrad"
+              "nativeQueryRef": "% Enrolled Undergrad"
             },
             {
               "field": {
@@ -88,11 +74,11 @@
                       "Entity": "Enrollment in Graduate Education"
                     }
                   },
-                  "Property": "Enrolled Grad"
+                  "Property": "% Enrolled Grad"
                 }
               },
               "queryRef": "Enrollment in Graduate Education.Enrolled Grad",
-              "nativeQueryRef": "Enrolled Grad"
+              "nativeQueryRef": "% Enrolled Grad"
             }
           ]
         }

@@ -77,12 +77,12 @@
                       "Entity": "Enrollment in Graduate Education"
                     }
                   },
-                  "Property": "HS Trend"
+                  "Property": "Undergrad Trend"
                 }
               },
-              "queryRef": "Enrollment in Graduate Education.HS Trend",
-              "nativeQueryRef": "K12 Graduation",
-              "displayName": "K12 Graduation"
+              "queryRef": "Enrollment in Graduate Education.Undergrad Trend",
+              "nativeQueryRef": "Undergrad Enrollment",
+              "displayName": "Undergrad Enrollment"
             }
           ],
           "fieldParameters": [
@@ -94,7 +94,7 @@
                       "Entity": "Enrollment Trend Picker"
                     }
                   },
-                  "Property": "Graduation Trend Picker"
+                  "Property": "Graduation Trend"
                 }
               },
               "index": 0,
@@ -113,7 +113,7 @@
                     "Entity": "Enrollment in Graduate Education"
                   }
                 },
-                "Property": "HS Trend"
+                "Property": "Undergrad Trend"
               }
             },
             "direction": "Descending"
@@ -215,6 +215,26 @@
             }
           }
         }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "end": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "start": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -277,6 +297,34 @@
         },
         "type": "Advanced",
         "howCreated": "User"
+      },
+      {
+        "name": "d284492252d2456c0dc6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "TrendLineGraduationYears"
+              }
+            },
+            "Property": "CohortGraduationYear"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7b995bfa1926e6091da8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Schools"
+              }
+            },
+            "Property": "SeaOrganizationName"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

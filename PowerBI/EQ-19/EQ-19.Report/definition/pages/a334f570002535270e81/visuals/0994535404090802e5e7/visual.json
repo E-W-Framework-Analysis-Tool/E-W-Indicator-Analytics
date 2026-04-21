@@ -62,25 +62,11 @@
                       "Entity": "Enrollment in Graduate Education"
                     }
                   },
-                  "Property": "HS Graduates"
-                }
-              },
-              "queryRef": "Enrollment in Graduate Education.HS Graduates",
-              "nativeQueryRef": "HS Graduates"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Enrollment in Graduate Education"
-                    }
-                  },
-                  "Property": "Enrolled Undergrad"
+                  "Property": "% Enrolled Undergrad"
                 }
               },
               "queryRef": "Enrollment in Graduate Education.Enrolled Undergrad",
-              "nativeQueryRef": "Enrolled Undergrad"
+              "nativeQueryRef": "% Enrolled Undergrad"
             },
             {
               "field": {
@@ -90,11 +76,11 @@
                       "Entity": "Enrollment in Graduate Education"
                     }
                   },
-                  "Property": "Enrolled Grad"
+                  "Property": "% Enrolled Grad"
                 }
               },
               "queryRef": "Enrollment in Graduate Education.Enrolled Grad",
-              "nativeQueryRef": "Enrolled Grad"
+              "nativeQueryRef": "% Enrolled Grad"
             }
           ]
         }
@@ -109,7 +95,7 @@
                     "Entity": "Enrollment in Graduate Education"
                   }
                 },
-                "Property": "HS Graduates"
+                "Property": "% Enrolled Undergrad"
               }
             },
             "direction": "Descending"
@@ -118,6 +104,67 @@
         "isDefaultSort": true
       }
     },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "0666d7e0c609b33722ab",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Schools"
+              }
+            },
+            "Property": "SeaOrganizationName"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "fa3c3e6fd04aa86ba8a1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Enrollment in Graduate Education"
+              }
+            },
+            "Property": "% Enrolled Undergrad"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "77917f3199506a6206ce",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Enrollment in Graduate Education"
+              }
+            },
+            "Property": "% Enrolled Grad"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

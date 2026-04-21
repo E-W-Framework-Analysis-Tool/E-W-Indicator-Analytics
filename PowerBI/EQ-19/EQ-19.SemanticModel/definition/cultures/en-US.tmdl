@@ -287,6 +287,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.476
 			          }
+			        },
+			        {
+			          "Race & Ethnicity": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -5372,7 +5382,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Enrollment in Graduate Education",
-			          "ConceptualProperty": "Enrolled Undergrad"
+			          "ConceptualProperty": "% Enrolled Undergrad"
 			        }
 			      },
 			      "State": "Generated",
@@ -5394,7 +5404,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Enrollment in Graduate Education",
-			          "ConceptualProperty": "Enrolled Grad"
+			          "ConceptualProperty": "% Enrolled Grad"
 			        }
 			      },
 			      "State": "Generated",
@@ -16598,335 +16608,6 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
-			    },
-			    "enrollment_trend_picker": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Enrollment Trend Picker"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "enrollment trend picker": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "picker": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "trend picker": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        }
-			      ]
-			    },
-			    "enrollment_trend_picker.graduation_trend_picker": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Enrollment Trend Picker",
-			          "ConceptualProperty": "Graduation Trend Picker"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "graduation trend picker": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "picker": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "trend picker": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        }
-			      ]
-			    },
-			    "enrollment_trend_picker.graduation_trend_picker_field": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Enrollment Trend Picker",
-			          "ConceptualProperty": "Graduation Trend Picker Fields"
-			        }
-			      },
-			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
-			      "Terms": [
-			        {
-			          "graduation trend picker field": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "field": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "picker field": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "trend picker field": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "graduation trend picker arena": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.514
-			          }
-			        },
-			        {
-			          "trend picker arena": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "picker arena": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "graduation trend picker turf": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.499
-			          }
-			        },
-			        {
-			          "graduation trend picker ground": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.499
-			          }
-			        },
-			        {
-			          "graduation trend picker pitch": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.499
-			          }
-			        },
-			        {
-			          "graduation trend picker park": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.499
-			          }
-			        },
-			        {
-			          "trend picker turf": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "trend picker ground": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "trend picker pitch": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        }
-			      ]
-			    },
-			    "enrollment_trend_picker.graduation_trend_picker_order": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Enrollment Trend Picker",
-			          "ConceptualProperty": "Graduation Trend Picker Order"
-			        }
-			      },
-			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
-			      "Terms": [
-			        {
-			          "graduation trend picker order": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "order": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "picker order": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "trend picker order": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "graduation trend picker instruction": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.514
-			          }
-			        },
-			        {
-			          "graduation trend picker direction": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.514
-			          }
-			        },
-			        {
-			          "graduation trend picker edict": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.514
-			          }
-			        },
-			        {
-			          "trend picker instruction": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "trend picker direction": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "trend picker edict": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "picker instruction": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "picker direction": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "picker edict": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "graduation trend picker command": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.499
-			          }
-			        }
-			      ]
 			    }
 			  },
 			  "Relationships": {
@@ -18223,72 +17904,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "bi_vw_DimPsEnrollmentStatuses_have_reporting_RDS_FactPsStudentEnrollments"
-			        }
-			      ]
-			    },
-			    "enrollment_trend_picker_has_graduation_trend_picker": {
-			      "Binding": {
-			        "ConceptualEntity": "Enrollment Trend Picker"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "enrollment_trend_picker": {
-			          "Target": {
-			            "Entity": "enrollment_trend_picker"
-			          }
-			        },
-			        "enrollment_trend_picker.graduation_trend_picker": {
-			          "Target": {
-			            "Entity": "enrollment_trend_picker.graduation_trend_picker"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "enrollment_trend_picker"
-			            },
-			            "Object": {
-			              "Role": "enrollment_trend_picker.graduation_trend_picker"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "enrollment_trend_pickers_have_graduation_trend_pickers"
-			        },
-			        {
-			          "Verb": {
-			            "Subject": {
-			              "Role": "enrollment_trend_picker.graduation_trend_picker"
-			            },
-			            "Verbs": [
-			              {
-			                "pick": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "enrollment_trend_picker"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.75,
-			          "ID": "graduation_trend_pickers_pick_enrollment_trend_pickers"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "enrollment_trend_picker.graduation_trend_picker"
-			            },
-			            "Object": {
-			              "Role": "enrollment_trend_picker"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "graduation_trend_pickers_have_enrollment_trend_pickers"
 			        }
 			      ]
 			    },
@@ -21649,38 +21264,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.9,
 			          "ID": "reporting_RDS_FactPsStudentEnrollments_are_schooled_on_school_years"
-			        }
-			      ]
-			    },
-			    "enrollment_trend_picker_pick": {
-			      "Binding": {
-			        "ConceptualEntity": "Enrollment Trend Picker"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "enrollment_trend_picker": {
-			          "Target": {
-			            "Entity": "enrollment_trend_picker"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Verb": {
-			            "Subject": {
-			              "Role": "enrollment_trend_picker"
-			            },
-			            "Verbs": [
-			              {
-			                "pick": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ]
-			          },
-			          "State": "Generated",
-			          "Weight": 0.75,
-			          "ID": "enrollment_trend_pickers_pick"
 			        }
 			      ]
 			    },

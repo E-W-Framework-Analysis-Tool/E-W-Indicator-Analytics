@@ -74,24 +74,26 @@ table 'Enrollment in Graduate Education'
 		formatString: 0
 		lineageTag: 38bf4d1c-5d9d-460d-ac15-5a3679ce9bb5
 
-	measure 'Enrolled Undergrad' =
+	measure '% Enrolled Undergrad' =
 			
-			CALCULATE(
+			VAR counts = CALCULATE(
 			    DISTINCTCOUNT('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
 			    KEEPFILTERS('reporting RDS_FactPsStudentEnrollments')
 			)
-		formatString: 0
+			RETURN DIVIDE(counts, [HS Graduates], 0)
+		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 6cd199fc-0505-4009-8bb3-e80e4553120f
 
-	measure 'Enrolled Grad' =
+	measure '% Enrolled Grad' =
 			
-			COUNTROWS(
+			VAR counts = COUNTROWS(
 			    FILTER(
 			        VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
 			        CALCULATE(COUNT('reporting RDS_FactPsStudentEnrollments'[PsStudentId])) > 1
 			    )
 			)
-		formatString: 0
+			RETURN DIVIDE(counts, [HS Graduates], 0)
+		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: c2c520b4-200b-4fd9-867b-ea619ebc4558
 
 	measure 'HS Trend' =
@@ -103,7 +105,7 @@ table 'Enrollment in Graduate Education'
 			    'bi vw_DimCohortGraduationYears'[CohortGraduationYear] = SelectedTrendYear,
 			    REMOVEFILTERS('bi vw_DimSchoolYears')
 			)
-		formatString: 0
+		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 4e606755-d1f3-4998-a731-94e52e96141c
 
 	measure 'Undergrad Trend' =
@@ -111,11 +113,11 @@ table 'Enrollment in Graduate Education'
 			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
 			RETURN
 			CALCULATE(
-			    [Enrolled Undergrad],
+			    [% Enrolled Undergrad],
 			    'bi vw_DimCohortGraduationYears'[CohortGraduationYear] = SelectedTrendYear,
 			    REMOVEFILTERS('bi vw_DimSchoolYears')
 			)
-		formatString: 0
+		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 2b662ce3-ef6a-4335-924f-368732ff6f82
 
 	measure 'Postgrad Trend' =
@@ -123,11 +125,11 @@ table 'Enrollment in Graduate Education'
 			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
 			RETURN
 			CALCULATE(
-			    [Enrolled Grad],
+			    [% Enrolled Grad],
 			    'bi vw_DimCohortGraduationYears'[CohortGraduationYear] = SelectedTrendYear,
 			    REMOVEFILTERS('bi vw_DimSchoolYears')
 			)
-		formatString: 0
+		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: c4c22e3d-4665-49c8-971e-b612cbfd6527
 
 	measure '% Enrolled 0 Year' = ```

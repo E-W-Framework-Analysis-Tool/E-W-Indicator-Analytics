@@ -1,23 +1,23 @@
 table 'Enrollment Trend Picker'
-	lineageTag: 7045af45-d775-4717-a1e1-51f75e37747c
+	lineageTag: 526353fd-f28d-4a0e-bce4-6c22a761a4ad
 
-	column 'Graduation Trend Picker'
-		lineageTag: d3cbcb9b-9f55-4ed6-b35c-caf86dc4774b
+	column 'Graduation Trend'
+		lineageTag: 8b372c57-fa84-43cc-9600-0ab10524557d
 		summarizeBy: none
 		sourceColumn: [Value1]
-		sortByColumn: 'Graduation Trend Picker Order'
+		sortByColumn: 'Enrollment Trend Picker Order'
 
 		relatedColumnDetails
-			groupByColumn: 'Graduation Trend Picker Fields'
+			groupByColumn: 'Enrollment Trend Picker Fields'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Graduation Trend Picker Fields'
+	column 'Enrollment Trend Picker Fields'
 		isHidden
-		lineageTag: d9e898e0-99cb-4fc3-883b-b5f3f0bd614e
+		lineageTag: 61f9ec21-63fe-4367-aa11-e0e99e204755
 		summarizeBy: none
 		sourceColumn: [Value2]
-		sortByColumn: 'Graduation Trend Picker Order'
+		sortByColumn: 'Enrollment Trend Picker Order'
 
 		extendedProperty ParameterMetadata =
 				{
@@ -27,10 +27,10 @@ table 'Enrollment Trend Picker'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Graduation Trend Picker Order'
+	column 'Enrollment Trend Picker Order'
 		isHidden
 		formatString: 0
-		lineageTag: 5888416f-3d7b-45fe-b696-15226306003a
+		lineageTag: a591c27e-a4b0-461c-9bb7-247a3d192be5
 		summarizeBy: sum
 		sourceColumn: [Value3]
 
@@ -40,10 +40,9 @@ table 'Enrollment Trend Picker'
 		mode: import
 		source =
 				{
-				    ("K12 Graduation", NAMEOF('Enrollment in Graduate Education'[HS Trend]), 0),
-				    ("Undergrad Enrollment", NAMEOF('Enrollment in Graduate Education'[Undergrad Trend]), 1),
-				    ("Postgrad Enrollment", NAMEOF('Enrollment in Graduate Education'[Postgrad Trend]), 2)
+				    ("Undergrad Enrollment", NAMEOF('Enrollment in Graduate Education'[Undergrad Trend]), 0),
+				    ("Postgrad Enrollment", NAMEOF('Enrollment in Graduate Education'[Postgrad Trend]), 1)
 				}
 
-	annotation PBI_Id = 381d03f5f84343e2be1d31da70bb5615
+	annotation PBI_Id = 0ce3dbd36c8247e3bbd28b6ed5238f1c
 
