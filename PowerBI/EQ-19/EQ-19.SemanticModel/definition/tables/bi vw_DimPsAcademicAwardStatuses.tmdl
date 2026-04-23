@@ -34,6 +34,15 @@ table 'bi vw_DimPsAcademicAwardStatuses'
 
 		annotation SummarizationSetBy = Automatic
 
+	column IntendedYears
+		dataType: int64
+		formatString: 0
+		lineageTag: 402cf9d9-9d70-4fa1-a1fa-726a9aea1f59
+		summarizeBy: sum
+		sourceColumn: IntendedYears
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'bi vw_DimPsAcademicAwardStatuses' = m
 		mode: import
 		source =

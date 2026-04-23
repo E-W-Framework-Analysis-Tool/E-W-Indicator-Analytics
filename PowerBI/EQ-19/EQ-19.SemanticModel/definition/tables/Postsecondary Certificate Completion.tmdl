@@ -1,73 +1,174 @@
 table 'Postsecondary Certificate Completion'
 	lineageTag: 38c775e6-9153-4b66-8c1e-b0a9ee4a5b3c
 
-	measure UndergradAwardDate = ```
+	measure '100% Program Length' = ```
 			
-			CALCULATE(
-			    MIN('bi vw_FactPsStudentAcademicAwards'[AcademicAwardDate])--,
-			    // KEEPFILTERS('bi vw_DimPsAcademicAwardStatuses'[CredentialType] = "Bachelor's Degree") 
-			)
-			```
-		formatString: General Date
-		lineageTag: 46b9b726-9647-4b79-ba80-674946a4a93a
-
-	measure FirstGradEnrollDate = ```
+			-- Get a list of unique students in the currently filtered cohort
+			VAR StudentList = VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId])
 			
-			VAR UDate = [UndergradAwardDate]
-			RETURN
-			CALCULATE(
-			    MIN('bi vw_FactPsStudentEnrollments'[SchoolYear])--, 
-			    // 'bi vw_DimPsAcademicAwardStatuses'[CredentialType] = "Master's Degree",
-			    // 'bi vw_FactPsStudentEnrollments'[SchoolYear] > YEAR(UDate)
-			)
-			```
-		formatString: 0
-		lineageTag: f6a7f463-b011-49a1-872e-1906723637e2
-
-	measure '% Grad Enroll 1-5 Years' =
-			
-			VAR CohortCount = [Total Cohort Count]
-			RETURN
-			DIVIDE(
-			    CALCULATE(
-			        DISTINCTCOUNT('bi vw_FactPsStudentEnrollments'[PSStudentId]),
+			VAR StudentCount =
+			    COUNTROWS(
 			        FILTER(
-			            VALUES('bi vw_PS_DimStudents'[DimPsStudentId]),
-			            VAR UDate = [UndergradAwardDate]
-			            VAR GDate = [FirstGradEnrollDate]
-			            VAR Diff = GDate - YEAR(UDate)
-			            RETURN
-			            // NOT ISBLANK(UDate) && NOT ISBLANK(GDate) && Diff >= 1 && Diff <= 5
-			            Diff <=5
-			        )
-			    ),
-			    CohortCount
-			)
-		formatString: 0.0%;-0.0%;0.0%
-		lineageTag: af5ffb6d-fef0-437c-ae11-984998c85ad9
-
-	measure '% Grad Enroll 6-10 Years' = ```
+			            StudentList,
+			            VAR StudentID = [PsStudentId]
+			            
+			            -- 1. Get ONLY the earliest enrollment date (ignores post-grad re-entry)
+			            VAR InitialStartDate = 
+			                CALCULATE(
+			                    MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate])
+			                )
+			            
+			            -- 2. Get the award details (firsProgrr that student)
+			            VAR MinAwardDate = 
+			                CALCULATE(
+			                    MIN('reporting RDS_FactPsStudentAcademicAwards'[AcademicAwardDate]),
+			                    'reporting RDS_FactPsStudentAcademicAwards'[PsStudentId] = StudentID
+			                )
+			            
+			            VAR ProgramLengthMonths = 
+			                CALCULATE(
+			                    MAX('bi vw_DimPsAcademicAwardStatuses'[IntendedYears]),
+			                   'reporting RDS_FactPsStudentAcademicAwards'[PsStudentId] = StudentID
+			                )
 			
-			VAR CohortCount = [Total Cohort Count]
-			RETURN
-			DIVIDE(
-			    CALCULATE(
-			        DISTINCTCOUNT('bi vw_FactPsStudentEnrollments'[PSStudentId]),
-			        FILTER(
-			            VALUES('bi vw_PS_DimStudents'[DimPsStudentId]),
-			            VAR UDate = [UndergradAwardDate]
-			            VAR GDate = [FirstGradEnrollDate]
-			            VAR Diff = GDate - YEAR(UDate)
+			            -- 3. Calculate Deadlines using EDATE for precision
+			            -- Assumes IntendedLength is in Months
+			            VAR Deadline = EDATE(InitialStartDate, ProgramLengthMonths * 1)
+			
 			            RETURN
-			            // NOT ISBLANK(UDate) && NOT ISBLANK(GDate) && Diff >= 6 && Diff <= 10
-			            Diff >= 6 
+			                -- Student must have an award within the specific 150-200% window
+			                NOT ISBLANK(MinAwardDate) &&
+			                MinAwardDate <= Deadline
 			        )
-			    ),
-			    CohortCount
-			)
+			    )
+			RETURN DIVIDE(StudentCount, [Total Cohort Students], 0)
 			```
 		formatString: 0.0%;-0.0%;0.0%
-		lineageTag: cf9e8b9e-45d2-451e-bccb-c4046ee3a8ab
+		lineageTag: d5a7c1f7-55b5-406e-9ce1-1d88cd610224
+
+	measure '150% Program Length' = ```
+			
+			VAR StudentList = VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId])
+			
+			VAR StudentCount =
+			    COUNTROWS(
+			        FILTER(
+			            StudentList,
+			            VAR StudentID = [PsStudentId]
+			            
+			            -- 1. Get ONLY the earliest enrollment date (ignores post-grad re-entry)
+			            VAR InitialStartDate = 
+			                CALCULATE(
+			                    MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate])
+			                )
+			            
+			            -- 2. Get the award details (firsProgrr that student)
+			            VAR MinAwardDate = 
+			                CALCULATE(
+			                    MIN('reporting RDS_FactPsStudentAcademicAwards'[AcademicAwardDate]),
+			                    'reporting RDS_FactPsStudentAcademicAwards'[PsStudentId] = StudentID
+			                )
+			            
+			            VAR ProgramLengthMonths = 
+			                CALCULATE(
+			                    MAX('bi vw_DimPsAcademicAwardStatuses'[IntendedYears]),
+			                   'reporting RDS_FactPsStudentAcademicAwards'[PsStudentId] = StudentID
+			                )
+			
+			            -- 3. Calculate Deadlines using EDATE for precision
+			            -- Assumes IntendedLength is in Months
+			            VAR Deadline = EDATE(InitialStartDate, ProgramLengthMonths * 1.5)
+			
+			            RETURN
+			                -- Student must have an award within the specific 150-200% window
+			                NOT ISBLANK(MinAwardDate) &&
+			                MinAwardDate <= Deadline
+			        )
+			    )
+			RETURN DIVIDE(StudentCount, [Total Cohort Students], 0)
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 91a09af5-bc3c-49a9-af3e-b796d4b54297
+
+	measure '200% Program Length' = ```
+			
+			VAR StudentList = VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId])
+			
+			VAR StudentCount =
+			    COUNTROWS(
+			        FILTER(
+			            StudentList,
+			            VAR StudentID = [PsStudentId]
+			            
+			            -- 1. Get ONLY the earliest enrollment date (ignores post-grad re-entry)
+			            VAR InitialStartDate = 
+			                CALCULATE(
+			                    MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate])
+			                )
+			            
+			            -- 2. Get the award details (firsProgrr that student)
+			            VAR MinAwardDate = 
+			                CALCULATE(
+			                    MIN('reporting RDS_FactPsStudentAcademicAwards'[AcademicAwardDate]),
+			                    'reporting RDS_FactPsStudentAcademicAwards'[PsStudentId] = StudentID
+			                )
+			            
+			            VAR ProgramLengthMonths = 
+			                CALCULATE(
+			                    MAX('bi vw_DimPsAcademicAwardStatuses'[IntendedYears]),
+			                   'reporting RDS_FactPsStudentAcademicAwards'[PsStudentId] = StudentID
+			                )
+			
+			            -- 3. Calculate Deadlines using EDATE for precision
+			            -- Assumes IntendedLength is in Months
+			            VAR Deadline = EDATE(InitialStartDate, ProgramLengthMonths * 2)
+			
+			            RETURN
+			                -- Student must have an award within the specific 150-200% window
+			                NOT ISBLANK(MinAwardDate) &&
+			                MinAwardDate <= Deadline
+			        )
+			    )
+			RETURN DIVIDE(StudentCount, [Total Cohort Students], 0)
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 9ea1c9bc-ba1d-4c36-84d9-a4b62862e747
+
+	measure '100% Program Length Trend' =
+			
+			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
+			RETURN
+			CALCULATE(
+			    [100% Program Length],
+			    'bi vw_DimCohortGraduationYears'[CohortGraduationYear] = SelectedTrendYear,
+			    REMOVEFILTERS('bi vw_DimSchoolYears')
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 4efb2153-d6a2-4df9-b78f-72e7363c9f1f
+
+	measure '150% Program Length Trend' =
+			
+			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
+			RETURN
+			CALCULATE(
+			    [150% Program Length],
+			    'bi vw_DimCohortGraduationYears'[CohortGraduationYear] = SelectedTrendYear,
+			    REMOVEFILTERS('bi vw_DimSchoolYears')
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 46f7a4d2-4f94-40f0-a3be-da5a6aa7ce65
+
+	measure '200% Program Length Trend' =
+			
+			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
+			RETURN
+			CALCULATE(
+			    [200% Program Length],
+			    'bi vw_DimCohortGraduationYears'[CohortGraduationYear] = SelectedTrendYear,
+			    REMOVEFILTERS('bi vw_DimSchoolYears')
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: e7bc1f4a-8fe5-40df-8a88-c8657211e60d
 
 	partition 'Postsecondary Certificate Completion' = m
 		mode: import

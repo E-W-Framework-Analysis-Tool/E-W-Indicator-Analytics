@@ -405,6 +405,16 @@
             "width": 234
           },
           "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "reporting vw_RDS_DegreeCompletion",
+          "nodeLineageTag": "331e19fd-e96d-4ee3-bd5a-449e079163b5",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",
@@ -697,7 +707,7 @@
       "ordinal": 4,
       "scrollPosition": {
         "x": 0,
-        "y": 276
+        "y": 0
       },
       "nodes": [
         {
@@ -875,6 +885,60 @@
         }
       ],
       "name": "FactPsStudentCourseTranscripts",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 7,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1229,
+            "y": 528
+          },
+          "nodeIndex": "reporting vw_RDS_DegreeCompletion",
+          "nodeLineageTag": "331e19fd-e96d-4ee3-bd5a-449e079163b5",
+          "size": {
+            "height": 234,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 638,
+            "y": 323
+          },
+          "nodeIndex": "reporting RDS_FactPsStudentAcademicAwards",
+          "nodeLineageTag": "1d044d72-ebd3-4a5f-95ac-c6eff7c2db13",
+          "size": {
+            "height": 284,
+            "width": 310
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 1055,
+            "y": 158
+          },
+          "nodeIndex": "bi vw_DimPsAcademicAwardStatuses",
+          "nodeLineageTag": "7f42d558-8292-4b9a-b256-afcaa2c7504a",
+          "size": {
+            "height": 231,
+            "width": 417
+          },
+          "zIndex": 2
+        }
+      ],
+      "name": "Layout 1",
       "zoomValue": 100,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,

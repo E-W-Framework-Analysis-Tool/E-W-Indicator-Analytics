@@ -10,7 +10,7 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_ProTooling = ["DevMode"]
 
-annotation PBI_QueryOrder = ["bi vw_DimRaces","bi vw_DimCipCodes","bi vw_DimDisabilityStatuses","bi vw_DimEconomicallyDisadvantagedStatuses","bi vw_DimHomelessnessStatuses","bi vw_DimPsEnrollmentStatuses","bi vw_DimPsAcademicAwardTitles","bi vw_DimPsAcademicAwardStatuses","bi vw_DimSEAs","bi vw_DimK12Demographics","bi vw_DimEnglishLearnerStatuses","Globals","Enrollment in Graduate Education","Postsecondary Certificate Completion","reporting RDS_FactPsStudentEnrollments","reporting RDS_FactK12GraduationCohorts","reporting RDS_DimPsInstitutions","bi vw_DimCohortYears","bi vw_DimSchoolYears","bi vw_DimCohortGraduationYears","bi vw_DimK12Schools","reporting RDS_DimStudents","bi vw_DimFosterCareStatuses","bi vw_DimNeglectedOrDelinquentStatus","bi vw_DimRuralStatuses","reporting RDS_FactPsStudentAcademicAwards","reporting RDS_FactPsStudentCourseTranscripts"]
+annotation PBI_QueryOrder = ["bi vw_DimRaces","bi vw_DimCipCodes","bi vw_DimDisabilityStatuses","bi vw_DimEconomicallyDisadvantagedStatuses","bi vw_DimHomelessnessStatuses","bi vw_DimPsEnrollmentStatuses","bi vw_DimPsAcademicAwardTitles","bi vw_DimPsAcademicAwardStatuses","bi vw_DimSEAs","bi vw_DimK12Demographics","bi vw_DimEnglishLearnerStatuses","Globals","Enrollment in Graduate Education","Postsecondary Certificate Completion","reporting RDS_FactPsStudentEnrollments","reporting RDS_FactK12GraduationCohorts","reporting RDS_DimPsInstitutions","bi vw_DimCohortYears","bi vw_DimSchoolYears","bi vw_DimCohortGraduationYears","bi vw_DimK12Schools","reporting RDS_DimStudents","bi vw_DimFosterCareStatuses","bi vw_DimNeglectedOrDelinquentStatus","bi vw_DimRuralStatuses","reporting RDS_FactPsStudentAcademicAwards","reporting RDS_FactPsStudentCourseTranscripts","reporting vw_RDS_DegreeCompletion"]
 
 ref table 'bi vw_DimRaces'
 ref table 'bi vw_DimCipCodes'
@@ -49,6 +49,7 @@ ref table 'Hierarchy Picker'
 ref table 'Enrollment Trend Picker'
 ref table 'reporting RDS_FactPsStudentAcademicAwards'
 ref table 'reporting RDS_FactPsStudentCourseTranscripts'
+ref table 'reporting vw_RDS_DegreeCompletion'
 
 ref cultureInfo en-US
 

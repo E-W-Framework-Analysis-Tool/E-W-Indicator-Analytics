@@ -4558,7 +4558,7 @@ cultureInfo en-US
 			    "enrollment_in_graduate_education.total_cohort_count": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Enrollment in Graduate Education",
+			          "ConceptualEntity": "Globals",
 			          "ConceptualProperty": "Total Cohort Students"
 			        }
 			      },
@@ -4878,7 +4878,7 @@ cultureInfo en-US
 			    "enrollment_in_graduate_education.HS_graduates": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Enrollment in Graduate Education",
+			          "ConceptualEntity": "Globals",
 			          "ConceptualProperty": "HS Graduates"
 			        }
 			      },
@@ -5246,162 +5246,6 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.491
-			          }
-			        }
-			      ]
-			    },
-			    "postsecondary_certificate_completion.undergrad_award_date": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Postsecondary Certificate Completion",
-			          "ConceptualProperty": "UndergradAwardDate"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "undergrad award date": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "UndergradAwardDate": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "award date": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "undergrad award moment": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.762
-			          }
-			        },
-			        {
-			          "award moment": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "undergrad award period": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.739
-			          }
-			        },
-			        {
-			          "award period": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.727
-			          }
-			        }
-			      ]
-			    },
-			    "postsecondary_certificate_completion.first_grad_enroll_date": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Postsecondary Certificate Completion",
-			          "ConceptualProperty": "FirstGradEnrollDate"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "first grad enroll date": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "FirstGradEnrollDate": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "first grad enroll moment": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.617
-			          }
-			        },
-			        {
-			          "first grad enroll period": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.599
-			          }
-			        }
-			      ]
-			    },
-			    "postsecondary_certificate_completion.grad_enroll_15_years": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Postsecondary Certificate Completion",
-			          "ConceptualProperty": "% Grad Enroll 1-5 Years"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% grad enroll 1-5 years": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "% grad enroll 1 5 years": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        }
-			      ]
-			    },
-			    "postsecondary_certificate_completion.grad_enroll_610_years": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Postsecondary Certificate Completion",
-			          "ConceptualProperty": "% Grad Enroll 6-10 Years"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% grad enroll 6-10 years": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "% grad enroll 6 10 years": {
-			            "State": "Generated",
-			            "Weight": 0.97
 			          }
 			        }
 			      ]

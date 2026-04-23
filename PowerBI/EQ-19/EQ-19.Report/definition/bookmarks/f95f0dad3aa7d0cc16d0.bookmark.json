@@ -1,6 +1,6 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
-  "displayName": "PS Completion - Show Filters",
+  "displayName": "Grad Enrollment - Show Filters",
   "name": "f95f0dad3aa7d0cc16d0",
   "options": {
     "targetVisualNames": [],

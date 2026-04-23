@@ -154,6 +154,26 @@ table Globals
 			```
 		lineageTag: fa6e4c3c-ea5c-41cf-b361-19f9f65c0f9b
 
+	measure 'Total Cohort Students' = DISTINCTCOUNT('reporting RDS_FactK12GraduationCohorts'[K12StudentId])
+		formatString: 0
+		lineageTag: 806f4425-b97b-4ab6-a532-30f0fa498dd7
+
+	measure 'Total Postgrad Students' = ```
+			
+			    COUNTROWS(
+			       FILTER(
+			        VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			        CALCULATE(COUNT('reporting RDS_FactPsStudentEnrollments'[PsStudentId])) > 1
+			    )
+			)
+			```
+		formatString: 0
+		lineageTag: 4be2df6b-32e2-45e9-8f99-28564c589562
+
+	measure 'HS Graduates' = DISTINCTCOUNT('reporting RDS_FactK12GraduationCohorts'[K12StudentId])
+		formatString: 0
+		lineageTag: 38bf4d1c-5d9d-460d-ac15-5a3679ce9bb5
+
 	partition Globals = m
 		mode: import
 		source =

@@ -1,14 +1,6 @@
 table 'Enrollment in Graduate Education'
 	lineageTag: a34fe3fd-4aea-45b2-ba18-b81f970e624e
 
-	measure 'Total Cohort Students' = DISTINCTCOUNT('reporting RDS_FactK12GraduationCohorts'[K12StudentId])
-		formatString: 0
-		lineageTag: 806f4425-b97b-4ab6-a532-30f0fa498dd7
-
-	measure 'HS Graduates' = DISTINCTCOUNT('reporting RDS_FactK12GraduationCohorts'[K12StudentId])
-		formatString: 0
-		lineageTag: 38bf4d1c-5d9d-460d-ac15-5a3679ce9bb5
-
 	measure '% Enrolled Undergrad' =
 			
 			VAR counts = CALCULATE(
@@ -172,18 +164,6 @@ table 'Enrollment in Graduate Education'
 			)
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 6f966cfd-892f-4262-8110-ffc7843fb8f1
-
-	measure 'Total Postgrad Students' = ```
-			
-			    COUNTROWS(
-			       FILTER(
-			        VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
-			        CALCULATE(COUNT('reporting RDS_FactPsStudentEnrollments'[PsStudentId])) > 1
-			    )
-			)
-			```
-		formatString: 0
-		lineageTag: 4be2df6b-32e2-45e9-8f99-28564c589562
 
 	partition 'Enrollment in Graduate Education' = m
 		mode: import

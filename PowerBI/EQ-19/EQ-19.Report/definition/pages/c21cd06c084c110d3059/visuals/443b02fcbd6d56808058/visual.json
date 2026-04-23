@@ -20,7 +20,21 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Enrollment in Graduate Education"
+                      "Entity": "Globals"
+                    }
+                  },
+                  "Property": "Total Cohort Students"
+                }
+              },
+              "queryRef": "Enrollment in Graduate Education.Total Cohort Students",
+              "nativeQueryRef": "Total Cohort Students"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Globals"
                     }
                   },
                   "Property": "Total Postgrad Students"
@@ -34,28 +48,42 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Enrollment in Graduate Education"
+                      "Entity": "Postsecondary Certificate Completion"
                     }
                   },
-                  "Property": "% Postgrad Enrolled 1-5 Years"
+                  "Property": "100% Program Length"
                 }
               },
-              "queryRef": "Enrollment in Graduate Education.% Postgrad Enrolled 1-5 Years",
-              "nativeQueryRef": "% Postgrad Enrolled 1-5 Years"
+              "queryRef": "Postsecondary Certificate Completion.100% Program Length",
+              "nativeQueryRef": "100% Program Length"
             },
             {
               "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Enrollment in Graduate Education"
+                      "Entity": "Postsecondary Certificate Completion"
                     }
                   },
-                  "Property": "% Postgrad Enrolled 6-10 Years"
+                  "Property": "150% Program Length"
                 }
               },
-              "queryRef": "Enrollment in Graduate Education.% Postgrad Enrolled 6-10 Years",
-              "nativeQueryRef": "% Postgrad Enrolled 6-10 Years"
+              "queryRef": "Postsecondary Certificate Completion.150% Program Length",
+              "nativeQueryRef": "150% Program Length"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Postsecondary Certificate Completion"
+                    }
+                  },
+                  "Property": "200% Program Length"
+                }
+              },
+              "queryRef": "Postsecondary Certificate Completion.200% Program Length",
+              "nativeQueryRef": "200% Program Length"
             }
           ]
         }
@@ -71,38 +99,10 @@
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Enrollment in Graduate Education"
+                "Entity": "Globals"
               }
             },
             "Property": "Total Postgrad Students"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "9da091efe6d8cee857c6",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Enrollment in Graduate Education"
-              }
-            },
-            "Property": "% Postgrad Enrolled 1-5 Years"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "50f40b5f665e1802c8bc",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Enrollment in Graduate Education"
-              }
-            },
-            "Property": "% Postgrad Enrolled 6-10 Years"
           }
         },
         "type": "Advanced"
