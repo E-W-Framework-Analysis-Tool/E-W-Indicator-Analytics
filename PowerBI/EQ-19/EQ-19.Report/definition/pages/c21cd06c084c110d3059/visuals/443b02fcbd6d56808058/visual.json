@@ -65,53 +65,25 @@
                       "Entity": "Postsecondary Certificate Completion"
                     }
                   },
+                  "Property": "150% Program Length"
+                }
+              },
+              "queryRef": "Postsecondary Certificate Completion.150% Program Length",
+              "nativeQueryRef": "150% Program Length"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Postsecondary Certificate Completion"
+                    }
+                  },
                   "Property": "200% Program Length"
                 }
               },
               "queryRef": "Postsecondary Certificate Completion.200% Program Length",
               "nativeQueryRef": "200% Program Length"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Postsecondary Certificate Completion"
-                    }
-                  },
-                  "Property": "Students Graduated 100%"
-                }
-              },
-              "queryRef": "Postsecondary Certificate Completion.Students Graduated 100%",
-              "nativeQueryRef": "Students Graduated 100%"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Postsecondary Certificate Completion"
-                    }
-                  },
-                  "Property": "Students Graduated 150%"
-                }
-              },
-              "queryRef": "Postsecondary Certificate Completion.Students Graduated 150%",
-              "nativeQueryRef": "Students Graduated 150%"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Postsecondary Certificate Completion"
-                    }
-                  },
-                  "Property": "Students Graduated 200%"
-                }
-              },
-              "queryRef": "Postsecondary Certificate Completion.Students Graduated 200%",
-              "nativeQueryRef": "Students Graduated 200%"
             }
           ]
         }
