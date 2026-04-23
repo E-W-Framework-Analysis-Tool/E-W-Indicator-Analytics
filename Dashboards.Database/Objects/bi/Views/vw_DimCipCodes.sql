@@ -1,20 +1,25 @@
 ﻿CREATE VIEW [bi].[vw_DimCipCodes]
 AS
-	WITH
-		[base] AS
-			(SELECT
-				 [DimCipCodeId]
-			   , CAST(CAST(IIF([CipCode] = 'MISSING', '-1.0', [CipCode]) AS DECIMAL) AS SMALLINT) AS [CipCode]
-			 FROM [reporting].[DimCipCodes])
-	SELECT
-		[DimCipCodeId]
-	  , CASE
-			WHEN [CipCode] IN (11, 14, 15, 26, 27, 30, 40, 41)
-				THEN 'STEM'
-			WHEN [CipCode] IN (52, 62)
-				THEN 'Business'
-			WHEN [CipCode] IN (5, 16, 23, 24, 38, 39, 45, 50, 54)
-				THEN 'Liberal Arts & Humanities'
-			ELSE 'Other'
-		END AS [FieldOfStudy]
-	FROM [base]
+    SELECT [DimCipCodeId],
+    CASE 
+        WHEN [CipCode] IN (
+            '11.0101', '11.0102', '11.0103', '11.0202', '11.0701', '11.1006', 
+            '14.0101', '14.1901', '15.0303', '26.0101', '26.0102', '27.0101', 
+            '27.0501', '30.7001', '40.0501', '40.0801', '41.0101'
+        ) THEN 'STEM'    
+        WHEN [CipCode] IN (
+            '16.0103', '23.0101', '24.0102', '24.0199', '38.0101', '45.0601', 
+            '45.1001', '50.0701', '50.0703', '54.0101'
+        ) THEN 'ARTS'    
+        WHEN [CipCode] IN (
+            '52.0201', '52.0301', '52.0302', '52.0401', '52.0801', '52.1001', 
+            '52.1201', '52.1301', '52.1401'
+        ) THEN 'BUSINESS'    
+        WHEN [CipCode] IN (
+            '03.0104', '09.0101', '13.0401', '13.0501', '13.0601', '13.1202', 
+            '42.0101', '42.2803', '43.0103', '44.0401', '44.0701', '46.0302', 
+            '48.0508', '51.0801', '51.2201', '51.3801', '51.3808', '51.3902'
+        ) THEN 'OTHER'    
+        ELSE 'MISSING'
+    END AS [FieldOfStudy]
+    FROM   [reporting].[DimCipCodes]

@@ -45,20 +45,6 @@
                       "Entity": "Enrollment in Graduate Education"
                     }
                   },
-                  "Property": "% Enrolled 0 Year Trend"
-                }
-              },
-              "queryRef": "Enrollment in Graduate Education.% Enrolled in Same Year Trend",
-              "nativeQueryRef": "% Enrolled 0 Year Trend"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Enrollment in Graduate Education"
-                    }
-                  },
                   "Property": "% Enrolled 1-5 Years Trend"
                 }
               },
@@ -92,7 +78,7 @@
                     "Entity": "Enrollment in Graduate Education"
                   }
                 },
-                "Property": "% Enrolled 0 Year Trend"
+                "Property": "% Enrolled 1-5 Years Trend"
               }
             },
             "direction": "Descending"

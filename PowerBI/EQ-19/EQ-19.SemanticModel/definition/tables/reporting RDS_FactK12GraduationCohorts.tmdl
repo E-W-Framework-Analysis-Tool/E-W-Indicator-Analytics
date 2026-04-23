@@ -42,9 +42,10 @@ table 'reporting RDS_FactK12GraduationCohorts'
 
 	column K12AcademicAwardStatusId
 		dataType: int64
+		isHidden
 		formatString: 0
 		lineageTag: 75cdb8ae-09c1-40c6-887e-a4d38e2d38de
-		summarizeBy: none
+		summarizeBy: count
 		sourceColumn: K12AcademicAwardStatusId
 
 		changedProperty = IsHidden

@@ -124,20 +124,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "0666d7e0c609b33722ab",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimK12Schools"
-              }
-            },
-            "Property": "SeaOrganizationName"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "fa3c3e6fd04aa86ba8a1",
         "field": {
           "Measure": {

@@ -60,20 +60,6 @@
                       "Entity": "Enrollment in Graduate Education"
                     }
                   },
-                  "Property": "% Enrolled 0 Year"
-                }
-              },
-              "queryRef": "Enrollment in Graduate Education.% Enrolled 0 Years",
-              "nativeQueryRef": "% Enrolled 0 Year"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Enrollment in Graduate Education"
-                    }
-                  },
                   "Property": "% Enrolled 1-5 Years"
                 }
               },
