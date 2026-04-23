@@ -158,76 +158,110 @@ table 'Enrollment in Graduate Education'
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: d9806268-9f23-4714-a68f-d6adb7932e16
 
-	measure '% Enrolled 1-5 Years Trend' =
+	measure '% Postgrad Enrolled 1-5 Years Trend' =
 			
 			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
 			RETURN
 			CALCULATE(
-			    [% Enrolled 1-5 Years],
+			    [% Postgrad Enrolled 1-5 Years],
 			    'bi vw_DimSchoolYears'[SchoolYear] = SelectedTrendYear,
 			    REMOVEFILTERS('bi vw_DimSchoolYears')
 			)
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: fa456567-0152-4237-98da-212aab3cfd33
 
-	measure '% Enrolled 6-10 Years Trend' =
+	measure '% Postgrad Enrolled 6-10 Years Trend' =
 			
 			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
 			RETURN
 			CALCULATE(
-			    [% Enrolled 6-10 Years],
+			    [% Postgrad Enrolled 6-10 Years],
 			    'bi vw_DimSchoolYears'[SchoolYear] = SelectedTrendYear,
 			    REMOVEFILTERS('bi vw_DimSchoolYears')
 			)
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: b9b9134c-f325-4689-a85c-8c0b97e53c83
 
-	measure '% Enrolled 1-5 Years' = ```
+	measure '% Postgrad Enrolled 1-5 Years' = ```
 			
-			VAR student_count = 
+			VAR StudentCount = 
 			    SUMX(
-			        'reporting RDS_FactK12GraduationCohorts',
-			        VAR HSGradYear = 'reporting RDS_FactK12GraduationCohorts'[CohortGraduationYear]
-			        VAR FirstPSEntryDate = 
+			        VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]), -- Iterate student by student
+			        VAR StudentID = 'reporting RDS_FactPsStudentEnrollments'[PsStudentId]
+			        
+			        -- Get Dates while respecting slicers
+			        VAR UndergradExit = 
 			            CALCULATE(
-			                MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate])
+			                MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentExitDate]),
+			                'reporting RDS_FactPsStudentEnrollments'[PsStudentId] = StudentID
 			            )
-			        VAR EntryYear = YEAR(FirstPSEntryDate)
-			        VAR YearDiff = EntryYear - HSGradYear
+			        VAR PostgradEntry = 
+			            CALCULATE(
+			                MAX('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate]),
+			                'reporting RDS_FactPsStudentEnrollments'[PsStudentId] = StudentID
+			            )
+			            
+			        -- Count records for this specific student
+			        VAR RecordCount = 
+			            CALCULATE(
+			                COUNT('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			                'reporting RDS_FactPsStudentEnrollments'[PsStudentId] = StudentID
+			            )
+			            
+			        VAR YearDiff = YEAR(PostgradEntry) - YEAR(UndergradExit)
 			        
 			        RETURN
-			        IF(YearDiff >= 1 && YearDiff <= 5, 1, 0)
+			        IF(
+			            RecordCount > 1 && 
+			            YearDiff >= 1 && YearDiff <= 5, 
+			            1, 0
+			        )
 			    )
 			
-			-- Suggestion: Use the K12 table for the total to get a true "Rate of Enrollment"
-			VAR total_graduates = COUNTROWS('reporting RDS_FactK12GraduationCohorts')
-			
 			RETURN 
-			    DIVIDE(student_count, total_graduates, 0)
+			    DIVIDE(StudentCount, [Total Postgrad Students], 0)
 			```
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 6f2ee082-6701-444d-879d-de57b9436cae
 
-	measure '% Enrolled 6-10 Years' = ```
+	measure '% Postgrad Enrolled 6-10 Years' = ```
 			
-			VAR student_count = 
+			VAR StudentCount = 
 			    SUMX(
-			        'reporting RDS_FactK12GraduationCohorts',
-			        VAR HSGradYear = 'reporting RDS_FactK12GraduationCohorts'[CohortGraduationYear]
-			        VAR FirstPSEntryDate = 
+			        VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]), -- Iterate student by student
+			        VAR StudentID = 'reporting RDS_FactPsStudentEnrollments'[PsStudentId]
+			        
+			        -- Get Dates while respecting slicers
+			        VAR UndergradExit = 
 			            CALCULATE(
-			                MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate])
+			                MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentExitDate]),
+			                'reporting RDS_FactPsStudentEnrollments'[PsStudentId] = StudentID
 			            )
-			        VAR EntryYear = YEAR(FirstPSEntryDate)
-			        VAR YearDiff = EntryYear - HSGradYear
+			        VAR PostgradEntry = 
+			            CALCULATE(
+			                MAX('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate]),
+			                'reporting RDS_FactPsStudentEnrollments'[PsStudentId] = StudentID
+			            )
+			            
+			        -- Count records for this specific student
+			        VAR RecordCount = 
+			            CALCULATE(
+			                COUNT('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			                'reporting RDS_FactPsStudentEnrollments'[PsStudentId] = StudentID
+			            )
+			            
+			        VAR YearDiff = YEAR(PostgradEntry) - YEAR(UndergradExit)
 			        
 			        RETURN
-			        IF(YearDiff >= 6 && YearDiff <= 10, 1, 0)
+			        IF(
+			            RecordCount > 1 && 
+			            YearDiff >= 6 && YearDiff <= 10, 
+			            1, 0
+			        )
 			    )
-			VAR total_graduates = COUNTROWS('reporting RDS_FactK12GraduationCohorts')
 			
 			RETURN 
-			    DIVIDE(student_count, total_graduates, 0)
+			    DIVIDE(StudentCount, [Total Postgrad Students], 0)
 			```
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: b59e8309-524a-40eb-91b6-c861be0aa05a
@@ -243,6 +277,22 @@ table 'Enrollment in Graduate Education'
 			)
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 6f966cfd-892f-4262-8110-ffc7843fb8f1
+
+	measure 'Total Postgrad Students' = ```
+			
+			    COUNTROWS(
+			        FILTER(
+			            SUMMARIZE(
+			                'reporting RDS_FactPsStudentEnrollments', 
+			                'reporting RDS_FactPsStudentEnrollments'[PsStudentId], 
+			                "Records", COUNT('reporting RDS_FactPsStudentEnrollments'[PsStudentId])
+			            ),
+			            [Records] > 1
+			        )
+			    )
+			```
+		formatString: 0
+		lineageTag: 4be2df6b-32e2-45e9-8f99-28564c589562
 
 	partition 'Enrollment in Graduate Education' = m
 		mode: import

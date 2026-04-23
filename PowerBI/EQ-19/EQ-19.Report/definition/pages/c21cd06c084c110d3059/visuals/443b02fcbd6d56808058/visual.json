@@ -1,0 +1,66 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "443b02fcbd6d56808058",
+  "position": {
+    "x": 0,
+    "y": 607.68729641693812,
+    "z": 0,
+    "height": 112.57328990228014,
+    "width": 842.21498371335508,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Enrollment in Graduate Education"
+                    }
+                  },
+                  "Property": "Total Postgrad Students"
+                }
+              },
+              "queryRef": "Enrollment in Graduate Education.Total Postgrad Students",
+              "nativeQueryRef": "Total Postgrad Students"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Enrollment in Graduate Education"
+                    }
+                  },
+                  "Property": "% Postgrad Enrolled 1-5 Years"
+                }
+              },
+              "queryRef": "Enrollment in Graduate Education.% Postgrad Enrolled 1-5 Years",
+              "nativeQueryRef": "% Postgrad Enrolled 1-5 Years"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Enrollment in Graduate Education"
+                    }
+                  },
+                  "Property": "% Postgrad Enrolled 6-10 Years"
+                }
+              },
+              "queryRef": "Enrollment in Graduate Education.% Postgrad Enrolled 6-10 Years",
+              "nativeQueryRef": "% Postgrad Enrolled 6-10 Years"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "87167d28a73e69e2090b",
   "position": {
     "x": 0,
@@ -59,11 +59,11 @@
                       "Entity": "Enrollment in Graduate Education"
                     }
                   },
-                  "Property": "% Enrolled 1-5 Years"
+                  "Property": "% Postgrad Enrolled 1-5 Years"
                 }
               },
               "queryRef": "Enrollment in Graduate Education.% Enrolled 1-5 Years1",
-              "nativeQueryRef": "% Enrolled 1-5 Years1"
+              "nativeQueryRef": "% Postgrad Enrolled 1-5 Years"
             },
             {
               "field": {
@@ -73,11 +73,11 @@
                       "Entity": "Enrollment in Graduate Education"
                     }
                   },
-                  "Property": "% Enrolled 6-10 Years"
+                  "Property": "% Postgrad Enrolled 6-10 Years"
                 }
               },
               "queryRef": "Enrollment in Graduate Education.% Enrolled 6-10 Years1",
-              "nativeQueryRef": "% Enrolled 6-10 Years"
+              "nativeQueryRef": "% Postgrad Enrolled 6-10 Years"
             }
           ]
         }
@@ -92,7 +92,7 @@
                     "Entity": "Enrollment in Graduate Education"
                   }
                 },
-                "Property": "% Enrolled 1-5 Years"
+                "Property": "% Postgrad Enrolled 1-5 Years"
               }
             },
             "direction": "Descending"
