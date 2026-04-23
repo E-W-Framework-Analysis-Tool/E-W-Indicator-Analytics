@@ -697,7 +697,7 @@
       "ordinal": 4,
       "scrollPosition": {
         "x": 0,
-        "y": 2
+        "y": 276
       },
       "nodes": [
         {
@@ -728,8 +728,8 @@
         },
         {
           "location": {
-            "x": 31,
-            "y": 23
+            "x": 0,
+            "y": 365
           },
           "nodeIndex": "reporting RDS_DimStudents",
           "nodeLineageTag": "4e6a4c71-b4d5-4f38-bce2-089c5d73531b",
@@ -755,7 +755,7 @@
         {
           "location": {
             "x": 778,
-            "y": 698
+            "y": 718
           },
           "nodeIndex": "reporting RDS_FactPsStudentCourseTranscripts",
           "nodeLineageTag": "148a45fd-bf56-4f6e-9d36-9d94f8a1b72e",
@@ -776,7 +776,7 @@
     {
       "ordinal": 5,
       "scrollPosition": {
-        "x": 0,
+        "x": 500,
         "y": 0
       },
       "nodes": [
@@ -830,7 +830,7 @@
     {
       "ordinal": 6,
       "scrollPosition": {
-        "x": 0,
+        "x": 369,
         "y": 0
       },
       "nodes": [
@@ -868,7 +868,7 @@
           "nodeIndex": "reporting RDS_DimPsInstitutions",
           "nodeLineageTag": "aa523192-6f59-472f-baa2-157be97021c3",
           "size": {
-            "height": 224,
+            "height": 227,
             "width": 234
           },
           "zIndex": 0

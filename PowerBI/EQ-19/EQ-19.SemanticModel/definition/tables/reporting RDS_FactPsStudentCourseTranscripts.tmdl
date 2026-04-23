@@ -26,7 +26,7 @@ table 'reporting RDS_FactPsStudentCourseTranscripts'
 		dataType: int64
 		formatString: 0
 		lineageTag: e5b69f49-fd6c-4eb2-9f26-4826be88b6bf
-		summarizeBy: none
+		summarizeBy: count
 		sourceColumn: PsInstitutionId
 
 		annotation SummarizationSetBy = Automatic
@@ -42,10 +42,13 @@ table 'reporting RDS_FactPsStudentCourseTranscripts'
 
 	column PsStudent_CurrentId
 		dataType: int64
+		isHidden
 		formatString: 0
 		lineageTag: d48d787b-d3df-490c-85f4-562a36f61225
 		summarizeBy: count
 		sourceColumn: PsStudent_CurrentId
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

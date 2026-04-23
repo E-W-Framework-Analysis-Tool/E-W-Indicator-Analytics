@@ -74,10 +74,6 @@ relationship 01d62a2d-d434-8ace-7fb5-4c7f2bec88a4
 	fromColumn: 'reporting RDS_FactPsStudentEnrollments'.SchoolYear
 	toColumn: 'bi vw_DimSchoolYears'.SchoolYear
 
-relationship 4c94dcec-f23e-9ecc-37d7-b980a6919322
-	fromColumn: 'reporting RDS_FactPsStudentEnrollments'.PsStudentId
-	toColumn: 'reporting RDS_FactK12GraduationCohorts'.K12StudentId
-
 relationship aaef7ebd-bfc2-dbcb-e369-5e4e7eeb1028
 	crossFilteringBehavior: bothDirections
 	fromCardinality: one
@@ -89,10 +85,12 @@ relationship 3ddf5b8d-7c90-79cf-711a-5e798280cb1a
 	toColumn: 'bi vw_DimPsAcademicAwardStatuses'.DimPsAcademicAwardStatusId
 
 relationship 9999df70-7376-d301-0bff-1ee2a377082f
+	isActive: false
 	fromColumn: 'reporting RDS_FactPsStudentAcademicAwards'.PsInstitutionId
 	toColumn: 'reporting RDS_DimPsInstitutions'.DimPsInstitutionId
 
 relationship dd72908c-7d1e-f1a7-fed2-f90fa0d3b598
+	isActive: false
 	fromColumn: 'reporting RDS_FactPsStudentCourseTranscripts'.PsInstitutionId
 	toColumn: 'reporting RDS_DimPsInstitutions'.DimPsInstitutionId
 
@@ -100,11 +98,17 @@ relationship 81edb250-c316-0227-95f9-dda5585fd4d8
 	fromColumn: 'reporting RDS_FactPsStudentCourseTranscripts'.CipCodeId
 	toColumn: 'bi vw_DimCipCodes'.DimCipCodeId
 
-relationship 399a414b-ac4a-3cc9-88a0-5f19ab8ccc44
-	fromColumn: 'reporting RDS_FactPsStudentCourseTranscripts'.PsStudentId
-	toColumn: 'reporting RDS_FactK12GraduationCohorts'.K12StudentId
-
-relationship bfff02cd-f239-6060-4a6d-2b263deadf00
+relationship 8dfbaa9e-c609-e037-b26e-c32d68fc2dba
+	crossFilteringBehavior: bothDirections
 	fromColumn: 'reporting RDS_FactPsStudentAcademicAwards'.PsStudentId
-	toColumn: 'reporting RDS_FactK12GraduationCohorts'.K12StudentId
+	toColumn: 'reporting RDS_DimStudents'.DimK12StudentId
+
+relationship 10004a2d-b1f3-e3ce-8395-ef3f18756b49
+	fromColumn: 'reporting RDS_FactPsStudentEnrollments'.PsStudentId
+	toColumn: 'reporting RDS_DimStudents'.DimK12StudentId
+
+relationship be52388c-27ab-ce82-a581-78c17c3129dd
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'reporting RDS_FactPsStudentCourseTranscripts'.PsStudentId
+	toColumn: 'reporting RDS_DimStudents'.DimK12StudentId
 

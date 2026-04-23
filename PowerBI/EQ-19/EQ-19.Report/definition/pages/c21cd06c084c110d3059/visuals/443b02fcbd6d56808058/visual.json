@@ -62,5 +62,51 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c12abe910672d99c0e43",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Enrollment in Graduate Education"
+              }
+            },
+            "Property": "Total Postgrad Students"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9da091efe6d8cee857c6",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Enrollment in Graduate Education"
+              }
+            },
+            "Property": "% Postgrad Enrolled 1-5 Years"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "50f40b5f665e1802c8bc",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Enrollment in Graduate Education"
+              }
+            },
+            "Property": "% Postgrad Enrolled 6-10 Years"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
