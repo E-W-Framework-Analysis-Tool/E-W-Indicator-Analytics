@@ -3,10 +3,10 @@
   "name": "443b02fcbd6d56808058",
   "position": {
     "x": 0,
-    "y": 607.68729641693812,
+    "y": 607.56756756756749,
     "z": 0,
-    "height": 112.57328990228014,
-    "width": 842.21498371335508,
+    "height": 112.43243243243242,
+    "width": 1271.3513513513512,
     "tabOrder": 0
   },
   "visual": {
@@ -98,6 +98,20 @@
               },
               "queryRef": "Postsecondary Certificate Completion.Students Graduated 150%",
               "nativeQueryRef": "Students Graduated 150%"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Postsecondary Certificate Completion"
+                    }
+                  },
+                  "Property": "Students Graduated 200%"
+                }
+              },
+              "queryRef": "Postsecondary Certificate Completion.Students Graduated 200%",
+              "nativeQueryRef": "Students Graduated 200%"
             }
           ]
         }

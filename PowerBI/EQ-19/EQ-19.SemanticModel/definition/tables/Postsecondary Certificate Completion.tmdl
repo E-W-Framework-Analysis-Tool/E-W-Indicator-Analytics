@@ -7,38 +7,26 @@ table 'Postsecondary Certificate Completion'
 			VAR StudentList = VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId])
 			
 			VAR StudentCount =
-			    COUNTROWS(
-			        FILTER(
-			            StudentList,
-			            VAR StudentID = [PsStudentId]
+			    SUMX(
+			        VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			        VAR StartDate = 
+			            CALCULATE(MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate]))
+			        
+			        VAR AwardDate = 
+			            CALCULATE(MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentExitDate]))
 			            
-			            -- 1. Get ONLY the earliest enrollment date (ignores post-grad re-entry)
-			            VAR InitialStartDate = 
-			                CALCULATE(
-			                    MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate])
-			                )
-			            
-			            -- 2. Get the award details (firsProgrr that student)
-			            VAR MinAwardDate = 
-			                CALCULATE(
-			                    MIN('reporting RDS_FactPsStudentAcademicAwards'[AcademicAwardDate]),
-			                    'reporting RDS_FactPsStudentAcademicAwards'[PsStudentId] = StudentID
-			                )
-			            
-			            VAR ProgramLengthMonths = 
-			                CALCULATE(
-			                    MAX('bi vw_DimPsAcademicAwardStatuses'[IntendedYears]),
-			                   'reporting RDS_FactPsStudentAcademicAwards'[PsStudentId] = StudentID
-			                )
-			
-			            -- 3. Calculate Deadlines using EDATE for precision
-			            -- Assumes IntendedLength is in Months
-			            VAR Deadline = EDATE(InitialStartDate, ProgramLengthMonths * 1)
-			
-			            RETURN
-			                -- Student must have an award within the specific 150-200% window
-			                NOT ISBLANK(MinAwardDate) &&
-			                MinAwardDate <= Deadline
+			        VAR IntendedYears = 
+			            CALCULATE(MAX('bi vw_DimPsAcademicAwardStatuses'[IntendedYears]))
+			        
+			        VAR IntendedMonths = IntendedYears * 12
+			        VAR ActualMonths = DATEDIFF(StartDate, AwardDate, MONTH)
+			        
+			        RETURN
+			        IF(
+			            NOT ISBLANK(StartDate) && 
+			            NOT ISBLANK(AwardDate) && 
+			            ActualMonths <= (IntendedMonths * 1),
+			            1, 0
 			        )
 			    )
 			RETURN DIVIDE(StudentCount, [Total Cohort Students], 0)
@@ -51,38 +39,26 @@ table 'Postsecondary Certificate Completion'
 			VAR StudentList = VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId])
 			
 			VAR StudentCount =
-			    COUNTROWS(
-			        FILTER(
-			            StudentList,
-			            VAR StudentID = [PsStudentId]
+			    SUMX(
+			        VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			        VAR StartDate = 
+			            CALCULATE(MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate]))
+			        
+			        VAR AwardDate = 
+			            CALCULATE(MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentExitDate]))
 			            
-			            -- 1. Get ONLY the earliest enrollment date (ignores post-grad re-entry)
-			            VAR InitialStartDate = 
-			                CALCULATE(
-			                    MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate])
-			                )
-			            
-			            -- 2. Get the award details (firsProgrr that student)
-			            VAR MinAwardDate = 
-			                CALCULATE(
-			                    MIN('reporting RDS_FactPsStudentAcademicAwards'[AcademicAwardDate]),
-			                    'reporting RDS_FactPsStudentAcademicAwards'[PsStudentId] = StudentID
-			                )
-			            
-			            VAR ProgramLengthMonths = 
-			                CALCULATE(
-			                    MAX('bi vw_DimPsAcademicAwardStatuses'[IntendedYears]),
-			                   'reporting RDS_FactPsStudentAcademicAwards'[PsStudentId] = StudentID
-			                )
-			
-			            -- 3. Calculate Deadlines using EDATE for precision
-			            -- Assumes IntendedLength is in Months
-			            VAR Deadline = EDATE(InitialStartDate, ProgramLengthMonths * 1.5)
-			
-			            RETURN
-			                -- Student must have an award within the specific 150-200% window
-			                NOT ISBLANK(MinAwardDate) &&
-			                MinAwardDate <= Deadline
+			        VAR IntendedYears = 
+			            CALCULATE(MAX('bi vw_DimPsAcademicAwardStatuses'[IntendedYears]))
+			        
+			        VAR IntendedMonths = IntendedYears * 12
+			        VAR ActualMonths = DATEDIFF(StartDate, AwardDate, MONTH)
+			        
+			        RETURN
+			        IF(
+			            NOT ISBLANK(StartDate) && 
+			            NOT ISBLANK(AwardDate) && 
+			            ActualMonths <= (IntendedMonths * 1.5),
+			            1, 0
 			        )
 			    )
 			RETURN DIVIDE(StudentCount, [Total Cohort Students], 0)
@@ -95,38 +71,26 @@ table 'Postsecondary Certificate Completion'
 			VAR StudentList = VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId])
 			
 			VAR StudentCount =
-			    COUNTROWS(
-			        FILTER(
-			            StudentList,
-			            VAR StudentID = [PsStudentId]
+			    SUMX(
+			        VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			        VAR StartDate = 
+			            CALCULATE(MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate]))
+			        
+			        VAR AwardDate = 
+			            CALCULATE(MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentExitDate]))
 			            
-			            -- 1. Get ONLY the earliest enrollment date (ignores post-grad re-entry)
-			            VAR InitialStartDate = 
-			                CALCULATE(
-			                    MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate])
-			                )
-			            
-			            -- 2. Get the award details (firsProgrr that student)
-			            VAR MinAwardDate = 
-			                CALCULATE(
-			                    MIN('reporting RDS_FactPsStudentAcademicAwards'[AcademicAwardDate]),
-			                    'reporting RDS_FactPsStudentAcademicAwards'[PsStudentId] = StudentID
-			                )
-			            
-			            VAR ProgramLengthMonths = 
-			                CALCULATE(
-			                    MAX('bi vw_DimPsAcademicAwardStatuses'[IntendedYears]),
-			                   'reporting RDS_FactPsStudentAcademicAwards'[PsStudentId] = StudentID
-			                )
-			
-			            -- 3. Calculate Deadlines using EDATE for precision
-			            -- Assumes IntendedLength is in Months
-			            VAR Deadline = EDATE(InitialStartDate, ProgramLengthMonths * 2)
-			
-			            RETURN
-			                -- Student must have an award within the specific 150-200% window
-			                NOT ISBLANK(MinAwardDate) &&
-			                MinAwardDate <= Deadline
+			        VAR IntendedYears = 
+			            CALCULATE(MAX('bi vw_DimPsAcademicAwardStatuses'[IntendedYears]))
+			        
+			        VAR IntendedMonths = IntendedYears * 12
+			        VAR ActualMonths = DATEDIFF(StartDate, AwardDate, MONTH)
+			        
+			        RETURN
+			        IF(
+			            NOT ISBLANK(StartDate) && 
+			            NOT ISBLANK(AwardDate) && 
+			            ActualMonths <= (IntendedMonths * 2),
+			            1, 0
 			        )
 			    )
 			RETURN DIVIDE(StudentCount, [Total Cohort Students], 0)
@@ -240,6 +204,37 @@ table 'Postsecondary Certificate Completion'
 			```
 		formatString: 0
 		lineageTag: 34fed6de-f758-404a-8176-f34418617016
+
+	measure 'Students Graduated 200%' = ```
+			
+			VAR Result = 
+			    SUMX(
+			        VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			        VAR StartDate = 
+			            CALCULATE(MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate]))
+			        
+			        VAR AwardDate = 
+			            CALCULATE(MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentExitDate]))
+			            
+			        VAR IntendedYears = 
+			            CALCULATE(MAX('bi vw_DimPsAcademicAwardStatuses'[IntendedYears]))
+			        
+			        VAR IntendedMonths = IntendedYears * 12
+			        VAR ActualMonths = DATEDIFF(StartDate, AwardDate, MONTH)
+			        
+			        RETURN
+			        IF(
+			            NOT ISBLANK(StartDate) && 
+			            NOT ISBLANK(AwardDate) && 
+			            ActualMonths <= (IntendedMonths * 2),
+			            1, 0
+			        )
+			    )
+			RETURN
+			IF(ISBLANK(Result), 0, Result)
+			```
+		formatString: 0
+		lineageTag: d86d4105-051a-47ec-ba34-99810cf0c7d3
 
 	partition 'Postsecondary Certificate Completion' = m
 		mode: import
