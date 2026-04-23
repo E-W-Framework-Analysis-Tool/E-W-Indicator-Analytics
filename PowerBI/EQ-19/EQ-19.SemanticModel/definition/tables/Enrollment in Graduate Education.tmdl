@@ -1,74 +1,9 @@
 table 'Enrollment in Graduate Education'
 	lineageTag: a34fe3fd-4aea-45b2-ba18-b81f970e624e
 
-	measure YearsToComplete = ```
-			
-			DATEDIFF(
-			    CALCULATE(MIN('bi vw_FactPsStudentEnrollments'[SchoolYear])), 
-			    MAX('bi vw_FactPsStudentAcademicAwards'[AcademicAwardDate].[Year]), 
-			    YEAR
-			)
-			```
-		formatString: 0
-		lineageTag: 94edb3c3-d10c-4476-bdf1-7f45c29d2678
-
 	measure 'Total Cohort Students' = DISTINCTCOUNT('reporting RDS_FactK12GraduationCohorts'[K12StudentId])
 		formatString: 0
 		lineageTag: 806f4425-b97b-4ab6-a532-30f0fa498dd7
-
-	measure '% Completion 100% Time' = ```
-			
-			VAR IntendedLength = 2
-			RETURN
-			DIVIDE(
-			    CALCULATE(
-			        DISTINCTCOUNT('bi vw_FactPsStudentEnrollments'[PSStudentId]),
-			        FILTER(
-			            VALUES('bi vw_PS_DimStudents'[DimPsStudentId]), 
-			            [YearsToComplete] <= IntendedLength
-			        )
-			    ),
-			    [Total Cohort Count]
-			)
-			```
-		formatString: 0.0%;-0.0%;0.0%
-		lineageTag: cc3b8252-68bc-43cd-a946-42d301a765d8
-
-	measure '% Completion 150% Time' = ```
-			
-			VAR IntendedLength = 3
-			RETURN
-			DIVIDE(
-			    CALCULATE(
-			        DISTINCTCOUNT('bi vw_FactPsStudentEnrollments'[PSStudentId]),
-			        FILTER(
-			            VALUES('bi vw_PS_DimStudents'[DimPsStudentId]), 
-			            [YearsToComplete] <= IntendedLength
-			        )
-			    ),
-			    [Total Cohort Count]
-			)
-			```
-		formatString: 0.0%;-0.0%;0.0%
-		lineageTag: eb7f14df-faa0-46d7-8a46-34347c21462b
-
-	measure '% Completion 200% Time' = ```
-			
-			VAR IntendedLength = 4
-			RETURN
-			DIVIDE(
-			    CALCULATE(
-			        DISTINCTCOUNT('bi vw_FactPsStudentEnrollments'[PSStudentId]),
-			        FILTER(
-			            VALUES('bi vw_PS_DimStudents'[DimPsStudentId]), 
-			            [YearsToComplete] <= IntendedLength
-			        )
-			    ),
-			    [Total Cohort Count]
-			)
-			```
-		formatString: 0.0%;-0.0%;0.0%
-		lineageTag: f2b41234-2e26-4464-a7d9-ff77b65bf8ed
 
 	measure 'HS Graduates' = DISTINCTCOUNT('reporting RDS_FactK12GraduationCohorts'[K12StudentId])
 		formatString: 0
