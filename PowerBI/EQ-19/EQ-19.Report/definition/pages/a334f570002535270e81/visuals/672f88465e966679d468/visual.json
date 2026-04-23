@@ -7,7 +7,7 @@
     "z": 1000,
     "height": 205.78522656734947,
     "width": 648.342644320298,
-    "tabOrder": 50
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "lineChart",
@@ -297,20 +297,6 @@
         },
         "type": "Advanced",
         "howCreated": "User"
-      },
-      {
-        "name": "d284492252d2456c0dc6",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "TrendLineGraduationYears"
-              }
-            },
-            "Property": "CohortGraduationYear"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "a71299a44e1335c1dc60",
   "position": {
-    "x": 940.29850746268653,
-    "y": 587.46268656716416,
+    "x": 905.94594594594594,
+    "y": 587.027027027027,
     "z": 8000,
-    "height": 66.268656716417908,
-    "width": 339.40298507462688,
-    "tabOrder": 29
+    "height": 67.027027027027017,
+    "width": 374.05405405405406,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "advancedSlicerVisual",
@@ -84,7 +84,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Master''s Degree'"
+                                "Value": "'Bachelor''s Degree'"
                               }
                             }
                           ]
@@ -129,7 +129,7 @@
             "maxTiles": {
               "expr": {
                 "Literal": {
-                  "Value": "2L"
+                  "Value": "3L"
                 }
               }
             }
@@ -699,14 +699,21 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'Master''s Degree'"
+                          "Value": "'Associate''s Degree'"
                         }
                       }
                     ],
                     [
                       {
                         "Literal": {
-                          "Value": "'Doctoral Degree'"
+                          "Value": "'Bachelor''s Degree'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Certificate'"
                         }
                       }
                     ]

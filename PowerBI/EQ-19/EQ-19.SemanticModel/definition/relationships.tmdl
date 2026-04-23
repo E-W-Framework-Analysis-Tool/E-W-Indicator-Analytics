@@ -112,7 +112,3 @@ relationship be52388c-27ab-ce82-a581-78c17c3129dd
 	fromColumn: 'reporting RDS_FactPsStudentCourseTranscripts'.PsStudentId
 	toColumn: 'reporting RDS_DimStudents'.DimK12StudentId
 
-relationship 4c809269-9522-51dc-309a-93179567bd0f
-	fromColumn: 'reporting vw_RDS_DegreeCompletion'.DimPsAcademicAwardStatusId
-	toColumn: 'bi vw_DimPsAcademicAwardStatuses'.DimPsAcademicAwardStatusId
-

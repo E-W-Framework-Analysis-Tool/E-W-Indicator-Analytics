@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "8d7b83b26675b10b4662",
   "position": {
     "x": 54.0013183915623,
@@ -7,7 +7,7 @@
     "z": 4000,
     "height": 56.532630191166781,
     "width": 214.31773236651287,
-    "tabOrder": 7
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -396,23 +396,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "90ca42f37571ae0a4831",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Globals"
-              }
-            },
-            "Property": "Disaggregate by"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

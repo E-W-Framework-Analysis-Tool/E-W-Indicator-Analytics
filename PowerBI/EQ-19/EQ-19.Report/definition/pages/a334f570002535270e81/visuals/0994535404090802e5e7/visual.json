@@ -7,7 +7,7 @@
     "z": 2000,
     "height": 205,
     "width": 631,
-    "tabOrder": 49
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -48,9 +48,6 @@
               "length": 1
             }
           ]
-        },
-        "Series": {
-          "projections": []
         },
         "Y": {
           "projections": [
@@ -120,37 +117,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "fa3c3e6fd04aa86ba8a1",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Enrollment in Graduate Education"
-              }
-            },
-            "Property": "% Enrolled Undergrad"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "77917f3199506a6206ce",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Enrollment in Graduate Education"
-              }
-            },
-            "Property": "% Enrolled Grad"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

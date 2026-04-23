@@ -7,7 +7,7 @@
     "z": 7000,
     "height": 56.532630191166781,
     "width": 214.31773236651287,
-    "tabOrder": 6
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -396,23 +396,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "2e89d61ec0e1ac565111",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Globals"
-              }
-            },
-            "Property": "Disaggregate by"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
