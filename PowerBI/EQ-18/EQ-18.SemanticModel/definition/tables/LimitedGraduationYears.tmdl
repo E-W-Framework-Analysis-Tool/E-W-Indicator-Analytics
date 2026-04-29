@@ -1,0 +1,21 @@
+table LimitedGraduationYears
+	lineageTag: d3087095-bcd7-49cb-b463-0260238c782c
+
+	column CohortGraduationYear
+		formatString: 0
+		lineageTag: 12275869-13c1-4142-90c2-fe481eb0462a
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: bi vw_DimCohortGraduationYears[CohortGraduationYear]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition LimitedGraduationYears = calculated
+		mode: import
+		source =
+				
+				VAR MaxCohortYear = CALCULATE(MAX('bi vw_DimCohortYears'[CohortYear]), ALL('bi vw_DimCohortYears'))
+				RETURN FILTER(DISTINCT('bi vw_DimCohortGraduationYears'[CohortGraduationYear]), 'bi vw_DimCohortGraduationYears'[CohortGraduationYear] <= MaxCohortYear)
+
+	annotation PBI_Id = 8b00de207e9a42d3bea18c25c1658aba
+

@@ -1,0 +1,81 @@
+table 'reporting RDS_FactPsStudentAcademicAwards'
+	lineageTag: 884b1c1e-c469-4be6-8067-994f39bf5429
+
+	column FactPsStudentAcademicAwardId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 8e065151-899c-4643-a1f9-8b5e23895584
+		summarizeBy: count
+		sourceColumn: FactPsStudentAcademicAwardId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column PsInstitutionId
+		dataType: int64
+		formatString: 0
+		lineageTag: f1085dd6-4873-412c-92c2-53f01a62f1a5
+		summarizeBy: none
+		sourceColumn: PsInstitutionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PsStudentId
+		dataType: int64
+		formatString: 0
+		lineageTag: a9708bd8-bc9c-4180-9c34-371ff2197268
+		summarizeBy: none
+		sourceColumn: PsStudentId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PsStudent_CurrentId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 297da02a-3fd2-4025-bc55-855530b6e626
+		summarizeBy: count
+		sourceColumn: PsStudent_CurrentId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AcademicAwardDate
+		dataType: int64
+		formatString: 0
+		lineageTag: 24a29d5e-752f-4438-9368-37154bb3c6fa
+		summarizeBy: sum
+		sourceColumn: AcademicAwardDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column PsAcademicAwardStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: 74d1f46c-9cc3-4a68-b1d5-104bbfce4683
+		summarizeBy: none
+		sourceColumn: PsAcademicAwardStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SchoolYear
+		dataType: int64
+		formatString: 0
+		lineageTag: c8847faa-52b3-4252-9625-100c79aee570
+		summarizeBy: sum
+		sourceColumn: SchoolYear
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'reporting RDS_FactPsStudentAcademicAwards' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost:14331", "Dashboards"),
+				    reporting_RDS_FactPsStudentAcademicAwards = Source{[Schema="reporting",Item="RDS_FactPsStudentAcademicAwards"]}[Data]
+				in
+				    reporting_RDS_FactPsStudentAcademicAwards
+

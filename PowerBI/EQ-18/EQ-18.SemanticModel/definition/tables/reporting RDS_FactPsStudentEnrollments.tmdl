@@ -1,0 +1,116 @@
+table 'reporting RDS_FactPsStudentEnrollments'
+	lineageTag: 5c54d96c-0190-4abd-bc61-1c1767f4b44c
+
+	column FactPsStudentEnrollmentId
+		dataType: int64
+		formatString: 0
+		lineageTag: fd7a0288-9715-4519-ad13-8f335d0d13ec
+		summarizeBy: count
+		sourceColumn: FactPsStudentEnrollmentId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SchoolYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 5851617b-aec9-499e-afb5-ac0e4122e800
+		summarizeBy: sum
+		sourceColumn: SchoolYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column PsInstitutionId
+		dataType: int64
+		formatString: 0
+		lineageTag: a71dbdc0-4cab-47e7-9935-66ffb5ca34ba
+		summarizeBy: none
+		sourceColumn: PsInstitutionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PsStudentId
+		dataType: int64
+		formatString: 0
+		lineageTag: 89310705-e4ad-40b7-bc12-2fd8ed7461b3
+		summarizeBy: none
+		sourceColumn: PsStudentId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PsStudent_CurrentId
+		dataType: int64
+		formatString: 0
+		lineageTag: dfeffad6-1b02-4842-8460-0cdf1f6aeb33
+		summarizeBy: count
+		sourceColumn: PsStudent_CurrentId
+
+		annotation SummarizationSetBy = Automatic
+
+	column AcademicTermDesignatorId
+		dataType: int64
+		formatString: 0
+		lineageTag: 6249daa7-422f-4346-8723-62b2090a2bc4
+		summarizeBy: count
+		sourceColumn: AcademicTermDesignatorId
+
+		annotation SummarizationSetBy = Automatic
+
+	column EnrollmentEntryDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ba5006b5-9667-43b0-b2ff-016f24f0459a
+		summarizeBy: none
+		sourceColumn: EnrollmentEntryDate
+
+		variation Variation
+			isDefault
+			relationship: 16b624c5-dd9b-4a3a-a915-64facc6df06e
+			defaultHierarchy: LocalDateTable_63e5f02f-4d0a-4250-b7f9-7fa4d3fb9fde.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column EnrollmentExitDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ec8c2cea-a67c-4520-8975-33b12b0f861a
+		summarizeBy: none
+		sourceColumn: EnrollmentExitDate
+
+		variation Variation
+			isDefault
+			relationship: 2d890261-f187-4c45-a309-0f3e626b1a4c
+			defaultHierarchy: LocalDateTable_36d89bf8-4fec-4299-ad82-b8dc6a2d9199.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column PsEnrollmentStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f2ed6fb-27b0-4ff1-b975-161d5fcde284
+		summarizeBy: none
+		sourceColumn: PsEnrollmentStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PsInstitutionStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: 1c64ddbc-7c26-40e8-8e37-ee5e5c135f92
+		summarizeBy: count
+		sourceColumn: PsInstitutionStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'reporting RDS_FactPsStudentEnrollments' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost:14331", "Dashboards"),
+				    reporting_RDS_FactPsStudentEnrollments = Source{[Schema="reporting",Item="RDS_FactPsStudentEnrollments"]}[Data]
+				in
+				    reporting_RDS_FactPsStudentEnrollments
+

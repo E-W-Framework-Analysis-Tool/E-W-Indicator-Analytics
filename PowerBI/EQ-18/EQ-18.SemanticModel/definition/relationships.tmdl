@@ -1,0 +1,100 @@
+relationship 16b624c5-dd9b-4a3a-a915-64facc6df06e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'reporting RDS_FactPsStudentEnrollments'.EnrollmentEntryDate
+	toColumn: LocalDateTable_63e5f02f-4d0a-4250-b7f9-7fa4d3fb9fde.Date
+
+relationship 2d890261-f187-4c45-a309-0f3e626b1a4c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'reporting RDS_FactPsStudentEnrollments'.EnrollmentExitDate
+	toColumn: LocalDateTable_36d89bf8-4fec-4299-ad82-b8dc6a2d9199.Date
+
+relationship e8999a90-4a7b-8699-80cf-0cc25e914423
+	fromColumn: 'reporting RDS_FactK12GraduationCohorts'.CohortYear
+	toColumn: 'bi vw_DimCohortYears'.CohortYear
+
+relationship 01b280ed-4c0e-8e68-280e-d7efd9bdbd88
+	fromColumn: 'reporting RDS_FactK12GraduationCohorts'.CohortGraduationYear
+	toColumn: 'bi vw_DimCohortGraduationYears'.CohortGraduationYear
+
+relationship f30c4570-dadf-ea73-5e63-5344376f0c32
+	fromColumn: 'reporting RDS_FactK12GraduationCohorts'.K12SchoolId
+	toColumn: 'bi vw_DimK12Schools'.DimK12SchoolId
+
+relationship b9742f54-f32f-edd0-df9d-80c5f7515970
+	fromColumn: 'reporting RDS_FactK12GraduationCohorts'.EconomicallyDisadvantagedStatusId
+	toColumn: 'bi vw_DimEconomicallyDisadvantagedStatuses'.DimEconomicallyDisadvantagedStatusId
+
+relationship 3a7b694d-3e7a-c9c3-e67d-fc0a0d0ccd2a
+	fromColumn: 'reporting RDS_FactK12GraduationCohorts'.EnglishLearnerStatusId
+	toColumn: 'bi vw_DimEnglishLearnerStatuses'.DimEnglishLearnerStatusId
+
+relationship c8043230-ab0c-7ed1-3a8d-66a86856aa93
+	fromColumn: 'reporting RDS_FactK12GraduationCohorts'.FosterCareStatusId
+	toColumn: 'bi vw_DimFosterCareStatuses'.DimFosterCareStatusId
+
+relationship a00a067f-7d6b-50c5-baaa-a0c37964f3af
+	fromColumn: 'reporting RDS_FactK12GraduationCohorts'.HomelessnessStatusId
+	toColumn: 'bi vw_DimHomelessnessStatuses'.DimHomelessnessStatusId
+
+relationship c7419d06-076c-4e2a-cb86-8394b83f99a8
+	fromColumn: 'reporting RDS_FactK12GraduationCohorts'.SchoolYear
+	toColumn: 'bi vw_DimSchoolYears'.SchoolYear
+
+relationship 2cd6b593-14e5-4289-b2c3-d93cc03d8391
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'reporting RDS_DimPsInstitutions'.OperationalStatusEffectiveDate
+	toColumn: LocalDateTable_963b827a-6a75-481a-9610-60d41b58678a.Date
+
+relationship 1b397948-d84d-2379-a2fd-b3e9ae3d7546
+	fromColumn: 'reporting RDS_FactPsStudentEnrollments'.PsEnrollmentStatusId
+	toColumn: 'bi vw_DimPsEnrollmentStatuses'.DimPsEnrollmentStatusId
+
+relationship 0187a5fa-6ce5-9ccf-a3cd-7b95a2f3363a
+	fromColumn: 'reporting RDS_FactPsStudentEnrollments'.PsStudentId
+	toColumn: 'reporting RDS_DimStudents'.DimK12StudentId
+
+relationship e2d04499-976e-f772-e37f-e7c1e363ded8
+	fromColumn: 'reporting RDS_DimStudents'.RaceId
+	toColumn: 'bi vw_DimRaces'.DimRaceId
+
+relationship 52e58b2e-1705-cc91-1ce1-f248e10fcd8f
+	fromColumn: 'reporting RDS_DimStudents'.K12DemographicId
+	toColumn: 'bi vw_DimK12Demographics'.Dimk12DemographicId
+
+relationship 0a3d2e94-d4bf-b8cd-0ac2-8c98cbefc37a
+	fromColumn: 'reporting RDS_FactPsStudentEnrollments'.PsInstitutionId
+	toColumn: 'reporting RDS_DimPsInstitutions'.DimPsInstitutionId
+
+relationship 2f93714a-7559-6635-13bb-4a0a14bf5285
+	isActive: false
+	fromColumn: 'reporting RDS_FactPsStudentEnrollments'.SchoolYear
+	toColumn: 'bi vw_DimSchoolYears'.SchoolYear
+
+relationship f9f586f6-23bb-85e1-04ac-daf2f85f2255
+	fromColumn: 'reporting RDS_FactPsStudentAcademicAwards'.PsAcademicAwardStatusId
+	toColumn: 'bi vw_DimPsAcademicAwardStatuses'.DimPsAcademicAwardStatusId
+
+relationship 30b87385-14b1-c954-5e05-5f94f5104db1
+	fromColumn: 'reporting RDS_FactPsStudentCourseTranscripts'.CipCodeId
+	toColumn: 'bi vw_DimCipCodes'.DimCipCodeId
+
+relationship 3c02599c-4622-079d-7fa6-c229fef34ac2
+	fromColumn: 'reporting RDS_FactPsStudentAcademicAwards'.PsInstitutionId
+	toColumn: 'reporting RDS_DimPsInstitutions'.DimPsInstitutionId
+
+relationship 888de32d-bd16-bf2b-8091-01a1524b320c
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'reporting RDS_DimStudents'.DimK12StudentId
+	toColumn: 'reporting RDS_FactK12GraduationCohorts'.K12StudentId
+
+relationship 5ddfa0e0-8712-475c-58c8-21cdccd63478
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'reporting RDS_FactPsStudentAcademicAwards'.PsStudentId
+	toColumn: 'reporting RDS_DimStudents'.DimK12StudentId
+
+relationship 2373cb23-c789-7000-f135-08e0f37f1b28
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'reporting RDS_FactPsStudentCourseTranscripts'.PsStudentId
+	toColumn: 'reporting RDS_DimStudents'.DimK12StudentId
+

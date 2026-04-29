@@ -7,7 +7,7 @@
     "z": 1000,
     "height": 62.722323049001808,
     "width": 538.9473684210526,
-    "tabOrder": 3005
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "textbox",
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Cumulative student debt",
+                    "value": "Access to college and career advising",
                     "textStyle": {
                       "fontWeight": "bold",
                       "color": "#5b6771"
@@ -30,7 +30,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "The total amount of student loans individuals take out while enrolled in college.",
+                    "value": "College and career counseling services are available in high schools and college campuses.",
                     "textStyle": {
                       "fontSize": "9pt",
                       "color": "#5b6771"

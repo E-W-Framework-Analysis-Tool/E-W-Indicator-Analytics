@@ -1,0 +1,29 @@
+table 'bi vw_DimEconomicallyDisadvantagedStatuses'
+	lineageTag: f1e748d9-9c27-4260-ac2d-c728b6df7d6d
+
+	column DimEconomicallyDisadvantagedStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: d9ac3c28-dc4d-4eb3-a217-9f197c20b729
+		summarizeBy: none
+		sourceColumn: DimEconomicallyDisadvantagedStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column EconomicDisadvantageStatus
+		dataType: string
+		lineageTag: 97f8b9f0-0288-4db5-9ba6-ff82897f3c9a
+		summarizeBy: none
+		sourceColumn: EconomicDisadvantageStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bi vw_DimEconomicallyDisadvantagedStatuses' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost:14331", "Dashboards"),
+				    bi_vw_DimEconomicallyDisadvantagedStatuses = Source{[Schema="bi",Item="vw_DimEconomicallyDisadvantagedStatuses"]}[Data]
+				in
+				    bi_vw_DimEconomicallyDisadvantagedStatuses
+

@@ -1,0 +1,61 @@
+table 'bi vw_DimPsEnrollmentStatuses'
+	lineageTag: 72cebcba-1dd9-4cc0-9958-c95df049c270
+
+	column DimPsEnrollmentStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: 1e79455b-71f6-411d-8879-2e9b5c484ff9
+		summarizeBy: none
+		sourceColumn: DimPsEnrollmentStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PostsecondaryExitOrWithdrawalTypeCode
+		dataType: string
+		lineageTag: 5010eb3c-e668-488f-9c67-3621f9c1b1d7
+		summarizeBy: none
+		sourceColumn: PostsecondaryExitOrWithdrawalTypeCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column PostsecondaryExitOrWithdrawalTypeDescription
+		dataType: string
+		lineageTag: 9c21b736-f51f-485d-b871-80a5bf93f2c5
+		summarizeBy: none
+		sourceColumn: PostsecondaryExitOrWithdrawalTypeDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column PostsecondaryEnrollmentStatusCode
+		dataType: string
+		lineageTag: f975a8d2-e5cf-4baf-b763-161174a6393e
+		summarizeBy: none
+		sourceColumn: PostsecondaryEnrollmentStatusCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column PostsecondaryEnrollmentStatusDescription
+		dataType: string
+		lineageTag: d4e9957f-3d57-46ed-b57a-f8b9e6017627
+		summarizeBy: none
+		sourceColumn: PostsecondaryEnrollmentStatusDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column PostSecondaryEnrollmentStatusEdFactsCode
+		dataType: string
+		lineageTag: d8e65f1e-3e73-4110-b617-d586b52e8a5a
+		summarizeBy: none
+		sourceColumn: PostSecondaryEnrollmentStatusEdFactsCode
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bi vw_DimPsEnrollmentStatuses' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost:14331", "Dashboards"),
+				    bi_vw_DimPsEnrollmentStatuses = Source{[Schema="bi",Item="vw_DimPsEnrollmentStatuses"]}[Data]
+				in
+				    bi_vw_DimPsEnrollmentStatuses
+

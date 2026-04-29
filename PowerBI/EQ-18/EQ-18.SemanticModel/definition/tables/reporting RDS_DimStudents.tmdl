@@ -1,0 +1,39 @@
+table 'reporting RDS_DimStudents'
+	lineageTag: 81d0879e-0d04-4475-9f65-add2bba0499e
+
+	column DimK12StudentId
+		dataType: int64
+		formatString: 0
+		lineageTag: 7d6ce10f-ddaf-447f-a29c-472b2e1dfb20
+		summarizeBy: none
+		sourceColumn: DimK12StudentId
+
+		annotation SummarizationSetBy = Automatic
+
+	column K12DemographicId
+		dataType: int64
+		formatString: 0
+		lineageTag: 5e191672-76b7-4625-9dee-2327a6be8601
+		summarizeBy: none
+		sourceColumn: K12DemographicId
+
+		annotation SummarizationSetBy = Automatic
+
+	column RaceId
+		dataType: int64
+		formatString: 0
+		lineageTag: f1d98ec6-8b39-4181-8f39-9589ebd31030
+		summarizeBy: none
+		sourceColumn: RaceId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'reporting RDS_DimStudents' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost:14331", "Dashboards"),
+				    reporting_RDS_DimStudents = Source{[Schema="reporting",Item="RDS_DimStudents"]}[Data]
+				in
+				    reporting_RDS_DimStudents
+
