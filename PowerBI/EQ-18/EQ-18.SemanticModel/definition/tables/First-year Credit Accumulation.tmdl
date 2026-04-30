@@ -1,0 +1,81 @@
+table 'First-year Credit Accumulation'
+	lineageTag: d42d6ce4-0bf7-47d9-81c9-658d4412785d
+
+	measure '% FT Students Completing 30 Credits' = ```
+			
+			VAR FTFirstYearStudents = 
+			    CALCULATE(
+			        DISTINCTCOUNT('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			        'reporting RDS_FactPsStudentCourseTranscripts'[StudentStatus] = "Full-Time"
+			    )
+			
+			VAR FTCompleters = 
+			    CALCULATE(
+			        DISTINCTCOUNT('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			        'reporting RDS_FactPsStudentCourseTranscripts'[StudentStatus] = "Full-Time",
+			        'reporting RDS_FactPsStudentCourseTranscripts'[NumberOfCreditsEarned] >= 30
+			    )
+			
+			RETURN 
+			    DIVIDE(FTCompleters, FTFirstYearStudents, 0)
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 9bc86cb3-1b6a-49f5-a36e-482bdd8e790d
+
+	measure '% HT Students Completing 15 Credits' = ```
+			
+			VAR HTFirstYearStudents = 
+			    CALCULATE(
+			        DISTINCTCOUNT('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			        'reporting RDS_FactPsStudentCourseTranscripts'[StudentStatus] = "Half-Time"
+			    )
+			
+			VAR HTCompleters = 
+			    CALCULATE(
+			        DISTINCTCOUNT('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			        'reporting RDS_FactPsStudentCourseTranscripts'[StudentStatus] = "Half-Time",
+			        'reporting RDS_FactPsStudentCourseTranscripts'[NumberOfCreditsEarned] >= 15
+			    )
+			
+			RETURN 
+			    DIVIDE(HTCompleters, HTFirstYearStudents, 0)
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 529c0c5e-94f7-44e4-86cb-a666028baa69
+
+	measure '% FT Students Completing 30 Credits Trend' =
+			
+			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
+			RETURN
+			CALCULATE(
+			    [% FT Students Completing 30 Credits],
+			    'bi vw_DimSchoolYears'[SchoolYear] = SelectedTrendYear,
+			    REMOVEFILTERS('bi vw_DimSchoolYears')
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 465d5243-47bc-4b94-a7cd-e69c1c846fb4
+
+	measure '% HT Students Completing 15 Credits Trend' =
+			
+			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
+			RETURN
+			CALCULATE(
+			    [% HT Students Completing 15 Credits],
+			    'bi vw_DimSchoolYears'[SchoolYear] = SelectedTrendYear,
+			    REMOVEFILTERS('bi vw_DimSchoolYears')
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: ad966f6c-fe23-4b88-b8dd-5c0a08f9583b
+
+	partition 'First-year Credit Accumulation' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

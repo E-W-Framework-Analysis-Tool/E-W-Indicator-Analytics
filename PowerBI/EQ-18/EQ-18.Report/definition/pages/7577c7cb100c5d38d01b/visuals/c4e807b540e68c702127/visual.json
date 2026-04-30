@@ -1,0 +1,195 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "c4e807b540e68c702127",
+  "position": {
+    "x": 0,
+    "y": 193.26364692218351,
+    "z": 6000,
+    "height": 205,
+    "width": 631,
+    "tabOrder": 18002
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_DimK12Schools"
+                    }
+                  },
+                  "Property": "SeaOrganizationName"
+                }
+              },
+              "queryRef": "bi vw_DimK12Schools.SeaOrganizationName",
+              "nativeQueryRef": "SEA",
+              "active": true,
+              "displayName": "SEA"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Hierarchy Picker"
+                    }
+                  },
+                  "Property": "Organization Hierarchy"
+                }
+              },
+              "index": 0,
+              "length": 1
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "First-year Credit Accumulation"
+                    }
+                  },
+                  "Property": "% FT Students Completing 30 Credits"
+                }
+              },
+              "queryRef": "First-year Credit Accumulation.% FT Students Completing 30 Credits",
+              "nativeQueryRef": "% FT Students Completing 30 Credits"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "First-year Credit Accumulation"
+                    }
+                  },
+                  "Property": "% HT Students Completing 15 Credits"
+                }
+              },
+              "queryRef": "First-year Credit Accumulation.% HT Students Completing 15 Credits",
+              "nativeQueryRef": "% HT Students Completing 15 Credits"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "First-year Credit Accumulation"
+                  }
+                },
+                "Property": "% FT Students Completing 30 Credits"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "valueAxis": [
+        {
+          "properties": {
+            "end": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "start": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "35b9c30f634c4a117c39",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "First-year Credit Accumulation"
+              }
+            },
+            "Property": "% FT Students Completing 30 Credits"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2940fcbe0e5b3ca22e5e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "First-year Credit Accumulation"
+              }
+            },
+            "Property": "% HT Students Completing 15 Credits"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

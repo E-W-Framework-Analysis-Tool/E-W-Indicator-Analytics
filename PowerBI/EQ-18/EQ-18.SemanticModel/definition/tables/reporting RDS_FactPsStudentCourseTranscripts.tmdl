@@ -89,6 +89,18 @@ table 'reporting RDS_FactPsStudentCourseTranscripts'
 
 		annotation SummarizationSetBy = Automatic
 
+	column StudentStatus =
+			
+			SWITCH(TRUE(),
+			    'reporting RDS_FactPsStudentCourseTranscripts'[NumberOfCreditsAttempted] == 30, "Full-Time",
+			    'reporting RDS_FactPsStudentCourseTranscripts'[NumberOfCreditsAttempted] == 15, "Half-Time",
+			    "Other"
+			)
+		lineageTag: 9b76e796-7f64-48fd-9349-599feecfc233
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'reporting RDS_FactPsStudentCourseTranscripts' = m
 		mode: import
 		source =

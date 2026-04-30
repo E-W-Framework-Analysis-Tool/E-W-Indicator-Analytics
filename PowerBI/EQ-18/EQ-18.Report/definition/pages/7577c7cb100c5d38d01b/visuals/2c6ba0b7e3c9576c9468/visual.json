@@ -1,0 +1,321 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "2c6ba0b7e3c9576c9468",
+  "position": {
+    "x": 631.657355679702,
+    "y": 193.07262569832403,
+    "z": 7000,
+    "height": 205.78522656734947,
+    "width": 648.342644320298,
+    "tabOrder": 18003
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TrendLineGraduationYears"
+                    }
+                  },
+                  "Property": "CohortGraduationYear"
+                }
+              },
+              "queryRef": "TrendLineGraduationYears.CohortGraduationYear",
+              "nativeQueryRef": "CohortGraduationYear1",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "First-year Credit Accumulation"
+                    }
+                  },
+                  "Property": "% FT Students Completing 30 Credits Trend"
+                }
+              },
+              "queryRef": "First-year Credit Accumulation.% FT Students Completing 30 Credits Trend",
+              "nativeQueryRef": "% FT Students Completing 30 Credits Trend"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "First-year Credit Accumulation"
+                    }
+                  },
+                  "Property": "% HT Students Completing 15 Credits Trend"
+                }
+              },
+              "queryRef": "First-year Credit Accumulation.% HT Students Completing 15 Credits Trend",
+              "nativeQueryRef": "% HT Students Completing 15 Credits Trend"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "First-year Credit Accumulation"
+                  }
+                },
+                "Property": "% FT Students Completing 30 Credits Trend"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "categoryAxis": [
+        {
+          "properties": {
+            "concatenateLabels": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'School Year'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "smallMultiplesLayout": [
+        {
+          "properties": {
+            "rowCount": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            },
+            "columnCount": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "seriesLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "legend": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "end": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "start": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Enrollment Trend '"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c5e3824b6dc3dde2b032",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Algebra I by 9th grade"
+                  }
+                },
+                "Property": "Algebra I Success Rate"
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Measure": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Algebra I by 9th grade"
+                      }
+                    },
+                    "Property": "Algebra I Success Rate"
+                  }
+                },
+                "Scope": []
+              }
+            },
+            "Operator": 3
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "4aa360144c027714eebe",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "TrendLineGraduationYears"
+              }
+            },
+            "Property": "CohortGraduationYear"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e6649e4ed09b0469b9c2",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "First-year Credit Accumulation"
+              }
+            },
+            "Property": "% FT Students Completing 30 Credits Trend"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d64d59496ab303533b94",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "First-year Credit Accumulation"
+              }
+            },
+            "Property": "% HT Students Completing 15 Credits Trend"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

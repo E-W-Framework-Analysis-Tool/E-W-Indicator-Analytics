@@ -382,6 +382,25 @@
             "width": 234
           },
           "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "First-year Program of Study",
+          "nodeLineageTag": "b2fc4fb6-1eda-4c9a-8bcf-130aa60b17e9",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "TrendLineGraduationYears",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",

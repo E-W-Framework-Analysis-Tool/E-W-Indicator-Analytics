@@ -154,6 +154,10 @@ table Globals
 	measure 'Disaggregate by' = CONCATENATE(VALUES(Disaggregation[Disaggregation Name]), "")
 		lineageTag: 820fa33a-27b7-44ca-b9f0-d81c14801b99
 
+	measure 'Total Cohort Students' = DISTINCTCOUNT('reporting RDS_FactK12GraduationCohorts'[K12StudentId])
+		formatString: 0
+		lineageTag: 1875e782-7622-4dc4-9ac9-2e25bc5f382a
+
 	partition Globals = m
 		mode: import
 		source =

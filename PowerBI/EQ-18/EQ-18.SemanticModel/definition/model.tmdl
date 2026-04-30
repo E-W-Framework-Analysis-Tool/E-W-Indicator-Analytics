@@ -10,7 +10,7 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_ProTooling = ["DevMode"]
 
-annotation PBI_QueryOrder = ["bi vw_DimCipCodes","bi vw_DimCohortGraduationYears","bi vw_DimCohortYears","bi vw_DimDisabilityStatuses","bi vw_DimEconomicallyDisadvantagedStatuses","bi vw_DimEnglishLearnerStatuses","bi vw_DimFosterCareStatuses","bi vw_DimHomelessnessStatuses","bi vw_DimK12Demographics","bi vw_DimK12Schools","bi vw_DimNeglectedOrDelinquentStatus","bi vw_DimPsAcademicAwardStatuses","bi vw_DimPsAcademicAwardTitles","bi vw_DimPsEnrollmentStatuses","bi vw_DimRaces","bi vw_DimRuralStatuses","bi vw_DimSchoolYears","bi vw_DimStudents","Globals","reporting RDS_FactK12GraduationCohorts","reporting RDS_FactPsStudentAcademicAwards","reporting RDS_FactPsStudentCourseTranscripts","reporting RDS_FactPsStudentEnrollments","reporting RDS_DimStudents","reporting RDS_DimPsInstitutions"]
+annotation PBI_QueryOrder = ["bi vw_DimCipCodes","bi vw_DimCohortGraduationYears","bi vw_DimCohortYears","bi vw_DimDisabilityStatuses","bi vw_DimEconomicallyDisadvantagedStatuses","bi vw_DimEnglishLearnerStatuses","bi vw_DimFosterCareStatuses","bi vw_DimHomelessnessStatuses","bi vw_DimK12Demographics","bi vw_DimK12Schools","bi vw_DimNeglectedOrDelinquentStatus","bi vw_DimPsAcademicAwardStatuses","bi vw_DimPsAcademicAwardTitles","bi vw_DimPsEnrollmentStatuses","bi vw_DimRaces","bi vw_DimRuralStatuses","bi vw_DimSchoolYears","bi vw_DimStudents","Globals","reporting RDS_FactK12GraduationCohorts","reporting RDS_FactPsStudentAcademicAwards","reporting RDS_FactPsStudentCourseTranscripts","reporting RDS_FactPsStudentEnrollments","reporting RDS_DimStudents","reporting RDS_DimPsInstitutions","First-year Program of Study","First-year Credit Accumulation"]
 
 ref table 'bi vw_DimCipCodes'
 ref table 'bi vw_DimCohortGraduationYears'
@@ -45,6 +45,9 @@ ref table LocalDateTable_36d89bf8-4fec-4299-ad82-b8dc6a2d9199
 ref table 'reporting RDS_DimStudents'
 ref table 'reporting RDS_DimPsInstitutions'
 ref table LocalDateTable_963b827a-6a75-481a-9610-60d41b58678a
+ref table 'First-year Program of Study'
+ref table TrendLineGraduationYears
+ref table 'First-year Credit Accumulation'
 
 ref cultureInfo en-US
 

@@ -1,0 +1,45 @@
+table 'First-year Program of Study'
+	lineageTag: b2fc4fb6-1eda-4c9a-8bcf-130aa60b17e9
+
+	measure '% Students Completing 9 Credits' = ```
+			
+			VAR Students_Completing_9_Credits = 
+			COUNTROWS(
+			    FILTER(
+			        VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			        VAR FirstYearCredits = 
+			            CALCULATE(
+			                MAX('reporting RDS_FactPsStudentCourseTranscripts'[NumberOfCreditsEarned])
+			            )
+			        RETURN FirstYearCredits >= 9
+			    )
+			)
+			RETURN DIVIDE(Students_Completing_9_Credits, [Total Cohort Students], 0)
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 165cd5ae-4159-4b52-9639-dbe9c0111f22
+
+	measure '% First-year Program of Study Trend' =
+			
+			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
+			RETURN
+			CALCULATE(
+			    'First-year Program of Study'[% Students Completing 9 Credits],
+			    'bi vw_DimCohortGraduationYears'[CohortGraduationYear] = SelectedTrendYear,
+			    REMOVEFILTERS('bi vw_DimSchoolYears')
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 48f08ad4-58ec-42a5-944c-9d5fce06a88e
+
+	partition 'First-year Program of Study' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
