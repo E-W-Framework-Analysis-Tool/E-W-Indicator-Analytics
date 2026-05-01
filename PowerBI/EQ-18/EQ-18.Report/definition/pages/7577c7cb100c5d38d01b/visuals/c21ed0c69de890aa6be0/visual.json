@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "bi vw_DimCipCodes"
+                      "Entity": "Field of Study"
                     }
                   },
-                  "Property": "FieldOfStudy"
+                  "Property": "Slicer-Value"
                 }
               },
-              "queryRef": "bi vw_DimCipCodes.FieldOfStudy",
-              "nativeQueryRef": "FieldOfStudy"
+              "queryRef": "Field of Study.Slicer-Value",
+              "nativeQueryRef": "Slicer-Value"
             }
           ]
         }
@@ -59,8 +59,8 @@
                 "Version": 2,
                 "From": [
                   {
-                    "Name": "b",
-                    "Entity": "bi vw_DimCipCodes",
+                    "Name": "f",
+                    "Entity": "Field of Study",
                     "Type": 0
                   }
                 ],
@@ -73,10 +73,10 @@
                             "Column": {
                               "Expression": {
                                 "SourceRef": {
-                                  "Source": "b"
+                                  "Source": "f"
                                 }
                               },
-                              "Property": "FieldOfStudy"
+                              "Property": "Slicer-Value"
                             }
                           }
                         ],
@@ -84,7 +84,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'ARTS'"
+                                "Value": "null"
                               }
                             }
                           ]
@@ -101,19 +101,6 @@
       "data": [
         {
           "properties": {}
-        }
-      ],
-      "selection": [
-        {
-          "properties": {
-            "strictSingleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
         }
       ],
       "layout": [
@@ -522,6 +509,19 @@
             }
           }
         }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -658,15 +658,15 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "0ba61be17862d2b7b43c",
+        "name": "5dc80604e46ac6055c05",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "bi vw_DimCipCodes"
+                "Entity": "Field of Study"
               }
             },
-            "Property": "FieldOfStudy"
+            "Property": "Slicer-Value"
           }
         },
         "type": "Categorical",
@@ -674,8 +674,8 @@
           "Version": 2,
           "From": [
             {
-              "Name": "b",
-              "Entity": "bi vw_DimCipCodes",
+              "Name": "f",
+              "Entity": "Field of Study",
               "Type": 0
             }
           ],
@@ -688,10 +688,10 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "b"
+                            "Source": "f"
                           }
                         },
-                        "Property": "FieldOfStudy"
+                        "Property": "Slicer-Value"
                       }
                     }
                   ],
@@ -699,21 +699,21 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'ARTS'"
+                          "Value": "'Business'"
                         }
                       }
                     ],
                     [
                       {
                         "Literal": {
-                          "Value": "'BUSINESS'"
+                          "Value": "'Liberal Arts'"
                         }
                       }
                     ],
                     [
                       {
                         "Literal": {
-                          "Value": "'OTHER'"
+                          "Value": "'Other'"
                         }
                       }
                     ],

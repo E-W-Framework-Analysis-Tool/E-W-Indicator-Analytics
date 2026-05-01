@@ -48,6 +48,8 @@ ref table LocalDateTable_963b827a-6a75-481a-9610-60d41b58678a
 ref table 'First-year Program of Study'
 ref table TrendLineGraduationYears
 ref table 'First-year Credit Accumulation'
+ref table 'Field of Study'
+ref table 'Credential Type'
 
 ref cultureInfo en-US
 

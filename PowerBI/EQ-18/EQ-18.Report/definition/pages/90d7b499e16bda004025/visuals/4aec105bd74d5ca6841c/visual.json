@@ -1,6 +1,6 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
-  "name": "4cfb97e16de40cc24308",
+  "name": "4aec105bd74d5ca6841c",
   "position": {
     "x": 905.94594594594594,
     "y": 587.027027027027,
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "bi vw_DimPsAcademicAwardStatuses"
+                      "Entity": "Credential Type"
                     }
                   },
-                  "Property": "CredentialType"
+                  "Property": "Slicer-Value"
                 }
               },
-              "queryRef": "bi vw_DimPsAcademicAwardStatuses.CredentialType",
-              "nativeQueryRef": "CredentialType"
+              "queryRef": "Credential Type.Slicer-Value",
+              "nativeQueryRef": "Slicer-Value"
             }
           ]
         }
@@ -39,10 +39,10 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "bi vw_DimPsAcademicAwardStatuses"
+                    "Entity": "Credential Type"
                   }
                 },
-                "Property": "CredentialType"
+                "Property": "Slicer-Value"
               }
             },
             "direction": "Ascending"
@@ -53,67 +53,12 @@
     "objects": {
       "general": [
         {
-          "properties": {
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "b",
-                    "Entity": "bi vw_DimPsAcademicAwardStatuses",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "b"
-                                }
-                              },
-                              "Property": "CredentialType"
-                            }
-                          }
-                        ],
-                        "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'Associate''s Degree'"
-                              }
-                            }
-                          ]
-                        ]
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          }
+          "properties": {}
         }
       ],
       "data": [
         {
           "properties": {}
-        }
-      ],
-      "selection": [
-        {
-          "properties": {
-            "strictSingleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
         }
       ],
       "layout": [
@@ -658,15 +603,15 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "66ca6018200a262a23b0",
+        "name": "36fcafc4ba65e62d1a9c",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "bi vw_DimPsAcademicAwardStatuses"
+                "Entity": "Credential Type"
               }
             },
-            "Property": "CredentialType"
+            "Property": "Slicer-Value"
           }
         },
         "type": "Categorical",
@@ -674,8 +619,8 @@
           "Version": 2,
           "From": [
             {
-              "Name": "b",
-              "Entity": "bi vw_DimPsAcademicAwardStatuses",
+              "Name": "c",
+              "Entity": "Credential Type",
               "Type": 0
             }
           ],
@@ -688,10 +633,10 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "b"
+                            "Source": "c"
                           }
                         },
-                        "Property": "CredentialType"
+                        "Property": "Slicer-Value"
                       }
                     }
                   ],

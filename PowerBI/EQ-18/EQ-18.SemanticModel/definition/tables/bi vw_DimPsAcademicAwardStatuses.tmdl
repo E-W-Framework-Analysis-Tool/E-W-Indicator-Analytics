@@ -38,7 +38,7 @@ table 'bi vw_DimPsAcademicAwardStatuses'
 		dataType: int64
 		formatString: 0
 		lineageTag: 0a38fb9d-72d6-4b41-857d-fa9c64075461
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: IntendedYears
 
 		annotation SummarizationSetBy = Automatic

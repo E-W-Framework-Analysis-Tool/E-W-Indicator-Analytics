@@ -98,3 +98,11 @@ relationship 2373cb23-c789-7000-f135-08e0f37f1b28
 	fromColumn: 'reporting RDS_FactPsStudentCourseTranscripts'.PsStudentId
 	toColumn: 'reporting RDS_DimStudents'.DimK12StudentId
 
+relationship be92f89f-d7a2-eb1a-57e6-d636eb05af83
+	fromColumn: 'bi vw_DimCipCodes'.FieldOfStudy
+	toColumn: 'Field of Study'.Mapping-Value
+
+relationship 4c666459-f43a-c661-0efc-d39f8e3a8ed6
+	fromColumn: 'bi vw_DimPsAcademicAwardStatuses'.CredentialType
+	toColumn: 'Credential Type'.Mapping-Value
+
