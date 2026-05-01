@@ -84,14 +84,14 @@
                           [
                             {
                               "Literal": {
-                                "Value": "null"
+                                "Value": "'Business'"
                               }
                             }
                           ],
                           [
                             {
                               "Literal": {
-                                "Value": "'STEM'"
+                                "Value": "null"
                               }
                             }
                           ]

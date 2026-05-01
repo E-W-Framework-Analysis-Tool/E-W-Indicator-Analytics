@@ -84,6 +84,13 @@
                           [
                             {
                               "Literal": {
+                                "Value": "'Doctoral Degree'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
                                 "Value": "'Master''s Degree'"
                               }
                             }
@@ -501,6 +508,19 @@
         {
           "properties": {
             "IsButtonsAdvanced": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "singleSelect": {
               "expr": {
                 "Literal": {
                   "Value": "false"
