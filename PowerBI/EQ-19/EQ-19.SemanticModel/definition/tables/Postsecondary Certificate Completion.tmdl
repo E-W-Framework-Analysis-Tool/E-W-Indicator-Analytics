@@ -29,7 +29,7 @@ table 'Postsecondary Certificate Completion'
 			            1, 0
 			        )
 			    )
-			RETURN DIVIDE(StudentCount, [Total Cohort Students], 0)
+			RETURN DIVIDE(StudentCount, [HS Graduates], 0)
 			```
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: d5a7c1f7-55b5-406e-9ce1-1d88cd610224
@@ -61,7 +61,7 @@ table 'Postsecondary Certificate Completion'
 			            1, 0
 			        )
 			    )
-			RETURN DIVIDE(StudentCount, [Total Cohort Students], 0)
+			RETURN DIVIDE(StudentCount, [HS Graduates], 0)
 			```
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 91a09af5-bc3c-49a9-af3e-b796d4b54297
@@ -93,7 +93,7 @@ table 'Postsecondary Certificate Completion'
 			            1, 0
 			        )
 			    )
-			RETURN DIVIDE(StudentCount, [Total Cohort Students], 0)
+			RETURN DIVIDE(StudentCount, [HS Graduates], 0)
 			```
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 9ea1c9bc-ba1d-4c36-84d9-a4b62862e747

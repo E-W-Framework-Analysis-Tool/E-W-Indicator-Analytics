@@ -408,10 +408,18 @@
         },
         {
           "location": {},
-          "nodeIndex": "reporting vw_RDS_DegreeCompletion",
-          "nodeLineageTag": "331e19fd-e96d-4ee3-bd5a-449e079163b5",
+          "nodeIndex": "Field of Study",
           "size": {
-            "height": 176,
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Credential Type",
+          "size": {
+            "height": 200,
             "width": 234
           },
           "zIndex": 0
@@ -900,45 +908,58 @@
       "nodes": [
         {
           "location": {
-            "x": 1229,
-            "y": 528
+            "x": 331,
+            "y": 163
           },
-          "nodeIndex": "reporting vw_RDS_DegreeCompletion",
-          "nodeLineageTag": "331e19fd-e96d-4ee3-bd5a-449e079163b5",
+          "nodeIndex": "bi vw_DimCipCodes",
+          "nodeLineageTag": "b782f756-c42c-4b89-bbb1-f4cbdf89cd05",
           "size": {
-            "height": 234,
+            "height": 200,
+            "width": 347
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 967,
+            "y": 191
+          },
+          "nodeIndex": "Field of Study",
+          "nodeLineageTag": "de022cdf-f907-4b79-b4eb-8998efdcaa04",
+          "size": {
+            "height": 152,
             "width": 234
           },
-          "zIndex": 1
+          "zIndex": 0
         },
         {
           "location": {
-            "x": 638,
-            "y": 323
-          },
-          "nodeIndex": "reporting RDS_FactPsStudentAcademicAwards",
-          "nodeLineageTag": "1d044d72-ebd3-4a5f-95ac-c6eff7c2db13",
-          "size": {
-            "height": 284,
-            "width": 310
-          },
-          "zIndex": 3
-        },
-        {
-          "location": {
-            "x": 1055,
-            "y": 158
+            "x": 409,
+            "y": 634
           },
           "nodeIndex": "bi vw_DimPsAcademicAwardStatuses",
           "nodeLineageTag": "7f42d558-8292-4b9a-b256-afcaa2c7504a",
           "size": {
-            "height": 231,
-            "width": 417
+            "height": 244,
+            "width": 380
           },
-          "zIndex": 2
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1028,
+            "y": 647
+          },
+          "nodeIndex": "Credential Type",
+          "nodeLineageTag": "9c1a56f7-6363-4302-8a7a-83e126dec2d9",
+          "size": {
+            "height": 197,
+            "width": 310
+          },
+          "zIndex": 0
         }
       ],
-      "name": "Layout 1",
+      "name": "Slicer Mappings",
       "zoomValue": 100,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
@@ -946,6 +967,6 @@
       "tablesLocked": false
     }
   ],
-  "selectedDiagram": "Fact-to-Fact Relationship",
+  "selectedDiagram": "Slicer Mappings",
   "defaultDiagram": "All tables"
 }

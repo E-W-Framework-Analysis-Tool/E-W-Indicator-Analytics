@@ -112,3 +112,11 @@ relationship be52388c-27ab-ce82-a581-78c17c3129dd
 	fromColumn: 'reporting RDS_FactPsStudentCourseTranscripts'.PsStudentId
 	toColumn: 'reporting RDS_DimStudents'.DimK12StudentId
 
+relationship e2364df8-ba84-7613-426d-f15ede5430b4
+	fromColumn: 'bi vw_DimCipCodes'.FieldOfStudy
+	toColumn: 'Field of Study'.Mapping-Value
+
+relationship 11eac2aa-c70e-cc2a-4549-dbb80a699b75
+	fromColumn: 'bi vw_DimPsAcademicAwardStatuses'.CredentialType
+	toColumn: 'Credential Type'.Mapping-Value
+

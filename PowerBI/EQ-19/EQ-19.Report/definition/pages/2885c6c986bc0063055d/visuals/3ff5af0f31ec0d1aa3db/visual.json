@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "3ff5af0f31ec0d1aa3db",
   "position": {
-    "x": 905.94594594594594,
-    "y": 654.05405405405406,
+    "x": 906.074672048436,
+    "y": 654.20787083753783,
     "z": 9000,
-    "height": 65.945945945945937,
-    "width": 374.05405405405406,
+    "height": 65.8728557013118,
+    "width": 373.9253279515641,
     "tabOrder": 9000
   },
   "visual": {
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "bi vw_DimCipCodes"
+                      "Entity": "Field of Study"
                     }
                   },
-                  "Property": "FieldOfStudy"
+                  "Property": "Slicer-Value"
                 }
               },
-              "queryRef": "bi vw_DimCipCodes.FieldOfStudy",
-              "nativeQueryRef": "FieldOfStudy"
+              "queryRef": "Field of Study.Slicer-Value",
+              "nativeQueryRef": "Slicer-Value"
             }
           ]
         }
@@ -53,67 +53,12 @@
     "objects": {
       "general": [
         {
-          "properties": {
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "b",
-                    "Entity": "bi vw_DimCipCodes",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "b"
-                                }
-                              },
-                              "Property": "FieldOfStudy"
-                            }
-                          }
-                        ],
-                        "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'BUSINESS'"
-                              }
-                            }
-                          ]
-                        ]
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          }
+          "properties": {}
         }
       ],
       "data": [
         {
           "properties": {}
-        }
-      ],
-      "selection": [
-        {
-          "properties": {
-            "strictSingleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
         }
       ],
       "layout": [
@@ -522,6 +467,19 @@
             }
           }
         }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -658,15 +616,15 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "0ba61be17862d2b7b43c",
+        "name": "16882618092d552585d5",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "bi vw_DimCipCodes"
+                "Entity": "Field of Study"
               }
             },
-            "Property": "FieldOfStudy"
+            "Property": "Slicer-Value"
           }
         },
         "type": "Categorical",
@@ -674,8 +632,8 @@
           "Version": 2,
           "From": [
             {
-              "Name": "b",
-              "Entity": "bi vw_DimCipCodes",
+              "Name": "f",
+              "Entity": "Field of Study",
               "Type": 0
             }
           ],
@@ -688,10 +646,10 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "b"
+                            "Source": "f"
                           }
                         },
-                        "Property": "FieldOfStudy"
+                        "Property": "Slicer-Value"
                       }
                     }
                   ],
@@ -699,21 +657,21 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'ARTS'"
+                          "Value": "'Business'"
                         }
                       }
                     ],
                     [
                       {
                         "Literal": {
-                          "Value": "'BUSINESS'"
+                          "Value": "'Liberal Arts'"
                         }
                       }
                     ],
                     [
                       {
                         "Literal": {
-                          "Value": "'OTHER'"
+                          "Value": "'Other'"
                         }
                       }
                     ],

@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "bi vw_DimPsAcademicAwardStatuses"
+                      "Entity": "Credential Type"
                     }
                   },
-                  "Property": "CredentialType"
+                  "Property": "Slicer-Value"
                 }
               },
-              "queryRef": "bi vw_DimPsAcademicAwardStatuses.CredentialType",
-              "nativeQueryRef": "CredentialType"
+              "queryRef": "Credential Type.Slicer-Value",
+              "nativeQueryRef": "Slicer-Value"
             }
           ]
         }
@@ -53,67 +53,12 @@
     "objects": {
       "general": [
         {
-          "properties": {
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "b",
-                    "Entity": "bi vw_DimPsAcademicAwardStatuses",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "b"
-                                }
-                              },
-                              "Property": "CredentialType"
-                            }
-                          }
-                        ],
-                        "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'Bachelor''s Degree'"
-                              }
-                            }
-                          ]
-                        ]
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          }
+          "properties": {}
         }
       ],
       "data": [
         {
           "properties": {}
-        }
-      ],
-      "selection": [
-        {
-          "properties": {
-            "strictSingleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
         }
       ],
       "layout": [
@@ -522,6 +467,19 @@
             }
           }
         }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -658,15 +616,15 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "66ca6018200a262a23b0",
+        "name": "17f522f66cee6a8d7085",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "bi vw_DimPsAcademicAwardStatuses"
+                "Entity": "Credential Type"
               }
             },
-            "Property": "CredentialType"
+            "Property": "Slicer-Value"
           }
         },
         "type": "Categorical",
@@ -674,8 +632,8 @@
           "Version": 2,
           "From": [
             {
-              "Name": "b",
-              "Entity": "bi vw_DimPsAcademicAwardStatuses",
+              "Name": "c",
+              "Entity": "Credential Type",
               "Type": 0
             }
           ],
@@ -688,10 +646,10 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "b"
+                            "Source": "c"
                           }
                         },
-                        "Property": "CredentialType"
+                        "Property": "Slicer-Value"
                       }
                     }
                   ],
