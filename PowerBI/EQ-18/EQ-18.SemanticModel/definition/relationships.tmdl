@@ -106,3 +106,17 @@ relationship 4c666459-f43a-c661-0efc-d39f8e3a8ed6
 	fromColumn: 'bi vw_DimPsAcademicAwardStatuses'.CredentialType
 	toColumn: 'Credential Type'.Mapping-Value
 
+relationship dcf38f44-035d-499f-854e-1d260d431c1c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'reporting RDS_DimPsCourses'.RecordStartDateTime
+	toColumn: LocalDateTable_718b8c1f-acd9-4260-8e77-edd0665a6542.Date
+
+relationship b808121a-392f-4084-8624-21aab05c5745
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'reporting RDS_DimPsCourses'.RecordEndDateTime
+	toColumn: LocalDateTable_11dc8671-67ed-4198-92f7-a15ba924017a.Date
+
+relationship 04bd3939-dcdd-92ee-8f2e-a9692904467e
+	fromColumn: 'reporting RDS_FactPsStudentCourseTranscripts'.UniversityPsCourseId
+	toColumn: 'reporting RDS_DimPsCourses'.DimPsCourseId
+

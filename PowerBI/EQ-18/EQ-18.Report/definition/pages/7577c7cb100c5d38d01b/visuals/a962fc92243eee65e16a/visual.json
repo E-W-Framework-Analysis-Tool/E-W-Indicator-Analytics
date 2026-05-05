@@ -228,6 +228,20 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "1538dcb0bc5117b91dab",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimRaces"
+              }
+            },
+            "Property": "RaceEthnicity"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

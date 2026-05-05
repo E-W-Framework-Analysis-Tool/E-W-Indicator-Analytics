@@ -1,0 +1,140 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "3b52e48e983049b20679",
+  "position": {
+    "x": 0,
+    "y": 439.86254295532649,
+    "z": 0,
+    "height": 280.04581901489121,
+    "width": 906.11683848797259,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "First-year Credit Accumulation"
+                    }
+                  },
+                  "Property": "Attempted_Credits_YR1"
+                }
+              },
+              "queryRef": "First-year Credit Accumulation.Attempted_Credits_YR1",
+              "nativeQueryRef": "Attempted_Credits_YR1"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "First-year Credit Accumulation"
+                    }
+                  },
+                  "Property": "Earned_Credits_YR1"
+                }
+              },
+              "queryRef": "First-year Credit Accumulation.Earned_Credits_YR1",
+              "nativeQueryRef": "Earned_Credits_YR1"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "First-year Credit Accumulation"
+                    }
+                  },
+                  "Property": "% FT Students Completing 30 Credits"
+                }
+              },
+              "queryRef": "First-year Credit Accumulation.% FT Students Completing 30 Credits",
+              "nativeQueryRef": "% FT Students Completing 30 Credits"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "First-year Credit Accumulation"
+                    }
+                  },
+                  "Property": "% HT Students Completing 15 Credits"
+                }
+              },
+              "queryRef": "First-year Credit Accumulation.% HT Students Completing 15 Credits",
+              "nativeQueryRef": "% HT Students Completing 15 Credits"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "aeccba02bc5b4a1030ad",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "First-year Credit Accumulation"
+              }
+            },
+            "Property": "Attempted_Credits_YR1"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6ecab3f91489a2c1414c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "First-year Credit Accumulation"
+              }
+            },
+            "Property": "Earned_Credits_YR1"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "41d719d5ab2c02689ed0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "First-year Credit Accumulation"
+              }
+            },
+            "Property": "% FT Students Completing 30 Credits"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e02efa8794801e381632",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "First-year Credit Accumulation"
+              }
+            },
+            "Property": "% HT Students Completing 15 Credits"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}
