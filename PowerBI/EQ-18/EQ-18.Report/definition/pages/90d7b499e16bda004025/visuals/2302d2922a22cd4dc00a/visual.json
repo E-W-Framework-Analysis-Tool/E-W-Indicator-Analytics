@@ -60,11 +60,11 @@
                       "Entity": "First-year Program of Study"
                     }
                   },
-                  "Property": "% Students Completing 9 Credits"
+                  "Property": "% Students 9+ Meta-Major Credits"
                 }
               },
-              "queryRef": "First-year Program of Study.% Students Completing 9 Credits",
-              "nativeQueryRef": "% Students Completing 9 Credits"
+              "queryRef": "First-year Program of Study.% Students 9+ Meta-Major Credits",
+              "nativeQueryRef": "% Students 9+ Meta-Major Credits"
             }
           ]
         }
@@ -202,7 +202,7 @@
         "type": "Categorical"
       },
       {
-        "name": "cd3213c1aa455ddecb0b",
+        "name": "42dcdbe8607ce40de085",
         "field": {
           "Measure": {
             "Expression": {
@@ -210,7 +210,7 @@
                 "Entity": "First-year Program of Study"
               }
             },
-            "Property": "% Students Completing 9 Credits"
+            "Property": "% Students 9+ Meta-Major Credits"
           }
         },
         "type": "Advanced"

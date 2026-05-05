@@ -67,26 +67,13 @@ table 'First-year Credit Accumulation'
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: ad966f6c-fe23-4b88-b8dd-5c0a08f9583b
 
-	measure StudentFirstYearWindow = ```
-			
-			VAR MinEntryDate = 
-			    CALCULATE(
-			        MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate]),
-			        ALLEXCEPT('reporting RDS_FactPsStudentEnrollments', 'reporting RDS_FactPsStudentEnrollments'[PsStudentId])
-			    )
-			RETURN
-			    MinEntryDate + 365
-			```
-		formatString: General Date
-		lineageTag: 2e8102b8-e56d-43c7-9c26-f456e29862fe
-
 	measure Attempted_Credits_YR1 =
 			
 			CALCULATE(
 			    SUM('reporting RDS_FactPsStudentCourseTranscripts'[NumberOfCreditsAttempted]),
 			    FILTER(
 			        'reporting RDS_FactPsStudentEnrollments',
-			        'reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate] <= [StudentFirstYearWindow]
+			        'reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate] <= [Student First-Year Window]
 			    )
 			)
 		lineageTag: d4d8664c-e390-488e-a049-c31c3855aa9a
@@ -99,7 +86,7 @@ table 'First-year Credit Accumulation'
 			    SUM('reporting RDS_FactPsStudentCourseTranscripts'[NumberOfCreditsEarned]),
 			    FILTER(
 			        'reporting RDS_FactPsStudentEnrollments',
-			        'reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate] <= [StudentFirstYearWindow]
+			        'reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate] <= [Student First-Year Window]
 			    )
 			)
 		lineageTag: 0b50dfb7-274d-4279-b88d-10db49333b5e

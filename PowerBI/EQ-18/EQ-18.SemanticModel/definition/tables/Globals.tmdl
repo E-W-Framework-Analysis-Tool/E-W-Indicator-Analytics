@@ -158,6 +158,19 @@ table Globals
 		formatString: 0
 		lineageTag: 1875e782-7622-4dc4-9ac9-2e25bc5f382a
 
+	measure 'Student First-Year Window' = ```
+			
+			VAR MinEntryDate = 
+			    CALCULATE(
+			        MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate]),
+			        ALLEXCEPT('reporting RDS_FactPsStudentEnrollments', 'reporting RDS_FactPsStudentEnrollments'[PsStudentId])
+			    )
+			RETURN
+			    MinEntryDate + 365
+			```
+		formatString: General Date
+		lineageTag: 2e8102b8-e56d-43c7-9c26-f456e29862fe
+
 	partition Globals = m
 		mode: import
 		source =

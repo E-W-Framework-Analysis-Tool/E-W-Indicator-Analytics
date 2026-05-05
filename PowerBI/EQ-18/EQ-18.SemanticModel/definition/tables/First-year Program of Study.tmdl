@@ -1,35 +1,52 @@
 table 'First-year Program of Study'
 	lineageTag: b2fc4fb6-1eda-4c9a-8bcf-130aa60b17e9
 
-	measure '% Students Completing 9 Credits' = ```
-			
-			VAR Students_Completing_9_Credits = 
-			COUNTROWS(
-			    FILTER(
-			        VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
-			        VAR FirstYearCredits = 
-			            CALCULATE(
-			                MAX('reporting RDS_FactPsStudentCourseTranscripts'[NumberOfCreditsEarned])
-			            )
-			        RETURN FirstYearCredits >= 9
-			    )
-			)
-			RETURN DIVIDE(Students_Completing_9_Credits, [Total Cohort Students], 0)
-			```
-		formatString: 0.0%;-0.0%;0.0%
-		lineageTag: 165cd5ae-4159-4b52-9639-dbe9c0111f22
-
 	measure '% First-year Program of Study Trend' =
 			
 			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
 			RETURN
 			CALCULATE(
-			    'First-year Program of Study'[% Students Completing 9 Credits],
+			    'First-year Program of Study'[% Students 9+ Meta-Major Credits],
 			    'bi vw_DimCohortGraduationYears'[CohortGraduationYear] = SelectedTrendYear,
 			    REMOVEFILTERS('bi vw_DimSchoolYears')
 			)
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 48f08ad4-58ec-42a5-944c-9d5fce06a88e
+
+	measure '% Students 9+ Meta-Major Credits' = ```
+			
+			VAR Threshold = 9
+			VAR MetaMajorStudents = 
+			    FILTER(
+			        VALUES('reporting RDS_FactPsStudentCourseTranscripts'[PsStudentId]),
+			        VAR CurrentStudent = 'reporting RDS_FactPsStudentCourseTranscripts'[PsStudentId]
+			        
+			        -- Get the specific first year window for THIS student only
+			        VAR SpecificWindow = 
+			            CALCULATE(
+			                [Student First-Year Window], 
+			                'reporting RDS_FactPsStudentEnrollments'[PsStudentId] = CurrentStudent
+			            )
+			            
+			        VAR CreditsEarned = 
+			            CALCULATE(
+			                SUM('reporting RDS_FactPsStudentCourseTranscripts'[NumberOfCreditsEarned]),
+			                'reporting RDS_DimPsCourses'[CourseCodeSystemCode] = "Meta-Major",
+			                -- Filter transcripts to only those occurring on or before the student's window
+			                'reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate] <= SpecificWindow
+			            )
+			        RETURN 
+			            CreditsEarned >= Threshold
+			    )
+			    
+			VAR TotalStudents = DISTINCTCOUNT('reporting RDS_FactPsStudentEnrollments'[PsStudentId])
+			VAR SuccessfulStudents = COUNTROWS(MetaMajorStudents)
+			
+			RETURN 
+			    DIVIDE(SuccessfulStudents, TotalStudents, 0)
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: fdc0f7bc-1309-4008-8229-3eeec1253238
 
 	partition 'First-year Program of Study' = m
 		mode: import

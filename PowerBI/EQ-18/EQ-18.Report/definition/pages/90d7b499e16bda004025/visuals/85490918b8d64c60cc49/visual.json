@@ -59,11 +59,11 @@
                       "Entity": "First-year Program of Study"
                     }
                   },
-                  "Property": "% Students Completing 9 Credits"
+                  "Property": "% Students 9+ Meta-Major Credits"
                 }
               },
-              "queryRef": "First-year Program of Study.% Students Completing 9 Credits",
-              "nativeQueryRef": "% Students Completing 9 Credits"
+              "queryRef": "First-year Program of Study.% Students 9+ Meta-Major Credits",
+              "nativeQueryRef": "% Students 9+ Meta-Major Credits"
             }
           ]
         }
@@ -78,7 +78,7 @@
                     "Entity": "First-year Program of Study"
                   }
                 },
-                "Property": "% Students Completing 9 Credits"
+                "Property": "% Students 9+ Meta-Major Credits"
               }
             },
             "direction": "Descending"
@@ -149,7 +149,21 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "8d51899bbc5e88d78b8e",
+        "name": "e9059c1904dd15e9567c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Schools"
+              }
+            },
+            "Property": "SeaOrganizationName"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "bc256ed51961ad67c8eb",
         "field": {
           "Measure": {
             "Expression": {
@@ -157,7 +171,7 @@
                 "Entity": "First-year Program of Study"
               }
             },
-            "Property": "% Students Completing 9 Credits"
+            "Property": "% Students 9+ Meta-Major Credits"
           }
         },
         "type": "Advanced"
