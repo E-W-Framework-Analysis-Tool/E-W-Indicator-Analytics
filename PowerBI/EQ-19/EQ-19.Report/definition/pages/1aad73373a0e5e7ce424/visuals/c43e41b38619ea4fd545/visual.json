@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
-  "name": "845573c05600aa543492",
+  "name": "c43e41b38619ea4fd545",
   "position": {
-    "x": 927.3864783047427,
-    "y": 653.56205852674066,
-    "z": 12000,
-    "height": 66.518668012108989,
-    "width": 352.61352169525736,
-    "tabOrder": 12000
+    "x": 906.29370629370635,
+    "y": 587.039627039627,
+    "z": 10001,
+    "height": 67.132867132867133,
+    "width": 373.70629370629371,
+    "tabOrder": 18001
   },
   "visual": {
     "visualType": "advancedSlicerVisual",
@@ -20,13 +20,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Field of Study"
+                      "Entity": "Credential Type"
                     }
                   },
                   "Property": "Slicer-Value"
                 }
               },
-              "queryRef": "Field of Study.Slicer-Value",
+              "queryRef": "Credential Type.Slicer-Value",
               "nativeQueryRef": "Slicer-Value"
             }
           ]
@@ -39,10 +39,10 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "bi vw_DimCipCodes"
+                    "Entity": "bi vw_DimPsAcademicAwardStatuses"
                   }
                 },
-                "Property": "FieldOfStudy"
+                "Property": "CredentialType"
               }
             },
             "direction": "Ascending"
@@ -53,56 +53,7 @@
     "objects": {
       "general": [
         {
-          "properties": {
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "f",
-                    "Entity": "Field of Study",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "f"
-                                }
-                              },
-                              "Property": "Slicer-Value"
-                            }
-                          }
-                        ],
-                        "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'Business'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "null"
-                              }
-                            }
-                          ]
-                        ]
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          }
+          "properties": {}
         }
       ],
       "data": [
@@ -123,7 +74,7 @@
             "maxTiles": {
               "expr": {
                 "Literal": {
-                  "Value": "4L"
+                  "Value": "3L"
                 }
               }
             }
@@ -564,7 +515,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Field of Study'"
+                  "Value": "'Credential Type'"
                 }
               }
             }
@@ -665,12 +616,12 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "b7a5544bab32c78412b1",
+        "name": "60961de5213ef90da303",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Field of Study"
+                "Entity": "Credential Type"
               }
             },
             "Property": "Slicer-Value"
@@ -681,57 +632,76 @@
           "Version": 2,
           "From": [
             {
-              "Name": "f",
-              "Entity": "Field of Study",
+              "Name": "c",
+              "Entity": "Credential Type",
               "Type": 0
             }
           ],
           "Where": [
             {
               "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "f"
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "c"
+                              }
+                            },
+                            "Property": "Slicer-Value"
                           }
-                        },
-                        "Property": "Slicer-Value"
-                      }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'Associate''s Degree'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'Bachelor''s Degree'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'Certificate'"
+                            }
+                          }
+                        ]
+                      ]
                     }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'STEM'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Liberal Arts'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Business'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Other'"
-                        }
-                      }
-                    ]
-                  ]
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
                 }
               }
             }

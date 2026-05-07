@@ -27,47 +27,232 @@ table 'Enrollment in Graduate Education'
 
 	measure '% Postgrad Enrolled 1-5 Years' = ```
 			
-			VAR StudentsWithMultipleRecords =  FILTER(
-			        VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
-			        CALCULATE(COUNT('reporting RDS_FactPsStudentEnrollments'[PsStudentId])) > 1
-			)
-			VAR StudentCount = 
-			    SUMX(
-			        StudentsWithMultipleRecords,
-			        VAR UndergradExit = CALCULATE(MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentExitDate]))
-			        VAR PostgradEntry = CALCULATE(MAX('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate]))
-			        VAR YearDiff = YEAR(PostgradEntry) - YEAR(UndergradExit)
+			// VAR StudentsWithMultipleRecords =  FILTER(
+			//         VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			//         CALCULATE(COUNT('reporting RDS_FactPsStudentEnrollments'[PsStudentId])) > 1
+			// )
+			// VAR StudentCount = 
+			//     SUMX(
+			//         StudentsWithMultipleRecords,
+			//         VAR UndergradExit = CALCULATE(MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentExitDate]))
+			//         VAR PostgradEntry = CALCULATE(MAX('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate]))
+			//         VAR YearDiff = YEAR(PostgradEntry) - YEAR(UndergradExit)
 			        
-			        RETURN IF(YearDiff >= 1 && YearDiff <= 5, 1, 0)
-			    )
+			//         RETURN IF(YearDiff >= 1 && YearDiff <= 5, 1, 0)
+			//     )
 			
-			RETURN 
-			    DIVIDE(StudentCount, [Total Postgrad Students], 0)
+			// RETURN 
+			//     DIVIDE(StudentCount, [Total Postgrad Students], 0)
+			DIVIDE([1-5], [Denominator], 0)
 			```
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 6f2ee082-6701-444d-879d-de57b9436cae
 
 	measure '% Postgrad Enrolled 6-10 Years' = ```
 			
-			VAR StudentsWithMultipleRecords =  FILTER(
-			        VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
-			        CALCULATE(COUNT('reporting RDS_FactPsStudentEnrollments'[PsStudentId])) > 1
-			)
-			VAR StudentCount = 
-			    SUMX(
-			        StudentsWithMultipleRecords,
-			        VAR UndergradExit = CALCULATE(MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentExitDate]))
-			        VAR PostgradEntry = CALCULATE(MAX('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate]))
-			        VAR YearDiff = YEAR(PostgradEntry) - YEAR(UndergradExit)
+			// VAR StudentsWithMultipleRecords =  FILTER(
+			//         VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			//         CALCULATE(COUNT('reporting RDS_FactPsStudentEnrollments'[PsStudentId])) > 1
+			// )
+			// VAR StudentCount = 
+			//     SUMX(
+			//         StudentsWithMultipleRecords,
+			//         VAR UndergradExit = CALCULATE(MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentExitDate]))
+			//         VAR PostgradEntry = CALCULATE(MAX('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate]))
+			//         VAR YearDiff = YEAR(PostgradEntry) - YEAR(UndergradExit)
 			        
-			        RETURN IF(YearDiff >= 6 && YearDiff <= 10, 1, 0)
-			    )
+			//         RETURN IF(YearDiff >= 6 && YearDiff <= 10, 1, 0)
+			//     )
 			
-			RETURN 
-			    DIVIDE(StudentCount, [Total Postgrad Students], 0)
+			// RETURN 
+			//     DIVIDE(StudentCount, [Total Postgrad Students], 0)
+			DIVIDE([6-10], [Denominator], 0)
 			```
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: b59e8309-524a-40eb-91b6-c861be0aa05a
+
+	measure 1-5 = ```
+			
+			VAR minYearDiff = 1
+			VAR maxYearDiff = 5
+			VAR TargetCredentials = {"Doctoral Degree", "Master's Degree"}
+			VAR TargetFieldOfStudy = {"BUSINESS", "ARTS", "OTHER", "STEM"}
+			
+			VAR CurrentCredential = SELECTEDVALUE('bi vw_DimPsAcademicAwardStatuses'[CredentialType])
+			VAR CurrentFieldOfStudy = SELECTEDVALUE('bi vw_DimCipCodes'[FieldOfStudy])
+			VAR IsValidRow = (
+			                    (CurrentCredential IN TargetCredentials     || NOT ISFILTERED('bi vw_DimPsAcademicAwardStatuses'[CredentialType])) &&
+			                    (CurrentFieldOfStudy in TargetFieldOfStudy  || NOT ISFILTERED('bi vw_DimCipCodes'[FieldOfStudy]))
+			                )
+			
+			-- 1. Identify Students with exactly/at least 2 records
+			VAR PostGradIds = 
+			    FILTER(
+			        VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			        CALCULATE(
+			            COUNTROWS('reporting RDS_FactPsStudentEnrollments'),
+			            ALLEXCEPT('reporting RDS_FactPsStudentEnrollments', 'reporting RDS_FactPsStudentEnrollments'[PsStudentId])
+			        ) >= 2
+			    )
+			
+			-- 2. Iterate through these students to check the gap
+			VAR SuccessStudentCount = 
+			    SUMX(
+			        PostGradIds,
+			        -- Reference the current student in the iteration
+			        VAR _currentStudent = 'reporting RDS_FactPsStudentEnrollments'[PsStudentId]
+			        
+			        -- Get the UNDERGRAD Exit Date (The 1st record)
+			        VAR UndergradExit = 
+			            CALCULATE(
+			                MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentExitDate]),
+			                ALLEXCEPT('reporting RDS_FactPsStudentEnrollments', 'reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			                'reporting RDS_FactPsStudentEnrollments'[PsStudentId] = _currentStudent,
+			                ('bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials)
+			            )
+			        
+			        -- Get the POSTGRAD Entry Date (The 2nd record)
+			        VAR PostgradEntry = 
+			            CALCULATE(
+			                MAX('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate]),
+			                ALLEXCEPT('reporting RDS_FactPsStudentEnrollments', 'reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			                'reporting RDS_FactPsStudentEnrollments'[PsStudentId] = _currentStudent,
+			                'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			                'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy
+			            )
+			            
+			        -- Use DATEDIFF for accuracy (or Year subtraction if business logic allows)
+			        VAR YearDiff = 
+			            IF(
+			                NOT ISBLANK(UndergradExit) && NOT ISBLANK(PostgradEntry),
+			                YEAR(PostgradEntry) - YEAR(UndergradExit)
+			            )
+			        
+			        RETURN IF(YearDiff >= minYearDiff && YearDiff <= maxYearDiff, 1, 0)
+			    )
+			
+			-- 3. Execution Logic
+			RETURN
+			    IF(IsValidRow, SuccessStudentCount, BLANK())
+			```
+		lineageTag: 79ef1e4d-436d-43f8-895e-11c65d105f99
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 6-10 = ```
+			
+			VAR minYearDiff = 6
+			VAR maxYearDiff = 10
+			VAR TargetCredentials = {"Doctoral Degree", "Master's Degree"}
+			VAR TargetFieldOfStudy = {"BUSINESS", "ARTS", "OTHER", "STEM"}
+			
+			VAR CurrentCredential = SELECTEDVALUE('bi vw_DimPsAcademicAwardStatuses'[CredentialType])
+			VAR CurrentFieldOfStudy = SELECTEDVALUE('bi vw_DimCipCodes'[FieldOfStudy])
+			VAR IsValidRow = (
+			                    (CurrentCredential IN TargetCredentials     || NOT ISFILTERED('bi vw_DimPsAcademicAwardStatuses'[CredentialType])) &&
+			                    (CurrentFieldOfStudy in TargetFieldOfStudy  || NOT ISFILTERED('bi vw_DimCipCodes'[FieldOfStudy]))
+			                )
+			
+			-- 1. Identify Students with exactly/at least 2 records
+			VAR PostGradIds = 
+			    FILTER(
+			        VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			        CALCULATE(
+			            COUNTROWS('reporting RDS_FactPsStudentEnrollments'),
+			            ALLEXCEPT('reporting RDS_FactPsStudentEnrollments', 'reporting RDS_FactPsStudentEnrollments'[PsStudentId])
+			        ) >= 2
+			    )
+			
+			-- 2. Iterate through these students to check the gap
+			VAR SuccessStudentCount = 
+			    SUMX(
+			        PostGradIds,
+			        -- Reference the current student in the iteration
+			        VAR _currentStudent = 'reporting RDS_FactPsStudentEnrollments'[PsStudentId]
+			        
+			        -- Get the UNDERGRAD Exit Date (The 1st record)
+			        VAR UndergradExit = 
+			            CALCULATE(
+			                MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentExitDate]),
+			                ALLEXCEPT('reporting RDS_FactPsStudentEnrollments', 'reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			                'reporting RDS_FactPsStudentEnrollments'[PsStudentId] = _currentStudent,
+			                ('bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials)
+			            )
+			        
+			        -- Get the POSTGRAD Entry Date (The 2nd record)
+			        VAR PostgradEntry = 
+			            CALCULATE(
+			                MAX('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate]),
+			                ALLEXCEPT('reporting RDS_FactPsStudentEnrollments', 'reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			                'reporting RDS_FactPsStudentEnrollments'[PsStudentId] = _currentStudent,
+			                'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			                'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy
+			            )
+			            
+			        -- Use DATEDIFF for accuracy (or Year subtraction if business logic allows)
+			        VAR YearDiff = 
+			            IF(
+			                NOT ISBLANK(UndergradExit) && NOT ISBLANK(PostgradEntry),
+			                YEAR(PostgradEntry) - YEAR(UndergradExit)
+			            )
+			        
+			        RETURN IF(YearDiff >= minYearDiff && YearDiff <= maxYearDiff, 1, 0)
+			    )
+			
+			-- 3. Execution Logic
+			RETURN
+			    IF(IsValidRow, SuccessStudentCount, BLANK())
+			```
+		lineageTag: e60cfd5a-1ea1-4589-8382-26a0481c0482
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Denominator = ```
+			
+			VAR TargetCredentials = {"Doctoral Degree", "Master's Degree"}
+			VAR TargetFieldOfStudy = {"BUSINESS", "ARTS", "OTHER", "STEM"}
+			
+			VAR CurrentCredential = SELECTEDVALUE('bi vw_DimPsAcademicAwardStatuses'[CredentialType])
+			VAR CurrentFieldOfStudy = SELECTEDVALUE('bi vw_DimCipCodes'[FieldOfStudy])
+			VAR IsValidRow = (
+			                    (CurrentCredential IN TargetCredentials     || NOT ISFILTERED('bi vw_DimPsAcademicAwardStatuses'[CredentialType])) &&
+			                    (CurrentFieldOfStudy in TargetFieldOfStudy  || NOT ISFILTERED('bi vw_DimCipCodes'[FieldOfStudy]))
+			                )
+			
+			-- 1. Identify students with at least 2 enrollment records across all time
+			VAR PostGradStudents = 
+			    FILTER(
+			        ADDCOLUMNS(
+			            VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			            "IsPostGrad", 
+			            CALCULATE(
+			                COUNTROWS('reporting RDS_FactPsStudentEnrollments'),
+			                ALLEXCEPT('reporting RDS_FactPsStudentEnrollments', 'reporting RDS_FactPsStudentEnrollments'[PsStudentId])
+			            ) >= 2
+			        ),
+			        [IsPostGrad] = TRUE
+			    )
+			
+			VAR OnlyPostGradIds = SELECTCOLUMNS(PostGradStudents, "PsStudentId", [PsStudentId])
+			
+			-- 2. Calculate the distinct count applying the context of the visual
+			VAR Result = 
+			    CALCULATE(
+			        DISTINCTCOUNT('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			        KEEPFILTERS(OnlyPostGradIds),
+			        'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			        'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy
+			    )
+			
+			-- 5. Execution Logic
+			RETURN
+			    IF(IsValidRow, Result, BLANK())
+			
+			// RETURN
+			//     Result
+			```
+		formatString: 0
+		lineageTag: e78adb20-f85b-4139-8f39-d4e654ffc9f6
 
 	partition 'Enrollment in Graduate Education' = m
 		mode: import

@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
-  "name": "36abed3c0ba160aa0a52",
+  "name": "508b3cad9e09188b1708",
   "position": {
-    "x": 927.3864783047427,
-    "y": 587.68920282542888,
-    "z": 11000,
-    "height": 65.8728557013118,
-    "width": 352.61352169525736,
-    "tabOrder": 11000
+    "x": 906.32696390658168,
+    "y": 654.09766454352439,
+    "z": 10002,
+    "height": 65.902335456475583,
+    "width": 373.67303609341826,
+    "tabOrder": 18002
   },
   "visual": {
     "visualType": "advancedSlicerVisual",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "bi vw_DimPsAcademicAwardStatuses"
+                      "Entity": "Field of Study"
                     }
                   },
-                  "Property": "CredentialType"
+                  "Property": "Slicer-Value"
                 }
               },
-              "queryRef": "bi vw_DimPsAcademicAwardStatuses.CredentialType",
-              "nativeQueryRef": "CredentialType"
+              "queryRef": "Field of Study.Slicer-Value",
+              "nativeQueryRef": "Slicer-Value"
             }
           ]
         }
@@ -39,10 +39,10 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "bi vw_DimPsAcademicAwardStatuses"
+                    "Entity": "bi vw_DimCipCodes"
                   }
                 },
-                "Property": "CredentialType"
+                "Property": "FieldOfStudy"
               }
             },
             "direction": "Ascending"
@@ -53,56 +53,7 @@
     "objects": {
       "general": [
         {
-          "properties": {
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "b",
-                    "Entity": "bi vw_DimPsAcademicAwardStatuses",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "b"
-                                }
-                              },
-                              "Property": "CredentialType"
-                            }
-                          }
-                        ],
-                        "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'Doctoral Degree'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'Master''s Degree'"
-                              }
-                            }
-                          ]
-                        ]
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          }
+          "properties": {}
         }
       ],
       "data": [
@@ -123,7 +74,7 @@
             "maxTiles": {
               "expr": {
                 "Literal": {
-                  "Value": "2L"
+                  "Value": "4L"
                 }
               }
             }
@@ -564,7 +515,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Credential Type'"
+                  "Value": "'Field of Study'"
                 }
               }
             }
@@ -665,59 +616,51 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "66ca6018200a262a23b0",
+        "name": "16882618092d552585d5",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "bi vw_DimPsAcademicAwardStatuses"
+                "Entity": "Field of Study"
               }
             },
-            "Property": "CredentialType"
+            "Property": "Slicer-Value"
           }
         },
-        "type": "Categorical",
+        "type": "Advanced",
         "filter": {
           "Version": 2,
           "From": [
             {
-              "Name": "b",
-              "Entity": "bi vw_DimPsAcademicAwardStatuses",
+              "Name": "f",
+              "Entity": "Field of Study",
               "Type": 0
             }
           ],
           "Where": [
             {
               "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "b"
-                          }
-                        },
-                        "Property": "CredentialType"
+                "Not": {
+                  "Expression": {
+                    "Comparison": {
+                      "ComparisonKind": 0,
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "f"
+                            }
+                          },
+                          "Property": "Slicer-Value"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "null"
+                        }
                       }
                     }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Master''s Degree'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Doctoral Degree'"
-                        }
-                      }
-                    ]
-                  ]
+                  }
                 }
               }
             }

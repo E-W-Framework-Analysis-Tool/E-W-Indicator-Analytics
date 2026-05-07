@@ -3,10 +3,10 @@
   "name": "443b02fcbd6d56808058",
   "position": {
     "x": 0,
-    "y": 0,
+    "y": 454.30786267995569,
     "z": 0,
-    "height": 719.81351981351986,
-    "width": 906.29370629370635,
+    "height": 265.78073089700996,
+    "width": 906.48947951273533,
     "tabOrder": 0
   },
   "visual": {
@@ -48,42 +48,42 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Postsecondary Certificate Completion"
+                      "Entity": "Enrollment in Graduate Education"
                     }
                   },
-                  "Property": "100% Program Length"
+                  "Property": "Denominator"
                 }
               },
-              "queryRef": "Postsecondary Certificate Completion.100% Program Length",
-              "nativeQueryRef": "100% Program Length"
+              "queryRef": "Enrollment in Graduate Education.Denominator",
+              "nativeQueryRef": "Denominator"
             },
             {
               "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Postsecondary Certificate Completion"
+                      "Entity": "Enrollment in Graduate Education"
                     }
                   },
-                  "Property": "150% Program Length"
+                  "Property": "1-5"
                 }
               },
-              "queryRef": "Postsecondary Certificate Completion.150% Program Length",
-              "nativeQueryRef": "150% Program Length"
+              "queryRef": "Enrollment in Graduate Education.1-5",
+              "nativeQueryRef": "1-5"
             },
             {
               "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Postsecondary Certificate Completion"
+                      "Entity": "Enrollment in Graduate Education"
                     }
                   },
-                  "Property": "200% Program Length"
+                  "Property": "6-10"
                 }
               },
-              "queryRef": "Postsecondary Certificate Completion.200% Program Length",
-              "nativeQueryRef": "200% Program Length"
+              "queryRef": "Enrollment in Graduate Education.6-10",
+              "nativeQueryRef": "6-10"
             }
           ]
         }
@@ -122,43 +122,43 @@
         "type": "Categorical"
       },
       {
-        "name": "2fcb6e4bb499c68fffe3",
+        "name": "3192782f6ce26383b636",
         "field": {
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Postsecondary Certificate Completion"
+                "Entity": "Enrollment in Graduate Education"
               }
             },
-            "Property": "100% Program Length"
+            "Property": "Denominator"
           }
         },
         "type": "Advanced"
       },
       {
-        "name": "0d1053276dc4733f50a2",
+        "name": "84a0c5d66efe72991b86",
         "field": {
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Postsecondary Certificate Completion"
+                "Entity": "Enrollment in Graduate Education"
               }
             },
-            "Property": "150% Program Length"
+            "Property": "1-5"
           }
         },
         "type": "Advanced"
       },
       {
-        "name": "f567be113fe4a1316359",
+        "name": "d9ac6002f2c29fc77163",
         "field": {
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Postsecondary Certificate Completion"
+                "Entity": "Enrollment in Graduate Education"
               }
             },
-            "Property": "200% Program Length"
+            "Property": "6-10"
           }
         },
         "type": "Advanced"
