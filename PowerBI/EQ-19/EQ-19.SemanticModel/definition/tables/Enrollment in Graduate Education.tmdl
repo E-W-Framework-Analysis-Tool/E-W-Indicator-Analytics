@@ -25,53 +25,15 @@ table 'Enrollment in Graduate Education'
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: b9b9134c-f325-4689-a85c-8c0b97e53c83
 
-	measure '% Postgrad Enrolled 1-5 Years' = ```
-			
-			// VAR StudentsWithMultipleRecords =  FILTER(
-			//         VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
-			//         CALCULATE(COUNT('reporting RDS_FactPsStudentEnrollments'[PsStudentId])) > 1
-			// )
-			// VAR StudentCount = 
-			//     SUMX(
-			//         StudentsWithMultipleRecords,
-			//         VAR UndergradExit = CALCULATE(MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentExitDate]))
-			//         VAR PostgradEntry = CALCULATE(MAX('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate]))
-			//         VAR YearDiff = YEAR(PostgradEntry) - YEAR(UndergradExit)
-			        
-			//         RETURN IF(YearDiff >= 1 && YearDiff <= 5, 1, 0)
-			//     )
-			
-			// RETURN 
-			//     DIVIDE(StudentCount, [Total Postgrad Students], 0)
-			DIVIDE([1-5], [Denominator], 0)
-			```
+	measure '% Postgrad Enrolled 1-5 Years' = DIVIDE([Count of Postgrads enrolling within 1-5 years], [Total Post Grad Enrolled Students], 0)
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 6f2ee082-6701-444d-879d-de57b9436cae
 
-	measure '% Postgrad Enrolled 6-10 Years' = ```
-			
-			// VAR StudentsWithMultipleRecords =  FILTER(
-			//         VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
-			//         CALCULATE(COUNT('reporting RDS_FactPsStudentEnrollments'[PsStudentId])) > 1
-			// )
-			// VAR StudentCount = 
-			//     SUMX(
-			//         StudentsWithMultipleRecords,
-			//         VAR UndergradExit = CALCULATE(MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentExitDate]))
-			//         VAR PostgradEntry = CALCULATE(MAX('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate]))
-			//         VAR YearDiff = YEAR(PostgradEntry) - YEAR(UndergradExit)
-			        
-			//         RETURN IF(YearDiff >= 6 && YearDiff <= 10, 1, 0)
-			//     )
-			
-			// RETURN 
-			//     DIVIDE(StudentCount, [Total Postgrad Students], 0)
-			DIVIDE([6-10], [Denominator], 0)
-			```
+	measure '% Postgrad Enrolled 6-10 Years' = DIVIDE([Count of Postgrads enrolling within 6-10 years], [Total Post Grad Enrolled Students], 0)
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: b59e8309-524a-40eb-91b6-c861be0aa05a
 
-	measure 1-5 = ```
+	measure 'Count of Postgrads enrolling within 1-5 years' = ```
 			
 			VAR minYearDiff = 1
 			VAR maxYearDiff = 5
@@ -139,7 +101,7 @@ table 'Enrollment in Graduate Education'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 6-10 = ```
+	measure 'Count of Postgrads enrolling within 6-10 years' = ```
 			
 			VAR minYearDiff = 6
 			VAR maxYearDiff = 10
@@ -207,7 +169,7 @@ table 'Enrollment in Graduate Education'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure Denominator = ```
+	measure 'Total Post Grad Enrolled Students' = ```
 			
 			VAR TargetCredentials = {"Doctoral Degree", "Master's Degree"}
 			VAR TargetFieldOfStudy = {"BUSINESS", "ARTS", "OTHER", "STEM"}
@@ -244,12 +206,10 @@ table 'Enrollment in Graduate Education'
 			        'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy
 			    )
 			
-			-- 5. Execution Logic
+			-- 3. Execution Logic
 			RETURN
 			    IF(IsValidRow, Result, BLANK())
 			
-			// RETURN
-			//     Result
 			```
 		formatString: 0
 		lineageTag: e78adb20-f85b-4139-8f39-d4e654ffc9f6
