@@ -173,5 +173,65 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b8ebf6c9558569c24805",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Schools"
+              }
+            },
+            "Property": "SeaOrganizationName"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1ba960e47037c6600dce",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Postsecondary Certificate Completion"
+              }
+            },
+            "Property": "100% Program Length"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "129b04ab38e28b9924ee",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Postsecondary Certificate Completion"
+              }
+            },
+            "Property": "150% Program Length"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "031a66f46af18daf9174",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Postsecondary Certificate Completion"
+              }
+            },
+            "Property": "200% Program Length"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

@@ -3,10 +3,10 @@
   "name": "443b02fcbd6d56808058",
   "position": {
     "x": 0,
-    "y": 607.56756756756749,
+    "y": 0,
     "z": 0,
-    "height": 112.43243243243242,
-    "width": 1271.3513513513512,
+    "height": 719.81351981351986,
+    "width": 906.29370629370635,
     "tabOrder": 0
   },
   "visual": {
@@ -17,31 +17,31 @@
           "projections": [
             {
               "field": {
-                "Measure": {
+                "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Globals"
+                      "Entity": "bi vw_DimCipCodes"
                     }
                   },
-                  "Property": "Total Cohort Students"
+                  "Property": "FieldOfStudy"
                 }
               },
-              "queryRef": "Enrollment in Graduate Education.Total Cohort Students",
-              "nativeQueryRef": "Total Cohort Students"
+              "queryRef": "bi vw_DimCipCodes.FieldOfStudy",
+              "nativeQueryRef": "FieldOfStudy"
             },
             {
               "field": {
-                "Measure": {
+                "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Globals"
+                      "Entity": "bi vw_DimPsAcademicAwardStatuses"
                     }
                   },
-                  "Property": "Total Postgrad Students"
+                  "Property": "CredentialType"
                 }
               },
-              "queryRef": "Enrollment in Graduate Education.Total Postgrad Students",
-              "nativeQueryRef": "Total Postgrad Students"
+              "queryRef": "bi vw_DimPsAcademicAwardStatuses.CredentialType",
+              "nativeQueryRef": "CredentialType"
             },
             {
               "field": {
@@ -90,5 +90,79 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "21929a2f0239b57a0e9d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimPsAcademicAwardStatuses"
+              }
+            },
+            "Property": "CredentialType"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "eb8350d8ac6f06213c13",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimCipCodes"
+              }
+            },
+            "Property": "FieldOfStudy"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2fcb6e4bb499c68fffe3",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Postsecondary Certificate Completion"
+              }
+            },
+            "Property": "100% Program Length"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0d1053276dc4733f50a2",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Postsecondary Certificate Completion"
+              }
+            },
+            "Property": "150% Program Length"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f567be113fe4a1316359",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Postsecondary Certificate Completion"
+              }
+            },
+            "Property": "200% Program Length"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

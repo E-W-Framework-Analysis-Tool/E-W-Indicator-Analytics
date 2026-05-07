@@ -53,7 +53,15 @@
     "objects": {
       "data": [
         {
-          "properties": {}
+          "properties": {
+            "isInvertedSelectionMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
         }
       ],
       "layout": [
@@ -463,6 +471,11 @@
           }
         }
       ],
+      "general": [
+        {
+          "properties": {}
+        }
+      ],
       "selection": [
         {
           "properties": {
@@ -472,13 +485,15 @@
                   "Value": "false"
                 }
               }
+            },
+            "selectAllCheckboxEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
-        }
-      ],
-      "general": [
-        {
-          "properties": {}
         }
       ]
     },

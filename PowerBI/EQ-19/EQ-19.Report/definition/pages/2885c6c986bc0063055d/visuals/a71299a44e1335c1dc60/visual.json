@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "a71299a44e1335c1dc60",
   "position": {
-    "x": 905.94594594594594,
-    "y": 587.027027027027,
+    "x": 906.29370629370635,
+    "y": 587.039627039627,
     "z": 8000,
-    "height": 67.027027027027017,
-    "width": 374.05405405405406,
+    "height": 67.132867132867133,
+    "width": 373.70629370629371,
     "tabOrder": 8000
   },
   "visual": {
@@ -616,7 +616,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "17f522f66cee6a8d7085",
+        "name": "60961de5213ef90da303",
         "field": {
           "Column": {
             "Expression": {
@@ -627,7 +627,7 @@
             "Property": "Slicer-Value"
           }
         },
-        "type": "Categorical",
+        "type": "Advanced",
         "filter": {
           "Version": 2,
           "From": [
@@ -640,42 +640,27 @@
           "Where": [
             {
               "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "c"
-                          }
-                        },
-                        "Property": "Slicer-Value"
+                "Not": {
+                  "Expression": {
+                    "Comparison": {
+                      "ComparisonKind": 0,
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "c"
+                            }
+                          },
+                          "Property": "Slicer-Value"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "null"
+                        }
                       }
                     }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Associate''s Degree'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Bachelor''s Degree'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Certificate'"
-                        }
-                      }
-                    ]
-                  ]
+                  }
                 }
               }
             }

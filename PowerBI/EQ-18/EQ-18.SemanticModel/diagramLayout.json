@@ -822,7 +822,7 @@
           "nodeIndex": "bi vw_DimPsAcademicAwardStatuses",
           "nodeLineageTag": "c988b311-0397-4a45-93f9-c617373d078a",
           "size": {
-            "height": 200,
+            "height": 258,
             "width": 234
           },
           "zIndex": 0
@@ -970,6 +970,6 @@
       "tablesLocked": false
     }
   ],
-  "selectedDiagram": "FactPsStudentCourseTranscripts",
+  "selectedDiagram": "FactPsStudentAcademicAwards",
   "defaultDiagram": "All tables"
 }
