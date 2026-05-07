@@ -1,90 +1,6 @@
 table 'Enrollment in Graduate Education'
 	lineageTag: a34fe3fd-4aea-45b2-ba18-b81f970e624e
 
-	measure '% Enrolled Undergrad' =
-			
-			VAR counts = CALCULATE(
-			    DISTINCTCOUNT('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
-			    KEEPFILTERS('reporting RDS_FactPsStudentEnrollments')
-			)
-			RETURN DIVIDE(counts, [HS Graduates], 0)
-		formatString: 0.0%;-0.0%;0.0%
-		lineageTag: 6cd199fc-0505-4009-8bb3-e80e4553120f
-
-	measure '% Enrolled Grad' =
-			
-			VAR counts = COUNTROWS(
-			    FILTER(
-			        VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
-			        CALCULATE(COUNT('reporting RDS_FactPsStudentEnrollments'[PsStudentId])) > 1
-			    )
-			)
-			RETURN DIVIDE(counts, [HS Graduates], 0)
-		formatString: 0.0%;-0.0%;0.0%
-		lineageTag: c2c520b4-200b-4fd9-867b-ea619ebc4558
-
-	measure 'HS Trend' =
-			
-			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
-			RETURN
-			CALCULATE(
-			    [HS Graduates],
-			    'bi vw_DimCohortGraduationYears'[CohortGraduationYear] = SelectedTrendYear,
-			    REMOVEFILTERS('bi vw_DimSchoolYears')
-			)
-		formatString: 0.0%;-0.0%;0.0%
-		lineageTag: 4e606755-d1f3-4998-a731-94e52e96141c
-
-	measure 'Undergrad Trend' =
-			
-			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
-			RETURN
-			CALCULATE(
-			    [% Enrolled Undergrad],
-			    'bi vw_DimCohortGraduationYears'[CohortGraduationYear] = SelectedTrendYear,
-			    REMOVEFILTERS('bi vw_DimSchoolYears')
-			)
-		formatString: 0.0%;-0.0%;0.0%
-		lineageTag: 2b662ce3-ef6a-4335-924f-368732ff6f82
-
-	measure 'Postgrad Trend' =
-			
-			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
-			RETURN
-			CALCULATE(
-			    [% Enrolled Grad],
-			    'bi vw_DimCohortGraduationYears'[CohortGraduationYear] = SelectedTrendYear,
-			    REMOVEFILTERS('bi vw_DimSchoolYears')
-			)
-		formatString: 0.0%;-0.0%;0.0%
-		lineageTag: c4c22e3d-4665-49c8-971e-b612cbfd6527
-
-	measure '% Enrolled 0 Year' = ```
-			
-			VAR student_count = 
-			    SUMX(
-			        'reporting RDS_FactK12GraduationCohorts',
-			        VAR HSGradYear = 'reporting RDS_FactK12GraduationCohorts'[CohortGraduationYear]
-			        VAR FirstPSEntryDate = 
-			            CALCULATE(
-			                MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate])
-			            )
-			        VAR EntryYear = YEAR(FirstPSEntryDate)
-			        VAR YearDiff = EntryYear - HSGradYear
-			        
-			        RETURN
-			        IF(YearDiff < 1, 1, 0)
-			    )
-			
-			-- Suggestion: Use the K12 table for the total to get a true "Rate of Enrollment"
-			VAR total_graduates = COUNTROWS('reporting RDS_FactK12GraduationCohorts')
-			
-			RETURN 
-			    DIVIDE(student_count, total_graduates, 0)
-			```
-		formatString: 0.0%;-0.0%;0.0%
-		lineageTag: d9806268-9f23-4714-a68f-d6adb7932e16
-
 	measure '% Postgrad Enrolled 1-5 Years Trend' =
 			
 			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
@@ -152,18 +68,6 @@ table 'Enrollment in Graduate Education'
 			```
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: b59e8309-524a-40eb-91b6-c861be0aa05a
-
-	measure '% Enrolled 0 Year Trend' =
-			
-			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
-			RETURN
-			CALCULATE(
-			    [% Enrolled 0 Year],
-			    'bi vw_DimSchoolYears'[SchoolYear] = SelectedTrendYear,
-			    REMOVEFILTERS('bi vw_DimSchoolYears')
-			)
-		formatString: 0.0%;-0.0%;0.0%
-		lineageTag: 6f966cfd-892f-4262-8110-ffc7843fb8f1
 
 	partition 'Enrollment in Graduate Education' = m
 		mode: import
