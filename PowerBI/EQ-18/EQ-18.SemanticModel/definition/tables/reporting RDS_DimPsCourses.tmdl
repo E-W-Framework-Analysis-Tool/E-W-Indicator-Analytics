@@ -64,7 +64,6 @@ table 'reporting RDS_DimPsCourses'
 
 	column CourseTitle
 		dataType: string
-		isHidden
 		lineageTag: 07965524-dc0a-4453-bc19-46e739485374
 		summarizeBy: none
 		sourceColumn: CourseTitle

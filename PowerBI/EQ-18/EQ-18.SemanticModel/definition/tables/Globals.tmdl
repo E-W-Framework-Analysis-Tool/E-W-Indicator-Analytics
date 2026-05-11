@@ -163,13 +163,36 @@ table Globals
 			VAR MinEntryDate = 
 			    CALCULATE(
 			        MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate]),
-			        ALLEXCEPT('reporting RDS_FactPsStudentEnrollments', 'reporting RDS_FactPsStudentEnrollments'[PsStudentId])
+			        ALLEXCEPT(
+			            'reporting RDS_FactPsStudentEnrollments', 
+			            'reporting RDS_FactPsStudentEnrollments'[PsStudentId]
+			        )
 			    )
 			RETURN
 			    MinEntryDate + 365
 			```
 		formatString: General Date
 		lineageTag: 2e8102b8-e56d-43c7-9c26-f456e29862fe
+
+	measure '1st Year Enrolled Students' = ```
+			
+			COUNTROWS(
+			        FILTER(
+			            VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			            VAR CurrentStudent = 'reporting RDS_FactPsStudentEnrollments'[PsStudentId]
+			            VAR SpecificWindow = [Student First-Year Window]
+			            
+			            -- Check if the student has enrollments within their first-year window
+			            RETURN
+			            CALCULATE(
+			                NOT ISEMPTY('reporting RDS_FactPsStudentEnrollments'),
+			                'reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate] <= SpecificWindow
+			            )
+			        )
+			    )
+			```
+		formatString: 0
+		lineageTag: 84e3d981-e3e4-495a-a97a-602dc2ce2ee5
 
 	partition Globals = m
 		mode: import

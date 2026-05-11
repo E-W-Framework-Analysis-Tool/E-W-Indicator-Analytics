@@ -439,6 +439,16 @@
             "width": 234
           },
           "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Gateway Course Completion",
+          "nodeLineageTag": "e48fecd6-4e9e-4c6b-80f1-83cf286c743c",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",
@@ -970,6 +980,6 @@
       "tablesLocked": false
     }
   ],
-  "selectedDiagram": "FactPsStudentAcademicAwards",
+  "selectedDiagram": "FactPsStudentCourseTranscripts",
   "defaultDiagram": "All tables"
 }
