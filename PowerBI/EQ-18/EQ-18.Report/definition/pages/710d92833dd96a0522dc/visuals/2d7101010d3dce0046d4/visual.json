@@ -60,11 +60,11 @@
                       "Entity": "Gateway Course Completion"
                     }
                   },
-                  "Property": "A: % students completing English"
+                  "Property": "% students completing English"
                 }
               },
               "queryRef": "Gateway Course Completion.% students completing English",
-              "nativeQueryRef": "A: % students completing English"
+              "nativeQueryRef": "% students completing English"
             },
             {
               "field": {
@@ -74,11 +74,11 @@
                       "Entity": "Gateway Course Completion"
                     }
                   },
-                  "Property": "B: % students completing Math"
+                  "Property": "% students completing Math"
                 }
               },
               "queryRef": "Gateway Course Completion.% students completing Math",
-              "nativeQueryRef": "B: % students completing Math"
+              "nativeQueryRef": "% students completing Math"
             },
             {
               "field": {
@@ -88,11 +88,11 @@
                       "Entity": "Gateway Course Completion"
                     }
                   },
-                  "Property": "C: % students completing English & Math"
+                  "Property": "% students completing English & Math"
                 }
               },
               "queryRef": "Gateway Course Completion.% students completing English or Math",
-              "nativeQueryRef": "C: % students completing English & Math"
+              "nativeQueryRef": "% students completing English & Math"
             }
           ]
         }
@@ -173,5 +173,65 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "24d460bc31c3701b659c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Schools"
+              }
+            },
+            "Property": "SeaOrganizationName"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8555b9d0c9680130b6ef",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Gateway Course Completion"
+              }
+            },
+            "Property": "% students completing English"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c5b4bb1889ef16908ff7",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Gateway Course Completion"
+              }
+            },
+            "Property": "% students completing Math"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ac91d630387d9bdee9af",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Gateway Course Completion"
+              }
+            },
+            "Property": "% students completing English & Math"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

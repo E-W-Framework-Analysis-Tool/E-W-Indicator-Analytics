@@ -42,11 +42,11 @@
                       "Entity": "Gateway Course Completion"
                     }
                   },
-                  "Property": "A: % students completing English Trend"
+                  "Property": "% students completing English Trend"
                 }
               },
               "queryRef": "Gateway Course Completion.% students completing English Trend",
-              "nativeQueryRef": "A: % students completing English Trend"
+              "nativeQueryRef": "% students completing English Trend"
             },
             {
               "field": {
@@ -56,11 +56,11 @@
                       "Entity": "Gateway Course Completion"
                     }
                   },
-                  "Property": "B: % students completing Math Trend"
+                  "Property": "% students completing Math Trend"
                 }
               },
               "queryRef": "Gateway Course Completion.% students completing Math Trend",
-              "nativeQueryRef": "B: % students completing Math Trend"
+              "nativeQueryRef": "% students completing Math Trend"
             },
             {
               "field": {
@@ -70,11 +70,11 @@
                       "Entity": "Gateway Course Completion"
                     }
                   },
-                  "Property": "C: % students completing English & Math Trend"
+                  "Property": "% students completing English & Math Trend"
                 }
               },
               "queryRef": "Gateway Course Completion.% students completing English or Math Trend",
-              "nativeQueryRef": "C: % students completing English & Math Trend"
+              "nativeQueryRef": "% students completing English & Math Trend"
             }
           ]
         }
@@ -89,7 +89,7 @@
                     "Entity": "Gateway Course Completion"
                   }
                 },
-                "Property": "A: % students completing English Trend"
+                "Property": "% students completing English Trend"
               }
             },
             "direction": "Descending"
