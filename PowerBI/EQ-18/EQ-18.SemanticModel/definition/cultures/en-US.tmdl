@@ -17510,7 +17510,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "First-year Credit Accumulation",
-			          "ConceptualProperty": "% FT Students Completing 30 Credits"
+			          "ConceptualProperty": "% Full-Time Students Completing 30 Credits"
 			        }
 			      },
 			      "State": "Generated",
@@ -17526,7 +17526,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "First-year Credit Accumulation",
-			          "ConceptualProperty": "% HT Students Completing 15 Credits"
+			          "ConceptualProperty": "% Half-Time Students Completing 15 Credits"
 			        }
 			      },
 			      "State": "Generated",
@@ -17542,7 +17542,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "First-year Credit Accumulation",
-			          "ConceptualProperty": "% FT Students Completing 30 Credits Trend"
+			          "ConceptualProperty": "% Full-Time Students Completing 30 Credits Trend"
 			        }
 			      },
 			      "State": "Generated",
@@ -17558,7 +17558,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "First-year Credit Accumulation",
-			          "ConceptualProperty": "% HT Students Completing 15 Credits Trend"
+			          "ConceptualProperty": "% Half-Time Students Completing 15 Credits Trend"
 			        }
 			      },
 			      "State": "Generated",

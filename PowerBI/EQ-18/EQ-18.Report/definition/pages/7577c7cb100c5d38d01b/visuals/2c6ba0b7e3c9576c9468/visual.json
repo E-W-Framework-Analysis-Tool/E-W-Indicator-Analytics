@@ -42,11 +42,11 @@
                       "Entity": "First-year Credit Accumulation"
                     }
                   },
-                  "Property": "% FT Students Completing 30 Credits Trend"
+                  "Property": "% Full-Time Students Completing 30 Credits Trend"
                 }
               },
               "queryRef": "First-year Credit Accumulation.% FT Students Completing 30 Credits Trend",
-              "nativeQueryRef": "% FT Students Completing 30 Credits Trend"
+              "nativeQueryRef": "% Full-Time Students Completing 30 Credits Trend"
             },
             {
               "field": {
@@ -56,11 +56,11 @@
                       "Entity": "First-year Credit Accumulation"
                     }
                   },
-                  "Property": "% HT Students Completing 15 Credits Trend"
+                  "Property": "% Half-Time Students Completing 15 Credits Trend"
                 }
               },
               "queryRef": "First-year Credit Accumulation.% HT Students Completing 15 Credits Trend",
-              "nativeQueryRef": "% HT Students Completing 15 Credits Trend"
+              "nativeQueryRef": "% Half-Time Students Completing 15 Credits Trend"
             }
           ]
         }
@@ -75,7 +75,7 @@
                     "Entity": "First-year Credit Accumulation"
                   }
                 },
-                "Property": "% FT Students Completing 30 Credits Trend"
+                "Property": "% Full-Time Students Completing 30 Credits Trend"
               }
             },
             "direction": "Descending"
@@ -297,7 +297,7 @@
                 "Entity": "First-year Credit Accumulation"
               }
             },
-            "Property": "% FT Students Completing 30 Credits Trend"
+            "Property": "% Full-Time Students Completing 30 Credits Trend"
           }
         },
         "type": "Advanced"
@@ -311,7 +311,7 @@
                 "Entity": "First-year Credit Accumulation"
               }
             },
-            "Property": "% HT Students Completing 15 Credits Trend"
+            "Property": "% Half-Time Students Completing 15 Credits Trend"
           }
         },
         "type": "Advanced"

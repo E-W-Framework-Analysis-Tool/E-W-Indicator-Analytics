@@ -59,11 +59,11 @@
                       "Entity": "First-year Credit Accumulation"
                     }
                   },
-                  "Property": "% FT Students Completing 30 Credits"
+                  "Property": "% Full-Time Students Completing 30 Credits"
                 }
               },
               "queryRef": "First-year Credit Accumulation.% FT Students Completing 30 Credits",
-              "nativeQueryRef": "% FT Students Completing 30 Credits"
+              "nativeQueryRef": "% Full-Time Students Completing 30 Credits"
             },
             {
               "field": {
@@ -73,11 +73,11 @@
                       "Entity": "First-year Credit Accumulation"
                     }
                   },
-                  "Property": "% HT Students Completing 15 Credits"
+                  "Property": "% Half-Time Students Completing 15 Credits"
                 }
               },
               "queryRef": "First-year Credit Accumulation.% HT Students Completing 15 Credits",
-              "nativeQueryRef": "% HT Students Completing 15 Credits"
+              "nativeQueryRef": "% Half-Time Students Completing 15 Credits"
             }
           ]
         }
@@ -92,7 +92,7 @@
                     "Entity": "First-year Credit Accumulation"
                   }
                 },
-                "Property": "% FT Students Completing 30 Credits"
+                "Property": "% Full-Time Students Completing 30 Credits"
               }
             },
             "direction": "Descending"
@@ -171,7 +171,7 @@
                 "Entity": "First-year Credit Accumulation"
               }
             },
-            "Property": "% FT Students Completing 30 Credits"
+            "Property": "% Full-Time Students Completing 30 Credits"
           }
         },
         "type": "Advanced"
@@ -185,7 +185,7 @@
                 "Entity": "First-year Credit Accumulation"
               }
             },
-            "Property": "% HT Students Completing 15 Credits"
+            "Property": "% Half-Time Students Completing 15 Credits"
           }
         },
         "type": "Advanced"

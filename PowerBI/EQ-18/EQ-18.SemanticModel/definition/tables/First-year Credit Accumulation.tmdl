@@ -1,7 +1,7 @@
 table 'First-year Credit Accumulation'
 	lineageTag: d42d6ce4-0bf7-47d9-81c9-658d4412785d
 
-	measure '% FT Students Completing 30 Credits' = ```
+	measure '% Full-Time Students Completing 30 Credits' = ```
 			
 			VAR StudentBase = 
 			    FILTER(
@@ -22,7 +22,7 @@ table 'First-year Credit Accumulation'
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 9bc86cb3-1b6a-49f5-a36e-482bdd8e790d
 
-	measure '% HT Students Completing 15 Credits' = ```
+	measure '% Half-Time Students Completing 15 Credits' = ```
 			
 			// VAR StudentBase = 
 			//     FILTER(
@@ -43,24 +43,24 @@ table 'First-year Credit Accumulation'
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 529c0c5e-94f7-44e4-86cb-a666028baa69
 
-	measure '% FT Students Completing 30 Credits Trend' =
+	measure '% Full-Time Students Completing 30 Credits Trend' =
 			
 			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
 			RETURN
 			CALCULATE(
-			    [% FT Students Completing 30 Credits],
+			    [% Full-Time Students Completing 30 Credits],
 			    'bi vw_DimSchoolYears'[SchoolYear] = SelectedTrendYear,
 			    REMOVEFILTERS('bi vw_DimSchoolYears')
 			)
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 465d5243-47bc-4b94-a7cd-e69c1c846fb4
 
-	measure '% HT Students Completing 15 Credits Trend' =
+	measure '% Half-Time Students Completing 15 Credits Trend' =
 			
 			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
 			RETURN
 			CALCULATE(
-			    [% HT Students Completing 15 Credits],
+			    [% Half-Time Students Completing 15 Credits],
 			    'bi vw_DimSchoolYears'[SchoolYear] = SelectedTrendYear,
 			    REMOVEFILTERS('bi vw_DimSchoolYears')
 			)
