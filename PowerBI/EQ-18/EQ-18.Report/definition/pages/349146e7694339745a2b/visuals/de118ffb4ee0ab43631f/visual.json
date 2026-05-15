@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
-  "name": "280feb69ea083df6d7a2",
+  "name": "de118ffb4ee0ab43631f",
   "position": {
-    "x": 905.68507157464217,
-    "y": 653.74233128834362,
-    "z": 2,
-    "height": 66.094069529652359,
-    "width": 374.31492842535789,
-    "tabOrder": 2
+    "x": 905.94594594594594,
+    "y": 587.027027027027,
+    "z": 3,
+    "height": 67.027027027027017,
+    "width": 374.05405405405406,
+    "tabOrder": 3
   },
   "visual": {
     "visualType": "advancedSlicerVisual",
@@ -20,13 +20,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Field of Study"
+                      "Entity": "Credential Type"
                     }
                   },
                   "Property": "Slicer-Value"
                 }
               },
-              "queryRef": "Field of Study.Slicer-Value",
+              "queryRef": "Credential Type.Slicer-Value",
               "nativeQueryRef": "Slicer-Value"
             }
           ]
@@ -39,10 +39,10 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "bi vw_DimCipCodes"
+                    "Entity": "Credential Type"
                   }
                 },
-                "Property": "FieldOfStudy"
+                "Property": "Slicer-Value"
               }
             },
             "direction": "Ascending"
@@ -74,7 +74,7 @@
             "maxTiles": {
               "expr": {
                 "Literal": {
-                  "Value": "4L"
+                  "Value": "3L"
                 }
               }
             }
@@ -515,7 +515,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Field of Study'"
+                  "Value": "'Credential Type'"
                 }
               }
             }
@@ -616,12 +616,12 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "5dc80604e46ac6055c05",
+        "name": "36fcafc4ba65e62d1a9c",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Field of Study"
+                "Entity": "Credential Type"
               }
             },
             "Property": "Slicer-Value"
@@ -632,8 +632,8 @@
           "Version": 2,
           "From": [
             {
-              "Name": "f",
-              "Entity": "Field of Study",
+              "Name": "c",
+              "Entity": "Credential Type",
               "Type": 0
             }
           ],
@@ -646,7 +646,7 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "f"
+                            "Source": "c"
                           }
                         },
                         "Property": "Slicer-Value"
@@ -657,28 +657,21 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'STEM'"
+                          "Value": "'Associate''s Degree'"
                         }
                       }
                     ],
                     [
                       {
                         "Literal": {
-                          "Value": "'Liberal Arts'"
+                          "Value": "'Bachelor''s Degree'"
                         }
                       }
                     ],
                     [
                       {
                         "Literal": {
-                          "Value": "'Business'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Other'"
+                          "Value": "'Certificate'"
                         }
                       }
                     ]

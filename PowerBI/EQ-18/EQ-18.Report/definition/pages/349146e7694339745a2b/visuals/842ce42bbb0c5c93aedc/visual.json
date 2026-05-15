@@ -48,47 +48,93 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "First-year Credit Accumulation"
+                      "Entity": "First-year Program of Study"
                     }
                   },
-                  "Property": "Total Undergrad Enrolled Students"
+                  "Property": "Total Enrolled Students"
                 }
               },
-              "queryRef": "First-year Credit Accumulation.Total Undergrad Enrolled Students",
-              "nativeQueryRef": "Total Undergrad Enrolled Students"
+              "queryRef": "First-year Program of Study.Total Enrolled Students",
+              "nativeQueryRef": "Total Enrolled Students"
             },
             {
               "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "First-year Credit Accumulation"
+                      "Entity": "First-year Program of Study"
                     }
                   },
-                  "Property": "HT Students 15 Credits"
+                  "Property": "Students 9+ Meta-Major Credits"
                 }
               },
-              "queryRef": "First-year Credit Accumulation.HT Students 15 Credits",
-              "nativeQueryRef": "HT Students 15 Credits"
+              "queryRef": "First-year Program of Study.Students 9+ Meta-Major Credits",
+              "nativeQueryRef": "Students 9+ Meta-Major Credits"
             },
             {
               "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "First-year Credit Accumulation"
+                      "Entity": "First-year Program of Study"
                     }
                   },
-                  "Property": "FT Students 30 Credits"
+                  "Property": "% Students 9+ Meta-Major Credits"
                 }
               },
-              "queryRef": "First-year Credit Accumulation.FT Students 30 Credits",
-              "nativeQueryRef": "FT Students 30 Credits"
+              "queryRef": "First-year Program of Study.% Students 9+ Meta-Major Credits",
+              "nativeQueryRef": "% Students 9+ Meta-Major Credits"
             }
           ]
         }
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e622d67c538dd9642b62",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimCipCodes"
+              }
+            },
+            "Property": "FieldOfStudy"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "5dc450796fbd8fa9b1b3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimPsAcademicAwardStatuses"
+              }
+            },
+            "Property": "CredentialType"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f6e4a7fab4f4903ad24a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "First-year Program of Study"
+              }
+            },
+            "Property": "Students 9+ Meta-Major Credits"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
