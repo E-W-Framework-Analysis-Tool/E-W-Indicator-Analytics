@@ -13,8 +13,8 @@ table 'First-year Credit Accumulation'
 			        StudentBase,
 			        [Earned_Credits_YR1] >= 30
 			    )
-			VAR Denominator = COUNTROWS(StudentBase)
-			VAR Numerator = COUNTROWS(SuccessfulStudents)
+			VAR Denominator = [Total Undergrad Enrolled Students] -- COUNTROWS(StudentBase)
+			VAR Numerator = [FT Students 30 Credits] -- COUNTROWS(SuccessfulStudents)
 			
 			RETURN 
 			    DIVIDE(Numerator, Denominator, 0)
@@ -24,18 +24,18 @@ table 'First-year Credit Accumulation'
 
 	measure '% HT Students Completing 15 Credits' = ```
 			
-			VAR StudentBase = 
-			    FILTER(
-			        VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
-			        [Attempted_Credits_YR1] <= 18
-			    )
-			VAR SuccessfulStudents = 
-			    FILTER(
-			        StudentBase,
-			        [Earned_Credits_YR1] >= 15
-			    )
-			VAR Denominator = COUNTROWS(StudentBase)
-			VAR Numerator = COUNTROWS(SuccessfulStudents)
+			// VAR StudentBase = 
+			//     FILTER(
+			//         VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			//         [Attempted_Credits_YR1] <= 18
+			//     )
+			// VAR SuccessfulStudents = 
+			//     FILTER(
+			//         StudentBase,
+			//         [Earned_Credits_YR1] >= 15
+			//     )
+			VAR Denominator = [Total Undergrad Enrolled Students] -- COUNTROWS(StudentBase)
+			VAR Numerator = [HT Students 15 Credits] -- COUNTROWS(SuccessfulStudents)
 			
 			RETURN 
 			    DIVIDE(Numerator, Denominator, 0)
@@ -92,6 +92,176 @@ table 'First-year Credit Accumulation'
 		lineageTag: 0b50dfb7-274d-4279-b88d-10db49333b5e
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'HT Students 15 Credits' = ```
+			
+			VAR TargetFieldOfStudy = {"BUSINESS", "ARTS", "OTHER", "STEM"}
+			VAR TargetCredentials = {"Certificate", "Associate's Degree", "Bachelor's Degree"}
+			VAR CurrentCredential = SELECTEDVALUE('bi vw_DimPsAcademicAwardStatuses'[CredentialType])
+			VAR CurrentFieldOfStudy = SELECTEDVALUE('bi vw_DimCipCodes'[FieldOfStudy])
+			VAR IsValidRow = (
+			                    (CurrentCredential IN TargetCredentials     || NOT ISFILTERED('bi vw_DimPsAcademicAwardStatuses'[CredentialType])) &&
+			                    (CurrentFieldOfStudy in TargetFieldOfStudy  || NOT ISFILTERED('bi vw_DimCipCodes'[FieldOfStudy]))
+			                )
+			
+			VAR QualifiedStudents = 
+			SUMX(
+			    VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			    VAR _CurrentStudent = 'reporting RDS_FactPsStudentEnrollments'[PsStudentId]
+			    VAR _StudentStart = [Student First-Year Window]
+			    VAR _StudentEnd = EDATE(_StudentStart, 12)
+			    
+			    -- Calculate Attempted for Intensity and Earned for Completion
+			    VAR _FirstYearAttempted = 
+			        CALCULATE(
+			            SUM('reporting RDS_FactPsStudentCourseTranscripts'[NumberOfCreditsAttempted]),
+			            'reporting RDS_FactPsStudentCourseTranscripts'[PsStudentId] = _CurrentStudent,
+			            'reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate] >= _StudentStart,
+			            'reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate] < _StudentEnd,
+			            'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy,
+			            'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials
+			        )
+			        
+			    VAR _FirstYearEarned = 
+			        CALCULATE(
+			            SUM('reporting RDS_FactPsStudentCourseTranscripts'[NumberOfCreditsEarned]),
+			            'reporting RDS_FactPsStudentCourseTranscripts'[PsStudentId] = _CurrentStudent,
+			            'reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate] >= _StudentStart,
+			            'reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate] < _StudentEnd,
+			            'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy,
+			            'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials
+			        )
+			
+			    VAR _HasValidCredential = 
+			        CALCULATE(
+			            COUNTROWS('bi vw_DimPsAcademicAwardStatuses'),
+			            'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			            'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			            'reporting RDS_FactPsStudentEnrollments'[PsStudentId] = _CurrentStudent
+			        )
+			
+			    -- Logic: Full Time (Attempted >= 30) AND Completed 30 (Earned >= 30)
+			    RETURN
+			    IF(
+			        _FirstYearAttempted <= 18 && 
+			        _FirstYearEarned >= 15 && 
+			        _HasValidCredential > 0,
+			        1, 0
+			    )
+			)
+			
+			RETURN
+			    IF(IsValidRow, QualifiedStudents, BLANK())
+			```
+		formatString: 0
+		lineageTag: 2cbc3206-2c69-4d7b-9cdb-1e767bc36fe3
+
+	measure 'FT Students 30 Credits' = ```
+			
+			VAR TargetFieldOfStudy = {"BUSINESS", "ARTS", "OTHER", "STEM"}
+			VAR TargetCredentials = {"Certificate", "Associate's Degree", "Bachelor's Degree"}
+			VAR CurrentCredential = SELECTEDVALUE('bi vw_DimPsAcademicAwardStatuses'[CredentialType])
+			VAR CurrentFieldOfStudy = SELECTEDVALUE('bi vw_DimCipCodes'[FieldOfStudy])
+			VAR IsValidRow = (
+			                    (CurrentCredential IN TargetCredentials     || NOT ISFILTERED('bi vw_DimPsAcademicAwardStatuses'[CredentialType])) &&
+			                    (CurrentFieldOfStudy in TargetFieldOfStudy  || NOT ISFILTERED('bi vw_DimCipCodes'[FieldOfStudy]))
+			                )
+			
+			VAR QualifiedStudents = 
+			SUMX(
+			    VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			    VAR _CurrentStudent = 'reporting RDS_FactPsStudentEnrollments'[PsStudentId]
+			    VAR _StudentStart = [Student First-Year Window]
+			    VAR _StudentEnd = EDATE(_StudentStart, 12)
+			    
+			    -- Calculate Attempted for Intensity and Earned for Completion
+			    VAR _FirstYearAttempted = 
+			        CALCULATE(
+			            SUM('reporting RDS_FactPsStudentCourseTranscripts'[NumberOfCreditsAttempted]),
+			            'reporting RDS_FactPsStudentCourseTranscripts'[PsStudentId] = _CurrentStudent,
+			            'reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate] >= _StudentStart,
+			            'reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate] < _StudentEnd,
+			            'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy,
+			            'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials
+			        )
+			        
+			    VAR _FirstYearEarned = 
+			        CALCULATE(
+			            SUM('reporting RDS_FactPsStudentCourseTranscripts'[NumberOfCreditsEarned]),
+			            'reporting RDS_FactPsStudentCourseTranscripts'[PsStudentId] = _CurrentStudent,
+			            'reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate] >= _StudentStart,
+			            'reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate] < _StudentEnd,
+			            'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy,
+			            'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials
+			        )
+			
+			    VAR _HasValidCredential = 
+			        CALCULATE(
+			            COUNTROWS('bi vw_DimPsAcademicAwardStatuses'),
+			            'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			            'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			            'reporting RDS_FactPsStudentEnrollments'[PsStudentId] = _CurrentStudent
+			        )
+			
+			    -- Logic: Full Time (Attempted >= 30) AND Completed 30 (Earned >= 30)
+			    RETURN
+			    IF(
+			        _FirstYearAttempted >= 30 && 
+			        _FirstYearEarned >= 30 && 
+			        _HasValidCredential > 0,
+			        1, 0
+			    )
+			)
+			
+			RETURN
+			    IF(IsValidRow, QualifiedStudents, BLANK())
+			```
+		formatString: 0
+		lineageTag: e0639399-133a-4fab-9d2b-4643ad23a047
+
+	measure 'Total Undergrad Enrolled Students' = ```
+			
+			VAR TargetCredentials = {"Certificate", "Associate's Degree", "Bachelor's Degree"}
+			VAR TargetFieldOfStudy = {"BUSINESS", "ARTS", "OTHER", "STEM"}
+			
+			VAR CurrentCredential = SELECTEDVALUE('bi vw_DimPsAcademicAwardStatuses'[CredentialType])
+			VAR CurrentFieldOfStudy = SELECTEDVALUE('bi vw_DimCipCodes'[FieldOfStudy])
+			VAR IsValidRow = (
+			                    (CurrentCredential IN TargetCredentials     || NOT ISFILTERED('bi vw_DimPsAcademicAwardStatuses'[CredentialType])) &&
+			                    (CurrentFieldOfStudy in TargetFieldOfStudy  || NOT ISFILTERED('bi vw_DimCipCodes'[FieldOfStudy]))
+			                )
+			
+			-- 1. Identify students with at least 2 enrollment records across all time
+			VAR UndergradStudents = 
+			    FILTER(
+			        ADDCOLUMNS(
+			            VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			            "IsUndergrad", 
+			            CALCULATE(
+			                COUNTROWS('reporting RDS_FactPsStudentEnrollments'),
+			                ALLEXCEPT('reporting RDS_FactPsStudentEnrollments', 'reporting RDS_FactPsStudentEnrollments'[PsStudentId])
+			            ) >= 1
+			        ),
+			        [IsUndergrad] = TRUE
+			    )
+			
+			VAR OnlyUndergradIds = SELECTCOLUMNS(UndergradStudents, "PsStudentId", [PsStudentId])
+			
+			-- 2. Calculate the distinct count applying the context of the visual
+			VAR Result = 
+			    CALCULATE(
+			        DISTINCTCOUNT('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			        KEEPFILTERS(OnlyUndergradIds),
+			        'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			        'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy
+			    )
+			
+			-- 3. Execution Logic
+			RETURN
+			    IF(IsValidRow, Result, BLANK())
+			```
+		formatString: 0
+		lineageTag: 963d68ed-7e3e-4cb7-b0c4-c93dd1d94888
 
 	partition 'First-year Credit Accumulation' = m
 		mode: import

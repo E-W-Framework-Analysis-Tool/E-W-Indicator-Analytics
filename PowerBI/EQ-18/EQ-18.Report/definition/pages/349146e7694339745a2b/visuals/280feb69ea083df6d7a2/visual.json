@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
-  "name": "c21ed0c69de890aa6be0",
+  "name": "280feb69ea083df6d7a2",
   "position": {
-    "x": 905.94594594594594,
-    "y": 654.05405405405406,
-    "z": 11000,
-    "height": 65.945945945945937,
-    "width": 374.05405405405406,
-    "tabOrder": 18007
+    "x": 905.68507157464217,
+    "y": 653.74233128834362,
+    "z": 2,
+    "height": 66.094069529652359,
+    "width": 374.31492842535789,
+    "tabOrder": 2
   },
   "visual": {
     "visualType": "advancedSlicerVisual",
@@ -53,49 +53,7 @@
     "objects": {
       "general": [
         {
-          "properties": {
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "f",
-                    "Entity": "Field of Study",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "f"
-                                }
-                              },
-                              "Property": "Slicer-Value"
-                            }
-                          }
-                        ],
-                        "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "null"
-                              }
-                            }
-                          ]
-                        ]
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          }
+          "properties": {}
         }
       ],
       "data": [
@@ -699,7 +657,7 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'Business'"
+                          "Value": "'STEM'"
                         }
                       }
                     ],
@@ -713,14 +671,14 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'Other'"
+                          "Value": "'Business'"
                         }
                       }
                     ],
                     [
                       {
                         "Literal": {
-                          "Value": "'STEM'"
+                          "Value": "'Other'"
                         }
                       }
                     ]

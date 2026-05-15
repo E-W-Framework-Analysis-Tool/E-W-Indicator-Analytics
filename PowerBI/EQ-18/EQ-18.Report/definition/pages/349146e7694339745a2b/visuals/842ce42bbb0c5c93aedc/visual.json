@@ -3,10 +3,10 @@
   "name": "842ce42bbb0c5c93aedc",
   "position": {
     "x": 0,
-    "y": 439.93880673125955,
+    "y": 359.89567031820553,
     "z": 0,
-    "height": 280.02039775624684,
-    "width": 1204.9362570117287,
+    "height": 359.89567031820553,
+    "width": 886.718831507564,
     "tabOrder": 0
   },
   "visual": {
@@ -20,14 +20,70 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "reporting RDS_DimPsCourses"
+                      "Entity": "bi vw_DimCipCodes"
                     }
                   },
-                  "Property": "CourseTitle"
+                  "Property": "FieldOfStudy"
                 }
               },
-              "queryRef": "reporting RDS_DimPsCourses.CourseTitle",
-              "nativeQueryRef": "CourseTitle"
+              "queryRef": "bi vw_DimCipCodes.FieldOfStudy",
+              "nativeQueryRef": "FieldOfStudy"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_DimPsAcademicAwardStatuses"
+                    }
+                  },
+                  "Property": "CredentialType"
+                }
+              },
+              "queryRef": "bi vw_DimPsAcademicAwardStatuses.CredentialType",
+              "nativeQueryRef": "CredentialType"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "First-year Credit Accumulation"
+                    }
+                  },
+                  "Property": "Total Undergrad Enrolled Students"
+                }
+              },
+              "queryRef": "First-year Credit Accumulation.Total Undergrad Enrolled Students",
+              "nativeQueryRef": "Total Undergrad Enrolled Students"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "First-year Credit Accumulation"
+                    }
+                  },
+                  "Property": "HT Students 15 Credits"
+                }
+              },
+              "queryRef": "First-year Credit Accumulation.HT Students 15 Credits",
+              "nativeQueryRef": "HT Students 15 Credits"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "First-year Credit Accumulation"
+                    }
+                  },
+                  "Property": "FT Students 30 Credits"
+                }
+              },
+              "queryRef": "First-year Credit Accumulation.FT Students 30 Credits",
+              "nativeQueryRef": "FT Students 30 Credits"
             }
           ]
         }
