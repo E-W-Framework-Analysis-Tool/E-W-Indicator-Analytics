@@ -45,7 +45,8 @@
                 }
               },
               "index": 0,
-              "length": 1
+              "length": 1,
+              "sortDirection": "Ascending"
             }
           ]
         },
@@ -59,25 +60,11 @@
                       "Entity": "Gateway Course Completion"
                     }
                   },
-                  "Property": "% students completing English or Math"
-                }
-              },
-              "queryRef": "Gateway Course Completion.% students completing English or Math",
-              "nativeQueryRef": "% students completing English or Math"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Gateway Course Completion"
-                    }
-                  },
-                  "Property": "% students completing English"
+                  "Property": "A: % students completing English"
                 }
               },
               "queryRef": "Gateway Course Completion.% students completing English",
-              "nativeQueryRef": "% students completing English"
+              "nativeQueryRef": "A: % students completing English"
             },
             {
               "field": {
@@ -87,11 +74,25 @@
                       "Entity": "Gateway Course Completion"
                     }
                   },
-                  "Property": "% students completing Math"
+                  "Property": "B: % students completing Math"
                 }
               },
               "queryRef": "Gateway Course Completion.% students completing Math",
-              "nativeQueryRef": "% students completing Math"
+              "nativeQueryRef": "B: % students completing Math"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Gateway Course Completion"
+                    }
+                  },
+                  "Property": "C: % students completing English & Math"
+                }
+              },
+              "queryRef": "Gateway Course Completion.% students completing English or Math",
+              "nativeQueryRef": "C: % students completing English & Math"
             }
           ]
         }
@@ -100,19 +101,18 @@
         "sort": [
           {
             "field": {
-              "Measure": {
+              "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Gateway Course Completion"
+                    "Entity": "bi vw_DimK12Schools"
                   }
                 },
-                "Property": "% students completing English or Math"
+                "Property": "SeaOrganizationName"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": true
+        ]
       }
     },
     "objects": {

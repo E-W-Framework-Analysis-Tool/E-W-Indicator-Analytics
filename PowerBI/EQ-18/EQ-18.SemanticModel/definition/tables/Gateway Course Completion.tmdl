@@ -1,7 +1,7 @@
 table 'Gateway Course Completion'
 	lineageTag: e48fecd6-4e9e-4c6b-80f1-83cf286c743c
 
-	measure '% students completing English' = ```
+	measure 'A: % students completing English' = ```
 			
 			VAR Threshold = 3
 			VAR MetaMajorStudents = 
@@ -36,7 +36,7 @@ table 'Gateway Course Completion'
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 2d5650b4-664a-4c88-9a84-547b4ef92f5e
 
-	measure '% students completing Math' = ```
+	measure 'B: % students completing Math' = ```
 			
 			VAR Threshold = 3
 			VAR MetaMajorStudents = 
@@ -71,7 +71,7 @@ table 'Gateway Course Completion'
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 99691e73-a0f7-4f05-b5bc-a1990dd8d9a9
 
-	measure '% students completing English or Math' = ```
+	measure 'C: % students completing English & Math' = ```
 			
 			VAR Threshold = 6
 			VAR MetaMajorStudents = 
@@ -86,15 +86,23 @@ table 'Gateway Course Completion'
 			                'reporting RDS_FactPsStudentEnrollments'[PsStudentId] = CurrentStudent
 			            )
 			            
-			        VAR CreditsEarned = 
+			        VAR CreditsEarnedMath = 
 			            CALCULATE(
 			                SUM('reporting RDS_FactPsStudentCourseTranscripts'[NumberOfCreditsEarned]),
-			                'reporting RDS_DimPsCourses'[CourseTitle] IN {"Math", "English"},
+			                'reporting RDS_DimPsCourses'[CourseTitle] IN {"Math"},
+			                -- Filter transcripts to only those occurring on or before the student's window
+			                'reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate] <= SpecificWindow
+			            )
+			
+			        VAR CreditsEarnedEnglish = 
+			            CALCULATE(
+			                SUM('reporting RDS_FactPsStudentCourseTranscripts'[NumberOfCreditsEarned]),
+			                'reporting RDS_DimPsCourses'[CourseTitle] IN {"English"},
 			                -- Filter transcripts to only those occurring on or before the student's window
 			                'reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate] <= SpecificWindow
 			            )
 			        RETURN 
-			            CreditsEarned >= Threshold
+			            CreditsEarnedMath + CreditsEarnedEnglish >= Threshold
 			    )
 			    
 			VAR TotalStudents = [1st Year Enrolled Students]
@@ -106,36 +114,36 @@ table 'Gateway Course Completion'
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 05d059b5-4914-4e13-b27b-803ee70b1d97
 
-	measure '% students completing English Trend' =
+	measure 'A: % students completing English Trend' =
 			
 			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
 			RETURN
 			CALCULATE(
-			    [% students completing English],
+			    [A: % students completing English],
 			    'bi vw_DimCohortGraduationYears'[CohortGraduationYear] = SelectedTrendYear,
 			    REMOVEFILTERS('bi vw_DimSchoolYears')
 			)
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: fcdfa6f8-2719-4096-8182-8e58232dcc5c
 
-	measure '% students completing Math Trend' =
+	measure 'B: % students completing Math Trend' =
 			
 			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
 			RETURN
 			CALCULATE(
-			    [% students completing Math],
+			    [B: % students completing Math],
 			    'bi vw_DimCohortGraduationYears'[CohortGraduationYear] = SelectedTrendYear,
 			    REMOVEFILTERS('bi vw_DimSchoolYears')
 			)
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: dc34875d-3afe-4d62-9e27-57e9fa64de02
 
-	measure '% students completing English or Math Trend' =
+	measure 'C: % students completing English & Math Trend' =
 			
 			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
 			RETURN
 			CALCULATE(
-			    [% students completing English or Math],
+			    [C: % students completing English & Math],
 			    'bi vw_DimCohortGraduationYears'[CohortGraduationYear] = SelectedTrendYear,
 			    REMOVEFILTERS('bi vw_DimSchoolYears')
 			)

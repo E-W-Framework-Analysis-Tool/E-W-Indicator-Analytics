@@ -42,25 +42,11 @@
                       "Entity": "Gateway Course Completion"
                     }
                   },
-                  "Property": "% students completing English or Math Trend"
-                }
-              },
-              "queryRef": "Gateway Course Completion.% students completing English or Math Trend",
-              "nativeQueryRef": "% students completing English or Math Trend"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Gateway Course Completion"
-                    }
-                  },
-                  "Property": "% students completing English Trend"
+                  "Property": "A: % students completing English Trend"
                 }
               },
               "queryRef": "Gateway Course Completion.% students completing English Trend",
-              "nativeQueryRef": "% students completing English Trend"
+              "nativeQueryRef": "A: % students completing English Trend"
             },
             {
               "field": {
@@ -70,11 +56,25 @@
                       "Entity": "Gateway Course Completion"
                     }
                   },
-                  "Property": "% students completing Math Trend"
+                  "Property": "B: % students completing Math Trend"
                 }
               },
               "queryRef": "Gateway Course Completion.% students completing Math Trend",
-              "nativeQueryRef": "% students completing Math Trend"
+              "nativeQueryRef": "B: % students completing Math Trend"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Gateway Course Completion"
+                    }
+                  },
+                  "Property": "C: % students completing English & Math Trend"
+                }
+              },
+              "queryRef": "Gateway Course Completion.% students completing English or Math Trend",
+              "nativeQueryRef": "C: % students completing English & Math Trend"
             }
           ]
         }
@@ -89,7 +89,7 @@
                     "Entity": "Gateway Course Completion"
                   }
                 },
-                "Property": "% students completing English or Math Trend"
+                "Property": "A: % students completing English Trend"
               }
             },
             "direction": "Descending"
