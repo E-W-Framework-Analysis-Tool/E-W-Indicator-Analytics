@@ -1,0 +1,49 @@
+table 'reporting RDS_FactPsStaffCounts'
+	lineageTag: d6bc5922-cf6d-4432-aa42-a60fbfe74754
+
+	column SchoolYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 514bbfe5-8d3f-4a75-a988-7f2950f5853f
+		summarizeBy: none
+		sourceColumn: SchoolYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column PsInstitutionId
+		dataType: int64
+		formatString: 0
+		lineageTag: 2e411f49-17e0-4654-9da8-163fcceabaf3
+		summarizeBy: none
+		sourceColumn: PsInstitutionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PsStaffId
+		dataType: int64
+		formatString: 0
+		lineageTag: 0d457f40-e7cf-4e4c-a38b-c0ef657f2e52
+		summarizeBy: count
+		sourceColumn: PsStaffId
+
+		annotation SummarizationSetBy = Automatic
+
+	column StaffEquivalency
+		dataType: double
+		lineageTag: cce99947-6e34-4a4c-a57c-e24b21651daf
+		summarizeBy: sum
+		sourceColumn: StaffEquivalency
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'reporting RDS_FactPsStaffCounts' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    reporting_RDS_FactPsStaffCounts = Source{[Schema="reporting",Item="RDS_FactPsStaffCounts"]}[Data]
+				in
+				    reporting_RDS_FactPsStaffCounts
+

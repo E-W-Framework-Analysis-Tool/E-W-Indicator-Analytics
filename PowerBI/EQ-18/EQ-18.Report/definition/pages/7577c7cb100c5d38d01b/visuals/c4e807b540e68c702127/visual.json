@@ -7,7 +7,7 @@
     "z": 6000,
     "height": 205,
     "width": 631,
-    "tabOrder": 18002
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -73,11 +73,11 @@
                       "Entity": "First-year Credit Accumulation"
                     }
                   },
-                  "Property": "% Half-Time Students Completing 15 Credits"
+                  "Property": "% Part-Time Students Completing 15 Credits"
                 }
               },
               "queryRef": "First-year Credit Accumulation.% HT Students Completing 15 Credits",
-              "nativeQueryRef": "% Half-Time Students Completing 15 Credits"
+              "nativeQueryRef": "% Part-Time Students Completing 15 Credits"
             }
           ]
         }
@@ -159,51 +159,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "35b9c30f634c4a117c39",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "First-year Credit Accumulation"
-              }
-            },
-            "Property": "% Full-Time Students Completing 30 Credits"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "2940fcbe0e5b3ca22e5e",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "First-year Credit Accumulation"
-              }
-            },
-            "Property": "% Half-Time Students Completing 15 Credits"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "709e7a509a95a6026ebc",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimK12Schools"
-              }
-            },
-            "Property": "SeaOrganizationName"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

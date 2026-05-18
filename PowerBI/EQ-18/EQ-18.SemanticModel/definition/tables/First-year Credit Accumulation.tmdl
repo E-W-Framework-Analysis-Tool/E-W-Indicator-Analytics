@@ -22,7 +22,7 @@ table 'First-year Credit Accumulation'
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 9bc86cb3-1b6a-49f5-a36e-482bdd8e790d
 
-	measure '% Half-Time Students Completing 15 Credits' = ```
+	measure '% Part-Time Students Completing 15 Credits' = ```
 			
 			// VAR StudentBase = 
 			//     FILTER(
@@ -35,7 +35,7 @@ table 'First-year Credit Accumulation'
 			//         [Earned_Credits_YR1] >= 15
 			//     )
 			VAR Denominator = [Total Undergrad Enrolled Students] -- COUNTROWS(StudentBase)
-			VAR Numerator = [HT Students 15 Credits] -- COUNTROWS(SuccessfulStudents)
+			VAR Numerator = [PT Students 15 Credits] -- COUNTROWS(SuccessfulStudents)
 			
 			RETURN 
 			    DIVIDE(Numerator, Denominator, 0)
@@ -55,12 +55,12 @@ table 'First-year Credit Accumulation'
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 465d5243-47bc-4b94-a7cd-e69c1c846fb4
 
-	measure '% Half-Time Students Completing 15 Credits Trend' =
+	measure '% Part-Time Students Completing 15 Credits Trend' =
 			
 			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
 			RETURN
 			CALCULATE(
-			    [% Half-Time Students Completing 15 Credits],
+			    [% Part-Time Students Completing 15 Credits],
 			    'bi vw_DimSchoolYears'[SchoolYear] = SelectedTrendYear,
 			    REMOVEFILTERS('bi vw_DimSchoolYears')
 			)
@@ -93,7 +93,7 @@ table 'First-year Credit Accumulation'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'HT Students 15 Credits' = ```
+	measure 'PT Students 15 Credits' = ```
 			
 			VAR TargetFieldOfStudy = {"BUSINESS", "ARTS", "OTHER", "STEM"}
 			VAR TargetCredentials = {"Certificate", "Associate's Degree", "Bachelor's Degree"}

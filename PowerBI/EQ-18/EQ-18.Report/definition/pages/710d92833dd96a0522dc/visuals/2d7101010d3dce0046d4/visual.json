@@ -45,8 +45,7 @@
                 }
               },
               "index": 0,
-              "length": 1,
-              "sortDirection": "Ascending"
+              "length": 1
             }
           ]
         },
@@ -101,16 +100,16 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "bi vw_DimK12Schools"
+                    "Entity": "First-year Program of Study"
                   }
                 },
-                "Property": "SeaOrganizationName"
+                "Property": "% Students 9+ Meta-Major Credits"
               }
             },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ]
       }
@@ -173,65 +172,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "24d460bc31c3701b659c",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimK12Schools"
-              }
-            },
-            "Property": "SeaOrganizationName"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "8555b9d0c9680130b6ef",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Gateway Course Completion"
-              }
-            },
-            "Property": "% students completing English"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "c5b4bb1889ef16908ff7",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Gateway Course Completion"
-              }
-            },
-            "Property": "% students completing Math"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "ac91d630387d9bdee9af",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Gateway Course Completion"
-              }
-            },
-            "Property": "% students completing English & Math"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

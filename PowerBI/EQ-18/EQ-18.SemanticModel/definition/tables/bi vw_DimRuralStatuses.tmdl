@@ -5,7 +5,7 @@ table 'bi vw_DimRuralStatuses'
 		dataType: int64
 		formatString: 0
 		lineageTag: fed1a16c-ee7c-416e-b83f-a05aa33b848c
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: DimRuralStatusId
 
 		annotation SummarizationSetBy = Automatic

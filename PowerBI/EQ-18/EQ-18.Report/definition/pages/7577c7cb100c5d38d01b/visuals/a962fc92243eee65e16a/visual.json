@@ -7,7 +7,7 @@
     "z": 8000,
     "height": 320,
     "width": 869.31596091205211,
-    "tabOrder": 18004
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -74,11 +74,11 @@
                       "Entity": "First-year Credit Accumulation"
                     }
                   },
-                  "Property": "% Half-Time Students Completing 15 Credits"
+                  "Property": "% Part-Time Students Completing 15 Credits"
                 }
               },
               "queryRef": "First-year Credit Accumulation.% HT Students Completing 15 Credits",
-              "nativeQueryRef": "% Half-Time Students Completing 15 Credits"
+              "nativeQueryRef": "% Part-Time Students Completing 15 Credits"
             }
           ]
         }
@@ -198,51 +198,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "e6a8be4edd5d20941507",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "First-year Credit Accumulation"
-              }
-            },
-            "Property": "% Full-Time Students Completing 30 Credits"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "ba5f9090a05cc3195ec8",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "First-year Credit Accumulation"
-              }
-            },
-            "Property": "% Half-Time Students Completing 15 Credits"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "1538dcb0bc5117b91dab",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimRaces"
-              }
-            },
-            "Property": "RaceEthnicity"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

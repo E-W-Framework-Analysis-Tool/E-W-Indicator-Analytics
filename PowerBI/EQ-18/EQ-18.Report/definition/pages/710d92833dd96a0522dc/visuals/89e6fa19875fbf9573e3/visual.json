@@ -86,10 +86,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Gateway Course Completion"
+                    "Entity": "First-year Program of Study"
                   }
                 },
-                "Property": "% students completing English Trend"
+                "Property": "% First-year Program of Study Trend"
               }
             },
             "direction": "Descending"

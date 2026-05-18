@@ -1,0 +1,59 @@
+table 'Career Advising'
+	lineageTag: dc64c372-d8c4-498a-ba13-ecddd4069592
+
+	measure 'Total FTE Counselors' =
+			
+			CALCULATE(
+			    SUMX(
+			        SUMMARIZE(
+			            'bi vw_FactK12StaffCounts',
+			            'bi vw_FactK12StaffCounts'[SchoolYear],
+			            'bi vw_FactK12StaffCounts'[K12StaffId]
+			            ),
+			        CALCULATE(MAX('bi vw_FactK12StaffCounts'[StaffFullTimeEquivalency]))
+			    ),
+			    'bi vw_DimK12StaffCategories'[K12StaffClassificationDescription] = "School Counselors"
+			)
+		lineageTag: 924fb696-c51c-4074-b4b2-f8c2c6daeb16
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total HS Students' = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentEnrollments'[K12StudentId]), 'bi vw_FactK12StudentEnrollments'[GradeLevelCode] IN {"09", "10", "11", "12"})
+		lineageTag: 8961a23d-fc86-49af-a485-baa8d82cc71a
+
+	measure 'Student to Counselor Ratio' = DIVIDE([Total HS Students], [Total FTE Counselors], 0)
+		formatString: 0.0
+		lineageTag: d24ca383-edc9-4ea9-81c4-264505e5dcbe
+
+	measure 'HS Career Advising Disaggregate Chart Title' =
+			
+			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
+			VAR SelectedYearTitle = "HS Students per FTE counselors " & IF(not ISBLANK([Disaggregate by]), "by '" & [Disaggregate by] & "' "," ") & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			RETURN
+			SelectedYearTitle
+		lineageTag: 01824c6f-e236-4e2a-9d33-8d69d6331a65
+
+	measure 'HS Advising Trend' =
+			
+			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineYears[SchoolYear])
+			RETURN
+			CALCULATE(
+			    [Student to Counselor Ratio],
+			    'bi vw_DimSchoolYears'[SchoolYear] = SelectedTrendYear,
+			    REMOVEFILTERS('bi vw_DimSchoolYears')
+			)
+		formatString: 0.0
+		lineageTag: 4766b13e-a88b-4f8f-a5c9-c4c15e888907
+
+	partition 'Career Advising' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

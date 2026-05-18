@@ -5,7 +5,7 @@ table 'bi vw_DimNeglectedOrDelinquentStatus'
 		dataType: int64
 		formatString: 0
 		lineageTag: 1f2b5dbc-2b91-45fb-9c30-941b62d6a2ae
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: DimNOrDStatusId
 
 		annotation SummarizationSetBy = Automatic

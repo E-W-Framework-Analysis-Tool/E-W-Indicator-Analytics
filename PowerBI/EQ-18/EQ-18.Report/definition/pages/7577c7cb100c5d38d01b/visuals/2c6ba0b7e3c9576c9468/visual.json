@@ -7,7 +7,7 @@
     "z": 7000,
     "height": 205.78522656734947,
     "width": 648.342644320298,
-    "tabOrder": 18003
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "lineChart",
@@ -56,11 +56,11 @@
                       "Entity": "First-year Credit Accumulation"
                     }
                   },
-                  "Property": "% Half-Time Students Completing 15 Credits Trend"
+                  "Property": "% Part-Time Students Completing 15 Credits Trend"
                 }
               },
               "queryRef": "First-year Credit Accumulation.% HT Students Completing 15 Credits Trend",
-              "nativeQueryRef": "% Half-Time Students Completing 15 Credits Trend"
+              "nativeQueryRef": "% Part-Time Students Completing 15 Credits Trend"
             }
           ]
         }
@@ -273,48 +273,6 @@
         },
         "type": "Advanced",
         "howCreated": "User"
-      },
-      {
-        "name": "4aa360144c027714eebe",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "TrendLineGraduationYears"
-              }
-            },
-            "Property": "CohortGraduationYear"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "e6649e4ed09b0469b9c2",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "First-year Credit Accumulation"
-              }
-            },
-            "Property": "% Full-Time Students Completing 30 Credits Trend"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "d64d59496ab303533b94",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "First-year Credit Accumulation"
-              }
-            },
-            "Property": "% Half-Time Students Completing 15 Credits Trend"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

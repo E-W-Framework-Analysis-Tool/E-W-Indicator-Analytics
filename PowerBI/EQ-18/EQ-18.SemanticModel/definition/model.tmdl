@@ -10,7 +10,7 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_ProTooling = ["DevMode"]
 
-annotation PBI_QueryOrder = ["bi vw_DimCipCodes","bi vw_DimCohortGraduationYears","bi vw_DimCohortYears","bi vw_DimDisabilityStatuses","bi vw_DimEconomicallyDisadvantagedStatuses","bi vw_DimEnglishLearnerStatuses","bi vw_DimFosterCareStatuses","bi vw_DimHomelessnessStatuses","bi vw_DimK12Demographics","bi vw_DimK12Schools","bi vw_DimNeglectedOrDelinquentStatus","bi vw_DimPsAcademicAwardStatuses","bi vw_DimPsAcademicAwardTitles","bi vw_DimPsEnrollmentStatuses","bi vw_DimRaces","bi vw_DimRuralStatuses","bi vw_DimSchoolYears","bi vw_DimStudents","Globals","reporting RDS_FactK12GraduationCohorts","reporting RDS_FactPsStudentAcademicAwards","reporting RDS_FactPsStudentCourseTranscripts","reporting RDS_FactPsStudentEnrollments","reporting RDS_DimStudents","reporting RDS_DimPsInstitutions","First-year Program of Study","First-year Credit Accumulation","reporting RDS_DimPsCourses","Gateway Course Completion"]
+annotation PBI_QueryOrder = ["bi vw_DimCipCodes","bi vw_DimCohortGraduationYears","bi vw_DimCohortYears","bi vw_DimDisabilityStatuses","bi vw_DimEconomicallyDisadvantagedStatuses","bi vw_DimEnglishLearnerStatuses","bi vw_DimFosterCareStatuses","bi vw_DimHomelessnessStatuses","bi vw_DimK12Demographics","bi vw_DimK12Schools","bi vw_DimNeglectedOrDelinquentStatus","bi vw_DimPsAcademicAwardStatuses","bi vw_DimPsAcademicAwardTitles","bi vw_DimPsEnrollmentStatuses","bi vw_DimRaces","bi vw_DimRuralStatuses","bi vw_DimSchoolYears","bi vw_DimStudents","Globals","reporting RDS_FactK12GraduationCohorts","reporting RDS_FactPsStudentAcademicAwards","reporting RDS_FactPsStudentCourseTranscripts","reporting RDS_FactPsStudentEnrollments","reporting RDS_DimStudents","reporting RDS_DimPsInstitutions","First-year Program of Study","First-year Credit Accumulation","reporting RDS_DimPsCourses","Gateway Course Completion","bi vw_FactK12StaffCounts","reporting RDS_FactPsStaffCounts","Career Advising","bi vw_DimK12StaffCategories","bi vw_FactK12StudentEnrollments","bi vw_DimGradeLevels"]
 
 ref table 'bi vw_DimCipCodes'
 ref table 'bi vw_DimCohortGraduationYears'
@@ -54,6 +54,13 @@ ref table 'reporting RDS_DimPsCourses'
 ref table LocalDateTable_718b8c1f-acd9-4260-8e77-edd0665a6542
 ref table LocalDateTable_11dc8671-67ed-4198-92f7-a15ba924017a
 ref table 'Gateway Course Completion'
+ref table 'bi vw_FactK12StaffCounts'
+ref table 'reporting RDS_FactPsStaffCounts'
+ref table 'Career Advising'
+ref table 'bi vw_DimK12StaffCategories'
+ref table 'bi vw_FactK12StudentEnrollments'
+ref table 'bi vw_DimGradeLevels'
+ref table TrendLineYears
 
 ref cultureInfo en-US
 

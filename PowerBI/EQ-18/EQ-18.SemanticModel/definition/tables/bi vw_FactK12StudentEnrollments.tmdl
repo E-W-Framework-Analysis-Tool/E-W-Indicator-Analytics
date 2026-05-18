@@ -1,0 +1,128 @@
+table 'bi vw_FactK12StudentEnrollments'
+	lineageTag: 4b249341-060f-4982-8e5c-5e38473da0e1
+
+	column CohortYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 43e70a28-4a70-44dc-b608-feab98c8fc0b
+		summarizeBy: none
+		sourceColumn: CohortYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column SchoolYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 6fb5013a-ab39-4e06-b99c-2825f0150934
+		summarizeBy: none
+		sourceColumn: SchoolYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column CohortGraduationYear
+		dataType: int64
+		formatString: 0
+		lineageTag: e7e74224-4740-48ba-ad2e-f2f875b562e4
+		summarizeBy: none
+		sourceColumn: CohortGraduationYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column K12SchoolId
+		dataType: int64
+		formatString: 0
+		lineageTag: e7b92684-e1ca-4d7b-949a-f09e13230097
+		summarizeBy: none
+		sourceColumn: K12SchoolId
+
+		annotation SummarizationSetBy = Automatic
+
+	column K12StudentId
+		dataType: int64
+		formatString: 0
+		lineageTag: 8c3d491f-d280-4153-adcf-f63a1c130a80
+		summarizeBy: count
+		sourceColumn: K12StudentId
+
+		annotation SummarizationSetBy = Automatic
+
+	column GradeLevelCode
+		dataType: string
+		lineageTag: e46cb8d6-4be8-43d8-b65b-a02c40c32c38
+		summarizeBy: none
+		sourceColumn: GradeLevelCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column EnglishLearnerStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: f5e35a83-c4a4-415c-8bc1-b6a66b91e633
+		summarizeBy: none
+		sourceColumn: EnglishLearnerStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column HomelessnessStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: 6e50264c-dd18-4d77-9316-ea428b1b6489
+		summarizeBy: none
+		sourceColumn: HomelessnessStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column EconomicallyDisadvantagedStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: 081d44c3-b247-45b2-8a97-db445fc8b298
+		summarizeBy: none
+		sourceColumn: EconomicallyDisadvantagedStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column FosterCareStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: 87f9c83f-5269-4d80-ba1d-3090c200ba54
+		summarizeBy: none
+		sourceColumn: FosterCareStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOrDStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: e4e275bb-533c-44ed-bf2a-d01d414bdbe6
+		summarizeBy: none
+		sourceColumn: NOrDStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column DisabilityStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: 2ed92166-015c-4462-8aea-aa9248b6d191
+		summarizeBy: none
+		sourceColumn: DisabilityStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column RuralStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: 688a5b80-5c27-4be2-a890-a87e76221ea4
+		summarizeBy: none
+		sourceColumn: RuralStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bi vw_FactK12StudentEnrollments' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    bi_vw_FactK12StudentEnrollments = Source{[Schema="bi",Item="vw_FactK12StudentEnrollments"]}[Data]
+				in
+				    bi_vw_FactK12StudentEnrollments
+
