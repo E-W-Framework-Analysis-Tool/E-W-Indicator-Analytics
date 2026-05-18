@@ -4,10 +4,10 @@
   "position": {
     "x": 0,
     "y": 400,
-    "z": 9000,
+    "z": 8000,
     "height": 320,
     "width": 869.31596091205211,
-    "tabOrder": 18004
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -184,37 +184,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "4e21d713cbd1d680ec9c",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimRaces"
-              }
-            },
-            "Property": "RaceEthnicity"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "42dcdbe8607ce40de085",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "First-year Program of Study"
-              }
-            },
-            "Property": "% Students 9+ Meta-Major Credits"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

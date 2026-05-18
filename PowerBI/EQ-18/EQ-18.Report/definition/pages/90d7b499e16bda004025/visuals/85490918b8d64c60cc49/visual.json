@@ -4,10 +4,10 @@
   "position": {
     "x": 0,
     "y": 193.26364692218351,
-    "z": 7000,
+    "z": 6000,
     "height": 205,
     "width": 631,
-    "tabOrder": 18002
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -145,37 +145,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "e9059c1904dd15e9567c",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimK12Schools"
-              }
-            },
-            "Property": "SeaOrganizationName"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "bc256ed51961ad67c8eb",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "First-year Program of Study"
-              }
-            },
-            "Property": "% Students 9+ Meta-Major Credits"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

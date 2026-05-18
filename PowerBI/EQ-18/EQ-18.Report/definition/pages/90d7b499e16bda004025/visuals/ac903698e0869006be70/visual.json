@@ -4,10 +4,10 @@
   "position": {
     "x": 631.657355679702,
     "y": 193.07262569832403,
-    "z": 8000,
+    "z": 7000,
     "height": 205.78522656734947,
     "width": 648.342644320298,
-    "tabOrder": 18003
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "lineChart",
@@ -259,34 +259,6 @@
         },
         "type": "Advanced",
         "howCreated": "User"
-      },
-      {
-        "name": "0f2ffc57081ea6e4ecae",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "TrendLineGraduationYears"
-              }
-            },
-            "Property": "CohortGraduationYear"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "89d6b58a30301156149a",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "First-year Program of Study"
-              }
-            },
-            "Property": "% First-year Program of Study Trend"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

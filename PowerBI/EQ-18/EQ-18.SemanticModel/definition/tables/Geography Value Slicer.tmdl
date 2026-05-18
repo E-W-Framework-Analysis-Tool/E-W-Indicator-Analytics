@@ -20,7 +20,7 @@ table 'Geography Value Slicer'
 	column K12SchoolId
 		formatString: 0
 		lineageTag: 0317975e-568c-407e-8e17-cf8d673e0072
-		summarizeBy: count
+		summarizeBy: none
 		isNameInferred
 		sourceColumn: [K12SchoolId]
 

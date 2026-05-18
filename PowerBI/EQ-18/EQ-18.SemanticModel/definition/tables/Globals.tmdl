@@ -151,7 +151,7 @@ table Globals
 			```
 		lineageTag: ab574ddc-5970-426f-808b-d0939853913d
 
-	measure 'Disaggregate by' = CONCATENATE(VALUES(Disaggregation[Disaggregation Name]), "")
+	measure 'Disaggregate by' = CONCATENATE(DISTINCT(Disaggregation[Disaggregation Name]), "")
 		lineageTag: 820fa33a-27b7-44ca-b9f0-d81c14801b99
 
 	measure 'Total Cohort Students' = DISTINCTCOUNT('reporting RDS_FactK12GraduationCohorts'[K12StudentId])
