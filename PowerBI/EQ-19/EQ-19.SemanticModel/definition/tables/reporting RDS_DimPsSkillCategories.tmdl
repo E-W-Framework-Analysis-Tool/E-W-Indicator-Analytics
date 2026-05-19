@@ -1,0 +1,29 @@
+table 'reporting RDS_DimPsSkillCategories'
+	lineageTag: 5458eb86-9a8a-42b6-9f66-1510af2cd37c
+
+	column DimPsSkillCategoryId
+		dataType: int64
+		formatString: 0
+		lineageTag: 5fc9e1b8-8a33-417a-9535-5d1fa7a31bbd
+		summarizeBy: none
+		sourceColumn: DimPsSkillCategoryId
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Skill Category'
+		dataType: string
+		lineageTag: 89c27662-f245-4c0b-8a8c-a09286730e1c
+		summarizeBy: none
+		sourceColumn: Skill Category
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'reporting RDS_DimPsSkillCategories' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    reporting_RDS_DimPsSkillCategories = Source{[Schema="reporting",Item="RDS_DimPsSkillCategories"]}[Data]
+				in
+				    reporting_RDS_DimPsSkillCategories
+

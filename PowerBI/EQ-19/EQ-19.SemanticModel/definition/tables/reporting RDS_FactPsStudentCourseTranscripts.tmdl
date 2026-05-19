@@ -89,6 +89,15 @@ table 'reporting RDS_FactPsStudentCourseTranscripts'
 
 		annotation SummarizationSetBy = Automatic
 
+	column UniversityPsCourseId
+		dataType: int64
+		formatString: 0
+		lineageTag: 81791957-c3af-4244-b451-9881380d3322
+		summarizeBy: count
+		sourceColumn: UniversityPsCourseId
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'reporting RDS_FactPsStudentCourseTranscripts' = m
 		mode: import
 		source =

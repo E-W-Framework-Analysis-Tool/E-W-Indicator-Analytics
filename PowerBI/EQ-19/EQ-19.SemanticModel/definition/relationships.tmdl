@@ -120,3 +120,21 @@ relationship 11eac2aa-c70e-cc2a-4549-dbb80a699b75
 	fromColumn: 'bi vw_DimPsAcademicAwardStatuses'.CredentialType
 	toColumn: 'Credential Type'.Mapping-Value
 
+relationship AutoDetected_a1fb9859-bfbf-47f7-8f47-aeb61a72b59e
+	isActive: false
+	fromColumn: 'bi vw_FactPsSkills'.SchoolYear
+	toColumn: 'bi vw_DimSchoolYears'.SchoolYear
+
+relationship 914c0814-4ac9-6118-0770-efd39e4aaae1
+	isActive: false
+	fromColumn: 'bi vw_FactPsSkills'.K12SchoolId
+	toColumn: 'bi vw_DimK12Schools'.DimK12SchoolId
+
+relationship 0747ee3e-7c42-d046-9ae5-7ac0b73ff8c3
+	fromColumn: 'bi vw_FactPsSkills'.SkillCategoryId
+	toColumn: 'reporting RDS_DimPsSkillCategories'.DimPsSkillCategoryId
+
+relationship a3fb1589-7db2-86dc-b189-badc15f22778
+	fromColumn: 'bi vw_FactPsSkills'.PsStudentId
+	toColumn: 'reporting RDS_FactK12GraduationCohorts'.K12StudentId
+

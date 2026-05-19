@@ -1,0 +1,90 @@
+table 'Skills Proficiency'
+	lineageTag: fa198077-7ebe-4f3f-9f9d-d8803c30811f
+
+	measure ProficientStudents_Digital =
+			
+			CALCULATE(
+			    DISTINCTCOUNT('bi vw_FactPsSkills'[PsStudentId]),
+			    'bi vw_FactPsSkills'[IsProficient] = TRUE,
+			    'reporting RDS_DimPsSkillCategories'[Skill Category] = "Digital"
+			)
+		formatString: 0
+		lineageTag: 8dffb6a8-89a7-47d8-a495-95d567a938b4
+
+	measure ProficientStudents_Communication =
+			
+			CALCULATE(
+			    DISTINCTCOUNT('bi vw_FactPsSkills'[PsStudentId]),
+			    'bi vw_FactPsSkills'[IsProficient] = TRUE,
+			    'reporting RDS_DimPsSkillCategories'[Skill Category] = "Communication"
+			)
+		formatString: 0
+		lineageTag: 29a86cf3-dd46-4eb5-9031-aab969904cde
+
+	measure ProficientStudents_HigherOrderThinking =
+			
+			CALCULATE(
+			    DISTINCTCOUNT('bi vw_FactPsSkills'[PsStudentId]),
+			    'bi vw_FactPsSkills'[IsProficient] = TRUE,
+			    'reporting RDS_DimPsSkillCategories'[Skill Category] = "Higher-Order Thinking"
+			)
+		formatString: 0
+		lineageTag: 205f11c8-d1a6-4505-9fe4-2514fcd8bb08
+
+	measure '% Proficiency in Digital' =
+			
+			VAR Result = DIVIDE('Skills Proficiency'[ProficientStudents_Digital], [HS Graduates], 0)
+			RETURN IF(Result >= 1, 1, Result)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 5bafe0b7-4bc1-4db5-b7ca-a05513f48d78
+
+	measure '% Proficiency in Communication' =
+			
+			VAR Result = DIVIDE('Skills Proficiency'[ProficientStudents_Communication], [HS Graduates], 0)
+			RETURN IF(Result >= 1, 1, Result)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: bcb17c8c-8bed-48c3-81e8-ed25214fa4f3
+
+	measure '% Proficiency in Higher-Order Thinking' =
+			
+			VAR Result = DIVIDE('Skills Proficiency'[ProficientStudents_HigherOrderThinking], [HS Graduates], 0)
+			RETURN IF(Result >= 1, 1, Result)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 8cfb94d2-d024-4dfa-8e64-3c3f76491850
+
+	measure 'Digital Skill Disaggregate Chart Title' =
+			
+			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
+			VAR SelectedYearTitle = "Proficient in Digital Skills " & IF(not ISBLANK([Disaggregate by]), "by '" & [Disaggregate by] & "' "," ") & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			RETURN
+			SelectedYearTitle
+		lineageTag: 2ee14466-8c2c-47fa-9665-f85acb628d7d
+
+	measure 'Communication Skill Disaggregate Chart Title' =
+			
+			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
+			VAR SelectedYearTitle = "Proficient in Communication Skills " & IF(not ISBLANK([Disaggregate by]), "by '" & [Disaggregate by] & "' "," ") & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			RETURN
+			SelectedYearTitle
+		lineageTag: 50cc7f3a-8f90-406e-a8df-9e1f8035a0b6
+
+	measure 'HighOrderThinking Skill Disaggregate Chart Title' =
+			
+			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
+			VAR SelectedYearTitle = "Proficient in Higher-Order Thinking Skills " & IF(not ISBLANK([Disaggregate by]), "by '" & [Disaggregate by] & "' "," ") & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			RETURN
+			SelectedYearTitle
+		lineageTag: d904f4c7-7219-45b5-af25-f78d8f2dca5a
+
+	partition 'Skills Proficiency' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
