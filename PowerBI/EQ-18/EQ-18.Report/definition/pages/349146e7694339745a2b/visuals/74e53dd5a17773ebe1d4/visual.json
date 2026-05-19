@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
-  "name": "3768779c7be339a21029",
+  "name": "74e53dd5a17773ebe1d4",
   "position": {
-    "x": 0,
+    "x": 640,
     "y": 255.38829151732378,
-    "z": 250,
+    "z": 125,
     "height": 227.86140979689367,
     "width": 640,
-    "tabOrder": 6000
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "columnChart",
@@ -59,11 +59,11 @@
                       "Entity": "Career Advising"
                     }
                   },
-                  "Property": "HS Student to Counselor Ratio"
+                  "Property": "PS Student to Counselor Ratio"
                 }
               },
-              "queryRef": "Career Advising.Student to Counselor Ratio",
-              "nativeQueryRef": "HS Student to Counselor Ratio"
+              "queryRef": "Career Advising.PS Student to Counselor Ratio",
+              "nativeQueryRef": "PS Student to Counselor Ratio"
             }
           ]
         }
@@ -78,7 +78,7 @@
                     "Entity": "Career Advising"
                   }
                 },
-                "Property": "HS Student to Counselor Ratio"
+                "Property": "PS Student to Counselor Ratio"
               }
             },
             "direction": "Descending"
@@ -126,6 +126,24 @@
             }
           }
         }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -140,7 +158,7 @@
                       "Entity": "Career Advising"
                     }
                   },
-                  "Property": "HS Career Advising Chart Title"
+                  "Property": "PS Career Advising Chart Title"
                 }
               }
             },
@@ -160,7 +178,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "b2a481255207a41ae5a0",
+        "name": "27e4da9fb02384136bc9",
         "field": {
           "Measure": {
             "Expression": {
@@ -168,13 +186,13 @@
                 "Entity": "Career Advising"
               }
             },
-            "Property": "HS Student to Counselor Ratio"
+            "Property": "PS Student to Counselor Ratio"
           }
         },
         "type": "Advanced"
       },
       {
-        "name": "e878f83d746ff0de14a2",
+        "name": "e884f0b9dbfd50072d63",
         "field": {
           "Column": {
             "Expression": {

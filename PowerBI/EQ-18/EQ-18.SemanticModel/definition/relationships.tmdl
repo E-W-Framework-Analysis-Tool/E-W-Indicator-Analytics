@@ -124,17 +124,9 @@ relationship AutoDetected_e1ebd98d-f4f1-403e-8019-e77596a1e6da
 	fromColumn: 'bi vw_FactK12StaffCounts'.SchoolYear
 	toColumn: 'bi vw_DimSchoolYears'.SchoolYear
 
-relationship AutoDetected_7036ffb9-a6f3-4c39-bc1f-0a10ac2ddde0
-	fromColumn: 'reporting RDS_FactPsStaffCounts'.SchoolYear
-	toColumn: 'bi vw_DimSchoolYears'.SchoolYear
-
 relationship 10c4af26-bc06-8e3b-8fae-3090c6ab6f20
 	fromColumn: 'bi vw_FactK12StaffCounts'.K12SchoolId
 	toColumn: 'bi vw_DimK12Schools'.DimK12SchoolId
-
-relationship 6a772bde-7161-8747-4c2f-ee6399d3f159
-	fromColumn: 'reporting RDS_FactPsStaffCounts'.PsInstitutionId
-	toColumn: 'reporting RDS_DimPsInstitutions'.DimPsInstitutionId
 
 relationship 1e6a104e-05ee-106b-d4a8-e5d5c724ee6d
 	fromColumn: 'bi vw_FactK12StaffCounts'.K12StaffCategoryId
@@ -204,4 +196,16 @@ relationship adf16e2a-f5af-28b8-6133-7c64ba7006d8
 relationship 04712cf3-6d31-f84a-2e5b-952871134154
 	fromColumn: 'Geography Value Slicer'.'Organization Hierarchy'
 	toColumn: 'Hierarchy Picker'.'Organization Hierarchy'
+
+relationship AutoDetected_b1b6a78c-a13f-456c-9881-e235f0edaa75
+	fromColumn: 'bi vw_PSStaffCounts'.SchoolYear
+	toColumn: 'bi vw_DimSchoolYears'.SchoolYear
+
+relationship 73d2f12c-417f-3d50-b46b-9c55acf52b2e
+	fromColumn: 'bi vw_PSStaffCounts'.K12SchoolId
+	toColumn: 'bi vw_DimK12Schools'.DimK12SchoolId
+
+relationship ec65b752-f247-2dba-9cf1-1c80d2378c81
+	fromColumn: 'bi vw_PSStaffCounts'.PsStudentId
+	toColumn: 'bi vw_DimStudents'.DimK12StudentId
 

@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
-  "name": "5b2a4715987bde1949b6",
+  "name": "cadd27f5653dafec2a4e",
   "position": {
-    "x": 0,
+    "x": 640,
     "y": 481.72043010752685,
-    "z": 0,
-    "height": 237.80167264038232,
+    "z": 500,
+    "height": 238.5663082437276,
     "width": 640,
-    "tabOrder": 4000
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "lineChart",
@@ -77,11 +77,11 @@
                       "Entity": "Career Advising"
                     }
                   },
-                  "Property": "HS Advising Trend"
+                  "Property": "PS Advising Trend"
                 }
               },
-              "queryRef": "Career Advising.HS Advising Trend",
-              "nativeQueryRef": "HS Advising Trend"
+              "queryRef": "Career Advising.PS Advising Trend",
+              "nativeQueryRef": "PS Advising Trend"
             }
           ]
         }
@@ -96,7 +96,7 @@
                     "Entity": "Career Advising"
                   }
                 },
-                "Property": "HS Advising Trend"
+                "Property": "PS Advising Trend"
               }
             },
             "direction": "Descending"
@@ -227,7 +227,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'HS Students per FTE counselors per year'"
+                  "Value": "'PS Students per FTE counselors per year'"
                 }
               }
             },
@@ -280,6 +280,48 @@
         },
         "type": "Advanced",
         "howCreated": "User"
+      },
+      {
+        "name": "5f1d43e314a3428d7256",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "TrendLineYears"
+              }
+            },
+            "Property": "SchoolYear"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d7c2f66cd6be469a536e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Career Advising"
+              }
+            },
+            "Property": "PS Advising Trend"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c96e58dbc516f05d8108",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bi vw_DimK12Schools"
+              }
+            },
+            "Property": "SeaOrganizationName"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

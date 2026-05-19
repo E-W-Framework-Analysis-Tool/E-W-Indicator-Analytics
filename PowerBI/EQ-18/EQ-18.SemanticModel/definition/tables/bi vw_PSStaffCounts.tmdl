@@ -1,28 +1,37 @@
-table 'reporting RDS_FactPsStaffCounts'
-	lineageTag: d6bc5922-cf6d-4432-aa42-a60fbfe74754
+table 'bi vw_PSStaffCounts'
+	lineageTag: 9f4d9ba7-3d30-46fa-bce3-5a4c755751aa
 
 	column SchoolYear
 		dataType: int64
 		formatString: 0
-		lineageTag: 514bbfe5-8d3f-4a75-a988-7f2950f5853f
+		lineageTag: d480a5ac-9954-4169-bf66-dcf7cf639444
 		summarizeBy: none
 		sourceColumn: SchoolYear
 
 		annotation SummarizationSetBy = Automatic
 
-	column PsInstitutionId
+	column K12SchoolId
 		dataType: int64
 		formatString: 0
-		lineageTag: 2e411f49-17e0-4654-9da8-163fcceabaf3
+		lineageTag: f0923665-8eba-4aa1-8cc3-29237199801f
 		summarizeBy: none
-		sourceColumn: PsInstitutionId
+		sourceColumn: K12SchoolId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PsStudentId
+		dataType: int64
+		formatString: 0
+		lineageTag: 2c180567-c4fd-4d27-9ba7-05a2b96fcd41
+		summarizeBy: none
+		sourceColumn: PsStudentId
 
 		annotation SummarizationSetBy = Automatic
 
 	column PsStaffId
 		dataType: int64
 		formatString: 0
-		lineageTag: 0d457f40-e7cf-4e4c-a38b-c0ef657f2e52
+		lineageTag: 6b3210e9-aaf8-4ab2-a352-95d4020095b4
 		summarizeBy: count
 		sourceColumn: PsStaffId
 
@@ -30,7 +39,7 @@ table 'reporting RDS_FactPsStaffCounts'
 
 	column StaffEquivalency
 		dataType: double
-		lineageTag: cce99947-6e34-4a4c-a57c-e24b21651daf
+		lineageTag: 3a4e753d-5a0d-4cf8-a642-0b7b15ed57c6
 		summarizeBy: sum
 		sourceColumn: StaffEquivalency
 
@@ -38,12 +47,12 @@ table 'reporting RDS_FactPsStaffCounts'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	partition 'reporting RDS_FactPsStaffCounts' = m
+	partition 'bi vw_PSStaffCounts' = m
 		mode: import
 		source =
 				let
 				    Source = Sql.Database("localhost,14331", "Dashboards"),
-				    reporting_RDS_FactPsStaffCounts = Source{[Schema="reporting",Item="RDS_FactPsStaffCounts"]}[Data]
+				    bi_vw_PSStaffCounts = Source{[Schema="bi",Item="vw_PSStaffCounts"]}[Data]
 				in
-				    reporting_RDS_FactPsStaffCounts
+				    bi_vw_PSStaffCounts
 

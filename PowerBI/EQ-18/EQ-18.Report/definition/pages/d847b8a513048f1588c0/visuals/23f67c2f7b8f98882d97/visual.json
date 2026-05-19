@@ -67,7 +67,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''bi vw_DimK12Schools''[SeaOrganizationName]'"
+                                "Value": "'''bi vw_DimK12Schools''[LeaOrganizationName]'"
                               }
                             }
                           ]
@@ -95,7 +95,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''bi vw_DimK12Schools''[SeaOrganizationName]'"
+                                      "Value": "'''bi vw_DimK12Schools''[LeaOrganizationName]'"
                                     }
                                   }
                                 ]
@@ -119,7 +119,7 @@
                         },
                         "valueMap": [
                           {
-                            "0": "SEA"
+                            "0": "LEA"
                           }
                         ]
                       }

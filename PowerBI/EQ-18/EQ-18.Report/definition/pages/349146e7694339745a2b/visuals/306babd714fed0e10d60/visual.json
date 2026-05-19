@@ -17778,7 +17778,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "EQ18: Are students experiencing sufficient early momentum in postsecondary education to be on track for on-time completion?",
+                    "value": " EQ18: Are students experiencing sufficient early momentum in postsecondary education to be on track for on-time completion?",
                     "textStyle": {
                       "color": "#000000"
                     }
@@ -17788,14 +17788,14 @@
               {
                 "textRuns": [
                   {
-                    "value": "Indicator:",
+                    "value": " Indicator: ",
                     "textStyle": {
                       "fontStyle": "italic",
                       "color": "#000000"
                     }
                   },
                   {
-                    "value": " Gateway Course Completion - Completion of college-level introductory math and English courses, as defined by each postsecondary institution, during the first year of college.",
+                    "value": "Access to college and career advising - College and career counseling services are available in high schools and college campuses.",
                     "textStyle": {
                       "color": "#000000"
                     }

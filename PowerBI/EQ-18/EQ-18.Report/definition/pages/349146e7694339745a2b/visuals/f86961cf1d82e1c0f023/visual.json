@@ -3,10 +3,10 @@
   "name": "f86961cf1d82e1c0f023",
   "position": {
     "x": 0,
-    "y": 138.95274584929757,
+    "y": 199.56989247311827,
     "z": 5000,
-    "height": 55.581098339719034,
-    "width": 1280,
+    "height": 55.818399044205492,
+    "width": 640,
     "tabOrder": 3000
   },
   "visual": {
@@ -45,7 +45,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of first-year college students who complete college-level introductory math and English courses within their first year'"
+                  "Value": "'K–12: Ratio of number of students to number of full-time equivalent (FTE) counselors. '"
                 }
               }
             },
@@ -71,7 +71,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of first-year college students who complete college-level introductory math and English courses within their first year'"
+                  "Value": "'K–12: Ratio of number of students to number of full-time equivalent (FTE) counselors. '"
                 }
               }
             }
@@ -85,13 +85,27 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of first-year college students who complete college-level introductory math and English courses within their first year'"
+                  "Value": "'K–12: Ratio of number of students to number of full-time equivalent (FTE) counselors. '"
                 }
               }
             }
           },
           "selector": {
             "id": "selected"
+          }
+        },
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'K–12: Ratio of number of students to number of full-time equivalent (FTE) counselors. '"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "disabled"
           }
         }
       ],

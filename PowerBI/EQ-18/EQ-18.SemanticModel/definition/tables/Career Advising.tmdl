@@ -1,7 +1,7 @@
 table 'Career Advising'
 	lineageTag: dc64c372-d8c4-498a-ba13-ecddd4069592
 
-	measure 'Total FTE Counselors' =
+	measure 'Total HS FTE Counselors' =
 			
 			CALCULATE(
 			    SUMX(
@@ -21,7 +21,7 @@ table 'Career Advising'
 	measure 'Total HS Students' = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentEnrollments'[K12StudentId]), 'bi vw_FactK12StudentEnrollments'[GradeLevelCode] IN {"09", "10", "11", "12"})
 		lineageTag: 8961a23d-fc86-49af-a485-baa8d82cc71a
 
-	measure 'Student to Counselor Ratio' = DIVIDE([Total HS Students], [Total FTE Counselors], 0)
+	measure 'HS Student to Counselor Ratio' = DIVIDE([Total HS Students], [Total HS FTE Counselors], 0)
 		formatString: 0.0
 		lineageTag: d24ca383-edc9-4ea9-81c4-264505e5dcbe
 
@@ -38,12 +38,65 @@ table 'Career Advising'
 			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineYears[SchoolYear])
 			RETURN
 			CALCULATE(
-			    [Student to Counselor Ratio],
+			    [HS Student to Counselor Ratio],
 			    'bi vw_DimSchoolYears'[SchoolYear] = SelectedTrendYear,
 			    REMOVEFILTERS('bi vw_DimSchoolYears')
 			)
 		formatString: 0.0
 		lineageTag: 4766b13e-a88b-4f8f-a5c9-c4c15e888907
+
+	measure 'HS Career Advising Chart Title' =
+			
+			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
+			VAR SelectedYearTitle = "HS Students per FTE counselors " & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			RETURN
+			SelectedYearTitle
+		lineageTag: 0dcf28ab-b4da-4c15-b198-9aacc4c19ea2
+
+	measure 'Total PS FTE Counselors' =
+			
+			CALCULATE(
+			    SUMX(
+			        SUMMARIZE(
+			            'bi vw_PSStaffCounts',
+			            'bi vw_PSStaffCounts'[SchoolYear],
+			            'bi vw_PSStaffCounts'[PsStaffId]
+			            ),
+			        CALCULATE(MAX('bi vw_PSStaffCounts'[StaffEquivalency]))
+			    )
+			)
+		formatString: 0
+		lineageTag: 36d20d4a-673d-427a-a06d-84d1ccc7df76
+
+	measure 'Total PS Students' = CALCULATE(DISTINCTCOUNT('reporting RDS_FactPsStudentEnrollments'[PsStudentId]))
+		formatString: 0
+		lineageTag: bbd40317-368a-4f05-8374-9a5c34bcf1ad
+
+	measure 'PS Student to Counselor Ratio' = DIVIDE([Total PS Students], [Total PS FTE Counselors], 0)
+		lineageTag: bf524010-a5a8-4cdb-a587-7c4619c55471
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'PS Advising Trend' =
+			
+			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineYears[SchoolYear])
+			RETURN
+			CALCULATE(
+			    [PS Student to Counselor Ratio],
+			    'bi vw_DimSchoolYears'[SchoolYear] = SelectedTrendYear,
+			    REMOVEFILTERS('bi vw_DimSchoolYears')
+			)
+		lineageTag: 712bbcc1-c58f-49a4-8ed1-fd2fd516878b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'PS Career Advising Chart Title' =
+			
+			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
+			VAR SelectedYearTitle = "PS Students per FTE counselors " & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			RETURN
+			SelectedYearTitle
+		lineageTag: 353e3aab-9d61-4533-b543-96d737280916
 
 	partition 'Career Advising' = m
 		mode: import

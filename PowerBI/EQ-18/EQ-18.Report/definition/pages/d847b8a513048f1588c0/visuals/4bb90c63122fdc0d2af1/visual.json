@@ -23,12 +23,12 @@
                       "Entity": "bi vw_DimK12Schools"
                     }
                   },
-                  "Property": "SeaOrganizationName"
+                  "Property": "LeaOrganizationName"
                 }
               },
-              "queryRef": "bi vw_DimK12Schools.SeaOrganizationName",
-              "nativeQueryRef": "SEA",
-              "displayName": "SEA"
+              "queryRef": "bi vw_DimK12Schools.LeaOrganizationName",
+              "nativeQueryRef": "LEA",
+              "displayName": "LEA"
             },
             {
               "field": {
@@ -52,7 +52,7 @@
                       "Entity": "Career Advising"
                     }
                   },
-                  "Property": "Total FTE Counselors"
+                  "Property": "Total HS FTE Counselors"
                 }
               },
               "queryRef": "Career Advising.Total FTE Counselors",
@@ -66,11 +66,25 @@
                       "Entity": "Career Advising"
                     }
                   },
-                  "Property": "Student to Counselor Ratio"
+                  "Property": "Total PS Students"
                 }
               },
-              "queryRef": "Career Advising.Student to Counselor Ratio",
-              "nativeQueryRef": "Student to Counselor Ratio"
+              "queryRef": "Career Advising.Total PS Students",
+              "nativeQueryRef": "Total PS Students"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Career Advising"
+                    }
+                  },
+                  "Property": "Total PS FTE Counselors"
+                }
+              },
+              "queryRef": "Career Advising.Total PS FTE Counselors",
+              "nativeQueryRef": "Total PS FTE Counselors"
             }
           ],
           "fieldParameters": [

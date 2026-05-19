@@ -5,7 +5,7 @@ table 'bi vw_DimStudents'
 		dataType: int64
 		formatString: 0
 		lineageTag: 107d07f8-bb0e-4890-8cea-835f6a8d29ca
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: DimK12StudentId
 
 		annotation SummarizationSetBy = Automatic
@@ -14,7 +14,7 @@ table 'bi vw_DimStudents'
 		dataType: int64
 		formatString: 0
 		lineageTag: e067fd04-867e-405b-9c82-285a9211e9aa
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: K12DemographicId
 
 		annotation SummarizationSetBy = Automatic
@@ -23,7 +23,7 @@ table 'bi vw_DimStudents'
 		dataType: int64
 		formatString: 0
 		lineageTag: 8d755319-6c59-4761-bb4a-8e71e26108b8
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: RaceId
 
 		annotation SummarizationSetBy = Automatic
