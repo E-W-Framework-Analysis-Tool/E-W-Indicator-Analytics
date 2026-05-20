@@ -1,0 +1,57 @@
+table 'reporting RDS_FactEconomicReturn'
+	lineageTag: e0a0b4e2-8d9e-4af9-ac2a-d9f8c7468518
+
+	column SchoolYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 3a073e8c-9b4a-4a90-be6f-dbec3198b75a
+		summarizeBy: none
+		sourceColumn: SchoolYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column K12StudentId
+		dataType: int64
+		formatString: 0
+		lineageTag: 10b4e2eb-0733-4509-8760-93728f386493
+		summarizeBy: count
+		sourceColumn: K12StudentId
+
+		annotation SummarizationSetBy = Automatic
+
+	column K12SchoolId
+		dataType: int64
+		formatString: 0
+		lineageTag: b0caa490-8243-4d16-86e0-b760e5ef1ab4
+		summarizeBy: none
+		sourceColumn: K12SchoolId
+
+		annotation SummarizationSetBy = Automatic
+
+	column StudentCategory
+		dataType: int64
+		formatString: 0
+		lineageTag: ae658aba-0045-4235-80f0-86ec8dd5dcbc
+		summarizeBy: none
+		sourceColumn: StudentCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column MeetingEconomicReturn
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f1f0ff9-7433-4e1e-972c-b0d6dc44d34d
+		summarizeBy: sum
+		sourceColumn: MeetingEconomicReturn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'reporting RDS_FactEconomicReturn' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    reporting_RDS_FactEconomicReturn = Source{[Schema="reporting",Item="RDS_FactEconomicReturn"]}[Data]
+				in
+				    reporting_RDS_FactEconomicReturn
+

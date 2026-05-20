@@ -138,3 +138,15 @@ relationship a3fb1589-7db2-86dc-b189-badc15f22778
 	fromColumn: 'bi vw_FactPsSkills'.PsStudentId
 	toColumn: 'reporting RDS_FactK12GraduationCohorts'.K12StudentId
 
+relationship AutoDetected_db5f13bb-601a-4977-bfb1-7c1e94201c2d
+	fromColumn: 'reporting RDS_FactEconomicReturn'.SchoolYear
+	toColumn: 'bi vw_DimSchoolYears'.SchoolYear
+
+relationship d10b204a-836d-17bf-e1bf-7a0ba5347a68
+	fromColumn: 'reporting RDS_FactEconomicReturn'.K12SchoolId
+	toColumn: 'bi vw_DimK12Schools'.DimK12SchoolId
+
+relationship aadfd1b7-6f91-fb9f-ba7b-ef793bfbbe2a
+	fromColumn: 'reporting RDS_FactEconomicReturn'.StudentCategory
+	toColumn: 'reporting RDS_DimEconomicReturnStudentCategory'.DimEconomicReturnStudentCategoryId
+

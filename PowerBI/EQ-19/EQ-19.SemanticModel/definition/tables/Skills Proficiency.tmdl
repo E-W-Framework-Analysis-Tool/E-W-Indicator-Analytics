@@ -33,21 +33,21 @@ table 'Skills Proficiency'
 
 	measure '% Proficiency in Digital' =
 			
-			VAR Result = DIVIDE('Skills Proficiency'[ProficientStudents_Digital], [HS Graduates], 0)
+			VAR Result = DIVIDE('Skills Proficiency'[ProficientStudents_Digital], [Total PS Enrolled Students], 0)
 			RETURN IF(Result >= 1, 1, Result)
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 5bafe0b7-4bc1-4db5-b7ca-a05513f48d78
 
 	measure '% Proficiency in Communication' =
 			
-			VAR Result = DIVIDE('Skills Proficiency'[ProficientStudents_Communication], [HS Graduates], 0)
+			VAR Result = DIVIDE('Skills Proficiency'[ProficientStudents_Communication], [Total PS Enrolled Students], 0)
 			RETURN IF(Result >= 1, 1, Result)
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: bcb17c8c-8bed-48c3-81e8-ed25214fa4f3
 
 	measure '% Proficiency in Higher-Order Thinking' =
 			
-			VAR Result = DIVIDE('Skills Proficiency'[ProficientStudents_HigherOrderThinking], [HS Graduates], 0)
+			VAR Result = DIVIDE('Skills Proficiency'[ProficientStudents_HigherOrderThinking], [Total PS Enrolled Students], 0)
 			RETURN IF(Result >= 1, 1, Result)
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 8cfb94d2-d024-4dfa-8e64-3c3f76491850

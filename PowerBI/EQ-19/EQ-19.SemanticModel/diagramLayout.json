@@ -443,6 +443,26 @@
             "width": 234
           },
           "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "reporting RDS_FactEconomicReturn",
+          "nodeLineageTag": "e0a0b4e2-8d9e-4af9-ac2a-d9f8c7468518",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "reporting RDS_DimEconomicReturnStudentCategory",
+          "nodeLineageTag": "a86076e6-30ec-4651-849a-0cea3a35fabe",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",
@@ -1065,8 +1085,88 @@
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,
       "tablesLocked": false
+    },
+    {
+      "ordinal": 9,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 795,
+            "y": 732
+          },
+          "nodeIndex": "reporting RDS_FactEconomicReturn",
+          "nodeLineageTag": "e0a0b4e2-8d9e-4af9-ac2a-d9f8c7468518",
+          "size": {
+            "height": 248,
+            "width": 326
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 142,
+            "y": 251
+          },
+          "nodeIndex": "bi vw_DimK12Schools",
+          "nodeLineageTag": "d4b337f3-d550-45ff-8985-d62df20f9dd7",
+          "size": {
+            "height": 383,
+            "width": 306
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 795,
+            "y": 101
+          },
+          "nodeIndex": "reporting RDS_FactK12GraduationCohorts",
+          "nodeLineageTag": "e0440402-a309-449e-8e63-91c1beb0f247",
+          "size": {
+            "height": 426,
+            "width": 310
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1338,
+            "y": 533
+          },
+          "nodeIndex": "reporting RDS_DimStudents",
+          "nodeLineageTag": "4e6a4c71-b4d5-4f38-bce2-089c5d73531b",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1338,
+            "y": 853
+          },
+          "nodeIndex": "reporting RDS_DimEconomicReturnStudentCategory",
+          "nodeLineageTag": "a86076e6-30ec-4651-849a-0cea3a35fabe",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Economic Return",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
     }
   ],
-  "selectedDiagram": "PsSkill",
+  "selectedDiagram": "Economic Return",
   "defaultDiagram": "All tables"
 }

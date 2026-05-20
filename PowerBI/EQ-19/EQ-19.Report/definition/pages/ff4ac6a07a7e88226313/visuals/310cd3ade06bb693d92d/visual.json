@@ -1,0 +1,123 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "310cd3ade06bb693d92d",
+  "position": {
+    "x": 0,
+    "y": 134.10288582183188,
+    "z": 1,
+    "height": 586.198243412798,
+    "width": 1191.6687578419071,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimK12Schools"
+                        }
+                      },
+                      "Hierarchy": "Geography"
+                    }
+                  },
+                  "Level": "SeaOrganizationName"
+                }
+              },
+              "queryRef": "bi vw_DimK12Schools.Geography.SeaOrganizationName",
+              "nativeQueryRef": "Geography SeaOrganizationName"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimK12Schools"
+                        }
+                      },
+                      "Hierarchy": "Geography"
+                    }
+                  },
+                  "Level": "LeaOrganizationName"
+                }
+              },
+              "queryRef": "bi vw_DimK12Schools.Geography.LeaOrganizationName",
+              "nativeQueryRef": "Geography LeaOrganizationName"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bi vw_DimK12Schools"
+                        }
+                      },
+                      "Hierarchy": "Geography"
+                    }
+                  },
+                  "Level": "K12SchoolName"
+                }
+              },
+              "queryRef": "bi vw_DimK12Schools.Geography.K12SchoolName",
+              "nativeQueryRef": "Geography K12SchoolName"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Economic Return"
+                    }
+                  },
+                  "Property": "% High School Economic Return"
+                }
+              },
+              "queryRef": "Economic Return.% High School Economic Return",
+              "nativeQueryRef": "% High School Economic Return"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Economic Return"
+                    }
+                  },
+                  "Property": "% Postsecondary Economic Return"
+                }
+              },
+              "queryRef": "Economic Return.% Postsecondary Economic Return",
+              "nativeQueryRef": "% Postsecondary Economic Return"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Economic Return"
+                    }
+                  },
+                  "Property": "% Workforce Economic Return"
+                }
+              },
+              "queryRef": "Economic Return.% Workforce Economic Return",
+              "nativeQueryRef": "% Workforce Economic Return"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
