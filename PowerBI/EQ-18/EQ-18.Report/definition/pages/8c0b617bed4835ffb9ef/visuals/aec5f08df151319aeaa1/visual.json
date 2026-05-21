@@ -1,0 +1,261 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "aec5f08df151319aeaa1",
+  "position": {
+    "x": 862.08547008547009,
+    "y": 83.145299145299148,
+    "z": 3,
+    "height": 363.21367521367523,
+    "width": 412.8091168091168,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Education-to-Workforce Indicator Framework links:",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "12pt",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Learn more about the Education-to-Workforce Framework by clicking the web links below:",
+                    "textStyle": {
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Essential Question 18",
+                    "textStyle": {
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/essential-questions/are-students-experiencing-sufficient-early-momentum-postsecondary-education-be"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Related Indicators:",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "12pt",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Outcomes & Milestones",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI Semibold",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "First-year Credit Accumulation",
+                    "textStyle": {
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/first-year-credit-accumulation"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "First-year program of study concentration",
+                    "textStyle": {
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/first-year-program-study-concentration"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Gateway Course Completion",
+                    "textStyle": {
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/gateway-course-completion"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Postsecondary persistence",
+                    "textStyle": {
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/postsecondary-persistence"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Transfer",
+                    "textStyle": {
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/transfer-if-applicable"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "E-W System Conditions",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI Semibold",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Access to college and career advising",
+                    "textStyle": {
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/access-college-and-career-advising"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Unmet financial need",
+                    "textStyle": {
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/unmet-financial-need"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#cecfd2'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

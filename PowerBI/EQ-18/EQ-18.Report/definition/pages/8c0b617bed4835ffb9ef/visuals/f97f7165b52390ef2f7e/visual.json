@@ -1,0 +1,146 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "f97f7165b52390ef2f7e",
+  "position": {
+    "x": 0,
+    "y": 83.145299145299148,
+    "z": 2,
+    "height": 595.87464387464388,
+    "width": 862.08547008547009,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Essential Question 18",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "12pt",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Are students experiencing sufficient early momentum in postsecondary education to be on track for on-time completion?",
+                    "textStyle": {
+                      "fontFamily": "Atlassian Sans, ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Ubuntu, Helvetica Neue, sans-serif",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "About this Essential Question",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "12pt",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "This question looks at early indicators of whether postsecondary students are on track for later success. ",
+                    "textStyle": {
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Credit accumulation, gateway course completion, and selection of an area of concentration during the first year can signal whether students are on track to complete a degree. Various factors influence early momentum in postsecondary education, such as the quality and comprehensiveness of advising services, students’ growth mindset and self-regulation, and access to intentionally designed career pathways. ",
+                    "textStyle": {
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Institution leaders, academic advisors, and student success teams can use this question to assess whether current supports are helping students stay on track for graduation, identify students that may need targeted support, and develop strategies to help all postsecondary students build early momentum toward earning a credential.",
+                    "textStyle": {
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "For additional context on this Essential Question, visit the Education-to-Workforce (E-W) Indicator Framework site: ",
+                    "textStyle": {
+                      "color": "#000000"
+                    }
+                  },
+                  {
+                    "value": "Essential Question 18",
+                    "textStyle": {
+                      "fontFamily": "Calibri",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/essential-questions/are-students-experiencing-sufficient-early-momentum-postsecondary-education-be"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

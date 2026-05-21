@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
-  "name": "23f67c2f7b8f98882d97",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "3e5457e6eebff30d2aeb",
   "position": {
-    "x": 492.89345592212004,
-    "y": 193.14223904813412,
-    "z": 1000,
-    "height": 62,
-    "width": 294.90535424553809,
-    "tabOrder": 1000
+    "x": 493.60824742268039,
+    "y": 87.216494845360828,
+    "z": 2,
+    "height": 62.47422680412371,
+    "width": 294.43298969072163,
+    "tabOrder": 5
   },
   "visual": {
     "visualType": "advancedSlicerVisual",
@@ -67,7 +67,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''bi vw_DimK12Schools''[LeaOrganizationName]'"
+                                "Value": "'''bi vw_DimK12Schools''[SeaOrganizationName]'"
                               }
                             }
                           ]
@@ -95,7 +95,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''bi vw_DimK12Schools''[LeaOrganizationName]'"
+                                      "Value": "'''bi vw_DimK12Schools''[SeaOrganizationName]'"
                                     }
                                   }
                                 ]
@@ -119,7 +119,7 @@
                         },
                         "valueMap": [
                           {
-                            "0": "LEA"
+                            "0": "SEA"
                           }
                         ]
                       }
@@ -603,6 +603,32 @@
           }
         }
       ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualTooltip": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
       "dropShadow": [
         {
           "properties": {
@@ -657,28 +683,26 @@
             }
           }
         }
-      ],
-      "background": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            }
-          }
-        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "68b0b57f5e1be8fcdc77",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Hierarchy Picker"
+              }
+            },
+            "Property": "Organization Hierarchy"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

@@ -14,9 +14,8 @@ table 'Career Advising'
 			    ),
 			    'bi vw_DimK12StaffCategories'[K12StaffClassificationDescription] = "School Counselors"
 			)
+		formatString: 0.0
 		lineageTag: 924fb696-c51c-4074-b4b2-f8c2c6daeb16
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Total HS Students' = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentEnrollments'[K12StudentId]), 'bi vw_FactK12StudentEnrollments'[GradeLevelCode] IN {"09", "10", "11", "12"})
 		lineageTag: 8961a23d-fc86-49af-a485-baa8d82cc71a
@@ -73,9 +72,8 @@ table 'Career Advising'
 		lineageTag: bbd40317-368a-4f05-8374-9a5c34bcf1ad
 
 	measure 'PS Student to Counselor Ratio' = DIVIDE([Total PS Students], [Total PS FTE Counselors], 0)
+		formatString: 0.0
 		lineageTag: bf524010-a5a8-4cdb-a587-7c4619c55471
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'PS Advising Trend' =
 			

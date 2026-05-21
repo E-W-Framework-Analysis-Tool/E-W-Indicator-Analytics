@@ -1,11 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
-  "name": "306babd714fed0e10d60",
+  "name": "f5400a732fabc053bff7",
   "position": {
     "x": 0,
     "y": 0,
     "z": 2000,
-    "height": 78,
+    "height": 74.975299929428374,
     "width": 969.25899788285119,
     "tabOrder": 0
   },
@@ -17778,24 +17778,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "EQ18: Are students experiencing sufficient early momentum in postsecondary education to be on track for on-time completion?",
-                    "textStyle": {
-                      "color": "#000000"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Indicator: ",
-                    "textStyle": {
-                      "fontStyle": "italic",
-                      "color": "#000000"
-                    }
-                  },
-                  {
-                    "value": "Access to college and career advising - College and career counseling services are available in high schools and college campuses.",
+                    "value": "Essential Question 18 - Are students experiencing sufficient early momentum in postsecondary education to be on track for on-time completion?",
                     "textStyle": {
                       "color": "#000000"
                     }
@@ -17824,5 +17807,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "d65e964a6eb69b7c2332"
+  "parentGroupName": "3b27bdc82f1c829cf5de"
 }

@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
-  "name": "306babd714fed0e10d60",
+  "name": "7d4a73ba7a19b86e8f25",
   "position": {
-    "x": 0,
+    "x": 969.49241924851685,
     "y": 0,
-    "z": 2000,
-    "height": 78,
-    "width": 969.25899788285119,
-    "tabOrder": 0
+    "z": 1000,
+    "height": 75.09558338826632,
+    "width": 124.03427818061965,
+    "tabOrder": 3
   },
   "visual": {
     "visualType": "textbox",
@@ -17768,39 +17768,16 @@
               {
                 "textRuns": [
                   {
-                    "value": "Education-to-Workforce Indicator Framework",
+                    "value": "SAMPLE DATA",
                     "textStyle": {
-                      "fontWeight": "bold"
+                      "fontWeight": "bold",
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "12pt",
+                      "color": "#6d5a00"
                     }
                   }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "EQ18: Are students experiencing sufficient early momentum in postsecondary education to be on track for on-time completion?",
-                    "textStyle": {
-                      "color": "#000000"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Indicator: ",
-                    "textStyle": {
-                      "fontStyle": "italic",
-                      "color": "#000000"
-                    }
-                  },
-                  {
-                    "value": "Access to college and career advising - College and career counseling services are available in high schools and college campuses.",
-                    "textStyle": {
-                      "color": "#000000"
-                    }
-                  }
-                ]
+                ],
+                "horizontalTextAlignment": "center"
               }
             ]
           }
@@ -17814,7 +17791,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Text box: Description'"
+                  "Value": "'Text box: Sample Data'"
                 }
               }
             }
@@ -17824,5 +17801,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "d65e964a6eb69b7c2332"
+  "parentGroupName": "3b27bdc82f1c829cf5de"
 }

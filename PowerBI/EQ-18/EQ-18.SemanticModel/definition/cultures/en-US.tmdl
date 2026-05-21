@@ -23960,7 +23960,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "career_advising.total_FTE_counselors": {
+			    "career_advising.total_HS_FTE_counselors": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Career Advising",
@@ -23970,7 +23970,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "total FTE counselors": {
+			          "total HS FTE counselors": {
 			            "State": "Generated"
 			          }
 			        },
@@ -23987,27 +23987,73 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "aggregate fte counselor": {
+			          "HS FTE counselors": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "aggregate hs fte counselor": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.591
+			            "Weight": 0.599
 			          }
 			        },
 			        {
-			          "overall fte counselor": {
+			          "overall hs fte counselor": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.591
+			            "Weight": 0.599
 			          }
 			        },
 			        {
-			          "total fte therapist": {
+			          "total hs fte therapist": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "total hs fte psychotherapist": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "total hs fte psychoanalyst": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "total hs fte analyst": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "hs fte therapist": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -24017,7 +24063,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "total fte psychotherapist": {
+			          "hs fte psychotherapist": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -24027,7 +24073,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "total fte psychoanalyst": {
+			          "hs fte psychoanalyst": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -24037,53 +24083,13 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "total fte analyst": {
+			          "hs fte analyst": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.508
-			          }
-			        },
-			        {
-			          "fte therapist": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "fte psychotherapist": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "fte psychoanalyst": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "fte analyst": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
 			          }
 			        }
 			      ]
@@ -24216,7 +24222,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "career_advising.student_to_counselor_ratio": {
+			    "career_advising.HS_student_to_counselor_ratio": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Career Advising",
@@ -24226,88 +24232,88 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "student to counselor ratio": {
+			          "HS student to counselor ratio": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "scholar to counselor ratio": {
+			          "hs scholar to counselor ratio": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.514
+			            "Weight": 0.52
 			          }
 			        },
 			        {
-			          "pupil to counselor ratio": {
+			          "hs pupil to counselor ratio": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.514
+			            "Weight": 0.52
 			          }
 			        },
 			        {
-			          "schoolboy to counselor ratio": {
+			          "hs schoolboy to counselor ratio": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.514
+			            "Weight": 0.52
 			          }
 			        },
 			        {
-			          "schoolgirl to counselor ratio": {
+			          "hs schoolgirl to counselor ratio": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.514
+			            "Weight": 0.52
 			          }
 			        },
 			        {
-			          "schoolchild to counselor ratio": {
+			          "hs schoolchild to counselor ratio": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.514
+			            "Weight": 0.52
 			          }
 			        },
 			        {
-			          "learner to counselor ratio": {
+			          "hs learner to counselor ratio": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.514
+			            "Weight": 0.52
 			          }
 			        },
 			        {
-			          "undergraduate to counselor ratio": {
+			          "hs undergraduate to counselor ratio": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.499
+			            "Weight": 0.504
 			          }
 			        },
 			        {
-			          "apprentice to counselor ratio": {
+			          "hs apprentice to counselor ratio": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.499
+			            "Weight": 0.504
 			          }
 			        }
 			      ]
@@ -26851,9 +26857,1423 @@ cultureInfo en-US
 			        }
 			      ],
 			      "SemanticType": "Time"
+			    },
+			    "career_advising.HS_career_advising_chart_title": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Career Advising",
+			          "ConceptualProperty": "HS Career Advising Chart Title"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "HS career advising chart title": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "title": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "chart title": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "advising chart title": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "career advising chart title": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "hs career advising chart designation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "career advising chart designation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "advising chart designation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "hs career advising chart name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        },
+			        {
+			          "hs career advising chart award": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        },
+			        {
+			          "hs career advising chart call": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        },
+			        {
+			          "hs career advising chart heading": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        },
+			        {
+			          "hs career advising chart label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        },
+			        {
+			          "chart designation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "career advising chart name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        }
+			      ]
+			    },
+			    "career_advising.total_PS_FTE_counselors": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Career Advising",
+			          "ConceptualProperty": "Total PS FTE Counselors"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total PS FTE counselors": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "counselors": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "FTE counselors": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "PS FTE counselors": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "aggregate ps fte counselor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "overall ps fte counselor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "total ps fte therapist": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "total ps fte psychotherapist": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "total ps fte psychoanalyst": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "total ps fte analyst": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "ps fte therapist": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "ps fte psychotherapist": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "ps fte psychoanalyst": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "ps fte analyst": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        }
+			      ]
+			    },
+			    "career_advising.total_PS_students": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Career Advising",
+			          "ConceptualProperty": "Total PS Students"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total PS students": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "students": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "PS students": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "aggregate ps student": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "overall ps student": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "total ps scholar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "total ps pupil": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "total ps schoolboy": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "total ps schoolgirl": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "total ps schoolchild": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "total ps learner": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "ps scholar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "ps pupil": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        }
+			      ]
+			    },
+			    "career_advising.PS_student_to_counselor_ratio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Career Advising",
+			          "ConceptualProperty": "PS Student to Counselor Ratio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "PS student to counselor ratio": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ps scholar to counselor ratio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "ps pupil to counselor ratio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "ps schoolboy to counselor ratio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "ps schoolgirl to counselor ratio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "ps schoolchild to counselor ratio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "ps learner to counselor ratio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "ps undergraduate to counselor ratio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "ps apprentice to counselor ratio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        }
+			      ]
+			    },
+			    "career_advising.PS_advising_trend": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Career Advising",
+			          "ConceptualProperty": "PS Advising Trend"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "PS advising trend": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "trend": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "advising trend": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "ps advising tendency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "ps advising inclination": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "ps advising movement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "ps advising development": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "advising tendency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "advising inclination": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "advising movement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "advising development": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "ps advising drift": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "ps advising leaning": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
+			    },
+			    "career_advising.PS_career_advising_chart_title": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Career Advising",
+			          "ConceptualProperty": "PS Career Advising Chart Title"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "PS career advising chart title": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "title": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "chart title": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "advising chart title": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "career advising chart title": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "ps career advising chart designation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "career advising chart designation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "advising chart designation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "ps career advising chart name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        },
+			        {
+			          "ps career advising chart award": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        },
+			        {
+			          "ps career advising chart call": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        },
+			        {
+			          "ps career advising chart heading": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        },
+			        {
+			          "ps career advising chart label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        },
+			        {
+			          "chart designation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "career advising chart name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        }
+			      ]
+			    },
+			    "bi_vw_PSStaffCount": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bi vw_PSStaffCounts"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "bi vw_PSStaffCount": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "bi_vw_PSStaffCount.school_year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bi vw_PSStaffCounts",
+			          "ConceptualProperty": "SchoolYear"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "school year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "SchoolYear": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "year": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "school yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "bi_vw_PSStaffCount.K12_school_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bi vw_PSStaffCounts",
+			          "ConceptualProperty": "K12SchoolId"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "K12 school id": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "K12SchoolId": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "school": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "K12 school": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "school id": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "k12 school identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "k12 school identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "k12 school identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "school identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "school identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "school identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "k12 school credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "school credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "k12 seminary": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "k12 conservatory": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        }
+			      ]
+			    },
+			    "bi_vw_PSStaffCount.ps_student_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bi vw_PSStaffCounts",
+			          "ConceptualProperty": "PsStudentId"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "ps student id": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "PsStudentId": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "student": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "ps student": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "student id": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "ps student identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "ps student identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "ps student identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "student identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "student identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "student identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "ps student credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "student credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "ps scholar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "ps pupil": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        }
+			      ]
+			    },
+			    "bi_vw_PSStaffCount.ps_staff_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bi vw_PSStaffCounts",
+			          "ConceptualProperty": "PsStaffId"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ps staff id": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "PsStaffId": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "staff": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "ps staff": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "staff id": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "ps staff identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "ps staff identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "ps staff identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "staff identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "staff identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "staff identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "ps staff credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "staff credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "ps workforce": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "ps organization": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        }
+			      ]
+			    },
+			    "bi_vw_PSStaffCount.staff_equivalency": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "bi vw_PSStaffCounts",
+			          "ConceptualProperty": "StaffEquivalency"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "staff equivalency": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "StaffEquivalency": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "equivalency": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "reporting_RDS_DimPsInstitution_operational_status_effective_date_date_hierarchy_has_reporting_RDS_DimPsInstitution_operational_status_effective_date_year": {
+			      "Binding": {
+			        "ConceptualEntity": "reporting RDS_DimPsInstitutions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "reporting_RDS_DimPsInstitution.operational_status_effective_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "reporting_RDS_DimPsInstitution.operational_status_effective_date.date_hierarchy"
+			          }
+			        },
+			        "reporting_RDS_DimPsInstitution.operational_status_effective_date.year": {
+			          "Target": {
+			            "Entity": "reporting_RDS_DimPsInstitution.operational_status_effective_date.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "reporting_RDS_DimPsInstitution.operational_status_effective_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "reporting_RDS_DimPsInstitution.operational_status_effective_date.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "operational_status_effective_date_hierarchies_have_operational_status_effective_years"
+			        }
+			      ]
+			    },
+			    "reporting_RDS_DimPsInstitution_operational_status_effective_date_has_date_hierarchy": {
+			      "Binding": {
+			        "ConceptualEntity": "reporting RDS_DimPsInstitutions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "reporting_RDS_DimPsInstitution.operational_status_effective_date": {
+			          "Target": {
+			            "Entity": "reporting_RDS_DimPsInstitution.operational_status_effective_date"
+			          }
+			        },
+			        "reporting_RDS_DimPsInstitution.operational_status_effective_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "reporting_RDS_DimPsInstitution.operational_status_effective_date.date_hierarchy"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "reporting_RDS_DimPsInstitution.operational_status_effective_date"
+			            },
+			            "Object": {
+			              "Role": "reporting_RDS_DimPsInstitution.operational_status_effective_date.date_hierarchy"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "operational_status_effective_dates_have_operational_status_effective_date_hierarchies"
+			        }
+			      ]
+			    },
+			    "reporting_RDS_FactPsStudentEnrollment_enrollment_exit_date_date_hierarchy_has_reporting_RDS_FactPsStudentEnrollment_enrollment_exit_date_day": {
+			      "Binding": {
+			        "ConceptualEntity": "reporting RDS_FactPsStudentEnrollments"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "reporting_RDS_FactPsStudentEnrollment.enrollment_exit_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "reporting_RDS_FactPsStudentEnrollment.enrollment_exit_date.date_hierarchy"
+			          }
+			        },
+			        "reporting_RDS_FactPsStudentEnrollment.enrollment_exit_date.day": {
+			          "Target": {
+			            "Entity": "reporting_RDS_FactPsStudentEnrollment.enrollment_exit_date.day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "reporting_RDS_FactPsStudentEnrollment.enrollment_exit_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "reporting_RDS_FactPsStudentEnrollment.enrollment_exit_date.day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "enrollment_exit_date_hierarchies_have_enrollment_exit_days"
+			        }
+			      ]
+			    },
+			    "reporting_RDS_FactPsStudentEnrollment_enrollment_exit_date_date_hierarchy_has_reporting_RDS_FactPsStudentEnrollment_enrollment_exit_date_month": {
+			      "Binding": {
+			        "ConceptualEntity": "reporting RDS_FactPsStudentEnrollments"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "reporting_RDS_FactPsStudentEnrollment.enrollment_exit_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "reporting_RDS_FactPsStudentEnrollment.enrollment_exit_date.date_hierarchy"
+			          }
+			        },
+			        "reporting_RDS_FactPsStudentEnrollment.enrollment_exit_date.month": {
+			          "Target": {
+			            "Entity": "reporting_RDS_FactPsStudentEnrollment.enrollment_exit_date.month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "reporting_RDS_FactPsStudentEnrollment.enrollment_exit_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "reporting_RDS_FactPsStudentEnrollment.enrollment_exit_date.month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "enrollment_exit_date_hierarchies_have_enrollment_exit_months"
+			        }
+			      ]
+			    },
 			    "reporting_RDS_FactPsStudentEnrollment_enrollment_exit_date_date_hierarchy_has_reporting_RDS_FactPsStudentEnrollment_enrollment_exit_date_quarter": {
 			      "Binding": {
 			        "ConceptualEntity": "reporting RDS_FactPsStudentEnrollments"
@@ -27346,6 +28766,163 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "geographies_have_sea_organization_names"
+			        }
+			      ]
+			    },
+			    "bi_vw_PSStaffCount_has_bi_vw_DimStudent": {
+			      "Binding": {
+			        "ConceptualEntity": "bi vw_PSStaffCounts"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "bi_vw_PSStaffCount": {
+			          "Target": {
+			            "Entity": "bi_vw_PSStaffCount"
+			          }
+			        },
+			        "bi_vw_DimStudent": {
+			          "Target": {
+			            "Entity": "bi_vw_DimStudent"
+			          },
+			          "Nouns": [
+			            {
+			              "student": {
+			                "State": "Generated"
+			              }
+			            },
+			            {
+			              "ps student": {
+			                "State": "Generated"
+			              }
+			            }
+			          ]
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "bi_vw_PSStaffCount"
+			            },
+			            "Object": {
+			              "Role": "bi_vw_DimStudent"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "bi_vw_PSStaffCounts_have_bi_vw_DimStudents"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "bi_vw_DimStudent"
+			            },
+			            "Object": {
+			              "Role": "bi_vw_PSStaffCount"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "bi_vw_DimStudents_have_bi_vw_PSStaffCounts"
+			        }
+			      ]
+			    },
+			    "bi_vw_PSStaffCount_has_bi_vw_DimK12School": {
+			      "Binding": {
+			        "ConceptualEntity": "bi vw_PSStaffCounts"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "bi_vw_PSStaffCount": {
+			          "Target": {
+			            "Entity": "bi_vw_PSStaffCount"
+			          }
+			        },
+			        "bi_vw_DimK12School": {
+			          "Target": {
+			            "Entity": "bi_vw_DimK12School"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "bi_vw_PSStaffCount"
+			            },
+			            "Object": {
+			              "Role": "bi_vw_DimK12School"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "bi_vw_PSStaffCounts_have_bi_vw_DimK12Schools"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "bi_vw_DimK12School"
+			            },
+			            "Object": {
+			              "Role": "bi_vw_PSStaffCount"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "bi_vw_DimK12Schools_have_bi_vw_PSStaffCounts"
+			        }
+			      ]
+			    },
+			    "bi_vw_PSStaffCount_has_bi_vw_DimSchoolYear": {
+			      "Binding": {
+			        "ConceptualEntity": "bi vw_PSStaffCounts"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "bi_vw_PSStaffCount": {
+			          "Target": {
+			            "Entity": "bi_vw_PSStaffCount"
+			          }
+			        },
+			        "bi_vw_DimSchoolYear": {
+			          "Target": {
+			            "Entity": "bi_vw_DimSchoolYear"
+			          },
+			          "Nouns": [
+			            {
+			              "school year": {
+			                "State": "Generated"
+			              }
+			            }
+			          ]
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "bi_vw_PSStaffCount"
+			            },
+			            "Object": {
+			              "Role": "bi_vw_DimSchoolYear"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "bi_vw_PSStaffCounts_have_bi_vw_DimSchoolYears"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "bi_vw_DimSchoolYear"
+			            },
+			            "Object": {
+			              "Role": "bi_vw_PSStaffCount"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "bi_vw_DimSchoolYears_have_bi_vw_PSStaffCounts"
 			        }
 			      ]
 			    },
@@ -29496,6 +31073,336 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
+			    "bi_vw_PSStaffCount_has_staff_equivalency": {
+			      "Binding": {
+			        "ConceptualEntity": "bi vw_PSStaffCounts"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "bi_vw_PSStaffCount": {
+			          "Target": {
+			            "Entity": "bi_vw_PSStaffCount"
+			          }
+			        },
+			        "bi_vw_PSStaffCount.staff_equivalency": {
+			          "Target": {
+			            "Entity": "bi_vw_PSStaffCount.staff_equivalency"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "bi_vw_PSStaffCount"
+			            },
+			            "Object": {
+			              "Role": "bi_vw_PSStaffCount.staff_equivalency"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "bi_vw_PSStaffCounts_have_staff_equivalencies"
+			        }
+			      ]
+			    },
+			    "bi_vw_PSStaffCount_has_ps_staff_id": {
+			      "Binding": {
+			        "ConceptualEntity": "bi vw_PSStaffCounts"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "bi_vw_PSStaffCount": {
+			          "Target": {
+			            "Entity": "bi_vw_PSStaffCount"
+			          }
+			        },
+			        "bi_vw_PSStaffCount.ps_staff_id": {
+			          "Target": {
+			            "Entity": "bi_vw_PSStaffCount.ps_staff_id"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "bi_vw_PSStaffCount"
+			            },
+			            "Object": {
+			              "Role": "bi_vw_PSStaffCount.ps_staff_id"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "bi_vw_PSStaffCounts_have_ps_staff_ids"
+			        }
+			      ]
+			    },
+			    "bi_vw_DimSchoolYear_has_career_advising_PS_career_advising_chart_title": {
+			      "Binding": {
+			        "ConceptualEntity": "bi vw_DimSchoolYears"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "bi_vw_DimSchoolYear": {
+			          "Target": {
+			            "Entity": "bi_vw_DimSchoolYear"
+			          }
+			        },
+			        "career_advising.PS_career_advising_chart_title": {
+			          "Target": {
+			            "Entity": "career_advising.PS_career_advising_chart_title"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "bi_vw_DimSchoolYear"
+			            },
+			            "Object": {
+			              "Role": "career_advising.PS_career_advising_chart_title"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "bi_vw_DimSchoolYears_have_PS_career_advising_chart_title"
+			        }
+			      ]
+			    },
+			    "reporting_RDS_FactPsStudentEnrollment_has_career_advising_PS_advising_trend": {
+			      "Binding": {
+			        "ConceptualEntity": "reporting RDS_FactPsStudentEnrollments"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "reporting_RDS_FactPsStudentEnrollment": {
+			          "Target": {
+			            "Entity": "reporting_RDS_FactPsStudentEnrollment"
+			          }
+			        },
+			        "career_advising.PS_advising_trend": {
+			          "Target": {
+			            "Entity": "career_advising.PS_advising_trend"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "reporting_RDS_FactPsStudentEnrollment"
+			            },
+			            "Object": {
+			              "Role": "career_advising.PS_advising_trend"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "reporting_RDS_FactPsStudentEnrollments_have_PS_advising_trend"
+			        }
+			      ]
+			    },
+			    "bi_vw_PSStaffCount_has_career_advising_PS_advising_trend": {
+			      "Binding": {
+			        "ConceptualEntity": "bi vw_PSStaffCounts"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "bi_vw_PSStaffCount": {
+			          "Target": {
+			            "Entity": "bi_vw_PSStaffCount"
+			          }
+			        },
+			        "career_advising.PS_advising_trend": {
+			          "Target": {
+			            "Entity": "career_advising.PS_advising_trend"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "bi_vw_PSStaffCount"
+			            },
+			            "Object": {
+			              "Role": "career_advising.PS_advising_trend"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "bi_vw_PSStaffCounts_have_PS_advising_trend"
+			        }
+			      ]
+			    },
+			    "reporting_RDS_FactPsStudentEnrollment_has_career_advising_PS_student_to_counselor_ratio": {
+			      "Binding": {
+			        "ConceptualEntity": "reporting RDS_FactPsStudentEnrollments"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "reporting_RDS_FactPsStudentEnrollment": {
+			          "Target": {
+			            "Entity": "reporting_RDS_FactPsStudentEnrollment"
+			          }
+			        },
+			        "career_advising.PS_student_to_counselor_ratio": {
+			          "Target": {
+			            "Entity": "career_advising.PS_student_to_counselor_ratio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "reporting_RDS_FactPsStudentEnrollment"
+			            },
+			            "Object": {
+			              "Role": "career_advising.PS_student_to_counselor_ratio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "reporting_RDS_FactPsStudentEnrollments_have_PS_student_to_counselor_ratio"
+			        }
+			      ]
+			    },
+			    "bi_vw_PSStaffCount_has_career_advising_PS_student_to_counselor_ratio": {
+			      "Binding": {
+			        "ConceptualEntity": "bi vw_PSStaffCounts"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "bi_vw_PSStaffCount": {
+			          "Target": {
+			            "Entity": "bi_vw_PSStaffCount"
+			          }
+			        },
+			        "career_advising.PS_student_to_counselor_ratio": {
+			          "Target": {
+			            "Entity": "career_advising.PS_student_to_counselor_ratio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "bi_vw_PSStaffCount"
+			            },
+			            "Object": {
+			              "Role": "career_advising.PS_student_to_counselor_ratio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "bi_vw_PSStaffCounts_have_PS_student_to_counselor_ratio"
+			        }
+			      ]
+			    },
+			    "reporting_RDS_FactPsStudentEnrollment_has_career_advising_total_PS_students": {
+			      "Binding": {
+			        "ConceptualEntity": "reporting RDS_FactPsStudentEnrollments"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "reporting_RDS_FactPsStudentEnrollment": {
+			          "Target": {
+			            "Entity": "reporting_RDS_FactPsStudentEnrollment"
+			          }
+			        },
+			        "career_advising.total_PS_students": {
+			          "Target": {
+			            "Entity": "career_advising.total_PS_students"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "reporting_RDS_FactPsStudentEnrollment"
+			            },
+			            "Object": {
+			              "Role": "career_advising.total_PS_students"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "reporting_RDS_FactPsStudentEnrollments_have_total_PS_students"
+			        }
+			      ]
+			    },
+			    "bi_vw_PSStaffCount_has_career_advising_total_PS_FTE_counselors": {
+			      "Binding": {
+			        "ConceptualEntity": "bi vw_PSStaffCounts"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "bi_vw_PSStaffCount": {
+			          "Target": {
+			            "Entity": "bi_vw_PSStaffCount"
+			          }
+			        },
+			        "career_advising.total_PS_FTE_counselors": {
+			          "Target": {
+			            "Entity": "career_advising.total_PS_FTE_counselors"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "bi_vw_PSStaffCount"
+			            },
+			            "Object": {
+			              "Role": "career_advising.total_PS_FTE_counselors"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "bi_vw_PSStaffCounts_have_total_PS_FTE_counselors"
+			        }
+			      ]
+			    },
+			    "bi_vw_DimSchoolYear_has_career_advising_HS_career_advising_chart_title": {
+			      "Binding": {
+			        "ConceptualEntity": "bi vw_DimSchoolYears"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "bi_vw_DimSchoolYear": {
+			          "Target": {
+			            "Entity": "bi_vw_DimSchoolYear"
+			          }
+			        },
+			        "career_advising.HS_career_advising_chart_title": {
+			          "Target": {
+			            "Entity": "career_advising.HS_career_advising_chart_title"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "bi_vw_DimSchoolYear"
+			            },
+			            "Object": {
+			              "Role": "career_advising.HS_career_advising_chart_title"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "bi_vw_DimSchoolYears_have_HS_career_advising_chart_title"
+			        }
+			      ]
+			    },
 			    "trend_line_year_has_school_year": {
 			      "Binding": {
 			        "ConceptualEntity": "TrendLineYears"
@@ -29859,7 +31766,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "bi_vw_FactK12StudentEnrollment_has_career_advising_student_to_counselor_ratio": {
+			    "bi_vw_FactK12StudentEnrollment_has_career_advising_HS_student_to_counselor_ratio": {
 			      "Binding": {
 			        "ConceptualEntity": "bi vw_FactK12StudentEnrollments"
 			      },
@@ -29870,9 +31777,9 @@ cultureInfo en-US
 			            "Entity": "bi_vw_FactK12StudentEnrollment"
 			          }
 			        },
-			        "career_advising.student_to_counselor_ratio": {
+			        "career_advising.HS_student_to_counselor_ratio": {
 			          "Target": {
-			            "Entity": "career_advising.student_to_counselor_ratio"
+			            "Entity": "career_advising.HS_student_to_counselor_ratio"
 			          }
 			        }
 			      },
@@ -29883,16 +31790,16 @@ cultureInfo en-US
 			              "Role": "bi_vw_FactK12StudentEnrollment"
 			            },
 			            "Object": {
-			              "Role": "career_advising.student_to_counselor_ratio"
+			              "Role": "career_advising.HS_student_to_counselor_ratio"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "bi_vw_FactK12StudentEnrollments_have_student_to_counselor_ratio"
+			          "ID": "bi_vw_FactK12StudentEnrollments_have_HS_student_to_counselor_ratio"
 			        }
 			      ]
 			    },
-			    "bi_vw_FactK12StaffCount_has_career_advising_student_to_counselor_ratio": {
+			    "bi_vw_FactK12StaffCount_has_career_advising_HS_student_to_counselor_ratio": {
 			      "Binding": {
 			        "ConceptualEntity": "bi vw_FactK12StaffCounts"
 			      },
@@ -29903,9 +31810,9 @@ cultureInfo en-US
 			            "Entity": "bi_vw_FactK12StaffCount"
 			          }
 			        },
-			        "career_advising.student_to_counselor_ratio": {
+			        "career_advising.HS_student_to_counselor_ratio": {
 			          "Target": {
-			            "Entity": "career_advising.student_to_counselor_ratio"
+			            "Entity": "career_advising.HS_student_to_counselor_ratio"
 			          }
 			        }
 			      },
@@ -29916,12 +31823,12 @@ cultureInfo en-US
 			              "Role": "bi_vw_FactK12StaffCount"
 			            },
 			            "Object": {
-			              "Role": "career_advising.student_to_counselor_ratio"
+			              "Role": "career_advising.HS_student_to_counselor_ratio"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "bi_vw_FactK12StaffCounts_have_student_to_counselor_ratio"
+			          "ID": "bi_vw_FactK12StaffCounts_have_HS_student_to_counselor_ratio"
 			        }
 			      ]
 			    },
@@ -29958,7 +31865,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "bi_vw_FactK12StaffCount_has_career_advising_total_FTE_counselors": {
+			    "bi_vw_FactK12StaffCount_has_career_advising_total_HS_FTE_counselors": {
 			      "Binding": {
 			        "ConceptualEntity": "bi vw_FactK12StaffCounts"
 			      },
@@ -29969,9 +31876,9 @@ cultureInfo en-US
 			            "Entity": "bi_vw_FactK12StaffCount"
 			          }
 			        },
-			        "career_advising.total_FTE_counselors": {
+			        "career_advising.total_HS_FTE_counselors": {
 			          "Target": {
-			            "Entity": "career_advising.total_FTE_counselors"
+			            "Entity": "career_advising.total_HS_FTE_counselors"
 			          }
 			        }
 			      },
@@ -29982,12 +31889,12 @@ cultureInfo en-US
 			              "Role": "bi_vw_FactK12StaffCount"
 			            },
 			            "Object": {
-			              "Role": "career_advising.total_FTE_counselors"
+			              "Role": "career_advising.total_HS_FTE_counselors"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "bi_vw_FactK12StaffCounts_have_total_FTE_counselors"
+			          "ID": "bi_vw_FactK12StaffCounts_have_total_HS_FTE_counselors"
 			        }
 			      ]
 			    },
@@ -34583,138 +36490,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.75,
 			          "ID": "geography_value_slicers_slice"
-			        }
-			      ]
-			    },
-			    "reporting_RDS_FactPsStudentEnrollment_enrollment_exit_date_date_hierarchy_has_reporting_RDS_FactPsStudentEnrollment_enrollment_exit_date_month": {
-			      "Binding": {
-			        "ConceptualEntity": "reporting RDS_FactPsStudentEnrollments"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "reporting_RDS_FactPsStudentEnrollment.enrollment_exit_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "reporting_RDS_FactPsStudentEnrollment.enrollment_exit_date.date_hierarchy"
-			          }
-			        },
-			        "reporting_RDS_FactPsStudentEnrollment.enrollment_exit_date.month": {
-			          "Target": {
-			            "Entity": "reporting_RDS_FactPsStudentEnrollment.enrollment_exit_date.month"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "reporting_RDS_FactPsStudentEnrollment.enrollment_exit_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "reporting_RDS_FactPsStudentEnrollment.enrollment_exit_date.month"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "enrollment_exit_date_hierarchies_have_enrollment_exit_months"
-			        }
-			      ]
-			    },
-			    "reporting_RDS_FactPsStudentEnrollment_enrollment_exit_date_date_hierarchy_has_reporting_RDS_FactPsStudentEnrollment_enrollment_exit_date_day": {
-			      "Binding": {
-			        "ConceptualEntity": "reporting RDS_FactPsStudentEnrollments"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "reporting_RDS_FactPsStudentEnrollment.enrollment_exit_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "reporting_RDS_FactPsStudentEnrollment.enrollment_exit_date.date_hierarchy"
-			          }
-			        },
-			        "reporting_RDS_FactPsStudentEnrollment.enrollment_exit_date.day": {
-			          "Target": {
-			            "Entity": "reporting_RDS_FactPsStudentEnrollment.enrollment_exit_date.day"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "reporting_RDS_FactPsStudentEnrollment.enrollment_exit_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "reporting_RDS_FactPsStudentEnrollment.enrollment_exit_date.day"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "enrollment_exit_date_hierarchies_have_enrollment_exit_days"
-			        }
-			      ]
-			    },
-			    "reporting_RDS_DimPsInstitution_operational_status_effective_date_has_date_hierarchy": {
-			      "Binding": {
-			        "ConceptualEntity": "reporting RDS_DimPsInstitutions"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "reporting_RDS_DimPsInstitution.operational_status_effective_date": {
-			          "Target": {
-			            "Entity": "reporting_RDS_DimPsInstitution.operational_status_effective_date"
-			          }
-			        },
-			        "reporting_RDS_DimPsInstitution.operational_status_effective_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "reporting_RDS_DimPsInstitution.operational_status_effective_date.date_hierarchy"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "reporting_RDS_DimPsInstitution.operational_status_effective_date"
-			            },
-			            "Object": {
-			              "Role": "reporting_RDS_DimPsInstitution.operational_status_effective_date.date_hierarchy"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "operational_status_effective_dates_have_operational_status_effective_date_hierarchies"
-			        }
-			      ]
-			    },
-			    "reporting_RDS_DimPsInstitution_operational_status_effective_date_date_hierarchy_has_reporting_RDS_DimPsInstitution_operational_status_effective_date_year": {
-			      "Binding": {
-			        "ConceptualEntity": "reporting RDS_DimPsInstitutions"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "reporting_RDS_DimPsInstitution.operational_status_effective_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "reporting_RDS_DimPsInstitution.operational_status_effective_date.date_hierarchy"
-			          }
-			        },
-			        "reporting_RDS_DimPsInstitution.operational_status_effective_date.year": {
-			          "Target": {
-			            "Entity": "reporting_RDS_DimPsInstitution.operational_status_effective_date.year"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "reporting_RDS_DimPsInstitution.operational_status_effective_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "reporting_RDS_DimPsInstitution.operational_status_effective_date.year"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "operational_status_effective_date_hierarchies_have_operational_status_effective_years"
 			        }
 			      ]
 			    },
