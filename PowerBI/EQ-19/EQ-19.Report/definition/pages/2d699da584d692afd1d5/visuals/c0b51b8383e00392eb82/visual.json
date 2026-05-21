@@ -1,0 +1,355 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "c0b51b8383e00392eb82",
+  "position": {
+    "x": 862.1761658031088,
+    "y": 70.30051813471502,
+    "z": 3,
+    "height": 401.24352331606218,
+    "width": 412.51813471502589,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Education-to-Workforce Indicator Framework links:",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Segoe UI Semibold",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Learn more about the Education-to-Workforce Framework by clicking the web links below:",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Essential Question 19",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/essential-questions/are-students-completing-credentials-value-after-high-school-set-them-success"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Related Indicators:",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Segoe UI Semibold",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Outcomes & Milestones",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "8pt",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Postsecondary certificate or degree completion",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/postsecondary-certificate-or-degree-completion"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Enrollment in graduate education",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/enrollment-graduate-education"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Graduate degree completion",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/graduate-degree-completion"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Social awareness",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/social-awareness"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Cultural competency",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/cultural-competency"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Civic engagement",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/civic-engagement"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Industry-recognized credential",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/industry-recognized-credential"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Social capital",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/social-capital"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Digital skills",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/digital-skills"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Communication skills",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/communication-skills"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Higher-order thinking skills",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/higher-order-thinking-skills"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Minimum economic return",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/minimum-economic-return"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Student loan repayment",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/student-loan-repayment"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "E-W System Conditions",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "8pt",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Institutions’ contributions to student outcomes",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/institutions-contributions-student-outcomes"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Cumulative student debt",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/indicators/cumulative-student-debt"
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#cecfd2'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
