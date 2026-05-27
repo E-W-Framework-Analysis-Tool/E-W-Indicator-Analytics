@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "824b4f5b34b5a776ab92",
+  "position": {
+    "x": 0,
+    "y": 95.259095920617412,
+    "z": 0,
+    "height": 624.4762954796031,
+    "width": 985.04961411245858,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "reporting RDS_DimSocialCapitalSurvey"
+                    }
+                  },
+                  "Property": "DomainName"
+                }
+              },
+              "queryRef": "reporting RDS_DimSocialCapitalSurvey.DomainName",
+              "nativeQueryRef": "DomainName"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Social Capital"
+                    }
+                  },
+                  "Property": "Average Survey Score"
+                }
+              },
+              "queryRef": "Social Capital.Average Survey Score",
+              "nativeQueryRef": "Average Survey Score"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

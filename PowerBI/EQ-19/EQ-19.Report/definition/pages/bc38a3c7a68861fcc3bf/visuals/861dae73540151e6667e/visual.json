@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
-  "name": "e56f15a883fc6d8d8fa6",
+  "name": "861dae73540151e6667e",
   "position": {
-    "x": 959.64718853362729,
+    "x": 814.994487320838,
     "y": 502.40352811466369,
-    "z": 11501,
-    "height": 166.52701212789415,
-    "width": 92.436604189636157,
-    "tabOrder": 18001
+    "z": 11502,
+    "height": 116.42778390297684,
+    "width": 145.35832414553474,
+    "tabOrder": 18002
   },
   "visual": {
     "visualType": "advancedSlicerVisual",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Hierarchy Picker"
+                      "Entity": "Social Capital Measurement"
                     }
                   },
-                  "Property": "Organization Hierarchy"
+                  "Property": "Measurement Type"
                 }
               },
-              "queryRef": "Hierarchy Picker.Hierarchy Picker",
-              "nativeQueryRef": "Organization Hierarchy"
+              "queryRef": "Social Capital Measurement.Measurement Type",
+              "nativeQueryRef": "Measurement Type"
             }
           ]
         }
@@ -42,8 +42,8 @@
                 "Version": 2,
                 "From": [
                   {
-                    "Name": "h",
-                    "Entity": "Hierarchy Picker",
+                    "Name": "s",
+                    "Entity": "Social Capital Measurement",
                     "Type": 0
                   }
                 ],
@@ -56,10 +56,10 @@
                             "Column": {
                               "Expression": {
                                 "SourceRef": {
-                                  "Source": "h"
+                                  "Source": "s"
                                 }
                               },
-                              "Property": "Hierarchy Picker Fields"
+                              "Property": "Social Capital Stat Fields"
                             }
                           }
                         ],
@@ -67,7 +67,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''bi vw_DimK12Schools''[SeaOrganizationName]'"
+                                "Value": "'''Social Capital''[Average Survey Score]'"
                               }
                             }
                           ]
@@ -81,10 +81,10 @@
                             "Column": {
                               "Expression": {
                                 "SourceRef": {
-                                  "Entity": "Hierarchy Picker"
+                                  "Entity": "Social Capital Measurement"
                                 }
                               },
-                              "Property": "Organization Hierarchy"
+                              "Property": "Measurement Type"
                             }
                           }
                         ],
@@ -95,7 +95,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''bi vw_DimK12Schools''[SeaOrganizationName]'"
+                                      "Value": "'''Social Capital''[Average Survey Score]'"
                                     }
                                   }
                                 ]
@@ -108,10 +108,10 @@
                                 "Column": {
                                   "Expression": {
                                     "SourceRef": {
-                                      "Entity": "Hierarchy Picker"
+                                      "Entity": "Social Capital Measurement"
                                     }
                                   },
-                                  "Property": "Hierarchy Picker Fields"
+                                  "Property": "Social Capital Stat Fields"
                                 }
                               }
                             }
@@ -119,7 +119,7 @@
                         },
                         "valueMap": [
                           {
-                            "0": "SEA"
+                            "0": "Average Survey Score"
                           }
                         ]
                       }
@@ -136,19 +136,6 @@
           "properties": {}
         }
       ],
-      "selection": [
-        {
-          "properties": {
-            "strictSingleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
       "layout": [
         {
           "properties": {
@@ -156,6 +143,13 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
+                }
+              }
+            },
+            "maxTiles": {
+              "expr": {
+                "Literal": {
+                  "Value": "2L"
                 }
               }
             }
@@ -548,6 +542,26 @@
             }
           }
         }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "strictSingleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -583,7 +597,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Organization'"
+                  "Value": "'Field of Study'"
                 }
               }
             }
@@ -680,5 +694,76 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "16882618092d552585d5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Field of Study"
+              }
+            },
+            "Property": "Slicer-Value"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "f",
+              "Entity": "Field of Study",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "Comparison": {
+                      "ComparisonKind": 0,
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "f"
+                            }
+                          },
+                          "Property": "Slicer-Value"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "null"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "1c8a5934ae409a136846",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Social Capital Measurement"
+              }
+            },
+            "Property": "Measurement Type"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

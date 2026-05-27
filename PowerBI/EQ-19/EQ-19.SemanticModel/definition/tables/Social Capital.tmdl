@@ -1,9 +1,64 @@
 table 'Social Capital'
 	lineageTag: f7c208b3-3f03-4171-9ed6-d929b7c4b4e1
 
-	measure 'Average Survey Score' = AVERAGE('reporting RDS_FactSocialCapitalSurvey'[SurveyScore])
+	measure 'Average Survey Score' =
+			
+			AVERAGEX(
+			    SUMMARIZE(
+			        'reporting RDS_FactSocialCapitalSurvey',
+			        'reporting RDS_FactSocialCapitalSurvey'[SchoolYear],
+			        'reporting RDS_FactSocialCapitalSurvey'[K12SchoolId],
+			        'reporting RDS_FactSocialCapitalSurvey'[PsStudentId]
+			    ),
+			    CALCULATE(AVERAGE('reporting RDS_FactSocialCapitalSurvey'[SurveyScore]))
+			)
 		formatString: 0.0
 		lineageTag: bc76ffe2-84c6-469e-9f8e-41f41779883e
+
+	measure '% Individuals with High Score' = ```
+			
+			-- Step 1: Create a virtual table calculating the true average score per student/school/year group
+			VAR StudentAveragesTable = 
+			    SUMMARIZE(
+			        'reporting RDS_FactSocialCapitalSurvey',
+			        'reporting RDS_FactSocialCapitalSurvey'[SchoolYear],
+			        'reporting RDS_FactSocialCapitalSurvey'[K12SchoolId],
+			        'reporting RDS_FactSocialCapitalSurvey'[PsStudentId],
+			        "GroupedAverage", AVERAGE('reporting RDS_FactSocialCapitalSurvey'[SurveyScore])
+			    )
+			
+			-- Step 2: Count how many distinct students in that virtual table have an average score >= 2
+			VAR StudentsWithPassingScore = 
+			    COUNTAX(
+			        FILTER(StudentAveragesTable, [GroupedAverage] >= 2),
+			        'reporting RDS_FactSocialCapitalSurvey'[PsStudentId]
+			    )
+			
+			-- Step 3: Count the total unique students in that virtual table context
+			VAR TotalStudents = 
+			    COUNTAX(
+			        StudentAveragesTable, 
+			        'reporting RDS_FactSocialCapitalSurvey'[PsStudentId]
+			    )
+			
+			-- Step 4: Safely divide
+			RETURN
+			    DIVIDE(StudentsWithPassingScore, TotalStudents, 0)
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 27ea1ce0-eec9-4db2-894d-4dabc740a4d1
+
+	measure 'Y-Axis Scale Max' =
+			
+			VAR ActiveSelection = MAX('Social Capital Measurement'[Measurement Type])
+			RETURN
+			    IF (
+			        ActiveSelection = "Average Survey Score",
+			        4,
+			        1
+			    )
+		formatString: 0
+		lineageTag: dc09ef09-7a04-4c33-992f-e1ef4e297fea
 
 	partition 'Social Capital' = m
 		mode: import

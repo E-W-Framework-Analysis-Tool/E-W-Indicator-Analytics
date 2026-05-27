@@ -44,7 +44,7 @@
               },
               "queryRef": "reporting RDS_DimSocialCapitalSurvey.DomainName",
               "nativeQueryRef": "DomainName",
-              "active": false
+              "active": true
             },
             {
               "field": {
@@ -59,7 +59,7 @@
               },
               "queryRef": "reporting RDS_DimSocialCapitalSurvey.MeasureName",
               "nativeQueryRef": "MeasureName",
-              "active": true
+              "active": false
             }
           ],
           "fieldParameters": [
@@ -93,7 +93,24 @@
                 }
               },
               "queryRef": "Social Capital.Average Survey Score",
-              "nativeQueryRef": "Average Survey Score"
+              "nativeQueryRef": "Average Survey Score",
+              "displayName": "Average Survey Score"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Social Capital Measurement"
+                    }
+                  },
+                  "Property": "Measurement Type"
+                }
+              },
+              "index": 0,
+              "length": 1
             }
           ]
         }
@@ -144,17 +161,23 @@
       }
     },
     "objects": {
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
       "valueAxis": [
         {
           "properties": {
-            "end": {
-              "expr": {
-                "Literal": {
-                  "Value": "5D"
-                }
-              }
-            },
-            "showAxisTitle": {
+            "logAxisScale": {
               "expr": {
                 "Literal": {
                   "Value": "false"
@@ -167,17 +190,16 @@
                   "Value": "0D"
                 }
               }
-            }
-          }
-        }
-      ],
-      "labels": [
-        {
-          "properties": {
-            "show": {
+            },
+            "end": {
               "expr": {
-                "Literal": {
-                  "Value": "true"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Social Capital"
+                    }
+                  },
+                  "Property": "Y-Axis Scale Max"
                 }
               }
             }
@@ -201,5 +223,37 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "0e6eb23acffb026eadcc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "reporting RDS_DimSocialCapitalSurvey"
+              }
+            },
+            "Property": "DomainName"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a5166a13a05d9d1c9d94",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "reporting RDS_DimSocialCapitalSurvey"
+              }
+            },
+            "Property": "MeasureName"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

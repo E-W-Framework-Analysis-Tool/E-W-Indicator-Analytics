@@ -27,7 +27,24 @@
                 }
               },
               "queryRef": "Social Capital.Average Survey Score",
-              "nativeQueryRef": "Average Survey Score"
+              "nativeQueryRef": "Average Survey Score",
+              "displayName": "Average Survey Score"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Social Capital Measurement"
+                    }
+                  },
+                  "Property": "Measurement Type"
+                }
+              },
+              "index": 0,
+              "length": 1
             }
           ]
         },
@@ -62,7 +79,7 @@
               },
               "queryRef": "reporting RDS_DimSocialCapitalSurvey.MeasureName",
               "nativeQueryRef": "MeasureName",
-              "active": true
+              "active": false
             }
           ],
           "fieldParameters": [
@@ -139,30 +156,17 @@
                 }
               }
             ],
-            "isPinned": true
+            "isPinned": true,
+            "isLocked": true
           },
           {
             "queryRefs": [
               "reporting RDS_DimSocialCapitalSurvey.MeasureName"
             ],
-            "isCollapsed": true,
-            "isPinned": true
+            "isCollapsed": true
           }
         ],
-        "root": {
-          "children": [
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'White'"
-                  }
-                }
-              ],
-              "isToggled": true
-            }
-          ]
-        }
+        "root": {}
       }
     ],
     "objects": {

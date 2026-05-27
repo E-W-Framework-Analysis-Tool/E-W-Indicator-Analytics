@@ -59,6 +59,7 @@ ref table 'Economic Return'
 ref table 'reporting RDS_DimSocialCapitalSurvey'
 ref table 'reporting RDS_FactSocialCapitalSurvey'
 ref table 'Social Capital'
+ref table 'Social Capital Measurement'
 
 ref cultureInfo en-US
 
