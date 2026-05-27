@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
   "name": "1aad73373a0e5e7ce424",
-  "displayName": "201 - Enrollment in graduate education",
+  "displayName": "Enrollment in graduate education",
   "displayOption": "FitToPage",
   "height": 720,
   "width": 1280

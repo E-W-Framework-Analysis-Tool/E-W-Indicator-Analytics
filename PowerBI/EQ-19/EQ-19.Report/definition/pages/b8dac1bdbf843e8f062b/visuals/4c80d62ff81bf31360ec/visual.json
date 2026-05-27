@@ -3,9 +3,9 @@
   "name": "4c80d62ff81bf31360ec",
   "position": {
     "x": 0,
-    "y": 149.36010037641154,
+    "y": 135.47960308710032,
     "z": 8000,
-    "height": 52.998745294855709,
+    "height": 67.034178610804844,
     "width": 1280,
     "tabOrder": 9000
   },
@@ -144,7 +144,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of Individuals proficient in Digital Skills'"
+                  "Value": "'Percentage of individuals that earn at least as much as the median high school graduate in their state plus enough to recoup their total net price plus interest within 10 years of completing their highest degree or leaving education (high school, postsecondary education, or workforce training).'"
                 }
               }
             },
@@ -177,7 +177,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of Individuals proficient in Digital Skills'"
+                  "Value": "'Percentage of individuals that earn at least as much as the median high school graduate in their state plus enough to recoup their total net price plus interest within 10 years of completing their highest degree or leaving education (high school, postsecondary education, or workforce training).'"
                 }
               }
             }
@@ -191,7 +191,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of Individuals proficient in Digital Skills'"
+                  "Value": "'Percentage of individuals that earn at least as much as the median high school graduate in their state plus enough to recoup their total net price plus interest within 10 years of completing their highest degree or leaving education (high school, postsecondary education, or workforce training).'"
                 }
               }
             }
