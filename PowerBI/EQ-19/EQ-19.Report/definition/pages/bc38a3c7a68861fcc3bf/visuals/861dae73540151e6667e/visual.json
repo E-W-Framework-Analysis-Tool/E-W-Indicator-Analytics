@@ -597,7 +597,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Field of Study'"
+                  "Value": "'Measurement Type'"
                 }
               }
             }

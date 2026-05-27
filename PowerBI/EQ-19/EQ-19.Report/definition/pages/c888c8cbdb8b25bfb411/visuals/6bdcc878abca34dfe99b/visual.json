@@ -1,11 +1,11 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "6bdcc878abca34dfe99b",
   "position": {
     "x": 853.80374862183021,
     "y": 162.99889746416758,
     "z": 10000,
-    "height": 54.332965821389195,
+    "height": 60.683572216097019,
     "width": 426.19625137816979,
     "tabOrder": 11000
   },
@@ -144,7 +144,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of Individuals proficient in Higher-Order Thinking Skills'"
+                  "Value": "'Percentage of individuals demonstrating proficiency on higher-order thinking skills assessments'"
                 }
               }
             },
@@ -177,7 +177,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of Individuals proficient in Higher-Order Thinking Skills'"
+                  "Value": "'Percentage of individuals demonstrating proficiency on higher-order thinking skills assessments'"
                 }
               }
             }
@@ -191,7 +191,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of Individuals proficient in Higher-Order Thinking Skills'"
+                  "Value": "'Percentage of individuals demonstrating proficiency on higher-order thinking skills assessments'"
                 }
               }
             }
@@ -205,7 +205,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of Individuals proficient in Higher-Order Thinking Skills'"
+                  "Value": "'Percentage of individuals demonstrating proficiency on higher-order thinking skills assessments'"
                 }
               }
             }

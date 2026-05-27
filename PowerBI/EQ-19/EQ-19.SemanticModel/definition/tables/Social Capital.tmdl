@@ -1,17 +1,28 @@
 table 'Social Capital'
 	lineageTag: f7c208b3-3f03-4171-9ed6-d929b7c4b4e1
 
-	measure 'Average Survey Score' =
+	measure 'Average Survey Score' = ```
 			
-			AVERAGEX(
+			-- Step 1: Create a virtual table calculating the true average score per student/school/year group
+			VAR StudentAveragesTable = 
 			    SUMMARIZE(
 			        'reporting RDS_FactSocialCapitalSurvey',
 			        'reporting RDS_FactSocialCapitalSurvey'[SchoolYear],
 			        'reporting RDS_FactSocialCapitalSurvey'[K12SchoolId],
-			        'reporting RDS_FactSocialCapitalSurvey'[PsStudentId]
-			    ),
-			    CALCULATE(AVERAGE('reporting RDS_FactSocialCapitalSurvey'[SurveyScore]))
-			)
+			        'reporting RDS_FactSocialCapitalSurvey'[PsStudentId],
+			        "GroupedAverage", AVERAGE('reporting RDS_FactSocialCapitalSurvey'[SurveyScore])
+			    )
+			
+			-- Step 2: Average only the rows from that virtual table where the student's average is >= 2
+			RETURN
+			    AVERAGEX(
+			        FILTER(
+			            StudentAveragesTable,
+			            [GroupedAverage] >= 2
+			        ),
+			        [GroupedAverage]
+			    )
+			```
 		formatString: 0.0
 		lineageTag: bc76ffe2-84c6-469e-9f8e-41f41779883e
 

@@ -1,11 +1,11 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "ad7d06f30eb72c101fe7",
   "position": {
     "x": 0,
     "y": 162.99889746416758,
     "z": 8000,
-    "height": 52.921719955898567,
+    "height": 60.683572216097019,
     "width": 426.19625137816979,
     "tabOrder": 9000
   },
@@ -144,7 +144,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of Individuals proficient in Digital Skills'"
+                  "Value": "'Percentage of individuals demonstrating proficiency on digital skills assessments'"
                 }
               }
             },
@@ -177,7 +177,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of Individuals proficient in Digital Skills'"
+                  "Value": "'Percentage of individuals demonstrating proficiency on digital skills assessments'"
                 }
               }
             }
@@ -191,7 +191,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of Individuals proficient in Digital Skills'"
+                  "Value": "'Percentage of individuals demonstrating proficiency on digital skills assessments'"
                 }
               }
             }

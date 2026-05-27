@@ -1,11 +1,11 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "f875af4427797c758424",
   "position": {
     "x": 426.19625137816979,
     "y": 162.29327453142227,
     "z": 9000,
-    "height": 53.627342888643881,
+    "height": 61.389195148842333,
     "width": 425.49062844542448,
     "tabOrder": 10000
   },
@@ -144,7 +144,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of Individuals proficient in Communication Skills'"
+                  "Value": "'Percentage of individuals demonstrating proficiency on communication skills assessments'"
                 }
               }
             },
@@ -177,7 +177,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of Individuals proficient in Communication Skills'"
+                  "Value": "'Percentage of individuals demonstrating proficiency on communication skills assessments'"
                 }
               }
             }
@@ -191,7 +191,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of Individuals proficient in Communication Skills'"
+                  "Value": "'Percentage of individuals demonstrating proficiency on communication skills assessments'"
                 }
               }
             }
@@ -205,7 +205,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percentage of Individuals proficient in Communication Skills'"
+                  "Value": "'Percentage of individuals demonstrating proficiency on communication skills assessments'"
                 }
               }
             }

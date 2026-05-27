@@ -79,7 +79,7 @@
               },
               "queryRef": "reporting RDS_DimSocialCapitalSurvey.MeasureName",
               "nativeQueryRef": "MeasureName",
-              "active": false
+              "active": true
             }
           ],
           "fieldParameters": [
@@ -163,10 +163,24 @@
             "queryRefs": [
               "reporting RDS_DimSocialCapitalSurvey.MeasureName"
             ],
-            "isCollapsed": true
+            "isCollapsed": true,
+            "isPinned": true
           }
         ],
-        "root": {}
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Native Hawaiian or Other Pacific Islander'"
+                  }
+                }
+              ],
+              "isToggled": true
+            }
+          ]
+        }
       }
     ],
     "objects": {
@@ -255,6 +269,20 @@
               "expr": {
                 "Literal": {
                   "Value": "135L"
+                }
+              }
+            },
+            "axisEnd": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "axisStart": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }
