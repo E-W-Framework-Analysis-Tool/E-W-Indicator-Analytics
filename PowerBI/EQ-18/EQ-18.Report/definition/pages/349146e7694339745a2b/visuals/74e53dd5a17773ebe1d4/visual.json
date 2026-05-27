@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "74e53dd5a17773ebe1d4",
   "position": {
     "x": 640,
@@ -59,11 +59,11 @@
                       "Entity": "Career Advising"
                     }
                   },
-                  "Property": "PS Student to Counselor Ratio"
+                  "Property": "% PS Counseling Utilization"
                 }
               },
-              "queryRef": "Career Advising.PS Student to Counselor Ratio",
-              "nativeQueryRef": "PS Student to Counselor Ratio"
+              "queryRef": "Career Advising.% Students Using Career Services",
+              "nativeQueryRef": "% PS Counseling Utilization"
             }
           ]
         }
@@ -78,7 +78,7 @@
                     "Entity": "Career Advising"
                   }
                 },
-                "Property": "PS Student to Counselor Ratio"
+                "Property": "% PS Counseling Utilization"
               }
             },
             "direction": "Descending"
@@ -108,6 +108,20 @@
               "expr": {
                 "Literal": {
                   "Value": "8D"
+                }
+              }
+            },
+            "start": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "end": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             }
@@ -178,7 +192,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "27e4da9fb02384136bc9",
+        "name": "0a0469e51cab1009b4b5",
         "field": {
           "Measure": {
             "Expression": {
@@ -186,24 +200,10 @@
                 "Entity": "Career Advising"
               }
             },
-            "Property": "PS Student to Counselor Ratio"
+            "Property": "% PS Counseling Utilization"
           }
         },
         "type": "Advanced"
-      },
-      {
-        "name": "e884f0b9dbfd50072d63",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimK12Schools"
-              }
-            },
-            "Property": "SeaOrganizationName"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

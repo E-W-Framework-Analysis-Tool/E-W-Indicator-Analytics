@@ -27002,7 +27002,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Career Advising",
-			          "ConceptualProperty": "Total PS FTE Counselors"
+			          "ConceptualProperty": "Average Equivalency Per Student greater than .7"
 			        }
 			      },
 			      "State": "Generated",

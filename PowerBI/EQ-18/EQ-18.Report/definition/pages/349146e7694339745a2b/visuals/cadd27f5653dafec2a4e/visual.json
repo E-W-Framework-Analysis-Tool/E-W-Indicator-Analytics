@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "cadd27f5653dafec2a4e",
   "position": {
     "x": 640,
@@ -77,11 +77,11 @@
                       "Entity": "Career Advising"
                     }
                   },
-                  "Property": "PS Advising Trend"
+                  "Property": "% PS Counseling Utilization Trend"
                 }
               },
-              "queryRef": "Career Advising.PS Advising Trend",
-              "nativeQueryRef": "PS Advising Trend"
+              "queryRef": "Career Advising.% PS Counseling Utilization Trend",
+              "nativeQueryRef": "% PS Counseling Utilization Trend"
             }
           ]
         }
@@ -96,7 +96,7 @@
                     "Entity": "Career Advising"
                   }
                 },
-                "Property": "PS Advising Trend"
+                "Property": "% PS Counseling Utilization Trend"
               }
             },
             "direction": "Descending"
@@ -192,7 +192,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Student to Counselor Ratio'"
+                  "Value": "'% PS Counseling Utilization'"
                 }
               }
             },
@@ -200,6 +200,27 @@
               "expr": {
                 "Literal": {
                   "Value": "8D"
+                }
+              }
+            },
+            "start": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "end": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -227,7 +248,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'PS Students per FTE counselors per year'"
+                  "Value": "'Postsecondary Advising and Counseling utilization per year'"
                 }
               }
             },
@@ -296,7 +317,7 @@
         "type": "Advanced"
       },
       {
-        "name": "d7c2f66cd6be469a536e",
+        "name": "8ebe2c3ca10a06c80cb4",
         "field": {
           "Measure": {
             "Expression": {
@@ -304,24 +325,10 @@
                 "Entity": "Career Advising"
               }
             },
-            "Property": "PS Advising Trend"
+            "Property": "% PS Counseling Utilization Trend"
           }
         },
         "type": "Advanced"
-      },
-      {
-        "name": "c96e58dbc516f05d8108",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "bi vw_DimK12Schools"
-              }
-            },
-            "Property": "SeaOrganizationName"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

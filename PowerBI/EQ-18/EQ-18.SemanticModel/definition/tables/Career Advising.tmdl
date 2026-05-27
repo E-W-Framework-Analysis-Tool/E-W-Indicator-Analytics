@@ -52,14 +52,14 @@ table 'Career Advising'
 			SelectedYearTitle
 		lineageTag: 0dcf28ab-b4da-4c15-b198-9aacc4c19ea2
 
-	measure 'Total PS FTE Counselors' =
+	measure 'Average Equivalency Per Student greater than .7' =
 			
 			CALCULATE(
 			    SUMX(
 			        SUMMARIZE(
 			            'bi vw_PSStaffCounts',
 			            'bi vw_PSStaffCounts'[SchoolYear],
-			            'bi vw_PSStaffCounts'[PsStaffId]
+			            'bi vw_PSStaffCounts'[PsStudentId]
 			            ),
 			        CALCULATE(MAX('bi vw_PSStaffCounts'[StaffEquivalency]))
 			    )
@@ -71,7 +71,7 @@ table 'Career Advising'
 		formatString: 0
 		lineageTag: bbd40317-368a-4f05-8374-9a5c34bcf1ad
 
-	measure 'PS Student to Counselor Ratio' = DIVIDE([Total PS Students], [Total PS FTE Counselors], 0)
+	measure 'PS Student to Counselor Ratio' = DIVIDE([Total PS Students], [Average Equivalency Per Student greater than .7], 0)
 		formatString: 0.0
 		lineageTag: bf524010-a5a8-4cdb-a587-7c4619c55471
 
@@ -91,10 +91,46 @@ table 'Career Advising'
 	measure 'PS Career Advising Chart Title' =
 			
 			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
-			VAR SelectedYearTitle = "PS Students per FTE counselors " & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			VAR SelectedYearTitle = "Postsecondary Advising and Counseling utilization " & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
 			RETURN
 			SelectedYearTitle
 		lineageTag: 353e3aab-9d61-4533-b543-96d737280916
+
+	measure '% PS Counseling Utilization' = ```
+			
+			VAR TotalStudents = 
+			    DISTINCTCOUNT('bi vw_PSStaffCounts'[PsStudentId])
+			
+			VAR StudentsAboveThreshold = 
+			    COUNTAX(
+			        FILTER(
+			            SUMMARIZE(
+			                'bi vw_PSStaffCounts',
+			                'bi vw_PSStaffCounts'[SchoolYear],
+			                'bi vw_PSStaffCounts'[PsStudentId]
+			            ),
+			            CALCULATE(AVERAGE('bi vw_PSStaffCounts'[StaffEquivalency])) >= 0.7
+			        ),
+			        'bi vw_PSStaffCounts'[PsStudentId]
+			    )
+			
+			RETURN
+			    DIVIDE(StudentsAboveThreshold, TotalStudents, 0)
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: ad7288a7-8fe8-41dd-87d7-617a4e823a57
+
+	measure '% PS Counseling Utilization Trend' =
+			
+			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineYears[SchoolYear])
+			RETURN
+			CALCULATE(
+			    [% PS Counseling Utilization],
+			    'bi vw_DimSchoolYears'[SchoolYear] = SelectedTrendYear,
+			    REMOVEFILTERS('bi vw_DimSchoolYears')
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: d48e2e0d-7ef0-428b-a529-349b2cc74a5e
 
 	partition 'Career Advising' = m
 		mode: import
