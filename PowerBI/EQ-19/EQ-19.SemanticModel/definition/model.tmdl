@@ -10,7 +10,7 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_ProTooling = ["DevMode"]
 
-annotation PBI_QueryOrder = ["bi vw_DimRaces","bi vw_DimCipCodes","bi vw_DimDisabilityStatuses","bi vw_DimEconomicallyDisadvantagedStatuses","bi vw_DimHomelessnessStatuses","bi vw_DimPsEnrollmentStatuses","bi vw_DimPsAcademicAwardTitles","bi vw_DimPsAcademicAwardStatuses","bi vw_DimSEAs","bi vw_DimK12Demographics","bi vw_DimEnglishLearnerStatuses","Globals","Enrollment in Graduate Education","Postsecondary Certificate Completion","reporting RDS_FactPsStudentEnrollments","reporting RDS_FactK12GraduationCohorts","reporting RDS_DimPsInstitutions","bi vw_DimCohortYears","bi vw_DimSchoolYears","bi vw_DimCohortGraduationYears","bi vw_DimK12Schools","reporting RDS_DimStudents","bi vw_DimFosterCareStatuses","bi vw_DimNeglectedOrDelinquentStatus","bi vw_DimRuralStatuses","reporting RDS_FactPsStudentAcademicAwards","reporting RDS_FactPsStudentCourseTranscripts","bi vw_FactPsSkills","reporting RDS_DimPsSkillCategories","Skills Proficiency","reporting RDS_FactEconomicReturn","reporting RDS_DimEconomicReturnStudentCategory","Economic Return"]
+annotation PBI_QueryOrder = ["bi vw_DimRaces","bi vw_DimCipCodes","bi vw_DimDisabilityStatuses","bi vw_DimEconomicallyDisadvantagedStatuses","bi vw_DimHomelessnessStatuses","bi vw_DimPsEnrollmentStatuses","bi vw_DimPsAcademicAwardTitles","bi vw_DimPsAcademicAwardStatuses","bi vw_DimSEAs","bi vw_DimK12Demographics","bi vw_DimEnglishLearnerStatuses","Globals","Enrollment in Graduate Education","Postsecondary Certificate Completion","reporting RDS_FactPsStudentEnrollments","reporting RDS_FactK12GraduationCohorts","reporting RDS_DimPsInstitutions","bi vw_DimCohortYears","bi vw_DimSchoolYears","bi vw_DimCohortGraduationYears","bi vw_DimK12Schools","reporting RDS_DimStudents","bi vw_DimFosterCareStatuses","bi vw_DimNeglectedOrDelinquentStatus","bi vw_DimRuralStatuses","reporting RDS_FactPsStudentAcademicAwards","reporting RDS_FactPsStudentCourseTranscripts","bi vw_FactPsSkills","reporting RDS_DimPsSkillCategories","Skills Proficiency","reporting RDS_FactEconomicReturn","reporting RDS_DimEconomicReturnStudentCategory","Economic Return","reporting RDS_DimSocialCapitalSurvey","reporting RDS_FactSocialCapitalSurvey","Social Capital"]
 
 ref table 'bi vw_DimRaces'
 ref table 'bi vw_DimCipCodes'
@@ -56,6 +56,9 @@ ref table 'Skills Proficiency'
 ref table 'reporting RDS_FactEconomicReturn'
 ref table 'reporting RDS_DimEconomicReturnStudentCategory'
 ref table 'Economic Return'
+ref table 'reporting RDS_DimSocialCapitalSurvey'
+ref table 'reporting RDS_FactSocialCapitalSurvey'
+ref table 'Social Capital'
 
 ref cultureInfo en-US
 

@@ -1,0 +1,19 @@
+table 'Social Capital'
+	lineageTag: f7c208b3-3f03-4171-9ed6-d929b7c4b4e1
+
+	measure 'Average Survey Score' = AVERAGE('reporting RDS_FactSocialCapitalSurvey'[SurveyScore])
+		formatString: 0.0
+		lineageTag: bc76ffe2-84c6-469e-9f8e-41f41779883e
+
+	partition 'Social Capital' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

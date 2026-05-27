@@ -1,0 +1,67 @@
+table 'reporting RDS_FactSocialCapitalSurvey'
+	lineageTag: f977fccb-4def-40cb-b8ad-675ff7840661
+
+	column SchoolYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 9e7027ce-d944-4114-8ae8-eaaab327f84f
+		summarizeBy: sum
+		sourceColumn: SchoolYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column K12SchoolId
+		dataType: int64
+		formatString: 0
+		lineageTag: 790352fd-308d-446e-9ff1-bbbb142c81f0
+		summarizeBy: count
+		sourceColumn: K12SchoolId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PsStudentId
+		dataType: int64
+		formatString: 0
+		lineageTag: f7855d59-7da2-4db3-9ab6-da8807485797
+		summarizeBy: none
+		sourceColumn: PsStudentId
+
+		annotation SummarizationSetBy = Automatic
+
+	column DomainId
+		dataType: int64
+		formatString: 0
+		lineageTag: da8b4b94-9979-468c-bdf6-0556db85bf5f
+		summarizeBy: count
+		sourceColumn: DomainId
+
+		annotation SummarizationSetBy = Automatic
+
+	column MeasureId
+		dataType: int64
+		formatString: 0
+		lineageTag: 3129f213-2a98-43a3-a1c1-8065d7ebf374
+		summarizeBy: none
+		sourceColumn: MeasureId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SurveyScore
+		dataType: double
+		lineageTag: b2e7b930-2689-4992-8808-f8b6ca8b0733
+		summarizeBy: sum
+		sourceColumn: SurveyScore
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'reporting RDS_FactSocialCapitalSurvey' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    reporting_RDS_FactSocialCapitalSurvey = Source{[Schema="reporting",Item="RDS_FactSocialCapitalSurvey"]}[Data]
+				in
+				    reporting_RDS_FactSocialCapitalSurvey
+

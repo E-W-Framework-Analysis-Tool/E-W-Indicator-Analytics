@@ -463,6 +463,46 @@
             "width": 234
           },
           "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Economic Return",
+          "nodeLineageTag": "077f38bd-a11d-4607-b96a-a7cd3c834269",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "reporting RDS_DimSocialCapitalSurvey",
+          "nodeLineageTag": "1dad2258-53e0-49f8-b3ae-72665617d796",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "reporting RDS_FactSocialCapitalSurvey",
+          "nodeLineageTag": "f977fccb-4def-40cb-b8ad-675ff7840661",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Social Capital",
+          "nodeLineageTag": "f7c208b3-3f03-4171-9ed6-d929b7c4b4e1",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",
@@ -1165,8 +1205,88 @@
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,
       "tablesLocked": false
+    },
+    {
+      "ordinal": 10,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1135,
+            "y": 177
+          },
+          "nodeIndex": "reporting RDS_DimSocialCapitalSurvey",
+          "nodeLineageTag": "1dad2258-53e0-49f8-b3ae-72665617d796",
+          "size": {
+            "height": 247,
+            "width": 391
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 753,
+            "y": 514
+          },
+          "nodeIndex": "reporting RDS_FactSocialCapitalSurvey",
+          "nodeLineageTag": "f977fccb-4def-40cb-b8ad-675ff7840661",
+          "size": {
+            "height": 424,
+            "width": 304
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 158,
+            "y": 175
+          },
+          "nodeIndex": "bi vw_DimK12Schools",
+          "nodeLineageTag": "d4b337f3-d550-45ff-8985-d62df20f9dd7",
+          "size": {
+            "height": 465,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 558,
+            "y": 50
+          },
+          "nodeIndex": "bi vw_DimSchoolYears",
+          "nodeLineageTag": "4c7fccbc-b39c-4c0c-b2a2-380d415c111c",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1271,
+            "y": 787
+          },
+          "nodeIndex": "reporting RDS_DimStudents",
+          "nodeLineageTag": "4e6a4c71-b4d5-4f38-bce2-089c5d73531b",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Social Capital",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
     }
   ],
-  "selectedDiagram": "Economic Return",
+  "selectedDiagram": "Social Capital",
   "defaultDiagram": "All tables"
 }

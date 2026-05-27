@@ -1,0 +1,55 @@
+table 'reporting RDS_DimSocialCapitalSurvey'
+	lineageTag: 1dad2258-53e0-49f8-b3ae-72665617d796
+
+	column DimSocialCapitalSurveyId
+		dataType: int64
+		formatString: 0
+		lineageTag: 5162aac8-f23f-40f9-a77c-29c710860b9b
+		summarizeBy: none
+		sourceColumn: DimSocialCapitalSurveyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column DomainId
+		dataType: int64
+		formatString: 0
+		lineageTag: 5fa51107-ad1f-468d-9418-65da561e9e59
+		summarizeBy: none
+		sourceColumn: DomainId
+
+		annotation SummarizationSetBy = Automatic
+
+	column DomainName
+		dataType: string
+		lineageTag: ec458de0-4b49-40ff-98f3-1644bbe9effb
+		summarizeBy: none
+		sourceColumn: DomainName
+
+		annotation SummarizationSetBy = Automatic
+
+	column MeasureId
+		dataType: int64
+		formatString: 0
+		lineageTag: a7113c7b-21c7-4a6c-bb09-45658b6ece03
+		summarizeBy: none
+		sourceColumn: MeasureId
+
+		annotation SummarizationSetBy = Automatic
+
+	column MeasureName
+		dataType: string
+		lineageTag: 4dd8857a-90d6-4aba-a89e-4b7f0f0edb56
+		summarizeBy: none
+		sourceColumn: MeasureName
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'reporting RDS_DimSocialCapitalSurvey' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    reporting_RDS_DimSocialCapitalSurvey = Source{[Schema="reporting",Item="RDS_DimSocialCapitalSurvey"]}[Data]
+				in
+				    reporting_RDS_DimSocialCapitalSurvey
+

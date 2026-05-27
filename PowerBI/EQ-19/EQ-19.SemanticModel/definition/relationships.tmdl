@@ -150,3 +150,21 @@ relationship aadfd1b7-6f91-fb9f-ba7b-ef793bfbbe2a
 	fromColumn: 'reporting RDS_FactEconomicReturn'.StudentCategory
 	toColumn: 'reporting RDS_DimEconomicReturnStudentCategory'.DimEconomicReturnStudentCategoryId
 
+relationship AutoDetected_66c2d00d-e67b-42fd-919f-2aed559cf702
+	isActive: false
+	fromColumn: 'reporting RDS_FactSocialCapitalSurvey'.SchoolYear
+	toColumn: 'bi vw_DimSchoolYears'.SchoolYear
+
+relationship AutoDetected_9769cfea-7c76-49e8-ac39-b2bf04262386
+	fromColumn: 'reporting RDS_FactSocialCapitalSurvey'.MeasureId
+	toColumn: 'reporting RDS_DimSocialCapitalSurvey'.MeasureId
+
+relationship cefbc810-8f20-a106-d7ed-f3051d9b90c6
+	isActive: false
+	fromColumn: 'reporting RDS_FactSocialCapitalSurvey'.K12SchoolId
+	toColumn: 'bi vw_DimK12Schools'.DimK12SchoolId
+
+relationship a2f6a92d-b33c-22bc-f664-6e7a1b1c6338
+	fromColumn: 'reporting RDS_FactSocialCapitalSurvey'.PsStudentId
+	toColumn: 'reporting RDS_DimStudents'.DimK12StudentId
+
