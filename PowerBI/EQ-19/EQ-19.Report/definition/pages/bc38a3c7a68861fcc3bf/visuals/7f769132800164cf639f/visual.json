@@ -7,7 +7,7 @@
     "z": 0,
     "height": 517.21822541966424,
     "width": 640,
-    "tabOrder": 7000
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "decompositionTreeVisual",
@@ -23,12 +23,12 @@
                       "Entity": "Social Capital"
                     }
                   },
-                  "Property": "Average Survey Score"
+                  "Property": "% Individuals with High Score"
                 }
               },
-              "queryRef": "Social Capital.Average Survey Score",
-              "nativeQueryRef": "Average Survey Score",
-              "displayName": "Average Survey Score"
+              "queryRef": "Social Capital.% Individuals with High Score",
+              "nativeQueryRef": "Percentage",
+              "displayName": "Percentage"
             }
           ],
           "fieldParameters": [
@@ -55,22 +55,6 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "bi vw_DimRaces"
-                    }
-                  },
-                  "Property": "RaceEthnicity"
-                }
-              },
-              "queryRef": "bi vw_DimRaces.RaceEthnicity",
-              "nativeQueryRef": "RaceEthnicity",
-              "active": true,
-              "displayName": "Race & Ethnicity"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
                       "Entity": "reporting RDS_DimSocialCapitalSurvey"
                     }
                   },
@@ -78,8 +62,22 @@
                 }
               },
               "queryRef": "reporting RDS_DimSocialCapitalSurvey.MeasureName",
-              "nativeQueryRef": "MeasureName",
-              "active": true
+              "nativeQueryRef": "MeasureName"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_DimRaces"
+                    }
+                  },
+                  "Property": "RaceEthnicity"
+                }
+              },
+              "queryRef": "bi vw_DimRaces.RaceEthnicity",
+              "nativeQueryRef": "Race & Ethnicity",
+              "displayName": "Race & Ethnicity"
             }
           ],
           "fieldParameters": [
@@ -94,7 +92,7 @@
                   "Property": "Disaggregation Name"
                 }
               },
-              "index": 0,
+              "index": 1,
               "length": 1,
               "sortDirection": "Ascending"
             }
@@ -111,7 +109,7 @@
                     "Entity": "Social Capital"
                   }
                 },
-                "Property": "Average Survey Score"
+                "Property": "% Individuals with High Score"
               }
             },
             "direction": "Descending"
@@ -141,45 +139,19 @@
         "levels": [
           {
             "queryRefs": [
-              "bi vw_DimRaces.RaceEthnicity"
+              "reporting RDS_DimSocialCapitalSurvey.MeasureName"
             ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "bi vw_DimRaces"
-                    }
-                  },
-                  "Property": "RaceEthnicity"
-                }
-              }
-            ],
-            "isPinned": true,
-            "isLocked": true
+            "isCollapsed": true
           },
           {
             "queryRefs": [
-              "reporting RDS_DimSocialCapitalSurvey.MeasureName"
+              "bi vw_DimRaces.RaceEthnicity"
             ],
-            "isCollapsed": true,
-            "isPinned": true
+            "isCollapsed": true
           }
         ],
         "root": {
-          "children": [
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'Native Hawaiian or Other Pacific Islander'"
-                  }
-                }
-              ],
-              "isToggled": true
-            }
-          ]
+          "isToggled": true
         }
       }
     ],
@@ -249,40 +221,6 @@
               "expr": {
                 "Literal": {
                   "Value": "'absolute'"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "dataBars": [
-        {
-          "properties": {
-            "dataBarScalingType": {
-              "expr": {
-                "Literal": {
-                  "Value": "'levelMaximum'"
-                }
-              }
-            },
-            "dataBarWidthPercent": {
-              "expr": {
-                "Literal": {
-                  "Value": "135L"
-                }
-              }
-            },
-            "axisEnd": {
-              "expr": {
-                "Literal": {
-                  "Value": "4D"
-                }
-              }
-            },
-            "axisStart": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
                 }
               }
             }

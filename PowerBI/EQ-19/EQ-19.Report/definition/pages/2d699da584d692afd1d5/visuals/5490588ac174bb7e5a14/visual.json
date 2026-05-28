@@ -6,7 +6,8 @@
     "y": 0,
     "z": 0,
     "height": 70.30051813471502,
-    "width": 1280
+    "width": 1280,
+    "tabOrder": 4000
   },
   "visualGroup": {
     "displayName": "Page Header",

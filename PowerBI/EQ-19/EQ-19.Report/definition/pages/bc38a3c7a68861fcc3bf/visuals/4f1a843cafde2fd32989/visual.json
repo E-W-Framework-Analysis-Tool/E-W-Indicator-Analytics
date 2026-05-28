@@ -4,7 +4,7 @@
   "position": {
     "x": 640,
     "y": 197.21822541966426,
-    "z": 9500,
+    "z": 7000,
     "height": 234.05275779376498,
     "width": 640,
     "tabOrder": 5000
@@ -30,6 +30,38 @@
               "nativeQueryRef": "SEA",
               "active": true,
               "displayName": "SEA"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_DimK12Schools"
+                    }
+                  },
+                  "Property": "LeaOrganizationName"
+                }
+              },
+              "queryRef": "bi vw_DimK12Schools.LeaOrganizationName",
+              "nativeQueryRef": "LEA",
+              "active": false,
+              "displayName": "LEA"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bi vw_DimK12Schools"
+                    }
+                  },
+                  "Property": "K12SchoolName"
+                }
+              },
+              "queryRef": "bi vw_DimK12Schools.K12SchoolName",
+              "nativeQueryRef": "K12 School",
+              "active": false,
+              "displayName": "K12 School"
             },
             {
               "field": {
@@ -75,12 +107,27 @@
                 }
               },
               "index": 0,
-              "length": 1
+              "length": 3
             }
           ]
         },
         "Y": {
           "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Social Capital"
+                    }
+                  },
+                  "Property": "% Individuals with High Score"
+                }
+              },
+              "queryRef": "Social Capital.% Individuals with High Score",
+              "nativeQueryRef": "Percentage",
+              "displayName": "Percentage"
+            },
             {
               "field": {
                 "Measure": {
@@ -110,7 +157,7 @@
                 }
               },
               "index": 0,
-              "length": 1
+              "length": 2
             }
           ]
         }
@@ -126,6 +173,32 @@
                   }
                 },
                 "Property": "SeaOrganizationName"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "bi vw_DimK12Schools"
+                  }
+                },
+                "Property": "LeaOrganizationName"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "bi vw_DimK12Schools"
+                  }
+                },
+                "Property": "K12SchoolName"
               }
             },
             "direction": "Ascending"
@@ -223,37 +296,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "0e6eb23acffb026eadcc",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "reporting RDS_DimSocialCapitalSurvey"
-              }
-            },
-            "Property": "DomainName"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "a5166a13a05d9d1c9d94",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "reporting RDS_DimSocialCapitalSurvey"
-              }
-            },
-            "Property": "MeasureName"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

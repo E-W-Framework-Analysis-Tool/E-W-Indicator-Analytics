@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "0b8b8c3c859abaa493a3",
   "position": {
     "x": 78.983666061705989,
@@ -34,6 +34,18 @@
                     "textStyle": {
                       "fontSize": "9pt",
                       "color": "#5b6771"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "No Sample Visualization Developed",
+                    "textStyle": {
+                      "fontFamily": "Calibri",
+                      "fontStyle": "italic",
+                      "color": "#46790e"
                     }
                   }
                 ]
