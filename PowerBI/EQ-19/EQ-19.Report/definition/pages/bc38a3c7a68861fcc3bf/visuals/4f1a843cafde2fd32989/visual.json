@@ -127,21 +127,6 @@
               "queryRef": "Social Capital.% Individuals with High Score",
               "nativeQueryRef": "Percentage",
               "displayName": "Percentage"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Social Capital"
-                    }
-                  },
-                  "Property": "Average Survey Score"
-                }
-              },
-              "queryRef": "Social Capital.Average Survey Score",
-              "nativeQueryRef": "Average Survey Score",
-              "displayName": "Average Survey Score"
             }
           ],
           "fieldParameters": [
@@ -157,7 +142,7 @@
                 }
               },
               "index": 0,
-              "length": 2
+              "length": 1
             }
           ]
         }

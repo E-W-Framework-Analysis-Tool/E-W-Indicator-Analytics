@@ -55,20 +55,6 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "reporting RDS_DimSocialCapitalSurvey"
-                    }
-                  },
-                  "Property": "MeasureName"
-                }
-              },
-              "queryRef": "reporting RDS_DimSocialCapitalSurvey.MeasureName",
-              "nativeQueryRef": "MeasureName"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
                       "Entity": "bi vw_DimRaces"
                     }
                   },
@@ -78,6 +64,20 @@
               "queryRef": "bi vw_DimRaces.RaceEthnicity",
               "nativeQueryRef": "Race & Ethnicity",
               "displayName": "Race & Ethnicity"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "reporting RDS_DimSocialCapitalSurvey"
+                    }
+                  },
+                  "Property": "MeasureName"
+                }
+              },
+              "queryRef": "reporting RDS_DimSocialCapitalSurvey.MeasureName",
+              "nativeQueryRef": "MeasureName"
             }
           ],
           "fieldParameters": [
@@ -92,7 +92,7 @@
                   "Property": "Disaggregation Name"
                 }
               },
-              "index": 1,
+              "index": 0,
               "length": 1,
               "sortDirection": "Ascending"
             }
@@ -113,19 +113,6 @@
               }
             },
             "direction": "Descending"
-          },
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "bi vw_DimRaces"
-                  }
-                },
-                "Property": "RaceEthnicity"
-              }
-            },
-            "direction": "Ascending"
           }
         ],
         "isDefaultSort": true
@@ -139,13 +126,13 @@
         "levels": [
           {
             "queryRefs": [
-              "reporting RDS_DimSocialCapitalSurvey.MeasureName"
+              "bi vw_DimRaces.RaceEthnicity"
             ],
             "isCollapsed": true
           },
           {
             "queryRefs": [
-              "bi vw_DimRaces.RaceEthnicity"
+              "reporting RDS_DimSocialCapitalSurvey.MeasureName"
             ],
             "isCollapsed": true
           }
