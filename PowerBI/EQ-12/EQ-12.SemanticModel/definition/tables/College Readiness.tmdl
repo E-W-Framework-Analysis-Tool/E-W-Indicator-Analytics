@@ -6,19 +6,24 @@ table 'College Readiness'
 		displayFolder: College Ready Measures
 		lineageTag: 46c267a9-fb6a-462c-a430-df62c44db6e5
 
-	measure 'Total 11-12 Graders' = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentEnrollments'[K12StudentId]), 'bi vw_DimGradeLevels'[GradeLevelCode] IN {"11", "12"})
+	measure 'Total 11-12 Graders' = ```
+			
+			CALCULATE(
+			    DISTINCTCOUNT('bi vw_FactK12StudentEnrollments'[K12StudentId]), 
+			    KEEPFILTERS('bi vw_DimGradeLevels'[GradeLevelCode] IN {"11", "12"})
+			)
+			```
 		formatString: 0
 		displayFolder: SAT-ACT Participations
 		lineageTag: 30a2f34d-0867-445e-a161-d958a44d4814
 
 	measure 'ACT-SAT Participant Count' =
 			
-			VAR Result = CALCULATE(
+			CALCULATE(
 			    DISTINCTCOUNT('bi vw_FactK12StudentAssessments'[K12StudentId]),
 			    'bi vw_FactK12StudentAssessments'[SATScore] <> BLANK() || 'bi vw_FactK12StudentAssessments'[ACTScore] <> BLANK(),
-			    KEEPFILTERS(CALCULATETABLE('bi vw_DimGradeLevels', 'bi vw_DimGradeLevels'[GradeLevelCode] IN {"11", "12"}))
-			 )
-			 RETURN Result
+			    KEEPFILTERS('bi vw_DimGradeLevels'[GradeLevelCode] IN {"11", "12"})
+			)
 		formatString: 0
 		displayFolder: SAT-ACT Participations
 		lineageTag: b9b7ab8d-406b-402d-a60b-a9c4481de6b8
@@ -46,16 +51,30 @@ table 'College Readiness'
 			        "MaxACT_Wri", CALCULATE(MAX('bi vw_FactK12StudentAssessments'[ACTScore]), KEEPFILTERS('bi vw_DimAssessmentSubtests'[AssessmentSubtestCode]  = "ACT-W"))
 			    )
 			RETURN
-			COUNTROWS(FILTER(StudentSubtestScores, 
-			( [MaxSAT_RW] >= SAT_RW_Bench && [MaxSAT_Math] >= SAT_Math_Bench ) ||
-			        ( [MaxACT_Eng] >= ACT_Eng_Bench && [MaxACT_Math] >= ACT_Math_Bench && [MaxACT_Read] >= ACT_Read_Bench && [MaxACT_Sci] >= ACT_Sci_Bench && [MaxACT_Wri] >= ACT_Wri_Bench  )
-			))
+			// Adding CALCULATE here ensures the row count obeys the Grade Level context of the visual
+			CALCULATE(
+			    COUNTROWS(FILTER(StudentSubtestScores, 
+			        ( [MaxSAT_RW] >= SAT_RW_Bench && [MaxSAT_Math] >= SAT_Math_Bench ) ||
+			        ( [MaxACT_Eng] >= ACT_Eng_Bench && [MaxACT_Math] >= ACT_Math_Bench && [MaxACT_Read] >= ACT_Read_Bench && [MaxACT_Sci] >= ACT_Sci_Bench && [MaxACT_Wri] >= ACT_Wri_Bench )
+			    )),
+			    KEEPFILTERS('bi vw_DimGradeLevels'[GradeLevelCode] IN {"11", "12"})
+			)
 			```
 		formatString: 0
 		displayFolder: SAT-ACT Participations
 		lineageTag: 1988389e-77b2-43f8-a006-a68edf934eb8
 
-	measure 'ACT-SAT College Readiness' = IF([ACT-SAT Participant Count] = 0, 0, DIVIDE([College Readiness on ACT-SAT Scores], [ACT-SAT Participant Count], 0))
+	measure 'ACT-SAT College Readiness' = ```
+			
+			IF(
+			    [ACT-SAT Participant Count] = 0, 
+			    0, 
+			    AVERAGEX(
+			        KEEPFILTERS(VALUES('bi vw_DimGradeLevels'[GradeLevelCode])),
+			        DIVIDE([College Readiness on ACT-SAT Scores], [ACT-SAT Participant Count], 0)
+			    )
+			)
+			```
 		formatString: 0.0%;-0.0%;0.0%
 		displayFolder: SAT-ACT Participations
 		lineageTag: 7a1b237e-732a-4869-9064-160e603780c5
@@ -76,7 +95,17 @@ table 'College Readiness'
 		displayFolder: College Ready Measures
 		lineageTag: a843d23f-014a-4a9c-8607-d71a2aba2847
 
-	measure 'ACT-SAT Participation Rate' = IF([Total 11-12 Graders] = 0, 0, DIVIDE([ACT-SAT Participant Count], [Total 11-12 Graders], 0))
+	measure 'ACT-SAT Participation Rate' = ```
+			
+			IF(
+			    [Total 11-12 Graders] = 0, 
+			    0, 
+			    AVERAGEX(
+			        KEEPFILTERS(VALUES('bi vw_DimGradeLevels'[GradeLevelCode])),
+			        DIVIDE([ACT-SAT Participant Count], [Total 11-12 Graders], 0)
+			    )
+			)
+			```
 		formatString: 0.0%;-0.0%;0.0%
 		displayFolder: SAT-ACT Participations
 		lineageTag: 3f9b7145-77bb-4128-8a32-f7ea020d4be0

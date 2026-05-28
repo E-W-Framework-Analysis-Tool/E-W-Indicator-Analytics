@@ -855,7 +855,7 @@
           "nodeLineageTag": "507771a1-5f6e-4ac5-9152-9fc47fdd08cc",
           "size": {
             "height": 347,
-            "width": 234
+            "width": 243
           },
           "zIndex": 1
         },
@@ -892,6 +892,19 @@
           },
           "nodeIndex": "bi vw_DimGradeLevels",
           "nodeLineageTag": "146faf17-3fdb-4714-adf3-d5620835c217",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 977,
+            "y": 505
+          },
+          "nodeIndex": "bi vw_DimStudents",
+          "nodeLineageTag": "c5ac66a0-c196-468c-8f8d-a42626e29721",
           "size": {
             "height": 152,
             "width": 234
@@ -1227,6 +1240,6 @@
       "tablesLocked": false
     }
   ],
-  "selectedDiagram": "Student Course Sections",
+  "selectedDiagram": "Fact Tables",
   "defaultDiagram": "All tables"
 }
