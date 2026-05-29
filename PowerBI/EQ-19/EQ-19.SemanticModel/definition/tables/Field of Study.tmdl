@@ -1,0 +1,48 @@
+table 'Field of Study'
+	lineageTag: de022cdf-f907-4b79-b4eb-8998efdcaa04
+
+	column 'Sort Index'
+		formatString: 0
+		lineageTag: eec3973b-586e-4461-a319-336016fdf147
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Sort Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Slicer-Value
+		lineageTag: 76b7c913-c8f5-4465-8875-5bd10653eeee
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Slicer-Value]
+		sortByColumn: 'Sort Index'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mapping-Value
+		lineageTag: 468409aa-aa48-46ce-9d0b-578c8784b956
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Mapping-Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Field of Study' = calculated
+		mode: import
+		source = ```
+				
+				DATATABLE (
+				    "Sort Index", INTEGER, 
+				    "Slicer-Value", STRING, 
+				    "Mapping-Value", STRING, 
+				    {
+				        {0, "STEM", "STEM"},
+				        {1, "Liberal Arts", "ARTS"},
+				        {2, "Business", "BUSINESS"},
+				        {3, "Other", "OTHER"}
+				    }
+				)
+				```
+
+	annotation PBI_Id = da52e5533eaa498096efeaba9c366403
+

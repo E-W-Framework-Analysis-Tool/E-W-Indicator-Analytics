@@ -1,0 +1,252 @@
+table 'reporting RDS_FactK12GraduationCohorts'
+	lineageTag: e0440402-a309-449e-8e63-91c1beb0f247
+
+	column FactK12GraduationCohortId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 28e16d46-b53d-4681-b1a8-dc4b2482b32f
+		summarizeBy: count
+		sourceColumn: FactK12GraduationCohortId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SchoolYear
+		dataType: int64
+		formatString: 0
+		lineageTag: dc22a294-ac51-4884-a1e7-02aa56d8550e
+		summarizeBy: none
+		sourceColumn: SchoolYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column CohortYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f17044a-030e-4e7a-92dc-c419bf6bcd4e
+		summarizeBy: none
+		sourceColumn: CohortYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column CohortGraduationYear
+		dataType: int64
+		formatString: 0
+		lineageTag: ed2dea13-4581-402b-9c08-ec281f61f698
+		summarizeBy: none
+		sourceColumn: CohortGraduationYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column K12AcademicAwardStatusId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 75cdb8ae-09c1-40c6-887e-a4d38e2d38de
+		summarizeBy: count
+		sourceColumn: K12AcademicAwardStatusId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SeaId
+		dataType: int64
+		formatString: 0
+		lineageTag: bda4138a-0f83-453f-8ee7-e639c9638253
+		summarizeBy: count
+		sourceColumn: SeaId
+
+		annotation SummarizationSetBy = Automatic
+
+	column LeaAccountabilityId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: cad21a50-d762-4823-a614-c083b1529ee4
+		summarizeBy: count
+		sourceColumn: LeaAccountabilityId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LeaFundingId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 9a88ebfa-760e-4ff6-8c25-8768073622c7
+		summarizeBy: count
+		sourceColumn: LeaFundingId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LeaGraduationId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c2ad18d2-bb54-492f-b38b-9bd62b3e0657
+		summarizeBy: count
+		sourceColumn: LeaGraduationId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LeaInstructionId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7f5fa116-b36b-4b56-8c93-d11894d00b83
+		summarizeBy: count
+		sourceColumn: LeaInstructionId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LeaResidentId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 86315c86-be27-47a5-bb73-afeb8b6b1238
+		summarizeBy: count
+		sourceColumn: LeaResidentId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column K12SchoolId
+		dataType: int64
+		formatString: 0
+		lineageTag: 328d0a95-2c44-43e5-afc8-f71c1b5c30a6
+		summarizeBy: none
+		sourceColumn: K12SchoolId
+
+		annotation SummarizationSetBy = Automatic
+
+	column K12StudentId
+		dataType: int64
+		formatString: 0
+		lineageTag: ea1b75aa-62c0-4d0a-82c3-4b6de3a8d568
+		summarizeBy: none
+		sourceColumn: K12StudentId
+
+		annotation SummarizationSetBy = Automatic
+
+	column GradeLevelId
+		dataType: int64
+		formatString: 0
+		lineageTag: 1c873115-fd58-40d8-baf4-418865431d77
+		summarizeBy: count
+		sourceColumn: GradeLevelId
+
+		annotation SummarizationSetBy = Automatic
+
+	column K12DemographicId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 56313608-2874-4649-96a0-7ef61571e4b9
+		summarizeBy: count
+		sourceColumn: K12DemographicId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EconomicallyDisadvantagedStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: ec98f1c1-64c5-4c66-b0fc-db7ee3a84f14
+		summarizeBy: none
+		sourceColumn: EconomicallyDisadvantagedStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column HomelessnessStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: d7f81017-8983-4d4c-b797-81abeb86cfcf
+		summarizeBy: none
+		sourceColumn: HomelessnessStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column MigrantStatusId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 5a1c62a6-fefd-424e-af14-ce24aa5e2a43
+		summarizeBy: count
+		sourceColumn: MigrantStatusId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FosterCareStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: a69fdab7-842d-4d28-be2c-b44c4e0c14ad
+		summarizeBy: none
+		sourceColumn: FosterCareStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column EnglishLearnerStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: bcc9fb0a-519d-46e3-b673-414c5cf49997
+		summarizeBy: none
+		sourceColumn: EnglishLearnerStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdeaStatusId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c64d9980-3f11-4956-b9a5-6186d2114655
+		summarizeBy: count
+		sourceColumn: IdeaStatusId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DisabilityStatusId
+		dataType: int64
+		formatString: 0
+		lineageTag: 876ba20e-0666-497a-a8e2-d4801a5c84ea
+		summarizeBy: none
+		sourceColumn: DisabilityStatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column MilitaryStatusId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: fda4ff66-a9a4-4c83-b4cb-2e776b98952a
+		summarizeBy: count
+		sourceColumn: MilitaryStatusId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'reporting RDS_FactK12GraduationCohorts' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    reporting_RDS_FactK12GraduationCohorts = Source{[Schema="reporting",Item="RDS_FactK12GraduationCohorts"]}[Data]
+				in
+				    reporting_RDS_FactK12GraduationCohorts
+

@@ -1,0 +1,3007 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/12/2026 1:43:14 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LATITUDE"
+  DTS:CreatorName="SPI-GLOBAL\e74099"
+  DTS:DTSID="{31192F55-09B7-438B-B095-F8A853883950}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Load_PS_Dimensions"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{A817C215-1DEB-40CA-8C5E-C03D4A41FA25}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DimCipCodes"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{91df76ab-169e-4a0c-80b9-f28cdb52dd3d}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DimCipCodes">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\DimCipCodes\Stage Data"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{f63d64d2-1db6-4715-9ece-c2c5630c0bb3}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Stage Data"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\DimCipCodes\Stage Data\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[reporting].[DimCipCodes]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\DimCipCodes\Stage Data\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{60dda06b-3f51-4553-8452-daaed09fbd3d}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Dashboards-DB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\DimCipCodes\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DimCipCodeId]"
+                          cachedDataType="i4"
+                          cachedName="DimCipCodeId"
+                          externalMetadataColumnId="Package\DimCipCodes\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DimCipCodeId]"
+                          lineageId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimCipCodeId]" />
+                        <inputColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CipCode]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="CipCode"
+                          externalMetadataColumnId="Package\DimCipCodes\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CipCode]"
+                          lineageId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CipCode]" />
+                        <inputColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CipDescription]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="CipDescription"
+                          externalMetadataColumnId="Package\DimCipCodes\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CipDescription]"
+                          lineageId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CipDescription]" />
+                        <inputColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CipUseCode]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="CipUseCode"
+                          externalMetadataColumnId="Package\DimCipCodes\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CipUseCode]"
+                          lineageId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CipUseCode]" />
+                        <inputColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CipUseDescription]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="CipUseDescription"
+                          externalMetadataColumnId="Package\DimCipCodes\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CipUseDescription]"
+                          lineageId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CipUseDescription]" />
+                        <inputColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CipVersionCode]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="CipVersionCode"
+                          externalMetadataColumnId="Package\DimCipCodes\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CipVersionCode]"
+                          lineageId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CipVersionCode]" />
+                        <inputColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CipVersionDescription]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="CipVersionDescription"
+                          externalMetadataColumnId="Package\DimCipCodes\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CipVersionDescription]"
+                          lineageId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CipVersionDescription]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DimCipCodeId]"
+                          dataType="i4"
+                          name="DimCipCodeId" />
+                        <externalMetadataColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CipCode]"
+                          dataType="wstr"
+                          length="7"
+                          name="CipCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CipDescription]"
+                          dataType="wstr"
+                          length="200"
+                          name="CipDescription" />
+                        <externalMetadataColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CipUseCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="CipUseCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CipUseDescription]"
+                          dataType="wstr"
+                          length="200"
+                          name="CipUseDescription" />
+                        <externalMetadataColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CipVersionCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="CipVersionCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CipVersionDescription]"
+                          dataType="wstr"
+                          length="200"
+                          name="CipVersionDescription" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\DimCipCodes\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\DimCipCodes\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\DimCipCodes\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\DimCipCodes\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\DimCipCodes\Stage Data\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[RDS].[DimCipCodes]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select DimPsInstitutionId, NameOfInstitution, IPEDSIdentifier, PhysicalAddressStateAbbreviation
+from rds.DimPsInstitutions
+ORDER BY DimPsInstitutionId</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\DimCipCodes\Stage Data\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{D41EB2B6-A586-49A5-A9CB-BCA8E8B2703B}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CEDS-DWH]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimCipCodeId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DimCipCodeId]"
+                          lineageId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimCipCodeId]"
+                          name="DimCipCodeId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CipCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CipCode]"
+                          length="7"
+                          lineageId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CipCode]"
+                          name="CipCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CipDescription]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CipDescription]"
+                          length="200"
+                          lineageId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CipDescription]"
+                          name="CipDescription"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CipUseCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CipUseCode]"
+                          length="50"
+                          lineageId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CipUseCode]"
+                          name="CipUseCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CipUseDescription]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CipUseDescription]"
+                          length="200"
+                          lineageId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CipUseDescription]"
+                          name="CipUseDescription"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CipVersionCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CipVersionCode]"
+                          length="50"
+                          lineageId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CipVersionCode]"
+                          name="CipVersionCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CipVersionDescription]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CipVersionDescription]"
+                          length="200"
+                          lineageId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CipVersionDescription]"
+                          name="CipVersionDescription"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DimCipCodeId]"
+                          dataType="i4"
+                          name="DimCipCodeId" />
+                        <externalMetadataColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CipCode]"
+                          dataType="wstr"
+                          length="7"
+                          name="CipCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CipDescription]"
+                          dataType="wstr"
+                          length="200"
+                          name="CipDescription" />
+                        <externalMetadataColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CipUseCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="CipUseCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CipUseDescription]"
+                          dataType="wstr"
+                          length="200"
+                          name="CipUseDescription" />
+                        <externalMetadataColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CipVersionCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="CipVersionCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CipVersionDescription]"
+                          dataType="wstr"
+                          length="200"
+                          name="CipVersionDescription" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DimCipCodeId]"
+                          dataType="i4"
+                          lineageId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DimCipCodeId]"
+                          name="DimCipCodeId" />
+                        <outputColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CipCode]"
+                          dataType="wstr"
+                          length="7"
+                          lineageId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CipCode]"
+                          name="CipCode" />
+                        <outputColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CipDescription]"
+                          dataType="wstr"
+                          length="200"
+                          lineageId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CipDescription]"
+                          name="CipDescription" />
+                        <outputColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CipUseCode]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CipUseCode]"
+                          name="CipUseCode" />
+                        <outputColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CipUseDescription]"
+                          dataType="wstr"
+                          length="200"
+                          lineageId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CipUseDescription]"
+                          name="CipUseDescription" />
+                        <outputColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CipVersionCode]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CipVersionCode]"
+                          name="CipVersionCode" />
+                        <outputColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CipVersionDescription]"
+                          dataType="wstr"
+                          length="200"
+                          lineageId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CipVersionDescription]"
+                          name="CipVersionDescription" />
+                        <outputColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\DimCipCodes\Stage Data.Paths[OLE DB Source Output]"
+                  endId="Package\DimCipCodes\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\DimCipCodes\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\DimCipCodes\Truncate staging table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{f7c81a9b-0ae2-4f2e-ba3e-5e052ad41f78}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate staging table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="4">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[DimCipCodes];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\DimCipCodes.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{8892ada4-0794-42e7-86ea-d60047dc0a6a}"
+          DTS:From="Package\DimCipCodes\Truncate staging table"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\DimCipCodes\Stage Data" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DimPsAcademicAwardStatuses"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{86e217f0-9129-45cb-a3c6-19297f9850a5}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DimPsAcademicAwardStatuses">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\DimPsAcademicAwardStatuses\Stage Data"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{0b97702b-6a63-450f-a6e2-11657f26ac48}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Stage Data"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[staging].[DimPsAcademicAwardStatuses]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{60dda06b-3f51-4553-8452-daaed09fbd3d}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Dashboards-DB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DimPsAcademicAwardStatusId]"
+                          cachedDataType="i4"
+                          cachedName="DimPsAcademicAwardStatusId"
+                          externalMetadataColumnId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DimPsAcademicAwardStatusId]"
+                          lineageId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimPsAcademicAwardStatusId]" />
+                        <inputColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PescAwardLevelTypeCode]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="PescAwardLevelTypeCode"
+                          externalMetadataColumnId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PescAwardLevelTypeCode]"
+                          lineageId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PescAwardLevelTypeCode]" />
+                        <inputColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PescAwardLevelTypeDescription]"
+                          cachedDataType="wstr"
+                          cachedLength="400"
+                          cachedName="PescAwardLevelTypeDescription"
+                          externalMetadataColumnId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PescAwardLevelTypeDescription]"
+                          lineageId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PescAwardLevelTypeDescription]" />
+                        <inputColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProfessionalOrTechnicalCredentialConferredCode]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="ProfessionalOrTechnicalCredentialConferredCode"
+                          externalMetadataColumnId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProfessionalOrTechnicalCredentialConferredCode]"
+                          lineageId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProfessionalOrTechnicalCredentialConferredCode]" />
+                        <inputColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProfessionalOrTechnicalCredentialConferredDescription]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="ProfessionalOrTechnicalCredentialConferredDescription"
+                          externalMetadataColumnId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProfessionalOrTechnicalCredentialConferredDescription]"
+                          lineageId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProfessionalOrTechnicalCredentialConferredDescription]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DimPsAcademicAwardStatusId]"
+                          dataType="i4"
+                          name="DimPsAcademicAwardStatusId" />
+                        <externalMetadataColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PescAwardLevelTypeCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="PescAwardLevelTypeCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PescAwardLevelTypeDescription]"
+                          dataType="wstr"
+                          length="400"
+                          name="PescAwardLevelTypeDescription" />
+                        <externalMetadataColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProfessionalOrTechnicalCredentialConferredCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="ProfessionalOrTechnicalCredentialConferredCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProfessionalOrTechnicalCredentialConferredDescription]"
+                          dataType="wstr"
+                          length="200"
+                          name="ProfessionalOrTechnicalCredentialConferredDescription" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[RDS].[DimPsAcademicAwardStatuses]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select DimPsInstitutionId, NameOfInstitution, IPEDSIdentifier, PhysicalAddressStateAbbreviation
+from rds.DimPsInstitutions
+ORDER BY DimPsInstitutionId</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{D41EB2B6-A586-49A5-A9CB-BCA8E8B2703B}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CEDS-DWH]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimPsAcademicAwardStatusId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DimPsAcademicAwardStatusId]"
+                          lineageId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimPsAcademicAwardStatusId]"
+                          name="DimPsAcademicAwardStatusId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PescAwardLevelTypeCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PescAwardLevelTypeCode]"
+                          length="50"
+                          lineageId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PescAwardLevelTypeCode]"
+                          name="PescAwardLevelTypeCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PescAwardLevelTypeDescription]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PescAwardLevelTypeDescription]"
+                          length="400"
+                          lineageId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PescAwardLevelTypeDescription]"
+                          name="PescAwardLevelTypeDescription"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProfessionalOrTechnicalCredentialConferredCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProfessionalOrTechnicalCredentialConferredCode]"
+                          length="50"
+                          lineageId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProfessionalOrTechnicalCredentialConferredCode]"
+                          name="ProfessionalOrTechnicalCredentialConferredCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProfessionalOrTechnicalCredentialConferredDescription]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProfessionalOrTechnicalCredentialConferredDescription]"
+                          length="200"
+                          lineageId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProfessionalOrTechnicalCredentialConferredDescription]"
+                          name="ProfessionalOrTechnicalCredentialConferredDescription"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DimPsAcademicAwardStatusId]"
+                          dataType="i4"
+                          name="DimPsAcademicAwardStatusId" />
+                        <externalMetadataColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PescAwardLevelTypeCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="PescAwardLevelTypeCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PescAwardLevelTypeDescription]"
+                          dataType="wstr"
+                          length="400"
+                          name="PescAwardLevelTypeDescription" />
+                        <externalMetadataColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProfessionalOrTechnicalCredentialConferredCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="ProfessionalOrTechnicalCredentialConferredCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProfessionalOrTechnicalCredentialConferredDescription]"
+                          dataType="wstr"
+                          length="200"
+                          name="ProfessionalOrTechnicalCredentialConferredDescription" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DimPsAcademicAwardStatusId]"
+                          dataType="i4"
+                          lineageId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DimPsAcademicAwardStatusId]"
+                          name="DimPsAcademicAwardStatusId" />
+                        <outputColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PescAwardLevelTypeCode]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PescAwardLevelTypeCode]"
+                          name="PescAwardLevelTypeCode" />
+                        <outputColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PescAwardLevelTypeDescription]"
+                          dataType="wstr"
+                          length="400"
+                          lineageId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PescAwardLevelTypeDescription]"
+                          name="PescAwardLevelTypeDescription" />
+                        <outputColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProfessionalOrTechnicalCredentialConferredCode]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProfessionalOrTechnicalCredentialConferredCode]"
+                          name="ProfessionalOrTechnicalCredentialConferredCode" />
+                        <outputColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProfessionalOrTechnicalCredentialConferredDescription]"
+                          dataType="wstr"
+                          length="200"
+                          lineageId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProfessionalOrTechnicalCredentialConferredDescription]"
+                          name="ProfessionalOrTechnicalCredentialConferredDescription" />
+                        <outputColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\DimPsAcademicAwardStatuses\Stage Data.Paths[OLE DB Source Output]"
+                  endId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\DimPsAcademicAwardStatuses\Truncate staging table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{4ccc2736-ef87-4db1-be48-66f2f6390254}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate staging table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="5">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[DimPsAcademicAwardStatuses];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\DimPsAcademicAwardStatuses.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{38f6f977-acaf-4444-9c86-32e2b9d84e05}"
+          DTS:From="Package\DimPsAcademicAwardStatuses\Truncate staging table"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\DimPsAcademicAwardStatuses\Stage Data" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DimPsAcademicAwardTitles"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{560cda6e-ca9e-46ce-843f-75845ad91e34}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DimPsAcademicAwardTitles">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\DimPsAcademicAwardTitles\Stage Data"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{46a0c81c-45c7-4766-842a-8b0af12b0b46}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Stage Data"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[staging].[DimPsAcademicAwardTitles]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{60dda06b-3f51-4553-8452-daaed09fbd3d}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Dashboards-DB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DimPsAcademicAwardTitleId]"
+                          cachedDataType="i4"
+                          cachedName="DimPsAcademicAwardTitleId"
+                          externalMetadataColumnId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DimPsAcademicAwardTitleId]"
+                          lineageId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimPsAcademicAwardTitleId]" />
+                        <inputColumn
+                          refId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AcademicAwardTitle]"
+                          cachedDataType="wstr"
+                          cachedLength="160"
+                          cachedName="AcademicAwardTitle"
+                          externalMetadataColumnId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AcademicAwardTitle]"
+                          lineageId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[AcademicAwardTitle]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DimPsAcademicAwardTitleId]"
+                          dataType="i4"
+                          name="DimPsAcademicAwardTitleId" />
+                        <externalMetadataColumn
+                          refId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AcademicAwardTitle]"
+                          dataType="wstr"
+                          length="160"
+                          name="AcademicAwardTitle" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[RDS].[DimPsAcademicAwardTitles]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select DimPsInstitutionId, NameOfInstitution, IPEDSIdentifier, PhysicalAddressStateAbbreviation
+from rds.DimPsInstitutions
+ORDER BY DimPsInstitutionId</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{D41EB2B6-A586-49A5-A9CB-BCA8E8B2703B}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CEDS-DWH]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimPsAcademicAwardTitleId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DimPsAcademicAwardTitleId]"
+                          lineageId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimPsAcademicAwardTitleId]"
+                          name="DimPsAcademicAwardTitleId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[AcademicAwardTitle]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AcademicAwardTitle]"
+                          length="160"
+                          lineageId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[AcademicAwardTitle]"
+                          name="AcademicAwardTitle"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DimPsAcademicAwardTitleId]"
+                          dataType="i4"
+                          name="DimPsAcademicAwardTitleId" />
+                        <externalMetadataColumn
+                          refId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AcademicAwardTitle]"
+                          dataType="wstr"
+                          length="160"
+                          name="AcademicAwardTitle" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DimPsAcademicAwardTitleId]"
+                          dataType="i4"
+                          lineageId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DimPsAcademicAwardTitleId]"
+                          name="DimPsAcademicAwardTitleId" />
+                        <outputColumn
+                          refId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AcademicAwardTitle]"
+                          dataType="wstr"
+                          length="160"
+                          lineageId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AcademicAwardTitle]"
+                          name="AcademicAwardTitle" />
+                        <outputColumn
+                          refId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\DimPsAcademicAwardTitles\Stage Data.Paths[OLE DB Source Output]"
+                  endId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\DimPsAcademicAwardTitles\Truncate staging table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{377d2893-d80d-4428-bd71-cf4951c91914}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate staging table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[DimPsAcademicAwardTitles];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\DimPsAcademicAwardTitles.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{fbc5c145-4766-40c9-b6c9-cefe07475f90}"
+          DTS:From="Package\DimPsAcademicAwardTitles\Truncate staging table"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\DimPsAcademicAwardTitles\Stage Data" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DimPsEnrollmentStatuses"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{ac8d5716-5899-4422-9f12-dedef4df0ec4}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DimPsEnrollmentStatuses">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\DimPsEnrollmentStatuses\Stage Data"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{a41b117e-e3a3-42ee-b151-2e2a78070406}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Stage Data"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[reporting].[DimPsEnrollmentStatuses]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{60dda06b-3f51-4553-8452-daaed09fbd3d}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Dashboards-DB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DimPsEnrollmentStatusId]"
+                          cachedDataType="i4"
+                          cachedName="DimPsEnrollmentStatusId"
+                          externalMetadataColumnId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DimPsEnrollmentStatusId]"
+                          lineageId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimPsEnrollmentStatusId]" />
+                        <inputColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PostsecondaryExitOrWithdrawalTypeCode]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="PostsecondaryExitOrWithdrawalTypeCode"
+                          externalMetadataColumnId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostsecondaryExitOrWithdrawalTypeCode]"
+                          lineageId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostsecondaryExitOrWithdrawalTypeCode]" />
+                        <inputColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PostsecondaryExitOrWithdrawalTypeDescription]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="PostsecondaryExitOrWithdrawalTypeDescription"
+                          externalMetadataColumnId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostsecondaryExitOrWithdrawalTypeDescription]"
+                          lineageId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostsecondaryExitOrWithdrawalTypeDescription]" />
+                        <inputColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PostsecondaryEnrollmentStatusCode]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="PostsecondaryEnrollmentStatusCode"
+                          externalMetadataColumnId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostsecondaryEnrollmentStatusCode]"
+                          lineageId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostsecondaryEnrollmentStatusCode]" />
+                        <inputColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PostsecondaryEnrollmentStatusDescription]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="PostsecondaryEnrollmentStatusDescription"
+                          externalMetadataColumnId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostsecondaryEnrollmentStatusDescription]"
+                          lineageId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostsecondaryEnrollmentStatusDescription]" />
+                        <inputColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PostSecondaryEnrollmentStatusEdFactsCode]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="PostSecondaryEnrollmentStatusEdFactsCode"
+                          externalMetadataColumnId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostSecondaryEnrollmentStatusEdFactsCode]"
+                          lineageId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostSecondaryEnrollmentStatusEdFactsCode]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DimPsEnrollmentStatusId]"
+                          dataType="i4"
+                          name="DimPsEnrollmentStatusId" />
+                        <externalMetadataColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostsecondaryExitOrWithdrawalTypeCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="PostsecondaryExitOrWithdrawalTypeCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostsecondaryExitOrWithdrawalTypeDescription]"
+                          dataType="wstr"
+                          length="200"
+                          name="PostsecondaryExitOrWithdrawalTypeDescription" />
+                        <externalMetadataColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostsecondaryEnrollmentStatusCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="PostsecondaryEnrollmentStatusCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostsecondaryEnrollmentStatusDescription]"
+                          dataType="wstr"
+                          length="200"
+                          name="PostsecondaryEnrollmentStatusDescription" />
+                        <externalMetadataColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostSecondaryEnrollmentStatusEdFactsCode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PostSecondaryEnrollmentStatusEdFactsCode" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[RDS].[DimPsEnrollmentStatuses]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select DimPsInstitutionId, NameOfInstitution, IPEDSIdentifier, PhysicalAddressStateAbbreviation
+from rds.DimPsInstitutions
+ORDER BY DimPsInstitutionId</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{D41EB2B6-A586-49A5-A9CB-BCA8E8B2703B}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CEDS-DWH]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimPsEnrollmentStatusId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DimPsEnrollmentStatusId]"
+                          lineageId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimPsEnrollmentStatusId]"
+                          name="DimPsEnrollmentStatusId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostsecondaryExitOrWithdrawalTypeCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PostsecondaryExitOrWithdrawalTypeCode]"
+                          length="50"
+                          lineageId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostsecondaryExitOrWithdrawalTypeCode]"
+                          name="PostsecondaryExitOrWithdrawalTypeCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostsecondaryExitOrWithdrawalTypeDescription]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PostsecondaryExitOrWithdrawalTypeDescription]"
+                          length="200"
+                          lineageId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostsecondaryExitOrWithdrawalTypeDescription]"
+                          name="PostsecondaryExitOrWithdrawalTypeDescription"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostsecondaryEnrollmentStatusCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PostsecondaryEnrollmentStatusCode]"
+                          length="50"
+                          lineageId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostsecondaryEnrollmentStatusCode]"
+                          name="PostsecondaryEnrollmentStatusCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostsecondaryEnrollmentStatusDescription]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PostsecondaryEnrollmentStatusDescription]"
+                          length="200"
+                          lineageId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostsecondaryEnrollmentStatusDescription]"
+                          name="PostsecondaryEnrollmentStatusDescription"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostSecondaryEnrollmentStatusEdFactsCode]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PostSecondaryEnrollmentStatusEdFactsCode]"
+                          length="50"
+                          lineageId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostSecondaryEnrollmentStatusEdFactsCode]"
+                          name="PostSecondaryEnrollmentStatusEdFactsCode"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DimPsEnrollmentStatusId]"
+                          dataType="i4"
+                          name="DimPsEnrollmentStatusId" />
+                        <externalMetadataColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PostsecondaryExitOrWithdrawalTypeCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="PostsecondaryExitOrWithdrawalTypeCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PostsecondaryExitOrWithdrawalTypeDescription]"
+                          dataType="wstr"
+                          length="200"
+                          name="PostsecondaryExitOrWithdrawalTypeDescription" />
+                        <externalMetadataColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PostsecondaryEnrollmentStatusCode]"
+                          dataType="wstr"
+                          length="50"
+                          name="PostsecondaryEnrollmentStatusCode" />
+                        <externalMetadataColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PostsecondaryEnrollmentStatusDescription]"
+                          dataType="wstr"
+                          length="200"
+                          name="PostsecondaryEnrollmentStatusDescription" />
+                        <externalMetadataColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PostSecondaryEnrollmentStatusEdFactsCode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PostSecondaryEnrollmentStatusEdFactsCode" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DimPsEnrollmentStatusId]"
+                          dataType="i4"
+                          lineageId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DimPsEnrollmentStatusId]"
+                          name="DimPsEnrollmentStatusId" />
+                        <outputColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PostsecondaryExitOrWithdrawalTypeCode]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PostsecondaryExitOrWithdrawalTypeCode]"
+                          name="PostsecondaryExitOrWithdrawalTypeCode" />
+                        <outputColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PostsecondaryExitOrWithdrawalTypeDescription]"
+                          dataType="wstr"
+                          length="200"
+                          lineageId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PostsecondaryExitOrWithdrawalTypeDescription]"
+                          name="PostsecondaryExitOrWithdrawalTypeDescription" />
+                        <outputColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PostsecondaryEnrollmentStatusCode]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PostsecondaryEnrollmentStatusCode]"
+                          name="PostsecondaryEnrollmentStatusCode" />
+                        <outputColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PostsecondaryEnrollmentStatusDescription]"
+                          dataType="wstr"
+                          length="200"
+                          lineageId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PostsecondaryEnrollmentStatusDescription]"
+                          name="PostsecondaryEnrollmentStatusDescription" />
+                        <outputColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PostSecondaryEnrollmentStatusEdFactsCode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PostSecondaryEnrollmentStatusEdFactsCode]"
+                          name="PostSecondaryEnrollmentStatusEdFactsCode" />
+                        <outputColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\DimPsEnrollmentStatuses\Stage Data.Paths[OLE DB Source Output]"
+                  endId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\DimPsEnrollmentStatuses\Truncate staging table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{c28b56a1-d87d-4d40-aa7a-76197c1e542a}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate staging table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[DimPsEnrollmentStatuses];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\DimPsEnrollmentStatuses.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{7469d474-859b-4089-a2fc-0606acb13d2e}"
+          DTS:From="Package\DimPsEnrollmentStatuses\Truncate staging table"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\DimPsEnrollmentStatuses\Stage Data" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DimPSInstitutions"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{710b370b-4222-4542-831a-bbe800cff154}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DimPSInstitutions">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\DimPSInstitutions\Stage Data"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{d826505b-c19d-4212-b1e5-54ed528c7c82}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Stage Data"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\DimPSInstitutions\Stage Data\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[staging].[PS_DimInstitutions]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\DimPSInstitutions\Stage Data\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{60dda06b-3f51-4553-8452-daaed09fbd3d}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Dashboards-DB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\DimPSInstitutions\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\DimPSInstitutions\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DimPsInstitutionId]"
+                          cachedDataType="i4"
+                          cachedName="DimPsInstitutionId"
+                          externalMetadataColumnId="Package\DimPSInstitutions\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DimPsInstitutionId]"
+                          lineageId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimPsInstitutionId]" />
+                        <inputColumn
+                          refId="Package\DimPSInstitutions\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NameOfInstitution]"
+                          cachedDataType="wstr"
+                          cachedLength="128"
+                          cachedName="NameOfInstitution"
+                          externalMetadataColumnId="Package\DimPSInstitutions\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NameOfInstitution]"
+                          lineageId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[NameOfInstitution]" />
+                        <inputColumn
+                          refId="Package\DimPSInstitutions\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IPEDSIdentifier]"
+                          cachedDataType="i4"
+                          cachedName="IPEDSIdentifier"
+                          externalMetadataColumnId="Package\DimPSInstitutions\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IPEDSIdentifier]"
+                          lineageId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[IPEDSIdentifier]" />
+                        <inputColumn
+                          refId="Package\DimPSInstitutions\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PhysicalAddressStateAbbreviation]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="PhysicalAddressStateAbbreviation"
+                          externalMetadataColumnId="Package\DimPSInstitutions\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateAbbreviation]"
+                          lineageId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PhysicalAddressStateAbbreviation]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\DimPSInstitutions\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DimPsInstitutionId]"
+                          dataType="i4"
+                          name="DimPsInstitutionId" />
+                        <externalMetadataColumn
+                          refId="Package\DimPSInstitutions\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NameOfInstitution]"
+                          dataType="wstr"
+                          length="1000"
+                          name="NameOfInstitution" />
+                        <externalMetadataColumn
+                          refId="Package\DimPSInstitutions\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IPEDSIdentifier]"
+                          dataType="i4"
+                          name="IPEDSIdentifier" />
+                        <externalMetadataColumn
+                          refId="Package\DimPSInstitutions\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateAbbreviation]"
+                          dataType="wstr"
+                          length="50"
+                          name="StateAbbreviation" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\DimPSInstitutions\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\DimPSInstitutions\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DimPSInstitutions\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\DimPSInstitutions\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\DimPSInstitutions\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\DimPSInstitutions\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\DimPSInstitutions\Stage Data\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[CEDS].[CedsOptionSetMapping]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select DimPsInstitutionId, NameOfInstitution, IPEDSIdentifier, PhysicalAddressStateAbbreviation
+from rds.DimPsInstitutions
+ORDER BY DimPsInstitutionId</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{D41EB2B6-A586-49A5-A9CB-BCA8E8B2703B}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CEDS-DWH]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimPsInstitutionId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DimPsInstitutionId]"
+                          lineageId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimPsInstitutionId]"
+                          name="DimPsInstitutionId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[NameOfInstitution]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NameOfInstitution]"
+                          length="128"
+                          lineageId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[NameOfInstitution]"
+                          name="NameOfInstitution"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[IPEDSIdentifier]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IPEDSIdentifier]"
+                          lineageId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[IPEDSIdentifier]"
+                          name="IPEDSIdentifier"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PhysicalAddressStateAbbreviation]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PhysicalAddressStateAbbreviation]"
+                          length="50"
+                          lineageId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PhysicalAddressStateAbbreviation]"
+                          name="PhysicalAddressStateAbbreviation"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DimPsInstitutionId]"
+                          dataType="i4"
+                          name="DimPsInstitutionId" />
+                        <externalMetadataColumn
+                          refId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NameOfInstitution]"
+                          dataType="wstr"
+                          length="128"
+                          name="NameOfInstitution" />
+                        <externalMetadataColumn
+                          refId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IPEDSIdentifier]"
+                          dataType="i4"
+                          name="IPEDSIdentifier" />
+                        <externalMetadataColumn
+                          refId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PhysicalAddressStateAbbreviation]"
+                          dataType="wstr"
+                          length="50"
+                          name="PhysicalAddressStateAbbreviation" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DimPsInstitutionId]"
+                          dataType="i4"
+                          lineageId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DimPsInstitutionId]"
+                          name="DimPsInstitutionId" />
+                        <outputColumn
+                          refId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NameOfInstitution]"
+                          dataType="wstr"
+                          length="128"
+                          lineageId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NameOfInstitution]"
+                          name="NameOfInstitution" />
+                        <outputColumn
+                          refId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IPEDSIdentifier]"
+                          dataType="i4"
+                          lineageId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IPEDSIdentifier]"
+                          name="IPEDSIdentifier" />
+                        <outputColumn
+                          refId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PhysicalAddressStateAbbreviation]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PhysicalAddressStateAbbreviation]"
+                          name="PhysicalAddressStateAbbreviation" />
+                        <outputColumn
+                          refId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\DimPSInstitutions\Stage Data.Paths[OLE DB Source Output]"
+                  endId="Package\DimPSInstitutions\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\DimPSInstitutions\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\DimPSInstitutions\Truncate staging table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{8c4542d4-1208-4383-8491-e5112e9cb676}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate staging table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[PS_DimInstitutions];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\DimPSInstitutions.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{feacc4d1-3062-440b-ba7e-94025b3c0e94}"
+          DTS:From="Package\DimPSInstitutions\Truncate staging table"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\DimPSInstitutions\Stage Data" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DimStudents"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{36dc61dc-6691-4a9d-9cd4-d7a5cb36c065}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DimStudents">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\DimStudents\Stage Data"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{803f8c42-0541-4d24-8af7-917c5c15b7fb}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Stage Data"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\DimStudents\Stage Data\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[staging].[PS_DimStudents]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\DimStudents\Stage Data\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{60dda06b-3f51-4553-8452-daaed09fbd3d}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Dashboards-DB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\DimStudents\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\DimStudents\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PsStudentStudentIdentifierState]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="PsStudentStudentIdentifierState"
+                          externalMetadataColumnId="Package\DimStudents\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentIdentifierState]"
+                          lineageId="Package\DimStudents\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PsStudentStudentIdentifierState]" />
+                        <inputColumn
+                          refId="Package\DimStudents\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DimPersonId]"
+                          cachedDataType="i8"
+                          cachedName="DimPersonId"
+                          externalMetadataColumnId="Package\DimStudents\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DimK12StudentId]"
+                          lineageId="Package\DimStudents\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimPersonId]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\DimStudents\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DimK12StudentId]"
+                          dataType="i8"
+                          name="DimK12StudentId" />
+                        <externalMetadataColumn
+                          refId="Package\DimStudents\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          name="StudentIdentifierState" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\DimStudents\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\DimStudents\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DimStudents\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\DimStudents\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\DimStudents\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\DimStudents\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\DimStudents\Stage Data\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[CEDS].[CedsOptionSetMapping]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select DimPersonId, PsStudentStudentIdentifierState
+from RDS.DimPeople
+where IsActivePsStudent = 1
+ORDER BY DimPersonId</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\DimStudents\Stage Data\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{D41EB2B6-A586-49A5-A9CB-BCA8E8B2703B}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CEDS-DWH]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\DimStudents\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DimStudents\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimPersonId]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimStudents\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DimPersonId]"
+                          lineageId="Package\DimStudents\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimPersonId]"
+                          name="DimPersonId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DimStudents\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PsStudentStudentIdentifierState]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DimStudents\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PsStudentStudentIdentifierState]"
+                          length="40"
+                          lineageId="Package\DimStudents\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PsStudentStudentIdentifierState]"
+                          name="PsStudentStudentIdentifierState"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\DimStudents\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DimPersonId]"
+                          dataType="i8"
+                          name="DimPersonId" />
+                        <externalMetadataColumn
+                          refId="Package\DimStudents\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PsStudentStudentIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          name="PsStudentStudentIdentifierState" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\DimStudents\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DimStudents\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DimPersonId]"
+                          dataType="i8"
+                          lineageId="Package\DimStudents\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DimPersonId]"
+                          name="DimPersonId" />
+                        <outputColumn
+                          refId="Package\DimStudents\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PsStudentStudentIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          lineageId="Package\DimStudents\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PsStudentStudentIdentifierState]"
+                          name="PsStudentStudentIdentifierState" />
+                        <outputColumn
+                          refId="Package\DimStudents\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\DimStudents\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\DimStudents\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\DimStudents\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\DimStudents\Stage Data.Paths[OLE DB Source Output]"
+                  endId="Package\DimStudents\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\DimStudents\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\DimStudents\Truncate staging table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{72b7535a-e39a-4880-bfcc-45f0b42d1855}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate staging table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[PS_DimStudents];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\DimStudents.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{ef3840b7-aef6-4a0f-a99f-57b8e959e4b9}"
+          DTS:From="Package\DimStudents\Truncate staging table"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\DimStudents\Stage Data" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="188,42"
+          Id="Package\DimCipCodes\Stage Data"
+          TopLeft="66,103" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\DimCipCodes\Truncate staging table"
+          TopLeft="66,31" />
+        <EdgeLayout
+          Id="Package\DimCipCodes.PrecedenceConstraints[Constraint]"
+          TopLeft="160,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="334,270"
+          Size="334,313"
+          Id="Package\DimCipCodes"
+          TopLeft="60,705" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\DimPsAcademicAwardStatuses\Stage Data"
+          TopLeft="66,103" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\DimPsAcademicAwardStatuses\Truncate staging table"
+          TopLeft="66,31" />
+        <EdgeLayout
+          Id="Package\DimPsAcademicAwardStatuses.PrecedenceConstraints[Constraint]"
+          TopLeft="160,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="334,270"
+          Size="334,313"
+          Id="Package\DimPsAcademicAwardStatuses"
+          TopLeft="782,331" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\DimPsEnrollmentStatuses\Stage Data"
+          TopLeft="66,103" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\DimPsEnrollmentStatuses\Truncate staging table"
+          TopLeft="66,31" />
+        <EdgeLayout
+          Id="Package\DimPsEnrollmentStatuses.PrecedenceConstraints[Constraint]"
+          TopLeft="160,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="334,270"
+          Size="334,313"
+          Id="Package\DimPsEnrollmentStatuses"
+          TopLeft="423,705" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\DimPSInstitutions\Stage Data"
+          TopLeft="66,103" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\DimPSInstitutions\Truncate staging table"
+          TopLeft="66,31" />
+        <EdgeLayout
+          Id="Package\DimPSInstitutions.PrecedenceConstraints[Constraint]"
+          TopLeft="160,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="334,270"
+          Size="334,313"
+          Id="Package\DimPSInstitutions"
+          TopLeft="423,331" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\DimStudents\Stage Data"
+          TopLeft="66,103" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\DimStudents\Truncate staging table"
+          TopLeft="66,31" />
+        <EdgeLayout
+          Id="Package\DimStudents.PrecedenceConstraints[Constraint]"
+          TopLeft="160,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="334,270"
+          Size="334,313"
+          Id="Package\DimStudents"
+          TopLeft="60,331" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\DimPsAcademicAwardTitles\Stage Data"
+          TopLeft="66,103" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\DimPsAcademicAwardTitles\Truncate staging table"
+          TopLeft="66,31" />
+        <EdgeLayout
+          Id="Package\DimPsAcademicAwardTitles.PrecedenceConstraints[Constraint]"
+          TopLeft="160,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="334,270"
+          Size="334,313"
+          Id="Package\DimPsAcademicAwardTitles"
+          TopLeft="781,706" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DimCipCodes\Stage Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\DimCipCodes\Stage Data\OLE DB Source"
+          TopLeft="77,35" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\DimCipCodes\Stage Data\OLE DB Destination"
+          TopLeft="73,117" />
+        <EdgeLayout
+          Id="Package\DimCipCodes\Stage Data.Paths[OLE DB Source Output]"
+          TopLeft="158.5,77">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40"
+              Start="0,0"
+              End="0,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimCipCodes\Stage Data\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimCipCodes\Stage Data\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DimPsAcademicAwardStatuses\Stage Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Destination"
+          TopLeft="65,134" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source"
+          TopLeft="77,35" />
+        <EdgeLayout
+          Id="Package\DimPsAcademicAwardStatuses\Stage Data.Paths[OLE DB Source Output]"
+          TopLeft="154.5,77">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimPsAcademicAwardStatuses\Stage Data\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DimPsEnrollmentStatuses\Stage Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source"
+          TopLeft="77,35" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination"
+          TopLeft="64,132" />
+        <EdgeLayout
+          Id="Package\DimPsEnrollmentStatuses\Stage Data.Paths[OLE DB Source Output]"
+          TopLeft="154,77">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55"
+              Start="0,0"
+              End="0,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimPsEnrollmentStatuses\Stage Data\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DimPSInstitutions\Stage Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\DimPSInstitutions\Stage Data\OLE DB Source"
+          TopLeft="77,35" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\DimPSInstitutions\Stage Data\OLE DB Destination"
+          TopLeft="65,134" />
+        <EdgeLayout
+          Id="Package\DimPSInstitutions\Stage Data.Paths[OLE DB Source Output]"
+          TopLeft="154.5,77">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimPSInstitutions\Stage Data\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimPSInstitutions\Stage Data\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DimStudents\Stage Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\DimStudents\Stage Data\OLE DB Source"
+          TopLeft="77,35" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\DimStudents\Stage Data\OLE DB Destination"
+          TopLeft="68,131" />
+        <EdgeLayout
+          Id="Package\DimStudents\Stage Data.Paths[OLE DB Source Output]"
+          TopLeft="156,77">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54"
+              Start="0,0"
+              End="0,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimStudents\Stage Data\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimStudents\Stage Data\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DimPsAcademicAwardTitles\Stage Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Destination"
+          TopLeft="65,134" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Source"
+          TopLeft="77,35" />
+        <EdgeLayout
+          Id="Package\DimPsAcademicAwardTitles\Stage Data.Paths[OLE DB Source Output]"
+          TopLeft="154.5,77">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimPsAcademicAwardTitles\Stage Data\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

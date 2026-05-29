@@ -1,0 +1,112 @@
+table 'reporting RDS_FactPsStudentCourseTranscripts'
+	lineageTag: cee3c791-b557-4d78-abc5-feaa5ba028f8
+
+	column FactPsStudentCourseTranscriptId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b3a302da-66e4-484c-9dc3-d989c631ab39
+		summarizeBy: count
+		sourceColumn: FactPsStudentCourseTranscriptId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SchoolYear
+		dataType: int64
+		formatString: 0
+		lineageTag: f2c94b85-7084-4e69-988f-0ba75278096a
+		summarizeBy: sum
+		sourceColumn: SchoolYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column PsInstitutionId
+		dataType: int64
+		formatString: 0
+		lineageTag: 722fe166-ab32-46b0-afd7-f2461a0b4653
+		summarizeBy: count
+		sourceColumn: PsInstitutionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PsStudentId
+		dataType: int64
+		formatString: 0
+		lineageTag: ee6a7570-4e6f-4abe-b76c-4c784bc7bf99
+		summarizeBy: none
+		sourceColumn: PsStudentId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PsStudent_CurrentId
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 04e3f0d2-c592-4549-af45-0136944e2552
+		summarizeBy: count
+		sourceColumn: PsStudent_CurrentId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CipCodeId
+		dataType: int64
+		formatString: 0
+		lineageTag: ee8106eb-465c-42be-b332-7d164a9cc70d
+		summarizeBy: none
+		sourceColumn: CipCodeId
+
+		annotation SummarizationSetBy = Automatic
+
+	column NumberOfCreditsAttempted
+		dataType: double
+		lineageTag: 4703f0c8-258d-4078-bd10-0d5ff2e9a028
+		summarizeBy: sum
+		sourceColumn: NumberOfCreditsAttempted
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NumberOfCreditsEarned
+		dataType: double
+		lineageTag: 57ddd16f-771b-4bcb-aaed-c4653926a892
+		summarizeBy: sum
+		sourceColumn: NumberOfCreditsEarned
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column StudentCourseSectionGradeEarned
+		dataType: string
+		isHidden
+		lineageTag: 39d8cb0e-9b55-489b-9d11-3f531a33b689
+		summarizeBy: none
+		sourceColumn: StudentCourseSectionGradeEarned
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UniversityPsCourseId
+		dataType: int64
+		formatString: 0
+		lineageTag: 6ef5d1a8-f8c9-4296-bf29-312d2b45d4f9
+		summarizeBy: none
+		sourceColumn: UniversityPsCourseId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'reporting RDS_FactPsStudentCourseTranscripts' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost:14331", "Dashboards"),
+				    reporting_RDS_FactPsStudentCourseTranscripts = Source{[Schema="reporting",Item="RDS_FactPsStudentCourseTranscripts"]}[Data]
+				in
+				    reporting_RDS_FactPsStudentCourseTranscripts
+

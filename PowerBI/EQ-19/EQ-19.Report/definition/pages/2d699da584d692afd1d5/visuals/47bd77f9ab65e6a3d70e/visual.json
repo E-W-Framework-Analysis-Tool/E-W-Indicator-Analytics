@@ -1,0 +1,163 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "47bd77f9ab65e6a3d70e",
+  "position": {
+    "x": 0,
+    "y": 70.30051813471502,
+    "z": 2000,
+    "height": 608.82901554404145,
+    "width": 856.20725388601034,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Essential Question 19",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "12pt",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Are students completing credentials of value after high school that set them up for success in the workforce?",
+                    "textStyle": {
+                      "fontFamily": "Atlassian Sans, ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Ubuntu, Helvetica Neue, sans-serif",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "About this Essential Question",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "12pt",
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "This question examines whether students are earning credentials (including degrees, certificates, badges, and more) that have value in the labor market and lead to economic opportunity. ",
+                    "textStyle": {
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Credential value can vary significantly based on field of study, institutional quality, and labor market demand. There are known challenges in measuring credential quality and value—more than 4,000 credentialing bodies offer thousands of different credentials across sectors, and there is wide variation in how states track credentials and whether those credentials are valued by employers.",
+                    "textStyle": {
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Nonetheless, the relationship between credentials and employment outcomes is crucial: some certificates and degrees lead to higher-paying jobs and career advancement opportunities while others have limited economic return.",
+                    "textStyle": {
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Education leaders, workforce development partners, and policymakers can use this question to evaluate credential programs, assess labor market alignment, and ensure educational pathways lead to meaningful economic outcomes.",
+                    "textStyle": {
+                      "color": "#000000"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "For additional context on this Essential Question, visit the Education-to-Workforce (E-W) Indicator Framework site: ",
+                    "textStyle": {
+                      "color": "#000000"
+                    }
+                  },
+                  {
+                    "value": "Essential Question 19",
+                    "textStyle": {
+                      "textDecoration": "underline",
+                      "color": "#669df1"
+                    },
+                    "url": "https://educationtoworkforce.org/essential-questions/are-students-completing-credentials-value-after-high-school-set-them-success"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

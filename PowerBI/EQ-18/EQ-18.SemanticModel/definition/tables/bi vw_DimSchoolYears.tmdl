@@ -1,0 +1,21 @@
+table 'bi vw_DimSchoolYears'
+	lineageTag: 1ccf58fc-925d-4dbe-a156-30033bce6b5a
+
+	column SchoolYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 4eacb7b2-1a49-4e83-b028-705b6ac1a1c3
+		summarizeBy: none
+		sourceColumn: SchoolYear
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bi vw_DimSchoolYears' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost:14331", "Dashboards"),
+				    bi_vw_DimSchoolYears = Source{[Schema="bi",Item="vw_DimSchoolYears"]}[Data]
+				in
+				    bi_vw_DimSchoolYears
+

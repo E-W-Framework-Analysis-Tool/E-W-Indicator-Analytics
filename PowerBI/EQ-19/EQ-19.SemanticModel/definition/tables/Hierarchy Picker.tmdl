@@ -1,0 +1,49 @@
+table 'Hierarchy Picker'
+	lineageTag: 985d8713-683c-48cd-8fe8-a669948e2748
+
+	column 'Organization Hierarchy'
+		lineageTag: d8121e08-b054-4763-a9af-8b8415a15ead
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Hierarchy Picker Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Hierarchy Picker Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hierarchy Picker Fields'
+		isHidden
+		lineageTag: 28935cde-902b-46b5-9511-07f837e72bdf
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Hierarchy Picker Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hierarchy Picker Order'
+		isHidden
+		formatString: 0
+		lineageTag: 18706009-1df5-45c7-8283-55ea2db59f6e
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Hierarchy Picker' = calculated
+		mode: import
+		source =
+				{
+				    ("SEA", NAMEOF('bi vw_DimK12Schools'[SeaOrganizationName]), 0),
+				    ("LEA", NAMEOF('bi vw_DimK12Schools'[LeaOrganizationName]), 1),
+				    ("K12 School", NAMEOF('bi vw_DimK12Schools'[K12SchoolName]), 2)
+				}
+
+	annotation PBI_Id = 9ff8ee2960dc41008c0e962dd081240d
+

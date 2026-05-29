@@ -5,7 +5,7 @@ table 'bi vw_DimRaces'
 		dataType: int64
 		formatString: 0
 		lineageTag: d762d235-a2ea-4ce0-ad88-a5c07d6adfc6
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: DimRaceId
 
 		annotation SummarizationSetBy = Automatic

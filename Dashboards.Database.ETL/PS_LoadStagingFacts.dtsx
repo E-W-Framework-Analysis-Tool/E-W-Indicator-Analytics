@@ -1,0 +1,2070 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/12/2026 2:34:42 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LATITUDE"
+  DTS:CreatorName="SPI-GLOBAL\e74099"
+  DTS:DTSID="{C791020F-5442-4B0D-A82F-DD12E97CFBB5}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="PS_LoadStagingFacts"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{50119BB3-04C5-41C5-AD6B-A9477CD6D84D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\FactPsStudentAcademicAwards"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{41a707ad-6735-45fd-be38-08dcf25e261d}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FactPsStudentAcademicAwards">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\FactPsStudentAcademicAwards\Stage Data"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{6fcaba2d-a9b7-4458-a6c1-598a8e3016bf}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Stage Data"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[staging].[FactPsStudentAcademicAwards]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{60dda06b-3f51-4553-8452-daaed09fbd3d}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Dashboards-DB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IPEDSIdentifier]"
+                          cachedDataType="i4"
+                          cachedName="IPEDSIdentifier"
+                          externalMetadataColumnId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IPEDSIdentifier]"
+                          lineageId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[IPEDSIdentifier]" />
+                        <inputColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SchoolYear]"
+                          cachedDataType="i2"
+                          cachedName="SchoolYear"
+                          externalMetadataColumnId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolYear]"
+                          lineageId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolYear]" />
+                        <inputColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PsStudentStudentIdentifierState]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="PsStudentStudentIdentifierState"
+                          externalMetadataColumnId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PsStudentStudentIdentifierState]"
+                          lineageId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PsStudentStudentIdentifierState]" />
+                        <inputColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FactPsStudentAcademicAwardId]"
+                          cachedDataType="i4"
+                          cachedName="FactPsStudentAcademicAwardId"
+                          externalMetadataColumnId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FactPsStudentAcademicAwardId]"
+                          lineageId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FactPsStudentAcademicAwardId]" />
+                        <inputColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PsAcademicAwardTitleId]"
+                          cachedDataType="i4"
+                          cachedName="PsAcademicAwardTitleId"
+                          externalMetadataColumnId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PsAcademicAwardTitleId]"
+                          lineageId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PsAcademicAwardTitleId]" />
+                        <inputColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PsAcademicAwardStatusId]"
+                          cachedDataType="i4"
+                          cachedName="PsAcademicAwardStatusId"
+                          externalMetadataColumnId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PsAcademicAwardStatusId]"
+                          lineageId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PsAcademicAwardStatusId]" />
+                        <inputColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SexDescription]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="SexDescription"
+                          externalMetadataColumnId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SexDescription]"
+                          lineageId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SexDescription]" />
+                        <inputColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AcademicAwardDate]"
+                          cachedDataType="dbTimeStamp2"
+                          cachedName="AcademicAwardDate"
+                          cachedScale="7"
+                          externalMetadataColumnId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AcademicAwardDate]"
+                          lineageId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[AcademicAwardDate]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IPEDSIdentifier]"
+                          dataType="i4"
+                          name="IPEDSIdentifier" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolYear]"
+                          dataType="i2"
+                          name="SchoolYear" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PsStudentStudentIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          name="PsStudentStudentIdentifierState" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FactPsStudentAcademicAwardId]"
+                          dataType="i4"
+                          name="FactPsStudentAcademicAwardId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PsAcademicAwardTitleId]"
+                          dataType="i4"
+                          name="PsAcademicAwardTitleId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PsAcademicAwardStatusId]"
+                          dataType="i4"
+                          name="PsAcademicAwardStatusId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SexDescription]"
+                          dataType="wstr"
+                          length="200"
+                          name="SexDescription" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AcademicAwardDate]"
+                          dataType="dbTimeStamp2"
+                          name="AcademicAwardDate"
+                          scale="7" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[CEDS].[CedsOptionSetMapping]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+    [FactPsStudentAcademicAwardId]
+  , [dpi].[IPEDSIdentifier]
+  , [dp].[PsStudentStudentIdentifierState]
+  , [PsAcademicAwardTitleId]
+  , [dd].[DateValue] AS [AcademicAwardDate]
+  , [PsAcademicAwardStatusId]
+  , [dsy1].[SchoolYear]
+  , [dpd].[SexDescription]
+FROM
+	[RDS].[FactPsStudentAcademicAwards]     AS [base]
+		LEFT JOIN [RDS].[DimSchoolYears]    AS [dsy1]
+					  ON [base].[SchoolYearId] = [dsy1].[DimSchoolYearId]
+		LEFT JOIN [RDS].[DimPsDemographics] AS [dpd]
+					  ON [base].[PsDemographicId] = [dpd].[DimPsDemographicId]
+		LEFT JOIN [RDS].[DimDates]          AS [dd]
+					  ON [base].[AcademicAwardDateId] = [dd].[DimDateId]
+		LEFT JOIN [RDS].[DimPeople]         AS [dp]
+					  ON [base].[PsStudentId] = [dp].[DimPersonId]
+		LEFT JOIN [RDS].[DimPsInstitutions] AS [dpi]
+					  ON [base].[PsInstitutionId] = [dpi].[DimPsInstitutionId]</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{D41EB2B6-A586-49A5-A9CB-BCA8E8B2703B}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CEDS-DWH]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[IPEDSIdentifier]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IPEDSIdentifier]"
+                          lineageId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[IPEDSIdentifier]"
+                          name="IPEDSIdentifier"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolYear]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolYear]"
+                          lineageId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolYear]"
+                          name="SchoolYear"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PsStudentStudentIdentifierState]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PsStudentStudentIdentifierState]"
+                          length="40"
+                          lineageId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PsStudentStudentIdentifierState]"
+                          name="PsStudentStudentIdentifierState"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FactPsStudentAcademicAwardId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FactPsStudentAcademicAwardId]"
+                          lineageId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FactPsStudentAcademicAwardId]"
+                          name="FactPsStudentAcademicAwardId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PsAcademicAwardTitleId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PsAcademicAwardTitleId]"
+                          lineageId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PsAcademicAwardTitleId]"
+                          name="PsAcademicAwardTitleId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PsAcademicAwardStatusId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PsAcademicAwardStatusId]"
+                          lineageId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PsAcademicAwardStatusId]"
+                          name="PsAcademicAwardStatusId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SexDescription]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SexDescription]"
+                          length="200"
+                          lineageId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SexDescription]"
+                          name="SexDescription"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[AcademicAwardDate]"
+                          dataType="dbTimeStamp2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AcademicAwardDate]"
+                          lineageId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[AcademicAwardDate]"
+                          name="AcademicAwardDate"
+                          scale="7"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IPEDSIdentifier]"
+                          dataType="i4"
+                          name="IPEDSIdentifier" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolYear]"
+                          dataType="i2"
+                          name="SchoolYear" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PsStudentStudentIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          name="PsStudentStudentIdentifierState" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FactPsStudentAcademicAwardId]"
+                          dataType="i4"
+                          name="FactPsStudentAcademicAwardId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PsAcademicAwardTitleId]"
+                          dataType="i4"
+                          name="PsAcademicAwardTitleId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PsAcademicAwardStatusId]"
+                          dataType="i4"
+                          name="PsAcademicAwardStatusId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SexDescription]"
+                          dataType="wstr"
+                          length="200"
+                          name="SexDescription" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AcademicAwardDate]"
+                          dataType="dbTimeStamp2"
+                          name="AcademicAwardDate"
+                          scale="7" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FactPsStudentAcademicAwardId]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FactPsStudentAcademicAwardId]"
+                          name="FactPsStudentAcademicAwardId" />
+                        <outputColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolYear]"
+                          dataType="i2"
+                          lineageId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolYear]"
+                          name="SchoolYear" />
+                        <outputColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IPEDSIdentifier]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IPEDSIdentifier]"
+                          name="IPEDSIdentifier" />
+                        <outputColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PsAcademicAwardTitleId]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PsAcademicAwardTitleId]"
+                          name="PsAcademicAwardTitleId" />
+                        <outputColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AcademicAwardDate]"
+                          dataType="dbTimeStamp2"
+                          lineageId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AcademicAwardDate]"
+                          name="AcademicAwardDate"
+                          scale="7" />
+                        <outputColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PsAcademicAwardStatusId]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PsAcademicAwardStatusId]"
+                          name="PsAcademicAwardStatusId" />
+                        <outputColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PsStudentStudentIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          lineageId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PsStudentStudentIdentifierState]"
+                          name="PsStudentStudentIdentifierState" />
+                        <outputColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SexDescription]"
+                          dataType="wstr"
+                          length="200"
+                          lineageId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SexDescription]"
+                          name="SexDescription" />
+                        <outputColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\FactPsStudentAcademicAwards\Stage Data.Paths[OLE DB Source Output]"
+                  endId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FactPsStudentAcademicAwards\Truncate staging table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{8b298470-936c-4fa8-995a-50cd8619e3dc}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate staging table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[FactPsStudentAcademicAwards];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FactPsStudentAcademicAwards.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{2f41de8a-a3e9-41aa-b8ee-802825392151}"
+          DTS:From="Package\FactPsStudentAcademicAwards\Truncate staging table"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\FactPsStudentAcademicAwards\Stage Data" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\FactPsStudentCourseTranscripts"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{380ed254-d8a0-4c19-839b-504821e72c16}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FactPsStudentCourseTranscripts">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\FactPsStudentCourseTranscripts\Stage Data"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{49d4c412-d85a-4f80-9963-bf7d07ae348f}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Stage Data"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[staging].[FactPsStudentCourseTranscripts]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{60dda06b-3f51-4553-8452-daaed09fbd3d}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Dashboards-DB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IPEDSIdentifier]"
+                          cachedDataType="i4"
+                          cachedName="IPEDSIdentifier"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IPEDSIdentifier]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[IPEDSIdentifier]" />
+                        <inputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SchoolYear]"
+                          cachedDataType="i2"
+                          cachedName="SchoolYear"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolYear]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolYear]" />
+                        <inputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PsStudentStudentIdentifierState]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="PsStudentStudentIdentifierState"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PsStudentStudentIdentifierState]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PsStudentStudentIdentifierState]" />
+                        <inputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FactPsStudentCourseTranscriptId]"
+                          cachedDataType="i8"
+                          cachedName="FactPsStudentCourseTranscriptId"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FactPsStudentCourseTranscriptId]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FactPsStudentCourseTranscriptId]" />
+                        <inputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CipCodeId]"
+                          cachedDataType="i4"
+                          cachedName="CipCodeId"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CipCodeId]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CipCodeId]" />
+                        <inputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EnglishLearnerStatusId]"
+                          cachedDataType="i4"
+                          cachedName="EnglishLearnerStatusId"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EnglishLearnerStatusId]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[EnglishLearnerStatusId]" />
+                        <inputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PsDemographicId]"
+                          cachedDataType="i4"
+                          cachedName="PsDemographicId"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PsDemographicId]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PsDemographicId]" />
+                        <inputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DisabilityStatusId]"
+                          cachedDataType="i4"
+                          cachedName="DisabilityStatusId"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DisabilityStatusId]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DisabilityStatusId]" />
+                        <inputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EconomicallyDisadvantagedStatusId]"
+                          cachedDataType="i4"
+                          cachedName="EconomicallyDisadvantagedStatusId"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EconomicallyDisadvantagedStatusId]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[EconomicallyDisadvantagedStatusId]" />
+                        <inputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HomelessnessStatusId]"
+                          cachedDataType="i4"
+                          cachedName="HomelessnessStatusId"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HomelessnessStatusId]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[HomelessnessStatusId]" />
+                        <inputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MigrantStatusId]"
+                          cachedDataType="i4"
+                          cachedName="MigrantStatusId"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MigrantStatusId]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[MigrantStatusId]" />
+                        <inputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PrimaryDisabilityTypeId]"
+                          cachedDataType="i4"
+                          cachedName="PrimaryDisabilityTypeId"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PrimaryDisabilityTypeId]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PrimaryDisabilityTypeId]" />
+                        <inputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IdeaStatusId]"
+                          cachedDataType="i4"
+                          cachedName="IdeaStatusId"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IdeaStatusId]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[IdeaStatusId]" />
+                        <inputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ImmigrantStatusId]"
+                          cachedDataType="i4"
+                          cachedName="ImmigrantStatusId"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ImmigrantStatusId]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[ImmigrantStatusId]" />
+                        <inputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MilitaryStatusId]"
+                          cachedDataType="i4"
+                          cachedName="MilitaryStatusId"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MilitaryStatusId]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[MilitaryStatusId]" />
+                        <inputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NumberOfCreditsAttempted]"
+                          cachedDataType="numeric"
+                          cachedName="NumberOfCreditsAttempted"
+                          cachedPrecision="9"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NumberOfCreditsAttempted]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[NumberOfCreditsAttempted]" />
+                        <inputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NumberOfCreditsEarned]"
+                          cachedDataType="numeric"
+                          cachedName="NumberOfCreditsEarned"
+                          cachedPrecision="9"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NumberOfCreditsEarned]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[NumberOfCreditsEarned]" />
+                        <inputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StudentCourseSectionGradeEarned]"
+                          cachedDataType="wstr"
+                          cachedLength="15"
+                          cachedName="StudentCourseSectionGradeEarned"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentCourseSectionGradeEarned]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentCourseSectionGradeEarned]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IPEDSIdentifier]"
+                          dataType="i4"
+                          name="IPEDSIdentifier" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolYear]"
+                          dataType="i2"
+                          name="SchoolYear" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PsStudentStudentIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          name="PsStudentStudentIdentifierState" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FactPsStudentCourseTranscriptId]"
+                          dataType="i8"
+                          name="FactPsStudentCourseTranscriptId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CipCodeId]"
+                          dataType="i4"
+                          name="CipCodeId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EnglishLearnerStatusId]"
+                          dataType="i4"
+                          name="EnglishLearnerStatusId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PsDemographicId]"
+                          dataType="i4"
+                          name="PsDemographicId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DisabilityStatusId]"
+                          dataType="i4"
+                          name="DisabilityStatusId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EconomicallyDisadvantagedStatusId]"
+                          dataType="i4"
+                          name="EconomicallyDisadvantagedStatusId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HomelessnessStatusId]"
+                          dataType="i4"
+                          name="HomelessnessStatusId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MigrantStatusId]"
+                          dataType="i4"
+                          name="MigrantStatusId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PrimaryDisabilityTypeId]"
+                          dataType="i4"
+                          name="PrimaryDisabilityTypeId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IdeaStatusId]"
+                          dataType="i4"
+                          name="IdeaStatusId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ImmigrantStatusId]"
+                          dataType="i4"
+                          name="ImmigrantStatusId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MilitaryStatusId]"
+                          dataType="i4"
+                          name="MilitaryStatusId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NumberOfCreditsAttempted]"
+                          dataType="numeric"
+                          name="NumberOfCreditsAttempted"
+                          precision="9"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NumberOfCreditsEarned]"
+                          dataType="numeric"
+                          name="NumberOfCreditsEarned"
+                          precision="9"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentCourseSectionGradeEarned]"
+                          dataType="wstr"
+                          length="15"
+                          name="StudentCourseSectionGradeEarned" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[CEDS].[CedsOptionSetMapping]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+   [base].[FactPsStudentCourseTranscriptId]
+  , [dpi].[IPEDSIdentifier]
+  , [dp].[PsStudentStudentIdentifierState]
+  , [dsy1].[SchoolYear]
+  , [base].[CipCodeId]
+  , [base].[EnglishLearnerStatusId]
+  , [base].[PsDemographicId]
+  , [base].[DisabilityStatusId]
+  , [base].[EconomicallyDisadvantagedStatusId]
+  , [base].[HomelessnessStatusId]
+  , [base].[MigrantStatusId]
+  , [base].[PrimaryDisabilityTypeId]
+  , [base].[IdeaStatusId]
+  , [base].[ImmigrantStatusId]
+  , [base].[MilitartyStatusId] AS [MilitaryStatusId]
+  , [base].[NumberOfCreditsAttempted]
+  , [base].[NumberOfCreditsEarned]
+  , [base].[StudentCourseSectionGradeEarned]
+FROM
+	[RDS].[FactPsStudentCourseTranscripts]  AS [base]
+		LEFT JOIN [RDS].[DimSchoolYears]    AS [dsy1]
+					  ON [base].[SchoolYearId] = [dsy1].[DimSchoolYearId]
+		LEFT JOIN [RDS].[DimPeople]         AS [dp]
+					  ON [base].[PsStudentId] = [dp].[DimPersonId]
+		LEFT JOIN [RDS].[DimPsInstitutions] AS [dpi]
+					  ON [base].[PsInstitutionId] = [dpi].[DimPsInstitutionId]</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{D41EB2B6-A586-49A5-A9CB-BCA8E8B2703B}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CEDS-DWH]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[IPEDSIdentifier]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IPEDSIdentifier]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[IPEDSIdentifier]"
+                          name="IPEDSIdentifier"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolYear]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolYear]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolYear]"
+                          name="SchoolYear"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PsStudentStudentIdentifierState]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PsStudentStudentIdentifierState]"
+                          length="40"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PsStudentStudentIdentifierState]"
+                          name="PsStudentStudentIdentifierState"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FactPsStudentCourseTranscriptId]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FactPsStudentCourseTranscriptId]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FactPsStudentCourseTranscriptId]"
+                          name="FactPsStudentCourseTranscriptId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CipCodeId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CipCodeId]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CipCodeId]"
+                          name="CipCodeId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[EnglishLearnerStatusId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EnglishLearnerStatusId]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[EnglishLearnerStatusId]"
+                          name="EnglishLearnerStatusId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PsDemographicId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PsDemographicId]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PsDemographicId]"
+                          name="PsDemographicId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DisabilityStatusId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DisabilityStatusId]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DisabilityStatusId]"
+                          name="DisabilityStatusId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[EconomicallyDisadvantagedStatusId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EconomicallyDisadvantagedStatusId]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[EconomicallyDisadvantagedStatusId]"
+                          name="EconomicallyDisadvantagedStatusId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[HomelessnessStatusId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[HomelessnessStatusId]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[HomelessnessStatusId]"
+                          name="HomelessnessStatusId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[MigrantStatusId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MigrantStatusId]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[MigrantStatusId]"
+                          name="MigrantStatusId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PrimaryDisabilityTypeId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PrimaryDisabilityTypeId]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PrimaryDisabilityTypeId]"
+                          name="PrimaryDisabilityTypeId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[IdeaStatusId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IdeaStatusId]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[IdeaStatusId]"
+                          name="IdeaStatusId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[ImmigrantStatusId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ImmigrantStatusId]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[ImmigrantStatusId]"
+                          name="ImmigrantStatusId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[MilitaryStatusId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MilitaryStatusId]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[MilitaryStatusId]"
+                          name="MilitaryStatusId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[NumberOfCreditsAttempted]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NumberOfCreditsAttempted]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[NumberOfCreditsAttempted]"
+                          name="NumberOfCreditsAttempted"
+                          precision="9"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[NumberOfCreditsEarned]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NumberOfCreditsEarned]"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[NumberOfCreditsEarned]"
+                          name="NumberOfCreditsEarned"
+                          precision="9"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentCourseSectionGradeEarned]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StudentCourseSectionGradeEarned]"
+                          length="15"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentCourseSectionGradeEarned]"
+                          name="StudentCourseSectionGradeEarned"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IPEDSIdentifier]"
+                          dataType="i4"
+                          name="IPEDSIdentifier" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolYear]"
+                          dataType="i2"
+                          name="SchoolYear" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PsStudentStudentIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          name="PsStudentStudentIdentifierState" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FactPsStudentCourseTranscriptId]"
+                          dataType="i8"
+                          name="FactPsStudentCourseTranscriptId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CipCodeId]"
+                          dataType="i4"
+                          name="CipCodeId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EnglishLearnerStatusId]"
+                          dataType="i4"
+                          name="EnglishLearnerStatusId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PsDemographicId]"
+                          dataType="i4"
+                          name="PsDemographicId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DisabilityStatusId]"
+                          dataType="i4"
+                          name="DisabilityStatusId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EconomicallyDisadvantagedStatusId]"
+                          dataType="i4"
+                          name="EconomicallyDisadvantagedStatusId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[HomelessnessStatusId]"
+                          dataType="i4"
+                          name="HomelessnessStatusId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MigrantStatusId]"
+                          dataType="i4"
+                          name="MigrantStatusId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PrimaryDisabilityTypeId]"
+                          dataType="i4"
+                          name="PrimaryDisabilityTypeId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IdeaStatusId]"
+                          dataType="i4"
+                          name="IdeaStatusId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ImmigrantStatusId]"
+                          dataType="i4"
+                          name="ImmigrantStatusId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MilitaryStatusId]"
+                          dataType="i4"
+                          name="MilitaryStatusId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NumberOfCreditsAttempted]"
+                          dataType="numeric"
+                          name="NumberOfCreditsAttempted"
+                          precision="9"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NumberOfCreditsEarned]"
+                          dataType="numeric"
+                          name="NumberOfCreditsEarned"
+                          precision="9"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StudentCourseSectionGradeEarned]"
+                          dataType="wstr"
+                          length="15"
+                          name="StudentCourseSectionGradeEarned" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FactPsStudentCourseTranscriptId]"
+                          dataType="i8"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FactPsStudentCourseTranscriptId]"
+                          name="FactPsStudentCourseTranscriptId" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolYear]"
+                          dataType="i2"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolYear]"
+                          name="SchoolYear" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IPEDSIdentifier]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IPEDSIdentifier]"
+                          name="IPEDSIdentifier" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PsStudentStudentIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PsStudentStudentIdentifierState]"
+                          name="PsStudentStudentIdentifierState" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CipCodeId]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CipCodeId]"
+                          name="CipCodeId" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EnglishLearnerStatusId]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EnglishLearnerStatusId]"
+                          name="EnglishLearnerStatusId" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PsDemographicId]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PsDemographicId]"
+                          name="PsDemographicId" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DisabilityStatusId]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DisabilityStatusId]"
+                          name="DisabilityStatusId" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EconomicallyDisadvantagedStatusId]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EconomicallyDisadvantagedStatusId]"
+                          name="EconomicallyDisadvantagedStatusId" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[HomelessnessStatusId]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[HomelessnessStatusId]"
+                          name="HomelessnessStatusId" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MigrantStatusId]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MigrantStatusId]"
+                          name="MigrantStatusId" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PrimaryDisabilityTypeId]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PrimaryDisabilityTypeId]"
+                          name="PrimaryDisabilityTypeId" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IdeaStatusId]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IdeaStatusId]"
+                          name="IdeaStatusId" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ImmigrantStatusId]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ImmigrantStatusId]"
+                          name="ImmigrantStatusId" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MilitaryStatusId]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MilitaryStatusId]"
+                          name="MilitaryStatusId" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NumberOfCreditsAttempted]"
+                          dataType="numeric"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NumberOfCreditsAttempted]"
+                          name="NumberOfCreditsAttempted"
+                          precision="9"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NumberOfCreditsEarned]"
+                          dataType="numeric"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NumberOfCreditsEarned]"
+                          name="NumberOfCreditsEarned"
+                          precision="9"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StudentCourseSectionGradeEarned]"
+                          dataType="wstr"
+                          length="15"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StudentCourseSectionGradeEarned]"
+                          name="StudentCourseSectionGradeEarned" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\FactPsStudentCourseTranscripts\Stage Data.Paths[OLE DB Source Output]"
+                  endId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FactPsStudentCourseTranscripts\Truncate staging table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{e2b0771a-f277-425c-9b62-eb167f74aa91}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate staging table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[FactPsStudentCourseTranscripts];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FactPsStudentCourseTranscripts.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{22031e1e-491a-4839-a057-ab0ba44f46c2}"
+          DTS:From="Package\FactPsStudentCourseTranscripts\Truncate staging table"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\FactPsStudentCourseTranscripts\Stage Data" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\FactPsStudentEnrollments"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{7dc3b3ae-290f-4f03-90c5-85b12f4e40e2}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FactPsStudentEnrollments">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\FactPsStudentEnrollments\Stage Data"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{785ecaca-1165-4610-98e8-f40cbe3b94db}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Stage Data"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[staging].[FactPsStudentEnrollments]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{60dda06b-3f51-4553-8452-daaed09fbd3d}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Dashboards-DB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IPEDSIdentifier]"
+                          cachedDataType="i4"
+                          cachedName="IPEDSIdentifier"
+                          externalMetadataColumnId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IPEDSIdentifier]"
+                          lineageId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[IPEDSIdentifier]" />
+                        <inputColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SchoolYear]"
+                          cachedDataType="i2"
+                          cachedName="SchoolYear"
+                          externalMetadataColumnId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolYear]"
+                          lineageId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolYear]" />
+                        <inputColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PsStudentStudentIdentifierState]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="PsStudentStudentIdentifierState"
+                          externalMetadataColumnId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PsStudentStudentIdentifierState]"
+                          lineageId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PsStudentStudentIdentifierState]" />
+                        <inputColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PsEnrollmentStatusId]"
+                          cachedDataType="i4"
+                          cachedName="PsEnrollmentStatusId"
+                          externalMetadataColumnId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PsEnrollmentStatusId]"
+                          lineageId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PsEnrollmentStatusId]" />
+                        <inputColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FactPsStudentEnrollmentId]"
+                          cachedDataType="i8"
+                          cachedName="FactPsStudentEnrollmentId"
+                          externalMetadataColumnId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FactPsStudentEnrollmentsId]"
+                          lineageId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FactPsStudentEnrollmentId]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FactPsStudentEnrollmentsId]"
+                          dataType="i8"
+                          name="FactPsStudentEnrollmentsId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IPEDSIdentifier]"
+                          dataType="i4"
+                          name="IPEDSIdentifier" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolYear]"
+                          dataType="i2"
+                          name="SchoolYear" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PsStudentStudentIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          name="PsStudentStudentIdentifierState" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PsEnrollmentStatusId]"
+                          dataType="i4"
+                          name="PsEnrollmentStatusId" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[CEDS].[CedsOptionSetMapping]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select 
+fact.FactPsStudentEnrollmentId
+, dsy1.SchoolYear
+, dpi.IPEDSIdentifier
+, dp.PsStudentStudentIdentifierState 
+, PsEnrollmentStatusId
+from RDS.FactPsStudentEnrollments AS fact
+LEFT JOIN RDS.DimSchoolYears AS dsy1
+ON fact.SchoolYearId = dsy1.DimSchoolYearId
+left join RDS.DimPsInstitutions as dpi
+on fact.PsInstitutionId = dpi.DimPsInstitutionId
+left join RDS.DimPeople AS  dp
+on fact.PsStudentId = dp.DimPersonId
+where dp.IsActivePsStudent = 1</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{D41EB2B6-A586-49A5-A9CB-BCA8E8B2703B}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CEDS-DWH]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[IPEDSIdentifier]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IPEDSIdentifier]"
+                          lineageId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[IPEDSIdentifier]"
+                          name="IPEDSIdentifier"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolYear]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolYear]"
+                          lineageId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolYear]"
+                          name="SchoolYear"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PsStudentStudentIdentifierState]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PsStudentStudentIdentifierState]"
+                          length="40"
+                          lineageId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PsStudentStudentIdentifierState]"
+                          name="PsStudentStudentIdentifierState"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PsEnrollmentStatusId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PsEnrollmentStatusId]"
+                          lineageId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[PsEnrollmentStatusId]"
+                          name="PsEnrollmentStatusId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FactPsStudentEnrollmentId]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FactPsStudentEnrollmentId]"
+                          lineageId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[FactPsStudentEnrollmentId]"
+                          name="FactPsStudentEnrollmentId"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IPEDSIdentifier]"
+                          dataType="i4"
+                          name="IPEDSIdentifier" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolYear]"
+                          dataType="i2"
+                          name="SchoolYear" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PsStudentStudentIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          name="PsStudentStudentIdentifierState" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PsEnrollmentStatusId]"
+                          dataType="i4"
+                          name="PsEnrollmentStatusId" />
+                        <externalMetadataColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FactPsStudentEnrollmentId]"
+                          dataType="i8"
+                          name="FactPsStudentEnrollmentId" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FactPsStudentEnrollmentId]"
+                          dataType="i8"
+                          lineageId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FactPsStudentEnrollmentId]"
+                          name="FactPsStudentEnrollmentId" />
+                        <outputColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolYear]"
+                          dataType="i2"
+                          lineageId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolYear]"
+                          name="SchoolYear" />
+                        <outputColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IPEDSIdentifier]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IPEDSIdentifier]"
+                          name="IPEDSIdentifier" />
+                        <outputColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PsStudentStudentIdentifierState]"
+                          dataType="wstr"
+                          length="40"
+                          lineageId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PsStudentStudentIdentifierState]"
+                          name="PsStudentStudentIdentifierState" />
+                        <outputColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PsEnrollmentStatusId]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PsEnrollmentStatusId]"
+                          name="PsEnrollmentStatusId" />
+                        <outputColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\FactPsStudentEnrollments\Stage Data.Paths[OLE DB Source Output]"
+                  endId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FactPsStudentEnrollments\Truncate staging table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{1b4356e0-07fe-4404-9bb3-166828f40a8f}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate staging table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{60dda06b-3f51-4553-8452-daaed09fbd3d}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[FactPsStudentEnrollments];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FactPsStudentEnrollments.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{9a2e19d5-df7a-453f-9a1f-654ae11ddc77}"
+          DTS:From="Package\FactPsStudentEnrollments\Truncate staging table"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\FactPsStudentEnrollments\Stage Data" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="188,42"
+          Id="Package\FactPsStudentAcademicAwards\Stage Data"
+          TopLeft="66,103" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\FactPsStudentAcademicAwards\Truncate staging table"
+          TopLeft="66,31" />
+        <EdgeLayout
+          Id="Package\FactPsStudentAcademicAwards.PrecedenceConstraints[Constraint]"
+          TopLeft="160,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="334,270"
+          Size="334,313"
+          Id="Package\FactPsStudentAcademicAwards"
+          TopLeft="413,86" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\FactPsStudentEnrollments\Stage Data"
+          TopLeft="66,103" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\FactPsStudentEnrollments\Truncate staging table"
+          TopLeft="66,31" />
+        <EdgeLayout
+          Id="Package\FactPsStudentEnrollments.PrecedenceConstraints[Constraint]"
+          TopLeft="160,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="334,270"
+          Size="334,313"
+          Id="Package\FactPsStudentEnrollments"
+          TopLeft="60,86" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\FactPsStudentCourseTranscripts\Stage Data"
+          TopLeft="66,103" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\FactPsStudentCourseTranscripts\Truncate staging table"
+          TopLeft="66,31" />
+        <EdgeLayout
+          Id="Package\FactPsStudentCourseTranscripts.PrecedenceConstraints[Constraint]"
+          TopLeft="160,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="334,270"
+          Size="334,313"
+          Id="Package\FactPsStudentCourseTranscripts"
+          TopLeft="60,459" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\FactPsStudentAcademicAwards\Stage Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination"
+          TopLeft="65,130" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source"
+          TopLeft="77,35" />
+        <EdgeLayout
+          Id="Package\FactPsStudentAcademicAwards\Stage Data.Paths[OLE DB Source Output]"
+          TopLeft="154.5,77">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactPsStudentAcademicAwards\Stage Data\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\FactPsStudentEnrollments\Stage Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\FactPsStudentEnrollments\Stage Data\OLE DB Destination"
+          TopLeft="65,130" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source"
+          TopLeft="77,35" />
+        <EdgeLayout
+          Id="Package\FactPsStudentEnrollments\Stage Data.Paths[OLE DB Source Output]"
+          TopLeft="154.5,77">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactPsStudentEnrollments\Stage Data\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactPsStudentEnrollments\Stage Data\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\FactPsStudentCourseTranscripts\Stage Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination"
+          TopLeft="65,130" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source"
+          TopLeft="77,35" />
+        <EdgeLayout
+          Id="Package\FactPsStudentCourseTranscripts\Stage Data.Paths[OLE DB Source Output]"
+          TopLeft="154.5,77">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactPsStudentCourseTranscripts\Stage Data\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

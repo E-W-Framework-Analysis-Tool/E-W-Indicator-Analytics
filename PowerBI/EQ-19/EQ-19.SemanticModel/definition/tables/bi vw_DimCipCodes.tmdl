@@ -1,0 +1,29 @@
+table 'bi vw_DimCipCodes'
+	lineageTag: b782f756-c42c-4b89-bbb1-f4cbdf89cd05
+
+	column DimCipCodeId
+		dataType: int64
+		formatString: 0
+		lineageTag: 65862472-c988-41b5-ad22-6c303c907862
+		summarizeBy: none
+		sourceColumn: DimCipCodeId
+
+		annotation SummarizationSetBy = Automatic
+
+	column FieldOfStudy
+		dataType: string
+		lineageTag: 27c2e220-e3ee-4e22-bd2b-5bc9c13c2995
+		summarizeBy: none
+		sourceColumn: FieldOfStudy
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bi vw_DimCipCodes' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    bi_vw_DimCipCodes = Source{[Schema="bi",Item="vw_DimCipCodes"]}[Data]
+				in
+				    bi_vw_DimCipCodes
+

@@ -1,0 +1,228 @@
+table 'Enrollment in Graduate Education'
+	lineageTag: a34fe3fd-4aea-45b2-ba18-b81f970e624e
+
+	measure '% Postgrad Enrolled 1-5 Years Trend' =
+			
+			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
+			RETURN
+			CALCULATE(
+			    [% Postgrad Enrolled 1-5 Years],
+			    'bi vw_DimSchoolYears'[SchoolYear] = SelectedTrendYear,
+			    REMOVEFILTERS('bi vw_DimSchoolYears')
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: fa456567-0152-4237-98da-212aab3cfd33
+
+	measure '% Postgrad Enrolled 6-10 Years Trend' =
+			
+			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
+			RETURN
+			CALCULATE(
+			    [% Postgrad Enrolled 6-10 Years],
+			    'bi vw_DimSchoolYears'[SchoolYear] = SelectedTrendYear,
+			    REMOVEFILTERS('bi vw_DimSchoolYears')
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: b9b9134c-f325-4689-a85c-8c0b97e53c83
+
+	measure '% Postgrad Enrolled 1-5 Years' = DIVIDE([Count of Postgrads enrolling within 1-5 years], [Total Post Grad Enrolled Students], 0)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 6f2ee082-6701-444d-879d-de57b9436cae
+
+	measure '% Postgrad Enrolled 6-10 Years' = DIVIDE([Count of Postgrads enrolling within 6-10 years], [Total Post Grad Enrolled Students], 0)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: b59e8309-524a-40eb-91b6-c861be0aa05a
+
+	measure 'Count of Postgrads enrolling within 1-5 years' = ```
+			
+			VAR minYearDiff = 1
+			VAR maxYearDiff = 5
+			VAR TargetCredentials = {"Doctoral Degree", "Master's Degree"}
+			VAR TargetFieldOfStudy = {"BUSINESS", "ARTS", "OTHER", "STEM"}
+			
+			VAR CurrentCredential = SELECTEDVALUE('bi vw_DimPsAcademicAwardStatuses'[CredentialType])
+			VAR CurrentFieldOfStudy = SELECTEDVALUE('bi vw_DimCipCodes'[FieldOfStudy])
+			VAR IsValidRow = (
+			                    (CurrentCredential IN TargetCredentials     || NOT ISFILTERED('bi vw_DimPsAcademicAwardStatuses'[CredentialType])) &&
+			                    (CurrentFieldOfStudy in TargetFieldOfStudy  || NOT ISFILTERED('bi vw_DimCipCodes'[FieldOfStudy]))
+			                )
+			
+			-- 1. Identify Students with exactly/at least 2 records
+			VAR PostGradIds = 
+			    FILTER(
+			        VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			        CALCULATE(
+			            COUNTROWS('reporting RDS_FactPsStudentEnrollments'),
+			            ALLEXCEPT('reporting RDS_FactPsStudentEnrollments', 'reporting RDS_FactPsStudentEnrollments'[PsStudentId])
+			        ) >= 2
+			    )
+			
+			-- 2. Iterate through these students to check the gap
+			VAR SuccessStudentCount = 
+			    SUMX(
+			        PostGradIds,
+			        -- Reference the current student in the iteration
+			        VAR _currentStudent = 'reporting RDS_FactPsStudentEnrollments'[PsStudentId]
+			        
+			        -- Get the UNDERGRAD Exit Date (The 1st record)
+			        VAR UndergradExit = 
+			            CALCULATE(
+			                MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentExitDate]),
+			                ALLEXCEPT('reporting RDS_FactPsStudentEnrollments', 'reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			                'reporting RDS_FactPsStudentEnrollments'[PsStudentId] = _currentStudent,
+			                ('bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials)
+			            )
+			        
+			        -- Get the POSTGRAD Entry Date (The 2nd record)
+			        VAR PostgradEntry = 
+			            CALCULATE(
+			                MAX('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate]),
+			                ALLEXCEPT('reporting RDS_FactPsStudentEnrollments', 'reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			                'reporting RDS_FactPsStudentEnrollments'[PsStudentId] = _currentStudent,
+			                'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			                'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy
+			            )
+			            
+			        -- Use DATEDIFF for accuracy (or Year subtraction if business logic allows)
+			        VAR YearDiff = 
+			            IF(
+			                NOT ISBLANK(UndergradExit) && NOT ISBLANK(PostgradEntry),
+			                YEAR(PostgradEntry) - YEAR(UndergradExit)
+			            )
+			        
+			        RETURN IF(YearDiff >= minYearDiff && YearDiff <= maxYearDiff, 1, 0)
+			    )
+			
+			-- 3. Execution Logic
+			RETURN
+			    IF(IsValidRow, SuccessStudentCount, BLANK())
+			```
+		lineageTag: 79ef1e4d-436d-43f8-895e-11c65d105f99
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Count of Postgrads enrolling within 6-10 years' = ```
+			
+			VAR minYearDiff = 6
+			VAR maxYearDiff = 10
+			VAR TargetCredentials = {"Doctoral Degree", "Master's Degree"}
+			VAR TargetFieldOfStudy = {"BUSINESS", "ARTS", "OTHER", "STEM"}
+			
+			VAR CurrentCredential = SELECTEDVALUE('bi vw_DimPsAcademicAwardStatuses'[CredentialType])
+			VAR CurrentFieldOfStudy = SELECTEDVALUE('bi vw_DimCipCodes'[FieldOfStudy])
+			VAR IsValidRow = (
+			                    (CurrentCredential IN TargetCredentials     || NOT ISFILTERED('bi vw_DimPsAcademicAwardStatuses'[CredentialType])) &&
+			                    (CurrentFieldOfStudy in TargetFieldOfStudy  || NOT ISFILTERED('bi vw_DimCipCodes'[FieldOfStudy]))
+			                )
+			
+			-- 1. Identify Students with exactly/at least 2 records
+			VAR PostGradIds = 
+			    FILTER(
+			        VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			        CALCULATE(
+			            COUNTROWS('reporting RDS_FactPsStudentEnrollments'),
+			            ALLEXCEPT('reporting RDS_FactPsStudentEnrollments', 'reporting RDS_FactPsStudentEnrollments'[PsStudentId])
+			        ) >= 2
+			    )
+			
+			-- 2. Iterate through these students to check the gap
+			VAR SuccessStudentCount = 
+			    SUMX(
+			        PostGradIds,
+			        -- Reference the current student in the iteration
+			        VAR _currentStudent = 'reporting RDS_FactPsStudentEnrollments'[PsStudentId]
+			        
+			        -- Get the UNDERGRAD Exit Date (The 1st record)
+			        VAR UndergradExit = 
+			            CALCULATE(
+			                MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentExitDate]),
+			                ALLEXCEPT('reporting RDS_FactPsStudentEnrollments', 'reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			                'reporting RDS_FactPsStudentEnrollments'[PsStudentId] = _currentStudent,
+			                ('bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials)
+			            )
+			        
+			        -- Get the POSTGRAD Entry Date (The 2nd record)
+			        VAR PostgradEntry = 
+			            CALCULATE(
+			                MAX('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate]),
+			                ALLEXCEPT('reporting RDS_FactPsStudentEnrollments', 'reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			                'reporting RDS_FactPsStudentEnrollments'[PsStudentId] = _currentStudent,
+			                'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			                'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy
+			            )
+			            
+			        -- Use DATEDIFF for accuracy (or Year subtraction if business logic allows)
+			        VAR YearDiff = 
+			            IF(
+			                NOT ISBLANK(UndergradExit) && NOT ISBLANK(PostgradEntry),
+			                YEAR(PostgradEntry) - YEAR(UndergradExit)
+			            )
+			        
+			        RETURN IF(YearDiff >= minYearDiff && YearDiff <= maxYearDiff, 1, 0)
+			    )
+			
+			-- 3. Execution Logic
+			RETURN
+			    IF(IsValidRow, SuccessStudentCount, BLANK())
+			```
+		lineageTag: e60cfd5a-1ea1-4589-8382-26a0481c0482
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Post Grad Enrolled Students' = ```
+			
+			VAR TargetCredentials = {"Doctoral Degree", "Master's Degree"}
+			VAR TargetFieldOfStudy = {"BUSINESS", "ARTS", "OTHER", "STEM"}
+			
+			VAR CurrentCredential = SELECTEDVALUE('bi vw_DimPsAcademicAwardStatuses'[CredentialType])
+			VAR CurrentFieldOfStudy = SELECTEDVALUE('bi vw_DimCipCodes'[FieldOfStudy])
+			VAR IsValidRow = (
+			                    (CurrentCredential IN TargetCredentials     || NOT ISFILTERED('bi vw_DimPsAcademicAwardStatuses'[CredentialType])) &&
+			                    (CurrentFieldOfStudy in TargetFieldOfStudy  || NOT ISFILTERED('bi vw_DimCipCodes'[FieldOfStudy]))
+			                )
+			
+			-- 1. Identify students with at least 2 enrollment records across all time
+			VAR PostGradStudents = 
+			    FILTER(
+			        ADDCOLUMNS(
+			            VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			            "IsPostGrad", 
+			            CALCULATE(
+			                COUNTROWS('reporting RDS_FactPsStudentEnrollments'),
+			                ALLEXCEPT('reporting RDS_FactPsStudentEnrollments', 'reporting RDS_FactPsStudentEnrollments'[PsStudentId])
+			            ) >= 2
+			        ),
+			        [IsPostGrad] = TRUE
+			    )
+			
+			VAR OnlyPostGradIds = SELECTCOLUMNS(PostGradStudents, "PsStudentId", [PsStudentId])
+			
+			-- 2. Calculate the distinct count applying the context of the visual
+			VAR Result = 
+			    CALCULATE(
+			        DISTINCTCOUNT('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			        KEEPFILTERS(OnlyPostGradIds),
+			        'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			        'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy
+			    )
+			
+			-- 3. Execution Logic
+			RETURN
+			    IF(IsValidRow, Result, BLANK())
+			
+			```
+		formatString: 0
+		lineageTag: e78adb20-f85b-4139-8f39-d4e654ffc9f6
+
+	partition 'Enrollment in Graduate Education' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

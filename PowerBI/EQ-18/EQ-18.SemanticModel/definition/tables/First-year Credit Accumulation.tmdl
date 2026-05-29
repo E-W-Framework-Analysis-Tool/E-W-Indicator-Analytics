@@ -1,0 +1,243 @@
+table 'First-year Credit Accumulation'
+	lineageTag: d42d6ce4-0bf7-47d9-81c9-658d4412785d
+
+	measure '% Full-Time Students Completing 30 Credits' = ```
+			
+			VAR Denominator = [Total Undergrad Enrolled Students]
+			VAR Numerator = [FT Students 30 Credits]
+			
+			RETURN 
+			    DIVIDE(Numerator, Denominator, 0)
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 9bc86cb3-1b6a-49f5-a36e-482bdd8e790d
+
+	measure '% Part-Time Students Completing 15 Credits' = ```
+			
+			VAR Denominator = [Total Undergrad Enrolled Students]
+			VAR Numerator = [PT Students 15 Credits]
+			
+			RETURN 
+			    DIVIDE(Numerator, Denominator, 0)
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 529c0c5e-94f7-44e4-86cb-a666028baa69
+
+	measure '% Full-Time Students Completing 30 Credits Trend' =
+			
+			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
+			RETURN
+			CALCULATE(
+			    [% Full-Time Students Completing 30 Credits],
+			    'bi vw_DimSchoolYears'[SchoolYear] = SelectedTrendYear,
+			    REMOVEFILTERS('bi vw_DimSchoolYears')
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 465d5243-47bc-4b94-a7cd-e69c1c846fb4
+
+	measure '% Part-Time Students Completing 15 Credits Trend' =
+			
+			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
+			RETURN
+			CALCULATE(
+			    [% Part-Time Students Completing 15 Credits],
+			    'bi vw_DimSchoolYears'[SchoolYear] = SelectedTrendYear,
+			    REMOVEFILTERS('bi vw_DimSchoolYears')
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: ad966f6c-fe23-4b88-b8dd-5c0a08f9583b
+
+	measure 'PT Students 15 Credits' = ```
+			
+			VAR TargetCredentials = {"Certificate", "Associate's Degree", "Bachelor's Degree"}
+			VAR TargetFieldOfStudy = {"BUSINESS", "ARTS", "OTHER", "STEM"}
+			
+			VAR CurrentCredential = SELECTEDVALUE('bi vw_DimPsAcademicAwardStatuses'[CredentialType])
+			VAR CurrentFieldOfStudy = SELECTEDVALUE('bi vw_DimCipCodes'[FieldOfStudy])
+			
+			VAR IsValidRow = 
+			    (ISBLANK(CurrentCredential) || CurrentCredential IN TargetCredentials) &&
+			    (ISBLANK(CurrentFieldOfStudy) || CurrentFieldOfStudy IN TargetFieldOfStudy)
+			
+			-- STRICT INTERSECTION: Only look at students who have the combination of both selected attributes
+			VAR StudentsInContext = 
+			    CALCULATETABLE(
+			        VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			        'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			        'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy
+			    )
+			
+			VAR QualifiedStudents = 
+			SUMX(
+			    StudentsInContext,
+			    VAR _CurrentStudent = 'reporting RDS_FactPsStudentEnrollments'[PsStudentId]
+			    VAR _StudentStart = [Student First-Year Window]
+			    VAR _StudentEnd = EDATE(_StudentStart, 12)
+			    
+			    -- Calculate Attempted for this student across allowed targets
+			    VAR _FirstYearAttempted = 
+			        CALCULATE(
+			            SUM('reporting RDS_FactPsStudentCourseTranscripts'[NumberOfCreditsAttempted]),
+			            'reporting RDS_FactPsStudentCourseTranscripts'[PsStudentId] = _CurrentStudent,
+			            'reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate] >= _StudentStart,
+			            'reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate] < _StudentEnd,
+			            REMOVEFILTERS('bi vw_DimCipCodes'), 
+			            'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy,
+			            REMOVEFILTERS('bi vw_DimPsAcademicAwardStatuses'),
+			            'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials
+			        )
+			        
+			    -- Calculate Earned for this student across allowed targets
+			    VAR _FirstYearEarned = 
+			        CALCULATE(
+			            SUM('reporting RDS_FactPsStudentCourseTranscripts'[NumberOfCreditsEarned]),
+			            'reporting RDS_FactPsStudentCourseTranscripts'[PsStudentId] = _CurrentStudent,
+			            'reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate] >= _StudentStart,
+			            'reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate] < _StudentEnd,
+			            REMOVEFILTERS('bi vw_DimCipCodes'),
+			            'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy,
+			            REMOVEFILTERS('bi vw_DimPsAcademicAwardStatuses'),
+			            'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials
+			        )
+			
+			    VAR _HasValidCredential = 
+			        CALCULATE(
+			            COUNTROWS('bi vw_DimPsAcademicAwardStatuses'),
+			            'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			            'reporting RDS_FactPsStudentEnrollments'[PsStudentId] = _CurrentStudent
+			        )
+			
+			    RETURN
+			    IF(
+			        _FirstYearAttempted <= 18 && 
+			        _FirstYearEarned >= 15 && 
+			        _HasValidCredential > 0,
+			        1, 0
+			    )
+			)
+			
+			RETURN
+			    IF(IsValidRow, QualifiedStudents, BLANK())
+			```
+		formatString: 0
+		lineageTag: 2cbc3206-2c69-4d7b-9cdb-1e767bc36fe3
+
+	measure 'FT Students 30 Credits' = ```
+			
+			VAR TargetCredentials = {"Certificate", "Associate's Degree", "Bachelor's Degree"}
+			VAR TargetFieldOfStudy = {"BUSINESS", "ARTS", "OTHER", "STEM"}
+			
+			VAR CurrentCredential = SELECTEDVALUE('bi vw_DimPsAcademicAwardStatuses'[CredentialType])
+			VAR CurrentFieldOfStudy = SELECTEDVALUE('bi vw_DimCipCodes'[FieldOfStudy])
+			
+			VAR IsValidRow = 
+			    (ISBLANK(CurrentCredential) || CurrentCredential IN TargetCredentials) &&
+			    (ISBLANK(CurrentFieldOfStudy) || CurrentFieldOfStudy IN TargetFieldOfStudy)
+			
+			-- STRICT INTERSECTION: Only look at students who have the combination of both selected attributes
+			VAR StudentsInContext = 
+			    CALCULATETABLE(
+			        VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			        'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			        'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy
+			    )
+			
+			VAR QualifiedStudents = 
+			SUMX(
+			    StudentsInContext,
+			    VAR _CurrentStudent = 'reporting RDS_FactPsStudentEnrollments'[PsStudentId]
+			    VAR _StudentStart = [Student First-Year Window]
+			    VAR _StudentEnd = EDATE(_StudentStart, 12)
+			    
+			    -- Calculate Attempted for this student across allowed targets
+			    VAR _FirstYearAttempted = 
+			        CALCULATE(
+			            SUM('reporting RDS_FactPsStudentCourseTranscripts'[NumberOfCreditsAttempted]),
+			            'reporting RDS_FactPsStudentCourseTranscripts'[PsStudentId] = _CurrentStudent,
+			            'reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate] >= _StudentStart,
+			            'reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate] < _StudentEnd,
+			            REMOVEFILTERS('bi vw_DimCipCodes'), 
+			            'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy,
+			            REMOVEFILTERS('bi vw_DimPsAcademicAwardStatuses'),
+			            'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials
+			        )
+			        
+			    -- Calculate Earned for this student across allowed targets
+			    VAR _FirstYearEarned = 
+			        CALCULATE(
+			            SUM('reporting RDS_FactPsStudentCourseTranscripts'[NumberOfCreditsEarned]),
+			            'reporting RDS_FactPsStudentCourseTranscripts'[PsStudentId] = _CurrentStudent,
+			            'reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate] >= _StudentStart,
+			            'reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate] < _StudentEnd,
+			            REMOVEFILTERS('bi vw_DimCipCodes'),
+			            'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy,
+			            REMOVEFILTERS('bi vw_DimPsAcademicAwardStatuses'),
+			            'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials
+			        )
+			
+			    VAR _HasValidCredential = 
+			        CALCULATE(
+			            COUNTROWS('bi vw_DimPsAcademicAwardStatuses'),
+			            'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			            'reporting RDS_FactPsStudentEnrollments'[PsStudentId] = _CurrentStudent
+			        )
+			
+			    RETURN
+			    IF(
+			        _FirstYearAttempted >= 30 && 
+			        _FirstYearEarned >= 30 && 
+			        _HasValidCredential > 0,
+			        1, 0
+			    )
+			)
+			
+			RETURN
+			    IF(IsValidRow, QualifiedStudents, BLANK())
+			```
+		formatString: 0
+		lineageTag: e0639399-133a-4fab-9d2b-4643ad23a047
+
+	measure 'Total Undergrad Enrolled Students' = ```
+			
+			VAR TargetCredentials = {"Certificate", "Associate's Degree", "Bachelor's Degree"}
+			VAR TargetFieldOfStudy = {"BUSINESS", "ARTS", "OTHER", "STEM"}
+			
+			VAR CurrentCredential = SELECTEDVALUE('bi vw_DimPsAcademicAwardStatuses'[CredentialType])
+			VAR CurrentFieldOfStudy = SELECTEDVALUE('bi vw_DimCipCodes'[FieldOfStudy])
+			
+			VAR IsValidRow = 
+			    (ISBLANK(CurrentCredential) || CurrentCredential IN TargetCredentials) &&
+			    (ISBLANK(CurrentFieldOfStudy) || CurrentFieldOfStudy IN TargetFieldOfStudy)
+			
+			-- Ensure the distinct count only operates on the true intersecting student subset
+			VAR ValidIntersectingStudents = 
+			    CALCULATETABLE(
+			        VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			        'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			        'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy
+			    )
+			
+			VAR Result = 
+			    CALCULATE(
+			        DISTINCTCOUNT('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			        KEEPFILTERS(ValidIntersectingStudents)
+			    )
+			
+			RETURN
+			    IF(IsValidRow, Result, BLANK())
+			```
+		formatString: 0
+		lineageTag: 963d68ed-7e3e-4cb7-b0c4-c93dd1d94888
+
+	partition 'First-year Credit Accumulation' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

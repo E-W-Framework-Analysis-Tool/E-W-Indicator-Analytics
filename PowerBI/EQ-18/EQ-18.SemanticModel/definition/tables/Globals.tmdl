@@ -1,0 +1,208 @@
+table Globals
+	lineageTag: 64239d0b-e01a-48a4-b88e-15a4559b4186
+
+	measure 'Selected Filters' = ```
+			
+			
+			IF(
+			    ISFILTERED('bi vw_DimSchoolYears'[SchoolYear])
+			    ||
+			    ISFILTERED('bi vw_DimCohortGraduationYears'[CohortGraduationYear])
+			    ||
+			    ISFILTERED(LimitedGraduationYears[CohortGraduationYear])
+			    ||
+			    ISFILTERED('bi vw_DimK12Schools'[SeaOrganizationName])
+			    ||
+			    ISFILTERED('bi vw_DimK12Schools'[LeaOrganizationName])
+			    ||
+			    ISFILTERED('bi vw_DimK12Schools'[K12SchoolName])
+			    ||
+			    ISFILTERED('bi vw_DimK12Schools'[SchoolTypeCode])
+			    ||
+			    ISFILTERED('bi vw_DimRaces'[RaceEthnicity])
+			    ||
+			    ISFILTERED('bi vw_DimK12Demographics'[Gender])
+			    ||
+			    ISFILTERED('bi vw_DimDisabilityStatuses'[DisabilityStatus])
+			    ||
+			    ISFILTERED('bi vw_DimEconomicallyDisadvantagedStatuses'[EconomicDisadvantageStatus])
+			    ||
+			    ISFILTERED('bi vw_DimEnglishLearnerStatuses'[EnglishLearnerStatus])
+			    ||    
+			    ISFILTERED('bi vw_DimFosterCareStatuses'[FosterCareStatus])
+			    ||    
+			    ISFILTERED('bi vw_DimHomelessnessStatuses'[HomelessnessStatus])
+			    ||    
+			    ISFILTERED('bi vw_DimRuralStatuses'[Urbanicity])
+			    ||      
+			    ISFILTERED('bi vw_DimNeglectedOrDelinquentStatus'[NeglectedOrDelinquentStatus])
+			    ||      
+			    ISFILTERED('Geography Value Slicer'[Organization Hierarchy]),
+			    
+			         IF(
+			            ISFILTERED('bi vw_DimSchoolYears'[SchoolYear]),
+			            "> Cohort Year: " & CONCATENATEX(VALUES('bi vw_DimSchoolYears'[SchoolYear]), 'bi vw_DimSchoolYears'[SchoolYear], ", "),
+			            ""
+			        )
+			        & " " & 
+			         IF(
+			            ISFILTERED('bi vw_DimCohortGraduationYears'[CohortGraduationYear]),
+			            "> Graduation Year: " & CONCATENATEX(VALUES('bi vw_DimCohortGraduationYears'[CohortGraduationYear]), 'bi vw_DimCohortGraduationYears'[CohortGraduationYear], ", "),
+			            ""
+			        )
+			        & " " & 
+			         IF(
+			            ISFILTERED(LimitedGraduationYears[CohortGraduationYear]),
+			            "> Graduation Year: " & CONCATENATEX(VALUES(LimitedGraduationYears[CohortGraduationYear]), LimitedGraduationYears[CohortGraduationYear], ", "),
+			            ""
+			        )       
+			        & " " & 
+			         IF(
+			            ISFILTERED('bi vw_DimK12Schools'[SeaOrganizationName]),
+			            "> SEAs: " & CONCATENATEX(VALUES('bi vw_DimK12Schools'[SeaOrganizationName]), 'bi vw_DimK12Schools'[SeaOrganizationName], ", "),
+			            ""
+			        )     
+			        & " " & 
+			        IF(
+			            ISFILTERED('bi vw_DimK12Schools'[LeaOrganizationName]),
+			            "> LEAs: " & CONCATENATEX(VALUES('bi vw_DimK12Schools'[LeaOrganizationName]), 'bi vw_DimK12Schools'[LeaOrganizationName], ", "),
+			            ""
+			        )
+			        & " " & 
+			        IF(
+			            ISFILTERED('bi vw_DimK12Schools'[K12SchoolName]),
+			            "> School: " & CONCATENATEX(VALUES('bi vw_DimK12Schools'[K12SchoolName]), 'bi vw_DimK12Schools'[K12SchoolName], ", "),
+			            ""
+			        )
+			        & " " & 
+			        IF(
+			            ISFILTERED('bi vw_DimK12Schools'[SchoolTypeCode]),
+			            "> School Type: " & CONCATENATEX(VALUES('bi vw_DimK12Schools'[SchoolTypeCode]), 'bi vw_DimK12Schools'[SchoolTypeCode], ", "),
+			            ""
+			        )
+			        & " " & 
+			        IF(
+			            ISFILTERED('bi vw_DimDisabilityStatuses'[DisabilityStatus]),
+			            "> Disability Type: " & CONCATENATEX(VALUES('bi vw_DimDisabilityStatuses'[DisabilityStatus]), 'bi vw_DimDisabilityStatuses'[DisabilityStatus], ", "),
+			            ""
+			        )
+			        & " " & 
+			        IF(
+			            ISFILTERED('bi vw_DimEnglishLearnerStatuses'[EnglishLearnerStatus]),
+			            "> English Learner Status: " & CONCATENATEX(VALUES('bi vw_DimEnglishLearnerStatuses'[EnglishLearnerStatus]), 'bi vw_DimEnglishLearnerStatuses'[EnglishLearnerStatus], ", "),
+			            ""
+			        )
+			        & " " &
+			        IF(
+			            ISFILTERED('bi vw_DimRaces'[RaceEthnicity]),
+			            "> Race/Ethnicity: " & CONCATENATEX(VALUES('bi vw_DimRaces'[RaceEthnicity]), 'bi vw_DimRaces'[RaceEthnicity], ", "),
+			            ""
+			        )
+			        & " " &
+			        IF(
+			            ISFILTERED('bi vw_DimHomelessnessStatuses'[HomelessnessStatus]),
+			            "> Homelessness Status: " & CONCATENATEX(VALUES('bi vw_DimHomelessnessStatuses'[HomelessnessStatus]), 'bi vw_DimHomelessnessStatuses'[HomelessnessStatus], ", "),
+			            ""
+			        )
+			        & " " &
+			        IF(
+			            ISFILTERED('bi vw_DimK12Demographics'[Gender]),
+			            "> Sex: " & CONCATENATEX(VALUES('bi vw_DimK12Demographics'[Gender]), 'bi vw_DimK12Demographics'[Gender], ", "),
+			            ""
+			        )
+			        & " " & 
+			        IF(
+			            ISFILTERED('bi vw_DimEconomicallyDisadvantagedStatuses'[EconomicDisadvantageStatus]),
+			            "> Economically Disadvantaged: " & CONCATENATEX(VALUES('bi vw_DimEconomicallyDisadvantagedStatuses'[EconomicDisadvantageStatus]), 'bi vw_DimEconomicallyDisadvantagedStatuses'[EconomicDisadvantageStatus], ", "),
+			            ""
+			        )
+			        & " " & 
+			        IF(
+			            ISFILTERED('bi vw_DimFosterCareStatuses'[FosterCareStatus]),
+			            "> Foster Care Status: " & CONCATENATEX(VALUES('bi vw_DimFosterCareStatuses'[FosterCareStatus]), 'bi vw_DimFosterCareStatuses'[FosterCareStatus], ", "),
+			            ""
+			        )
+			        & " " & 
+			        IF(
+			            ISFILTERED('bi vw_DimRuralStatuses'[Urbanicity]),
+			            "> Urbanicity: " & CONCATENATEX(VALUES('bi vw_DimRuralStatuses'[Urbanicity]), 'bi vw_DimRuralStatuses'[Urbanicity], ", "),
+			            ""
+			        )
+			        & " " &  
+			        IF(
+			            ISFILTERED('bi vw_DimNeglectedOrDelinquentStatus'[NeglectedOrDelinquentStatus]),
+			            "> Neglected or Delinquent Status: " & CONCATENATEX(VALUES('bi vw_DimNeglectedOrDelinquentStatus'[NeglectedOrDelinquentStatus]), 'bi vw_DimNeglectedOrDelinquentStatus'[NeglectedOrDelinquentStatus], ", "),
+			            ""
+			        )
+			        & " " &  
+			        IF(
+			            ISFILTERED('Geography Value Slicer'[Organization Hierarchy]),
+			                IF(SELECTEDVALUE('Geography Value Slicer'[Organization Hierarchy]) <> SELECTEDVALUE('Geography Value Slicer'[Organization Name]),
+			                    "> Organization: " & SELECTEDVALUE('Geography Value Slicer'[Organization Hierarchy]) & " | " & SELECTEDVALUE('Geography Value Slicer'[Organization Name]),
+			                    "> ! Select Organization filters !"
+			                ),
+			            ""
+			        )
+			        & " "
+			    ,
+			    "No filters selected"
+			
+			)
+			```
+		lineageTag: ab574ddc-5970-426f-808b-d0939853913d
+
+	measure 'Disaggregate by' = CONCATENATE(DISTINCT(Disaggregation[Disaggregation Name]), "")
+		lineageTag: 820fa33a-27b7-44ca-b9f0-d81c14801b99
+
+	measure 'Total Cohort Students' = DISTINCTCOUNT('reporting RDS_FactK12GraduationCohorts'[K12StudentId])
+		formatString: 0
+		lineageTag: 1875e782-7622-4dc4-9ac9-2e25bc5f382a
+
+	measure 'Student First-Year Window' = ```
+			
+			VAR MinEntryDate = 
+			    CALCULATE(
+			        MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate]),
+			        ALLEXCEPT(
+			            'reporting RDS_FactPsStudentEnrollments', 
+			            'reporting RDS_FactPsStudentEnrollments'[PsStudentId]
+			        )
+			    )
+			RETURN
+			    MinEntryDate + 365
+			```
+		formatString: General Date
+		lineageTag: 2e8102b8-e56d-43c7-9c26-f456e29862fe
+
+	measure '1st Year Enrolled Students' = ```
+			
+			COUNTROWS(
+			        FILTER(
+			            VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			            VAR CurrentStudent = 'reporting RDS_FactPsStudentEnrollments'[PsStudentId]
+			            VAR SpecificWindow = [Student First-Year Window]
+			            
+			            -- Check if the student has enrollments within their first-year window
+			            RETURN
+			            CALCULATE(
+			                NOT ISEMPTY('reporting RDS_FactPsStudentEnrollments'),
+			                'reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate] <= SpecificWindow
+			            )
+			        )
+			    )
+			```
+		formatString: 0
+		lineageTag: 84e3d981-e3e4-495a-a97a-602dc2ce2ee5
+
+	partition Globals = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

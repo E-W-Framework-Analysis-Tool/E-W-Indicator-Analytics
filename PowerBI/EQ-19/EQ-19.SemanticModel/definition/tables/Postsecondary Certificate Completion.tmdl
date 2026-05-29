@@ -1,0 +1,321 @@
+table 'Postsecondary Certificate Completion'
+	lineageTag: 38c775e6-9153-4b66-8c1e-b0a9ee4a5b3c
+
+	measure '100% Program Length' = ```
+			
+			// VAR factor = 1
+			// -- Get a list of unique students in the currently filtered cohort
+			// VAR StudentList = VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId])
+			
+			// VAR StudentCount =
+			//     SUMX(
+			//         VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			//         VAR StartDate =
+			//             CALCULATE(MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate]))
+			       
+			//         VAR AwardDate =
+			//             CALCULATE(MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentExitDate]))
+			           
+			//         VAR IntendedYears =
+			//             CALCULATE(MAX('bi vw_DimPsAcademicAwardStatuses'[IntendedYears]))
+			       
+			//         VAR IntendedMonths = IntendedYears * 12
+			//         VAR ActualMonths = DATEDIFF(StartDate, AwardDate, MONTH)
+			       
+			//         RETURN
+			//         IF(
+			//             NOT ISBLANK(StartDate) &&
+			//             NOT ISBLANK(AwardDate) &&
+			//             ActualMonths <= (IntendedMonths * factor),
+			//             1, 0
+			//         )
+			//     )
+			DIVIDE([Count of Completion within 100% Program Length], [Count of Valid Enrollments], 0)
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: d5a7c1f7-55b5-406e-9ce1-1d88cd610224
+
+	measure '150% Program Length' = DIVIDE([Count of Completion within 150% Program Length], [Count of Valid Enrollments], 0)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 91a09af5-bc3c-49a9-af3e-b796d4b54297
+
+	measure '200% Program Length' = DIVIDE([Count of Completion within 200% Program Length], [Count of Valid Enrollments], 0)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 9ea1c9bc-ba1d-4c36-84d9-a4b62862e747
+
+	measure '100% Program Length Trend' =
+			
+			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
+			RETURN
+			CALCULATE(
+			    [100% Program Length],
+			    'bi vw_DimCohortGraduationYears'[CohortGraduationYear] = SelectedTrendYear,
+			    REMOVEFILTERS('bi vw_DimSchoolYears')
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 4efb2153-d6a2-4df9-b78f-72e7363c9f1f
+
+	measure '150% Program Length Trend' =
+			
+			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
+			RETURN
+			CALCULATE(
+			    [150% Program Length],
+			    'bi vw_DimCohortGraduationYears'[CohortGraduationYear] = SelectedTrendYear,
+			    REMOVEFILTERS('bi vw_DimSchoolYears')
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 46f7a4d2-4f94-40f0-a3be-da5a6aa7ce65
+
+	measure '200% Program Length Trend' =
+			
+			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineGraduationYears[CohortGraduationYear])
+			RETURN
+			CALCULATE(
+			    [200% Program Length],
+			    'bi vw_DimCohortGraduationYears'[CohortGraduationYear] = SelectedTrendYear,
+			    REMOVEFILTERS('bi vw_DimSchoolYears')
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: e7bc1f4a-8fe5-40df-8a88-c8657211e60d
+
+	measure 'Count of Completion within 100% Program Length' = ```
+			
+			VAR factor = 1
+			-- 1. Configuration & Context Variables
+			VAR TargetCredentials = {"Certificate", "Associate's Degree", "Bachelor's Degree"}
+			VAR TargetFieldOfStudy = {"BUSINESS", "ARTS", "OTHER", "STEM"}
+			VAR CurrentCredential = SELECTEDVALUE('bi vw_DimPsAcademicAwardStatuses'[CredentialType])
+			VAR CurrentFieldOfStudy = SELECTEDVALUE('bi vw_DimCipCodes'[FieldOfStudy])
+			VAR IsValidRow = (
+			                    (CurrentCredential IN TargetCredentials     || NOT ISFILTERED('bi vw_DimPsAcademicAwardStatuses'[CredentialType])) &&
+			                    (CurrentFieldOfStudy in TargetFieldOfStudy  || NOT ISFILTERED('bi vw_DimCipCodes'[FieldOfStudy]))
+			                )
+			
+			-- 2. Filter the Student List
+			-- We only look at students who have records matching our 3 target types
+			VAR QualifiedStudents = 
+			    CALCULATETABLE(
+			        VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			        'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			        'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy
+			    )
+			
+			-- 3. Identify "On-Time" Students
+			-- We filter the QualifiedStudents list down to only those meeting the time requirement
+			VAR OnTimeStudentsTable = 
+			    FILTER(
+			        QualifiedStudents,
+			        VAR StartDate = 
+			            CALCULATE(
+			                MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate]),
+			                'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			                'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy
+			            )
+			        VAR AwardDate = 
+			            CALCULATE(
+			                MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentExitDate]),
+			                'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			                'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy
+			            )
+			        VAR IntendedYears = 
+			            CALCULATE(
+			                MAX('bi vw_DimPsAcademicAwardStatuses'[IntendedYears]),
+			                'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			                'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy
+			            )
+			        
+			        VAR ActualMonths = DATEDIFF(StartDate, AwardDate, MONTH)
+			        VAR AllowedMonths = IntendedYears * 12 * factor
+			
+			        RETURN
+			            NOT ISBLANK(StartDate) && 
+			            NOT ISBLANK(AwardDate) && 
+			            NOT ISBLANK(IntendedYears) &&
+			            ActualMonths <= AllowedMonths
+			    )
+			
+			-- 4. Final Aggregations
+			VAR OnTimeCount = COUNTROWS(OnTimeStudentsTable)
+			VAR Result = DIVIDE(OnTimeCount, [HS Graduates], 0)
+			
+			-- 5. Execution Logic
+			RETURN
+			    IF(IsValidRow, OnTimeCount, BLANK())
+			```
+		formatString: 0
+		lineageTag: 4d085aa0-b7e2-4f9d-a362-d106a5c18c68
+
+	measure 'Count of Completion within 150% Program Length' = ```
+			
+			VAR factor = 1.5
+			-- 1. Configuration & Context Variables
+			VAR TargetCredentials = {"Certificate", "Associate's Degree", "Bachelor's Degree"}
+			VAR TargetFieldOfStudy = {"BUSINESS", "ARTS", "OTHER", "STEM"}
+			VAR CurrentCredential = SELECTEDVALUE('bi vw_DimPsAcademicAwardStatuses'[CredentialType])
+			VAR CurrentFieldOfStudy = SELECTEDVALUE('bi vw_DimCipCodes'[FieldOfStudy])
+			VAR IsValidRow = (
+			                    (CurrentCredential IN TargetCredentials     || NOT ISFILTERED('bi vw_DimPsAcademicAwardStatuses'[CredentialType])) &&
+			                    (CurrentFieldOfStudy in TargetFieldOfStudy  || NOT ISFILTERED('bi vw_DimCipCodes'[FieldOfStudy]))
+			                )
+			
+			-- 2. Filter the Student List
+			-- We only look at students who have records matching our 3 target types
+			VAR QualifiedStudents = 
+			    CALCULATETABLE(
+			        VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			        'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			        'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy
+			    )
+			
+			-- 3. Identify "On-Time" Students
+			-- We filter the QualifiedStudents list down to only those meeting the time requirement
+			VAR OnTimeStudentsTable = 
+			    FILTER(
+			        QualifiedStudents,
+			        VAR StartDate = 
+			            CALCULATE(
+			                MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate]),
+			                'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			                'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy
+			            )
+			        VAR AwardDate = 
+			            CALCULATE(
+			                MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentExitDate]),
+			                'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			                'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy
+			            )
+			        VAR IntendedYears = 
+			            CALCULATE(
+			                MAX('bi vw_DimPsAcademicAwardStatuses'[IntendedYears]),
+			                'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			                'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy
+			            )
+			        
+			        VAR ActualMonths = DATEDIFF(StartDate, AwardDate, MONTH)
+			        VAR AllowedMonths = IntendedYears * 12 * factor
+			
+			        RETURN
+			            NOT ISBLANK(StartDate) && 
+			            NOT ISBLANK(AwardDate) && 
+			            NOT ISBLANK(IntendedYears) &&
+			            ActualMonths <= AllowedMonths
+			    )
+			
+			-- 4. Final Aggregations
+			VAR OnTimeCount = COUNTROWS(OnTimeStudentsTable)
+			VAR Result = DIVIDE(OnTimeCount, [HS Graduates], 0)
+			
+			-- 5. Execution Logic
+			RETURN
+			    IF(IsValidRow, OnTimeCount, BLANK())
+			```
+		formatString: 0
+		lineageTag: 33d65ca0-1538-4209-9e6c-a8c12c425812
+
+	measure 'Count of Completion within 200% Program Length' = ```
+			
+			VAR factor = 2
+			-- 1. Configuration & Context Variables
+			VAR TargetCredentials = {"Certificate", "Associate's Degree", "Bachelor's Degree"}
+			VAR TargetFieldOfStudy = {"BUSINESS", "ARTS", "OTHER", "STEM"}
+			VAR CurrentCredential = SELECTEDVALUE('bi vw_DimPsAcademicAwardStatuses'[CredentialType])
+			VAR CurrentFieldOfStudy = SELECTEDVALUE('bi vw_DimCipCodes'[FieldOfStudy])
+			VAR IsValidRow = (
+			                    (CurrentCredential IN TargetCredentials     || NOT ISFILTERED('bi vw_DimPsAcademicAwardStatuses'[CredentialType])) &&
+			                    (CurrentFieldOfStudy in TargetFieldOfStudy  || NOT ISFILTERED('bi vw_DimCipCodes'[FieldOfStudy]))
+			                )
+			
+			-- 2. Filter the Student List
+			-- We only look at students who have records matching our 3 target types
+			VAR QualifiedStudents = 
+			    CALCULATETABLE(
+			        VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			        'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			        'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy
+			    )
+			
+			-- 3. Identify "On-Time" Students
+			-- We filter the QualifiedStudents list down to only those meeting the time requirement
+			VAR OnTimeStudentsTable = 
+			    FILTER(
+			        QualifiedStudents,
+			        VAR StartDate = 
+			            CALCULATE(
+			                MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentEntryDate]),
+			                'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			                'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy
+			            )
+			        VAR AwardDate = 
+			            CALCULATE(
+			                MIN('reporting RDS_FactPsStudentEnrollments'[EnrollmentExitDate]),
+			                'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			                'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy
+			            )
+			        VAR IntendedYears = 
+			            CALCULATE(
+			                MAX('bi vw_DimPsAcademicAwardStatuses'[IntendedYears]),
+			                'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			                'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy
+			            )
+			        
+			        VAR ActualMonths = DATEDIFF(StartDate, AwardDate, MONTH)
+			        VAR AllowedMonths = IntendedYears * 12 * factor
+			
+			        RETURN
+			            NOT ISBLANK(StartDate) && 
+			            NOT ISBLANK(AwardDate) && 
+			            NOT ISBLANK(IntendedYears) &&
+			            ActualMonths <= AllowedMonths
+			    )
+			
+			-- 4. Final Aggregations
+			VAR OnTimeCount = COUNTROWS(OnTimeStudentsTable)
+			VAR Result = DIVIDE(OnTimeCount, [HS Graduates], 0)
+			
+			-- 5. Execution Logic
+			RETURN
+			    IF(IsValidRow, OnTimeCount, BLANK())
+			```
+		formatString: 0
+		lineageTag: 2a9cf9a6-cb5f-4cfa-b3ff-50615e654432
+
+	measure 'Count of Valid Enrollments' = ```
+			
+			-- 1. Configuration & Context Variables
+			VAR TargetCredentials = {"Certificate", "Associate's Degree", "Bachelor's Degree"}
+			VAR TargetFieldOfStudy = {"BUSINESS", "ARTS", "OTHER", "STEM"}
+			VAR CurrentCredential = SELECTEDVALUE('bi vw_DimPsAcademicAwardStatuses'[CredentialType])
+			VAR CurrentFieldOfStudy = SELECTEDVALUE('bi vw_DimCipCodes'[FieldOfStudy])
+			VAR IsValidRow = (
+			                    (CurrentCredential IN TargetCredentials     || NOT ISFILTERED('bi vw_DimPsAcademicAwardStatuses'[CredentialType])) &&
+			                    (CurrentFieldOfStudy in TargetFieldOfStudy  || NOT ISFILTERED('bi vw_DimCipCodes'[FieldOfStudy]))
+			                )
+			
+			-- 2. Filter the Student List
+			-- We only look at students who have records matching our 3 target types
+			VAR QualifiedStudents = 
+			    CALCULATETABLE(
+			        VALUES('reporting RDS_FactPsStudentEnrollments'[PsStudentId]),
+			        'bi vw_DimPsAcademicAwardStatuses'[CredentialType] IN TargetCredentials,
+			        'bi vw_DimCipCodes'[FieldOfStudy] IN TargetFieldOfStudy
+			    )
+			VAR ValidEnrollments = COUNTROWS(QualifiedStudents)
+			RETURN
+			    IF(IsValidRow, ValidEnrollments, BLANK())
+			```
+		formatString: 0
+		lineageTag: 9672a03a-cd38-44eb-bf07-9d17912970b3
+
+	partition 'Postsecondary Certificate Completion' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

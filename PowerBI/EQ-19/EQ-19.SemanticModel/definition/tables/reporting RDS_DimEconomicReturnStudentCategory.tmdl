@@ -1,0 +1,29 @@
+table 'reporting RDS_DimEconomicReturnStudentCategory'
+	lineageTag: a86076e6-30ec-4651-849a-0cea3a35fabe
+
+	column DimEconomicReturnStudentCategoryId
+		dataType: int64
+		formatString: 0
+		lineageTag: ff48cd3f-4ab1-4ff6-935a-5866eb528cab
+		summarizeBy: none
+		sourceColumn: DimEconomicReturnStudentCategoryId
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Education Category'
+		dataType: string
+		lineageTag: 55f25a83-c188-4df5-963e-8ddda84adea2
+		summarizeBy: none
+		sourceColumn: Education Category
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'reporting RDS_DimEconomicReturnStudentCategory' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    reporting_RDS_DimEconomicReturnStudentCategory = Source{[Schema="reporting",Item="RDS_DimEconomicReturnStudentCategory"]}[Data]
+				in
+				    reporting_RDS_DimEconomicReturnStudentCategory
+

@@ -1,0 +1,48 @@
+table 'Social Capital Measurement'
+	lineageTag: 79d9176c-ecef-4cd8-af15-b73c95baa7db
+
+	column 'Measurement Type'
+		lineageTag: e3d449b6-c71f-416f-846b-838bed8b91fe
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Social Capital Stat Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Social Capital Stat Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Social Capital Stat Fields'
+		isHidden
+		lineageTag: ee171e3e-4b5c-404f-964e-327612c1a511
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Social Capital Stat Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Social Capital Stat Order'
+		isHidden
+		formatString: 0
+		lineageTag: 41a1303d-087d-46b4-b6b2-e663eafa585d
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Social Capital Measurement' = calculated
+		mode: import
+		source =
+				{
+				    ("Percentage", NAMEOF('Social Capital'[% Individuals with High Score]), 0),
+				    ("Average Survey Score", NAMEOF('Social Capital'[Average Survey Score]), 1)
+				}
+
+	annotation PBI_Id = d7802b18754a4013aba6f5eec4a79346
+

@@ -1,0 +1,74 @@
+table 'reporting RDS_DimPsInstitutions'
+	lineageTag: aa523192-6f59-472f-baa2-157be97021c3
+
+	column DimPsInstitutionId
+		dataType: int64
+		formatString: 0
+		lineageTag: a1c49724-d70a-401a-8126-e683ad0fa5ef
+		summarizeBy: none
+		sourceColumn: DimPsInstitutionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column NameOfInstitution
+		dataType: string
+		lineageTag: 9a471af2-787b-4c64-b23b-db2829a91ec5
+		summarizeBy: none
+		sourceColumn: NameOfInstitution
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShortNameOfInstitution
+		dataType: string
+		lineageTag: 071fb17f-6ce4-48c4-baad-d8e39a8085bb
+		summarizeBy: none
+		sourceColumn: ShortNameOfInstitution
+
+		annotation SummarizationSetBy = Automatic
+
+	column IPEDSIdentifier
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 9fd9a4a8-abba-438c-aa08-260139bc9661
+		summarizeBy: sum
+		sourceColumn: IPEDSIdentifier
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column OperationalStatusEffectiveDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 7f945f38-f01a-4269-8317-b95cbbde2848
+		summarizeBy: none
+		sourceColumn: OperationalStatusEffectiveDate
+
+		variation Variation
+			isDefault
+			relationship: 63fdabdd-2175-4f08-be01-e099af217a1e
+			defaultHierarchy: LocalDateTable_d05496c1-5e0b-4e01-b52a-283816cfde3d.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column StateCode
+		dataType: string
+		lineageTag: f3f4ce1b-d7f1-48a6-9c54-ff81be182276
+		summarizeBy: none
+		sourceColumn: StateCode
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'reporting RDS_DimPsInstitutions' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    reporting_RDS_DimPsInstitutions = Source{[Schema="reporting",Item="RDS_DimPsInstitutions"]}[Data]
+				in
+				    reporting_RDS_DimPsInstitutions
+

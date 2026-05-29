@@ -1,0 +1,146 @@
+table 'Career Advising'
+	lineageTag: dc64c372-d8c4-498a-ba13-ecddd4069592
+
+	measure 'Total HS FTE Counselors' =
+			
+			CALCULATE(
+			    SUMX(
+			        SUMMARIZE(
+			            'bi vw_FactK12StaffCounts',
+			            'bi vw_FactK12StaffCounts'[SchoolYear],
+			            'bi vw_FactK12StaffCounts'[K12StaffId]
+			            ),
+			        CALCULATE(MAX('bi vw_FactK12StaffCounts'[StaffFullTimeEquivalency]))
+			    ),
+			    'bi vw_DimK12StaffCategories'[K12StaffClassificationDescription] = "School Counselors"
+			)
+		formatString: 0.0
+		lineageTag: 924fb696-c51c-4074-b4b2-f8c2c6daeb16
+
+	measure 'Total HS Students' = CALCULATE(DISTINCTCOUNT('bi vw_FactK12StudentEnrollments'[K12StudentId]), 'bi vw_FactK12StudentEnrollments'[GradeLevelCode] IN {"09", "10", "11", "12"})
+		lineageTag: 8961a23d-fc86-49af-a485-baa8d82cc71a
+
+	measure 'HS Student to Counselor Ratio' = DIVIDE([Total HS Students], [Total HS FTE Counselors], 0)
+		formatString: 0.0
+		lineageTag: d24ca383-edc9-4ea9-81c4-264505e5dcbe
+
+	measure 'HS Career Advising Disaggregate Chart Title' =
+			
+			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
+			VAR SelectedYearTitle = "HS Students per FTE counselors " & IF(not ISBLANK([Disaggregate by]), "by '" & [Disaggregate by] & "' "," ") & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			RETURN
+			SelectedYearTitle
+		lineageTag: 01824c6f-e236-4e2a-9d33-8d69d6331a65
+
+	measure 'HS Advising Trend' =
+			
+			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineYears[SchoolYear])
+			RETURN
+			CALCULATE(
+			    [HS Student to Counselor Ratio],
+			    'bi vw_DimSchoolYears'[SchoolYear] = SelectedTrendYear,
+			    REMOVEFILTERS('bi vw_DimSchoolYears')
+			)
+		formatString: 0.0
+		lineageTag: 4766b13e-a88b-4f8f-a5c9-c4c15e888907
+
+	measure 'HS Career Advising Chart Title' =
+			
+			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
+			VAR SelectedYearTitle = "HS Students per FTE counselors " & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			RETURN
+			SelectedYearTitle
+		lineageTag: 0dcf28ab-b4da-4c15-b198-9aacc4c19ea2
+
+	measure 'Average Equivalency Per Student greater than .7' =
+			
+			CALCULATE(
+			    SUMX(
+			        SUMMARIZE(
+			            'bi vw_PSStaffCounts',
+			            'bi vw_PSStaffCounts'[SchoolYear],
+			            'bi vw_PSStaffCounts'[PsStudentId]
+			            ),
+			        CALCULATE(MAX('bi vw_PSStaffCounts'[StaffEquivalency]))
+			    )
+			)
+		formatString: 0
+		lineageTag: 36d20d4a-673d-427a-a06d-84d1ccc7df76
+
+	measure 'Total PS Students' = CALCULATE(DISTINCTCOUNT('reporting RDS_FactPsStudentEnrollments'[PsStudentId]))
+		formatString: 0
+		lineageTag: bbd40317-368a-4f05-8374-9a5c34bcf1ad
+
+	measure 'PS Student to Counselor Ratio' = DIVIDE([Total PS Students], [Average Equivalency Per Student greater than .7], 0)
+		formatString: 0.0
+		lineageTag: bf524010-a5a8-4cdb-a587-7c4619c55471
+
+	measure 'PS Advising Trend' =
+			
+			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineYears[SchoolYear])
+			RETURN
+			CALCULATE(
+			    [PS Student to Counselor Ratio],
+			    'bi vw_DimSchoolYears'[SchoolYear] = SelectedTrendYear,
+			    REMOVEFILTERS('bi vw_DimSchoolYears')
+			)
+		lineageTag: 712bbcc1-c58f-49a4-8ed1-fd2fd516878b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'PS Career Advising Chart Title' =
+			
+			VAR SelectedYear = SELECTEDVALUE('bi vw_DimSchoolYears'[SchoolYear])
+			VAR SelectedYearTitle = "Postsecondary Advising and Counseling utilization " & IF(not ISBLANK(SelectedYear), "for " & SelectedYear, "All Years")
+			RETURN
+			SelectedYearTitle
+		lineageTag: 353e3aab-9d61-4533-b543-96d737280916
+
+	measure '% PS Counseling Utilization' = ```
+			
+			VAR TotalStudents = 
+			    DISTINCTCOUNT('bi vw_PSStaffCounts'[PsStudentId])
+			
+			VAR StudentsAboveThreshold = 
+			    COUNTAX(
+			        FILTER(
+			            SUMMARIZE(
+			                'bi vw_PSStaffCounts',
+			                'bi vw_PSStaffCounts'[SchoolYear],
+			                'bi vw_PSStaffCounts'[PsStudentId]
+			            ),
+			            CALCULATE(AVERAGE('bi vw_PSStaffCounts'[StaffEquivalency])) >= 0.7
+			        ),
+			        'bi vw_PSStaffCounts'[PsStudentId]
+			    )
+			
+			RETURN
+			    DIVIDE(StudentsAboveThreshold, TotalStudents, 0)
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: ad7288a7-8fe8-41dd-87d7-617a4e823a57
+
+	measure '% PS Counseling Utilization Trend' =
+			
+			VAR SelectedTrendYear = SELECTEDVALUE(TrendLineYears[SchoolYear])
+			RETURN
+			CALCULATE(
+			    [% PS Counseling Utilization],
+			    'bi vw_DimSchoolYears'[SchoolYear] = SelectedTrendYear,
+			    REMOVEFILTERS('bi vw_DimSchoolYears')
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: d48e2e0d-7ef0-428b-a529-349b2cc74a5e
+
+	partition 'Career Advising' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

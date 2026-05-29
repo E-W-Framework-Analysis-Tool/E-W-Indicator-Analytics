@@ -1,0 +1,66 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+annotation PBI_QueryOrder = ["bi vw_DimCipCodes","bi vw_DimCohortGraduationYears","bi vw_DimCohortYears","bi vw_DimDisabilityStatuses","bi vw_DimEconomicallyDisadvantagedStatuses","bi vw_DimEnglishLearnerStatuses","bi vw_DimFosterCareStatuses","bi vw_DimHomelessnessStatuses","bi vw_DimK12Demographics","bi vw_DimK12Schools","bi vw_DimNeglectedOrDelinquentStatus","bi vw_DimPsAcademicAwardStatuses","bi vw_DimPsAcademicAwardTitles","bi vw_DimPsEnrollmentStatuses","bi vw_DimRaces","bi vw_DimRuralStatuses","bi vw_DimSchoolYears","bi vw_DimStudents","Globals","reporting RDS_FactK12GraduationCohorts","reporting RDS_FactPsStudentAcademicAwards","reporting RDS_FactPsStudentCourseTranscripts","reporting RDS_FactPsStudentEnrollments","reporting RDS_DimStudents","reporting RDS_DimPsInstitutions","First-year Program of Study","First-year Credit Accumulation","reporting RDS_DimPsCourses","Gateway Course Completion","bi vw_FactK12StaffCounts","Career Advising","bi vw_DimK12StaffCategories","bi vw_FactK12StudentEnrollments","bi vw_DimGradeLevels","bi vw_PSStaffCounts"]
+
+ref table 'bi vw_DimCipCodes'
+ref table 'bi vw_DimCohortGraduationYears'
+ref table 'bi vw_DimCohortYears'
+ref table 'bi vw_DimDisabilityStatuses'
+ref table 'bi vw_DimEconomicallyDisadvantagedStatuses'
+ref table 'bi vw_DimEnglishLearnerStatuses'
+ref table 'bi vw_DimFosterCareStatuses'
+ref table 'bi vw_DimHomelessnessStatuses'
+ref table 'bi vw_DimK12Demographics'
+ref table 'bi vw_DimK12Schools'
+ref table 'bi vw_DimNeglectedOrDelinquentStatus'
+ref table 'bi vw_DimPsAcademicAwardStatuses'
+ref table 'bi vw_DimPsAcademicAwardTitles'
+ref table 'bi vw_DimPsEnrollmentStatuses'
+ref table 'bi vw_DimRaces'
+ref table 'bi vw_DimRuralStatuses'
+ref table 'bi vw_DimSchoolYears'
+ref table 'bi vw_DimStudents'
+ref table Globals
+ref table LimitedGraduationYears
+ref table 'Hierarchy Picker'
+ref table 'Geography Value Slicer'
+ref table Disaggregation
+ref table 'reporting RDS_FactK12GraduationCohorts'
+ref table 'reporting RDS_FactPsStudentAcademicAwards'
+ref table 'reporting RDS_FactPsStudentCourseTranscripts'
+ref table 'reporting RDS_FactPsStudentEnrollments'
+ref table DateTableTemplate_89980fbe-c84c-4562-8938-36e1f83a30f3
+ref table LocalDateTable_63e5f02f-4d0a-4250-b7f9-7fa4d3fb9fde
+ref table LocalDateTable_36d89bf8-4fec-4299-ad82-b8dc6a2d9199
+ref table 'reporting RDS_DimStudents'
+ref table 'reporting RDS_DimPsInstitutions'
+ref table LocalDateTable_963b827a-6a75-481a-9610-60d41b58678a
+ref table 'First-year Program of Study'
+ref table TrendLineGraduationYears
+ref table 'First-year Credit Accumulation'
+ref table 'Field of Study'
+ref table 'Credential Type'
+ref table 'reporting RDS_DimPsCourses'
+ref table LocalDateTable_718b8c1f-acd9-4260-8e77-edd0665a6542
+ref table LocalDateTable_11dc8671-67ed-4198-92f7-a15ba924017a
+ref table 'Gateway Course Completion'
+ref table 'bi vw_FactK12StaffCounts'
+ref table 'Career Advising'
+ref table 'bi vw_DimK12StaffCategories'
+ref table 'bi vw_FactK12StudentEnrollments'
+ref table 'bi vw_DimGradeLevels'
+ref table TrendLineYears
+ref table 'bi vw_PSStaffCounts'
+
+ref cultureInfo en-US
+

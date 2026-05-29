@@ -1,0 +1,18 @@
+table TrendLineGraduationYears
+	lineageTag: 314d7106-acd9-49a3-a68d-10d6ad2689be
+
+	column CohortGraduationYear
+		formatString: 0
+		lineageTag: 2559b3ff-895e-4271-a44c-90a9f8823fa4
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: bi vw_DimCohortGraduationYears[CohortGraduationYear]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition TrendLineGraduationYears = calculated
+		mode: import
+		source = DISTINCT('bi vw_DimCohortGraduationYears')
+
+	annotation PBI_Id = c76a274a60124a83a5ff3803b0f5c7e5
+

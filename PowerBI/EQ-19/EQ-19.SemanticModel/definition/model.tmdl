@@ -10,9 +10,56 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_ProTooling = ["DevMode"]
 
-annotation PBI_QueryOrder = ["bi vw_DimRaces"]
+annotation PBI_QueryOrder = ["bi vw_DimRaces","bi vw_DimCipCodes","bi vw_DimDisabilityStatuses","bi vw_DimEconomicallyDisadvantagedStatuses","bi vw_DimHomelessnessStatuses","bi vw_DimPsEnrollmentStatuses","bi vw_DimPsAcademicAwardTitles","bi vw_DimPsAcademicAwardStatuses","bi vw_DimSEAs","bi vw_DimK12Demographics","bi vw_DimEnglishLearnerStatuses","Globals","Enrollment in Graduate Education","Postsecondary Certificate Completion","reporting RDS_FactPsStudentEnrollments","reporting RDS_FactK12GraduationCohorts","reporting RDS_DimPsInstitutions","bi vw_DimCohortYears","bi vw_DimSchoolYears","bi vw_DimCohortGraduationYears","bi vw_DimK12Schools","reporting RDS_DimStudents","bi vw_DimFosterCareStatuses","bi vw_DimNeglectedOrDelinquentStatus","bi vw_DimRuralStatuses","reporting RDS_FactPsStudentAcademicAwards","reporting RDS_FactPsStudentCourseTranscripts","bi vw_FactPsSkills","reporting RDS_DimPsSkillCategories","Skills Proficiency","reporting RDS_FactEconomicReturn","reporting RDS_DimEconomicReturnStudentCategory","Economic Return","reporting RDS_DimSocialCapitalSurvey","reporting RDS_FactSocialCapitalSurvey","Social Capital"]
 
 ref table 'bi vw_DimRaces'
+ref table 'bi vw_DimCipCodes'
+ref table 'bi vw_DimDisabilityStatuses'
+ref table 'bi vw_DimEconomicallyDisadvantagedStatuses'
+ref table 'bi vw_DimHomelessnessStatuses'
+ref table 'bi vw_DimPsEnrollmentStatuses'
+ref table 'bi vw_DimPsAcademicAwardTitles'
+ref table 'bi vw_DimPsAcademicAwardStatuses'
+ref table 'bi vw_DimSEAs'
+ref table 'bi vw_DimK12Demographics'
+ref table 'bi vw_DimEnglishLearnerStatuses'
+ref table Globals
+ref table Disaggregation
+ref table 'Enrollment in Graduate Education'
+ref table 'Postsecondary Certificate Completion'
+ref table 'reporting RDS_FactPsStudentEnrollments'
+ref table DateTableTemplate_864426f5-38f6-4bd7-b817-98b8d0bb11ab
+ref table LocalDateTable_8e1e9ab8-78a9-4ea7-83c7-838b5d8b3fa1
+ref table LocalDateTable_83841da8-e5bf-4734-8ea3-fe9c531649be
+ref table 'reporting RDS_FactK12GraduationCohorts'
+ref table 'reporting RDS_DimPsInstitutions'
+ref table LocalDateTable_d05496c1-5e0b-4e01-b52a-283816cfde3d
+ref table 'bi vw_DimCohortYears'
+ref table 'bi vw_DimSchoolYears'
+ref table 'bi vw_DimCohortGraduationYears'
+ref table 'bi vw_DimK12Schools'
+ref table 'reporting RDS_DimStudents'
+ref table 'bi vw_DimFosterCareStatuses'
+ref table 'bi vw_DimNeglectedOrDelinquentStatus'
+ref table 'bi vw_DimRuralStatuses'
+ref table LimitedGraduationYears
+ref table 'Geography Value Slicer'
+ref table TrendLineGraduationYears
+ref table 'Hierarchy Picker'
+ref table 'reporting RDS_FactPsStudentAcademicAwards'
+ref table 'reporting RDS_FactPsStudentCourseTranscripts'
+ref table 'Field of Study'
+ref table 'Credential Type'
+ref table 'bi vw_FactPsSkills'
+ref table 'reporting RDS_DimPsSkillCategories'
+ref table 'Skills Proficiency'
+ref table 'reporting RDS_FactEconomicReturn'
+ref table 'reporting RDS_DimEconomicReturnStudentCategory'
+ref table 'Economic Return'
+ref table 'reporting RDS_DimSocialCapitalSurvey'
+ref table 'reporting RDS_FactSocialCapitalSurvey'
+ref table 'Social Capital'
+ref table 'Social Capital Measurement'
 
 ref cultureInfo en-US
 

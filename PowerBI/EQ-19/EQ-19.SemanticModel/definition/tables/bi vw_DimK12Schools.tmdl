@@ -1,0 +1,84 @@
+table 'bi vw_DimK12Schools'
+	lineageTag: d4b337f3-d550-45ff-8985-d62df20f9dd7
+
+	column DimK12SchoolId
+		dataType: int64
+		formatString: 0
+		lineageTag: ccd62049-a97d-49a9-9896-f303455236ac
+		summarizeBy: none
+		sourceColumn: DimK12SchoolId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SeaOrganizationName
+		dataType: string
+		lineageTag: 84aa4e65-b267-4df7-b194-8ed3d741f9b6
+		summarizeBy: none
+		sourceColumn: SeaOrganizationName
+
+		annotation SummarizationSetBy = Automatic
+
+	column LeaOrganizationName
+		dataType: string
+		lineageTag: bfadb348-0a97-4658-84dd-842e2cc4d6bb
+		summarizeBy: none
+		sourceColumn: LeaOrganizationName
+
+		annotation SummarizationSetBy = Automatic
+
+	column K12SchoolName
+		dataType: string
+		lineageTag: c640acda-7618-46ff-a078-30d5b93c0968
+		summarizeBy: none
+		sourceColumn: K12SchoolName
+
+		annotation SummarizationSetBy = Automatic
+
+	column LeaTypeDescription
+		dataType: string
+		lineageTag: 47273747-efbd-4b9c-b5d9-bbccf63af97c
+		summarizeBy: none
+		sourceColumn: LeaTypeDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column SchoolTypeCode
+		dataType: string
+		lineageTag: e6ef0800-5748-4c8f-9ceb-658436c8e4a2
+		summarizeBy: none
+		sourceColumn: SchoolTypeCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column EducationLevel
+		dataType: string
+		lineageTag: d7de1d31-ee3f-44e7-87d3-3ddfc455928d
+		summarizeBy: none
+		sourceColumn: EducationLevel
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy Geography
+		lineageTag: c63e6f9d-b8d0-49c9-a1f4-8f3da011201d
+
+		level SeaOrganizationName
+			lineageTag: ad58f2a1-ced3-4995-9be9-a376a9614a7c
+			column: SeaOrganizationName
+
+		level LeaOrganizationName
+			lineageTag: 73f673e8-8481-41ef-b6ee-4db9d71f6820
+			column: LeaOrganizationName
+
+		level K12SchoolName
+			lineageTag: 1a1352df-966f-465b-9165-db8bfc14231b
+			column: K12SchoolName
+
+	partition 'bi vw_DimK12Schools' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    bi_vw_DimK12Schools = Source{[Schema="bi",Item="vw_DimK12Schools"]}[Data]
+				in
+				    bi_vw_DimK12Schools
+

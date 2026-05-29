@@ -1,0 +1,174 @@
+table 'reporting RDS_DimPsCourses'
+	lineageTag: bcf2db2a-4b89-4f06-8a4e-eeeb93acdd43
+
+	column DimPsCourseId
+		dataType: int64
+		formatString: 0
+		lineageTag: e672eb4f-efea-4ba8-a413-b6033b1516ca
+		summarizeBy: none
+		sourceColumn: DimPsCourseId
+
+		annotation SummarizationSetBy = Automatic
+
+	column CourseIdentifier
+		dataType: string
+		isHidden
+		lineageTag: 7376cb0e-8a4a-4cf8-ba63-020fa6f2572c
+		summarizeBy: none
+		sourceColumn: CourseIdentifier
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CourseCodeSystemCode
+		dataType: string
+		lineageTag: 71790471-c73b-48dd-9d97-0b7900ae8f49
+		summarizeBy: none
+		sourceColumn: CourseCodeSystemCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column CourseCodeSystemDescription
+		dataType: string
+		isHidden
+		lineageTag: 301ca3a1-ae46-4196-bdfd-d848298ed5f8
+		summarizeBy: none
+		sourceColumn: CourseCodeSystemDescription
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CourseSubjectAbbreviation
+		dataType: string
+		isHidden
+		lineageTag: 5c730e7d-7f71-48c1-94dd-8fff7bfc6036
+		summarizeBy: none
+		sourceColumn: CourseSubjectAbbreviation
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CourseNumber
+		dataType: string
+		isHidden
+		lineageTag: f171b124-c5e4-44dd-808b-f88ec6935954
+		summarizeBy: none
+		sourceColumn: CourseNumber
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CourseTitle
+		dataType: string
+		lineageTag: 07965524-dc0a-4453-bc19-46e739485374
+		summarizeBy: none
+		sourceColumn: CourseTitle
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CourseDescription
+		dataType: string
+		isHidden
+		lineageTag: f06345b3-bdca-4a04-8d20-adda945ba42f
+		summarizeBy: none
+		sourceColumn: CourseDescription
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CourseDepartmentName
+		dataType: string
+		isHidden
+		lineageTag: 27e771d7-77b9-44f1-8871-1108aa03116a
+		summarizeBy: none
+		sourceColumn: CourseDepartmentName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CourseCreditUnitsCode
+		dataType: string
+		isHidden
+		lineageTag: 3d4d7b87-9d1d-418f-9be6-a4933719cb42
+		summarizeBy: none
+		sourceColumn: CourseCreditUnitsCode
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CourseCreditUnitsDescription
+		dataType: string
+		isHidden
+		lineageTag: e14a40bc-0b50-448d-ba23-aece15b1f2de
+		summarizeBy: none
+		sourceColumn: CourseCreditUnitsDescription
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreditValue
+		dataType: double
+		isHidden
+		lineageTag: c09ab459-c3fc-4477-be89-7f6f4db5250f
+		summarizeBy: sum
+		sourceColumn: CreditValue
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RecordStartDateTime
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 62a50376-35c4-4eb8-82f3-b6115fbe6036
+		summarizeBy: none
+		sourceColumn: RecordStartDateTime
+
+		variation Variation
+			isDefault
+			relationship: dcf38f44-035d-499f-854e-1d260d431c1c
+			defaultHierarchy: LocalDateTable_718b8c1f-acd9-4260-8e77-edd0665a6542.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RecordEndDateTime
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: e6982906-a0e7-429a-88e1-64f39123e386
+		summarizeBy: none
+		sourceColumn: RecordEndDateTime
+
+		variation Variation
+			isDefault
+			relationship: b808121a-392f-4084-8624-21aab05c5745
+			defaultHierarchy: LocalDateTable_11dc8671-67ed-4198-92f7-a15ba924017a.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'reporting RDS_DimPsCourses' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    reporting_RDS_DimPsCourses = Source{[Schema="reporting",Item="RDS_DimPsCourses"]}[Data]
+				in
+				    reporting_RDS_DimPsCourses
+

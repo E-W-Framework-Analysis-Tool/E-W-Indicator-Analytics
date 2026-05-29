@@ -1,0 +1,57 @@
+table 'bi vw_FactPsSkills'
+	lineageTag: c6034b9b-fba5-477d-897b-65641b23f5fa
+
+	column SchoolYear
+		dataType: int64
+		formatString: 0
+		lineageTag: ece17935-4efe-4500-8bb5-d5f197865682
+		summarizeBy: sum
+		sourceColumn: SchoolYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column K12SchoolId
+		dataType: int64
+		formatString: 0
+		lineageTag: 8e02ed26-7fd7-4885-9c95-e1166ab21879
+		summarizeBy: count
+		sourceColumn: K12SchoolId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PsStudentId
+		dataType: int64
+		formatString: 0
+		lineageTag: 37859f34-2d00-412d-bcb1-f28d6e1f623c
+		summarizeBy: none
+		sourceColumn: PsStudentId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SkillCategoryId
+		dataType: int64
+		formatString: 0
+		lineageTag: a9d5b2d7-7fb1-458d-aa6a-98a1a6806757
+		summarizeBy: none
+		sourceColumn: SkillCategoryId
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsProficient
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 9726552e-fa8d-4e51-a5c4-0c4e22c788f3
+		summarizeBy: none
+		sourceColumn: IsProficient
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bi vw_FactPsSkills' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost,14331", "Dashboards"),
+				    bi_vw_FactPsSkills = Source{[Schema="bi",Item="vw_FactPsSkills"]}[Data]
+				in
+				    bi_vw_FactPsSkills
+
