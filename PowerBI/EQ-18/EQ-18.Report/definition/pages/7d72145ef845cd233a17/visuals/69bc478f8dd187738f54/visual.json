@@ -1,0 +1,80 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "69bc478f8dd187738f54",
+  "position": {
+    "x": 0,
+    "y": 271.08280254777071,
+    "z": 0,
+    "height": 449.08704883227176,
+    "width": 808.4925690021231,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Field of Study"
+                    }
+                  },
+                  "Property": "Slicer-Value"
+                }
+              },
+              "queryRef": "Field of Study.Slicer-Value",
+              "nativeQueryRef": "Slicer-Value"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Credential Type"
+                    }
+                  },
+                  "Property": "Slicer-Value"
+                }
+              },
+              "queryRef": "Credential Type.Slicer-Value",
+              "nativeQueryRef": "Slicer-Value1"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "First-year Credit Accumulation"
+                    }
+                  },
+                  "Property": "Total Undergrad Enrolled Students"
+                }
+              },
+              "queryRef": "First-year Credit Accumulation.Total Undergrad Enrolled Students",
+              "nativeQueryRef": "Total Undergrad Enrolled Students"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "First-year Credit Accumulation"
+                    }
+                  },
+                  "Property": "PT Students 15 Credits"
+                }
+              },
+              "queryRef": "First-year Credit Accumulation.PT Students 15 Credits",
+              "nativeQueryRef": "PT Students 15 Credits"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

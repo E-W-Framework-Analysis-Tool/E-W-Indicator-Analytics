@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
-  "name": "90d7b499e16bda004025",
-  "displayName": "First-year program of study concentration",
+  "name": "7d72145ef845cd233a17",
+  "displayName": "Page 1",
   "displayOption": "FitToPage",
   "height": 720,
   "width": 1280
