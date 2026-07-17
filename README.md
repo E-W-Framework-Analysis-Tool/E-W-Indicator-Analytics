@@ -83,7 +83,10 @@ up your own CEDS Data Warehouse:
 3. Open the `.pbip` file for the EQ you want in the `PowerBI` folder — Power BI Desktop will load the dashboard.
 4. Point Power BI at your restored database: **Home → Transform Data → Data source settings** → **SQL Server**, set
    **Server** to `localhost\<INSTANCE_NAME>` (found in SSMS at the top of the object tree) and **Database** to
-   `Dashboards`, then connect using Windows Authentication.
+   `Dashboards`. Choose **Import** (faster) or **DirectQuery** (real-time, no size limit) for Data Connectivity mode,
+   click **OK**, then connect using Windows Authentication.
+
+One sample database backs all three EQ dashboards — restoring it once is enough to explore EQ-12, EQ-18, and EQ-19.
 
 ### Option B: Deploy the Full Pipeline
 

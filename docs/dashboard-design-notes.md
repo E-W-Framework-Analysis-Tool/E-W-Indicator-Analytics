@@ -8,7 +8,13 @@
 - **One semantic model per Essential Question.** Each `PowerBI/EQ-*` folder is a fully self-contained `.pbip` (report
   + semantic model) rather than several reports sharing one model, so each EQ can be deployed or embedded
   independently.
-- **A consistent page pattern across EQs**: Summary → Reference → one or more Indicator Analysis pages → Resources.
+- **A consistent page pattern across EQs**:
+
+  ```mermaid
+  flowchart LR
+      Summary --> Reference --> Indicator["Indicator Analysis<br/>(one or more pages)"] --> Resources
+  ```
+
   - **Summary** — landing page aggregating the EQ's headline indicators.
   - **Reference** — maps each Indicator covered by the EQ to its corresponding report page.
   - **Indicator Analysis pages** — one or more per Indicator; these carry the filters described below.
@@ -20,7 +26,7 @@ Shared across Indicator Analysis pages, though not every filter appears on every
 
 - **Organization** — SEA / LEA / K–12 School (only one level viewable at a time)
 - **Disaggregates** — Race & Ethnicity (default), Gender, Disability Status, Economic Disadvantage, English Learner,
-  Foster Care, Homelessness, Neglected/Delinquent status, Urbanicity
+  Foster Care, Homelessness, Neglected Status, Urbanicity
 - **Cohort / School Year** — defaults to Current Year; selectable for trend comparisons
 - **Grade Level** — 11th vs. 12th grade, where applicable
 - **Course Type** — AP / IB / Dual Credit / Assessment, where applicable

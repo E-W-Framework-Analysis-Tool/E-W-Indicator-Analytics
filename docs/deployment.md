@@ -25,7 +25,8 @@ supply SQL credentials via `*SqlUsername`/`*SqlPassword`.
 
 ### Package Execution Order
 
-`Master.dtsx` runs, per school year (tracked in `etl.BatchControl`):
+See the [architecture diagram](technical-overview.md#architecture) for the full picture. `Master.dtsx` runs, per
+school year (tracked in `etl.BatchControl`):
 
 1. **CEDS DWH → Staging** — `LoadStagingDimensions.dtsx` / `LoadStagingFacts.dtsx` for K12,
    `PS_LoadStagingDimensions.dtsx` / `PS_LoadStagingFacts.dtsx` for postsecondary.
