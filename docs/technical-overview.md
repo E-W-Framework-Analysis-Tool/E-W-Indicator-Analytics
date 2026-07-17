@@ -11,34 +11,26 @@ replace the SSIS pipeline included here.
 
 ```mermaid
 flowchart LR
-    CEDS[("CEDS Data<br/>Warehouse")]
+    CEDS[("CEDS Data Warehouse")]
+    ETL["ETL (SSIS)"]
 
-    subgraph SSIS["Dashboards.Database.ETL (SSIS)"]
+    subgraph DB["Dashboards Database"]
         direction TB
-        K12Stg["K12 staging load<br/>(disabled)"]
-        PSStg["Postsecondary<br/>staging load"]
-        K12Rep["K12 reporting load<br/>(disabled)"]
-        PSRep["Postsecondary<br/>reporting load"]
-    end
-
-    subgraph SQL["Dashboards.Database"]
-        direction LR
         STG[("staging")]
         REP[("reporting")]
         BI[("bi views")]
+        STG -->|"etl.Upsert_*"| REP --> BI
     end
 
     PBI["Power BI<br/>(EQ-12, EQ-18, EQ-19)"]
 
-    CEDS --> K12Stg --> STG
-    CEDS --> PSStg --> STG
-    STG --> K12Rep -->|"etl.Upsert_*"| REP
-    STG --> PSRep -->|"etl.Upsert_*"| REP
-    REP --> BI --> PBI
-
-    classDef disabled fill:#eee,stroke:#999,stroke-dasharray: 5 5,color:#999;
-    class K12Stg,K12Rep disabled;
+    CEDS --> ETL --> STG
+    BI --> PBI
 ```
+
+Power BI's only real dependency is the `bi` schema — everything upstream of it (`staging`, `reporting`, and the ETL
+that populates them) can be replaced without changing a single report, as long as `bi` keeps producing the same
+shape of data.
 
 ### Schema Layers
 
@@ -61,12 +53,14 @@ flowchart LR
 ### Data Flow
 
 `Master.dtsx` orchestrates the load above one school year at a time, tracked in `etl.BatchControl`
-(`YearProcessed`, `LastRunDate`) — each run processes a single year rather than the full history. Power BI then
-queries `bi` views directly (Import or DirectQuery, depending on the semantic model).
+(`YearProcessed`, `LastRunDate`) — each run processes a single year rather than the full history. K12 and
+postsecondary data move through separate package pairs internally (`Load*.dtsx` vs. `PS_Load*.dtsx`) before landing
+in the same `staging`/`reporting` tables. Power BI then queries `bi` views directly (Import or DirectQuery, depending
+on the semantic model).
 
-> As of this writing, the K12 staging-to-reporting steps are disabled in `Master.dtsx` (grayed out above) — only the
-> postsecondary (PS) path runs by default. Enable the corresponding executables in the package if you need K12 data
-> populated through this pipeline.
+> As of this writing, the K12 staging-to-reporting steps are disabled in `Master.dtsx` — only the postsecondary (PS)
+> path runs by default. Enable the corresponding executables in the package if you need K12 data populated through
+> this pipeline.
 
 ### Semantic Models
 
